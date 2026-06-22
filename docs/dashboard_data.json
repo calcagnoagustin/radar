@@ -1,0 +1,45 @@
+{
+ "generated_at": "2026-06-22T03:23:07Z",
+ "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
+ "capital_inicial": 100.0,
+ "free_usdt": 91.39107309,
+ "deposits": [],
+ "positions": [
+  {
+   "symbol": "NEAR/USDT",
+   "binance": "NEARUSDT",
+   "status": "confirmed",
+   "qty": 3.7,
+   "avg_cost": 2.162,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": "2026-06-19",
+   "note": "override_manual_test"
+  },
+  {
+   "symbol": "ONDO/USDT",
+   "binance": "ONDOUSDT",
+   "status": "closed",
+   "qty": 0,
+   "avg_cost": 0.3571,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": "2026-06-19",
+   "note": "reconciliado: held real"
+  }
+ ],
+ "shortlist": [
+  "IO/USDT",
+  "SPK/USDT",
+  "ID/USDT",
+  "XAI/USDT",
+  "DYM/USDT"
+ ],
+ "narrativa_active": null,
+ "last_brain_run": "2026-06-22",
+ "rules": {
+  "freeze_days": 60,
+  "max_seeds": 3,
+  "seed_size_usdt": 7.0
+ }
+}
