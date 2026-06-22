@@ -1,0 +1,56 @@
+{
+ "updated_at": 1782098661,
+ "bot": "Ganesha",
+ "dry_run": false,
+ "equity_now": 48.47245063,
+ "realized_pnl": -1.53,
+ "deposits_total": 42.31,
+ "main_spot_usdt": null,
+ "trades_total": 2,
+ "win_rate": 0.0,
+ "profit_factor": 0.0,
+ "trades_today": 2,
+ "pnl_today": -0.51,
+ "open_positions": [
+  {
+   "symbol": "IO/USDT",
+   "entry": 0.212,
+   "qty": 103.77,
+   "stop": 0.2079269348353804,
+   "tp1_done": false,
+   "opened_ts": 1782098661.5548072
+  }
+ ],
+ "recent_closed": [
+  {
+   "symbol": "EIGEN/USDT",
+   "entry": 0.2821,
+   "exit": 0.2696,
+   "qty_total": 77.98,
+   "action": "stop",
+   "pnl_net": -1.0173,
+   "opened_ts": 1782036982.1743028,
+   "closed_ts": 1782086116.439127
+  },
+  {
+   "symbol": "XAUT/USDT",
+   "entry": 4200.27,
+   "exit": 4186.77,
+   "qty_total": 0.0052,
+   "action": "stop",
+   "pnl_net": -0.5102,
+   "opened_ts": 1782090057.1847198,
+   "closed_ts": 1782092134.4810057
+  }
+ ],
+ "equity_curve": [
+  {
+   "ts": 1782086116.439127,
+   "cum_pnl": -1.02
+  },
+  {
+   "ts": 1782092134.4810057,
+   "cum_pnl": -1.53
+  }
+ ]
+}
