@@ -1,17 +1,26 @@
 {
- "updated_at": 1782344488,
+ "updated_at": 1782344827,
  "bot": "Ganesha",
  "dry_run": false,
- "equity_now": 47.99221808,
+ "equity_now": 48.04374008,
  "realized_pnl": -2.01,
  "deposits_total": 63.83,
  "main_spot_usdt": null,
  "trades_total": 3,
  "win_rate": 0.0,
  "profit_factor": 0.0,
- "trades_today": 0,
+ "trades_today": 1,
  "pnl_today": 0.0,
- "open_positions": [],
+ "open_positions": [
+  {
+   "symbol": "ENA/USDT",
+   "entry": 0.0854,
+   "qty": 257.61,
+   "stop": 0.08423760101939515,
+   "tp1_done": false,
+   "opened_ts": 1782344766.5035667
+  }
+ ],
  "recent_closed": [
   {
    "symbol": "EIGEN/USDT",
