@@ -1,8 +1,8 @@
 {
- "updated_at": 1782377412,
+ "updated_at": 1782377719,
  "bot": "Ganesha",
  "dry_run": false,
- "equity_now": 47.584268210000005,
+ "equity_now": 47.61455621,
  "realized_pnl": -2.66,
  "deposits_total": 107.17,
  "main_spot_usdt": null,
@@ -15,9 +15,9 @@
   {
    "symbol": "SEI/USDT",
    "entry": 0.0581,
-   "qty": 378.6,
-   "stop": 0.057434888959440544,
-   "tp1_done": false,
+   "qty": 189.3,
+   "stop": 0.0581,
+   "tp1_done": true,
    "opened_ts": 1782374479.3858232
   }
  ],
