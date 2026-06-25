@@ -1,17 +1,26 @@
 {
- "updated_at": 1782374324,
+ "updated_at": 1782374661,
  "bot": "Ganesha",
  "dry_run": false,
- "equity_now": 47.33817821,
+ "equity_now": 47.28896021,
  "realized_pnl": -2.66,
  "deposits_total": 107.17,
  "main_spot_usdt": null,
  "trades_total": 5,
  "win_rate": 0.0,
  "profit_factor": 0.0,
- "trades_today": 1,
+ "trades_today": 2,
  "pnl_today": -0.65,
- "open_positions": [],
+ "open_positions": [
+  {
+   "symbol": "SEI/USDT",
+   "entry": 0.0581,
+   "qty": 378.6,
+   "stop": 0.057434888959440544,
+   "tp1_done": false,
+   "opened_ts": 1782374479.3858232
+  }
+ ],
  "recent_closed": [
   {
    "symbol": "EIGEN/USDT",
