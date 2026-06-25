@@ -103,6 +103,16 @@
   .gmetrics .m{background:var(--surface-2);border:1px solid var(--hair);border-radius:10px;padding:12px 14px}
   .gmetrics .m .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .gmetrics .m .v{font-size:20px;margin-top:4px}
+  .trade{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair-soft)}
+  .trade:last-child{border-bottom:none}
+  .trade .tr-sym{font-size:14px}
+  .trade .tr-sym .sym{font-weight:600}
+  .trade .tr-sym .pair{color:var(--muted)}
+  .trade .tr-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:5px;border:1px solid var(--hair);margin-left:8px}
+  .trade .tr-meta{color:var(--muted);font-size:12px;margin-top:3px}
+  .trade .tr-r{text-align:right;white-space:nowrap}
+  .trade .tr-pnl{font-size:15px;font-weight:600}
+  .trade .tr-pct{font-size:12px}
 </style>
 
 </head>
@@ -154,6 +164,13 @@
     </div>
   </div>
 
+  <div class="cols" style="grid-template-columns:1fr;margin-top:18px">
+    <div class="card">
+      <div class="head"><span class="title">Historial de operaciones</span><span class="eyebrow" id="sHistCount"></span></div>
+      <div class="body" id="sHistory"><div class="row"><span class="lbl">Cargando…</span></div></div>
+    </div>
+  </div>
+
   <div class="note" id="discipline">Vista de control, no de trading. El sistema revisa una vez al día; mirar precios al segundo no cambia ninguna decisión.</div>
 
   
@@ -200,6 +217,11 @@
   </div>
 </div>
 
+
+<div class="card" style="margin-top:18px">
+  <div class="head"><span class="title">Historial de operaciones</span><span class="eyebrow" id="gHistCount"></span></div>
+  <div class="body" id="gHistory"><div class="row"><span class="lbl">Cargando…</span></div></div>
+</div>
 
 <footer>
     <span id="dataStamp">—</span>
@@ -317,6 +339,21 @@ function render(){
   document.getElementById("brainLast").textContent = DATA.last_brain_run? dateShort(DATA.last_brain_run):"—";
   document.getElementById("brainNext").textContent = nextBrain(DATA.last_brain_run);
 
+  // historial
+  const SH=(DATA.recent_closed||[]).slice().reverse();
+  const shc=document.getElementById("sHistory");
+  document.getElementById("sHistCount").textContent=SH.length+" operaci\u00f3n"+(SH.length===1?"":"es");
+  shc.innerHTML="";
+  if(!SH.length)shc.innerHTML='<div class="row"><span class="lbl">Sin operaciones cerradas todav\u00eda.</span></div>';
+  SH.forEach(t=>{
+    const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const pct=t.entry?((t.exit/t.entry-1)*100):0;
+    const when=t.closed_ts?stampShort(new Date(t.closed_ts*1000).toISOString()):(t.closed_at||"");
+    const tg=t.action?String(t.action).toUpperCase():"CIERRE";
+    const el=document.createElement("div");el.className="trade";
+    el.innerHTML=`<div><div class="tr-sym"><span class="sym">${b}</span><span class="pair">/${q||"USDT"}</span><span class="tr-tag ${cls(pnl)}">${tg}</span></div><div class="tr-meta">${fmtUSD(t.entry,t.entry<1?4:2)} \u2192 ${fmtUSD(t.exit,t.exit<1?4:2)} \u00b7 cant ${t.qty_total} \u00b7 ${when}</div></div><div class="tr-r"><div class="tr-pnl ${cls(pnl)}">${fmtUSD(pnl)}</div><div class="tr-pct ${cls(pct)}">${fmtPct(pct)}</div></div>`;
+    shc.appendChild(el);
+  });
+
   // stamps
   document.getElementById("dataStamp").textContent = "Estado generado: "+(DATA.generated_at?stampShort(DATA.generated_at):"—");
   tickFreshness();
@@ -389,6 +426,17 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
       const el=document.createElement("div");el.className="pos";
       el.innerHTML=`<div class="pos-top"><div><span class="sym">${b}</span> <span class="pair">/${q||"USDT"}</span>${p.tp1_done?' <span class="badge moonbag" style="margin-left:6px">TP1 ✓</span>':''}</div><div class="pos-pnl">${px?`<div class="pct ${cl(up)}">${fP(uc)}</div><div class="abs">${fU(up)}</div>`:'<div class="pct flat">—</div>'}</div></div><div class="pos-meta"><span>Precio <b class="mono">${px?fU(px.price,px.price<1?4:2):"—"}</b></span><span>Entrada <b class="mono">${fU(p.entry,p.entry<1?4:2)}</b></span><span>Invertido <b class="mono">${fU(p.qty*p.entry)}</b></span><span>Cant <b class="mono">${p.qty}</b></span><span>Stop <b class="mono">${fU(p.stop,p.stop<1?4:2)}</b>${sp!=null?` <span class="${cl(sp)}">(${fP(sp)})</span>`:""}</span>${px?`<span>24h <b class="mono ${cl(px.chg)}">${fP(px.chg)}</b></span>`:""}</div>`;
       pc.appendChild(el);
+    });
+    const H=(D.recent_closed||[]).slice().reverse();
+    $("gHistCount").textContent=H.length+" operaci\u00f3n"+(H.length===1?"":"es");
+    const hc=$("gHistory");hc.innerHTML="";
+    if(!H.length)hc.innerHTML='<div class="row"><span class="lbl">Sin operaciones cerradas todav\u00eda.</span></div>';
+    H.forEach(t=>{
+      const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const pct=t.entry?((t.exit/t.entry-1)*100):0;
+      const tg=t.action==="tp"?"TP":(t.action==="stop"?"STOP":(t.action||"cierre").toUpperCase());
+      const el=document.createElement("div");el.className="trade";
+      el.innerHTML=`<div><div class="tr-sym"><span class="sym">${b}</span><span class="pair">/${q||"USDT"}</span><span class="tr-tag ${cl(pnl)}">${tg}</span></div><div class="tr-meta">${fU(t.entry,t.entry<1?4:2)} \u2192 ${fU(t.exit,t.exit<1?4:2)} \u00b7 cant ${t.qty_total} \u00b7 ${stamp((t.closed_ts||0)*1000)}</div></div><div class="tr-r"><div class="tr-pnl ${cl(pnl)}">${fU(pnl)}</div><div class="tr-pct ${cl(pct)}">${fP(pct)}</div></div>`;
+      hc.appendChild(el);
     });
     fresh();
   }
