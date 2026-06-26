@@ -1,5 +1,5 @@
 {
- "updated_at": 1782431961,
+ "updated_at": 1782432304,
  "bot": "Ganesha",
  "dry_run": false,
  "equity_now": 47.42912449,
@@ -9,8 +9,8 @@
  "trades_total": 6,
  "win_rate": 16.7,
  "profit_factor": 0.03,
- "trades_today": 2,
- "pnl_today": -0.56,
+ "trades_today": 0,
+ "pnl_today": 0.0,
  "open_positions": [],
  "recent_closed": [
   {
