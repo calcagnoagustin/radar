@@ -1,26 +1,17 @@
 {
- "updated_at": 1782490850,
+ "updated_at": 1782491154,
  "bot": "Ganesha",
  "dry_run": false,
- "equity_now": 47.00903312,
- "realized_pnl": -2.66,
- "deposits_total": 139.92,
+ "equity_now": 46.86594695,
+ "realized_pnl": -3.13,
+ "deposits_total": 161.43,
  "main_spot_usdt": null,
- "trades_total": 7,
- "win_rate": 14.3,
+ "trades_total": 8,
+ "win_rate": 12.5,
  "profit_factor": 0.03,
  "trades_today": 2,
- "pnl_today": -0.09,
- "open_positions": [
-  {
-   "symbol": "FET/USDT",
-   "entry": 0.1774358353510896,
-   "qty": 123.9,
-   "stop": 0.17441633258997488,
-   "tp1_done": false,
-   "opened_ts": 1782489690.9467921
-  }
- ],
+ "pnl_today": -0.56,
+ "open_positions": [],
  "recent_closed": [
   {
    "symbol": "EIGEN/USDT",
@@ -91,6 +82,16 @@
    "pnl_net": -0.0935,
    "opened_ts": 1782478845.5032852,
    "closed_ts": 1782479395.6526802
+  },
+  {
+   "symbol": "FET/USDT",
+   "entry": 0.1774358353510896,
+   "exit": 0.1741,
+   "qty_total": 123.9,
+   "action": "stop",
+   "pnl_net": -0.4697,
+   "opened_ts": 1782489690.9467921,
+   "closed_ts": 1782490912.9154165
   }
  ],
  "equity_curve": [
@@ -121,6 +122,10 @@
   {
    "ts": 1782479395.6526802,
    "cum_pnl": -2.66
+  },
+  {
+   "ts": 1782490912.9154165,
+   "cum_pnl": -3.13
   }
  ]
 }
