@@ -113,6 +113,9 @@
   .trade .tr-r{text-align:right;white-space:nowrap}
   .trade .tr-pnl{font-size:15px;font-weight:600}
   .trade .tr-pct{font-size:12px}
+  .tr-hidden{display:none}
+  .vermas{margin-top:12px;background:transparent;border:1px solid #2a3b32;color:#9fe0b8;font:inherit;font-size:12px;padding:7px 16px;border-radius:8px;cursor:pointer;width:100%}
+  .vermas:hover{background:#16241c}
 </style>
 
 </head>
@@ -232,6 +235,7 @@
 const MONTHS=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
 const fmtUSD=(n,d=2)=>(n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
 const fmtPct=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
+function paginateHist(cid,lim){var c=document.getElementById(cid);if(!c)return;var rows=Array.prototype.slice.call(c.querySelectorAll('.trade'));if(rows.length<=lim)return;rows.forEach(function(r,i){if(i>=lim)r.classList.add('tr-hidden');});var rest=rows.length-lim;var w=document.createElement('div');w.style.textAlign='center';var btn=document.createElement('button');btn.className='vermas';btn.textContent='Ver m\u00e1s ('+rest+')';btn.dataset.exp='0';btn.addEventListener('click',function(){if(btn.dataset.exp==='0'){c.querySelectorAll('.trade.tr-hidden').forEach(function(e){e.classList.remove('tr-hidden');});btn.textContent='Ver menos';btn.dataset.exp='1';}else{Array.prototype.slice.call(c.querySelectorAll('.trade')).forEach(function(e,i){if(i>=lim)e.classList.add('tr-hidden');});btn.textContent='Ver m\u00e1s ('+rest+')';btn.dataset.exp='0';}});w.appendChild(btn);c.appendChild(w);}
 const cls=n=>n>0.0001?"up":(n<-0.0001?"down":"flat");
 const bSym=s=>s.replace("/","").toUpperCase();
 let DATA=null, PRICES={}, lastFetch=0;
@@ -346,13 +350,14 @@ function render(){
   shc.innerHTML="";
   if(!SH.length)shc.innerHTML='<div class="row"><span class="lbl">Sin operaciones cerradas todav\u00eda.</span></div>';
   SH.forEach(t=>{
-    const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const pct=t.entry?((t.exit/t.entry-1)*100):0;
+    const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const _cb=(t.entry||0)*(t.qty_total||0);const pct=_cb?(pnl/_cb*100):0;
     const when=t.closed_ts?stampShort(new Date(t.closed_ts*1000).toISOString()):(t.closed_at||"");
     const tg=t.action?String(t.action).toUpperCase():"CIERRE";
     const el=document.createElement("div");el.className="trade";
     el.innerHTML=`<div><div class="tr-sym"><span class="sym">${b}</span><span class="pair">/${q||"USDT"}</span><span class="tr-tag ${cls(pnl)}">${tg}</span></div><div class="tr-meta">${fmtUSD(t.entry,t.entry<1?4:2)} \u2192 ${fmtUSD(t.exit,t.exit<1?4:2)} \u00b7 cant ${t.qty_total} \u00b7 ${when}</div></div><div class="tr-r"><div class="tr-pnl ${cls(pnl)}">${fmtUSD(pnl)}</div><div class="tr-pct ${cls(pct)}">${fmtPct(pct)}</div></div>`;
     shc.appendChild(el);
   });
+  paginateHist("sHistory",8);
 
   // stamps
   document.getElementById("dataStamp").textContent = "Estado generado: "+(DATA.generated_at?stampShort(DATA.generated_at):"—");
@@ -432,12 +437,13 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
     const hc=$("gHistory");hc.innerHTML="";
     if(!H.length)hc.innerHTML='<div class="row"><span class="lbl">Sin operaciones cerradas todav\u00eda.</span></div>';
     H.forEach(t=>{
-      const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const pct=t.entry?((t.exit/t.entry-1)*100):0;
+      const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const _cb=(t.entry||0)*(t.qty_total||0);const pct=_cb?(pnl/_cb*100):0;
       const tg=t.action==="tp"?"TP":(t.action==="stop"?"STOP":(t.action||"cierre").toUpperCase());
       const el=document.createElement("div");el.className="trade";
       el.innerHTML=`<div><div class="tr-sym"><span class="sym">${b}</span><span class="pair">/${q||"USDT"}</span><span class="tr-tag ${cl(pnl)}">${tg}</span></div><div class="tr-meta">${fU(t.entry,t.entry<1?4:2)} \u2192 ${fU(t.exit,t.exit<1?4:2)} \u00b7 cant ${t.qty_total} \u00b7 ${stamp((t.closed_ts||0)*1000)}</div></div><div class="tr-r"><div class="tr-pnl ${cl(pnl)}">${fU(pnl)}</div><div class="tr-pct ${cl(pct)}">${fP(pct)}</div></div>`;
       hc.appendChild(el);
     });
+    paginateHist("gHistory",8);
     fresh();
   }
   async function cyc(){try{await prices();render();}catch(e){const f=$("gFresh");if(f)f.innerHTML='<span class="err">precios n/d</span>';}}
