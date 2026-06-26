@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-25T23:44:24Z",
+ "generated_at": "2026-06-26T01:16:22Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 91.39107309,
@@ -36,7 +36,7 @@
   "DYM/USDT"
  ],
  "narrativa_active": null,
- "last_brain_run": "2026-06-25",
+ "last_brain_run": "2026-06-26",
  "recent_closed": [],
  "shortlist_full": [],
  "rules": {
