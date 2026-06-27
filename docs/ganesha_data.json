@@ -1,13 +1,13 @@
 {
- "updated_at": 1782519303,
+ "updated_at": 1782520203,
  "bot": "Ganesha",
  "strategy": "Freqtrade DonchianTrend BTC/USDT 1h",
  "mode": "LIVE",
  "dry_run": false,
- "equity_now": 47.4273,
+ "equity_now": 47.2525,
  "realized_pnl": -3.134,
  "deposits_total": 161.43,
- "main_spot_usdt": 47.43,
+ "main_spot_usdt": 47.25,
  "trades_total": 8,
  "win_rate": 12.5,
  "profit_factor": 0.03,
@@ -17,7 +17,7 @@
   {
    "symbol": "AVAX/USDT",
    "qty": 3.35664,
-   "est_usdt": 22.15,
+   "est_usdt": 21.97,
    "legacy": true
   }
  ],
@@ -136,6 +136,6 @@
    "ts": 1782490912.9154165,
    "cum_pnl": -3.13
   },
-  47.4273
+  47.2525
  ]
 }
