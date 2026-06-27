@@ -1,18 +1,18 @@
 {
- "updated_at": 1782576902,
+ "updated_at": 1782577805,
  "bot": "Ganesha",
  "strategy": "Freqtrade DonchianTrend BTC/USDT 1h",
  "mode": "LIVE",
  "dry_run": false,
- "equity_now": 46.2802,
+ "equity_now": 46.2801,
  "realized_pnl": -3.134,
  "deposits_total": 161.43,
  "main_spot_usdt": 46.28,
  "trades_total": 8,
  "win_rate": 12.5,
  "profit_factor": 0.03,
- "trades_today": 1,
- "pnl_today": -0.4697,
+ "trades_today": 0,
+ "pnl_today": 0,
  "open_positions": [],
  "recent_closed": [
   {
@@ -129,6 +129,6 @@
    "ts": 1782490912.9154165,
    "cum_pnl": -3.13
   },
-  46.2802
+  46.2801
  ]
 }
