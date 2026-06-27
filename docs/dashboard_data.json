@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-27T03:18:08Z",
+ "generated_at": "2026-06-27T03:56:40Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 91.39107309,
@@ -30,7 +30,6 @@
  ],
  "shortlist": [
   "FET/USDT",
-  "GRASS/USDT",
   "PLUME/USDT"
  ],
  "narrativa_active": null,
@@ -56,27 +55,6 @@
    "sources": [
     "https://coinmarketcap.com/cmc-ai/artificial-superintelligence-alliance/latest-updates/",
     "https://bitcoinfoundation.org/news/ai-news/top-ai-crypto-tokens/"
-   ]
-  },
-  {
-   "symbol": "GRASS/USDT",
-   "rank": 2,
-   "type": "historica",
-   "stage": "1",
-   "thesis": "DePIN x AI sobre Solana saliendo de base larga (~-90% desde ATH) con repunte de volumen y minimos crecientes; entrada solo en confirmacion de breakout sobre la neckline ~$0.46, sino esperar. Aun mayormente Stage 1.",
-   "fundamentals": "Protocolo DePIN que monetiza ancho de banda no usado para scraping de datos web que entrenan modelos AcI; sin hardware, app liviana. Utilidad del token: pago de la red, staking y recompensas. Por que ahora: ~8.5M usuarios, ubicado en una capa critica de la cadena de valor de datos para AI, y la narrativa DePIN/AI descentralizada esta rotando capital este mes; VCs anunciaron fondos DePIN por +$2B.",
-   "catalyst": "Token Holder & Network Participant Call programado para el 7-jul-2026 que deberia clarificar la distribucion de la Season 2 (catalizador binario); rally del sector AI descentralizado por tension geopolitica.",
-   "signals": {
-    "google_trends": "Interes en 'Grass DePIN' y airdrop Season 2 al alza de cara a la call del 7-jul.",
-    "social": "Citado por analistas como top pick para una eventual 'altcoin summer' por fundamentales reales y revenue; sentimiento mixto por dilucion de unlocks.",
-    "binance": "Trading activo; +19% intradia con volumen +49% al testear neckline $0.46; +13% en 7 dias superando al mercado global.",
-    "onchain": "8.5M usuarios; volumen 24h ~$53M sobre mcap ~$275M (ratio sano); pero whale deposito tokens a exchange con perdida ~$4.2M (riesgo de distribucion)."
-   },
-   "risk": "Dilucion fuerte: Season 2 podria distribuir ~17% del supply (overhang); alta beta (~7x BTC) y depositos de whales a exchange. Si la call decepciona o el breakout falla, recae a la base.",
-   "sources": [
-    "https://coinmarketcap.com/cmc-ai/grass/latest-updates/",
-    "https://www.bybit.com/en/price/grass/",
-    "https://coinmarketcap.com/cmc-ai/grass/price-prediction/"
    ]
   },
   {
