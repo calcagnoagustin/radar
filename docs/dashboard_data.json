@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-27T03:56:40Z",
+ "generated_at": "2026-06-27T17:36:33Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 91.39107309,
@@ -29,8 +29,9 @@
   }
  ],
  "shortlist": [
-  "FET/USDT",
-  "PLUME/USDT"
+  "SYN/USDT",
+  "HEI/USDT",
+  "AAVE/USDT"
  ],
  "narrativa_active": null,
  "regimen": "risk_off",
@@ -38,45 +39,16 @@
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "FET/USDT",
-   "rank": 1,
-   "type": "historica",
-   "stage": "2",
-   "thesis": "Lider establecido del sector AI-agentes saliendo de base larga con el catalizador narrativo mas fuerte del mes; entrar en pullbacks hacia la base mientras mantenga estructura de minimos crecientes, no perseguir velas verticales.",
-   "fundamentals": "Token de la Artificial Superintelligence Alliance (ASI), infraestructura para coordinacion de agentes AI descentralizados. Utilidad: gas/coordinacion en ASI:Chain, staking y acceso a la red de agentes. Por que ahora: el shutdown forzado de modelos de Anthropic por orden del gobierno US (14-jun-2026) gatillo ~$2.87B de rotacion hacia tokens de AI descentralizada; ademas lanzaron el Agent Launchpad (de narrativa a utilidad) y hay drenaje de reservas en exchanges (~20% en 90 dias). Liquidez profunda en Binance.",
-   "catalyst": "Anthropic model shutdown (14-jun-2026) impulsando narrativa AI descentralizada + Agent Launchpad live + caida de reservas en exchange (supply crunch) + TestNet de ASI:Chain en camino.",
-   "signals": {
-    "google_trends": "Interes de busqueda en 'AI agents crypto' y FET repuntando tras la noticia de Anthropic; FET top en social mentions del sector.",
-    "social": "X/Twitter: cuenta oficial @ASI_Alliance (97K) empujando narrativa anti-censura AI; mencion de inflow drought y supply crunch en exchanges.",
-    "binance": "FET subio +15% en una sesion al testear resistencia tecnica clave; uno de los tokens AI mas traded en Binance Spot.",
-    "onchain": "Caida ~20% de reservas de FET en Binance en 90 dias (sell-side liquidity bloqueada); Agent Launchpad generando actividad on-chain real."
-   },
-   "risk": "Rally impulsado por narrativa/noticia geopolitica que puede revertir rapido si el catalizador se enfria; entorno macro risk_off de alta beta. Sin confirmacion de cierre semanal sobre resistencia, tratar como rebote.",
-   "sources": [
-    "https://coinmarketcap.com/cmc-ai/artificial-superintelligence-alliance/latest-updates/",
-    "https://bitcoinfoundation.org/news/ai-news/top-ai-crypto-tokens/"
-   ]
+   "symbol": "SYN/USDT",
+   "thesis": "scanner score 6.5 stage 2 mom30 641.4% trending False"
   },
   {
-   "symbol": "PLUME/USDT",
-   "rank": 3,
-   "type": "historica",
-   "stage": "1",
-   "thesis": "Lider en RWA con traccion institucional inusual para su mcap (~$60M), en plena distribucion/Stage 1 cerca de minimos historicos; candidato de acumulacion paciente, NO entrar hasta ver giro de estructura y volumen sostenido. Por ahora es watchlist, sizing minimo.",
-   "fundamentals": "Blockchain L1 EVM full-stack especifica para RWAfi (tokenizacion de activos reales con compliance integrado). Utilidad del token: gas, governance y staking. Por que ahora: tokenizacion RWA es narrativa macro estructural; +190k holders RWA y >$400M TVL, backers de primer nivel (Apollo, WisdomTree, EY, Mastercard, Securitize, YZi/Binance Labs) y nuevo vault Etherfi Liquid RWA ($25M inicial, plan $100M) lanzado el 6-jun-2026.",
-   "catalyst": "Lanzamiento del vault Etherfi Liquid RWA (6-jun-2026) conectando +$6B de depositos de Etherfi a yields de RWA via Plume; graduacion Alpha-to-Spot reciente en Binance; claim de airdrop Season 2 activo hasta agosto 2026.",
-   "signals": {
-    "google_trends": "Interes en 'RWA tokenization' y Plume sostenido por narrativa institucional, aunque precio aun debil.",
-    "social": "Acumulacion por conviccion de sector ('comprar Plume ahora es como ONDO en el launch'); comunidad atenta a unlocks.",
-    "binance": "Binance concentra el mayor volumen de PLUME/USDT; volumen 24h repunto +70% (~$10M) recientemente.",
-    "onchain": ">$400M TVL y 190k holders RWA; pero 10B supply total con ~40% aun bloqueado (vesting hasta 2028) = overhang importante."
-   },
-   "risk": "Token desconectado de la traccion institucional del ecosistema; supply de 10B con vesting fuerte hasta 2028 presiona el precio. Cerca de ATL en regimen risk_off: alto riesgo de seguir sangrando sin un giro tecnico claro.",
-   "sources": [
-    "https://coinmarketcap.com/cmc-ai/plume/latest-updates/",
-    "https://messari.io/project/plume-network",
-    "https://phemex.com/blogs/plume-network-token"
-   ]
+   "symbol": "HEI/USDT",
+   "thesis": "scanner score 6.3 stage 2 mom30 171.0% trending False"
+  },
+  {
+   "symbol": "AAVE/USDT",
+   "thesis": "scanner score 5.1 stage 2 mom30 17.6% trending True"
   }
  ],
  "rules": {
