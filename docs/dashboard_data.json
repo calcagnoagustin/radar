@@ -1,20 +1,53 @@
 {
- "generated_at": "2026-06-28T04:16:42Z",
+ "generated_at": "2026-06-28T15:30:12Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 91.39107309,
+ "free_usdt": 76.59879749,
  "deposits": [],
  "positions": [
   {
+   "symbol": "ATM/USDT",
+   "binance": "ATMUSDT",
+   "status": "seed",
+   "qty": 3.2169117647058822,
+   "avg_cost": 2.176,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
+  {
+   "symbol": "MANTA/USDT",
+   "binance": "MANTAUSDT",
+   "status": "seed",
+   "qty": 46.43757463181637,
+   "avg_cost": 0.15074,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
+  {
    "symbol": "NEAR/USDT",
    "binance": "NEARUSDT",
-   "status": "seed",
-   "qty": 3.6963,
+   "status": "moonbag",
+   "qty": 0.36963,
    "avg_cost": 2.162,
    "dca_adds": 0,
    "tp_hit": [],
    "confirmed_at": null,
    "note": "reconciliado a balance real 2026-06-28 (3.6963)"
+  },
+  {
+   "symbol": "SYN/USDT",
+   "binance": "SYNUSDT",
+   "status": "seed",
+   "qty": 18.738622978905664,
+   "avg_cost": 0.37356,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
   },
   {
    "symbol": "ONDO/USDT",
@@ -29,26 +62,78 @@
   }
  ],
  "shortlist": [
-  "SYN/USDT",
-  "HEI/USDT",
-  "AAVE/USDT"
+  "KITE/USDT",
+  "KAITO/USDT",
+  "ACT/USDT"
  ],
  "narrativa_active": null,
  "regimen": "risk_off",
- "last_brain_run": "2026-06-27",
+ "last_brain_run": "2026-06-28",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "SYN/USDT",
-   "thesis": "scanner score 6.5 stage 2 mom30 641.4% trending False"
+   "symbol": "KITE/USDT",
+   "rank": 1,
+   "type": "launch",
+   "stage": "2",
+   "thesis": "Reciente Launchpool de Binance sobre la narrativa mas caliente del ciclo (agentic payments / AI agents); volumen real reacelerando (+53% a $63M con OI subiendo) tras reclamar EMAs clave. Entrada escalonada en fuerza, no perseguir.",
+   "fundamentals": "Kite es una L1 PoS EVM-compatible (sobre Avalanche) que actua como capa de pagos e identidad para agentes de IA autonomos (Agent Passport, session keys, settlement en stablecoins). Token KITE se usa para pagos, staking, governance y acceso de modulos; las comisiones de servicios de IA se convierten a KITE creando buy-pressure ligada al uso real. Backed por PayPal Ventures y General Catalyst ($33M). Mainnet en abril 2026, ya en top-100 de CMC. AHORA: la narrativa AI-agent vuelve a calentar con OpenAI/Google/Meta empujando agentes en Web2, y Binance acaba de listarlo via Launchpool.",
+   "catalyst": "Mainnet recien lanzada (abr 2026) + expansion de ecosistema (nueva DEX partnership y dev tools jun 2026) sobre narrativa agentic-payments en aceleracion.",
+   "signals": {
+    "google_trends": "Interes de busqueda en 'AI agents' y 'agentic payments' creciente, empujado por lanzamientos de agentes de gigantes Web2.",
+    "social": "Sentimiento dividido pero con conviccion alcista en la tesis de infraestructura de agentes; bots de trading marcando setups long sobre estructura de timeframe alto.",
+    "binance": "Launchpool reciente; salto de volume_rank 119->51; +53% de volumen a ~$63M con OI +10%.",
+    "onchain": "1.95M wallets y 115M interacciones en testnet; KPIs a vigilar: Passport wallets, volumen de settlement en stablecoins, integraciones de agentes activas."
+   },
+   "risk": "Overhang de unlocks (release de ~$12.35M el 1-jun y mas programados; supply total 10B con float bajo) puede tapar rallies; adopcion real aun por probarse y mercado risk-off castiga early-stage.",
+   "sources": [
+    "https://coinmarketcap.com/cmc-ai/kite/latest-updates/",
+    "https://tokenpost.com/news/technology/20518",
+    "https://blogth.bitazza.com/en/blog/get-to-know-kite",
+    "https://www.gate.com/news/detail/15489848"
+   ]
   },
   {
-   "symbol": "HEI/USDT",
-   "thesis": "scanner score 6.3 stage 2 mom30 171.0% trending False"
+   "symbol": "KAITO/USDT",
+   "rank": 2,
+   "type": "historica",
+   "stage": "1",
+   "thesis": "InfoFi/AI con +1 ano de historia, liquidez mas sana que el resto del scanner (~$10-27M vol) y volume_rank reacelerando (139->69). Base larga ~$0.27-0.47; tesis de transicion Stage1->2 si reclama y sostiene volumen, no antes.",
+   "fundamentals": "Kaito es la plataforma lider de InfoFi (Information Finance): usa IA para indexar miles de fuentes Web3 y cuantificar 'mindshare'/atencion. Token KAITO sirve para governance, incentivos, acceso a data premium y al Capital Launchpad. Fundada por Yu Hu (ex-Citadel), respaldada por Sequoia, Superscrypt y Jane Street. AHORA: pivote estrategico 2026 (Kaito Studio, Capital Launchpad y Attention Markets con Polymarket) que reescribe la utilidad del token hacia mercados de prediccion de atencion, un vertical nuevo en expansion.",
+   "catalyst": "Rollout de Attention Markets con Polymarket (decenas de mercados desde marzo, escalando a miles) + Kaito Studio/Capital Launchpad como nuevos sumideros de demanda.",
+   "signals": {
+    "google_trends": "Narrativa 'InfoFi' y 'mindshare' con interes sostenido dentro de Crypto Twitter y expandiendo a finanzas/AI.",
+    "social": "Comunidad bullish hoy; producto es justamente herramienta de medicion de atencion social, con uso activo de leaderboards.",
+    "binance": "Par mas activo KAITO/USDT en Binance; salto de volume_rank 139->69 este ciclo.",
+    "onchain": "~344K holders, market cap ~$110-140M, vol/mktcap saludable (~9%); FDV ~$345-471M."
+   },
+   "risk": "Overhang de unlocks lineales de core contributors (desde feb 2026 sobre 3 anos) y narrativa de utilidad 'en reescritura' tras el cierre de Yaps; en regimen risk-off los AI-alts siguen fragiles.",
+   "sources": [
+    "https://www.coingecko.com/en/coins/kaito",
+    "https://coinmarketcap.com/cmc-ai/kaito/latest-updates/",
+    "https://www.coingecko.com/learn/what-is-kaito-earn-yap-points",
+    "https://tokenomist.ai/kaito"
+   ]
   },
   {
-   "symbol": "AAVE/USDT",
-   "thesis": "scanner score 5.1 stage 2 mom30 17.6% trending True"
+   "symbol": "ACT/USDT",
+   "rank": 3,
+   "type": "momentum",
+   "stage": "2",
+   "thesis": "Nuevo en top-100 por volumen y marcado Stage 2 en el ranking de volume_rank, dentro de la rotacion AI/agent que es la unica narrativa con traccion este mes. Candidato especulativo de tamano pequeno; el scanner ya lo marca cerca de Stage 3, asi que SOLO con confirmacion de estructura y volumen sostenido, sino se descarta.",
+   "fundamentals": "ACT (AI Prophecy / AI-agent meme-adyacente) cabalga la narrativa de agentes de IA que esta rotando capital este mes junto a KITE; utilidad principalmente especulativa/comunidad mas que infraestructura probada. Por AHORA: entra al radar por el salto de volumen y la afinidad con el sector AI-agent caliente, no por fundamentales robustos.",
+   "catalyst": "Rotacion sectorial AI-agent (misma corriente que empuja a KITE) generando spike de volumen y entrada nueva al top-100.",
+   "signals": {
+    "google_trends": "Empuja sobre el paraguas 'AI agents', sin senal de busqueda propia fuerte verificada.",
+    "social": "Atencion creciente ligada al sector agentes, pero sentimiento mas fragil/meme que KITE o KAITO.",
+    "binance": "Nuevo en top-100 por volumen; scanner sc 2.3 con stage marcado 3 (extension temprana - precaucion).",
+    "onchain": "Liquidez aceptable para Binance Spot pero menos profunda que KITE/KAITO; vigilar profundidad antes de entrar."
+   },
+   "risk": "El scanner ya lo flaggea cerca de Stage 3 (extendido); riesgo alto de perseguir un movimiento maduro de baja conviccion en pleno risk-off. Fundamentales debiles y dependencia total de la narrativa; tamano minimo o pasar si no hay base limpia.",
+   "sources": [
+    "https://coindcx.com/blog/crypto-deep-dives/crypto-bull-run/",
+    "https://coinmarketcap.com/cmc-ai/kite/latest-updates/"
+   ]
   }
  ],
  "rules": {
