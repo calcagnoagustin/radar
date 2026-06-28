@@ -1,134 +1,21 @@
 {
- "updated_at": 1782607505,
+ "updated_at": 1782612903,
  "bot": "Ganesha",
- "strategy": "Freqtrade DonchianTrend BTC/USDT 1h",
+ "strategy": "Freqtrade DonchianDaily BTC/USDT 1d",
  "mode": "LIVE",
  "dry_run": false,
  "equity_now": 46.2795,
- "realized_pnl": -3.134,
- "deposits_total": 161.43,
+ "realized_pnl": 0,
+ "deposits_total": 46.872666949999996,
  "main_spot_usdt": 46.28,
- "trades_total": 8,
- "win_rate": 12.5,
- "profit_factor": 0.03,
+ "trades_total": 0,
+ "win_rate": 0,
+ "profit_factor": null,
  "trades_today": 0,
  "pnl_today": 0,
  "open_positions": [],
- "recent_closed": [
-  {
-   "symbol": "EIGEN/USDT",
-   "entry": 0.2821,
-   "exit": 0.2696,
-   "qty_total": 77.98,
-   "action": "stop",
-   "pnl_net": -1.0173,
-   "opened_ts": 1782036982.1743028,
-   "closed_ts": 1782086116.439127
-  },
-  {
-   "symbol": "XAUT/USDT",
-   "entry": 4200.27,
-   "exit": 4186.77,
-   "qty_total": 0.0052,
-   "action": "stop",
-   "pnl_net": -0.5102,
-   "opened_ts": 1782090057.1847198,
-   "closed_ts": 1782092134.4810057
-  },
-  {
-   "symbol": "IO/USDT",
-   "entry": 0.212,
-   "exit": 0.2078,
-   "qty_total": 103.77,
-   "action": "stop",
-   "pnl_net": -0.4802,
-   "opened_ts": 1782098661.5548072,
-   "closed_ts": 1782101409.8639507
-  },
-  {
-   "symbol": "ENA/USDT",
-   "entry": 0.0854,
-   "exit": 0.0842,
-   "qty_total": 257.61,
-   "action": "stop",
-   "pnl_net": -0.3527,
-   "opened_ts": 1782344766.5035667,
-   "closed_ts": 1782347758.6202528
-  },
-  {
-   "symbol": "FIL/USDT",
-   "entry": 0.771,
-   "exit": 0.762,
-   "qty_total": 28.53,
-   "action": "stop",
-   "pnl_net": -0.3013,
-   "opened_ts": 1782367264.927173,
-   "closed_ts": 1782368302.8722224
-  },
-  {
-   "symbol": "SEI/USDT",
-   "entry": 0.0581,
-   "exit": 0.0581,
-   "qty_total": 378.6,
-   "action": "stop",
-   "pnl_net": 0.0909,
-   "opened_ts": 1782374479.3858232,
-   "closed_ts": 1782379370.6299684
-  },
-  {
-   "symbol": "XAUT/USDT",
-   "entry": 4050.2,
-   "exit": 4036.92,
-   "qty_total": 0.0054,
-   "action": "stop",
-   "pnl_net": -0.0935,
-   "opened_ts": 1782478845.5032852,
-   "closed_ts": 1782479395.6526802
-  },
-  {
-   "symbol": "FET/USDT",
-   "entry": 0.1774358353510896,
-   "exit": 0.1741,
-   "qty_total": 123.9,
-   "action": "stop",
-   "pnl_net": -0.4697,
-   "opened_ts": 1782489690.9467921,
-   "closed_ts": 1782490912.9154165
-  }
- ],
+ "recent_closed": [],
  "equity_curve": [
-  {
-   "ts": 1782086116.439127,
-   "cum_pnl": -1.02
-  },
-  {
-   "ts": 1782092134.4810057,
-   "cum_pnl": -1.53
-  },
-  {
-   "ts": 1782101409.8639507,
-   "cum_pnl": -2.01
-  },
-  {
-   "ts": 1782347758.6202528,
-   "cum_pnl": -2.36
-  },
-  {
-   "ts": 1782368302.8722224,
-   "cum_pnl": -2.66
-  },
-  {
-   "ts": 1782379370.6299684,
-   "cum_pnl": -2.57
-  },
-  {
-   "ts": 1782479395.6526802,
-   "cum_pnl": -2.66
-  },
-  {
-   "ts": 1782490912.9154165,
-   "cum_pnl": -3.13
-  },
   46.2795
  ]
 }
