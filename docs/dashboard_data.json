@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-28T15:30:12Z",
+ "generated_at": "2026-06-29T00:17:03Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 76.59879749,
@@ -8,12 +8,12 @@
   {
    "symbol": "ATM/USDT",
    "binance": "ATMUSDT",
-   "status": "seed",
+   "status": "confirmed",
    "qty": 3.2169117647058822,
    "avg_cost": 2.176,
    "dca_adds": 0,
    "tp_hit": [],
-   "confirmed_at": null,
+   "confirmed_at": "2026-06-29",
    "note": ""
   },
   {
@@ -31,7 +31,7 @@
    "symbol": "NEAR/USDT",
    "binance": "NEARUSDT",
    "status": "moonbag",
-   "qty": 0.36963,
+   "qty": 0.036963,
    "avg_cost": 2.162,
    "dca_adds": 0,
    "tp_hit": [],
@@ -41,12 +41,12 @@
   {
    "symbol": "SYN/USDT",
    "binance": "SYNUSDT",
-   "status": "seed",
+   "status": "confirmed",
    "qty": 18.738622978905664,
    "avg_cost": 0.37356,
    "dca_adds": 0,
    "tp_hit": [],
-   "confirmed_at": null,
+   "confirmed_at": "2026-06-29",
    "note": ""
   },
   {
@@ -62,78 +62,104 @@
   }
  ],
  "shortlist": [
-  "KITE/USDT",
-  "KAITO/USDT",
-  "ACT/USDT"
+  "JTO/USDT",
+  "MANTA/USDT",
+  "AEVO/USDT"
  ],
  "narrativa_active": null,
  "regimen": "risk_off",
- "last_brain_run": "2026-06-28",
+ "last_brain_run": "2026-06-29",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "KITE/USDT",
+   "symbol": "JTO/USDT",
    "rank": 1,
-   "type": "launch",
+   "type": "historica",
    "stage": "2",
-   "thesis": "Reciente Launchpool de Binance sobre la narrativa mas caliente del ciclo (agentic payments / AI agents); volumen real reacelerando (+53% a $63M con OI subiendo) tras reclamar EMAs clave. Entrada escalonada en fuerza, no perseguir.",
-   "fundamentals": "Kite es una L1 PoS EVM-compatible (sobre Avalanche) que actua como capa de pagos e identidad para agentes de IA autonomos (Agent Passport, session keys, settlement en stablecoins). Token KITE se usa para pagos, staking, governance y acceso de modulos; las comisiones de servicios de IA se convierten a KITE creando buy-pressure ligada al uso real. Backed por PayPal Ventures y General Catalyst ($33M). Mainnet en abril 2026, ya en top-100 de CMC. AHORA: la narrativa AI-agent vuelve a calentar con OpenAI/Google/Meta empujando agentes en Web2, y Binance acaba de listarlo via Launchpool.",
-   "catalyst": "Mainnet recien lanzada (abr 2026) + expansion de ecosistema (nueva DEX partnership y dev tools jun 2026) sobre narrativa agentic-payments en aceleracion.",
+   "thesis": "Mejor relacion estructura/liquidez del lote: rompe al alza superando al mercado con volumen real y flujo comprador, sobre la base larga de Solana infra. Entrada en pullback al rango $0.80-0.85 buscando confirmacion como soporte.",
+   "fundamentals": "Jito es el protocolo lider de liquid staking + MEV en Solana (JitoSOL captura staking + MEV). JTO es el token de gobernanza. Sector DePIN/infra Solana que esta rotando capital; utilidad real con revenue on-chain y ahora ruteo de ingresos de la plataforma JTX (80%) al token. MC ~$360-400M con volumen ~$57M/24h: liquidez profunda y sana.",
+   "catalyst": "Tres de los cuatro pilares del Solana Market Layer ya en vivo (Block Engine, Restaking, Block Assembly Marketplace) y lanzamiento de JTX comprometiendo 80% del revenue a JTO; CMF positivo confirma inflows.",
    "signals": {
-    "google_trends": "Interes de busqueda en 'AI agents' y 'agentic payments' creciente, empujado por lanzamientos de agentes de gigantes Web2.",
-    "social": "Sentimiento dividido pero con conviccion alcista en la tesis de infraestructura de agentes; bots de trading marcando setups long sobre estructura de timeframe alto.",
-    "binance": "Launchpool reciente; salto de volume_rank 119->51; +53% de volumen a ~$63M con OI +10%.",
-    "onchain": "1.95M wallets y 115M interacciones en testnet; KPIs a vigilar: Passport wallets, volumen de settlement en stablecoins, integraciones de agentes activas."
+    "google_trends": "Interes en Solana infra/MEV en alza dentro de la narrativa DePIN 2026.",
+    "social": "Comunidad bullish; momentum +18.5% en 7 dias mientras el mercado global cae ~-6%.",
+    "binance": "JTO/USDT activo en Binance Spot con ~$7M+ vol en el par y ~$57M agregado; salto de volumen (scanner st2).",
+    "onchain": "Revenue MEV real y pilares del Market Layer operativos; flujo comprador (CMF+) y 85% buy-rate intradia."
    },
-   "risk": "Overhang de unlocks (release de ~$12.35M el 1-jun y mas programados; supply total 10B con float bajo) puede tapar rallies; adopcion real aun por probarse y mercado risk-off castiga early-stage.",
+   "risk": "Unlocks programados a lo largo de 2026 (presion de dilucion) y solo ~0.3% del MEV llega a holders hoy; alta beta a SOL/BTC en regimen risk_off.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/kite/latest-updates/",
-    "https://tokenpost.com/news/technology/20518",
-    "https://blogth.bitazza.com/en/blog/get-to-know-kite",
-    "https://www.gate.com/news/detail/15489848"
-   ]
+    "https://coinpedia.org/price-analysis/jito-surges-as-solanas-market-layer-goes-live-can-jto-price-extend-its-rally-beyond-1",
+    "https://www.coingecko.com/en/coins/jito",
+    "https://www.bitcoinnoobs.com/crypto/jto"
+   ],
+   "tokenomics": {
+    "mcap": 400565842,
+    "fdv": 819947583,
+    "fdv_mcap": 2.05,
+    "float_pct": 48.9,
+    "cg_id": "jito-governance-token",
+    "warning": "",
+    "penalty": 0
+   }
   },
   {
-   "symbol": "KAITO/USDT",
+   "symbol": "MANTA/USDT",
    "rank": 2,
    "type": "historica",
-   "stage": "1",
-   "thesis": "InfoFi/AI con +1 ano de historia, liquidez mas sana que el resto del scanner (~$10-27M vol) y volume_rank reacelerando (139->69). Base larga ~$0.27-0.47; tesis de transicion Stage1->2 si reclama y sostiene volumen, no antes.",
-   "fundamentals": "Kaito es la plataforma lider de InfoFi (Information Finance): usa IA para indexar miles de fuentes Web3 y cuantificar 'mindshare'/atencion. Token KAITO sirve para governance, incentivos, acceso a data premium y al Capital Launchpad. Fundada por Yu Hu (ex-Citadel), respaldada por Sequoia, Superscrypt y Jane Street. AHORA: pivote estrategico 2026 (Kaito Studio, Capital Launchpad y Attention Markets con Polymarket) que reescribe la utilidad del token hacia mercados de prediccion de atencion, un vertical nuevo en expansion.",
-   "catalyst": "Rollout de Attention Markets con Polymarket (decenas de mercados desde marzo, escalando a miles) + Kaito Studio/Capital Launchpad como nuevos sumideros de demanda.",
+   "stage": "2",
+   "thesis": "Transicion Stage 1->2 desde base larga (-98% del ATH): scanner marca stage 2 con trend True saliendo de acumulacion. Liquidez aceptable y tokenomics mejorando. Entrar solo si mantiene soporte $0.082-0.084 y confirma sobre $0.088.",
+   "fundamentals": "Manta es un ecosistema modular ZK (Manta Pacific L2 EVM + Manta Atlantic), narrativa ZK/modular blockchain vigente en 2026. El token sirve gobernanza, fees y colateral. MC ~$39M con volumen $7-10M/24h: liquidez razonable para spot. El fin de la inflacion de staking reduce emision y mejora la escasez del token.",
+   "catalyst": "Sunset del staking inflacionario (mayo 2026) recorta presion de emision; pivote a modelo app-focused (Manta Labs, incubadora de apps Web3) y unlock proximo minimo (~0.19% del supply) = poco overhang inmediato.",
    "signals": {
-    "google_trends": "Narrativa 'InfoFi' y 'mindshare' con interes sostenido dentro de Crypto Twitter y expandiendo a finanzas/AI.",
-    "social": "Comunidad bullish hoy; producto es justamente herramienta de medicion de atencion social, con uso activo de leaderboards.",
-    "binance": "Par mas activo KAITO/USDT en Binance; salto de volume_rank 139->69 este ciclo.",
-    "onchain": "~344K holders, market cap ~$110-140M, vol/mktcap saludable (~9%); FDV ~$345-471M."
+    "google_trends": "Narrativa ZK/modular mantiene interes de busqueda dentro de infra cripto.",
+    "social": "Cuenta oficial (724K followers) activa comunicando el giro de tokenomics; analistas marcan zona de acumulacion $0.06-0.085 con objetivo $0.2-0.3.",
+    "binance": "MANTA/USDT en Binance Spot; salto de volume_rank (238->97) y stage 2 con trend True en scanner.",
+    "onchain": "Circulante ~46-48% (unlocks futuros pero el inmediato es minimo); fin de emision por staking reduce dilucion."
    },
-   "risk": "Overhang de unlocks lineales de core contributors (desde feb 2026 sobre 3 anos) y narrativa de utilidad 'en reescritura' tras el cierre de Yaps; en regimen risk-off los AI-alts siguen fragiles.",
+   "risk": "Fundamentos/revenue del protocolo aun debiles (fees diarios bajos) y movimiento muy beta-dependiente de BTC; calendario de unlocks se extiende hasta 2030 y MC chico lo hace volatil.",
    "sources": [
-    "https://www.coingecko.com/en/coins/kaito",
-    "https://coinmarketcap.com/cmc-ai/kaito/latest-updates/",
-    "https://www.coingecko.com/learn/what-is-kaito-earn-yap-points",
-    "https://tokenomist.ai/kaito"
-   ]
+    "https://coinmarketcap.com/cmc-ai/manta-network/latest-updates/",
+    "https://www.coingecko.com/en/coins/manta-network",
+    "https://manta.network/"
+   ],
+   "tokenomics": {
+    "mcap": 41250527,
+    "fdv": 86725230,
+    "fdv_mcap": 2.1,
+    "float_pct": 47.6,
+    "cg_id": "manta-network",
+    "warning": "",
+    "penalty": 0
+   }
   },
   {
-   "symbol": "ACT/USDT",
+   "symbol": "AEVO/USDT",
    "rank": 3,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Nuevo en top-100 por volumen y marcado Stage 2 en el ranking de volume_rank, dentro de la rotacion AI/agent que es la unica narrativa con traccion este mes. Candidato especulativo de tamano pequeno; el scanner ya lo marca cerca de Stage 3, asi que SOLO con confirmacion de estructura y volumen sostenido, sino se descarta.",
-   "fundamentals": "ACT (AI Prophecy / AI-agent meme-adyacente) cabalga la narrativa de agentes de IA que esta rotando capital este mes junto a KITE; utilidad principalmente especulativa/comunidad mas que infraestructura probada. Por AHORA: entra al radar por el salto de volumen y la afinidad con el sector AI-agent caliente, no por fundamentales robustos.",
-   "catalyst": "Rotacion sectorial AI-agent (misma corriente que empuja a KITE) generando spike de volumen y entrada nueva al top-100.",
+   "type": "historica",
+   "stage": "1",
+   "thesis": "Apuesta de mayor asimetria (cotiza -99.5% del ATH, cerca del ATL) en la narrativa perp DEX que esta rotando capital. Es Stage 1 (acumulacion/base) mas que breakout confirmado: entrada chica y escalonada SOLO si la estructura confirma giro; no perseguir.",
+   "fundamentals": "Aevo es un DEX de derivados (opciones + perps) sobre su propia L2 OP-stack, construido por el equipo de Ribbon Finance con respaldo de Paradigm. Token de gobernanza/staking. Sector perp DEX es meta caliente 2026, pero MC muy chico (~$16-21M) y volumen ~$3-4M/24h: liquidez fina, el punto mas debil de la tesis.",
+   "catalyst": "Burn de 69M AEVO (6.9% del supply) como shock de oferta positivo, programa de rewards Epoch 20 con APRs altas para incentivar volumen, y distribucion de revenue de Treasury LP en junio 2026.",
    "signals": {
-    "google_trends": "Empuja sobre el paraguas 'AI agents', sin senal de busqueda propia fuerte verificada.",
-    "social": "Atencion creciente ligada al sector agentes, pero sentimiento mas fragil/meme que KITE o KAITO.",
-    "binance": "Nuevo en top-100 por volumen; scanner sc 2.3 con stage marcado 3 (extension temprana - precaucion).",
-    "onchain": "Liquidez aceptable para Binance Spot pero menos profunda que KITE/KAITO; vigilar profundidad antes de entrar."
+    "google_trends": "Interes en perp DEX en alza (Hyperliquid lidera la narrativa, capital rota a competidores mas baratos).",
+    "social": "Sentimiento mixto-a-bullish; lecturas de mercado ~65% bullish y comunidad activa pese a cicatrices pasadas.",
+    "binance": "AEVO/USDT en Binance Spot; salto fuerte de volume_rank (217->70) = atencion creciente.",
+    "onchain": "Supply 100% desbloqueado (sin overhang de unlocks) y burn reduciendo oferta; contrapeso: liquidez baja y exploit de vault en 2025."
    },
-   "risk": "El scanner ya lo flaggea cerca de Stage 3 (extendido); riesgo alto de perseguir un movimiento maduro de baja conviccion en pleno risk-off. Fundamentales debiles y dependencia total de la narrativa; tamano minimo o pasar si no hay base limpia.",
+   "risk": "Liquidez fina y MC muy bajo (manipulable), cicatriz por exploit de vault 2025 y riesgo regulatorio (SEC Filipinas); en regimen risk_off una apuesta de baja capitalizacion puede seguir sangrando. Tamaño de posicion minimo.",
    "sources": [
-    "https://coindcx.com/blog/crypto-deep-dives/crypto-bull-run/",
-    "https://coinmarketcap.com/cmc-ai/kite/latest-updates/"
-   ]
+    "https://www.coingecko.com/en/coins/aevo",
+    "https://coinmarketcap.com/cmc-ai/aevo/latest-updates/",
+    "https://www.mexc.com/price/AEVO"
+   ],
+   "tokenomics": {
+    "mcap": 16269284,
+    "fdv": 17738959,
+    "fdv_mcap": 1.09,
+    "float_pct": 91.7,
+    "cg_id": "aevo-exchange",
+    "warning": "",
+    "penalty": 0
+   }
   }
  ],
  "rules": {
