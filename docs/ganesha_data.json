@@ -1,5 +1,5 @@
 {
- "updated_at": 1782833403,
+ "updated_at": 1782834305,
  "bot": "Ganesha",
  "strategy": "Freqtrade DonchianDaily BTC/USDT 1d",
  "mode": "LIVE",
@@ -7,7 +7,7 @@
  "equity_now": 46.275,
  "realized_pnl": 0,
  "deposits_total": 46.872666949999996,
- "main_spot_usdt": 46.27,
+ "main_spot_usdt": 46.28,
  "trades_total": 0,
  "win_rate": 0,
  "profit_factor": null,
