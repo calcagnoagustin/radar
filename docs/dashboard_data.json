@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-29T00:17:03Z",
+ "generated_at": "2026-06-30T00:16:47Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 76.59879749,
@@ -62,101 +62,101 @@
   }
  ],
  "shortlist": [
-  "JTO/USDT",
-  "MANTA/USDT",
-  "AEVO/USDT"
+  "PYTH/USDT",
+  "PENDLE/USDT",
+  "AR/USDT"
  ],
  "narrativa_active": null,
  "regimen": "risk_off",
- "last_brain_run": "2026-06-29",
+ "last_brain_run": "2026-06-30",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "JTO/USDT",
+   "symbol": "PYTH/USDT",
    "rank": 1,
    "type": "historica",
    "stage": "2",
-   "thesis": "Mejor relacion estructura/liquidez del lote: rompe al alza superando al mercado con volumen real y flujo comprador, sobre la base larga de Solana infra. Entrada en pullback al rango $0.80-0.85 buscando confirmacion como soporte.",
-   "fundamentals": "Jito es el protocolo lider de liquid staking + MEV en Solana (JitoSOL captura staking + MEV). JTO es el token de gobernanza. Sector DePIN/infra Solana que esta rotando capital; utilidad real con revenue on-chain y ahora ruteo de ingresos de la plataforma JTX (80%) al token. MC ~$360-400M con volumen ~$57M/24h: liquidez profunda y sana.",
-   "catalyst": "Tres de los cuatro pilares del Solana Market Layer ya en vivo (Block Engine, Restaking, Block Assembly Marketplace) y lanzamiento de JTX comprometiendo 80% del revenue a JTO; CMF positivo confirma inflows.",
+   "thesis": "Oracle infra leader emerging from a long base with a concrete TradFi catalyst and a volume_rank jump (257->78); the largest May unlock is already digested, removing the main overhang. Enter on confirmed structure above the recent demand zone, scale in, keep size modest given risk-off tape.",
+   "fundamentals": "Pyth is a first-party oracle network delivering 380+ low-latency price feeds across 40-100+ chains, with publishers like Binance, Jane Street, Cboe and OKX; the PYTH token governs the network and underpins its data economy. Why now: it pivoted from pure DeFi into a wholesale TradFi data layer (Data Marketplace backed by Fidelity, Euronext, Tradeweb) and powered ~$130B volume in May (~$110B RWA perps), plus monthly PYTH buybacks via the Reserve. Mid-cap (~$250-280M) with deep liquidity across 95+ exchanges.",
+   "catalyst": "Data Marketplace launch with major TradFi institutions and US Commerce on-chain macro data distribution, plus rising RWA-perps volume flowing through Pyth feeds and ongoing PYTH buybacks.",
    "signals": {
-    "google_trends": "Interes en Solana infra/MEV en alza dentro de la narrativa DePIN 2026.",
-    "social": "Comunidad bullish; momentum +18.5% en 7 dias mientras el mercado global cae ~-6%.",
-    "binance": "JTO/USDT activo en Binance Spot con ~$7M+ vol en el par y ~$57M agregado; salto de volumen (scanner st2).",
-    "onchain": "Revenue MEV real y pilares del Market Layer operativos; flujo comprador (CMF+) y 85% buy-rate intradia."
+    "google_trends": "Search and media interest rising around on-chain GDP/RWA oracle narrative; PYTH cited as institutional-infra breakout pick.",
+    "social": "Community sentiment flagged bullish on CoinGecko; recurring coverage of institutional partnerships and buyback mechanism.",
+    "binance": "volume_rank jumped 257->78 this cycle; scanner stage 2; Binance is a Pyth data publisher and lists PYTH/USDT with healthy depth.",
+    "onchain": "~$130B total volume in May (~$110B RWA perps) and ~$100B already in June; ~7.88B circulating of 10B supply with the big cliff unlock now cleared."
    },
-   "risk": "Unlocks programados a lo largo de 2026 (presion de dilucion) y solo ~0.3% del MEV llega a holders hoy; alta beta a SOL/BTC en regimen risk_off.",
+   "risk": "Remaining vesting/unlock supply (2.1B+ PYTH locked) can cap rallies; oracle competition from Chainlink; in a risk-off tape mid-cap infra alts can bleed regardless of fundamentals.",
    "sources": [
-    "https://coinpedia.org/price-analysis/jito-surges-as-solanas-market-layer-goes-live-can-jto-price-extend-its-rally-beyond-1",
-    "https://www.coingecko.com/en/coins/jito",
-    "https://www.bitcoinnoobs.com/crypto/jto"
+    "https://coinmarketcap.com/cmc-ai/pyth-network/latest-updates/",
+    "https://coinmarketcap.com/currencies/pyth-network/",
+    "https://www.coingecko.com/en/coins/pyth-network"
    ],
    "tokenomics": {
-    "mcap": 400565842,
-    "fdv": 819947583,
-    "fdv_mcap": 2.05,
-    "float_pct": 48.9,
-    "cg_id": "jito-governance-token",
+    "mcap": 283628159,
+    "fdv": 360163577,
+    "fdv_mcap": 1.27,
+    "float_pct": 78.7,
+    "cg_id": "pyth-network",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "MANTA/USDT",
+   "symbol": "PENDLE/USDT",
    "rank": 2,
    "type": "historica",
    "stage": "2",
-   "thesis": "Transicion Stage 1->2 desde base larga (-98% del ATH): scanner marca stage 2 con trend True saliendo de acumulacion. Liquidez aceptable y tokenomics mejorando. Entrar solo si mantiene soporte $0.082-0.084 y confirma sobre $0.088.",
-   "fundamentals": "Manta es un ecosistema modular ZK (Manta Pacific L2 EVM + Manta Atlantic), narrativa ZK/modular blockchain vigente en 2026. El token sirve gobernanza, fees y colateral. MC ~$39M con volumen $7-10M/24h: liquidez razonable para spot. El fin de la inflacion de staking reduce emision y mejora la escasez del token.",
-   "catalyst": "Sunset del staking inflacionario (mayo 2026) recorta presion de emision; pivote a modelo app-focused (Manta Labs, incubadora de apps Web3) y unlock proximo minimo (~0.19% del supply) = poco overhang inmediato.",
+   "thesis": "Established DeFi yield protocol transitioning Stage 1->2 after rebounding ~90% off the $0.97 base to ~$1.85, with a volume_rank jump (172->62) and scanner stage 2 confirmation. Structure constructive while it holds above $1.60; enter on support holds, invalidate below $1.32.",
+   "fundamentals": "Pendle is a yield-tokenization protocol splitting yield-bearing assets into Principal (PT) and Yield (YT) tokens via a time-decay AMM, with a market for fixed/leveraged yield; PENDLE (now sPENDLE) captures fees and governs incentive distribution. Why now: it is riding the RWA/stablecoin-yield meta (new regulated-stablecoin pools, institutional mEVUSD strategy) and executed a tokenomics overhaul (vePENDLE->sPENDLE with buybacks and lower emissions). Mid-cap (~$250M) with TVL historically >$4B and liquidity across 100+ exchanges.",
+   "catalyst": "sPENDLE tokenomics upgrade (buybacks + reduced emissions) plus new RWA/stablecoin yield pool integrations (USDG, apxUSD, institutional EU products) expanding fee demand.",
    "signals": {
-    "google_trends": "Narrativa ZK/modular mantiene interes de busqueda dentro de infra cripto.",
-    "social": "Cuenta oficial (724K followers) activa comunicando el giro de tokenomics; analistas marcan zona de acumulacion $0.06-0.085 con objetivo $0.2-0.3.",
-    "binance": "MANTA/USDT en Binance Spot; salto de volume_rank (238->97) y stage 2 con trend True en scanner.",
-    "onchain": "Circulante ~46-48% (unlocks futuros pero el inmediato es minimo); fin de emision por staking reduce dilucion."
+    "google_trends": "Rising interest tied to the stablecoin-yield/RWA narrative where Pendle is repeatedly featured as a core platform.",
+    "social": "CoinGecko community bullish; coverage frames Pendle as a maturing, fee-generating protocol with buyback support.",
+    "binance": "volume_rank jumped 172->62; scanner stage 2; PENDLE/USDT is the most active pair on Binance with solid depth.",
+    "onchain": "Recovered from $0.97 to ~$1.85 (+90%); 15/30 green days last month; TVL historically above $4B; sPENDLE buybacks reduce float."
    },
-   "risk": "Fundamentos/revenue del protocolo aun debiles (fees diarios bajos) y movimiento muy beta-dependiente de BTC; calendario de unlocks se extiende hasta 2030 y MC chico lo hace volatil.",
+   "risk": "Weekly timeframe still shows a falling 200-day MA (longer-term overhang); loss of $1.60 then $1.32 support would break the thesis; DeFi-wide risk-off could stall yield demand.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/manta-network/latest-updates/",
-    "https://www.coingecko.com/en/coins/manta-network",
-    "https://manta.network/"
+    "https://www.coingecko.com/en/coins/pendle",
+    "https://coinmarketcap.com/cmc-ai/pendle/latest-updates/",
+    "https://bitmarkets.com/en/insights/article/pendle-techincal-analysis-price-outlook-2026"
    ],
    "tokenomics": {
-    "mcap": 41250527,
-    "fdv": 86725230,
-    "fdv_mcap": 2.1,
-    "float_pct": 47.6,
-    "cg_id": "manta-network",
+    "mcap": 230633453,
+    "fdv": 379308511,
+    "fdv_mcap": 1.64,
+    "float_pct": 60.8,
+    "cg_id": "pendle",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "AEVO/USDT",
+   "symbol": "AR/USDT",
    "rank": 3,
    "type": "historica",
    "stage": "1",
-   "thesis": "Apuesta de mayor asimetria (cotiza -99.5% del ATH, cerca del ATL) en la narrativa perp DEX que esta rotando capital. Es Stage 1 (acumulacion/base) mas que breakout confirmado: entrada chica y escalonada SOLO si la estructura confirma giro; no perseguir.",
-   "fundamentals": "Aevo es un DEX de derivados (opciones + perps) sobre su propia L2 OP-stack, construido por el equipo de Ribbon Finance con respaldo de Paradigm. Token de gobernanza/staking. Sector perp DEX es meta caliente 2026, pero MC muy chico (~$16-21M) y volumen ~$3-4M/24h: liquidez fina, el punto mas debil de la tesis.",
-   "catalyst": "Burn de 69M AEVO (6.9% del supply) como shock de oferta positivo, programa de rewards Epoch 20 con APRs altas para incentivar volumen, y distribucion de revenue de Treasury LP en junio 2026.",
+   "thesis": "DePIN/AI-storage L1 in a multi-month accumulation/compression structure with a volume_rank jump (243->85); a high-conviction infra name coiling for a Stage 1->2 transition. This is the most speculative of the three: only add on a confirmed reclaim of $2.20-2.50 with volume, keep size small.",
+   "fundamentals": "Arweave provides permanent, one-time-fee decentralized storage (the Permaweb); the AR token pays for storage and is progressively locked into the Storage Endowment as usage grows, while the AO compute layer (live since Feb 2025) adds a direct utility/demand link and an AI-data-provenance narrative. Why now: AO maturation plus AI/DePIN sector rotation, with AR outperforming BTC over the prior month. Smaller mid-cap (~$120M) — liquid on Binance but thinner than PYTH/PENDLE, so size accordingly.",
+   "catalyst": "AO compute adoption ramp (developer activity, persistent processes) and AI-data-provenance demand driving storage usage that locks AR into the endowment; sector capital rotating into AI/DePIN infra.",
    "signals": {
-    "google_trends": "Interes en perp DEX en alza (Hyperliquid lidera la narrativa, capital rota a competidores mas baratos).",
-    "social": "Sentimiento mixto-a-bullish; lecturas de mercado ~65% bullish y comunidad activa pese a cicatrices pasadas.",
-    "binance": "AEVO/USDT en Binance Spot; salto fuerte de volume_rank (217->70) = atencion creciente.",
-    "onchain": "Supply 100% desbloqueado (sin overhang de unlocks) y burn reduciendo oferta; contrapeso: liquidez baja y exploit de vault en 2025."
+    "google_trends": "Permanent-storage/AI-data narrative interest steady-to-rising; AR anchored in Web3 infrastructure conversations.",
+    "social": "Core community sentiment optimistic per surveys; recurring AO/Permaweb ecosystem updates.",
+    "binance": "volume_rank jumped 243->85 this cycle; AR/USDT liquid on Binance, the most active venue.",
+    "onchain": "Trading in a compressed descending channel near $1.80 with neutral (not bearish) momentum; AR outperformed BTC ~10.7% over the prior month; fixed supply with endowment lockup."
    },
-   "risk": "Liquidez fina y MC muy bajo (manipulable), cicatriz por exploit de vault 2025 y riesgo regulatorio (SEC Filipinas); en regimen risk_off una apuesta de baja capitalizacion puede seguir sangrando. Tamaño de posicion minimo.",
+   "risk": "No fresh hard catalyst this month and momentum still only neutral — breakout unconfirmed; competition from Filecoin and other storage/DePIN; smallest cap of the three means higher volatility and thinner liquidity in a risk-off tape; failure to hold ~$1.00-1.50 opens deeper downside.",
    "sources": [
-    "https://www.coingecko.com/en/coins/aevo",
-    "https://coinmarketcap.com/cmc-ai/aevo/latest-updates/",
-    "https://www.mexc.com/price/AEVO"
+    "https://coinmarketcap.com/cmc-ai/arweave/price-prediction/",
+    "https://coincub.com/price-prediction/arweave/",
+    "https://bitscreener.com/coins/arweave/price-prediction"
    ],
    "tokenomics": {
-    "mcap": 16269284,
-    "fdv": 17738959,
-    "fdv_mcap": 1.09,
-    "float_pct": 91.7,
-    "cg_id": "aevo-exchange",
+    "mcap": 131146729,
+    "fdv": 131146729,
+    "fdv_mcap": 1.0,
+    "float_pct": 99.5,
+    "cg_id": "arweave",
     "warning": "",
     "penalty": 0
    }
