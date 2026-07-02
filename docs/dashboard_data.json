@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-01T00:17:01Z",
+ "generated_at": "2026-07-02T01:08:31Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 55.60738849,
+ "free_usdt": 67.9192543,
  "deposits": [],
  "positions": [
   {
@@ -19,8 +19,8 @@
   {
    "symbol": "BIO/USDT",
    "binance": "BIOUSDT",
-   "status": "seed",
-   "qty": 232.8,
+   "status": "stopped_moonbag",
+   "qty": 23.30000000000001,
    "avg_cost": 0.03006,
    "dca_adds": 0,
    "tp_hit": [],
@@ -30,8 +30,8 @@
   {
    "symbol": "GLM/USDT",
    "binance": "GLMUSDT",
-   "status": "seed",
-   "qty": 66.5,
+   "status": "stopped_moonbag",
+   "qty": 6.700000000000003,
    "avg_cost": 0.1052,
    "dca_adds": 0,
    "tp_hit": [],
@@ -95,103 +95,95 @@
   }
  ],
  "shortlist": [
-  "PYTH/USDT",
-  "GLM/USDT",
-  "BIO/USDT"
+  "AIGENSYN/USDT",
+  "DYDX/USDT",
+  "JUP/USDT"
  ],
  "narrativa_active": null,
- "regimen": "risk_off",
- "last_brain_run": "2026-07-01",
+ "regimen": "neutral",
+ "last_brain_run": "2026-07-02",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "PYTH/USDT",
+   "symbol": "AIGENSYN/USDT",
    "rank": 1,
-   "type": "historica",
-   "stage": "1",
-   "thesis": "Oráculo first-party líder saliendo de base larga (-80% anual) con catalizador institucional fresco: Nasdaq trae TotalView on-chain vía Pyth. Entrar en confirmación de reclaim del rango $0.05 y ruptura hacia $0.10-$0.16; asimetría alta con mktcap chico (~$300M).",
-   "fundamentals": "Pyth es la red de oráculos first-party más grande, con 380+ feeds de precios en 40+ blockchains alimentados por 90+ instituciones (Binance, Jane Street, Cboe, etc.). El token captura valor vía Pyth Reserve (buybacks con revenue) y Pyth Pro (suscripción TradFi que ya superó $1M ARR). Ahora: pivote Phase 2 al mercado de datos de TradFi (~$50B) con Nasdaq, Tradeweb, SGX, Kalshi y U.S. Dept. of Commerce publicando en su Data Marketplace.",
-   "catalyst": "30-jun-2026: Nasdaq selecciona a Pyth como primera red on-chain para distribuir su data propietaria TotalView; el anuncio disparó ~10% en PYTH y encabeza trending. Unlock grande de mayo ya absorbido, reduciendo overhang.",
+   "type": "launch",
+   "stage": "2",
+   "thesis": "Launch reciente de Binance (mayo 2026) en la narrativa mas caliente (AI/DePIN compute) con market cap muy bajo (~$50M) y volumen reacelerando fuerte; asimetria grande si el sector AI rota capital. Entrar escalonado solo con estructura sostenida sobre la base post-listing.",
+   "fundamentals": "Gensyn es una red de computo descentralizado para entrenamiento/verificacion de ML e IA, diferenciada por su verificacion criptografica del trabajo computacional (evita 'trampas' de nodos). Token AIGENSYN sirve para pagos de compute, staking, verificacion y gobernanza, con mecanismo buyback-burn atado al uso real via su app Delphi. Respaldado por a16z crypto, CoinFund y Galaxy (>$50M levantados). Por que ahora: listado spot reciente + HODLer Airdrop 64 + reaceleracion de volumen y sector DePIN/AI rotando.",
+   "catalyst": "Listing spot en Binance (mayo 2026) + 64avo HODLer Airdrop distribuyendo 100M tokens; app Delphi en mainnet y buyback-burn ligado a fees de red.",
    "signals": {
-    "google_trends": "Interes de busqueda en 'Pyth Nasdaq' saltando tras el anuncio del 30-jun con cobertura amplia (CoinDesk, Cointelegraph, Coinpaprika).",
-    "social": "CoinGecko marca comunidad bullish; X activo con hilos 'Nasdaq selects Pyth'; disparador de news en el scanner (partnership).",
-    "binance": "Salto de volume_rank (113->48); PYTH marcado trending, +9-10% en 24h y +8-14% en 7 dias post-anuncio.",
-    "onchain": "Red asegura >$1B TVS, usada por 250+ apps para $100B de volumen; revenue recurrente vía Pyth Pro y buybacks del Reserve."
+    "google_trends": "Interes de busqueda creciente en 'decentralized AI compute' y Gensyn tras el listing; ticker nuevo con atencion de la comunidad AI.",
+    "social": "Gensyn (AI) rankeando alto en menciones sociales en X segun agregadores; narrativa DePIN/AI activa.",
+    "binance": "Listado spot (AIGENSYN/USDT, USDC, TRY) con Seed Tag; salto de volume_rank 262->30; +69% en 24h desde base baja.",
+    "onchain": "Circulante ~13% del total (1.3B/10B), mcap ~$50M / FDV ~$330M, volumen 24h ~$55-63M; buyback-burn deflacionario atado a uso."
    },
-   "risk": "Sector oraculo competitivo (Chainlink) y presion de supply por vesting multi-anual; en risk-off la liquidez de alts se seca y un catalizador puede no sostener el rally sin BTC estable.",
+   "risk": "Seed Tag = alta volatilidad; gran oferta no circulante (~87%) genera presion de desbloqueos futuros; utilidad real depende de adopcion de compute providers todavia incipiente.",
    "sources": [
-    "https://cointelegraph.com/news/nasdaq-brings-proprietary-market-data-onchain-through-pyth",
-    "https://www.coindesk.com/markets/2026/06/30/nasdaq-expands-distribution-of-its-market-data-into-blockchain-infrastructure",
-    "https://coinmarketcap.com/cmc-ai/pyth-network/price-prediction/",
-    "https://www.coingecko.com/en/coins/pyth-network"
+    "https://nftplazas.com/gensyn-aigensyn-new-listing-on-binance-hodler-airdrops/",
+    "https://www.coingecko.com/en/coins/gensyn",
+    "https://nftevening.com/what-is-gensyn-ai-and-how-does-it-work/"
    ],
    "tokenomics": {
-    "mcap": 298807148,
-    "fdv": 379438527,
-    "fdv_mcap": 1.27,
-    "float_pct": 78.7,
-    "cg_id": "pyth-network",
-    "warning": "",
-    "penalty": 0
+    "status": "sin_datos"
    }
   },
   {
-   "symbol": "GLM/USDT",
+   "symbol": "DYDX/USDT",
    "rank": 2,
    "type": "historica",
    "stage": "1",
-   "thesis": "DePIN/compute veterano (2016) en acumulacion larga con mispricing evidente vs pares (Akash $700M, Render $2.3B vs GLM ~$135M). Nuevo en top-100 de volumen con whales acumulando; entrar en ruptura confirmada sobre $0.145 con volumen. Asimetria por gap de valuacion + narrativa AI/compute rotando.",
-   "fundamentals": "Golem es el marketplace descentralizado de computo mas antiguo del sector DePIN; el token GLM (supply fijo 1B, todo circulante) paga por compute (AI inference, rendering) y recompensa a providers. Sector AI-compute con TAM proyectado de $17B para GPU cloud descentralizado hacia 2035.",
-   "catalyst": "Piloto con Salad.com ($200M GPU cloud Web2) corriendo workloads reales de AI, generando ~$57k/semana en fees con transacciones de whales +1,900% semana-sobre-semana; ademas Tor Project acepta GLM (may-2026), sumando utilidad real.",
+   "thesis": "DeFi perp DEX establecido saliendo de base larga tras caer ~77-84% desde ATH; combinacion de buyback agresivo (75% de revenue) + fin de todos los unlocks en julio 2026 elimina la presion vendedora estructural justo cuando el volumen reacelera. Setup de acumulacion Stage 1->2 con asimetria si DeFi rota.",
+   "fundamentals": "dYdX es el 2do mayor DEX de perpetuos por volumen (~$28B/30d) sobre su propia L1 en Cosmos, con gas cero. Token DYDX se usa para staking/seguridad de red y gobernanza; gobernanza aprobo destinar 75% del revenue del protocolo a recompras en mercado abierto (antes 25%), triplicando la presion compradora. Por que ahora: los unlocks concluyen en junio/julio 2026 (fin de la dilucion), buybacks activos, trading fee-free en BTC/BONK para atraer volumen, y expansion a spot/RWA perps.",
+   "catalyst": "Conclusion de todos los token unlocks en julio 2026 (fin de sell pressure) + buyback ampliado al 75% del revenue + trading fee-free y hoja de ruta de spot/EVM/RWA perps.",
    "signals": {
-    "google_trends": "Atencion de analistas subiendo: incluido en watchlists de low-cap altcoins 2026 por su marketplace de compute establecido.",
-    "social": "@aixbt_agent (470K followers) llamando a GLM 'el mispricing mas obvio en DePIN'; picos historicos de +343% intradia con atencion creciente de comunidad.",
-    "binance": "Nuevo en top-100 de volume_rank; setups de ruptura sobre $0.145-$0.148 vigilados por traders.",
-    "onchain": "Fees semanales ~$57k con piloto de empresa S&P 500 activo; transacciones de whales +1,900% w/w sugieren acumulacion en pisos."
+    "google_trends": "Interes ligado a 'perp DEX' y buybacks DeFi; repunte de atencion tras la votacion de recompra.",
+    "social": "Sentimiento retail neutral-a-mixto pero mejorando; campanas sociales (copy trading, Chat Box) subiendo engagement.",
+    "binance": "Salto de volume_rank 82->20; volumen en exchanges salto fuerte tras anuncios de recompra.",
+    "onchain": "85%+ de tokens ya desbloqueados con emisiones bajando 50%; volumen acumulado del chain >$1.5T; recompras mensuales financiadas por fees reales."
    },
-   "risk": "Ejecucion binaria: si el piloto Salad no escala, la tesis DePIN-readiness se debilita. Precio aun debajo de la 200-day EMA con estructura tecnica floja; sin BTC estable la ruptura puede fallar. Liquidez menor que PYTH/BIO.",
+   "risk": "Presion vendedora residual de unlocks hasta julio y fees del protocolo modestos vs. volumen de unlocks; criticas de centralizacion del validator set; reversion si BTC pierde soporte y DeFi no rota.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/golem-network-tokens/latest-updates/",
-    "https://coinmarketcap.com/cmc-ai/golem-network-tokens/price-prediction/",
-    "https://www.bitget.com/price/golem"
+    "https://finance.yahoo.com/news/dydx-pass-landmark-buyback-allocating-174056781.html",
+    "https://coinmarketcap.com/cmc-ai/dydx-chain/latest-updates/",
+    "https://www.dlnews.com/articles/defi/why-buybacks-will-not-stop-the-dydx-token-bleeding-out/"
    ],
    "tokenomics": {
-    "mcap": 105195823,
-    "fdv": 105195823,
-    "fdv_mcap": 1.0,
-    "float_pct": 100.0,
-    "cg_id": "golem",
+    "mcap": 113230665,
+    "fdv": 128558023,
+    "fdv_mcap": 1.14,
+    "float_pct": 84.4,
+    "cg_id": "dydx-chain",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "BIO/USDT",
+   "symbol": "JUP/USDT",
    "rank": 3,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Ancla de liquidez del sector DeSci con disparador claro de volume_rank (125->61) y estructura de wedge descendente que ya rompio al alza en abril. Capital rota selectivamente a DeSci incluso en mercado con miedo. Entrar en confirmacion sobre $0.04 con volumen; asimetria por mktcap chico (~$85M) y utilidad real emergente.",
-   "fundamentals": "Bio Protocol es la capa de coordinacion/funding del sector Decentralized Science: enruta capital a BioDAOs (VitaDAO, HairDAO, AthenaDAO) que tokenizan IP biotech. BIO se usa para staking, governance y liquidez. Respaldo de Binance Labs y Spartan Group; agentes de AI (peptAI) diseñando candidatos de farmacos, con validacion comercial (Eli Lilly pago hasta $300M por un programa via Crossbridge Bio; Pfizer usando su suite BixBench).",
-   "catalyst": "Reaceleracion de la narrativa DeSci: sales tipo 'Ignition' (PEPTAI sobresuscrita 5.9x), nuevos BioAgents y milestones de descubrimiento de farmacos AI-driven que reducen R&D de millones a ~$1,500. Disparador de volumen actual reactivando interes tras compresion.",
+   "type": "historica",
+   "stage": "1",
+   "thesis": "Lider absoluto de liquidez en Solana consolidando una base larga (~$0.20) con volumen reacelerando; apalancamiento directo al catalizador SOL (ETF spot filings) y a la rotacion de capital hacia tokens DEX/on-chain. Entrada Stage 1->2 solo con cierre diario sobre resistencia ($0.20) que confirme estructura.",
+   "fundamentals": "Jupiter es el DEX aggregator dominante de Solana (~95% del market share de agregacion, >50% del volumen DEX de la red) evolucionado a 'superapp' DeFi: swaps, perps, lending, staking, stablecoin JupUSD e integracion Polymarket. Token JUP para gobernanza/staking con recompras permanentes financiadas por fees del protocolo (~$70M ejecutados). Por que ahora: recuperacion de actividad DeFi en Solana, narrativa ETF de Solana (filing de Morgan Stanley), Jupiter Lend TVL subiendo y reduccion de dilucion (Jupuary recortado).",
+   "catalyst": "Momentum de Solana con filings de ETF spot + rotacion de capital a tokens DEX; expansion de producto (equities on-chain con Securitize/Jump, JupUSD) y buybacks ligados al volumen.",
    "signals": {
-    "google_trends": "BIO encabezo trending en CoinGecko durante rallies DeSci; interes en 'DeSci' resurgiendo como tema definitorio 2026.",
-    "social": "90,000+ miembros de comunidad; X/Discord muy activos en governance de tokenizacion de IP; sector DeSci moviendose de nicho a mainstream.",
-    "binance": "Salto de volume_rank (125->61); listado en Binance con volumen historicamente alto; ratios volumen/mktcap extremos (>1.5x) en spikes.",
-    "onchain": "$65M en tesorerias de BioDAOs; 15+ BioDAOs con programas de research activos; validacion comercial via Eli Lilly y Pfizer."
+    "google_trends": "Interes creciente en 'Solana ETF' y ecosistema Solana DeFi que arrastra a JUP.",
+    "social": "JUP citado repetidamente como lider del sector DEX en X; debate sobre demanda real vs 'airdrop ghosts', pero atencion concentrandose en la pista DEX.",
+    "binance": "Salto de volume_rank 112->53; movimientos intradiarios de +12-23% en sesiones de fuerza de Solana.",
+    "onchain": "TVL >$2.6-3B y Jupiter Lend acercandose a ~$800M; netflows negativos de exchange (acumulacion en wallets); recompras crean demanda spot al subir volumen."
    },
-   "risk": "Alta volatilidad especulativa (RSI extremos, ratios volumen/mktcap >5x en picos) y presion de dilucion por unlocks; supply circulante grande. Coinbase pauso futuros de BIO, deteriorando charts. Riesgo de que el momentum se enfrie rapido si el sentimiento gira.",
+   "risk": "Presion de unlocks (253M JUP desbloqueados feb 2026) y concentracion (~72% en top-10 wallets); dependencia total de Solana (outages = Jupiter offline) y debilidad de precio pese a fundamentos solidos.",
    "sources": [
-    "https://www.gate.com/blog/101816/bio-protocol-deep-dive-bio-tokenomics-desci-narrative-market-volatility-analysis-crypto-project-research-trends",
-    "https://www.ainvest.com/news/bio-protocol-sees-speculative-surge-tokenomics-upgrade-desci-milestones-2605/",
-    "https://www.spotedcrypto.com/bio-desci-surge-arb-unlock-april-2026/",
-    "https://coinmarketcap.com/cmc-ai/bio/price-prediction/"
+    "https://coinmarketcap.com/top-stories/6a377121b3e87801c3e621af/",
+    "https://blockchainreporter.net/exchanges/jupiter/",
+    "https://coinmarketcap.com/cmc-ai/jupiter-ag/latest-updates/"
    ],
    "tokenomics": {
-    "mcap": 64227074,
-    "fdv": 99408390,
-    "fdv_mcap": 1.55,
-    "float_pct": 64.6,
-    "cg_id": "bio-protocol",
+    "mcap": 774048754,
+    "fdv": 1599806769,
+    "fdv_mcap": 2.07,
+    "float_pct": 33.2,
+    "cg_id": "jupiter-exchange-solana",
     "warning": "",
     "penalty": 0
    }
