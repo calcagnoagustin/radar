@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-02T01:08:31Z",
+ "generated_at": "2026-07-03T01:11:45Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -95,97 +95,103 @@
   }
  ],
  "shortlist": [
-  "AIGENSYN/USDT",
-  "DYDX/USDT",
-  "JUP/USDT"
+  "ONDO/USDT",
+  "RAY/USDT",
+  "KAITO/USDT"
  ],
  "narrativa_active": null,
- "regimen": "neutral",
- "last_brain_run": "2026-07-02",
+ "regimen": "risk_off",
+ "last_brain_run": "2026-07-03",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "AIGENSYN/USDT",
-   "rank": 1,
-   "type": "launch",
-   "stage": "2",
-   "thesis": "Launch reciente de Binance (mayo 2026) en la narrativa mas caliente (AI/DePIN compute) con market cap muy bajo (~$50M) y volumen reacelerando fuerte; asimetria grande si el sector AI rota capital. Entrar escalonado solo con estructura sostenida sobre la base post-listing.",
-   "fundamentals": "Gensyn es una red de computo descentralizado para entrenamiento/verificacion de ML e IA, diferenciada por su verificacion criptografica del trabajo computacional (evita 'trampas' de nodos). Token AIGENSYN sirve para pagos de compute, staking, verificacion y gobernanza, con mecanismo buyback-burn atado al uso real via su app Delphi. Respaldado por a16z crypto, CoinFund y Galaxy (>$50M levantados). Por que ahora: listado spot reciente + HODLer Airdrop 64 + reaceleracion de volumen y sector DePIN/AI rotando.",
-   "catalyst": "Listing spot en Binance (mayo 2026) + 64avo HODLer Airdrop distribuyendo 100M tokens; app Delphi en mainnet y buyback-burn ligado a fees de red.",
-   "signals": {
-    "google_trends": "Interes de busqueda creciente en 'decentralized AI compute' y Gensyn tras el listing; ticker nuevo con atencion de la comunidad AI.",
-    "social": "Gensyn (AI) rankeando alto en menciones sociales en X segun agregadores; narrativa DePIN/AI activa.",
-    "binance": "Listado spot (AIGENSYN/USDT, USDC, TRY) con Seed Tag; salto de volume_rank 262->30; +69% en 24h desde base baja.",
-    "onchain": "Circulante ~13% del total (1.3B/10B), mcap ~$50M / FDV ~$330M, volumen 24h ~$55-63M; buyback-burn deflacionario atado a uso."
-   },
-   "risk": "Seed Tag = alta volatilidad; gran oferta no circulante (~87%) genera presion de desbloqueos futuros; utilidad real depende de adopcion de compute providers todavia incipiente.",
-   "sources": [
-    "https://nftplazas.com/gensyn-aigensyn-new-listing-on-binance-hodler-airdrops/",
-    "https://www.coingecko.com/en/coins/gensyn",
-    "https://nftevening.com/what-is-gensyn-ai-and-how-does-it-work/"
-   ],
-   "tokenomics": {
-    "status": "sin_datos"
-   }
-  },
-  {
-   "symbol": "DYDX/USDT",
+   "symbol": "ONDO/USDT",
    "rank": 2,
    "type": "historica",
    "stage": "1",
-   "thesis": "DeFi perp DEX establecido saliendo de base larga tras caer ~77-84% desde ATH; combinacion de buyback agresivo (75% de revenue) + fin de todos los unlocks en julio 2026 elimina la presion vendedora estructural justo cuando el volumen reacelera. Setup de acumulacion Stage 1->2 con asimetria si DeFi rota.",
-   "fundamentals": "dYdX es el 2do mayor DEX de perpetuos por volumen (~$28B/30d) sobre su propia L1 en Cosmos, con gas cero. Token DYDX se usa para staking/seguridad de red y gobernanza; gobernanza aprobo destinar 75% del revenue del protocolo a recompras en mercado abierto (antes 25%), triplicando la presion compradora. Por que ahora: los unlocks concluyen en junio/julio 2026 (fin de la dilucion), buybacks activos, trading fee-free en BTC/BONK para atraer volumen, y expansion a spot/RWA perps.",
-   "catalyst": "Conclusion de todos los token unlocks en julio 2026 (fin de sell pressure) + buyback ampliado al 75% del revenue + trading fee-free y hoja de ruta de spot/EVM/RWA perps.",
+   "thesis": "Established RWA leader with a hard, dated catalyst (July 2 launch of SEC-aligned tokenized US securities with Broadridge proxy voting) while price is still basing near $0.32 — an early Stage 1 accumulation setup, not extended. Wait for a volume-backed reclaim before adding; deep liquidity makes it a lower-manipulation bet in a risk-off tape.",
+   "fundamentals": "Ondo Finance tokenizes real-world assets (US Treasuries via OUSG/USDY, plus 430+ tokenized equities/ETFs through Ondo Global Markets). ONDO is the governance token. Sector: RWA/tokenization, a durable institutional narrative. Why now: first production deployment of the SEC's third-party custodial model in the US, giving token holders full shareholder rights.",
+   "catalyst": "July 2, 2026 launch with Broadridge enabling proxy voting and shareholder communications across 250+ tokenized securities, including tokenized BlackRock IVV and Micron shares on Ethereum; follows 24/7 minting (June 25) and Uniswap integration.",
    "signals": {
-    "google_trends": "Interes ligado a 'perp DEX' y buybacks DeFi; repunte de atencion tras la votacion de recompra.",
-    "social": "Sentimiento retail neutral-a-mixto pero mejorando; campanas sociales (copy trading, Chat Box) subiendo engagement.",
-    "binance": "Salto de volume_rank 82->20; volumen en exchanges salto fuerte tras anuncios de recompra.",
-    "onchain": "85%+ de tokens ya desbloqueados con emisiones bajando 50%; volumen acumulado del chain >$1.5T; recompras mensuales financiadas por fees reales."
+    "google_trends": "Tokenization/RWA search interest elevated around July 4 launch coverage",
+    "social": "Heavy news-cycle coverage (CoinDesk, Finance Magnates, Crypto.news) driving attention",
+    "binance": "Flagged on news trigger; deep, liquid ONDO/USDT market",
+    "onchain": "OUSG/Ondo Global Markets >$1B TVL; Citi projects tokenized securities market ~$5.5T by 2030"
    },
-   "risk": "Presion vendedora residual de unlocks hasta julio y fees del protocolo modestos vs. volumen de unlocks; criticas de centralizacion del validator set; reversion si BTC pierde soporte y DeFi no rota.",
+   "risk": "Product not yet available to US investors, so near-term revenue impact is limited; price remains soft and a broad risk-off leg could delay the Stage 1->2 breakout.",
    "sources": [
-    "https://finance.yahoo.com/news/dydx-pass-landmark-buyback-allocating-174056781.html",
-    "https://coinmarketcap.com/cmc-ai/dydx-chain/latest-updates/",
-    "https://www.dlnews.com/articles/defi/why-buybacks-will-not-stop-the-dydx-token-bleeding-out/"
+    "https://www.coindesk.com/business/2026/07/01/ondo-finance-debuts-sec-aligned-tokenized-stock-model-with-blackrock-etf-micron-shares",
+    "https://crypto.news/ondo-finance-puts-blackrock-etf-onchain-sec-model/",
+    "https://metamask.io/price/ondo-finance"
    ],
    "tokenomics": {
-    "mcap": 113230665,
-    "fdv": 128558023,
-    "fdv_mcap": 1.14,
-    "float_pct": 84.4,
-    "cg_id": "dydx-chain",
+    "mcap": 1606855597,
+    "fdv": 3299951705,
+    "fdv_mcap": 2.05,
+    "float_pct": 48.7,
+    "cg_id": "ondo-finance",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "JUP/USDT",
+   "symbol": "RAY/USDT",
    "rank": 3,
    "type": "historica",
-   "stage": "1",
-   "thesis": "Lider absoluto de liquidez en Solana consolidando una base larga (~$0.20) con volumen reacelerando; apalancamiento directo al catalizador SOL (ETF spot filings) y a la rotacion de capital hacia tokens DEX/on-chain. Entrada Stage 1->2 solo con cierre diario sobre resistencia ($0.20) que confirme estructura.",
-   "fundamentals": "Jupiter es el DEX aggregator dominante de Solana (~95% del market share de agregacion, >50% del volumen DEX de la red) evolucionado a 'superapp' DeFi: swaps, perps, lending, staking, stablecoin JupUSD e integracion Polymarket. Token JUP para gobernanza/staking con recompras permanentes financiadas por fees del protocolo (~$70M ejecutados). Por que ahora: recuperacion de actividad DeFi en Solana, narrativa ETF de Solana (filing de Morgan Stanley), Jupiter Lend TVL subiendo y reduccion de dilucion (Jupuary recortado).",
-   "catalyst": "Momentum de Solana con filings de ETF spot + rotacion de capital a tokens DEX; expansion de producto (equities on-chain con Securitize/Jump, JupUSD) y buybacks ligados al volumen.",
+   "stage": "2",
+   "thesis": "Solana DEX leader reaccelerating: volume rank jumped 191->79 and price +8-11% with 24h volume up ~36%, off a long base with real protocol revenue. Trades above 20/50-day MAs; only add on a decisive close above the ~$0.66-0.70 resistance since the 200-day trend is still down.",
+   "fundamentals": "Raydium is Solana's largest AMM/DEX and its primary liquidity layer, capturing the bulk of Solana DEX volume and now tokenized-stock (xStocks) volume; RAY is used for staking, fee share, launchpad allocations and governance. Sector: Solana DeFi, rotating with SOL strength. Why now: fee generation frequently exceeds legacy protocols and LaunchLab launchpad activity is driving revenue.",
+   "catalyst": "Capital rotation into Solana DeFi plus Raydium's expansion into tokenized RWAs (>90% of Solana tokenized-stock volume) and its LaunchLab launchpad diversifying revenue beyond memecoins.",
    "signals": {
-    "google_trends": "Interes creciente en 'Solana ETF' y ecosistema Solana DeFi que arrastra a JUP.",
-    "social": "JUP citado repetidamente como lider del sector DEX en X; debate sobre demanda real vs 'airdrop ghosts', pero atencion concentrandose en la pista DEX.",
-    "binance": "Salto de volume_rank 112->53; movimientos intradiarios de +12-23% en sesiones de fuerza de Solana.",
-    "onchain": "TVL >$2.6-3B y Jupiter Lend acercandose a ~$800M; netflows negativos de exchange (acumulacion en wallets); recompras crean demanda spot al subir volumen."
+    "google_trends": "Solana DeFi/Raydium interest picking up with ecosystem volume uptick",
+    "social": "Analysts tag RAY a prime mid-cap rotation candidate; community mixed to bearish (contrarian early)",
+    "binance": "Volume rank 191->79; RAY/USDT liquid, 24h volume ~+36%",
+    "onchain": "Market cap ~$178M, circulating 270M/560M; Raydium leads Solana DEX volume with sustained fees/revenue"
    },
-   "risk": "Presion de unlocks (253M JUP desbloqueados feb 2026) y concentracion (~72% en top-10 wallets); dependencia total de Solana (outages = Jupiter offline) y debilidad de precio pese a fundamentos solidos.",
+   "risk": "Longer-term trend still below the 200-day average and heavily beta to SOL and memecoin flows; a Solana volume cooldown or Bitcoin breakdown below ~$54K would likely reverse the move.",
    "sources": [
-    "https://coinmarketcap.com/top-stories/6a377121b3e87801c3e621af/",
-    "https://blockchainreporter.net/exchanges/jupiter/",
-    "https://coinmarketcap.com/cmc-ai/jupiter-ag/latest-updates/"
+    "https://www.coingecko.com/en/coins/raydium",
+    "https://coinmarketcap.com/cmc-ai/raydium/latest-updates/",
+    "https://tradersunion.com/news/cryptocurrency-news/show/1853328-raydium-jumps-7-73percent-today-to/"
    ],
    "tokenomics": {
-    "mcap": 774048754,
-    "fdv": 1599806769,
-    "fdv_mcap": 2.07,
-    "float_pct": 33.2,
-    "cg_id": "jupiter-exchange-solana",
+    "mcap": 186402978,
+    "fdv": 384137826,
+    "fdv_mcap": 2.06,
+    "float_pct": 48.5,
+    "cg_id": "raydium",
     "warning": "",
     "penalty": 0
+   }
+  },
+  {
+   "symbol": "KAITO/USDT",
+   "rank": 1,
+   "type": "momentum",
+   "stage": "2",
+   "thesis": "Volume rank jumped 113->63 with price +32% over 7 days on doubling turnover — an early Stage 1->2 transition backed by the InfoFi/AI narrative. Enter on a confirmed hold above the $0.47-0.49 breakout zone; size small given risk-off macro.",
+   "fundamentals": "KAITO is the native token of the Kaito InfoFi network, an AI-powered platform that quantifies and monetizes attention across crypto (Mindshare, Yaps, Kaito Pro analytics). Token is used for governance, network currency and directing attention. Sector: AI + InfoFi, one of the few narratives still attracting capital. Why now: sharp volume/price acceleration off a long base near mid-cap (~$145M).",
+   "catalyst": "Rising social/mindshare traction plus altcoin rotation lifting AI names; the token itself powers the trending 'attention economy' narrative.",
+   "signals": {
+    "google_trends": "Airdrop/InfoFi search interest recovering alongside AI sector attention",
+    "social": "Community bullish on CoinGecko; X sentiment ~41% bullish vs ~4% bearish, though mention counts still modest",
+    "binance": "Volume rank 113->63; KAITO/USDT active pair, 24h volume roughly doubled (~+102%)",
+    "onchain": "Market cap ~$145M, circulating ~240M of 1B; 7-day price +32% outperforming market"
+   },
+   "risk": "Token unlock scheduled ~July 20 (~17.6M KAITO, ~1.8% of supply) plus ongoing vesting; thin liquidity can amplify a reversal if AI rotation stalls. | TOKENOMICS: float 24.1% (poco supply circulando)",
+   "sources": [
+    "https://www.coingecko.com/en/coins/kaito",
+    "https://coinmarketcap.com/currencies/kaito/",
+    "https://www.bitget.com/price/kaito"
+   ],
+   "tokenomics": {
+    "mcap": 137647568,
+    "fdv": 570231582,
+    "fdv_mcap": 4.14,
+    "float_pct": 24.1,
+    "cg_id": "kaito",
+    "warning": "float 24.1% (poco supply circulando)",
+    "penalty": 1
    }
   }
  ],
