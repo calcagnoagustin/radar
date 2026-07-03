@@ -161,7 +161,7 @@
         <div class="head"><span class="title">Cerebro</span><span class="eyebrow">LLM mensual</span></div>
         <div class="body">
           <div class="row"><span class="lbl">Último análisis</span><span class="mono" id="brainLast">—</span></div>
-          <div class="row"><span class="lbl">Próximo</span><span class="mono" id="brainNext">—</span></div>
+          <div class="row"><span class="lbl">Próximo</span><span class="mono" id="brainNext">—</span></div><div style="padding-top:11px"><div class="lbl" style="color:var(--muted);font-size:13px;margin-bottom:8px">Historial cerebro</div><div id="brainHist"></div></div>
         </div>
       </div>
     </div>
@@ -181,7 +181,7 @@
 <div class="gan-head">
   <div class="brand">
     <h1>Radar - Ganesha</h1>
-    <div class="sub">DonchianTrend · BTC/USDT 1h · Binance Spot · sub-cuenta aislada</div>
+    <div class="sub">Ejecutor 15m/4h · semillas confirmadas · Binance Spot · sub-cuenta aislada</div>
   </div>
   <div style="display:flex;align-items:center;gap:14px">
     <span class="badge dry" id="gMode">—</span>
@@ -342,6 +342,11 @@ function render(){
   // cerebro
   document.getElementById("brainLast").textContent = DATA.last_brain_run? dateShort(DATA.last_brain_run):"—";
   document.getElementById("brainNext").textContent = nextBrain(DATA.last_brain_run);
+const bh=document.getElementById("brainHist");
+if(bh){bh.innerHTML="";const BH=(DATA.brain_history||[]).slice().reverse();
+if(!BH.length)bh.innerHTML='<span class="lbl" style="font-size:13px">sin corridas registradas</span>';
+BH.forEach(function(x){var el=document.createElement("div");el.className="row";el.innerHTML='<span class="lbl">'+dateShort(x.date)+'</span><span class="mono" style="font-size:12px;text-align:right;max-width:62%">'+(x.narrativa||"sin narrativa")+" | "+(((x.shortlist||[]).map(function(q){return q.split("/")[0]}).join(", "))||"-")+'</span>';bh.appendChild(el);});}
+
 
   // historial
   const SH=(DATA.recent_closed||[]).slice().reverse();
