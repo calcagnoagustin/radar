@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-03T01:11:45Z",
+ "generated_at": "2026-07-03T16:49:10Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -193,6 +193,18 @@
     "warning": "float 24.1% (poco supply circulando)",
     "penalty": 1
    }
+  }
+ ],
+ "brain_history": [
+  {
+   "date": "2026-07-03",
+   "narrativa": null,
+   "shortlist": [
+    "ONDO/USDT",
+    "RAY/USDT",
+    "KAITO/USDT"
+   ],
+   "regimen": "risk_off"
   }
  ],
  "rules": {
