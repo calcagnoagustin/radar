@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-03T16:49:10Z",
+ "generated_at": "2026-07-04T01:10:35Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -95,103 +95,105 @@
   }
  ],
  "shortlist": [
-  "ONDO/USDT",
-  "RAY/USDT",
-  "KAITO/USDT"
+  "ETHFI/USDT",
+  "SAND/USDT",
+  "ZKC/USDT"
  ],
  "narrativa_active": null,
  "regimen": "risk_off",
- "last_brain_run": "2026-07-03",
+ "last_brain_run": "2026-07-04",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "ONDO/USDT",
+   "symbol": "ETHFI/USDT",
+   "rank": 1,
+   "type": "historica",
+   "stage": "2",
+   "thesis": "Histórica en reaceleración tipo FET: saltó de volume_rank 151 a 84 con +12.8% en 24h y estructura de piso saliendo de base larga. Valuation disconnect masivo (TVL ~$7.8B vs market cap ~$345M) con buyback DAO como suelo mecánico. Entrar en pullback a soporte, señal técnica sobre narrativa.",
+   "fundamentals": "ether.fi es el protocolo líder de liquid restaking en Ethereum (token eETH, EigenLayer). ETHFI es token de governance/utilidad. Sector DePIN/restaking establecido. Ahora importa porque combina rebote temprano desde ATL (+39%) con catalizadores fundamentales reales, no hype, mientras cotiza rank #98 con TVL de segundo LST detrás de Lido.",
+   "catalyst": "DAO aprobó buyback de hasta $50M cuando cotiza <$3 (99% soporte), migración exitosa de la Cash card a OP Mainnet moviendo $220M TVL sin fallos, y acuerdo de 3 años y $3B con ETHGas para mercado forward de blockspace.",
+   "signals": {
+    "google_trends": "Interés en 'restaking' y liquid restaking se mantiene como narrativa establecida; búsquedas repuntando con el bounce del token",
+    "social": "Sentimiento cautelosamente alcista en X; hilos destacando el disconnect rank #130 vs $7.8B TVL y el buyback de $50M al 99% de soporte",
+    "binance": "Salto volume_rank 151->84; +12.8% 24h; par ETHFI/USDT con liquidez profunda y múltiples pares en Binance",
+    "onchain": "TVL ~$7.8B (#2 LST tras Lido); revenue de protocolo ~$3.1M/mes financiando buybacks; 70k tarjetas activas y 300k cuentas operativas"
+   },
+   "risk": "Correlación alta con sentimiento altcoin en régimen risk_off; si el restaking se enfría o competidores (Kelp, Puffer, Renzo) capturan share, erosiona premium. Unlocks pendientes.",
+   "sources": [
+    "https://coinmarketcap.com/currencies/ether-fi-ethfi/",
+    "https://coinmarketcap.com/cmc-ai/ether-fi-ethfi/latest-updates/",
+    "https://coinmarketcap.com/cmc-ai/ether-fi-ethfi/price-prediction/",
+    "https://www.coingecko.com/en/coins/ether-fi"
+   ],
+   "tokenomics": {
+    "mcap": 346713630,
+    "fdv": 373321784,
+    "fdv_mcap": 1.08,
+    "float_pct": 92.7,
+    "cg_id": "ether-fi",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "SAND/USDT",
    "rank": 2,
    "type": "historica",
    "stage": "1",
-   "thesis": "Established RWA leader with a hard, dated catalyst (July 2 launch of SEC-aligned tokenized US securities with Broadridge proxy voting) while price is still basing near $0.32 — an early Stage 1 accumulation setup, not extended. Wait for a volume-backed reclaim before adding; deep liquidity makes it a lower-manipulation bet in a risk-off tape.",
-   "fundamentals": "Ondo Finance tokenizes real-world assets (US Treasuries via OUSG/USDY, plus 430+ tokenized equities/ETFs through Ondo Global Markets). ONDO is the governance token. Sector: RWA/tokenization, a durable institutional narrative. Why now: first production deployment of the SEC's third-party custodial model in the US, giving token holders full shareholder rights.",
-   "catalyst": "July 2, 2026 launch with Broadridge enabling proxy voting and shareholder communications across 250+ tokenized securities, including tokenized BlackRock IVV and Micron shares on Ethereum; follows 24/7 minting (June 25) and Uniswap integration.",
+   "thesis": "Rotación de sector gaming/metaverse confirmada por confluencia: SAND, GALA y MANA aparecen simultáneamente subiendo en volume_rank (no señal única). SAND ofrece el mejor perfil de liquidez y brand del grupo para jugar el despertar del sector desde base larga. Requiere confirmación de ruptura Stage 1->2 antes de tamaño pleno.",
+   "fundamentals": "The Sandbox es metaverso/gaming Web3 donde usuarios crean, poseen y monetizan experiencias; SAND es la moneda para transacciones, LAND, marketplace, staking y governance DAO. Sector GameFi/metaverso establecido rotando capital este ciclo. Ahora importa porque múltiples gaming tokens despiertan a la vez tras lull largo, patrón histórico de rotación sectorial de mediana data.",
+   "catalyst": "Reaparición coordinada de tokens gaming en rankings de volumen de Binance (SAND, GALA, MANA nuevos en top-100), narrativa de resurgimiento GameFi y partnerships de marca (Gucci, Adidas, Warner) como base de adopción.",
    "signals": {
-    "google_trends": "Tokenization/RWA search interest elevated around July 4 launch coverage",
-    "social": "Heavy news-cycle coverage (CoinDesk, Finance Magnates, Crypto.news) driving attention",
-    "binance": "Flagged on news trigger; deep, liquid ONDO/USDT market",
-    "onchain": "OUSG/Ondo Global Markets >$1B TVL; Citi projects tokenized securities market ~$5.5T by 2030"
+    "google_trends": "Interés en metaverso/GameFi repuntando con la rotación sectorial tras periodo prolongado de desinterés",
+    "social": "Sentimiento de sector mejorando; gaming tokens historicamente lideran rebotes iniciales tras carnage de mercado",
+    "binance": "SAND saltó volume_rank 172->98; GALA 134->77 y MANA nuevo en top-100 en simultaneo = rotacion de sector, no ruido aislado",
+    "onchain": "SAND con market cap y partnerships superiores del grupo; liquidez sana; supply y unlocks a vigilar"
    },
-   "risk": "Product not yet available to US investors, so near-term revenue impact is limited; price remains soft and a broad risk-off leg could delay the Stage 1->2 breakout.",
+   "risk": "Metaverso sigue con retención de usuarios débil y DAU bajos; en risk_off el sector gaming cae más rápido que el mercado. Es Stage 1 aún: sin ruptura confirmada podría ser trampa. Unlocks y competencia fragmentan share.",
    "sources": [
-    "https://www.coindesk.com/business/2026/07/01/ondo-finance-debuts-sec-aligned-tokenized-stock-model-with-blackrock-etf-micron-shares",
-    "https://crypto.news/ondo-finance-puts-blackrock-etf-onchain-sec-model/",
-    "https://metamask.io/price/ondo-finance"
+    "https://decrypt.co/294520/gaming-tokens-sand-mana-gala-resurgence",
+    "https://cryptorank.io/news/feed/491bb-sandbox-sand-price-prediction-2026-2030",
+    "https://empirica.io/gamefi-crypto-assets-report-on-chain-gaming-metaverse-play-to-earn-gaming-platforms/"
    ],
    "tokenomics": {
-    "mcap": 1606855597,
-    "fdv": 3299951705,
-    "fdv_mcap": 2.05,
-    "float_pct": 48.7,
-    "cg_id": "ondo-finance",
+    "mcap": 134352983,
+    "fdv": 151111828,
+    "fdv_mcap": 1.12,
+    "float_pct": 88.9,
+    "cg_id": "the-sandbox",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "RAY/USDT",
+   "symbol": "ZKC/USDT",
    "rank": 3,
-   "type": "historica",
-   "stage": "2",
-   "thesis": "Solana DEX leader reaccelerating: volume rank jumped 191->79 and price +8-11% with 24h volume up ~36%, off a long base with real protocol revenue. Trades above 20/50-day MAs; only add on a decisive close above the ~$0.66-0.70 resistance since the 200-day trend is still down.",
-   "fundamentals": "Raydium is Solana's largest AMM/DEX and its primary liquidity layer, capturing the bulk of Solana DEX volume and now tokenized-stock (xStocks) volume; RAY is used for staking, fee share, launchpad allocations and governance. Sector: Solana DeFi, rotating with SOL strength. Why now: fee generation frequently exceeds legacy protocols and LaunchLab launchpad activity is driving revenue.",
-   "catalyst": "Capital rotation into Solana DeFi plus Raydium's expansion into tokenized RWAs (>90% of Solana tokenized-stock volume) and its LaunchLab launchpad diversifying revenue beyond memecoins.",
+   "type": "launch",
+   "stage": "1",
+   "thesis": "Launch reciente de Binance (HODLer Airdrop sept 2025) con narrativa ZK caliente y catalizadores técnicos reales, nuevo en top-100 de volumen. Asimetría enorme por market cap minúsculo, pero es la apuesta más especulativa: solo entrar en confirmación clara de piso y con tamaño reducido dada la disciplina risk_off.",
+   "fundamentals": "Boundless (ZKC) es un protocolo universal de proving zero-knowledge construido por RISC Zero (equipo del primer zkVM RISC-V); provers generan pruebas ZK para L1s, rollups y apps de cualquier chain, con ZKC como colateral e incentivo (PoVW). Sector ZK/infraestructura, narrativa en rotación. Ahora importa por upgrade Surge y expansión multi-chain, aunque post-listing sigue buscando suelo.",
+   "catalyst": "Upgrade 'Surge' recorta costos de pruebas ZK hasta 50% y expande a Taiko y Base; integración de verificador ZK nativo con XRP Ledger habilitando transacciones privadas para instituciones; commits activos en GitHub.",
    "signals": {
-    "google_trends": "Solana DeFi/Raydium interest picking up with ecosystem volume uptick",
-    "social": "Analysts tag RAY a prime mid-cap rotation candidate; community mixed to bearish (contrarian early)",
-    "binance": "Volume rank 191->79; RAY/USDT liquid, 24h volume ~+36%",
-    "onchain": "Market cap ~$178M, circulating 270M/560M; Raydium leads Solana DEX volume with sustained fees/revenue"
+    "google_trends": "Narrativa ZK/zero-knowledge con interés recurrente; búsquedas del token modestas y ligadas a upgrades",
+    "social": "Sentimiento cautelosamente optimista en X (~39% bullish, mayoría neutral); debate sobre si tocó fondo tras crash post-listing",
+    "binance": "Nuevo en top-100 de volumen; par ZKC/USDT es el más activo del token en Binance; listado con múltiples pares desde sept 2025",
+    "onchain": "Market cap muy chico (~$18M, rank #785-949); volumen 24h cayendo -52%; modelo inflacionario 7% año 1; circulante ~300M de 1B genesis"
    },
-   "risk": "Longer-term trend still below the 200-day average and heavily beta to SOL and memecoin flows; a Solana volume cooldown or Bitcoin breakdown below ~$54K would likely reverse the move.",
+   "risk": "Riesgo alto: market cap minúsculo e inflación real presionan precio, volumen en caída, -97% desde ATH aún buscando piso. Iliquidez relativa y unlocks de ecosistema/equipo pueden generar sell pressure. En risk_off, la más frágil del shortlist.",
    "sources": [
-    "https://www.coingecko.com/en/coins/raydium",
-    "https://coinmarketcap.com/cmc-ai/raydium/latest-updates/",
-    "https://tradersunion.com/news/cryptocurrency-news/show/1853328-raydium-jumps-7-73percent-today-to/"
+    "https://coinmarketcap.com/currencies/boundless/",
+    "https://coinmarketcap.com/cmc-ai/boundless/latest-updates/",
+    "https://www.coingecko.com/en/coins/boundless",
+    "https://beincrypto.com/boundless-zkc-token-launch-binance/"
    ],
    "tokenomics": {
-    "mcap": 186402978,
-    "fdv": 384137826,
-    "fdv_mcap": 2.06,
-    "float_pct": 48.5,
-    "cg_id": "raydium",
+    "mcap": 13287208,
+    "fdv": 48302686,
+    "fdv_mcap": 3.64,
+    "float_pct": 27.5,
+    "cg_id": "boundless",
     "warning": "",
     "penalty": 0
-   }
-  },
-  {
-   "symbol": "KAITO/USDT",
-   "rank": 1,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Volume rank jumped 113->63 with price +32% over 7 days on doubling turnover — an early Stage 1->2 transition backed by the InfoFi/AI narrative. Enter on a confirmed hold above the $0.47-0.49 breakout zone; size small given risk-off macro.",
-   "fundamentals": "KAITO is the native token of the Kaito InfoFi network, an AI-powered platform that quantifies and monetizes attention across crypto (Mindshare, Yaps, Kaito Pro analytics). Token is used for governance, network currency and directing attention. Sector: AI + InfoFi, one of the few narratives still attracting capital. Why now: sharp volume/price acceleration off a long base near mid-cap (~$145M).",
-   "catalyst": "Rising social/mindshare traction plus altcoin rotation lifting AI names; the token itself powers the trending 'attention economy' narrative.",
-   "signals": {
-    "google_trends": "Airdrop/InfoFi search interest recovering alongside AI sector attention",
-    "social": "Community bullish on CoinGecko; X sentiment ~41% bullish vs ~4% bearish, though mention counts still modest",
-    "binance": "Volume rank 113->63; KAITO/USDT active pair, 24h volume roughly doubled (~+102%)",
-    "onchain": "Market cap ~$145M, circulating ~240M of 1B; 7-day price +32% outperforming market"
-   },
-   "risk": "Token unlock scheduled ~July 20 (~17.6M KAITO, ~1.8% of supply) plus ongoing vesting; thin liquidity can amplify a reversal if AI rotation stalls. | TOKENOMICS: float 24.1% (poco supply circulando)",
-   "sources": [
-    "https://www.coingecko.com/en/coins/kaito",
-    "https://coinmarketcap.com/currencies/kaito/",
-    "https://www.bitget.com/price/kaito"
-   ],
-   "tokenomics": {
-    "mcap": 137647568,
-    "fdv": 570231582,
-    "fdv_mcap": 4.14,
-    "float_pct": 24.1,
-    "cg_id": "kaito",
-    "warning": "float 24.1% (poco supply circulando)",
-    "penalty": 1
    }
   }
  ],
@@ -205,8 +207,53 @@
     "KAITO/USDT"
    ],
    "regimen": "risk_off"
+  },
+  {
+   "date": "2026-07-04",
+   "narrativa": null,
+   "shortlist": [
+    "ETHFI/USDT",
+    "SAND/USDT",
+    "ZKC/USDT"
+   ],
+   "regimen": "risk_off"
   }
  ],
+ "loop_recs": {
+  "generated": "2026-07-03T17:07:10Z",
+  "ranking": [
+   {
+    "atr_mult": 2.0,
+    "vol_mult": 1.5,
+    "r_promedio": 1.78,
+    "n": 2
+   },
+   {
+    "atr_mult": 2.0,
+    "vol_mult": 1.3,
+    "r_promedio": 1.76,
+    "n": 2
+   },
+   {
+    "atr_mult": 2.5,
+    "vol_mult": 1.3,
+    "r_promedio": 0.69,
+    "n": 2
+   },
+   {
+    "atr_mult": 2.5,
+    "vol_mult": 1.5,
+    "r_promedio": 0.68,
+    "n": 2
+   },
+   {
+    "atr_mult": 3.0,
+    "vol_mult": 1.3,
+    "r_promedio": 0.56,
+    "n": 2
+   }
+  ]
+ },
  "rules": {
   "freeze_days": 60,
   "max_seeds": 60,
