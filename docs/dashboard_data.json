@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-04T01:10:35Z",
+ "generated_at": "2026-07-05T01:04:10Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -96,12 +96,12 @@
  ],
  "shortlist": [
   "ETHFI/USDT",
-  "SAND/USDT",
-  "ZKC/USDT"
+  "FET/USDT",
+  "PLUME/USDT"
  ],
  "narrativa_active": null,
  "regimen": "risk_off",
- "last_brain_run": "2026-07-04",
+ "last_brain_run": "2026-07-05",
  "recent_closed": [],
  "shortlist_full": [
   {
@@ -109,25 +109,25 @@
    "rank": 1,
    "type": "historica",
    "stage": "2",
-   "thesis": "Histórica en reaceleración tipo FET: saltó de volume_rank 151 a 84 con +12.8% en 24h y estructura de piso saliendo de base larga. Valuation disconnect masivo (TVL ~$7.8B vs market cap ~$345M) con buyback DAO como suelo mecánico. Entrar en pullback a soporte, señal técnica sobre narrativa.",
-   "fundamentals": "ether.fi es el protocolo líder de liquid restaking en Ethereum (token eETH, EigenLayer). ETHFI es token de governance/utilidad. Sector DePIN/restaking establecido. Ahora importa porque combina rebote temprano desde ATL (+39%) con catalizadores fundamentales reales, no hype, mientras cotiza rank #98 con TVL de segundo LST detrás de Lido.",
-   "catalyst": "DAO aprobó buyback de hasta $50M cuando cotiza <$3 (99% soporte), migración exitosa de la Cash card a OP Mainnet moviendo $220M TVL sin fallos, y acuerdo de 3 años y $3B con ETHGas para mercado forward de blockspace.",
+   "thesis": "Líder de liquid restaking saliendo de base larga con volumen reacelerando (rank 84->33, scanner st2 +44.6%) y múltiples catalizadores de demanda estructural; entrar sobre confirmación de estructura mientras el buyback pone piso.",
+   "fundamentals": "ether.fi es el protocolo líder de liquid restaking sobre Ethereum/EigenLayer y se expandió a neobanco on-chain (tarjeta Visa ether.fi Cash) y a yield RWA institucional. El token ETHFI captura gobernanza y demanda vía buyback financiado con revenue del protocolo. Por qué ahora: convergen integración con Telegram Wallet (flujo retail de ETH), programa de buyback y despliegue de $100M en RWA regulado, con TVL de sector rotando. Contexto de liquidez: mid-cap con volumen 24h saludable en Binance (decenas a >$100M), operable en Spot sin problema.",
+   "catalyst": "Integracion con Telegram Wallet Earn (1 jun 2026) que canaliza ETH al staking de ether.fi + programa de buyback de $50M aprobado por la DAO (99% soporte) para precios bajo $3, financiado con revenue real (~$3.1M/mes).",
    "signals": {
-    "google_trends": "Interés en 'restaking' y liquid restaking se mantiene como narrativa establecida; búsquedas repuntando con el bounce del token",
-    "social": "Sentimiento cautelosamente alcista en X; hilos destacando el disconnect rank #130 vs $7.8B TVL y el buyback de $50M al 99% de soporte",
-    "binance": "Salto volume_rank 151->84; +12.8% 24h; par ETHFI/USDT con liquidez profunda y múltiples pares en Binance",
-    "onchain": "TVL ~$7.8B (#2 LST tras Lido); revenue de protocolo ~$3.1M/mes financiando buybacks; 70k tarjetas activas y 300k cuentas operativas"
+    "google_trends": "Interes de busqueda en restaking/ether.fi sostenido con el sector LST/LRT reactivandose junto a ETH.",
+    "social": "Sentimiento cautelosamente alcista en X centrado en desconexion de valuacion (rank ~#130 vs $7.8B TVL, #2 LST detras de Lido) y en el buyback como soporte.",
+    "binance": "volume_rank salto 84->33; tag Binance Launchpool; scanner Stage 2 con m30 +44.6%; volumen 24h reportado >$100M en picos.",
+    "onchain": "TVL de $5.6-7.8B (lider de liquid restaking); revenue de protocolo ~$3.1M/mes; asignacion de $100M a vault RWA regulado y flujo de ETH desde Telegram elevando TVL."
    },
-   "risk": "Correlación alta con sentimiento altcoin en régimen risk_off; si el restaking se enfría o competidores (Kelp, Puffer, Renzo) capturan share, erosiona premium. Unlocks pendientes.",
+   "risk": "Beta alto a ETH: con ETH bajo presion (ballenas vendiendo ~550k ETH en una semana, salidas de ETF) ETHFI amplifica caidas; ademas competencia creciente en restaking (Kelp, Puffer).",
    "sources": [
-    "https://coinmarketcap.com/currencies/ether-fi-ethfi/",
     "https://coinmarketcap.com/cmc-ai/ether-fi-ethfi/latest-updates/",
+    "https://www.tradingview.com/news/coinmarketcal:b984c35a1094b:0-ether-fi-ethfi-wallet-in-tg-partnership-01-june-2026/",
     "https://coinmarketcap.com/cmc-ai/ether-fi-ethfi/price-prediction/",
-    "https://www.coingecko.com/en/coins/ether-fi"
+    "https://coinmarketcap.com/currencies/ether-fi-ethfi/"
    ],
    "tokenomics": {
-    "mcap": 346713630,
-    "fdv": 373321784,
+    "mcap": 383160993,
+    "fdv": 412566259,
     "fdv_mcap": 1.08,
     "float_pct": 92.7,
     "cg_id": "ether-fi",
@@ -136,62 +136,61 @@
    }
   },
   {
-   "symbol": "SAND/USDT",
+   "symbol": "FET/USDT",
    "rank": 2,
    "type": "historica",
-   "stage": "1",
-   "thesis": "Rotación de sector gaming/metaverse confirmada por confluencia: SAND, GALA y MANA aparecen simultáneamente subiendo en volume_rank (no señal única). SAND ofrece el mejor perfil de liquidez y brand del grupo para jugar el despertar del sector desde base larga. Requiere confirmación de ruptura Stage 1->2 antes de tamaño pleno.",
-   "fundamentals": "The Sandbox es metaverso/gaming Web3 donde usuarios crean, poseen y monetizan experiencias; SAND es la moneda para transacciones, LAND, marketplace, staking y governance DAO. Sector GameFi/metaverso establecido rotando capital este ciclo. Ahora importa porque múltiples gaming tokens despiertan a la vez tras lull largo, patrón histórico de rotación sectorial de mediana data.",
-   "catalyst": "Reaparición coordinada de tokens gaming en rankings de volumen de Binance (SAND, GALA, MANA nuevos en top-100), narrativa de resurgimiento GameFi y partnerships de marca (Gucci, Adidas, Warner) como base de adopción.",
+   "stage": "2",
+   "thesis": "Nombre AI establecido (ASI Alliance) saliendo de base tras -73% con catalizador de producto real (Agent Launchpad) y supply crunch en Binance; el sector AI es el que mas capital rota este mes. Entrar sobre ruptura confirmada de resistencia $0.25-$0.28.",
+   "fundamentals": "FET es el token nativo de la Artificial Superintelligence Alliance (fusion Fetch.ai + SingularityNET + Ocean), cubriendo agentes AI, modelos y datos: casi toda la cadena de valor de AI descentralizada. Utilidad del token: gas/coordinacion en la red de agentes y proximamente ASI:Chain. Por qué ahora: el Agent Launchpad (mayo 2026) mueve la narrativa de hype a utilidad y ~$2.87B entraron en tokens AI en una semana tras el shock regulatorio a AI centralizada. Liquidez: large-cap AI, muy liquido en Binance Spot (100+ exchanges).",
+   "catalyst": "Despliegue del Agent Launchpad (20 may 2026) para desplegar agentes AI autonomos on-chain + 'inflow drought' que redujo las reservas de FET en Binance ~20% en 90 dias, apretando la oferta vendedora.",
    "signals": {
-    "google_trends": "Interés en metaverso/GameFi repuntando con la rotación sectorial tras periodo prolongado de desinterés",
-    "social": "Sentimiento de sector mejorando; gaming tokens historicamente lideran rebotes iniciales tras carnage de mercado",
-    "binance": "SAND saltó volume_rank 172->98; GALA 134->77 y MANA nuevo en top-100 en simultaneo = rotacion de sector, no ruido aislado",
-    "onchain": "SAND con market cap y partnerships superiores del grupo; liquidez sana; supply y unlocks a vigilar"
+    "google_trends": "Interes en 'AI agents' y AI cripto subiendo tras el evento regulatorio de mediados de junio 2026 que impulso la narrativa de AI descentralizada.",
+    "social": "Menciones alcistas en X sobre el Agent Launchpad y el supply crunch; hilos de cuentas de decenas de miles de seguidores enmarcando a FET como nucleo de la cadena de valor AI.",
+    "binance": "Reservas de FET en Binance -20% en 90d con netflows negativos; sector AI liderando rotacion (ej. NEAR +50% semanal); rally del 14 jun +15.5% con volumen +31%.",
+    "onchain": "Direcciones activas y transacciones al alza con salidas de exchange (acumulacion); ~$2.87B fluyeron a tokens AI en una semana."
    },
-   "risk": "Metaverso sigue con retención de usuarios débil y DAU bajos; en risk_off el sector gaming cae más rápido que el mercado. Es Stage 1 aún: sin ruptura confirmada podría ser trampa. Unlocks y competencia fragmentan share.",
+   "risk": "Volatilidad y dependencia de narrativa: cayo ~26% en una semana reciente; si la rotacion AI se enfria o el mercado sigue risk-off (BTC debil), la ruptura sobre $0.28 puede fallar.",
    "sources": [
-    "https://decrypt.co/294520/gaming-tokens-sand-mana-gala-resurgence",
-    "https://cryptorank.io/news/feed/491bb-sandbox-sand-price-prediction-2026-2030",
-    "https://empirica.io/gamefi-crypto-assets-report-on-chain-gaming-metaverse-play-to-earn-gaming-platforms/"
+    "https://coinmarketcap.com/cmc-ai/artificial-superintelligence-alliance/latest-updates/",
+    "https://coinmarketcap.com/cmc-ai/artificial-superintelligence-alliance/price-prediction/"
    ],
    "tokenomics": {
-    "mcap": 134352983,
-    "fdv": 151111828,
-    "fdv_mcap": 1.12,
-    "float_pct": 88.9,
-    "cg_id": "the-sandbox",
+    "mcap": 403740370,
+    "fdv": 487614029,
+    "fdv_mcap": 1.21,
+    "float_pct": 82.8,
+    "cg_id": "fetch-ai",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "ZKC/USDT",
+   "symbol": "PLUME/USDT",
    "rank": 3,
-   "type": "launch",
-   "stage": "1",
-   "thesis": "Launch reciente de Binance (HODLer Airdrop sept 2025) con narrativa ZK caliente y catalizadores técnicos reales, nuevo en top-100 de volumen. Asimetría enorme por market cap minúsculo, pero es la apuesta más especulativa: solo entrar en confirmación clara de piso y con tamaño reducido dada la disciplina risk_off.",
-   "fundamentals": "Boundless (ZKC) es un protocolo universal de proving zero-knowledge construido por RISC Zero (equipo del primer zkVM RISC-V); provers generan pruebas ZK para L1s, rollups y apps de cualquier chain, con ZKC como colateral e incentivo (PoVW). Sector ZK/infraestructura, narrativa en rotación. Ahora importa por upgrade Surge y expansión multi-chain, aunque post-listing sigue buscando suelo.",
-   "catalyst": "Upgrade 'Surge' recorta costos de pruebas ZK hasta 50% y expande a Taiko y Base; integración de verificador ZK nativo con XRP Ledger habilitando transacciones privadas para instituciones; commits activos en GitHub.",
+   "type": "historica",
+   "stage": "2",
+   "thesis": "L1 de RWAfi tipo 'early ONDO' con catalizador institucional directo (vault de $100M de ether.fi) y credenciales regulatorias; sector RWA es de los pocos rotando capital institucional en este regimen. Entrar chico y solo con estructura por ser el mas iliquido de los tres.",
+   "fundamentals": "Plume es la primera L1 full-stack de RWAfi: integra motor de tokenizacion, chain EVM, compliance y normalizacion de datos para llevar activos del mundo real (credito, ETFs, money-market funds) a DeFi. El token PLUME es gas, gobernanza y staking. Por qué ahora: ether.fi asigno $100M a un vault RWA en Plume (jun 2026) conectando >$6B de depositos a yields regulados, sobre licencias de Bermuda y estatus de SEC transfer-agent. Contexto de liquidez: micro/small-cap con volumen 24h de varios millones en Binance; operable en Spot pero el mas fino de la lista, exige position sizing chico.",
+   "catalyst": "Lanzamiento del vault 'ether.fi Liquid RWA' en Plume (6 jun 2026, cap inicial $25M dentro de un despliegue de $100M) que da acceso a fondos de BlackRock/Fidelity via infraestructura regulada de Plume.",
    "signals": {
-    "google_trends": "Narrativa ZK/zero-knowledge con interés recurrente; búsquedas del token modestas y ligadas a upgrades",
-    "social": "Sentimiento cautelosamente optimista en X (~39% bullish, mayoría neutral); debate sobre si tocó fondo tras crash post-listing",
-    "binance": "Nuevo en top-100 de volumen; par ZKC/USDT es el más activo del token en Binance; listado con múltiples pares desde sept 2025",
-    "onchain": "Market cap muy chico (~$18M, rank #785-949); volumen 24h cayendo -52%; modelo inflacionario 7% año 1; circulante ~300M de 1B genesis"
+    "google_trends": "Interes en 'RWA'/'tokenizacion' elevado en 2026 con activos tokenizandose a ritmo acelerado y el sector RWA cerca de $13B.",
+    "social": "Comunidad vocalmente alcista comparando el punto de entrada con el early ONDO; tension entre progreso fundamental y valuacion deprimida.",
+    "binance": "Nuevo/reacelerando en top-100 de volumen; par PLUME/USDT activo en Binance con Plume como venue principal; graduo de Binance Alpha a Spot.",
+    "onchain": "200+ protocolos construyendo, ~110k usuarios y 20M transacciones; deposits que crecieron ~200% en un mes hasta ~$110M; airdrop Season 2 activo hasta agosto 2026."
    },
-   "risk": "Riesgo alto: market cap minúsculo e inflación real presionan precio, volumen en caída, -97% desde ATH aún buscando piso. Iliquidez relativa y unlocks de ecosistema/equipo pueden generar sell pressure. En risk_off, la más frágil del shortlist.",
+   "risk": "Liquidez fina y small-cap: mas manipulable y sensible a risk-off; el precio ha rendido pobremente pese a metricas de adopcion, y depende de que el capital del vault se traduzca en TVL/uso sostenido.",
    "sources": [
-    "https://coinmarketcap.com/currencies/boundless/",
-    "https://coinmarketcap.com/cmc-ai/boundless/latest-updates/",
-    "https://www.coingecko.com/en/coins/boundless",
-    "https://beincrypto.com/boundless-zkc-token-launch-binance/"
+    "https://coinmarketcap.com/cmc-ai/plume/latest-updates/",
+    "https://www.coingecko.com/en/coins/plume",
+    "https://messari.io/project/plume-network",
+    "https://coinmarketcap.com/currencies/plume/"
    ],
    "tokenomics": {
-    "mcap": 13287208,
-    "fdv": 48302686,
-    "fdv_mcap": 3.64,
-    "float_pct": 27.5,
-    "cg_id": "boundless",
+    "mcap": 64701680,
+    "fdv": 108381767,
+    "fdv_mcap": 1.68,
+    "float_pct": 59.7,
+    "cg_id": "plume",
     "warning": "",
     "penalty": 0
    }
@@ -217,39 +216,49 @@
     "ZKC/USDT"
    ],
    "regimen": "risk_off"
+  },
+  {
+   "date": "2026-07-05",
+   "narrativa": null,
+   "shortlist": [
+    "ETHFI/USDT",
+    "FET/USDT",
+    "PLUME/USDT"
+   ],
+   "regimen": "risk_off"
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-03T17:07:10Z",
+  "generated": "2026-07-04T01:10:42Z",
   "ranking": [
    {
     "atr_mult": 2.0,
     "vol_mult": 1.5,
-    "r_promedio": 1.78,
+    "r_promedio": 1.89,
     "n": 2
    },
    {
     "atr_mult": 2.0,
     "vol_mult": 1.3,
-    "r_promedio": 1.76,
+    "r_promedio": 1.88,
     "n": 2
    },
    {
     "atr_mult": 2.5,
     "vol_mult": 1.3,
-    "r_promedio": 0.69,
+    "r_promedio": 0.78,
     "n": 2
    },
    {
     "atr_mult": 2.5,
     "vol_mult": 1.5,
-    "r_promedio": 0.68,
+    "r_promedio": 0.78,
     "n": 2
    },
    {
     "atr_mult": 3.0,
     "vol_mult": 1.3,
-    "r_promedio": 0.56,
+    "r_promedio": 0.64,
     "n": 2
    }
   ]
