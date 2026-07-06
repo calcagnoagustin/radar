@@ -103,19 +103,6 @@
   .gmetrics .m{background:var(--surface-2);border:1px solid var(--hair);border-radius:10px;padding:12px 14px}
   .gmetrics .m .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .gmetrics .m .v{font-size:20px;margin-top:4px}
-  .trade{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair-soft)}
-  .trade:last-child{border-bottom:none}
-  .trade .tr-sym{font-size:14px}
-  .trade .tr-sym .sym{font-weight:600}
-  .trade .tr-sym .pair{color:var(--muted)}
-  .trade .tr-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:5px;border:1px solid var(--hair);margin-left:8px}
-  .trade .tr-meta{color:var(--muted);font-size:12px;margin-top:3px}
-  .trade .tr-r{text-align:right;white-space:nowrap}
-  .trade .tr-pnl{font-size:15px;font-weight:600}
-  .trade .tr-pct{font-size:12px}
-  .tr-hidden{display:none}
-  .vermas{margin-top:12px;background:transparent;border:1px solid #2a3b32;color:#9fe0b8;font:inherit;font-size:12px;padding:7px 16px;border-radius:8px;cursor:pointer;width:100%}
-  .vermas:hover{background:#16241c}
 </style>
 
 </head>
@@ -161,16 +148,9 @@
         <div class="head"><span class="title">Cerebro</span><span class="eyebrow">LLM mensual</span></div>
         <div class="body">
           <div class="row"><span class="lbl">Último análisis</span><span class="mono" id="brainLast">—</span></div>
-          <div class="row"><span class="lbl">Próximo</span><span class="mono" id="brainNext">—</span></div><div style="padding-top:11px"><div class="lbl" style="color:var(--muted);font-size:13px;margin-bottom:8px">Historial cerebro</div><div id="brainHist"></div></div>
+          <div class="row"><span class="lbl">Próximo</span><span class="mono" id="brainNext">—</span></div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="cols" style="grid-template-columns:1fr;margin-top:18px">
-    <div class="card">
-      <div class="head"><span class="title">Historial de operaciones</span><span class="eyebrow" id="sHistCount"></span></div>
-      <div class="body" id="sHistory"><div class="row"><span class="lbl">Cargando…</span></div></div>
     </div>
   </div>
 
@@ -181,7 +161,7 @@
 <div class="gan-head">
   <div class="brand">
     <h1>Radar - Ganesha</h1>
-    <div class="sub">Ejecutor 15m/4h · semillas confirmadas · Binance Spot · sub-cuenta aislada</div>
+    <div class="sub">Momentum intradía · 15m · Binance Spot · sub-cuenta aislada</div>
   </div>
   <div style="display:flex;align-items:center;gap:14px">
     <span class="badge dry" id="gMode">—</span>
@@ -221,11 +201,6 @@
 </div>
 
 
-<div class="card" style="margin-top:18px">
-  <div class="head"><span class="title">Historial de operaciones</span><span class="eyebrow" id="gHistCount"></span></div>
-  <div class="body" id="gHistory"><div class="row"><span class="lbl">Cargando…</span></div></div>
-</div>
-
 <footer>
     <span id="dataStamp">—</span>
     <span>Precios: Binance público · P&amp;L calculado en el navegador</span>
@@ -235,7 +210,6 @@
 const MONTHS=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
 const fmtUSD=(n,d=2)=>(n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
 const fmtPct=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
-function paginateHist(cid,lim){var c=document.getElementById(cid);if(!c)return;var rows=Array.prototype.slice.call(c.querySelectorAll('.trade'));if(rows.length<=lim)return;rows.forEach(function(r,i){if(i>=lim)r.classList.add('tr-hidden');});var rest=rows.length-lim;var w=document.createElement('div');w.style.textAlign='center';var btn=document.createElement('button');btn.className='vermas';btn.textContent='Ver m\u00e1s ('+rest+')';btn.dataset.exp='0';btn.addEventListener('click',function(){if(btn.dataset.exp==='0'){c.querySelectorAll('.trade.tr-hidden').forEach(function(e){e.classList.remove('tr-hidden');});btn.textContent='Ver menos';btn.dataset.exp='1';}else{Array.prototype.slice.call(c.querySelectorAll('.trade')).forEach(function(e,i){if(i>=lim)e.classList.add('tr-hidden');});btn.textContent='Ver m\u00e1s ('+rest+')';btn.dataset.exp='0';}});w.appendChild(btn);c.appendChild(w);}
 const cls=n=>n>0.0001?"up":(n<-0.0001?"down":"flat");
 const bSym=s=>s.replace("/","").toUpperCase();
 let DATA=null, PRICES={}, lastFetch=0;
@@ -342,27 +316,6 @@ function render(){
   // cerebro
   document.getElementById("brainLast").textContent = DATA.last_brain_run? dateShort(DATA.last_brain_run):"—";
   document.getElementById("brainNext").textContent = nextBrain(DATA.last_brain_run);
-const bh=document.getElementById("brainHist");
-if(bh){bh.innerHTML="";const BH=(DATA.brain_history||[]).slice().reverse();
-if(!BH.length)bh.innerHTML='<span class="lbl" style="font-size:13px">sin corridas registradas</span>';
-BH.forEach(function(x){var el=document.createElement("div");el.className="row";el.innerHTML='<span class="lbl">'+dateShort(x.date)+'</span><span class="mono" style="font-size:12px;text-align:right;max-width:62%">'+(x.narrativa||"sin narrativa")+" | "+(((x.shortlist||[]).map(function(q){return q.split("/")[0]}).join(", "))||"-")+'</span>';bh.appendChild(el);});}
-
-
-  // historial
-  const SH=(DATA.recent_closed||[]).slice().reverse();
-  const shc=document.getElementById("sHistory");
-  document.getElementById("sHistCount").textContent=SH.length+" operaci\u00f3n"+(SH.length===1?"":"es");
-  shc.innerHTML="";
-  if(!SH.length)shc.innerHTML='<div class="row"><span class="lbl">Sin operaciones cerradas todav\u00eda.</span></div>';
-  SH.forEach(t=>{
-    const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const _cb=(t.entry||0)*(t.qty_total||0);const pct=_cb?(pnl/_cb*100):0;
-    const when=t.closed_ts?stampShort(new Date(t.closed_ts*1000).toISOString()):(t.closed_at||"");
-    const tg=t.action?String(t.action).toUpperCase():"CIERRE";
-    const el=document.createElement("div");el.className="trade";
-    el.innerHTML=`<div><div class="tr-sym"><span class="sym">${b}</span><span class="pair">/${q||"USDT"}</span><span class="tr-tag ${cls(pnl)}">${tg}</span></div><div class="tr-meta">${fmtUSD(t.entry,t.entry<1?4:2)} \u2192 ${fmtUSD(t.exit,t.exit<1?4:2)} \u00b7 cant ${t.qty_total} \u00b7 ${when}</div></div><div class="tr-r"><div class="tr-pnl ${cls(pnl)}">${fmtUSD(pnl)}</div><div class="tr-pct ${cls(pct)}">${fmtPct(pct)}</div></div>`;
-    shc.appendChild(el);
-  });
-  paginateHist("sHistory",8);
 
   // stamps
   document.getElementById("dataStamp").textContent = "Estado generado: "+(DATA.generated_at?stampShort(DATA.generated_at):"—");
@@ -437,18 +390,6 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
       el.innerHTML=`<div class="pos-top"><div><span class="sym">${b}</span> <span class="pair">/${q||"USDT"}</span>${p.tp1_done?' <span class="badge moonbag" style="margin-left:6px">TP1 ✓</span>':''}</div><div class="pos-pnl">${px?`<div class="pct ${cl(up)}">${fP(uc)}</div><div class="abs">${fU(up)}</div>`:'<div class="pct flat">—</div>'}</div></div><div class="pos-meta"><span>Precio <b class="mono">${px?fU(px.price,px.price<1?4:2):"—"}</b></span><span>Entrada <b class="mono">${fU(p.entry,p.entry<1?4:2)}</b></span><span>Invertido <b class="mono">${fU(p.qty*p.entry)}</b></span><span>Cant <b class="mono">${p.qty}</b></span><span>Stop <b class="mono">${fU(p.stop,p.stop<1?4:2)}</b>${sp!=null?` <span class="${cl(sp)}">(${fP(sp)})</span>`:""}</span>${px?`<span>24h <b class="mono ${cl(px.chg)}">${fP(px.chg)}</b></span>`:""}</div>`;
       pc.appendChild(el);
     });
-    const H=(D.recent_closed||[]).slice().reverse();
-    $("gHistCount").textContent=H.length+" operaci\u00f3n"+(H.length===1?"":"es");
-    const hc=$("gHistory");hc.innerHTML="";
-    if(!H.length)hc.innerHTML='<div class="row"><span class="lbl">Sin operaciones cerradas todav\u00eda.</span></div>';
-    H.forEach(t=>{
-      const[b,q]=t.symbol.split("/");const pnl=t.pnl_net||0;const _cb=(t.entry||0)*(t.qty_total||0);const pct=_cb?(pnl/_cb*100):0;
-      const tg=t.action==="tp"?"TP":(t.action==="stop"?"STOP":(t.action||"cierre").toUpperCase());
-      const el=document.createElement("div");el.className="trade";
-      el.innerHTML=`<div><div class="tr-sym"><span class="sym">${b}</span><span class="pair">/${q||"USDT"}</span><span class="tr-tag ${cl(pnl)}">${tg}</span></div><div class="tr-meta">${fU(t.entry,t.entry<1?4:2)} \u2192 ${fU(t.exit,t.exit<1?4:2)} \u00b7 cant ${t.qty_total} \u00b7 ${stamp((t.closed_ts||0)*1000)}</div></div><div class="tr-r"><div class="tr-pnl ${cl(pnl)}">${fU(pnl)}</div><div class="tr-pct ${cl(pct)}">${fP(pct)}</div></div>`;
-      hc.appendChild(el);
-    });
-    paginateHist("gHistory",8);
     fresh();
   }
   async function cyc(){try{await prices();render();}catch(e){const f=$("gFresh");if(f)f.innerHTML='<span class="err">precios n/d</span>';}}
