@@ -1,0 +1,9 @@
+c6152a0f7759ec98f4589cdda922712f  /tmp/p9_deploy.tgz
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<string>", line 1, in <listcomp>
+  File "/usr/lib64/python3.9/py_compile.py", line 143, in compile
+    source_bytes = loader.get_data(file)
+  File "<frozen importlib._bootstrap_external>", line 1040, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: 'p9_runner.py'
+0
