@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-05T01:04:10Z",
+ "generated_at": "2026-07-06T00:16:57Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -95,104 +95,103 @@
   }
  ],
  "shortlist": [
-  "ETHFI/USDT",
-  "FET/USDT",
-  "PLUME/USDT"
+  "PYTH/USDT",
+  "IMX/USDT",
+  "OPN/USDT"
  ],
  "narrativa_active": null,
- "regimen": "risk_off",
- "last_brain_run": "2026-07-05",
+ "regimen": "neutral",
+ "last_brain_run": "2026-07-06",
  "recent_closed": [],
  "shortlist_full": [
   {
-   "symbol": "ETHFI/USDT",
+   "symbol": "PYTH/USDT",
    "rank": 1,
    "type": "historica",
    "stage": "2",
-   "thesis": "Líder de liquid restaking saliendo de base larga con volumen reacelerando (rank 84->33, scanner st2 +44.6%) y múltiples catalizadores de demanda estructural; entrar sobre confirmación de estructura mientras el buyback pone piso.",
-   "fundamentals": "ether.fi es el protocolo líder de liquid restaking sobre Ethereum/EigenLayer y se expandió a neobanco on-chain (tarjeta Visa ether.fi Cash) y a yield RWA institucional. El token ETHFI captura gobernanza y demanda vía buyback financiado con revenue del protocolo. Por qué ahora: convergen integración con Telegram Wallet (flujo retail de ETH), programa de buyback y despliegue de $100M en RWA regulado, con TVL de sector rotando. Contexto de liquidez: mid-cap con volumen 24h saludable en Binance (decenas a >$100M), operable en Spot sin problema.",
-   "catalyst": "Integracion con Telegram Wallet Earn (1 jun 2026) que canaliza ETH al staking de ether.fi + programa de buyback de $50M aprobado por la DAO (99% soporte) para precios bajo $3, financiado con revenue real (~$3.1M/mes).",
+   "thesis": "Oracle con +4 anos de historia saliendo de base larga cerca de minimos con catalizador concreto y alpha comprobada; entrar sobre soporte $0.037-0.040 buscando continuacion hacia resistencia previa.",
+   "fundamentals": "Pyth es un oraculo de primera parte que agrega feeds de +125 instituciones (Jane Street, Cboe, Binance, OKX) para +380 feeds de cripto, equities, FX y commodities en +40 blockchains. El token se usa para Oracle Integrity Staking y governance. AHORA: se posiciona en el centro de la narrativa oracle/RWA que rota capital este mes, y el modelo pago crea revenue real ligado a uso que alimenta el PYTH Reserve. Market cap ~$276M (rank ~109), muy comprimido vs ATH, dando asimetria grande.",
+   "catalyst": "Nasdaq distribuira su data institucional TotalView on-chain via Pyth (1 jul, +6% ese dia); ademas el upgrade Pyth Core del 31 julio transiciona a modelo de suscripcion pago (desde $500/mes) con revenue al PYTH Reserve, creando demanda estructural.",
    "signals": {
-    "google_trends": "Interes de busqueda en restaking/ether.fi sostenido con el sector LST/LRT reactivandose junto a ETH.",
-    "social": "Sentimiento cautelosamente alcista en X centrado en desconexion de valuacion (rank ~#130 vs $7.8B TVL, #2 LST detras de Lido) y en el buyback como soporte.",
-    "binance": "volume_rank salto 84->33; tag Binance Launchpool; scanner Stage 2 con m30 +44.6%; volumen 24h reportado >$100M en picos.",
-    "onchain": "TVL de $5.6-7.8B (lider de liquid restaking); revenue de protocolo ~$3.1M/mes; asignacion de $100M a vault RWA regulado y flujo de ETH desde Telegram elevando TVL."
+    "google_trends": "Interes en narrativa oracle/RWA subiendo; Pyth citado repetidamente como infraestructura clave del sector RWA tokenization en julio 2026",
+    "social": "Traders en X marcando setups long con targets $0.043-0.047; sentimiento tornandose alcista con anomalias de volumen senaladas como interes institucional",
+    "binance": "Salto en volume_rank 146->62; spike de volumen spot +281% en un dia mientras BTC caia (alpha clara)",
+    "onchain": "PYTH subio 6.5% mientras BTC caia -1.6% y market cap total -1.34%, confirmado por volumen 24h +281% a >$86M: acumulacion spot organica"
    },
-   "risk": "Beta alto a ETH: con ETH bajo presion (ballenas vendiendo ~550k ETH en una semana, salidas de ETF) ETHFI amplifica caidas; ademas competencia creciente en restaking (Kelp, Puffer).",
+   "risk": "Unlocks de vesting multi-anuales (gran desbloqueo en mayo 2026) que pueden meter presion de venta; ademas la transicion a pago podria reducir integraciones si builders migran a oraculos gratis.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/ether-fi-ethfi/latest-updates/",
-    "https://www.tradingview.com/news/coinmarketcal:b984c35a1094b:0-ether-fi-ethfi-wallet-in-tg-partnership-01-june-2026/",
-    "https://coinmarketcap.com/cmc-ai/ether-fi-ethfi/price-prediction/",
-    "https://coinmarketcap.com/currencies/ether-fi-ethfi/"
+    "https://coinmarketcap.com/cmc-ai/pyth-network/latest-updates/",
+    "https://www.bitrue.com/blog/pyth-core-upgrade-july-2026",
+    "https://wp.madrestravels.com/2026/07/03/wall-streets-on-chain-paradox-why-31billion-in-tokenized-capital-sits-idle/"
    ],
    "tokenomics": {
-    "mcap": 383160993,
-    "fdv": 412566259,
-    "fdv_mcap": 1.08,
-    "float_pct": 92.7,
-    "cg_id": "ether-fi",
+    "mcap": 318470215,
+    "fdv": 404407560,
+    "fdv_mcap": 1.27,
+    "float_pct": 78.7,
+    "cg_id": "pyth-network",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "FET/USDT",
+   "symbol": "IMX/USDT",
    "rank": 2,
    "type": "historica",
-   "stage": "2",
-   "thesis": "Nombre AI establecido (ASI Alliance) saliendo de base tras -73% con catalizador de producto real (Agent Launchpad) y supply crunch en Binance; el sector AI es el que mas capital rota este mes. Entrar sobre ruptura confirmada de resistencia $0.25-$0.28.",
-   "fundamentals": "FET es el token nativo de la Artificial Superintelligence Alliance (fusion Fetch.ai + SingularityNET + Ocean), cubriendo agentes AI, modelos y datos: casi toda la cadena de valor de AI descentralizada. Utilidad del token: gas/coordinacion en la red de agentes y proximamente ASI:Chain. Por qué ahora: el Agent Launchpad (mayo 2026) mueve la narrativa de hype a utilidad y ~$2.87B entraron en tokens AI en una semana tras el shock regulatorio a AI centralizada. Liquidez: large-cap AI, muy liquido en Binance Spot (100+ exchanges).",
-   "catalyst": "Despliegue del Agent Launchpad (20 may 2026) para desplegar agentes AI autonomos on-chain + 'inflow drought' que redujo las reservas de FET en Binance ~20% en 90 dias, apretando la oferta vendedora.",
+   "stage": "1",
+   "thesis": "Gaming L2 establecido en base larga con acumulacion de ballenas; transicion Stage 1->2 temprana, entrar solo con cierre confirmado sobre resistencia (~$0.155-0.17) para evitar falsa senal, ya que la estructura aun es fragil.",
+   "fundamentals": "Immutable es una L2 zkEVM dedicada a gaming/NFT sobre Ethereum, con gas casi cero y retiros inmediatos. El token IMX se usa como gas nativo tras la fusion en Immutable Chain, staking (20% de fees de transaccion) y governance. AHORA: sector gaming rotando con partnerships mainstream (Ubisoft, Netmarble, AVALON AI para UGC). Precio ~$0.14, muy lejos de maximos, base extendida que ofrece asimetria si el sector despierta.",
+   "catalyst": "Partnership AVALON AI para plataforma UGC con beta en 2026, integraciones Ubisoft/Netmarble y lanzamientos de juegos; historicamente noticias tipo Ubisoft movieron IMX +52%.",
    "signals": {
-    "google_trends": "Interes en 'AI agents' y AI cripto subiendo tras el evento regulatorio de mediados de junio 2026 que impulso la narrativa de AI descentralizada.",
-    "social": "Menciones alcistas en X sobre el Agent Launchpad y el supply crunch; hilos de cuentas de decenas de miles de seguidores enmarcando a FET como nucleo de la cadena de valor AI.",
-    "binance": "Reservas de FET en Binance -20% en 90d con netflows negativos; sector AI liderando rotacion (ej. NEAR +50% semanal); rally del 14 jun +15.5% con volumen +31%.",
-    "onchain": "Direcciones activas y transacciones al alza con salidas de exchange (acumulacion); ~$2.87B fluyeron a tokens AI en una semana."
+    "google_trends": "Gaming/GameFi como narrativa secundaria; interes moderado pero creciente ligado a lanzamientos de juegos",
+    "social": "IMX listado entre top L2 por actividad social; sentimiento mixto (optimismo fundamental vs pesimismo tecnico de corto plazo)",
+    "binance": "Salto fuerte en volume_rank 192->53; spikes de volumen +63% y +97% en sesiones de breakout",
+    "onchain": "Outflows record de exchange (+4.67M IMX en un dia, el mayor de 2026) vinculados a acumulacion de ballenas y optimismo por zkEVM"
    },
-   "risk": "Volatilidad y dependencia de narrativa: cayo ~26% en una semana reciente; si la rotacion AI se enfria o el mercado sigue risk-off (BTC debil), la ruptura sobre $0.28 puede fallar.",
+   "risk": "Tendencia de fondo aun bajista (medias moviles 50/200 cayendo), unlocks de tokens que diluyen, y caida de wallets activas que amenaza el revenue de fees; puede seguir lateralizando si el sector gaming no reacelera.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/artificial-superintelligence-alliance/latest-updates/",
-    "https://coinmarketcap.com/cmc-ai/artificial-superintelligence-alliance/price-prediction/"
+    "https://coinmarketcap.com/cmc-ai/immutable-x/latest-updates/",
+    "https://messari.io/project/immutable",
+    "https://coinmarketcap.com/cmc-ai/immutable-x/price-prediction/"
    ],
    "tokenomics": {
-    "mcap": 403740370,
-    "fdv": 487614029,
-    "fdv_mcap": 1.21,
-    "float_pct": 82.8,
-    "cg_id": "fetch-ai",
+    "mcap": 116577608,
+    "fdv": 276760301,
+    "fdv_mcap": 2.37,
+    "float_pct": 42.1,
+    "cg_id": "immutable-x",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "PLUME/USDT",
+   "symbol": "OPN/USDT",
    "rank": 3,
-   "type": "historica",
+   "type": "launch",
    "stage": "2",
-   "thesis": "L1 de RWAfi tipo 'early ONDO' con catalizador institucional directo (vault de $100M de ether.fi) y credenciales regulatorias; sector RWA es de los pocos rotando capital institucional en este regimen. Entrar chico y solo con estructura por ser el mas iliquido de los tres.",
-   "fundamentals": "Plume es la primera L1 full-stack de RWAfi: integra motor de tokenizacion, chain EVM, compliance y normalizacion de datos para llevar activos del mundo real (credito, ETFs, money-market funds) a DeFi. El token PLUME es gas, gobernanza y staking. Por qué ahora: ether.fi asigno $100M a un vault RWA en Plume (jun 2026) conectando >$6B de depositos a yields regulados, sobre licencias de Bermuda y estatus de SEC transfer-agent. Contexto de liquidez: micro/small-cap con volumen 24h de varios millones en Binance; operable en Spot pero el mas fino de la lista, exige position sizing chico.",
-   "catalyst": "Lanzamiento del vault 'ether.fi Liquid RWA' en Plume (6 jun 2026, cap inicial $25M dentro de un despliegue de $100M) que da acceso a fondos de BlackRock/Fidelity via infraestructura regulada de Plume.",
+   "thesis": "Launch reciente de Binance Launchpool (72o proyecto) con liquidez profunda multi-par y volumen reacelerando; entrar solo con estructura post-descubrimiento de precio confirmada, tratandolo como la apuesta mas especulativa de la canasta.",
+   "fundamentals": "Opinion (OPN) es infraestructura para el trading global de senales, opiniones y predicciones (prediction-market/signals). Supply total 1B, circulante inicial ~19.85% (198.5M). Token con rol de governance y participacion en el ecosistema. AHORA: aun en fase temprana de roadmap ('Ecosystem Growth' Q2->'Protocol Maturity' Q3 2026), con reaceleracion de volumen que sugiere renovado interes tras el enfriamiento post-listing.",
+   "catalyst": "Reaceleracion de volumen en Binance (volume_rank 227->57) tras el listing spot de marzo 2026; el proyecto activa governance y expansion de casos de uso de senales en Q2-Q3 2026.",
    "signals": {
-    "google_trends": "Interes en 'RWA'/'tokenizacion' elevado en 2026 con activos tokenizandose a ritmo acelerado y el sector RWA cerca de $13B.",
-    "social": "Comunidad vocalmente alcista comparando el punto de entrada con el early ONDO; tension entre progreso fundamental y valuacion deprimida.",
-    "binance": "Nuevo/reacelerando en top-100 de volumen; par PLUME/USDT activo en Binance con Plume como venue principal; graduo de Binance Alpha a Spot.",
-    "onchain": "200+ protocolos construyendo, ~110k usuarios y 20M transacciones; deposits que crecieron ~200% en un mes hasta ~$110M; airdrop Season 2 activo hasta agosto 2026."
+    "google_trends": "Interes acotado pero ligado al listing reciente de Binance; visibilidad global por ser Launchpool",
+    "social": "Comunidad activa tras el evento Launchpool (BNB/USDC/U/USD1); atencion de traders al ser proyecto Binance con Seed Tag",
+    "binance": "Nuevo/reaceleracion en volume_rank 227->57; listing Launchpool con 6 pares (USDT/USDC/BNB/U/USD1/TRY) que asegura profundidad",
+    "onchain": "Liquidez sana por multi-par en Binance; circulante ~19.85% con cliff de 12 meses para team/investors reduce presion de venta inmediata"
    },
-   "risk": "Liquidez fina y small-cap: mas manipulable y sensible a risk-off; el precio ha rendido pobremente pese a metricas de adopcion, y depende de que el capital del vault se traduzca en TVL/uso sostenido.",
+   "risk": "Seed Tag = alta volatilidad y proyecto early-stage con producto no probado; riesgo de dump post-hype tipico de Launchpool y de unlocks futuros (team/investors 42.5% tras cliff); menor historial dificulta validar la estructura. | TOKENOMICS: FDV/MCAP 5.5x (dilucion alta); float 18.2% (poco supply circulando)",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/plume/latest-updates/",
-    "https://www.coingecko.com/en/coins/plume",
-    "https://messari.io/project/plume-network",
-    "https://coinmarketcap.com/currencies/plume/"
+    "https://nftplazas.com/binance-list-opinion-opn/",
+    "https://www.mexc.co/news/845011",
+    "https://bitcoinworld.co.in/binance-opn-listing-march-launchpool/"
    ],
    "tokenomics": {
-    "mcap": 64701680,
-    "fdv": 108381767,
-    "fdv_mcap": 1.68,
-    "float_pct": 59.7,
-    "cg_id": "plume",
-    "warning": "",
-    "penalty": 0
+    "mcap": 11845791,
+    "fdv": 65181932,
+    "fdv_mcap": 5.5,
+    "float_pct": 18.2,
+    "cg_id": "opinion",
+    "warning": "FDV/MCAP 5.5x (dilucion alta); float 18.2% (poco supply circulando)",
+    "penalty": 1
    }
   }
  ],
@@ -226,39 +225,49 @@
     "PLUME/USDT"
    ],
    "regimen": "risk_off"
+  },
+  {
+   "date": "2026-07-06",
+   "narrativa": null,
+   "shortlist": [
+    "PYTH/USDT",
+    "IMX/USDT",
+    "OPN/USDT"
+   ],
+   "regimen": "neutral"
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-04T01:10:42Z",
+  "generated": "2026-07-05T01:04:17Z",
   "ranking": [
    {
     "atr_mult": 2.0,
     "vol_mult": 1.5,
-    "r_promedio": 1.89,
+    "r_promedio": 1.42,
     "n": 2
    },
    {
     "atr_mult": 2.0,
     "vol_mult": 1.3,
-    "r_promedio": 1.88,
+    "r_promedio": 1.41,
     "n": 2
    },
    {
     "atr_mult": 2.5,
     "vol_mult": 1.3,
-    "r_promedio": 0.78,
+    "r_promedio": 0.41,
     "n": 2
    },
    {
     "atr_mult": 2.5,
     "vol_mult": 1.5,
-    "r_promedio": 0.78,
+    "r_promedio": 0.4,
     "n": 2
    },
    {
     "atr_mult": 3.0,
     "vol_mult": 1.3,
-    "r_promedio": 0.64,
+    "r_promedio": 0.32,
     "n": 2
    }
   ]
