@@ -1,3 +1,0 @@
-AUTH_OK | USDT libre: 190.89826695
-[ejecutor-dash] publicado. 0 cerradas.
-DASH_VIVO
