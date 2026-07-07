@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06T23:19:43Z",
+ "generated_at": "2026-07-07T00:16:57Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -95,13 +95,13 @@
   }
  ],
  "shortlist": [
-  "PYTH/USDT",
-  "IMX/USDT",
-  "OPN/USDT"
+  "YFI/USDT",
+  "ZRO/USDT",
+  "ZAMA/USDT"
  ],
  "narrativa_active": null,
- "regimen": "neutral",
- "last_brain_run": "2026-07-06",
+ "regimen": "risk_off",
+ "last_brain_run": "2026-07-07",
  "recent_closed": [
   {
    "symbol": "PYTH/USDT",
@@ -151,92 +151,92 @@
  ],
  "shortlist_full": [
   {
-   "symbol": "PYTH/USDT",
+   "symbol": "YFI/USDT",
    "rank": 1,
    "type": "historica",
    "stage": "2",
-   "thesis": "Oracle con +4 anos de historia saliendo de base larga cerca de minimos con catalizador concreto y alpha comprobada; entrar sobre soporte $0.037-0.040 buscando continuacion hacia resistencia previa.",
-   "fundamentals": "Pyth es un oraculo de primera parte que agrega feeds de +125 instituciones (Jane Street, Cboe, Binance, OKX) para +380 feeds de cripto, equities, FX y commodities en +40 blockchains. El token se usa para Oracle Integrity Staking y governance. AHORA: se posiciona en el centro de la narrativa oracle/RWA que rota capital este mes, y el modelo pago crea revenue real ligado a uso que alimenta el PYTH Reserve. Market cap ~$276M (rank ~109), muy comprimido vs ATH, dando asimetria grande.",
-   "catalyst": "Nasdaq distribuira su data institucional TotalView on-chain via Pyth (1 jul, +6% ese dia); ademas el upgrade Pyth Core del 31 julio transiciona a modelo de suscripcion pago (desde $500/mes) con revenue al PYTH Reserve, creando demanda estructural.",
+   "thesis": "DeFi blue-chip saliendo de base larga: apareció con el score más alto del scanner (6.9, st2, trending) y disparo de volumen; entrada temprana con catalizador de valor-a-token concreto y suministro fijo.",
+   "fundamentals": "Yearn es un agregador de rendimiento (yield aggregator) en Ethereum con TVL ~$546M; YFI es token de gobernanza con supply fijo (~36.7k) totalmente circulante. Por qué ahora: propuesta de gobernanza que dirige 90% del revenue del protocolo a stakers (stYFI), que lo transformaría de token de gobernanza a activo con flujo de caja. mcap ~$65-74M, liquidez profunda en Binance/OKX.",
+   "catalyst": "Voto DAO pendiente para dirigir 90% del revenue a stakers (buy-and-stake demand); rebote impulsado por comentarios dovish de la Fed el 2-jul.",
    "signals": {
-    "google_trends": "Interes en narrativa oracle/RWA subiendo; Pyth citado repetidamente como infraestructura clave del sector RWA tokenization en julio 2026",
-    "social": "Traders en X marcando setups long con targets $0.043-0.047; sentimiento tornandose alcista con anomalias de volumen senaladas como interes institucional",
-    "binance": "Salto en volume_rank 146->62; spike de volumen spot +281% en un dia mientras BTC caia (alpha clara)",
-    "onchain": "PYTH subio 6.5% mientras BTC caia -1.6% y market cap total -1.34%, confirmado por volumen 24h +281% a >$86M: acumulacion spot organica"
+    "google_trends": "Interés de búsqueda ligado a narrativa DeFi revenue-sharing y al rebote del sector.",
+    "social": "Comunidad marcada como bullish en CoinGecko; foco en el overhaul de tokenomics.",
+    "binance": "Nuevo en top-100 por volumen (scanner sc 6.9, trending True); YFI/USDT con liquidez sana.",
+    "onchain": "Volumen +311% 24h a ~$16.8M; TVL ~$546M; supply fijo totalmente circulante (asimetría por escasez)."
    },
-   "risk": "Unlocks de vesting multi-anuales (gran desbloqueo en mayo 2026) que pueden meter presion de venta; ademas la transicion a pago podria reducir integraciones si builders migran a oraculos gratis.",
+   "risk": "Alta beta a BTC en régimen risk-off; exploits en contratos legacy (yETH $9M nov-2025) y competencia de agregadores multi-chain (Superform/Convex). Si el voto no pasa, se cae el catalizador.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/pyth-network/latest-updates/",
-    "https://www.bitrue.com/blog/pyth-core-upgrade-july-2026",
-    "https://wp.madrestravels.com/2026/07/03/wall-streets-on-chain-paradox-why-31billion-in-tokenized-capital-sits-idle/"
+    "https://coinmarketcap.com/cmc-ai/yearn-finance/price-prediction/",
+    "https://www.coingecko.com/en/coins/yearn-finance",
+    "https://coinmarketcap.com/cmc-ai/yearn-finance/price-analysis/"
    ],
    "tokenomics": {
-    "mcap": 318470215,
-    "fdv": 404407560,
-    "fdv_mcap": 1.27,
-    "float_pct": 78.7,
-    "cg_id": "pyth-network",
+    "mcap": 97107098,
+    "fdv": 99411831,
+    "fdv_mcap": 1.02,
+    "float_pct": 97.7,
+    "cg_id": "yearn-finance",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "IMX/USDT",
-   "rank": 2,
-   "type": "historica",
-   "stage": "1",
-   "thesis": "Gaming L2 establecido en base larga con acumulacion de ballenas; transicion Stage 1->2 temprana, entrar solo con cierre confirmado sobre resistencia (~$0.155-0.17) para evitar falsa senal, ya que la estructura aun es fragil.",
-   "fundamentals": "Immutable es una L2 zkEVM dedicada a gaming/NFT sobre Ethereum, con gas casi cero y retiros inmediatos. El token IMX se usa como gas nativo tras la fusion en Immutable Chain, staking (20% de fees de transaccion) y governance. AHORA: sector gaming rotando con partnerships mainstream (Ubisoft, Netmarble, AVALON AI para UGC). Precio ~$0.14, muy lejos de maximos, base extendida que ofrece asimetria si el sector despierta.",
-   "catalyst": "Partnership AVALON AI para plataforma UGC con beta en 2026, integraciones Ubisoft/Netmarble y lanzamientos de juegos; historicamente noticias tipo Ubisoft movieron IMX +52%.",
-   "signals": {
-    "google_trends": "Gaming/GameFi como narrativa secundaria; interes moderado pero creciente ligado a lanzamientos de juegos",
-    "social": "IMX listado entre top L2 por actividad social; sentimiento mixto (optimismo fundamental vs pesimismo tecnico de corto plazo)",
-    "binance": "Salto fuerte en volume_rank 192->53; spikes de volumen +63% y +97% en sesiones de breakout",
-    "onchain": "Outflows record de exchange (+4.67M IMX en un dia, el mayor de 2026) vinculados a acumulacion de ballenas y optimismo por zkEVM"
-   },
-   "risk": "Tendencia de fondo aun bajista (medias moviles 50/200 cayendo), unlocks de tokens que diluyen, y caida de wallets activas que amenaza el revenue de fees; puede seguir lateralizando si el sector gaming no reacelera.",
-   "sources": [
-    "https://coinmarketcap.com/cmc-ai/immutable-x/latest-updates/",
-    "https://messari.io/project/immutable",
-    "https://coinmarketcap.com/cmc-ai/immutable-x/price-prediction/"
-   ],
-   "tokenomics": {
-    "mcap": 116577608,
-    "fdv": 276760301,
-    "fdv_mcap": 2.37,
-    "float_pct": 42.1,
-    "cg_id": "immutable-x",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "OPN/USDT",
+   "symbol": "ZRO/USDT",
    "rank": 3,
+   "type": "historica",
+   "stage": "2",
+   "thesis": "Interop L0 establecido en reaceleración: salto de rank de volumen 162→66 con narrativa de pivote a L1 'Zero' y buybacks activos; setup temprano pero condicionado a absorber el unlock del 20-jul.",
+   "fundamentals": "LayerZero es protocolo de interoperabilidad omnichain que ha movido >$260B de valor y ~70% del volumen cross-chain de stablecoins; ZRO es el token de value-capture. Por qué ahora: repricing como infra clave (partner de bridging nativo de Robinhood Chain) + narrativa del nuevo L1 'Zero' donde ZRO sería el gas token, con >$112M en buybacks desplegados desde late-2025. mcap ~$230M.",
+   "catalyst": "Robinhood Chain lo nombra partner de cross-chain bridging (jun/jul); L1 'Zero' hacia fall-2026 con respaldo de Citadel/ARK/Tether; buybacks/burn en curso.",
+   "signals": {
+    "google_trends": "Interés ligado a 'Robinhood Chain' e infra institucional cross-chain.",
+    "social": "Comunidad bullish en CoinGecko; ZRO en el 'Robinhood read-through' basket con LINK/UNI.",
+    "binance": "Flagged #1 por cambio de volumen en Binance spot en episodios recientes (+300-430% en ventanas de 15min); salto rank 162→66.",
+    "onchain": "Volumen 24h ~$22M; >$112M en buybacks; ~252M circulante de 1B supply."
+   },
+   "risk": "Unlock de 25.71M ZRO (~$24M, 2.6% supply) el 20-jul añade presión vendedora; secuela reputacional del exploit KelpDAO ($292M) con migración de TVL a Chainlink CCIP; estructura descrita como frágil y en downtrend multi-mes. Es el candidato de mayor riesgo del shortlist.",
+   "sources": [
+    "https://coinmarketcap.com/top-stories/6a20a51b398a8965f3b1c071/",
+    "https://www.coingecko.com/en/coins/layerzero",
+    "https://coinmarketcap.com/cmc-ai/layerzero/price-prediction/"
+   ],
+   "tokenomics": {
+    "mcap": 254764041,
+    "fdv": 1009639649,
+    "fdv_mcap": 3.96,
+    "float_pct": 25.2,
+    "cg_id": "layerzero",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "ZAMA/USDT",
+   "rank": 2,
    "type": "launch",
    "stage": "2",
-   "thesis": "Launch reciente de Binance Launchpool (72o proyecto) con liquidez profunda multi-par y volumen reacelerando; entrar solo con estructura post-descubrimiento de precio confirmada, tratandolo como la apuesta mas especulativa de la canasta.",
-   "fundamentals": "Opinion (OPN) es infraestructura para el trading global de senales, opiniones y predicciones (prediction-market/signals). Supply total 1B, circulante inicial ~19.85% (198.5M). Token con rol de governance y participacion en el ecosistema. AHORA: aun en fase temprana de roadmap ('Ecosystem Growth' Q2->'Protocol Maturity' Q3 2026), con reaceleracion de volumen que sugiere renovado interes tras el enfriamiento post-listing.",
-   "catalyst": "Reaceleracion de volumen en Binance (volume_rank 227->57) tras el listing spot de marzo 2026; el proyecto activa governance y expansion de casos de uso de senales en Q2-Q3 2026.",
+   "thesis": "Listing reciente (feb-2026, Seed Tag) en narrativa FHE/privacy que empieza a rotar capital, con salto de rank de volumen 134→83 y catalizador de utilidad real; entrada Stage 1->2 temprana en un launch respaldado institucionalmente.",
+   "fundamentals": "Zama es una capa de confidencialidad cross-chain basada en Fully Homomorphic Encryption (FHE) sobre chains existentes; ZAMA se usa para fees y staking con modelo burn-and-mint (100% de fees quemados). Por qué ahora: pasa de tecnología teórica a producto con revenue (vault de cUSDC con Morpho/Steakhouse). Respaldo fuerte: $130M levantados, valuación >$1B, backers Pantera/Multicoin/Protocol Labs. mcap ~$70M.",
+   "catalyst": "Lanzamiento del primer vault de yield confidencial (cUSDC) con Morpho (que levantó $175M de Paradigm/a16z) el 28-jun; >$10M depositados en 4 días. Programa de desarrolladores Season 2 activo.",
    "signals": {
-    "google_trends": "Interes acotado pero ligado al listing reciente de Binance; visibilidad global por ser Launchpool",
-    "social": "Comunidad activa tras el evento Launchpool (BNB/USDC/U/USD1); atencion de traders al ser proyecto Binance con Seed Tag",
-    "binance": "Nuevo/reaceleracion en volume_rank 227->57; listing Launchpool con 6 pares (USDT/USDC/BNB/U/USD1/TRY) que asegura profundidad",
-    "onchain": "Liquidez sana por multi-par en Binance; circulante ~19.85% con cliff de 12 meses para team/investors reduce presion de venta inmediata"
+    "google_trends": "Narrativa FHE/privacy y 'confidential DeFi' ganando búsquedas tras integraciones institucionales.",
+    "social": "Comunidad bullish en CoinGecko; atención por integraciones (Morpho, Dfns para 400+ clientes enterprise).",
+    "binance": "Listado en Binance spot con Seed Tag; salto rank volumen 134→83; par ZAMA/USDT operable.",
+    "onchain": "Volumen 24h ~$24M; TVS (Total Value Shielded) creciente; supply 2.77B circulante (FDV ~$353M)."
    },
-   "risk": "Seed Tag = alta volatilidad y proyecto early-stage con producto no probado; riesgo de dump post-hype tipico de Launchpool y de unlocks futuros (team/investors 42.5% tras cliff); menor historial dificulta validar la estructura. | TOKENOMICS: FDV/MCAP 5.5x (dilucion alta); float 18.2% (poco supply circulando)",
+   "risk": "Seed Tag = alta volatilidad; overhang de compradores de la subasta a $0.05 (bajo agua ~-46%) crea techo psicológico; FHE aún computacionalmente pesada y riesgo regulatorio a protocolos de privacidad con activos USD. | TOKENOMICS: FDV/MCAP 5.0x (dilucion alta); float 20.0% (poco supply circulando)",
    "sources": [
-    "https://nftplazas.com/binance-list-opinion-opn/",
-    "https://www.mexc.co/news/845011",
-    "https://bitcoinworld.co.in/binance-opn-listing-march-launchpool/"
+    "https://coinmarketcap.com/cmc-ai/zama/latest-updates/",
+    "https://nftplazas.com/binance-list-zama/",
+    "https://dropstab.com/coins/zama"
    ],
    "tokenomics": {
-    "mcap": 11845791,
-    "fdv": 65181932,
-    "fdv_mcap": 5.5,
-    "float_pct": 18.2,
-    "cg_id": "opinion",
-    "warning": "FDV/MCAP 5.5x (dilucion alta); float 18.2% (poco supply circulando)",
+    "mcap": 76659495,
+    "fdv": 383297477,
+    "fdv_mcap": 5.0,
+    "float_pct": 20.0,
+    "cg_id": "zama",
+    "warning": "FDV/MCAP 5.0x (dilucion alta); float 20.0% (poco supply circulando)",
     "penalty": 1
    }
   }
@@ -281,6 +281,16 @@
     "OPN/USDT"
    ],
    "regimen": "neutral"
+  },
+  {
+   "date": "2026-07-07",
+   "narrativa": null,
+   "shortlist": [
+    "YFI/USDT",
+    "ZRO/USDT",
+    "ZAMA/USDT"
+   ],
+   "regimen": "risk_off"
   }
  ],
  "loop_recs": {
