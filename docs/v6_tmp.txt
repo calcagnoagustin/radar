@@ -1,9 +1,0 @@
-/usr/lib64/python3.9/tarfile.py:2288: RuntimeWarning: The default behavior of tarfile extraction has been changed to disallow common exploits (including CVE-2007-4559). By default, absolute/parent paths are disallowed and some mode bits are cleared. 
-  warnings.warn(
-KEYS_ENCONTRADAS: False
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/home/opc/bot_semillas/ejecutor_dash.py", line 70
-    return {"dry_run": not live, "equity_now": (_real_equity(gs) if live else None) or (gs.get("equity_base", 46.0) + (0 if live else pnl)), 46.0) + (0 if os.path.exists(os.path.join(GDIR, "LIVE")) else pnl),
-                                                                                                                                                 ^
-SyntaxError: closing parenthesis ')' does not match opening parenthesis '{'
