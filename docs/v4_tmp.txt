@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/tmp/fix_keys.py", line 2, in <module>
+    cfg = json.load(open('/opt/ganesha_bot/config.json'))
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/ganesha_bot/config.json'
+---
+ls: cannot access '/home/opc/bot_semillas/ejecutor/keys.json': No such file or directory
+---
+{
+ "positions": {
+  "ATM/USDT": {
+   "entry": 2.334,
+   "qty": 3.3068035943517327,
+   "stop": 2.0557857142857143,
+   "r": 0.27821428571428575,
+   "so": false,
+   "stop_oid": null,
+   "mode": "PAPER",
+   "opened": "2026-07-07T04:07:12Z"
+  }
+ },
+ "paper_pnl": 0.0,
+ "equity_base": 46.0
+}---
+{"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper", "ts": 1783440425.1343157, "iso": "2026-07-07T16:07:05Z"}
+{"type": "scan", "mode": "PAPER", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783440425.1735713, "iso": "2026-07-07T16:07:05Z"}
