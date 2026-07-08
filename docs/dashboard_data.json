@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07T00:16:57Z",
+ "generated_at": "2026-07-08T00:17:01Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -95,13 +95,13 @@
   }
  ],
  "shortlist": [
-  "YFI/USDT",
-  "ZRO/USDT",
-  "ZAMA/USDT"
+  "LDO/USDT",
+  "SXT/USDT",
+  "HUMA/USDT"
  ],
  "narrativa_active": null,
- "regimen": "risk_off",
- "last_brain_run": "2026-07-07",
+ "regimen": "neutral",
+ "last_brain_run": "2026-07-08",
  "recent_closed": [
   {
    "symbol": "PYTH/USDT",
@@ -151,92 +151,92 @@
  ],
  "shortlist_full": [
   {
-   "symbol": "YFI/USDT",
+   "symbol": "LDO/USDT",
    "rank": 1,
    "type": "historica",
    "stage": "2",
-   "thesis": "DeFi blue-chip saliendo de base larga: apareció con el score más alto del scanner (6.9, st2, trending) y disparo de volumen; entrada temprana con catalizador de valor-a-token concreto y suministro fijo.",
-   "fundamentals": "Yearn es un agregador de rendimiento (yield aggregator) en Ethereum con TVL ~$546M; YFI es token de gobernanza con supply fijo (~36.7k) totalmente circulante. Por qué ahora: propuesta de gobernanza que dirige 90% del revenue del protocolo a stakers (stYFI), que lo transformaría de token de gobernanza a activo con flujo de caja. mcap ~$65-74M, liquidez profunda en Binance/OKX.",
-   "catalyst": "Voto DAO pendiente para dirigir 90% del revenue a stakers (buy-and-stake demand); rebote impulsado por comentarios dovish de la Fed el 2-jul.",
+   "thesis": "Salió de un rango horizontal de varias semanas de acumulación con velas de continuación (no un solo spike), convirtiendo resistencia previa en soporte; entrar en pullbacks manteniendo estructura, con aceleración clara por encima de $0.40.",
+   "fundamentals": "Lido es el líder de liquid staking de Ethereum (stETH); su token LDO es de gobernanza sobre parámetros del protocolo. Sector DeFi/liquid staking, justo el que está recibiendo la rotación de capital este mes. Liquidez profunda (~$1.8B market cap, $100M+ volumen diario), la más sana del shortlist.",
+   "catalyst": "Nuevo plan de buyback automático que mejora la tokenómica y reduce supply circulante, más el giro a dual-governance (veto de stETH holders) que suma confianza institucional; expansión de producto con Lido v3/stVaults.",
    "signals": {
-    "google_trends": "Interés de búsqueda ligado a narrativa DeFi revenue-sharing y al rebote del sector.",
-    "social": "Comunidad marcada como bullish en CoinGecko; foco en el overhaul de tokenomics.",
-    "binance": "Nuevo en top-100 por volumen (scanner sc 6.9, trending True); YFI/USDT con liquidez sana.",
-    "onchain": "Volumen +311% 24h a ~$16.8M; TVL ~$546M; supply fijo totalmente circulante (asimetría por escasez)."
+    "google_trends": "Interés en 'liquid staking' y LDO repunta con la rotación DeFi del mes",
+    "social": "Sentimiento comunitario muy alcista (~85% bullish) y narrativa de outperformance dentro del segmento altcoin",
+    "binance": "Salto de volume_rank 127->62; par LDO/USDT es el mercado más activo del token en Binance",
+    "onchain": "Reservas en exchanges cayendo ~3% semanal, top-100 holders acumulando, 141 wallets nuevas en un día (máximo en 2 meses)"
    },
-   "risk": "Alta beta a BTC en régimen risk-off; exploits en contratos legacy (yETH $9M nov-2025) y competencia de agregadores multi-chain (Superform/Convex). Si el voto no pasa, se cae el catalizador.",
+   "risk": "Alta correlación/beta con BTC: si el rebote de BTC se agota (posible short-squeeze, no demanda spot fresca), LDO puede devolver ganancias rápido. Perder $0.36 debilita la tesis.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/yearn-finance/price-prediction/",
-    "https://www.coingecko.com/en/coins/yearn-finance",
-    "https://coinmarketcap.com/cmc-ai/yearn-finance/price-analysis/"
+    "https://beincrypto.com/lido-dao-ldo-rally-accumulation/",
+    "https://coinpedia.org/price-analysis/lido-dao-price-outlook-is-ldo-about-to-outperform-the-market/",
+    "https://www.coingecko.com/en/coins/lido-dao"
    ],
    "tokenomics": {
-    "mcap": 97107098,
-    "fdv": 99411831,
-    "fdv_mcap": 1.02,
-    "float_pct": 97.7,
-    "cg_id": "yearn-finance",
+    "mcap": 264056189,
+    "fdv": 313295367,
+    "fdv_mcap": 1.19,
+    "float_pct": 84.3,
+    "cg_id": "lido-dao",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "ZRO/USDT",
+   "symbol": "SXT/USDT",
    "rank": 3,
-   "type": "historica",
-   "stage": "2",
-   "thesis": "Interop L0 establecido en reaceleración: salto de rank de volumen 162→66 con narrativa de pivote a L1 'Zero' y buybacks activos; setup temprano pero condicionado a absorber el unlock del 20-jul.",
-   "fundamentals": "LayerZero es protocolo de interoperabilidad omnichain que ha movido >$260B de valor y ~70% del volumen cross-chain de stablecoins; ZRO es el token de value-capture. Por qué ahora: repricing como infra clave (partner de bridging nativo de Robinhood Chain) + narrativa del nuevo L1 'Zero' donde ZRO sería el gas token, con >$112M en buybacks desplegados desde late-2025. mcap ~$230M.",
-   "catalyst": "Robinhood Chain lo nombra partner de cross-chain bridging (jun/jul); L1 'Zero' hacia fall-2026 con respaldo de Citadel/ARK/Tether; buybacks/burn en curso.",
+   "type": "launch",
+   "stage": "1",
+   "thesis": "Candidata 'próximo Kite' de máxima asimetría: cap diminuta (~$17-21M) cerca de ATL, con narrativa AI+ZK y catalizador institucional concreto. Es la apuesta especulativa temprana del shortlist; solo entrar con confirmación de estructura y size chico por el riesgo de unlocks.",
+   "fundamentals": "Space and Time es blockchain L1 de datos ZK-probados (Proof of SQL sub-segundo) respaldada por Microsoft y Chainlink; permite a smart contracts y agentes AI consultar datos verificables on-chain. Token SXT: staking de validadores, fees de queries, gobernanza. Sector AI/DePIN/datos verificables, narrativa caliente. Lanzado vía Binance Launchpool (mayo 2025).",
+   "catalyst": "Grayscale lanzó el Space and Time Trust (24 junio 2026) dando exposición institucional a SXT; integración de USDC para pagar ZK coprocessing auto-convertido a SXT, ampliando demanda real del token.",
    "signals": {
-    "google_trends": "Interés ligado a 'Robinhood Chain' e infra institucional cross-chain.",
-    "social": "Comunidad bullish en CoinGecko; ZRO en el 'Robinhood read-through' basket con LINK/UNI.",
-    "binance": "Flagged #1 por cambio de volumen en Binance spot en episodios recientes (+300-430% en ventanas de 15min); salto rank 162→66.",
-    "onchain": "Volumen 24h ~$22M; >$112M en buybacks; ~252M circulante de 1B supply."
+    "google_trends": "Interés en narrativa 'verifiable data / AI + blockchain' en alza",
+    "social": "Comunidad alcista; SXT apareció entre ganadores diarios de altcoins junto a otros tokens de staking/utility",
+    "binance": "Nuevo en top-100 por volumen; disponible en Binance Spot desde Launchpool, con Binance Alpha airdrops",
+    "onchain": "Nuevas integraciones (USDC, mainnet para tokenized assets); supply ~52% desbloqueado, validadores staking SXT"
    },
-   "risk": "Unlock de 25.71M ZRO (~$24M, 2.6% supply) el 20-jul añade presión vendedora; secuela reputacional del exploit KelpDAO ($292M) con migración de TVL a Chainlink CCIP; estructura descrita como frágil y en downtrend multi-mes. Es el candidato de mayor riesgo del shortlist.",
+   "risk": "Riesgo alto: cap muy chica y liquidez fina (fácilmente manipulable), precio en mínimos históricos y unlocks mensuales de ~1.6% del supply (8 de cada mes) que presionan. Si no hay estructura técnica clara, NO entra — la señal técnica manda sobre la narrativa.",
    "sources": [
-    "https://coinmarketcap.com/top-stories/6a20a51b398a8965f3b1c071/",
-    "https://www.coingecko.com/en/coins/layerzero",
-    "https://coinmarketcap.com/cmc-ai/layerzero/price-prediction/"
+    "https://coincodex.com/crypto/space-and-time/",
+    "https://www.coingecko.com/en/coins/space-and-time",
+    "https://www.kucoin.com/price/SXT"
    ],
    "tokenomics": {
-    "mcap": 254764041,
-    "fdv": 1009639649,
-    "fdv_mcap": 3.96,
-    "float_pct": 25.2,
-    "cg_id": "layerzero",
+    "mcap": 17177419,
+    "fdv": 33048577,
+    "fdv_mcap": 1.92,
+    "float_pct": 52.0,
+    "cg_id": "space-and-time",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "ZAMA/USDT",
+   "symbol": "HUMA/USDT",
    "rank": 2,
-   "type": "launch",
-   "stage": "2",
-   "thesis": "Listing reciente (feb-2026, Seed Tag) en narrativa FHE/privacy que empieza a rotar capital, con salto de rank de volumen 134→83 y catalizador de utilidad real; entrada Stage 1->2 temprana en un launch respaldado institucionalmente.",
-   "fundamentals": "Zama es una capa de confidencialidad cross-chain basada en Fully Homomorphic Encryption (FHE) sobre chains existentes; ZAMA se usa para fees y staking con modelo burn-and-mint (100% de fees quemados). Por qué ahora: pasa de tecnología teórica a producto con revenue (vault de cUSDC con Morpho/Steakhouse). Respaldo fuerte: $130M levantados, valuación >$1B, backers Pantera/Multicoin/Protocol Labs. mcap ~$70M.",
-   "catalyst": "Lanzamiento del primer vault de yield confidencial (cUSDC) con Morpho (que levantó $175M de Paradigm/a16z) el 28-jun; >$10M depositados en 4 días. Programa de desarrolladores Season 2 activo.",
+   "type": "historica",
+   "stage": "1",
+   "thesis": "Base larga y plana justo debajo del nivel de breakout $0.0225 que los traders vigilan; entrar en cierre diario confirmado por encima con volumen, con objetivos analistas en la zona $0.05-$0.10. Estructura de acumulación pre-movimiento, disciplina cumplida si rompe.",
+   "fundamentals": "Huma es la primera red PayFi: financia pagos globales con settlement on-chain en stablecoins (cross-border, tarjetas, trade finance, DePIN). Utilidad real del token (fees, gobernanza, staking). Ingresos ~$17M anualizados (+16x interanual) y $1.5B+ en volumen procesado, respaldo VC fuerte. Cap ~$40-74M con liquidez sana ($8-12M volumen).",
+   "catalyst": "Integración de Chainlink CCIP (mayo) para bridging cross-chain seguro tras un exploit de un competidor, más rol en Circle Payments Network que da acceso directo a flujos institucionales de settlement en USDC. Narrativa PayFi rotando capital.",
    "signals": {
-    "google_trends": "Narrativa FHE/privacy y 'confidential DeFi' ganando búsquedas tras integraciones institucionales.",
-    "social": "Comunidad bullish en CoinGecko; atención por integraciones (Morpho, Dfns para 400+ clientes enterprise).",
-    "binance": "Listado en Binance spot con Seed Tag; salto rank volumen 134→83; par ZAMA/USDT operable.",
-    "onchain": "Volumen 24h ~$24M; TVS (Total Value Shielded) creciente; supply 2.77B circulante (FDV ~$353M)."
+    "google_trends": "'PayFi' emergiendo como narrativa DeFi buscada en 2026",
+    "social": "Sentimiento neutral-a-alcista en X (~40% bullish, 60% neutral); traders apuntando a target de ciclo $0.20",
+    "binance": "Nuevo en top-100 por volumen; token vino de Binance Launchpool con base establecida",
+    "onchain": "$1.5B+ en transacciones procesadas, wallets activas crecieron +490% tras Huma 2.0 en Solana; ingresos por fees de flujos de pago reales"
    },
-   "risk": "Seed Tag = alta volatilidad; overhang de compradores de la subasta a $0.05 (bajo agua ~-46%) crea techo psicológico; FHE aún computacionalmente pesada y riesgo regulatorio a protocolos de privacidad con activos USD. | TOKENOMICS: FDV/MCAP 5.0x (dilucion alta); float 20.0% (poco supply circulando)",
+   "risk": "Proyecto joven con concentración/control central y unlocks de team/inversores (lock extendido a 18 meses). Sin cierre firme sobre $0.0225 la tesis técnica no se activa; liquidez menor que LDO. | TOKENOMICS: FDV/MCAP 5.77x (dilucion alta); float 17.3% (poco supply circulando)",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/zama/latest-updates/",
-    "https://nftplazas.com/binance-list-zama/",
-    "https://dropstab.com/coins/zama"
+    "https://www.streetinsider.com/MarketMediaWire/Huma+Finance+(HUMA)+Price+Prediction+2026/26493789.html",
+    "https://coinmarketcap.com/cmc-ai/huma-finance/latest-updates/",
+    "https://messari.io/project/huma-finance"
    ],
    "tokenomics": {
-    "mcap": 76659495,
-    "fdv": 383297477,
-    "fdv_mcap": 5.0,
-    "float_pct": 20.0,
-    "cg_id": "zama",
-    "warning": "FDV/MCAP 5.0x (dilucion alta); float 20.0% (poco supply circulando)",
+    "mcap": 42979670,
+    "fdv": 247959634,
+    "fdv_mcap": 5.77,
+    "float_pct": 17.3,
+    "cg_id": "huma-finance",
+    "warning": "FDV/MCAP 5.77x (dilucion alta); float 17.3% (poco supply circulando)",
     "penalty": 1
    }
   }
@@ -291,10 +291,20 @@
     "ZAMA/USDT"
    ],
    "regimen": "risk_off"
+  },
+  {
+   "date": "2026-07-08",
+   "narrativa": null,
+   "shortlist": [
+    "LDO/USDT",
+    "SXT/USDT",
+    "HUMA/USDT"
+   ],
+   "regimen": "neutral"
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-06T00:17:03Z",
+  "generated": "2026-07-07T00:17:03Z",
   "ranking": [
    {
     "atr_mult": 2.0,
