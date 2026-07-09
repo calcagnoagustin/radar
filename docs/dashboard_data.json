@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-08T00:17:01Z",
+ "generated_at": "2026-07-09T01:01:22Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -95,13 +95,13 @@
   }
  ],
  "shortlist": [
-  "LDO/USDT",
-  "SXT/USDT",
-  "HUMA/USDT"
+  "EIGEN/USDT",
+  "KAITO/USDT",
+  "ENSO/USDT"
  ],
  "narrativa_active": null,
  "regimen": "neutral",
- "last_brain_run": "2026-07-08",
+ "last_brain_run": "2026-07-09",
  "recent_closed": [
   {
    "symbol": "PYTH/USDT",
@@ -151,92 +151,95 @@
  ],
  "shortlist_full": [
   {
-   "symbol": "LDO/USDT",
+   "symbol": "EIGEN/USDT",
+   "rank": 2,
+   "type": "historica",
+   "stage": "2",
+   "thesis": "L1/restaking establecido saliendo de base larga cerca de mínimos históricos; volume_rank 122->61 y +32% semanal con volumen $120M marcan reaceleración temprana desde acumulación, no extendido (>90% bajo su ATH).",
+   "fundamentals": "EIGEN es el work token universal 'intersubjetivo' de EigenLayer, ahora EigenCloud tras el rebrand mid-2025 hacia una 'verifiable cloud' que integra EigenDA (data availability), EigenCompute y EigenVerify. Sector restaking/infra/AI con TVL de ecosistema restaking ~$16B y EigenLayer comandando la mayoría. Respaldo de a16z ($70M) y roadmap H2 2026 en AgentKit (AI agents onchain) y escalado de EigenDA. Market cap ~$165-182M, liquidez profunda en Binance/Gate/OKX.",
+   "catalyst": "ELIP-12: propuesta de gobernanza para dirigir revenue de fees a buybacks de EIGEN (presión deflacionaria) vía Incentives Committee; expansión a AI agents (AgentKit) alinea con la narrativa AI/DePIN que rota capital.",
+   "signals": {
+    "google_trends": "Interés en 'restaking' y EigenCloud sostenido dentro de la narrativa infra/AI; rebrand amplía TAM y mindshare.",
+    "social": "Comunidad alcista en CoinGecko; usó Kaito para sentiment durante su airdrop, señal de presencia social activa.",
+    "binance": "Volume_rank 122->61; par EIGEN/USDT activo en Binance; +6% 24h con volumen 24h escalando a $120M (vol/mktcap ~66%).",
+    "onchain": "MC ~$165-182M sobre ~740M supply circulante; TVL de restaking ~$16B como fundamento; fees onchain aún bajos (riesgo de value-accrual)."
+   },
+   "risk": "Emisión/unlocks constantes (36.82M EIGEN ~$8.7M el 1 jul) generan dilución persistente que puede tapar la demanda; el value-accrual depende de que AVS fees superen emisiones, aún no probado; correlación negativa con top-10 puede frenar el impulso si BTC lidera.",
+   "sources": [
+    "https://coinmarketcap.com/cmc-ai/eigencloud/latest-updates/",
+    "https://www.coingecko.com/en/coins/eigencloud",
+    "https://tokenomics.com/articles/eigenlayer-tokenomics-how-eigen-captures-restaking-revenue",
+    "https://coinstats.app/coins/eigenlayer/"
+   ],
+   "tokenomics": {
+    "mcap": 182867968,
+    "fdv": 453227503,
+    "fdv_mcap": 2.48,
+    "float_pct": 40.3,
+    "cg_id": "eigenlayer",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "KAITO/USDT",
    "rank": 1,
    "type": "historica",
    "stage": "2",
-   "thesis": "Salió de un rango horizontal de varias semanas de acumulación con velas de continuación (no un solo spike), convirtiendo resistencia previa en soporte; entrar en pullbacks manteniendo estructura, con aceleración clara por encima de $0.40.",
-   "fundamentals": "Lido es el líder de liquid staking de Ethereum (stETH); su token LDO es de gobernanza sobre parámetros del protocolo. Sector DeFi/liquid staking, justo el que está recibiendo la rotación de capital este mes. Liquidez profunda (~$1.8B market cap, $100M+ volumen diario), la más sana del shortlist.",
-   "catalyst": "Nuevo plan de buyback automático que mejora la tokenómica y reduce supply circulante, más el giro a dual-governance (veto de stETH holders) que suma confianza institucional; expansión de producto con Lido v3/stVaults.",
+   "thesis": "Salió de canal descendente largo y aceleró volumen (rank 114->19, +740% intradía), con estructura Stage 2 confirmada y liderazgo del sector InfoFi/AI que rota capital este mes. Entrada temprana con base construida durante meses, no extendida.",
+   "fundamentals": "KAITO es el token nativo de la red InfoFi de Kaito, plataforma AI que cuantifica y monetiza la atención (mindshare) del ecosistema cripto; el token sirve como moneda de red, gobernanza y para influir la distribución de atención. Tras cerrar Yaps en enero 2026 por el veto de API de X, pivotó a Kaito Studio, Capital Launchpad y Attention Markets con Polymarket, diversificando su moat de datos a X/TikTok/YouTube. Respaldado por Dragonfly, Sequoia China y Jane Street. Market cap ~$160-195M, liquidez sana con Binance como venue principal.",
+   "catalyst": "Reaceleración de volumen tras breakout técnico + narrativa InfoFi caliente (Attention Markets con Polymarket escalando a miles de mercados en 2026); pivote a data-infra reduce riesgo existencial de plataforma.",
    "signals": {
-    "google_trends": "Interés en 'liquid staking' y LDO repunta con la rotación DeFi del mes",
-    "social": "Sentimiento comunitario muy alcista (~85% bullish) y narrativa de outperformance dentro del segmento altcoin",
-    "binance": "Salto de volume_rank 127->62; par LDO/USDT es el mercado más activo del token en Binance",
-    "onchain": "Reservas en exchanges cayendo ~3% semanal, top-100 holders acumulando, 141 wallets nuevas en un día (máximo en 2 meses)"
+    "google_trends": "Interés de busqueda en 'InfoFi' y 'mindshare' creciente como narrativa de sector; KAITO como pionero y referencia del tema en 2026.",
+    "social": "Sentimiento en extreme-greed en Upbit (índice 83, top-3, 29 jun); comunidad alcista; cuenta oficial mantiene momentum de marca.",
+    "binance": "Volume_rank saltó 114->19; par KAITO/USDT es el mercado más activo; +31% en 24h con volumen +508% vol/mktcap.",
+    "onchain": "MC ~$163-195M sobre supply circulante ~241M; 414K holders; volumen 24h $84-113M señalando participación real (no ilíquido)."
    },
-   "risk": "Alta correlación/beta con BTC: si el rebote de BTC se agota (posible short-squeeze, no demanda spot fresca), LDO puede devolver ganancias rápido. Perder $0.36 debilita la tesis.",
+   "risk": "Unlock de 17.6M KAITO (~$11.9M, 1.8% supply) el 20 de julio añade presión de oferta; RSI elevado (~74) tras el rally exige esperar retest de soporte para no comprar extendido; utilidad del token aún reescribiéndose tras la muerte de Yaps. | TOKENOMICS: float 24.1% (poco supply circulando)",
    "sources": [
-    "https://beincrypto.com/lido-dao-ldo-rally-accumulation/",
-    "https://coinpedia.org/price-analysis/lido-dao-price-outlook-is-ldo-about-to-outperform-the-market/",
-    "https://www.coingecko.com/en/coins/lido-dao"
+    "https://www.coingecko.com/en/coins/kaito",
+    "https://www.coingecko.com/learn/what-is-kaito-earn-yap-points",
+    "https://coinmarketcap.com/currencies/kaito/",
+    "https://coinmarketcap.com/cmc-ai/kaito/latest-updates/"
    ],
    "tokenomics": {
-    "mcap": 264056189,
-    "fdv": 313295367,
-    "fdv_mcap": 1.19,
-    "float_pct": 84.3,
-    "cg_id": "lido-dao",
-    "warning": "",
-    "penalty": 0
+    "mcap": 157927540,
+    "fdv": 654245274,
+    "fdv_mcap": 4.14,
+    "float_pct": 24.1,
+    "cg_id": "kaito",
+    "warning": "float 24.1% (poco supply circulando)",
+    "penalty": 1
    }
   },
   {
-   "symbol": "SXT/USDT",
+   "symbol": "ENSO/USDT",
    "rank": 3,
    "type": "launch",
-   "stage": "1",
-   "thesis": "Candidata 'próximo Kite' de máxima asimetría: cap diminuta (~$17-21M) cerca de ATL, con narrativa AI+ZK y catalizador institucional concreto. Es la apuesta especulativa temprana del shortlist; solo entrar con confirmación de estructura y size chico por el riesgo de unlocks.",
-   "fundamentals": "Space and Time es blockchain L1 de datos ZK-probados (Proof of SQL sub-segundo) respaldada por Microsoft y Chainlink; permite a smart contracts y agentes AI consultar datos verificables on-chain. Token SXT: staking de validadores, fees de queries, gobernanza. Sector AI/DePIN/datos verificables, narrativa caliente. Lanzado vía Binance Launchpool (mayo 2025).",
-   "catalyst": "Grayscale lanzó el Space and Time Trust (24 junio 2026) dando exposición institucional a SXT; integración de USDC para pagar ZK coprocessing auto-convertido a SXT, ampliando demanda real del token.",
+   "stage": "2",
+   "thesis": "Launch reciente de Binance (HODLer Airdrop, oct 2025) rebotando +33% desde mínimo histórico con volume_rank 272->69; infra de interoperabilidad/intents que rota capital, con supply circulante bajo (asimetría alta) y estructura girando al alza sobre soporte $1.70 previo.",
+   "fundamentals": "ENSO es el token nativo de Enso Network, capa de ejecución unificada 'super-conector' multichain que convierte 'intents' en operaciones onchain vía su Intent Engine y sistema de Shortcuts, validadas por validators con staking/slashing. Ya settleó >$17B onchain, potencia 145+ productos enterprise y facilitó >$3.1B en el launch de Berachain. Respaldado por Polychain, Multicoin, Naval, IDEO. Genesis supply 100M, circulante ~21M (FDV ~$65M), listado en Binance Spot con pares USDT/USDC/BNB/FDUSD/TRY.",
+   "catalyst": "Reaceleración de volumen (rank 272->69) sobre narrativa de chain-abstraction/intents e infra multichain; posicionamiento como 'plumbing' en workflows de launches y migraciones (Uniswap/LayerZero/Stargate).",
    "signals": {
-    "google_trends": "Interés en narrativa 'verifiable data / AI + blockchain' en alza",
-    "social": "Comunidad alcista; SXT apareció entre ganadores diarios de altcoins junto a otros tokens de staking/utility",
-    "binance": "Nuevo en top-100 por volumen; disponible en Binance Spot desde Launchpool, con Binance Alpha airdrops",
-    "onchain": "Nuevas integraciones (USDC, mainnet para tokenized assets); supply ~52% desbloqueado, validadores staking SXT"
+    "google_trends": "Interés en 'intents' y 'chain abstraction' como narrativa infra emergente; Enso apareciendo repetidamente en workflows multichain.",
+    "social": "Base de +70 angels de LayerZero/1inch/Yearn/Pendle; comunidad activa tras rallies previos de +50% semanal con volumen.",
+    "binance": "Volume_rank saltó 272->69; ENSO/USDT es el mercado más activo en Binance; +8.6% 7d superando al mercado global.",
+    "onchain": "MC ~$13M sobre circulante ~21M pero >$17B settleados onchain como tracción real; FDV ~$65M implica gap circulante/FDV a vigilar."
    },
-   "risk": "Riesgo alto: cap muy chica y liquidez fina (fácilmente manipulable), precio en mínimos históricos y unlocks mensuales de ~1.6% del supply (8 de cada mes) que presionan. Si no hay estructura técnica clara, NO entra — la señal técnica manda sobre la narrativa.",
+   "risk": "Micro-cap (~$13M MC) con liquidez más fina que los otros dos: susceptible a manipulación y volatilidad amplificada; gap circulante-FDV grande con inflación inicial 8% anual = presión de emisiones futura; -88% bajo ATH exige confirmar que el giro no es rebote muerto. | TOKENOMICS: float 16.2% (poco supply circulando)",
    "sources": [
-    "https://coincodex.com/crypto/space-and-time/",
-    "https://www.coingecko.com/en/coins/space-and-time",
-    "https://www.kucoin.com/price/SXT"
+    "https://www.coingecko.com/en/coins/enso",
+    "https://coinmarketcap.com/currencies/enso/",
+    "https://www.cryptoninjas.net/news/binance-to-list-enso-enso-after-1-75m-airdrop-new-cross-chain-network-links-web2-web3/",
+    "https://blog.millionero.com/blog/enso-network-and-enso-token-funding-tokenomics-unlocks-and-the-bigger-picture/"
    ],
    "tokenomics": {
-    "mcap": 17177419,
-    "fdv": 33048577,
-    "fdv_mcap": 1.92,
-    "float_pct": 52.0,
-    "cg_id": "space-and-time",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "HUMA/USDT",
-   "rank": 2,
-   "type": "historica",
-   "stage": "1",
-   "thesis": "Base larga y plana justo debajo del nivel de breakout $0.0225 que los traders vigilan; entrar en cierre diario confirmado por encima con volumen, con objetivos analistas en la zona $0.05-$0.10. Estructura de acumulación pre-movimiento, disciplina cumplida si rompe.",
-   "fundamentals": "Huma es la primera red PayFi: financia pagos globales con settlement on-chain en stablecoins (cross-border, tarjetas, trade finance, DePIN). Utilidad real del token (fees, gobernanza, staking). Ingresos ~$17M anualizados (+16x interanual) y $1.5B+ en volumen procesado, respaldo VC fuerte. Cap ~$40-74M con liquidez sana ($8-12M volumen).",
-   "catalyst": "Integración de Chainlink CCIP (mayo) para bridging cross-chain seguro tras un exploit de un competidor, más rol en Circle Payments Network que da acceso directo a flujos institucionales de settlement en USDC. Narrativa PayFi rotando capital.",
-   "signals": {
-    "google_trends": "'PayFi' emergiendo como narrativa DeFi buscada en 2026",
-    "social": "Sentimiento neutral-a-alcista en X (~40% bullish, 60% neutral); traders apuntando a target de ciclo $0.20",
-    "binance": "Nuevo en top-100 por volumen; token vino de Binance Launchpool con base establecida",
-    "onchain": "$1.5B+ en transacciones procesadas, wallets activas crecieron +490% tras Huma 2.0 en Solana; ingresos por fees de flujos de pago reales"
-   },
-   "risk": "Proyecto joven con concentración/control central y unlocks de team/inversores (lock extendido a 18 meses). Sin cierre firme sobre $0.0225 la tesis técnica no se activa; liquidez menor que LDO. | TOKENOMICS: FDV/MCAP 5.77x (dilucion alta); float 17.3% (poco supply circulando)",
-   "sources": [
-    "https://www.streetinsider.com/MarketMediaWire/Huma+Finance+(HUMA)+Price+Prediction+2026/26493789.html",
-    "https://coinmarketcap.com/cmc-ai/huma-finance/latest-updates/",
-    "https://messari.io/project/huma-finance"
-   ],
-   "tokenomics": {
-    "mcap": 42979670,
-    "fdv": 247959634,
-    "fdv_mcap": 5.77,
-    "float_pct": 17.3,
-    "cg_id": "huma-finance",
-    "warning": "FDV/MCAP 5.77x (dilucion alta); float 17.3% (poco supply circulando)",
+    "mcap": 14010327,
+    "fdv": 68044327,
+    "fdv_mcap": 4.86,
+    "float_pct": 16.2,
+    "cg_id": "enso",
+    "warning": "float 16.2% (poco supply circulando)",
     "penalty": 1
    }
   }
@@ -301,10 +304,20 @@
     "HUMA/USDT"
    ],
    "regimen": "neutral"
+  },
+  {
+   "date": "2026-07-09",
+   "narrativa": null,
+   "shortlist": [
+    "EIGEN/USDT",
+    "KAITO/USDT",
+    "ENSO/USDT"
+   ],
+   "regimen": "neutral"
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-07T00:17:03Z",
+  "generated": "2026-07-08T00:17:12Z",
   "ranking": [
    {
     "atr_mult": 2.0,
