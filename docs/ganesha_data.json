@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 190.9,
+ "equity_now": 190.83,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -8,6 +8,14 @@
  "trades_total": 0,
  "win_rate": 0,
  "profit_factor": 0,
- "open_positions": [],
+ "open_positions": [
+  {
+   "symbol": "ATM/USDT",
+   "entry": 2.484,
+   "qty": 21.55,
+   "stop": 2.322857142857143,
+   "tp1_done": false
+  }
+ ],
  "recent_closed": []
 }
