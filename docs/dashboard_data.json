@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09T01:01:22Z",
+ "generated_at": "2026-07-10T00:15:49Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.9192543,
@@ -101,7 +101,7 @@
  ],
  "narrativa_active": null,
  "regimen": "neutral",
- "last_brain_run": "2026-07-09",
+ "last_brain_run": "2026-07-10",
  "recent_closed": [
   {
    "symbol": "PYTH/USDT",
@@ -314,10 +314,20 @@
     "ENSO/USDT"
    ],
    "regimen": "neutral"
+  },
+  {
+   "date": "2026-07-10",
+   "narrativa": null,
+   "shortlist": [
+    "EIGEN/USDT",
+    "KAITO/USDT",
+    "ENSO/USDT"
+   ],
+   "regimen": "neutral"
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-08T00:17:12Z",
+  "generated": "2026-07-09T01:01:29Z",
   "ranking": [
    {
     "atr_mult": 2.0,
