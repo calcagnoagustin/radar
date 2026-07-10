@@ -1,21 +1,31 @@
 {
  "dry_run": false,
- "equity_now": 190.36,
+ "equity_now": 198.13,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 0.0,
- "trades_total": 0,
- "win_rate": 0,
- "profit_factor": 0,
+ "pnl_today": 2.47,
+ "trades_today": 1,
+ "realized_pnl": 2.47,
+ "trades_total": 1,
+ "win_rate": 100,
+ "profit_factor": 2.47,
  "open_positions": [
   {
    "symbol": "ATM/USDT",
    "entry": 2.484,
-   "qty": 21.55,
-   "stop": 2.322857142857143,
-   "tp1_done": false
+   "qty": 15.085,
+   "stop": 2.484,
+   "tp1_done": true
   }
  ],
- "recent_closed": []
+ "recent_closed": [
+  {
+   "symbol": "ATM/USDT",
+   "entry": 2.484,
+   "exit": 2.866,
+   "qty_total": 0,
+   "pnl_net": 2.47,
+   "action": "tp",
+   "closed_ts": 1783720789.763385
+  }
+ ]
 }
