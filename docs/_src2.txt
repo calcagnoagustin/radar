@@ -1,0 +1,63 @@
+##### SERVICES #####
+● auto-cpufreq.service                                  not-found inactive dead    auto-cpufreq.service
+  ganesha-daily.service                                 loaded    active   running Ganesha-Daily Freqtrade DonchianDaily FORWARD-TEST (dry-run)
+##### DBFILES #####
+-rw-r--r--. 1 opc opc   94208 Jun 28 00:49 /home/opc/freqtrade/user_data/tradesv3_daily.sqlite
+-rw-r--r--. 1 opc opc   32768 Jul 10 00:14 /home/opc/freqtrade/user_data/tradesv3_daily.sqlite-shm
+-rw-r--r--. 1 opc opc 1845792 Jul 10 00:14 /home/opc/freqtrade/user_data/tradesv3_daily.sqlite-wal
+##### PAIRS #####
+whitelist ['BTC/USDT']
+pairlists [{'method': 'StaticPairList'}]
+##### freq_dashboard.py #####
+import json, base64, time, urllib.request
+CFG="/home/opc/freqtrade/user_data/config.json"
+BASE="/home/opc/freqtrade/dash_baseline.json"
+DENV="/home/opc/freqtrade/.dashenv"
+API="http://127.0.0.1:8081/api/v1/"
+GH="https://api.github.com"
+PATH="docs/ganesha_data.json"
+cfg=json.load(open(CFG)); a=cfg["api_server"]
+fauth=base64.b64encode((a["username"]+":"+a["password"]).encode()).decode()
+def fget(p):
+    r=urllib.request.Request(API+p, headers={"Authorization":"Basic "+fauth})
+    return json.load(urllib.request.urlopen(r, timeout=25))
+d={}
+for line in open(DENV):
+    if "=" in line:
+        k,v=line.strip().split("=",1); d[k]=v
+TOKEN=d.get("GITHUB_TOKEN",""); REPO=d.get("GITHUB_REPO","calcagnoagustin/radar"); BR=d.get("GITHUB_BRANCH","main")
+base=json.load(open(BASE)); old_closed=base.get("recent_closed",[]); old_curve=base.get("equity_curve",[])
+base_open={p.get("symbol"):p for p in base.get("open_positions",[])}
+bal=fget("balance"); equity=round(bal.get("total",0) or 0,4)
+positions=[]
+for cur in bal.get("currencies",[]):
+    e=cur.get("est_stake",0) or 0; s=cur.get("currency","")
+    if s!="USDT" and e>1:
+        sym=s+"/USDT"; bp=base_open.get(sym,{})
+        positions.append({"symbol":sym,"entry":bp.get("entry"),"qty":cur.get("balance"),"stop":bp.get("stop"),"tp1_done":bp.get("tp1_done",False),"opened_ts":bp.get("opened_ts",0),"legacy":True})
+for t in fget("status"):
+    positions.append({"symbol":t.get("pair"),"entry":t.get("open_rate"),"qty":t.get("amount"),"stop":t.get("stop_loss"),"tp1_done":False,"opened_ts":(t.get("open_timestamp") or 0)/1000})
+newc=[]
+for t in fget("trades").get("trades",[]):
+    if t.get("is_open"): continue
+    newc.append({"symbol":t.get("pair"),"entry":t.get("open_rate"),"exit":t.get("close_rate"),"qty_total":t.get("amount"),"action":t.get("exit_reason","exit"),"pnl_net":round(t.get("profit_abs",0) or 0,4),"opened_ts":(t.get("open_timestamp") or 0)/1000,"closed_ts":(t.get("close_timestamp") or 0)/1000})
+merged=newc+old_closed
+pnls=[x.get("pnl_net",0) or 0 for x in merged]; tt=len(merged)
+wins=[p for p in pnls if p>0]; losses=[p for p in pnls if p<0]
+wr=round(100*len(wins)/tt,2) if tt else 0
+gl=-sum(losses); gp=sum(wins); pf=round(gp/gl,2) if gl>0 else None
+now=time.time(); today=[x for x in merged if (x.get("closed_ts") or 0)>=now-86400]
+snap={"updated_at":int(now),"bot":"Ganesha","strategy":"Freqtrade DonchianDaily BTC/USDT 1d","mode":"LIVE","dry_run":False,"equity_now":equity,"realized_pnl":round(sum(pnls),4),"deposits_total":base.get("deposits_total"),"main_spot_usdt":round(bal.get("total",0) or 0,2),"trades_total":tt,"win_rate":wr,"profit_factor":pf,"trades_today":len(today),"pnl_today":round(sum((x.get("pnl_net") or 0) for x in today),4),"open_positions":positions,"recent_closed":merged,"equity_curve":(old_curve+[equity])[-300:]}
+payload=json.dumps(snap,ensure_ascii=False,indent=1,default=str).encode("utf-8")
+hdr={"Authorization":"Bearer "+TOKEN,"Accept":"application/vnd.github+json","User-Agent":"ganesha-bot"}
+sha=None
+try:
+    r=urllib.request.Request(GH+"/repos/"+REPO+"/contents/"+PATH+"?ref="+BR, headers=hdr)
+    sha=json.load(urllib.request.urlopen(r,timeout=25)).get("sha")
+except Exception:
+    sha=None
+body={"message":"ganesha-btc snapshot "+str(snap["updated_at"]),"content":base64.b64encode(payload).decode(),"branch":BR}
+if sha: body["sha"]=sha
+req=urllib.request.Request(GH+"/repos/"+REPO+"/contents/"+PATH, data=json.dumps(body).encode(), headers=hdr, method="PUT")
+resp=urllib.request.urlopen(req,timeout=40)
+print("PUBLISHED",resp.status,"equity",equity,"positions",positions)
