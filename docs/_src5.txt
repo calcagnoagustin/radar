@@ -1,0 +1,396 @@
+##### state.json #####
+{
+ "positions": {
+  "ATM/USDT": {
+   "entry": 2.484,
+   "qty": 15.085,
+   "stop": 2.484,
+   "r": 0.16114285714285703,
+   "so": true,
+   "stop_oid": null,
+   "mode": "LIVE",
+   "opened": "2026-07-10T08:07:14Z"
+  }
+ },
+ "paper_pnl": 2.469630000000001,
+ "equity_base": 190.9
+}
+##### events.jsonl_TAIL #####
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783296435.0694857, "iso": "2026-07-06T00:07:15Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783310831.2528844, "iso": "2026-07-06T04:07:11Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783327346.0680704, "iso": "2026-07-06T08:42:26Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783341252.38014, "iso": "2026-07-06T12:34:12Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783359024.5658808, "iso": "2026-07-06T17:30:24Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783374666.2664487, "iso": "2026-07-06T21:51:06Z"}
+{"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper", "ts": 1783383135.6746488, "iso": "2026-07-07T00:12:15Z"}
+{"type": "scan", "mode": "PAPER", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783383135.8657656, "iso": "2026-07-07T00:12:15Z"}
+{"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper", "ts": 1783397224.7951522, "iso": "2026-07-07T04:07:04Z"}
+{"type": "scan", "mode": "PAPER", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783397224.8095322, "iso": "2026-07-07T04:07:04Z"}
+{"type": "PAPER_ENTRY", "symbol": "ATM/USDT", "px": 2.334, "qty": 3.306804, "stop": 2.055786, "stop_oid": null, "atr4h_pct": 4.77, "ts": 1783397232.5340295, "iso": "2026-07-07T04:07:12Z"}
+{"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper", "ts": 1783411625.1332874, "iso": "2026-07-07T08:07:05Z"}
+{"type": "scan", "mode": "PAPER", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783411625.1762729, "iso": "2026-07-07T08:07:05Z"}
+{"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper", "ts": 1783430148.9878552, "iso": "2026-07-07T13:15:48Z"}
+{"type": "scan", "mode": "PAPER", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783430149.1662557, "iso": "2026-07-07T13:15:49Z"}
+{"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper", "ts": 1783440425.1343157, "iso": "2026-07-07T16:07:05Z"}
+{"type": "scan", "mode": "PAPER", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783440425.1735713, "iso": "2026-07-07T16:07:05Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783456666.3872955, "iso": "2026-07-07T20:37:46Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783469235.7738402, "iso": "2026-07-08T00:07:15Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783483631.9514227, "iso": "2026-07-08T04:07:11Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783503714.788418, "iso": "2026-07-08T09:41:54Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783512434.3463979, "iso": "2026-07-08T12:07:14Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783526832.3606164, "iso": "2026-07-08T16:07:12Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783546006.287055, "iso": "2026-07-08T21:26:46Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783558749.268759, "iso": "2026-07-09T00:59:09Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783570032.4969134, "iso": "2026-07-09T04:07:12Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783584432.7590773, "iso": "2026-07-09T08:07:12Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783599716.6733935, "iso": "2026-07-09T12:21:56Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783616069.579655, "iso": "2026-07-09T16:54:29Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783627633.885415, "iso": "2026-07-09T20:07:13Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783642450.086076, "iso": "2026-07-10T00:14:10Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783656432.9716969, "iso": "2026-07-10T04:07:12Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": [], "ts": 1783670833.483706, "iso": "2026-07-10T08:07:13Z"}
+{"type": "warn", "symbol": "ATM/USDT", "msg": "place_stop: binance Account has insufficient balance for requested action.", "ts": 1783670834.824606, "iso": "2026-07-10T08:07:14Z"}
+{"type": "LIVE_ENTRY", "symbol": "ATM/USDT", "px": 2.484, "qty": 21.55, "stop": 2.322857, "stop_oid": null, "atr4h_pct": 2.85, "ts": 1783670834.8248048, "iso": "2026-07-10T08:07:14Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783685233.6941826, "iso": "2026-07-10T12:07:13Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783699819.9715614, "iso": "2026-07-10T16:10:19Z"}
+{"type": "scan", "mode": "LIVE", "confirmed": ["SYN/USDT", "ATM/USDT"], "open": ["ATM/USDT"], "ts": 1783720787.066723, "iso": "2026-07-10T21:59:47Z"}
+{"type": "warn", "symbol": "ATM/USDT", "msg": "place_stop: binance Account has insufficient balance for requested action.", "ts": 1783720789.7631598, "iso": "2026-07-10T21:59:49Z"}
+{"type": "LIVE_SCALE_OUT", "symbol": "ATM/USDT", "px": 2.866, "pnl": 2.47, "ts": 1783720789.763385, "iso": "2026-07-10T21:59:49Z"}
+##### ejecutor_dash.py #####
+"""Publica ganesha_data.json (Ejecutor) al dashboard via GitHub Contents API."""
+import json, os, time
+import dashboard
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+GDIR = os.path.join(BASE, "ejecutor")
+
+def _events():
+    out = []
+    try:
+        for ln in open(os.path.join(GDIR, "events.jsonl")):
+            try:
+                out.append(json.loads(ln))
+            except Exception:
+                pass
+    except Exception:
+        pass
+    return out
+
+
+def _real_equity(gs):
+    """Balance real de la sub-cuenta si hay keys; None si no se puede."""
+    import json as _j, os as _o
+    try:
+        k = _j.load(open(_o.path.join(GDIR, "keys.json")))
+        import ccxt as _c
+        ex = _c.binance({"apiKey": k["apiKey"], "secret": k["secret"], "enableRateLimit": True})
+        bal = ex.fetch_balance()
+        eq = float(bal["USDT"]["free"] or 0)
+        for sym, p in (gs.get("positions") or {}).items():
+            try:
+                t = ex.fetch_ticker(sym)
+                eq += p.get("qty", 0) * (t["last"] or 0)
+            except Exception:
+                pass
+        return round(eq, 2)
+    except Exception:
+        return None
+
+
+def build():
+    try:
+        gs = json.load(open(os.path.join(GDIR, "state.json")))
+    except Exception:
+        gs = {"positions": {}, "paper_pnl": 0.0}
+    live = os.path.exists(os.path.join(GDIR, "LIVE"))
+    entries, closed = {}, []
+    for e in _events():
+        t = e.get("type", "")
+        if t.endswith("_ENTRY"):
+            entries[e["symbol"]] = e
+        elif t.endswith("_SCALE_OUT"):
+            en = entries.get(e["symbol"], {})
+            closed.append({"symbol": e["symbol"], "entry": en.get("px", 0),
+                           "exit": e.get("px", 0), "qty_total": e.get("qty", 0),
+                           "pnl_net": e.get("pnl", 0), "action": "tp",
+                           "closed_ts": e.get("ts", 0)})
+        elif t.endswith("_STOP_OUT"):
+            en = entries.pop(e["symbol"], {})
+            closed.append({"symbol": e["symbol"], "entry": en.get("px", 0),
+                           "exit": e.get("px", 0), "qty_total": en.get("qty", 0),
+                           "pnl_net": e.get("pnl", 0), "action": "stop",
+                           "closed_ts": e.get("ts", 0)})
+    pnl = gs.get("paper_pnl", 0.0)
+    wins = [c for c in closed if c["pnl_net"] > 0]
+    gw = sum(c["pnl_net"] for c in wins)
+    gl = -sum(c["pnl_net"] for c in closed if c["pnl_net"] < 0)
+    day0 = time.time() - (time.time() % 86400)
+    today = [c for c in closed if c["closed_ts"] >= day0]
+    return {"dry_run": not live, "equity_now": (_real_equity(gs) if live else None) or (gs.get("equity_base", 46.0) + (0 if live else pnl)),
+            "deposits_total": 0,
+            "pnl_today": round(sum(c["pnl_net"] for c in today), 2),
+            "trades_today": len(today), "realized_pnl": round(pnl, 2),
+            "trades_total": len(closed),
+            "win_rate": round(100.0 * len(wins) / len(closed)) if closed else 0,
+            "profit_factor": round(gw / gl, 2) if gl > 0 else round(gw, 2),
+            "open_positions": [{"symbol": s, "entry": p.get("entry"),
+                                "qty": p.get("qty"), "stop": p.get("stop"),
+                                "tp1_done": p.get("so", False)}
+                               for s, p in gs.get("positions", {}).items()],
+            "recent_closed": closed[-40:]}
+
+def publish():
+    payload = build()
+    dashboard.gh_put("docs/ganesha_data.json",
+                     json.dumps(payload, indent=1).encode(),
+                     "ganesha_data (ejecutor)")
+    print("[ejecutor-dash] publicado.", len(payload["recent_closed"]), "cerradas.")
+
+if __name__ == "__main__":
+    publish()
+##### ganesha_ejecutor.py #####
+"""Ganesha-Ejecutor v2. Trend-bot corto plazo sobre semillas confirmadas.
+Scan de entrada en velas 15m, stops ATR gestionados en velas 4h (confirmados al cierre).
+Cron cada 4h. Modo por defecto: PAPER. Modo LIVE solo si existe ejecutor/LIVE
+(archivo que crea Agus a mano) y hay API keys. En live: ordenes market reales +
+stop-loss-limit NATIVO en Binance como red de seguridad."""
+import json, os, time
+import ccxt
+import notify
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+GDIR = os.path.join(BASE, "ejecutor")
+GSTATE = os.path.join(GDIR, "state.json")
+GLOG = os.path.join(GDIR, "events.jsonl")
+SEM_STATE = os.path.join(BASE, "state.json")
+LIVEFLAG = os.path.join(GDIR, "LIVE")
+KEYS = os.path.join(GDIR, "keys.json")
+FT_CONFIG = "/opt/ganesha_bot/config.json"
+
+P = {"equity": 46.0, "risk_pct": 2.0, "min_notional": 5.0,
+     "vol_mult": 1.5, "vol_sma": 20, "mom_lookback": 96,
+     "atr_n": 14, "atr_mult": 2.5,
+     "scaleout_r": 2.0, "scaleout_frac": 0.30, "trail_after_r": 2.0}
+
+def load(p, d):
+    try:
+        return json.load(open(p))
+    except Exception:
+        return d
+
+def log(ev):
+    ev["ts"] = time.time()
+    ev["iso"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    with open(GLOG, "a") as f:
+        f.write(json.dumps(ev) + "\n")
+    print("[ejecutor]", json.dumps(ev))
+
+def atr(c, n):
+    trs = [max(c[i][2] - c[i][3], abs(c[i][2] - c[i-1][4]), abs(c[i][3] - c[i-1][4]))
+           for i in range(len(c) - n, len(c))]
+    return sum(trs) / len(trs)
+
+def confirmed_symbols():
+    st = load(SEM_STATE, {})
+    return [s for s, p in st.get("positions", {}).items()
+            if p.get("status") == "confirmed"]
+
+def scan_entry(c15):
+    last = c15[-1]
+    hh = max(x[4] for x in c15[-P["mom_lookback"] - 1:-1])
+    vs = sum(x[5] for x in c15[-P["vol_sma"] - 1:-1]) / P["vol_sma"]
+    return last[4] > hh and last[5] > P["vol_mult"] * vs
+
+def get_ex():
+    live = os.path.exists(LIVEFLAG)
+    creds = None
+    if live:
+        k = load(KEYS, {})
+        if not k.get("apiKey"):
+            try:
+                import importlib.util as iu
+                sp = iu.spec_from_file_location("gcfg", "/opt/ganesha_bot/config.py")
+                m = iu.module_from_spec(sp)
+                sp.loader.exec_module(m)
+                k = {"apiKey": getattr(m, "BINANCE_API_KEY", None),
+                     "secret": getattr(m, "BINANCE_API_SECRET", None)}
+            except Exception:
+                k = {}
+        if k.get("apiKey") and k.get("secret"):
+            creds = k
+        else:
+            live = False
+            log({"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper"})
+    cfg = {"enableRateLimit": True}
+    if creds:
+        cfg.update({"apiKey": creds["apiKey"], "secret": creds["secret"]})
+    return ccxt.binance(cfg), live
+
+def buy_market(ex, sym, qty, px):
+    bal = ex.fetch_balance()
+    free = bal.get("USDT", {}).get("free", 0)
+    if qty * px > free * 0.98:
+        qty = free * 0.98 / px
+    if qty * px < P["min_notional"]:
+        return None, 0
+    q = float(ex.amount_to_precision(sym, qty))
+    o = ex.create_order(sym, "market", "buy", q)
+    return o, q
+
+def sell_market(ex, sym, qty):
+    base = sym.split("/")[0]
+    free = ex.fetch_balance().get(base, {}).get("free", 0)
+    q = float(ex.amount_to_precision(sym, min(qty, free)))
+    if q <= 0:
+        return None
+    return ex.create_order(sym, "market", "sell", q)
+
+def place_stop(ex, sym, qty, stop):
+    try:
+        q = float(ex.amount_to_precision(sym, qty))
+        sp = float(ex.price_to_precision(sym, stop))
+        px = float(ex.price_to_precision(sym, stop * 0.99))
+        o = ex.create_order(sym, "limit", "sell", q, px, {"stopPrice": sp})
+        return o.get("id")
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "place_stop: " + str(e)[:100]})
+        return None
+
+def cancel_stop(ex, sym, oid):
+    try:
+        if oid:
+            ex.cancel_order(oid, sym)
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "cancel_stop: " + str(e)[:80]})
+
+def run():
+    os.makedirs(GDIR, exist_ok=True)
+    ex, live = get_ex()
+    mode = "LIVE" if live else "PAPER"
+    gs = load(GSTATE, {"positions": {}, "paper_pnl": 0.0})
+    if live:
+        try:
+            free = ex.fetch_balance().get("USDT", {}).get("free", 0)
+            inv = sum(q.get("entry", 0) * q.get("qty", 0)
+                      for q in gs.get("positions", {}).values())
+            if free + inv > 1:
+                P["equity"] = round(free + inv, 2)
+        except Exception as e:
+            log({"type": "warn", "msg": "equity fetch: " + str(e)[:80]})
+    gs["equity_base"] = P["equity"]
+    syms = confirmed_symbols()
+    log({"type": "scan", "mode": mode, "confirmed": syms,
+         "open": list(gs["positions"].keys())})
+    for sym in set(syms) | set(gs["positions"].keys()):
+        try:
+            c15 = ex.fetch_ohlcv(sym, "15m", limit=120)[:-1]
+            c4h = ex.fetch_ohlcv(sym, "4h", limit=60)[:-1]
+        except Exception as e:
+            log({"type": "error", "symbol": sym, "msg": str(e)[:120]})
+            continue
+        pos = gs["positions"].get(sym)
+        px = c15[-1][4]
+        a4 = atr(c4h, P["atr_n"])
+        if pos is None:
+            if sym in syms and scan_entry(c15):
+                stop = px - P["atr_mult"] * a4
+                if stop <= 0 or stop >= px:
+                    continue
+                risk = P["equity"] * P["risk_pct"] / 100
+                qty = risk / (px - stop)
+                if qty * px < P["min_notional"]:
+                    log({"type": "skip_min_notional", "symbol": sym,
+                         "notional": round(qty * px, 2)})
+                    continue
+                oid = None
+                if live:
+                    try:
+                        o, qty = buy_market(ex, sym, qty, px)
+                        if o is None:
+                            log({"type": "skip_no_balance", "symbol": sym})
+                            continue
+                        px = o.get("average") or px
+                        oid = place_stop(ex, sym, qty, stop)
+                    except Exception as e:
+                        log({"type": "error", "symbol": sym,
+                             "msg": "entry live: " + str(e)[:120]})
+                        continue
+                gs["positions"][sym] = {"entry": px, "qty": qty, "stop": stop,
+                                        "r": px - stop, "so": False, "stop_oid": oid,
+                                        "mode": mode,
+                                        "opened": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+                log({"type": mode + "_ENTRY", "symbol": sym, "px": px,
+                     "qty": round(qty, 6), "stop": round(stop, 6),
+                     "stop_oid": oid, "atr4h_pct": round(a4 / px * 100, 2)})
+                try:
+                    notify.exec_alert(sym, mode + "_ENTRY", f"Ejecutor {mode}: entrada {sym} @ {px:.6g}, qty {qty:.6g}, stop {stop:.6g}")
+                except Exception:
+                    pass
+            continue
+        close4 = c4h[-1][4]
+        rmult = (px - pos["entry"]) / pos["r"]
+        if close4 < pos["stop"]:
+            if live and pos.get("mode") == "LIVE":
+                cancel_stop(ex, sym, pos.get("stop_oid"))
+                try:
+                    sell_market(ex, sym, pos["qty"])
+                except Exception as e:
+                    log({"type": "error", "symbol": sym,
+                         "msg": "stop live: " + str(e)[:120]})
+                    continue
+            pnl = pos["qty"] * (close4 - pos["entry"])
+            gs["paper_pnl"] += pnl
+            log({"type": mode + "_STOP_OUT", "symbol": sym, "px": close4,
+                 "pnl": round(pnl, 2),
+                 "r": round((close4 - pos["entry"]) / pos["r"], 2)})
+            try:
+                notify.exec_alert(sym, mode + "_STOP_OUT", f"Ejecutor {mode}: STOP {sym} @ {close4:.6g}, pnl {pnl:.2f} USDT")
+            except Exception:
+                pass
+            del gs["positions"][sym]
+            continue
+        if not pos["so"] and rmult >= P["scaleout_r"]:
+            sq = pos["qty"] * P["scaleout_frac"]
+            if not live or sq * px >= P["min_notional"]:
+                if live and pos.get("mode") == "LIVE":
+                    cancel_stop(ex, sym, pos.get("stop_oid"))
+                    try:
+                        sell_market(ex, sym, sq)
+                    except Exception as e:
+                        log({"type": "error", "symbol": sym,
+                             "msg": "scaleout live: " + str(e)[:120]})
+                        continue
+                pnl = sq * (px - pos["entry"])
+                gs["paper_pnl"] += pnl
+                pos["qty"] -= sq
+                pos["so"] = True
+                pos["stop"] = max(pos["stop"], pos["entry"])
+                if live and pos.get("mode") == "LIVE":
+                    pos["stop_oid"] = place_stop(ex, sym, pos["qty"], pos["stop"])
+                log({"type": mode + "_SCALE_OUT", "symbol": sym, "px": px,
+                     "pnl": round(pnl, 2)})
+                try:
+                    notify.exec_alert(sym, mode + "_SCALE_OUT", f"Ejecutor {mode}: TP parcial {sym} @ {px:.6g}")
+                except Exception:
+                    pass
+        if rmult >= P["trail_after_r"]:
+            ns = close4 - P["atr_mult"] * a4
+            if ns > pos["stop"]:
+                pos["stop"] = ns
+                if live and pos.get("mode") == "LIVE":
+                    cancel_stop(ex, sym, pos.get("stop_oid"))
+                    pos["stop_oid"] = place_stop(ex, sym, pos["qty"], ns)
+                log({"type": "TRAIL", "symbol": sym, "stop": round(ns, 6)})
+        if sym not in syms:
+            log({"type": "note_unconfirmed", "symbol": sym})
+    json.dump(gs, open(GSTATE, "w"), indent=1)
+    try:
+        import ejecutor_dash
+        ejecutor_dash.publish()
+    except Exception as e:
+        log({"type": "warn", "msg": "dash: " + str(e)[:100]})
+    print("[ejecutor] ok (%s). abiertas: %s pnl: %s" %
+          (mode, list(gs["positions"].keys()), round(gs["paper_pnl"], 2)))
+
+if __name__ == "__main__":
+    run()
