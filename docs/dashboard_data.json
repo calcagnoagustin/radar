@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-11T00:15:44Z",
+ "generated_at": "2026-07-11T05:18:05Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 71.56822177,
+ "free_usdt": 62.02699177,
  "deposits": [],
  "positions": [
   {
@@ -17,28 +17,6 @@
    "note": ""
   },
   {
-   "symbol": "BIO/USDT",
-   "binance": "BIOUSDT",
-   "status": "stopped_moonbag",
-   "qty": 23.30000000000001,
-   "avg_cost": 0.03006,
-   "dca_adds": 0,
-   "tp_hit": [],
-   "confirmed_at": null,
-   "note": ""
-  },
-  {
-   "symbol": "GLM/USDT",
-   "binance": "GLMUSDT",
-   "status": "stopped_moonbag",
-   "qty": 6.700000000000003,
-   "avg_cost": 0.1052,
-   "dca_adds": 0,
-   "tp_hit": [],
-   "confirmed_at": null,
-   "note": ""
-  },
-  {
    "symbol": "MANTA/USDT",
    "binance": "MANTAUSDT",
    "status": "seed",
@@ -48,17 +26,6 @@
    "tp_hit": [],
    "confirmed_at": null,
    "note": ""
-  },
-  {
-   "symbol": "NEAR/USDT",
-   "binance": "NEARUSDT",
-   "status": "moonbag",
-   "qty": 0.036963,
-   "avg_cost": 2.162,
-   "dca_adds": 0,
-   "tp_hit": [],
-   "confirmed_at": null,
-   "note": "reconciliado a balance real 2026-06-28 (3.6963)"
   },
   {
    "symbol": "PYTH/USDT",
@@ -83,6 +50,50 @@
    "note": ""
   },
   {
+   "symbol": "ZEC/USDT",
+   "binance": "ZECUSDT",
+   "status": "seed",
+   "qty": 0.019,
+   "avg_cost": 502.17,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
+  {
+   "symbol": "BIO/USDT",
+   "binance": "BIOUSDT",
+   "status": "closed",
+   "qty": 0.0,
+   "avg_cost": 0.03006,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
+  {
+   "symbol": "GLM/USDT",
+   "binance": "GLMUSDT",
+   "status": "closed",
+   "qty": 0.0,
+   "avg_cost": 0.1052,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
+  {
+   "symbol": "NEAR/USDT",
+   "binance": "NEARUSDT",
+   "status": "closed",
+   "qty": 0.0,
+   "avg_cost": 2.162,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": "reconciliado a balance real 2026-06-28 (3.6963)"
+  },
+  {
    "symbol": "ONDO/USDT",
    "binance": "ONDOUSDT",
    "status": "closed",
@@ -95,9 +106,16 @@
   }
  ],
  "shortlist": [
-  "EIGEN/USDT",
-  "KAITO/USDT",
-  "ENSO/USDT"
+  "PYTH/USDT",
+  "AAVE/USDT",
+  "ARB/USDT",
+  "SKL/USDT",
+  "UNI/USDT",
+  "INJ/USDT",
+  "ZEC/USDT",
+  "PLUME/USDT",
+  "BREV/USDT",
+  "MMT/USDT"
  ],
  "narrativa_active": null,
  "regimen": "neutral",
@@ -147,99 +165,300 @@
    "qty_total": 209.5,
    "pnl_net": 0,
    "closed_ts": 1782954397.0642097
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "action": "SEED",
+   "entry": 502.17,
+   "exit": 502.17,
+   "qty_total": 0.019,
+   "pnl_net": 0,
+   "closed_ts": 1783747056.378286
   }
  ],
  "shortlist_full": [
   {
-   "symbol": "EIGEN/USDT",
-   "rank": 2,
+   "symbol": "PYTH/USDT",
+   "rank": 1,
    "type": "historica",
-   "stage": "2",
-   "thesis": "L1/restaking establecido saliendo de base larga cerca de mínimos históricos; volume_rank 122->61 y +32% semanal con volumen $120M marcan reaceleración temprana desde acumulación, no extendido (>90% bajo su ATH).",
-   "fundamentals": "EIGEN es el work token universal 'intersubjetivo' de EigenLayer, ahora EigenCloud tras el rebrand mid-2025 hacia una 'verifiable cloud' que integra EigenDA (data availability), EigenCompute y EigenVerify. Sector restaking/infra/AI con TVL de ecosistema restaking ~$16B y EigenLayer comandando la mayoría. Respaldo de a16z ($70M) y roadmap H2 2026 en AgentKit (AI agents onchain) y escalado de EigenDA. Market cap ~$165-182M, liquidez profunda en Binance/Gate/OKX.",
-   "catalyst": "ELIP-12: propuesta de gobernanza para dirigir revenue de fees a buybacks de EIGEN (presión deflacionaria) vía Incentives Committee; expansión a AI agents (AgentKit) alinea con la narrativa AI/DePIN que rota capital.",
+   "stage": "1",
+   "thesis": "Sale de base larga (-80% anual) con catalizador institucional fresco Nasdaq; comprar rupturas sobre $0.047 con confirmacion de volumen, invalida bajo soporte de base.",
+   "fundamentals": "Oraculo first-party lider; pivote a datos institucionales grado TradFi (mercado de $50B) via Pyth Pro y marketplace, compitiendo con Chainlink en sector oraculos.",
+   "catalyst": "Nasdaq selecciona a Pyth para distribuir data TotalView on-chain (30 jun); upgrade Pyth Core 31 julio activa suscripciones pagas y buybacks con revenue.",
    "signals": {
-    "google_trends": "Interés en 'restaking' y EigenCloud sostenido dentro de la narrativa infra/AI; rebrand amplía TAM y mindshare.",
-    "social": "Comunidad alcista en CoinGecko; usó Kaito para sentiment durante su airdrop, señal de presencia social activa.",
-    "binance": "Volume_rank 122->61; par EIGEN/USDT activo en Binance; +6% 24h con volumen 24h escalando a $120M (vol/mktcap ~66%).",
-    "onchain": "MC ~$165-182M sobre ~740M supply circulante; TVL de restaking ~$16B como fundamento; fees onchain aún bajos (riesgo de value-accrual)."
+    "google_trends": "repunte tras deal Nasdaq",
+    "social": "@PythNetwork 287K seguidores, consenso 'bullish con cautela'",
+    "binance": "listado spot con liquidez profunda, entre top gainers semanales (~23%)",
+    "onchain": "TVS Q3 +15.6% a $6.14B, 675K updates diarios, buyback program 33% treasury"
    },
-   "risk": "Emisión/unlocks constantes (36.82M EIGEN ~$8.7M el 1 jul) generan dilución persistente que puede tapar la demanda; el value-accrual depende de que AVS fees superen emisiones, aún no probado; correlación negativa con top-10 puede frenar el impulso si BTC lidera.",
+   "risk": "Unlocks grandes recurrentes (2.13B tokens) y sector oraculos competitivo; presion de oferta si no la absorbe la demanda institucional.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/eigencloud/latest-updates/",
-    "https://www.coingecko.com/en/coins/eigencloud",
-    "https://tokenomics.com/articles/eigenlayer-tokenomics-how-eigen-captures-restaking-revenue",
-    "https://coinstats.app/coins/eigenlayer/"
+    "https://coinmarketcap.com/cmc-ai/pyth-network/latest-updates/",
+    "https://coinmarketcap.com/top-stories/6a4b6fe3f5595469d59e0207/"
    ],
    "tokenomics": {
-    "mcap": 182867968,
-    "fdv": 453227503,
-    "fdv_mcap": 2.48,
-    "float_pct": 40.3,
-    "cg_id": "eigenlayer",
+    "mcap": 379212107,
+    "fdv": 481540301,
+    "fdv_mcap": 1.27,
+    "float_pct": 78.7,
+    "cg_id": "pyth-network",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "KAITO/USDT",
-   "rank": 1,
-   "type": "historica",
+   "symbol": "AAVE/USDT",
+   "rank": 2,
+   "type": "momentum",
    "stage": "2",
-   "thesis": "Salió de canal descendente largo y aceleró volumen (rank 114->19, +740% intradía), con estructura Stage 2 confirmada y liderazgo del sector InfoFi/AI que rota capital este mes. Entrada temprana con base construida durante meses, no extendida.",
-   "fundamentals": "KAITO es el token nativo de la red InfoFi de Kaito, plataforma AI que cuantifica y monetiza la atención (mindshare) del ecosistema cripto; el token sirve como moneda de red, gobernanza y para influir la distribución de atención. Tras cerrar Yaps en enero 2026 por el veto de API de X, pivotó a Kaito Studio, Capital Launchpad y Attention Markets con Polymarket, diversificando su moat de datos a X/TikTok/YouTube. Respaldado por Dragonfly, Sequoia China y Jane Street. Market cap ~$160-195M, liquidez sana con Binance como venue principal.",
-   "catalyst": "Reaceleración de volumen tras breakout técnico + narrativa InfoFi caliente (Attention Markets con Polymarket escalando a miles de mercados en 2026); pivote a data-infra reduce riesgo existencial de plataforma.",
+   "thesis": "Scanner marca trending=True; reclama $90 sobre 100d-EMA con RSI ~62 sano; comprar cierre diario sobre $97.74 apuntando a $100 y luego 200d-EMA ~$115.",
+   "fundamentals": "Lider indiscutido de lending DeFi (~59% del mercado, 61% de prestamos activos); lanza Stable Vaults para yield fijo a fintechs y expande GHO a Arbitrum.",
+   "catalyst": "Stable Vaults (9 jul) abre capital institucional/enterprise; DAO aprobo GHO en Arbitrum (8 jul); V4 hub-and-spoke en despliegue.",
    "signals": {
-    "google_trends": "Interés de busqueda en 'InfoFi' y 'mindshare' creciente como narrativa de sector; KAITO como pionero y referencia del tema en 2026.",
-    "social": "Sentimiento en extreme-greed en Upbit (índice 83, top-3, 29 jun); comunidad alcista; cuenta oficial mantiene momentum de marca.",
-    "binance": "Volume_rank saltó 114->19; par KAITO/USDT es el mercado más activo; +31% en 24h con volumen +508% vol/mktcap.",
-    "onchain": "MC ~$163-195M sobre supply circulante ~241M; 414K holders; volumen 24h $84-113M señalando participación real (no ilíquido)."
+    "google_trends": "estable, repunte con Stable Vaults",
+    "social": "outperform vs BTC y mercado, sentimiento constructivo",
+    "binance": "par profundo y liquido en Binance spot",
+    "onchain": "dominancia de lending y crecimiento de GHO como fee driver"
    },
-   "risk": "Unlock de 17.6M KAITO (~$11.9M, 1.8% supply) el 20 de julio añade presión de oferta; RSI elevado (~74) tras el rally exige esperar retest de soporte para no comprar extendido; utilidad del token aún reescribiéndose tras la muerte de Yaps. | TOKENOMICS: float 24.1% (poco supply circulando)",
+   "risk": "MACD plano/momentum agotado en intentos previos; si pierde $83.8 (50d-EMA) la ruptura es solo un rebote. Requiere confirmacion de volumen.",
    "sources": [
-    "https://www.coingecko.com/en/coins/kaito",
-    "https://www.coingecko.com/learn/what-is-kaito-earn-yap-points",
-    "https://coinmarketcap.com/currencies/kaito/",
-    "https://coinmarketcap.com/cmc-ai/kaito/latest-updates/"
+    "https://invezz.com/news/2026/07/10/aave-price-rockets-higher-as-bulls-eye-a-breakout-beyond-100/",
+    "https://captainaltcoin.com/aave-price-prediction-can-stable-vaults-push-aave-higher-in-july-2026/"
    ],
    "tokenomics": {
-    "mcap": 157927540,
-    "fdv": 654245274,
-    "fdv_mcap": 4.14,
-    "float_pct": 24.1,
-    "cg_id": "kaito",
-    "warning": "float 24.1% (poco supply circulando)",
-    "penalty": 1
+    "mcap": 1442890605,
+    "fdv": 1520842141,
+    "fdv_mcap": 1.05,
+    "float_pct": 94.9,
+    "cg_id": "aave",
+    "warning": "",
+    "penalty": 0
    }
   },
   {
-   "symbol": "ENSO/USDT",
+   "symbol": "ARB/USDT",
    "rank": 3,
-   "type": "launch",
+   "type": "momentum",
    "stage": "2",
-   "thesis": "Launch reciente de Binance (HODLer Airdrop, oct 2025) rebotando +33% desde mínimo histórico con volume_rank 272->69; infra de interoperabilidad/intents que rota capital, con supply circulante bajo (asimetría alta) y estructura girando al alza sobre soporte $1.70 previo.",
-   "fundamentals": "ENSO es el token nativo de Enso Network, capa de ejecución unificada 'super-conector' multichain que convierte 'intents' en operaciones onchain vía su Intent Engine y sistema de Shortcuts, validadas por validators con staking/slashing. Ya settleó >$17B onchain, potencia 145+ productos enterprise y facilitó >$3.1B en el launch de Berachain. Respaldado por Polychain, Multicoin, Naval, IDEO. Genesis supply 100M, circulante ~21M (FDV ~$65M), listado en Binance Spot con pares USDT/USDC/BNB/FDUSD/TRY.",
-   "catalyst": "Reaceleración de volumen (rank 272->69) sobre narrativa de chain-abstraction/intents e infra multichain; posicionamiento como 'plumbing' en workflows de launches y migraciones (Uniswap/LayerZero/Stargate).",
+   "thesis": "Estructura de acumulacion con piso $0.068-0.070; comprar cierre diario sobre resistencia $0.086-0.089 con volumen apuntando a $0.10-0.105.",
+   "fundamentals": "L2 lider de Ethereum; nuevo stream de revenue real: 10% de fees de cada L2 Orbit (incl. Robinhood Chain) va al ecosistema Arbitrum, 8% a treasury de tokenholders.",
+   "catalyst": "Robinhood Chain live en Robinhood Wallet (8 jul) con fee-sharing hacia ARB; convierte el token de puramente especulativo a captura de revenue por uso.",
    "signals": {
-    "google_trends": "Interés en 'intents' y 'chain abstraction' como narrativa infra emergente; Enso apareciendo repetidamente en workflows multichain.",
-    "social": "Base de +70 angels de LayerZero/1inch/Yearn/Pendle; comunidad activa tras rallies previos de +50% semanal con volumen.",
-    "binance": "Volume_rank saltó 272->69; ENSO/USDT es el mercado más activo en Binance; +8.6% 7d superando al mercado global.",
-    "onchain": "MC ~$13M sobre circulante ~21M pero >$17B settleados onchain como tracción real; FDV ~$65M implica gap circulante/FDV a vigilar."
+    "google_trends": "repunte con noticia Robinhood",
+    "social": "reaccion inmediata del mercado, RSI ~55 sobre neutral",
+    "binance": "par principal liquido en Binance spot",
+    "onchain": "DMI +DI sobre -DI, ADX ~24 sugiere tendencia emergente"
    },
-   "risk": "Micro-cap (~$13M MC) con liquidez más fina que los otros dos: susceptible a manipulación y volatilidad amplificada; gap circulante-FDV grande con inflación inicial 8% anual = presión de emisiones futura; -88% bajo ATH exige confirmar que el giro no es rebote muerto. | TOKENOMICS: float 16.2% (poco supply circulando)",
+   "risk": "Sigue bajo 50d-EMA y Supertrend; competencia intensa de Base; si falla resistencia vuelve al pivote $0.078-0.080.",
    "sources": [
-    "https://www.coingecko.com/en/coins/enso",
-    "https://coinmarketcap.com/currencies/enso/",
-    "https://www.cryptoninjas.net/news/binance-to-list-enso-enso-after-1-75m-airdrop-new-cross-chain-network-links-web2-web3/",
-    "https://blog.millionero.com/blog/enso-network-and-enso-token-funding-tokenomics-unlocks-and-the-bigger-picture/"
+    "https://www.banklesstimes.com/articles/2026/07/09/arbitrum-price-prediction-arb-eyes-more-upside-after-robinhood-chain-news/"
    ],
    "tokenomics": {
-    "mcap": 14010327,
-    "fdv": 68044327,
-    "fdv_mcap": 4.86,
-    "float_pct": 16.2,
-    "cg_id": "enso",
-    "warning": "float 16.2% (poco supply circulando)",
+    "mcap": 574213045,
+    "fdv": 902447571,
+    "fdv_mcap": 1.57,
+    "float_pct": 63.6,
+    "cg_id": "arbitrum",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "SKL/USDT",
+   "rank": 4,
+   "type": "historica",
+   "stage": "1",
+   "thesis": "Acumulacion silenciosa cerca del ciclo-low ($0.0035, +74% desde minimo jun); RSI deeply oversold. Especulativa: solo comprar si rompe $0.005 con volumen real y liquidez lo permite.",
+   "fundamentals": "Red Ethereum-compatible gas-free (55M wallets, 1.8B tx) pivotando fuerte a infraestructura de agentes AI (x402, ERC-8004, BITE); mcap minusculo ~$20-35M.",
+   "catalyst": "Lanzamiento SKALE on Base (L3 AI), quema de SKL para validar FAIR (deflacion estructural) y showcases de developers recurrentes en el 'agent economy'.",
+   "signals": {
+    "google_trends": "bajo, nicho",
+    "social": "CoinGecko bullish; on-chain muestra wallets grandes acumulando en Q1",
+    "binance": "listado en Binance spot pero liquidez fragmentada (delistings de margin/pares en otros CEX)",
+    "onchain": "acumulacion institucional documentada, burn por FAIR, mcap<TVL de algunos protocolos"
+   },
+   "risk": "Liquidez pobre y fragmentada (KuCoin delist, Binance quito margin); brecha cronica entre uso de red y valor del token; puede seguir lateral meses.",
+   "sources": [
+    "https://www.cryptonewsnavigator.com/academy/article/skale-price-dynamics-reveal-hidden-institutional-accumulation",
+    "https://messari.io/project/skale-network"
+   ],
+   "tokenomics": {
+    "mcap": 33924679,
+    "fdv": 35150816,
+    "fdv_mcap": 1.04,
+    "float_pct": 87.1,
+    "cg_id": "skale",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "UNI/USDT",
+   "rank": 5,
+   "type": "momentum",
+   "stage": "2",
+   "thesis": "Scanner st2 mom30 40.2%; DEX lider en fase de recuperacion junto a rotacion selectiva DeFi. Operar rupturas de rango con confirmacion de volumen.",
+   "fundamentals": "Mayor DEX por volumen y liquidez; blue-chip DeFi con narrativa de captura de fees y gobernanza si el mercado premia protocolos con revenue.",
+   "catalyst": "Rotacion de capital hacia DeFi lagging conforme lideres se agotan; sensibilidad a cualquier avance de fee-switch/gobernanza.",
+   "signals": {
+    "google_trends": "estable, marca reconocida",
+    "social": "sentimiento neutral-positivo en rotacion DeFi",
+    "binance": "par de alta liquidez en Binance spot",
+    "onchain": "volumen DEX consistente como base de utilidad"
+   },
+   "risk": "Sin catalizador propio fresco este ciclo; depende de rotacion sectorial y de que BTC ceda dominancia. Puede quedar lateral.",
+   "sources": [
+    "https://coinpedia.org/price-analysis/altcoins-to-watch-ahead-q1-close-sei-arb-aave-inj-fil-poised-for-a-breakout/"
+   ],
+   "tokenomics": {
+    "mcap": 2169615115,
+    "fdv": 3120415976,
+    "fdv_mcap": 1.44,
+    "float_pct": 62.1,
+    "cg_id": "uniswap",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "INJ/USDT",
+   "rank": 6,
+   "type": "momentum",
+   "stage": "2",
+   "thesis": "Mostro momentum fuerte (+78% desde señal de compra en mayo, de ~$3.7 a ~$7) con volumen alto; buscar continuacion tras consolidacion sana.",
+   "fundamentals": "L1 orientado a DeFi/derivados on-chain con quema de token via subastas; narrativa de infraestructura financiera descentralizada.",
+   "catalyst": "Rotacion hacia alts con revenue/quema; volumen diario cruzando $150M en la fase de impulso.",
+   "signals": {
+    "google_trends": "repunte en el rally de mayo-junio",
+    "social": "señales de compra de trackers, participacion creciente",
+    "binance": "par liquido en Binance spot",
+    "onchain": "mecanismo de quema por buyback como driver deflacionario"
+   },
+   "risk": "Ya subio fuerte; entrada tardia si no consolida. Alta beta, correcciona duro en risk-off.",
+   "sources": [
+    "https://www.openpr.com/news/4559713/synapse-syn-price-prediction-how-crowdwisdom360-alerts"
+   ],
+   "tokenomics": {
+    "mcap": 498933420,
+    "fdv": 498933420,
+    "fdv_mcap": 1.0,
+    "float_pct": 100.0,
+    "cg_id": "injective-protocol",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "rank": 7,
+   "type": "historica",
+   "stage": "2",
+   "thesis": "Reacelera desde $250-300 a rozar $500 (+60-100% en semanas) con narrativa privacidad; operar solo pullbacks a $420-455 con stop ajustado, evitar comprar extendido.",
+   "fundamentals": "Privacy coin top-15 (~$7.8B mcap); tesis de dinero privado/censura-resistente reavivada con progreso en verificacion formal (Project Tachyon).",
+   "catalyst": "Upgrade Ironwood (fin julio) introduce turnstile de supply fijo y refuerza shielded pools; interes renovado en privacidad ante escrutinio regulatorio.",
+   "signals": {
+    "google_trends": "pico con rally sobre $500",
+    "social": "sentimiento social disparado, discusiones bullish",
+    "binance": "liquidez decente en Binance/OKX/Bybit",
+    "onchain": "OI futuros $750-798M; futures vol $1.35B >> spot $115M"
+   },
+   "risk": "Rally muy apalancado (futures>>spot), riesgo de liquidaciones de longs; ya toco resistencia $490-510. Es reacelaracion, no acumulacion temprana.",
+   "sources": [
+    "https://www.cryptotimes.io/2026/07/09/zcash-zec-rockets-past-500-on-ironwood-upgrade-momentum-whats-next/",
+    "https://www.kucoin.com/news/flash/zcash-price-prediction-for-july-2026-can-zec-regain-momentum-above-430"
+   ],
+   "tokenomics": {
+    "mcap": 8414894701,
+    "fdv": 8415675403,
+    "fdv_mcap": 1.0,
+    "float_pct": 80.0,
+    "cg_id": "zcash",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "PLUME/USDT",
+   "rank": 9,
+   "type": "launch",
+   "stage": "1",
+   "thesis": "Graduacion Alpha-a-spot reciente en Binance; RWA narrative. Especulativa: comprar solo ruptura de base post-listing con volumen, no el open.",
+   "fundamentals": "L1/infra enfocada en Real-World Assets (RWA), sector con tailwind institucional 2026; graduo de Binance Alpha a spot.",
+   "catalyst": "Listing spot en Binance y narrativa RWA en expansion con adopcion institucional y tokenizacion.",
+   "signals": {
+    "google_trends": "repunte por graduacion",
+    "social": "atencion en dashboard Alpha/Square",
+    "binance": "spot en Binance tras Alpha, liquidez en formacion",
+    "onchain": "n/d, monitorear TVL/actividad RWA"
+   },
+   "risk": "Early-stage con float bajo y volatilidad; RWA es narrativa pero ejecucion incierta. Liquidez menos profunda que blue-chips.",
+   "sources": [
+    "https://www.cryptowire.in/crypto/binance-new-listings/",
+    "https://coinlaunch.space/blog/new-binance-listings-to-watch/"
+   ],
+   "tokenomics": {
+    "mcap": 62842414,
+    "fdv": 105267311,
+    "fdv_mcap": 1.68,
+    "float_pct": 59.7,
+    "cg_id": "plume",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "BREV/USDT",
+   "rank": 10,
+   "type": "launch",
+   "stage": "1",
+   "thesis": "HODLer airdrop reciente (Brevis, proyecto #60) listado en spot Binance; infra ZK. Especulativa de base: entrar solo en ruptura confirmada con liquidez sana.",
+   "fundamentals": "Brevis: infraestructura de coprocesador ZK/pruebas para escalar computo verificable en Ethereum; sector ZK/AI con demanda estructural.",
+   "catalyst": "Listing spot Binance via HODLer Airdrop program (exposicion + liquidez); narrativa ZK-coprocessing.",
+   "signals": {
+    "google_trends": "nicho, repunte por listing",
+    "social": "atencion de comunidad ZK/BNB",
+    "binance": "spot en Binance, Seed Tag",
+    "onchain": "n/d por launch reciente"
+   },
+   "risk": "Seed Tag, float bajo, volatilidad alta y liquidez inicial fina; tesis tecnica pero adopcion temprana. Posicion pequeña.",
+   "sources": [
+    "https://www.cryptowire.in/crypto/binance-new-listings/"
+   ],
+   "tokenomics": {
+    "mcap": 18654359,
+    "fdv": 74617434,
+    "fdv_mcap": 4.0,
+    "float_pct": 25.0,
+    "cg_id": "brevis",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "MMT/USDT",
+   "rank": 8,
+   "type": "launch",
+   "stage": "2",
+   "thesis": "Launch reciente de Binance (Momentum) con scanner st2 mom30 69.2%; operable en spot, buscar continuacion tras la fase de descubrimiento de precio si sostiene soporte post-listing.",
+   "fundamentals": "Token listado en spot de Binance en la ventana reciente de listings 2026; early-stage con Seed Tag, alta volatilidad.",
+   "catalyst": "'Binance effect' de exposicion y liquidez fresca; momentum de mediana data confirmado por scanner.",
+   "signals": {
+    "google_trends": "elevado por listing reciente",
+    "social": "atencion de listing en canales Binance",
+    "binance": "listado spot directo, liquidez inicial alta",
+    "onchain": "n/d por ser launch reciente"
+   },
+   "risk": "Seed Tag: baja profundidad, unlocks y volatilidad extrema; gains de listing suelen desvanecerse. Tamaño de posicion chico obligatorio. | TOKENOMICS: float 20.4% (poco supply circulando)",
+   "sources": [
+    "https://www.cryptowire.in/crypto/binance-new-listings/"
+   ],
+   "tokenomics": {
+    "mcap": 37467043,
+    "fdv": 183576103,
+    "fdv_mcap": 4.9,
+    "float_pct": 20.4,
+    "cg_id": "momentum-3",
+    "warning": "float 20.4% (poco supply circulando)",
     "penalty": 1
    }
   }
@@ -337,7 +556,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-10T00:15:56Z",
+  "generated": "2026-07-11T00:15:55Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -374,6 +593,6 @@
  "rules": {
   "freeze_days": 60,
   "max_seeds": 60,
-  "seed_size_usdt": 7.0
+  "seed_size_usdt": 10.0
  }
 }
