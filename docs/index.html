@@ -159,6 +159,8 @@
   <div class="note" id="discipline">Vista de control, no de trading. El sistema revisa una vez al día; mirar precios al segundo no cambia ninguna decisión.</div>
 
   
+<div class="card" style="margin-top:18px"><div class="head"><span class="title">Historial</span><span class="eyebrow" id="sHistCount"></span></div><div class="body" id="sHistory"><div class="row"><span class="lbl">Cargando&hellip;</span></div></div></div>
+
 <hr class="gan-sep">
 <div class="gan-head">
   <div class="brand">
@@ -202,6 +204,8 @@
   </div>
 </div>
 
+
+<div class="card" style="margin-top:18px"><div class="head"><span class="title">Historial</span><span class="eyebrow" id="gHistCount"></span></div><div class="body" id="gHistory"><div class="row"><span class="lbl">Cargando&hellip;</span></div></div></div>
 
 <footer>
     <span id="dataStamp">—</span>
@@ -405,5 +409,42 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
 })();
 </script>
 
+<script>
+(function(){
+  var MO=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  function fU(n,d){d=(d==null?2:d);return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});}
+  function dt(ts){var t=new Date(ts*1000);return isNaN(t.getTime())?"":t.getDate()+" "+MO[t.getMonth()]+" "+String(t.getHours()).padStart(2,"0")+":"+String(t.getMinutes()).padStart(2,"0");}
+  function cl(n){return n>0.0001?"up":(n<-0.0001?"down":"flat");}
+  var LBL={SEED:"plantada",STOP:"stop",TAKE_PROFIT:"TP",MANUAL:"cierre manual",FREEZE:"freeze",GARDEN_LIQ:"liquidada",GARDEN_DCA:"DCA",REVIVE:"revival",tp:"TP",stop:"stop",manual:"cierre manual"};
+  var BUY={SEED:1,GARDEN_DCA:1,REVIVE:1};
+  function rowHTML(r){
+    var act=String(r.action||"");var lb=LBL[act]||act.toLowerCase();
+    var isBuy=BUY[act]===1;var right,mid="";
+    if(isBuy){right='<span class="mono" style="color:var(--muted)">'+fU((r.qty_total||0)*(r.entry||0))+'</span>';}
+    else{var p=(r.pnl_net==null?0:+r.pnl_net);right='<span class="mono '+cl(p)+'">'+(p>0?"+":"")+fU(p)+'</span>';
+      if(r.entry&&r.exit){mid=' <span style="color:var(--faint);font-size:12px">'+fU(+r.entry,+r.entry<1?4:2)+' &rarr; '+fU(+r.exit,+r.exit<1?4:2)+'</span>';}}
+    return '<div class="row"><span class="lbl"><b style="color:var(--ink)">'+String(r.symbol||"").split("/")[0]+'</b> &middot; '+lb+mid+' <span style="color:var(--faint);font-size:11.5px">'+dt(+r.closed_ts||0)+'</span></span>'+right+'</div>';
+  }
+  function paint(bodyId,cntId,rows){
+    var el=document.getElementById(bodyId),cn=document.getElementById(cntId);
+    if(!el)return;var exp=false;
+    rows=(rows||[]).slice().sort(function(a,b){return (+b.closed_ts||0)-(+a.closed_ts||0);});
+    if(cn)cn.textContent=rows.length?rows.length+" operaciones":"";
+    function draw(){
+      var lst=exp?rows:rows.slice(0,4);
+      el.innerHTML=lst.length?lst.map(rowHTML).join(""):'<div class="row"><span class="lbl">Sin operaciones todav&iacute;a.</span></div>';
+      if(rows.length>4){
+        var a=document.createElement("div");a.className="row";
+        a.innerHTML='<a href="#" style="font-size:13px">'+(exp?"Ver menos":"Ver las "+rows.length+" operaciones")+'</a>';
+        a.firstChild.onclick=function(e){e.preventDefault();exp=!exp;draw();};
+        el.appendChild(a);
+      }
+    }
+    draw();
+  }
+  fetch("./dashboard_data.json?ts="+Date.now()).then(function(r){return r.json();}).then(function(d){paint("sHistory","sHistCount",d.recent_closed);}).catch(function(){});
+  fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.json();}).then(function(d){paint("gHistory","gHistCount",d.recent_closed);}).catch(function(){});
+})();
+</script>
 </body>
 </html>
