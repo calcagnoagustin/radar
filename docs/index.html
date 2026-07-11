@@ -446,5 +446,6 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
   fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.json();}).then(function(d){paint("gHistory","gHistCount",d.recent_closed);}).catch(function(){});
 })();
 </script>
+<script src="./ganesha_extra.js"></script>
 </body>
 </html>
