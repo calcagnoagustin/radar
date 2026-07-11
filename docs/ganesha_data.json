@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 198.13,
+ "equity_now": 198.0,
  "deposits_total": 0,
- "pnl_today": 2.47,
- "trades_today": 1,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": 2.47,
  "trades_total": 1,
  "win_rate": 100,
@@ -13,7 +13,7 @@
    "symbol": "ATM/USDT",
    "entry": 2.484,
    "qty": 15.085,
-   "stop": 2.484,
+   "stop": 2.575285714285714,
    "tp1_done": true
   }
  ],
