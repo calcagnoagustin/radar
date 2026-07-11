@@ -129,7 +129,9 @@
     </div>
   </section>
 
-  <div class="cols">
+  <div class="card" id="alertCard" style="margin-bottom:18px"><div class="head"><span class="title">Alertas</span><span class="eyebrow" id="alertCount"></span></div><div class="body" id="alertas"><div class="row"><span class="lbl">Cargando…</span></div></div></div>
+
+<div class="cols">
     <div class="card">
       <div class="head"><span class="title">Posiciones</span><span class="eyebrow" id="posCount"></span></div>
       <div class="body" id="positions"><div class="row"><span class="lbl">Cargando…</span></div></div>
@@ -267,9 +269,9 @@ function render(){
   const _semEq=(DATA.free_usdt!=null)?DATA.free_usdt+mkt:((DATA.capital_inicial||0)+dep)+(mkt-cost);
   document.getElementById("semEquity").textContent=priced?fmtUSD(_semEq):"—";
 
-  document.getElementById("posCount").textContent = (DATA.positions||[]).length+" total";
+  document.getElementById("posCount").textContent = open.length+" abiertas";
   const pc=document.getElementById("positions"); pc.innerHTML="";
-  const ordered=[...open,...closed];
+  const ordered=[...open];
   if(ordered.length===0) pc.innerHTML='<div class="row"><span class="lbl">Sin posiciones.</span></div>';
   ordered.forEach(p=>{
     const px=PRICES[bSym(p.symbol)];
@@ -301,7 +303,13 @@ function render(){
     pc.appendChild(el);
   });
 
-  // bot diario
+  
+// alertas
+const AL=(DATA.alertas||[]);const acEl=document.getElementById("alertas");const acC=document.getElementById("alertCount");
+if(acEl){acEl.innerHTML="";if(acC)acC.textContent=AL.length?AL.length+" activa"+(AL.length>1?"s":""):"";
+if(!AL.length)acEl.innerHTML='<div class="row"><span class="lbl">Sin alertas. Todo en orden.</span></div>';
+AL.forEach(function(a){var colors={rojo:"var(--clay)",amarillo:"var(--grain)",info:"var(--sky)"};var el=document.createElement("div");el.className="row";el.innerHTML='<span style="color:'+(colors[a.nivel]||"var(--muted)")+';font-size:13.5px">'+(a.nivel==="rojo"?"\u26a0 ":"")+a.texto+"</span>";acEl.appendChild(el);});}
+// bot diario
   document.getElementById("lastRun").textContent = DATA.generated_at? stampShort(DATA.generated_at):"—";
   document.getElementById("narr").textContent = DATA.narrativa_active? DATA.narrativa_active : "ninguna";
   const sl=document.getElementById("shortlist"); sl.innerHTML="";
