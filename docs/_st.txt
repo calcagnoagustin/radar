@@ -1,0 +1,5 @@
+##PS##
+opc        72017  6.3 16.7 309844 85332 pts/0    S    16:27   0:01 python3 /tmp/mb.py
+opc        72392  7.8 17.2 309832 87908 pts/1    R    16:27   0:01 python3 /tmp/mb.py
+##LOGTAIL##
+nohup: ignoring input
