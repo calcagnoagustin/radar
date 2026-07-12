@@ -31,7 +31,7 @@ CACHE = "/tmp/bt_cache"
 # Barridos
 MOVE_THRESHES = [12, 15, 20, 25]     # % en LOOKBACK dias
 VOL_MULTS = [1.5, 3.0]               # spike de volumen (vol dia / mediana)
-ANTITOP = ["none", "rsi70", "fresh"] # filtro anti-techo
+ANTITOP = ["none", "rsi70", "rsi65", "rsi60", "fresh", "ema", "ema_rsi65"]  # filtros de entrada
 USE_VOLRANK = True                   # sumar señal de volume_rank (OR)
 VOLRANK_TOP = 100
 VOLRANK_JUMP = 50
@@ -121,6 +121,30 @@ def atr(h, l, c, i, n=ATR_N):
         trs.append(max(h[k] - l[k], abs(h[k] - c[k - 1]), abs(l[k] - c[k - 1])))
     return sum(trs) / n
 
+def ema_series(c, n):
+    k = 2.0 / (n + 1)
+    out = []
+    e = None
+    for x in c:
+        e = x if e is None else (x * k + e * (1 - k))
+        out.append(e)
+    return out
+
+def _pass_filter(at, c, i, em):
+    """anti-techo / gate de tendencia. True = entra."""
+    if at == "none":
+        return True
+    if at.startswith("rsi"):
+        return rsi(c, i) < int(at[3:])
+    if at == "fresh":
+        return is_fresh(c, i)
+    up = (c[i] > em[i]) and (i >= 5) and (em[i] > em[i - 5])   # sobre EMA50 y EMA50 subiendo
+    if at == "ema":
+        return up
+    if at == "ema_rsi65":
+        return up and rsi(c, i) < 65
+    return True
+
 def is_fresh(c, i, n=10):
     """dia 1 de romper el maximo de cierres de N dias (breakout fresco)."""
     if i < n + 1: return False
@@ -192,6 +216,7 @@ def run(data, day_pos, ranks, move_thr, vol_mult, antitop):
     trades = []
     for sym, d in data.items():
         o, h, l, c, qv, t = d["o"], d["h"], d["l"], d["c"], d["qv"], d["t"]
+        em = d["ema50"]
         n = len(c)
         open_until = -1
         for i in range(max(ATR_N, 21), n - 1):
@@ -203,17 +228,15 @@ def run(data, day_pos, ranks, move_thr, vol_mult, antitop):
             vr = False
             if USE_VOLRANK:
                 gi = day_pos[t[i]]
-                rk = ranks[gi].get(sym)
+                rs = ranks[gi].get(sym)
                 rk_prev = ranks[gi - 1].get(sym) if gi > 0 else None
-                if rk is not None and rk <= VOLRANK_TOP:
-                    if rk_prev is None or (rk_prev - rk) >= VOLRANK_JUMP:
+                if rs is not None and rs <= VOLRANK_TOP:
+                    if rk_prev is None or (rk_prev - rs) >= VOLRANK_JUMP:
                         vr = True
             if not (wk or vr):
                 continue
-            # --- filtro anti-techo ---
-            if antitop == "rsi70" and rsi(c, i) >= 70:
-                continue
-            if antitop == "fresh" and not is_fresh(c, i):
+            # --- filtro de entrada (anti-techo / gate EMA) ---
+            if not _pass_filter(antitop, c, i, em):
                 continue
             res = simulate(o, h, l, c, i)
             if res is None:
@@ -281,9 +304,10 @@ def main():
         qv = [r[6] for r in rows]
         if stats.median(qv[-30:]) < MIN_QVOL_USD:  # liquidez
             continue
+        cl = [r[4] for r in rows]
         data[sym] = {"t": [r[0] for r in rows], "o": [r[1] for r in rows],
                      "h": [r[2] for r in rows], "l": [r[3] for r in rows],
-                     "c": [r[4] for r in rows], "qv": qv}
+                     "c": cl, "qv": qv, "ema50": ema_series(cl, 50)}
         for r in rows: dates.add(r[0])
         if (j + 1) % 100 == 0:
             print("[bt] descargados", j + 1, "/", len(syms))
