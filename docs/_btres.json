@@ -1,5 +1,5 @@
 {
- "generated": 1783876994,
+ "generated": 1783882140,
  "days": 540,
  "universe": 55,
  "cutoff_iso": "2026-01-03",
@@ -11,6 +11,138 @@
   "scaleout_frac": 0.3
  },
  "results": [
+  {
+   "move_thr": 25,
+   "vol_mult": 3.0,
+   "antitop": "rsi60",
+   "all": {
+    "n": 25,
+    "per_month": 1.3,
+    "win_rate": 24.0,
+    "expectancy": 5.581,
+    "profit_factor": 1.29,
+    "payoff": 4.07,
+    "max_dd": -169.84
+   },
+   "is": {
+    "n": 11,
+    "per_month": 0.9,
+    "win_rate": 9.1,
+    "expectancy": -22.942,
+    "profit_factor": 0.08,
+    "payoff": 0.85,
+    "max_dd": -252.36
+   },
+   "oos": {
+    "n": 14,
+    "per_month": 2.2,
+    "win_rate": 35.7,
+    "expectancy": 27.991,
+    "profit_factor": 2.83,
+    "payoff": 5.1,
+    "max_dd": -121.85
+   },
+   "rand_control": -10.263
+  },
+  {
+   "move_thr": 25,
+   "vol_mult": 3.0,
+   "antitop": "rsi65",
+   "all": {
+    "n": 44,
+    "per_month": 2.4,
+    "win_rate": 27.3,
+    "expectancy": 2.671,
+    "profit_factor": 1.17,
+    "payoff": 3.11,
+    "max_dd": -238.46
+   },
+   "is": {
+    "n": 21,
+    "per_month": 1.7,
+    "win_rate": 14.3,
+    "expectancy": -15.694,
+    "profit_factor": 0.19,
+    "payoff": 1.12,
+    "max_dd": -329.58
+   },
+   "oos": {
+    "n": 23,
+    "per_month": 3.6,
+    "win_rate": 39.1,
+    "expectancy": 19.44,
+    "profit_factor": 2.49,
+    "payoff": 3.87,
+    "max_dd": -143.55
+   },
+   "rand_control": -8.13
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 3.0,
+   "antitop": "rsi60",
+   "all": {
+    "n": 37,
+    "per_month": 2.0,
+    "win_rate": 29.7,
+    "expectancy": 4.615,
+    "profit_factor": 1.27,
+    "payoff": 3.01,
+    "max_dd": -216.04
+   },
+   "is": {
+    "n": 14,
+    "per_month": 1.1,
+    "win_rate": 14.3,
+    "expectancy": -19.266,
+    "profit_factor": 0.17,
+    "payoff": 1.01,
+    "max_dd": -269.72
+   },
+   "oos": {
+    "n": 23,
+    "per_month": 3.6,
+    "win_rate": 39.1,
+    "expectancy": 19.151,
+    "profit_factor": 2.45,
+    "payoff": 3.82,
+    "max_dd": -119.37
+   },
+   "rand_control": -7.281
+  },
+  {
+   "move_thr": 15,
+   "vol_mult": 3.0,
+   "antitop": "rsi60",
+   "all": {
+    "n": 51,
+    "per_month": 2.7,
+    "win_rate": 31.4,
+    "expectancy": 3.727,
+    "profit_factor": 1.25,
+    "payoff": 2.72,
+    "max_dd": -229.19
+   },
+   "is": {
+    "n": 24,
+    "per_month": 2.0,
+    "win_rate": 25.0,
+    "expectancy": -10.412,
+    "profit_factor": 0.43,
+    "payoff": 1.29,
+    "max_dd": -309.03
+   },
+   "oos": {
+    "n": 27,
+    "per_month": 4.3,
+    "win_rate": 37.0,
+    "expectancy": 16.294,
+    "profit_factor": 2.31,
+    "payoff": 3.93,
+    "max_dd": -119.37
+   },
+   "rand_control": -7.79
+  },
   {
    "move_thr": 25,
    "vol_mult": 3.0,
@@ -43,6 +175,72 @@
     "max_dd": -191.51
    },
    "rand_control": -8.083
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 3.0,
+   "antitop": "rsi60",
+   "all": {
+    "n": 70,
+    "per_month": 3.8,
+    "win_rate": 35.7,
+    "expectancy": 2.434,
+    "profit_factor": 1.18,
+    "payoff": 2.12,
+    "max_dd": -253.3
+   },
+   "is": {
+    "n": 36,
+    "per_month": 2.9,
+    "win_rate": 30.6,
+    "expectancy": -7.753,
+    "profit_factor": 0.49,
+    "payoff": 1.12,
+    "max_dd": -362.79
+   },
+   "oos": {
+    "n": 34,
+    "per_month": 5.4,
+    "win_rate": 41.2,
+    "expectancy": 13.22,
+    "profit_factor": 2.12,
+    "payoff": 3.04,
+    "max_dd": -138.83
+   },
+   "rand_control": -7.395
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 3.0,
+   "antitop": "rsi65",
+   "all": {
+    "n": 70,
+    "per_month": 3.8,
+    "win_rate": 28.6,
+    "expectancy": 1.181,
+    "profit_factor": 1.08,
+    "payoff": 2.7,
+    "max_dd": -342.11
+   },
+   "is": {
+    "n": 33,
+    "per_month": 2.7,
+    "win_rate": 21.2,
+    "expectancy": -10.784,
+    "profit_factor": 0.34,
+    "payoff": 1.27,
+    "max_dd": -355.86
+   },
+   "oos": {
+    "n": 37,
+    "per_month": 5.9,
+    "win_rate": 35.1,
+    "expectancy": 11.852,
+    "profit_factor": 1.93,
+    "payoff": 3.56,
+    "max_dd": -166.15
+   },
+   "rand_control": -7.395
   },
   {
    "move_thr": 20,
@@ -78,6 +276,171 @@
    "rand_control": -5.955
   },
   {
+   "move_thr": 25,
+   "vol_mult": 1.5,
+   "antitop": "rsi60",
+   "all": {
+    "n": 51,
+    "per_month": 2.7,
+    "win_rate": 23.5,
+    "expectancy": -3.343,
+    "profit_factor": 0.81,
+    "payoff": 2.62,
+    "max_dd": -414.17
+   },
+   "is": {
+    "n": 24,
+    "per_month": 2.0,
+    "win_rate": 8.3,
+    "expectancy": -20.195,
+    "profit_factor": 0.1,
+    "payoff": 1.14,
+    "max_dd": -491.88
+   },
+   "oos": {
+    "n": 27,
+    "per_month": 4.3,
+    "win_rate": 37.0,
+    "expectancy": 11.636,
+    "profit_factor": 1.94,
+    "payoff": 3.29,
+    "max_dd": -178.55
+   },
+   "rand_control": -7.79
+  },
+  {
+   "move_thr": 15,
+   "vol_mult": 1.5,
+   "antitop": "rsi60",
+   "all": {
+    "n": 137,
+    "per_month": 7.4,
+    "win_rate": 30.7,
+    "expectancy": 0.68,
+    "profit_factor": 1.05,
+    "payoff": 2.37,
+    "max_dd": -291.41
+   },
+   "is": {
+    "n": 76,
+    "per_month": 6.2,
+    "win_rate": 21.1,
+    "expectancy": -6.921,
+    "profit_factor": 0.58,
+    "payoff": 2.18,
+    "max_dd": -639.27
+   },
+   "oos": {
+    "n": 61,
+    "per_month": 9.6,
+    "win_rate": 42.6,
+    "expectancy": 10.15,
+    "profit_factor": 1.91,
+    "payoff": 2.57,
+    "max_dd": -111.08
+   },
+   "rand_control": -3.969
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 1.5,
+   "antitop": "rsi60",
+   "all": {
+    "n": 77,
+    "per_month": 4.1,
+    "win_rate": 26.0,
+    "expectancy": -3.079,
+    "profit_factor": 0.81,
+    "payoff": 2.32,
+    "max_dd": -472.99
+   },
+   "is": {
+    "n": 34,
+    "per_month": 2.8,
+    "win_rate": 14.7,
+    "expectancy": -17.856,
+    "profit_factor": 0.16,
+    "payoff": 0.93,
+    "max_dd": -616.32
+   },
+   "oos": {
+    "n": 43,
+    "per_month": 6.8,
+    "win_rate": 34.9,
+    "expectancy": 8.605,
+    "profit_factor": 1.66,
+    "payoff": 3.1,
+    "max_dd": -174.77
+   },
+   "rand_control": -5.859
+  },
+  {
+   "move_thr": 15,
+   "vol_mult": 3.0,
+   "antitop": "rsi65",
+   "all": {
+    "n": 96,
+    "per_month": 5.2,
+    "win_rate": 31.2,
+    "expectancy": 0.572,
+    "profit_factor": 1.04,
+    "payoff": 2.29,
+    "max_dd": -379.5
+   },
+   "is": {
+    "n": 50,
+    "per_month": 4.1,
+    "win_rate": 30.0,
+    "expectancy": -6.344,
+    "profit_factor": 0.56,
+    "payoff": 1.3,
+    "max_dd": -434.89
+   },
+   "oos": {
+    "n": 46,
+    "per_month": 7.3,
+    "win_rate": 32.6,
+    "expectancy": 8.089,
+    "profit_factor": 1.64,
+    "payoff": 3.38,
+    "max_dd": -205.92
+   },
+   "rand_control": -5.858
+  },
+  {
+   "move_thr": 25,
+   "vol_mult": 1.5,
+   "antitop": "rsi65",
+   "all": {
+    "n": 86,
+    "per_month": 4.6,
+    "win_rate": 31.4,
+    "expectancy": -0.205,
+    "profit_factor": 0.99,
+    "payoff": 2.15,
+    "max_dd": -344.64
+   },
+   "is": {
+    "n": 45,
+    "per_month": 3.7,
+    "win_rate": 26.7,
+    "expectancy": -7.686,
+    "profit_factor": 0.51,
+    "payoff": 1.39,
+    "max_dd": -374.31
+   },
+   "oos": {
+    "n": 41,
+    "per_month": 6.5,
+    "win_rate": 36.6,
+    "expectancy": 8.005,
+    "profit_factor": 1.65,
+    "payoff": 2.86,
+    "max_dd": -203.72
+   },
+   "rand_control": -6.031
+  },
+  {
    "move_thr": 15,
    "vol_mult": 3.0,
    "antitop": "rsi70",
@@ -109,6 +472,105 @@
     "max_dd": -150.89
    },
    "rand_control": -4.456
+  },
+  {
+   "move_thr": 25,
+   "vol_mult": 3.0,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 24,
+    "per_month": 1.3,
+    "win_rate": 20.8,
+    "expectancy": -6.299,
+    "profit_factor": 0.66,
+    "payoff": 2.5,
+    "max_dd": -228.81
+   },
+   "is": {
+    "n": 11,
+    "per_month": 0.9,
+    "win_rate": 0.0,
+    "expectancy": -22.135,
+    "profit_factor": 0.0,
+    "payoff": null,
+    "max_dd": -243.48
+   },
+   "oos": {
+    "n": 13,
+    "per_month": 2.1,
+    "win_rate": 38.5,
+    "expectancy": 7.101,
+    "profit_factor": 1.47,
+    "payoff": 2.35,
+    "max_dd": -67.88
+   },
+   "rand_control": -10.158
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 3.0,
+   "antitop": "rsi65",
+   "all": {
+    "n": 117,
+    "per_month": 6.3,
+    "win_rate": 32.5,
+    "expectancy": -0.238,
+    "profit_factor": 0.98,
+    "payoff": 2.04,
+    "max_dd": -388.86
+   },
+   "is": {
+    "n": 63,
+    "per_month": 5.1,
+    "win_rate": 30.2,
+    "expectancy": -6.46,
+    "profit_factor": 0.53,
+    "payoff": 1.23,
+    "max_dd": -549.84
+   },
+   "oos": {
+    "n": 54,
+    "per_month": 8.5,
+    "win_rate": 35.2,
+    "expectancy": 7.021,
+    "profit_factor": 1.59,
+    "payoff": 2.93,
+    "max_dd": -182.29
+   },
+   "rand_control": -4.322
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 1.5,
+   "antitop": "rsi60",
+   "all": {
+    "n": 204,
+    "per_month": 11.0,
+    "win_rate": 31.9,
+    "expectancy": -1.175,
+    "profit_factor": 0.91,
+    "payoff": 1.95,
+    "max_dd": -506.35
+   },
+   "is": {
+    "n": 118,
+    "per_month": 9.6,
+    "win_rate": 25.4,
+    "expectancy": -6.571,
+    "profit_factor": 0.55,
+    "payoff": 1.62,
+    "max_dd": -855.33
+   },
+   "oos": {
+    "n": 86,
+    "per_month": 13.6,
+    "win_rate": 40.7,
+    "expectancy": 6.23,
+    "profit_factor": 1.57,
+    "payoff": 2.29,
+    "max_dd": -168.46
+   },
+   "rand_control": -1.987
   },
   {
    "move_thr": 12,
@@ -177,6 +639,138 @@
    "rand_control": -4.318
   },
   {
+   "move_thr": 15,
+   "vol_mult": 1.5,
+   "antitop": "rsi65",
+   "all": {
+    "n": 223,
+    "per_month": 12.0,
+    "win_rate": 28.3,
+    "expectancy": -1.691,
+    "profit_factor": 0.87,
+    "payoff": 2.22,
+    "max_dd": -725.55
+   },
+   "is": {
+    "n": 133,
+    "per_month": 10.8,
+    "win_rate": 23.3,
+    "expectancy": -6.526,
+    "profit_factor": 0.55,
+    "payoff": 1.81,
+    "max_dd": -943.14
+   },
+   "oos": {
+    "n": 90,
+    "per_month": 14.2,
+    "win_rate": 35.6,
+    "expectancy": 5.452,
+    "profit_factor": 1.47,
+    "payoff": 2.66,
+    "max_dd": -173.45
+   },
+   "rand_control": -2.401
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 1.5,
+   "antitop": "rsi65",
+   "all": {
+    "n": 132,
+    "per_month": 7.1,
+    "win_rate": 25.0,
+    "expectancy": -2.678,
+    "profit_factor": 0.82,
+    "payoff": 2.45,
+    "max_dd": -473.36
+   },
+   "is": {
+    "n": 70,
+    "per_month": 5.7,
+    "win_rate": 21.4,
+    "expectancy": -9.297,
+    "profit_factor": 0.42,
+    "payoff": 1.53,
+    "max_dd": -679.7
+   },
+   "oos": {
+    "n": 62,
+    "per_month": 9.8,
+    "win_rate": 29.0,
+    "expectancy": 4.796,
+    "profit_factor": 1.37,
+    "payoff": 3.34,
+    "max_dd": -213.18
+   },
+   "rand_control": -4.287
+  },
+  {
+   "move_thr": 15,
+   "vol_mult": 1.5,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 120,
+    "per_month": 6.5,
+    "win_rate": 22.5,
+    "expectancy": -5.945,
+    "profit_factor": 0.6,
+    "payoff": 2.06,
+    "max_dd": -751.25
+   },
+   "is": {
+    "n": 80,
+    "per_month": 6.5,
+    "win_rate": 15.0,
+    "expectancy": -11.146,
+    "profit_factor": 0.28,
+    "payoff": 1.61,
+    "max_dd": -927.51
+   },
+   "oos": {
+    "n": 40,
+    "per_month": 6.3,
+    "win_rate": 37.5,
+    "expectancy": 4.456,
+    "profit_factor": 1.34,
+    "payoff": 2.23,
+    "max_dd": -141.56
+   },
+   "rand_control": -4.534
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 3.0,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 38,
+    "per_month": 2.0,
+    "win_rate": 21.1,
+    "expectancy": -6.819,
+    "profit_factor": 0.59,
+    "payoff": 2.22,
+    "max_dd": -352.89
+   },
+   "is": {
+    "n": 18,
+    "per_month": 1.5,
+    "win_rate": 5.6,
+    "expectancy": -19.215,
+    "profit_factor": 0.01,
+    "payoff": 0.22,
+    "max_dd": -345.86
+   },
+   "oos": {
+    "n": 20,
+    "per_month": 3.2,
+    "win_rate": 35.0,
+    "expectancy": 4.337,
+    "profit_factor": 1.31,
+    "payoff": 2.43,
+    "max_dd": -79.33
+   },
+   "rand_control": -7.096
+  },
+  {
    "move_thr": 20,
    "vol_mult": 3.0,
    "antitop": "none",
@@ -208,6 +802,105 @@
     "max_dd": -332.92
    },
    "rand_control": -2.744
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 3.0,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 53,
+    "per_month": 2.8,
+    "win_rate": 24.5,
+    "expectancy": -6.88,
+    "profit_factor": 0.55,
+    "payoff": 1.7,
+    "max_dd": -470.63
+   },
+   "is": {
+    "n": 27,
+    "per_month": 2.2,
+    "win_rate": 11.1,
+    "expectancy": -17.233,
+    "profit_factor": 0.06,
+    "payoff": 0.51,
+    "max_dd": -468.85
+   },
+   "oos": {
+    "n": 26,
+    "per_month": 4.1,
+    "win_rate": 38.5,
+    "expectancy": 3.872,
+    "profit_factor": 1.32,
+    "payoff": 2.1,
+    "max_dd": -86.59
+   },
+   "rand_control": -7.178
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 1.5,
+   "antitop": "rsi65",
+   "all": {
+    "n": 295,
+    "per_month": 15.9,
+    "win_rate": 28.8,
+    "expectancy": -2.245,
+    "profit_factor": 0.82,
+    "payoff": 2.03,
+    "max_dd": -892.5
+   },
+   "is": {
+    "n": 179,
+    "per_month": 14.6,
+    "win_rate": 25.1,
+    "expectancy": -5.905,
+    "profit_factor": 0.57,
+    "payoff": 1.7,
+    "max_dd": -1135.39
+   },
+   "oos": {
+    "n": 116,
+    "per_month": 18.3,
+    "win_rate": 34.5,
+    "expectancy": 3.401,
+    "profit_factor": 1.31,
+    "payoff": 2.48,
+    "max_dd": -177.79
+   },
+   "rand_control": -1.872
+  },
+  {
+   "move_thr": 25,
+   "vol_mult": 1.5,
+   "antitop": "ema",
+   "all": {
+    "n": 155,
+    "per_month": 8.3,
+    "win_rate": 35.5,
+    "expectancy": 1.206,
+    "profit_factor": 1.1,
+    "payoff": 2.0,
+    "max_dd": -375.34
+   },
+   "is": {
+    "n": 86,
+    "per_month": 7.0,
+    "win_rate": 32.6,
+    "expectancy": -0.519,
+    "profit_factor": 0.96,
+    "payoff": 1.99,
+    "max_dd": -647.53
+   },
+   "oos": {
+    "n": 69,
+    "per_month": 10.9,
+    "win_rate": 39.1,
+    "expectancy": 3.357,
+    "profit_factor": 1.3,
+    "payoff": 2.02,
+    "max_dd": -290.35
+   },
+   "rand_control": -3.65
   },
   {
    "move_thr": 20,
@@ -309,6 +1002,72 @@
    "rand_control": -4.1
   },
   {
+   "move_thr": 20,
+   "vol_mult": 1.5,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 75,
+    "per_month": 4.0,
+    "win_rate": 25.3,
+    "expectancy": -4.662,
+    "profit_factor": 0.69,
+    "payoff": 2.03,
+    "max_dd": -370.31
+   },
+   "is": {
+    "n": 43,
+    "per_month": 3.5,
+    "win_rate": 18.6,
+    "expectancy": -10.331,
+    "profit_factor": 0.34,
+    "payoff": 1.51,
+    "max_dd": -444.22
+   },
+   "oos": {
+    "n": 32,
+    "per_month": 5.1,
+    "win_rate": 34.4,
+    "expectancy": 2.956,
+    "profit_factor": 1.21,
+    "payoff": 2.31,
+    "max_dd": -118.89
+   },
+   "rand_control": -7.462
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 1.5,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 147,
+    "per_month": 7.9,
+    "win_rate": 25.2,
+    "expectancy": -4.883,
+    "profit_factor": 0.64,
+    "payoff": 1.91,
+    "max_dd": -739.42
+   },
+   "is": {
+    "n": 93,
+    "per_month": 7.6,
+    "win_rate": 18.3,
+    "expectancy": -9.419,
+    "profit_factor": 0.35,
+    "payoff": 1.57,
+    "max_dd": -911.8
+   },
+   "oos": {
+    "n": 54,
+    "per_month": 8.5,
+    "win_rate": 37.0,
+    "expectancy": 2.93,
+    "profit_factor": 1.24,
+    "payoff": 2.11,
+    "max_dd": -127.72
+   },
+   "rand_control": -4.168
+  },
+  {
    "move_thr": 15,
    "vol_mult": 3.0,
    "antitop": "none",
@@ -340,6 +1099,39 @@
     "max_dd": -353.49
    },
    "rand_control": -2.061
+  },
+  {
+   "move_thr": 25,
+   "vol_mult": 1.5,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 50,
+    "per_month": 2.7,
+    "win_rate": 30.0,
+    "expectancy": -2.692,
+    "profit_factor": 0.81,
+    "payoff": 1.88,
+    "max_dd": -172.25
+   },
+   "is": {
+    "n": 26,
+    "per_month": 2.1,
+    "win_rate": 19.2,
+    "expectancy": -7.82,
+    "profit_factor": 0.49,
+    "payoff": 2.06,
+    "max_dd": -295.61
+   },
+   "oos": {
+    "n": 24,
+    "per_month": 3.8,
+    "win_rate": 41.7,
+    "expectancy": 2.863,
+    "profit_factor": 1.23,
+    "payoff": 1.72,
+    "max_dd": -73.18
+   },
+   "rand_control": -7.682
   },
   {
    "move_thr": 25,
@@ -441,6 +1233,138 @@
    "rand_control": -6.147
   },
   {
+   "move_thr": 15,
+   "vol_mult": 3.0,
+   "antitop": "ema_rsi65",
+   "all": {
+    "n": 46,
+    "per_month": 2.5,
+    "win_rate": 19.6,
+    "expectancy": -8.417,
+    "profit_factor": 0.5,
+    "payoff": 2.05,
+    "max_dd": -493.19
+   },
+   "is": {
+    "n": 24,
+    "per_month": 2.0,
+    "win_rate": 8.3,
+    "expectancy": -18.319,
+    "profit_factor": 0.04,
+    "payoff": 0.41,
+    "max_dd": -443.22
+   },
+   "oos": {
+    "n": 22,
+    "per_month": 3.5,
+    "win_rate": 31.8,
+    "expectancy": 2.386,
+    "profit_factor": 1.17,
+    "payoff": 2.5,
+    "max_dd": -105.45
+   },
+   "rand_control": -7.607
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 3.0,
+   "antitop": "ema",
+   "all": {
+    "n": 134,
+    "per_month": 7.2,
+    "win_rate": 35.8,
+    "expectancy": 0.898,
+    "profit_factor": 1.07,
+    "payoff": 1.92,
+    "max_dd": -446.17
+   },
+   "is": {
+    "n": 71,
+    "per_month": 5.8,
+    "win_rate": 33.8,
+    "expectancy": -0.395,
+    "profit_factor": 0.97,
+    "payoff": 1.9,
+    "max_dd": -607.05
+   },
+   "oos": {
+    "n": 63,
+    "per_month": 10.0,
+    "win_rate": 38.1,
+    "expectancy": 2.354,
+    "profit_factor": 1.19,
+    "payoff": 1.94,
+    "max_dd": -233.75
+   },
+   "rand_control": -4.404
+  },
+  {
+   "move_thr": 15,
+   "vol_mult": 3.0,
+   "antitop": "ema",
+   "all": {
+    "n": 155,
+    "per_month": 8.3,
+    "win_rate": 34.8,
+    "expectancy": 0.164,
+    "profit_factor": 1.01,
+    "payoff": 1.9,
+    "max_dd": -469.09
+   },
+   "is": {
+    "n": 85,
+    "per_month": 6.9,
+    "win_rate": 32.9,
+    "expectancy": -1.603,
+    "profit_factor": 0.87,
+    "payoff": 1.77,
+    "max_dd": -688.56
+   },
+   "oos": {
+    "n": 70,
+    "per_month": 11.1,
+    "win_rate": 37.1,
+    "expectancy": 2.309,
+    "profit_factor": 1.2,
+    "payoff": 2.03,
+    "max_dd": -221.9
+   },
+   "rand_control": -3.65
+  },
+  {
+   "move_thr": 15,
+   "vol_mult": 1.5,
+   "antitop": "ema",
+   "all": {
+    "n": 264,
+    "per_month": 14.2,
+    "win_rate": 31.1,
+    "expectancy": -1.531,
+    "profit_factor": 0.87,
+    "payoff": 1.93,
+    "max_dd": -732.2
+   },
+   "is": {
+    "n": 162,
+    "per_month": 13.2,
+    "win_rate": 27.8,
+    "expectancy": -3.935,
+    "profit_factor": 0.68,
+    "payoff": 1.78,
+    "max_dd": -1008.66
+   },
+   "oos": {
+    "n": 102,
+    "per_month": 16.1,
+    "win_rate": 36.3,
+    "expectancy": 2.287,
+    "profit_factor": 1.21,
+    "payoff": 2.12,
+    "max_dd": -269.38
+   },
+   "rand_control": -1.945
+  },
+  {
    "move_thr": 20,
    "vol_mult": 1.5,
    "antitop": "none",
@@ -472,6 +1396,39 @@
     "max_dd": -424.84
    },
    "rand_control": -1.899
+  },
+  {
+   "move_thr": 20,
+   "vol_mult": 1.5,
+   "antitop": "ema",
+   "all": {
+    "n": 202,
+    "per_month": 10.9,
+    "win_rate": 33.2,
+    "expectancy": -0.301,
+    "profit_factor": 0.98,
+    "payoff": 1.96,
+    "max_dd": -588.63
+   },
+   "is": {
+    "n": 115,
+    "per_month": 9.4,
+    "win_rate": 31.3,
+    "expectancy": -2.142,
+    "profit_factor": 0.83,
+    "payoff": 1.82,
+    "max_dd": -771.96
+   },
+   "oos": {
+    "n": 87,
+    "per_month": 13.8,
+    "win_rate": 35.6,
+    "expectancy": 2.132,
+    "profit_factor": 1.18,
+    "payoff": 2.14,
+    "max_dd": -321.08
+   },
+   "rand_control": -2.347
   },
   {
    "move_thr": 15,
@@ -538,6 +1495,39 @@
     "max_dd": -381.31
    },
    "rand_control": -2.329
+  },
+  {
+   "move_thr": 12,
+   "vol_mult": 3.0,
+   "antitop": "ema",
+   "all": {
+    "n": 166,
+    "per_month": 8.9,
+    "win_rate": 34.9,
+    "expectancy": -0.604,
+    "profit_factor": 0.95,
+    "payoff": 1.77,
+    "max_dd": -533.59
+   },
+   "is": {
+    "n": 90,
+    "per_month": 7.3,
+    "win_rate": 33.3,
+    "expectancy": -2.15,
+    "profit_factor": 0.83,
+    "payoff": 1.65,
+    "max_dd": -705.17
+   },
+   "oos": {
+    "n": 76,
+    "per_month": 12.0,
+    "win_rate": 36.8,
+    "expectancy": 1.226,
+    "profit_factor": 1.1,
+    "payoff": 1.89,
+    "max_dd": -244.52
+   },
+   "rand_control": -3.661
   },
   {
    "move_thr": 12,
@@ -640,6 +1630,39 @@
   },
   {
    "move_thr": 12,
+   "vol_mult": 1.5,
+   "antitop": "ema",
+   "all": {
+    "n": 298,
+    "per_month": 16.0,
+    "win_rate": 31.5,
+    "expectancy": -1.958,
+    "profit_factor": 0.83,
+    "payoff": 1.8,
+    "max_dd": -747.9
+   },
+   "is": {
+    "n": 178,
+    "per_month": 14.5,
+    "win_rate": 30.3,
+    "expectancy": -3.89,
+    "profit_factor": 0.68,
+    "payoff": 1.56,
+    "max_dd": -944.44
+   },
+   "oos": {
+    "n": 120,
+    "per_month": 19.0,
+    "win_rate": 33.3,
+    "expectancy": 0.907,
+    "profit_factor": 1.08,
+    "payoff": 2.17,
+    "max_dd": -333.13
+   },
+   "rand_control": -1.773
+  },
+  {
+   "move_thr": 12,
    "vol_mult": 3.0,
    "antitop": "fresh",
    "all": {
@@ -670,6 +1693,39 @@
     "max_dd": -352.83
    },
    "rand_control": -4.466
+  },
+  {
+   "move_thr": 25,
+   "vol_mult": 3.0,
+   "antitop": "ema",
+   "all": {
+    "n": 115,
+    "per_month": 6.2,
+    "win_rate": 34.8,
+    "expectancy": 0.29,
+    "profit_factor": 1.02,
+    "payoff": 1.92,
+    "max_dd": -461.81
+   },
+   "is": {
+    "n": 57,
+    "per_month": 4.6,
+    "win_rate": 33.3,
+    "expectancy": 0.013,
+    "profit_factor": 1.0,
+    "payoff": 2.0,
+    "max_dd": -528.77
+   },
+   "oos": {
+    "n": 58,
+    "per_month": 9.2,
+    "win_rate": 36.2,
+    "expectancy": 0.561,
+    "profit_factor": 1.04,
+    "payoff": 1.84,
+    "max_dd": -344.07
+   },
+   "rand_control": -4.26
   },
   {
    "move_thr": 15,
