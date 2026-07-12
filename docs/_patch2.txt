@@ -1,0 +1,1 @@
+MOVER_PATCH_OK bak=ganesha_ejecutor.py.bak_20260712T200930 size=13611
