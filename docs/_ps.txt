@@ -97,10 +97,14 @@ def sell_market(ex, sym, qty):
 def place_stop(ex, sym, qty, stop):
     try:
         base = sym.split("/")[0]
-        free = ex.fetch_balance().get(base, {}).get("free", 0)
-        if free > 0:
-            qty = min(qty, free)
+        free = ex.fetch_balance().get(base, {}).get("free", 0) or 0
+        qty = min(qty, free) * 0.999
+        if qty <= 0:
+            log({"type": "warn", "symbol": sym, "msg": "place_stop: sin balance libre, skip"})
+            return None
         q = float(ex.amount_to_precision(sym, qty))
+        if q <= 0:
+            return None
         sp = float(ex.price_to_precision(sym, stop))
         px = float(ex.price_to_precision(sym, stop * 0.99))
         o = ex.create_order(sym, "limit", "sell", q, px, {"stopPrice": sp})
