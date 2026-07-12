@@ -1,0 +1,278 @@
+"""Ganesha-Ejecutor v2. Trend-bot corto plazo sobre semillas confirmadas.
+Scan de entrada en velas 15m, stops ATR gestionados en velas 4h (confirmados al cierre).
+Cron cada 4h. Modo por defecto: PAPER. Modo LIVE solo si existe ejecutor/LIVE
+(archivo que crea Agus a mano) y hay API keys. En live: ordenes market reales +
+stop-loss-limit NATIVO en Binance como red de seguridad."""
+import json, os, time
+import ccxt
+import notify
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+GDIR = os.path.join(BASE, "ejecutor")
+GSTATE = os.path.join(GDIR, "state.json")
+GLOG = os.path.join(GDIR, "events.jsonl")
+SEM_STATE = os.path.join(BASE, "state.json")
+LIVEFLAG = os.path.join(GDIR, "LIVE")
+KEYS = os.path.join(GDIR, "keys.json")
+FT_CONFIG = "/opt/ganesha_bot/config.json"
+
+P = {"equity": 46.0, "risk_pct": 2.0, "min_notional": 5.0,
+     "vol_mult": 1.5, "vol_sma": 20, "mom_lookback": 96,
+     "atr_n": 14, "atr_mult": 2.5,
+     "scaleout_r": 2.0, "scaleout_frac": 0.30, "trail_after_r": 2.0}
+
+def load(p, d):
+    try:
+        return json.load(open(p))
+    except Exception:
+        return d
+
+def log(ev):
+    ev["ts"] = time.time()
+    ev["iso"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    with open(GLOG, "a") as f:
+        f.write(json.dumps(ev) + "\n")
+    print("[ejecutor]", json.dumps(ev))
+
+def atr(c, n):
+    trs = [max(c[i][2] - c[i][3], abs(c[i][2] - c[i-1][4]), abs(c[i][3] - c[i-1][4]))
+           for i in range(len(c) - n, len(c))]
+    return sum(trs) / len(trs)
+
+def confirmed_symbols():
+    st = load(SEM_STATE, {})
+    return [s for s, p in st.get("positions", {}).items()
+            if p.get("status") == "confirmed"]
+
+def scan_entry(c15):
+    last = c15[-1]
+    hh = max(x[4] for x in c15[-P["mom_lookback"] - 1:-1])
+    vs = sum(x[5] for x in c15[-P["vol_sma"] - 1:-1]) / P["vol_sma"]
+    return last[4] > hh and last[5] > P["vol_mult"] * vs
+
+def get_ex():
+    live = os.path.exists(LIVEFLAG)
+    creds = None
+    if live:
+        k = load(KEYS, {})
+        if not k.get("apiKey"):
+            try:
+                import importlib.util as iu
+                sp = iu.spec_from_file_location("gcfg", "/opt/ganesha_bot/config.py")
+                m = iu.module_from_spec(sp)
+                sp.loader.exec_module(m)
+                k = {"apiKey": getattr(m, "BINANCE_API_KEY", None),
+                     "secret": getattr(m, "BINANCE_API_SECRET", None)}
+            except Exception:
+                k = {}
+        if k.get("apiKey") and k.get("secret"):
+            creds = k
+        else:
+            live = False
+            log({"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper"})
+    cfg = {"enableRateLimit": True}
+    if creds:
+        cfg.update({"apiKey": creds["apiKey"], "secret": creds["secret"]})
+    return ccxt.binance(cfg), live
+
+def buy_market(ex, sym, qty, px):
+    bal = ex.fetch_balance()
+    free = bal.get("USDT", {}).get("free", 0)
+    if qty * px > free * 0.98:
+        qty = free * 0.98 / px
+    if qty * px < P["min_notional"]:
+        return None, 0
+    q = float(ex.amount_to_precision(sym, qty))
+    o = ex.create_order(sym, "market", "buy", q)
+    return o, q
+
+def sell_market(ex, sym, qty):
+    base = sym.split("/")[0]
+    free = ex.fetch_balance().get(base, {}).get("free", 0)
+    q = float(ex.amount_to_precision(sym, min(qty, free)))
+    if q <= 0:
+        return None
+    return ex.create_order(sym, "market", "sell", q)
+
+def place_stop(ex, sym, qty, stop):
+    try:
+        base = sym.split("/")[0]
+        free = ex.fetch_balance().get(base, {}).get("free", 0)
+        if free > 0:
+            qty = min(qty, free)
+        q = float(ex.amount_to_precision(sym, qty))
+        sp = float(ex.price_to_precision(sym, stop))
+        px = float(ex.price_to_precision(sym, stop * 0.99))
+        o = ex.create_order(sym, "limit", "sell", q, px, {"stopPrice": sp})
+        return o.get("id")
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "place_stop: " + str(e)[:100]})
+        return None
+
+def cancel_stop(ex, sym, oid):
+    try:
+        if oid:
+            ex.cancel_order(oid, sym)
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "cancel_stop: " + str(e)[:80]})
+
+def run():
+    os.makedirs(GDIR, exist_ok=True)
+    ex, live = get_ex()
+    mode = "LIVE" if live else "PAPER"
+    gs = load(GSTATE, {"positions": {}, "paper_pnl": 0.0})
+    if live:
+        try:
+            free = ex.fetch_balance().get("USDT", {}).get("free", 0)
+            inv = sum(q.get("entry", 0) * q.get("qty", 0)
+                      for q in gs.get("positions", {}).values())
+            if free + inv > 1:
+                P["equity"] = round(free + inv, 2)
+        except Exception as e:
+            log({"type": "warn", "msg": "equity fetch: " + str(e)[:80]})
+    gs["equity_base"] = P["equity"]
+    syms = confirmed_symbols()
+    log({"type": "scan", "mode": mode, "confirmed": syms,
+         "open": list(gs["positions"].keys())})
+    for sym in set(syms) | set(gs["positions"].keys()):
+        try:
+            c15 = ex.fetch_ohlcv(sym, "15m", limit=120)[:-1]
+            c4h = ex.fetch_ohlcv(sym, "4h", limit=60)[:-1]
+        except Exception as e:
+            log({"type": "error", "symbol": sym, "msg": str(e)[:120]})
+            continue
+        pos = gs["positions"].get(sym)
+        px = c15[-1][4]
+        a4 = atr(c4h, P["atr_n"])
+        if pos is None:
+            if sym in syms and scan_entry(c15):
+                stop = px - P["atr_mult"] * a4
+                if stop <= 0 or stop >= px:
+                    continue
+                risk = P["equity"] * P["risk_pct"] / 100
+                qty = risk / (px - stop)
+                if qty * px < P["min_notional"]:
+                    log({"type": "skip_min_notional", "symbol": sym,
+                         "notional": round(qty * px, 2)})
+                    continue
+                oid = None
+                if live:
+                    try:
+                        o, qty = buy_market(ex, sym, qty, px)
+                        if o is None:
+                            log({"type": "skip_no_balance", "symbol": sym})
+                            continue
+                        px = o.get("average") or px
+                        oid = place_stop(ex, sym, qty, stop)
+                    except Exception as e:
+                        log({"type": "error", "symbol": sym,
+                             "msg": "entry live: " + str(e)[:120]})
+                        continue
+                gs["positions"][sym] = {"entry": px, "qty": qty, "stop": stop,
+                                        "r": px - stop, "so": False, "stop_oid": oid,
+                                        "mode": mode,
+                                        "opened": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+                log({"type": mode + "_ENTRY", "symbol": sym, "px": px,
+                     "qty": round(qty, 6), "stop": round(stop, 6),
+                     "stop_oid": oid, "atr4h_pct": round(a4 / px * 100, 2)})
+                try:
+                    notify.exec_alert(sym, mode + "_ENTRY", f"Ejecutor {mode}: entrada {sym} @ {px:.6g}, qty {qty:.6g}, stop {stop:.6g}")
+                except Exception:
+                    pass
+            continue
+        if live and pos.get("mode") == "LIVE" and pos.get("stop_oid"):
+            try:
+                so = ex.fetch_order(pos["stop_oid"], sym)
+                st_ = (so.get("status") or "").lower()
+                if st_ == "closed":
+                    fillpx = so.get("average") or so.get("price") or pos["stop"]
+                    fq = so.get("filled") or pos["qty"]
+                    pnl = fq * (fillpx - pos["entry"])
+                    gs["paper_pnl"] += pnl
+                    log({"type": "LIVE_NATIVE_STOP_OUT", "symbol": sym,
+                         "px": fillpx, "pnl": round(pnl, 2),
+                         "r": round((fillpx - pos["entry"]) / pos["r"], 2)})
+                    try:
+                        notify.exec_alert(sym, "LIVE_NATIVE_STOP_OUT",
+                                          "Ejecutor LIVE: stop nativo ejecutado %s @ %.6g, pnl %.2f USDT" % (sym, fillpx, pnl))
+                    except Exception:
+                        pass
+                    del gs["positions"][sym]
+                    continue
+                if st_ in ("canceled", "cancelled", "expired", "rejected"):
+                    pos["stop_oid"] = None
+            except Exception as e:
+                log({"type": "warn", "symbol": sym,
+                     "msg": "check stop nativo: " + str(e)[:80]})
+        close4 = c4h[-1][4]
+        rmult = (px - pos["entry"]) / pos["r"]
+        if close4 < pos["stop"]:
+            if live and pos.get("mode") == "LIVE":
+                cancel_stop(ex, sym, pos.get("stop_oid"))
+                try:
+                    sell_market(ex, sym, pos["qty"])
+                except Exception as e:
+                    log({"type": "error", "symbol": sym,
+                         "msg": "stop live: " + str(e)[:120]})
+                    continue
+            pnl = pos["qty"] * (close4 - pos["entry"])
+            gs["paper_pnl"] += pnl
+            log({"type": mode + "_STOP_OUT", "symbol": sym, "px": close4,
+                 "pnl": round(pnl, 2),
+                 "r": round((close4 - pos["entry"]) / pos["r"], 2)})
+            try:
+                notify.exec_alert(sym, mode + "_STOP_OUT", f"Ejecutor {mode}: STOP {sym} @ {close4:.6g}, pnl {pnl:.2f} USDT")
+            except Exception:
+                pass
+            del gs["positions"][sym]
+            continue
+        if live and pos.get("mode") == "LIVE" and not pos.get("stop_oid"):
+            pos["stop_oid"] = place_stop(ex, sym, pos["qty"], pos["stop"])
+            if pos["stop_oid"]:
+                log({"type": "STOP_REPAIR", "symbol": sym,
+                     "stop": round(pos["stop"], 6), "oid": pos["stop_oid"]})
+        if not pos["so"] and rmult >= P["scaleout_r"]:
+            sq = pos["qty"] * P["scaleout_frac"]
+            if not live or sq * px >= P["min_notional"]:
+                if live and pos.get("mode") == "LIVE":
+                    cancel_stop(ex, sym, pos.get("stop_oid"))
+                    try:
+                        sell_market(ex, sym, sq)
+                    except Exception as e:
+                        log({"type": "error", "symbol": sym,
+                             "msg": "scaleout live: " + str(e)[:120]})
+                        continue
+                pnl = sq * (px - pos["entry"])
+                gs["paper_pnl"] += pnl
+                pos["qty"] -= sq
+                pos["so"] = True
+                pos["stop"] = max(pos["stop"], pos["entry"])
+                if live and pos.get("mode") == "LIVE":
+                    pos["stop_oid"] = place_stop(ex, sym, pos["qty"], pos["stop"])
+                log({"type": mode + "_SCALE_OUT", "symbol": sym, "px": px,
+                     "pnl": round(pnl, 2)})
+                try:
+                    notify.exec_alert(sym, mode + "_SCALE_OUT", f"Ejecutor {mode}: TP parcial {sym} @ {px:.6g}")
+                except Exception:
+                    pass
+        if rmult >= P["trail_after_r"]:
+            ns = close4 - P["atr_mult"] * a4
+            if ns > pos["stop"]:
+                pos["stop"] = ns
+                if live and pos.get("mode") == "LIVE":
+                    cancel_stop(ex, sym, pos.get("stop_oid"))
+                    pos["stop_oid"] = place_stop(ex, sym, pos["qty"], ns)
+                log({"type": "TRAIL", "symbol": sym, "stop": round(ns, 6)})
+        if sym not in syms:
+            log({"type": "note_unconfirmed", "symbol": sym})
+    json.dump(gs, open(GSTATE, "w"), indent=1)
+    try:
+        import ejecutor_dash
+        ejecutor_dash.publish()
+    except Exception as e:
+        log({"type": "warn", "msg": "dash: " + str(e)[:100]})
+    print("[ejecutor] ok (%s). abiertas: %s pnl: %s" %
+          (mode, list(gs["positions"].keys()), round(gs["paper_pnl"], 2)))
+
+if __name__ == "__main__":
+    run()
