@@ -1,0 +1,16 @@
+PS
+NCACHE
+436
+LOG
+[bt] mt=20 vm=1.5 at=fresh -> n=150/mes=8.3 wr=28.7 exp=-1.496 pf=0.89 ctrl=-3.86
+[bt] mt=20 vm=3.0 at=none -> n=167/mes=9.3 wr=36.5 exp=2.953 pf=1.25 ctrl=-2.744
+[bt] mt=20 vm=3.0 at=rsi70 -> n=90/mes=5.0 wr=33.3 exp=4.397 pf=1.32 ctrl=-5.955
+[bt] mt=20 vm=3.0 at=fresh -> n=79/mes=4.4 wr=34.2 exp=3.378 pf=1.25 ctrl=-6.147
+[bt] mt=25 vm=1.5 at=none -> n=201/mes=11.2 wr=35.3 exp=1.475 pf=1.12 ctrl=-2.509
+[bt] mt=25 vm=1.5 at=rsi70 -> n=124/mes=6.9 wr=29.8 exp=-0.323 pf=0.98 ctrl=-4.318
+[bt] mt=25 vm=1.5 at=fresh -> n=111/mes=6.2 wr=29.7 exp=0.207 pf=1.02 ctrl=-4.659
+[bt] mt=25 vm=3.0 at=none -> n=141/mes=7.8 wr=36.2 exp=2.646 pf=1.21 ctrl=-4.1
+[bt] mt=25 vm=3.0 at=rsi70 -> n=63/mes=3.5 wr=30.2 exp=4.769 pf=1.31 ctrl=-8.083
+[bt] mt=25 vm=3.0 at=fresh -> n=63/mes=3.5 wr=33.3 exp=4.142 pf=1.31 ctrl=-8.083
+[bt] publish docs/_btres.json 200
+[bt] LISTO en 14s
