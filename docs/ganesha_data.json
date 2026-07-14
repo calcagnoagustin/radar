@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 189.37,
+ "equity_now": 187.83,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -28,6 +28,13 @@
    "entry": 48.322435897435895,
    "qty": 0.39,
    "stop": 38.04210714285714,
+   "tp1_done": false
+  },
+  {
+   "symbol": "XEC/USDT",
+   "entry": 6.68e-06,
+   "qty": 3197583.0,
+   "stop": 5.632142857142857e-06,
    "tp1_done": false
   }
  ],
