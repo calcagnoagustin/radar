@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 183.66,
+ "equity_now": 182.85,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 3.81,
- "trades_total": 2,
- "win_rate": 100,
- "profit_factor": 3.81,
+ "pnl_today": -4.28,
+ "trades_today": 1,
+ "realized_pnl": -0.47,
+ "trades_total": 3,
+ "win_rate": 67,
+ "profit_factor": 0.89,
  "open_positions": [
-  {
-   "symbol": "T/USDT",
-   "entry": 0.0055,
-   "qty": 3972.2,
-   "stop": 0.004419642857142857,
-   "tp1_done": false
-  },
   {
    "symbol": "DODO/USDT",
    "entry": 0.02296,
@@ -56,6 +49,15 @@
    "pnl_net": 1.34,
    "action": "stop",
    "closed_ts": 1783752662.9234464
+  },
+  {
+   "symbol": "T/USDT",
+   "entry": 0.0055,
+   "exit": 0.00442,
+   "qty_total": 3972.2,
+   "pnl_net": -4.28,
+   "action": "stop",
+   "closed_ts": 1784030837.527158
   }
  ]
 }
