@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 179.93,
+ "equity_now": 178.31,
  "deposits_total": 0,
- "pnl_today": -10.28,
- "trades_today": 3,
- "realized_pnl": -10.75,
- "trades_total": 6,
- "win_rate": 33,
- "profit_factor": 0.26,
+ "pnl_today": -13.92,
+ "trades_today": 4,
+ "realized_pnl": -14.39,
+ "trades_total": 7,
+ "win_rate": 29,
+ "profit_factor": 0.21,
  "open_positions": [
   {
    "symbol": "DODO/USDT",
@@ -28,13 +28,6 @@
    "entry": 0.00929,
    "qty": 1253.4,
    "stop": 0.0062125,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PORTO/USDT",
-   "entry": 0.598,
-   "qty": 44.41,
-   "stop": 0.5157142857142857,
    "tp1_done": false
   }
  ],
@@ -92,6 +85,15 @@
    "pnl_net": -3.91,
    "action": "stop",
    "closed_ts": 1784103677.4625063
+  },
+  {
+   "symbol": "PORTO/USDT",
+   "entry": 0.598,
+   "exit": 0.516,
+   "qty_total": 44.41,
+   "pnl_net": -3.64,
+   "action": "stop",
+   "closed_ts": 1784131642.7436383
   }
  ]
 }
