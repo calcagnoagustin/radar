@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-13T00:16:07Z",
+ "generated_at": "2026-07-15T00:16:48Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 79.02744377,
@@ -30,12 +30,12 @@
   {
    "symbol": "PYTH/USDT",
    "binance": "PYTHUSDT",
-   "status": "seed",
+   "status": "confirmed",
    "qty": 184.1,
    "avg_cost": 0.03801,
    "dca_adds": 0,
    "tp_hit": [],
-   "confirmed_at": null,
+   "confirmed_at": "2026-07-14",
    "note": ""
   },
   {
@@ -605,7 +605,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-12T00:28:44Z",
+  "generated": "2026-07-13T00:16:49Z",
   "ranking": [
    {
     "atr_mult": 2.0,
