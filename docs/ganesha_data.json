@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 185.51,
+ "equity_now": 182.42,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -0.47,
- "trades_total": 3,
- "win_rate": 67,
- "profit_factor": 0.89,
+ "pnl_today": -6.37,
+ "trades_today": 2,
+ "realized_pnl": -6.84,
+ "trades_total": 5,
+ "win_rate": 40,
+ "profit_factor": 0.36,
  "open_positions": [
   {
    "symbol": "DODO/USDT",
@@ -24,13 +24,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "XEC/USDT",
-   "entry": 6.68e-06,
-   "qty": 3197583.0,
-   "stop": 5.632142857142857e-06,
-   "tp1_done": false
-  },
-  {
    "symbol": "KAITO/USDT",
    "entry": 0.7885,
    "qty": 17.7,
@@ -42,13 +35,6 @@
    "entry": 0.00929,
    "qty": 1253.4,
    "stop": 0.0062125,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PORTO/USDT",
-   "entry": 0.597,
-   "qty": 42.64,
-   "stop": 0.5267142857142857,
    "tp1_done": false
   }
  ],
@@ -79,6 +65,24 @@
    "pnl_net": -4.28,
    "action": "stop",
    "closed_ts": 1784030837.527158
+  },
+  {
+   "symbol": "XEC/USDT",
+   "entry": 6.68e-06,
+   "exit": 5.63e-06,
+   "qty_total": 3197583.0,
+   "pnl_net": -3.35,
+   "action": "stop",
+   "closed_ts": 1784088438.8097138
+  },
+  {
+   "symbol": "PORTO/USDT",
+   "entry": 0.597,
+   "exit": 0.526,
+   "qty_total": 42.64,
+   "pnl_net": -3.02,
+   "action": "stop",
+   "closed_ts": 1784088441.4751234
   }
  ]
 }
