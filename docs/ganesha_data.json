@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 176.88,
+ "equity_now": 178.1,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -42,6 +42,13 @@
    "entry": 0.00461,
    "qty": 2262.0,
    "stop": 0.0031064285714285716,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BANK/USDT",
+   "entry": 0.0557,
+   "qty": 290.3,
+   "stop": 0.043192857142857144,
    "tp1_done": false
   }
  ],
