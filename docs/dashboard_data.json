@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-15T00:16:48Z",
+ "generated_at": "2026-07-16T00:16:20Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 79.02744377,
+ "free_usdt": 65.32104377,
  "deposits": [],
  "positions": [
   {
@@ -63,12 +63,12 @@
   {
    "symbol": "ZEC/USDT",
    "binance": "ZECUSDT",
-   "status": "seed",
-   "qty": 0.019,
-   "avg_cost": 502.17,
-   "dca_adds": 0,
+   "status": "confirmed",
+   "qty": 0.043,
+   "avg_cost": 540.6425581395349,
+   "dca_adds": 1,
    "tp_hit": [],
-   "confirmed_at": null,
+   "confirmed_at": "2026-07-16",
    "note": ""
   }
  ],
@@ -178,6 +178,15 @@
    "qty_total": 2024.2,
    "pnl_net": 0,
    "closed_ts": 1783816069.4745917
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "action": "GARDEN_DCA",
+   "entry": 571.1,
+   "exit": 571.1,
+   "qty_total": 0.024,
+   "pnl_net": 0,
+   "closed_ts": 1784160940.1795108
   }
  ],
  "shortlist_full": [
@@ -605,7 +614,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-13T00:16:49Z",
+  "generated": "2026-07-15T00:18:44Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -643,10 +652,6 @@
   {
    "nivel": "amarillo",
    "texto": "DCA del mes: reforzar PYTH/USDT con $24 USDT - Catalizador institucional fresco y accionable (Nasdaq TotalView on-chain + upgrade Pyth Co (esperando timing Stage 2)"
-  },
-  {
-   "nivel": "amarillo",
-   "texto": "DCA del mes: reforzar ZEC/USDT con $20 USDT - Posición dust ($9.5) pero tesis viva: privacidad reacelerando y ZEC entre top movers diari (esperando timing Stage 2)"
   },
   {
    "nivel": "rojo",
