@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 175.16,
+ "equity_now": 175.09,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -49,6 +49,13 @@
    "entry": 0.0557,
    "qty": 290.3,
    "stop": 0.043192857142857144,
+   "tp1_done": false
+  },
+  {
+   "symbol": "DGB/USDT",
+   "entry": 0.00301,
+   "qty": 5841.2,
+   "stop": 0.002368214285714286,
    "tp1_done": false
   }
  ],
