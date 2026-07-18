@@ -1,10 +1,9 @@
 {
- "now": "22:19:24Z",
- "ccxt_ver": "4.5.59",
- "fetch_deposits_USDT": "[]",
- "fetch_transfers": "[]",
- "subUserHistory[sapi_get_sub_account_transfer_subuserhistory]": "[{'counterParty': 'master', 'email': 'calcagnoagustin@gmail.com', 'type': '2', 'asset': 'AVAX', 'qty': '3.35664000', 'time': '1782523200000', 'status': 'SUCCESS', 'tranId': '385438122076', 'fromAccountType': 'SPOT', 'toAccountType': 'SPOT'}]",
- "universalTransfer_MAIN": "ERR:binance {\"code\":-1102,\"msg\":\"Mandatory parameter 'type' was not sent, was empty/null, or malformed.\"}",
- "usdt_free": "92.90016167",
- "usdt_total": "92.90016167"
+ "now": "22:26:54Z",
+ "n": "1",
+ "rows": "[{'type': '2', 'asset': 'AVAX', 'qty': 3.35664, 'iso': '2026-06-27', 'px': 6.679, 'usd': 22.42, 'to': 'SPOT', 'cp': 'master'}]",
+ "deposits_in_usd(type2)": "22.42",
+ "out_usd(type1)": "0.0",
+ "net_deposits_usd": "22.42",
+ "usdt_free": "92.90016167"
 }
