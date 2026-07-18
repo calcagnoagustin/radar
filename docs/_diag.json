@@ -1,0 +1,11 @@
+{
+ "now": "2026-07-18 21:31:30Z",
+ "tok_len": 93,
+ "ps": "",
+ "systemd_user": "",
+ "systemd_sys": "",
+ "cron": "15 0 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python main.py >> /home/opc/bot_semillas/cron.log 2>&1\n7 0,4,8,12,16,20 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python ganesha_ejecutor.py >> /home/opc/bot_semillas/ejecutor/cron.log 2>&1",
+ "ganesha_json_mtime": "",
+ "ls": "total 736\ndrwxr-xr-x.  7 opc opc  4096 Jul 18 00:15 .\ndrwx------. 10 opc opc  4096 Jul 12 05:45 ..\n-rw-r--r--.  1 opc opc  6555 Jul 11 05:10 brain_monthly.py\n-rw-r--r--.  1 opc opc  2921 Jun 25 23:04 brain_monthly.py.bak.1782428657\n-rw-r--r--.  1 opc opc  6059 Jun 28 22:18 brain_monthly.py.bak.20260628\n-rw-r--r--.  1 opc opc  6028 Jun 28 03:43 brain_monthly.py.bak_3seeds\n-rw-r--r--.  1 opc opc  5305 Jun 26 01:15 brain_monthly.py.bak.mx\n-rw-r--r--.  1 opc opc  5320 Jun 26 01:48 brain_monthly.py.bak.v3\n-rw-r--r--.  1 opc opc  3811 Jul 11 05:10 config.py\n-rw-r--r--.  1 opc opc  2609 Jun 28 21:58 config.py.bak.20260628\n-rw-r--r--.  1 opc opc  2525 Jun 28 03:52 config.py.bak_3seeds\n-rw-r--r--.  1 opc opc  2828 Jul  6 22:01 config.py.bak_p9\n-rw-r--r--.  1 opc opc  2608 Jun 29 03:40 config.py.bak.preP15.20260629-034053\n-rw-r--r--.  1 opc opc  2739 Jun 29 14:06 config.py.bak.preP6.20260629-140609\n-rw-r--r--.  1 opc opc  2828 Jul  6 22:43 config.py.bak_prep9\n-rw-r--r--.  1 opc opc  2333 Jun 27 17:31 config.py.bak.scan\n-rw-r--r--.  1 opc opc 29255 Jul 18 00:18 cron.log\n-rw-r--r--.  1 opc opc 10533 Jul 11 06:14 dashboard.py\n-rw-r--r--.  1 opc opc  5334 Jun 25 23:24 dashboard.py.bak.1782429899\n-rw-r--r--.  1 opc opc  5450 Jun 27 03:04 dashboard.py.bak.regimen\ndrwxr-xr-x.  2 opc opc    97 Jul  3 16:13 docs\ndrwxr-xr-x.  2 opc opc   103 Jul 12 20:26 ejecutor\n-rw-r--r--.  1 opc opc  3721 Jul 11 06:14 ejecutor_dash.py\n-rw-------.  1 opc opc  2030 Jul 11 05:10 .env\n-rw-------.  1 opc opc  2079",
+ "logtail": ""
+}
