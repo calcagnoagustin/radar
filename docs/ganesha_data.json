@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 183.42,
+ "equity_now": 188.74,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -14.39,
- "trades_total": 7,
- "win_rate": 29,
- "profit_factor": 0.21,
+ "pnl_today": 2.18,
+ "trades_today": 1,
+ "realized_pnl": -12.21,
+ "trades_total": 8,
+ "win_rate": 38,
+ "profit_factor": 0.33,
  "open_positions": [
   {
    "symbol": "DODO/USDT",
@@ -33,9 +33,9 @@
   {
    "symbol": "XEC/USDT",
    "entry": 6.63e-06,
-   "qty": 2114406.0,
-   "stop": 4.9574999999999995e-06,
-   "tp1_done": false
+   "qty": 1480084.2000000002,
+   "stop": 8.19e-06,
+   "tp1_done": true
   },
   {
    "symbol": "SKL/USDT",
@@ -122,6 +122,15 @@
    "pnl_net": -3.64,
    "action": "stop",
    "closed_ts": 1784131642.7436383
+  },
+  {
+   "symbol": "XEC/USDT",
+   "entry": 6.63e-06,
+   "exit": 1.007e-05,
+   "qty_total": 0,
+   "pnl_net": 2.18,
+   "action": "tp",
+   "closed_ts": 1784378315.8888724
   }
  ]
 }
