@@ -47,3 +47,65 @@
   setInterval(function(){loadG();},20000);
   setInterval(apply,2500);
 })();
+
+/* ganesha_extra.js — bloque 2 (18 jul 2026): curva de equity REALIZADA.
+   Calcula el P&L realizado acumulado desde recent_closed (que el dashboard ya carga)
+   y lo dibuja como card SVG, sin dependencias externas (CSP-safe).
+   Es realizada (cierres): la equity total mark-to-market no es reconstruible mientras
+   deposits_total no quede registrado. */
+(function(){
+  var G=null, lastSig="";
+  function load(){return fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)G=j;}).catch(function(){});}
+  function fU(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function anchor(){var h=document.getElementById("gHistory");return h?h.closest(".card"):null;}
+  function ensureCard(){
+    if(document.getElementById("gEqCurveCard"))return document.getElementById("gEqCurveBody");
+    var a=anchor();if(!a||!a.parentNode)return null;
+    var card=document.createElement("div");
+    card.className="card";card.id="gEqCurveCard";card.style.marginTop="18px";
+    card.innerHTML='<div class="head"><span class="title">Curva de equity</span><span class="eyebrow">realizada · acumulado</span></div><div class="body" id="gEqCurveBody"></div>';
+    a.parentNode.insertBefore(card,a);
+    return card.querySelector("#gEqCurveBody");
+  }
+  function render(){
+    if(!G||!G.recent_closed||!G.recent_closed.length)return;
+    var cl=G.recent_closed.slice().sort(function(x,y){return (x.closed_ts||0)-(y.closed_ts||0);});
+    var sig=cl.length+":"+(cl[cl.length-1].closed_ts||0);
+    var body=ensureCard();if(!body)return;
+    if(sig===lastSig&&body.dataset.done)return;lastSig=sig;
+    var cum=0, pts=[{c:0,a:"base"}];
+    cl.forEach(function(t){cum+=(t.pnl_net||0);pts.push({c:cum,a:t.action||"stop"});});
+    var vals=pts.map(function(p){return p.c;});
+    var mx=Math.max.apply(null,vals.concat([0])), mn=Math.min.apply(null,vals.concat([0]));
+    var pad=(mx-mn)*0.12||1; mx+=pad; mn-=pad;
+    var W=320,H=132,L=10,R=10,T=12,B=20, pw=W-L-R, ph=H-T-B;
+    function X(i){return L+(pts.length<2?0:pw*i/(pts.length-1));}
+    function Y(v){return T+ph*(mx-v)/(mx-mn);}
+    var line=pts.map(function(p,i){return (i?"L":"M")+X(i).toFixed(1)+" "+Y(p.c).toFixed(1);}).join(" ");
+    var y0=Y(0).toFixed(1);
+    var dots=pts.map(function(p,i){
+      if(p.a==="base")return "";
+      var col=p.a==="tp"?"var(--jade)":"var(--clay)";
+      return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(p.c).toFixed(1)+'" r="3.2" style="fill:'+col+'"></circle>';
+    }).join("");
+    var lastC=pts[pts.length-1].c, floor=Math.min.apply(null,vals);
+    var lastCol=lastC>=0?"var(--jade)":"var(--clay)";
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curva de P&L realizado acumulado de Ganesha">'
+      +'<line x1="'+L+'" y1="'+y0+'" x2="'+(W-R)+'" y2="'+y0+'" style="stroke:var(--faint);stroke-dasharray:3 3;stroke-width:1"></line>'
+      +'<text x="'+(W-R)+'" y="'+(+y0-3)+'" text-anchor="end" style="fill:var(--faint);font:10px \'IBM Plex Mono\',monospace">0</text>'
+      +'<path d="'+line+'" style="fill:none;stroke:var(--sky);stroke-width:2;stroke-linejoin:round;stroke-linecap:round"></path>'
+      +dots+'</svg>';
+    var legend='<div style="display:flex;gap:16px;margin-top:8px;font-size:12px;color:var(--muted)">'
+      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--jade);margin-right:5px"></span>cierre en TP</span>'
+      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--clay);margin-right:5px"></span>cierre en stop</span></div>';
+    var stats='<div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--muted)">'
+      +'<span>Realizado <b class="mono" style="color:'+lastCol+'">'+fU(lastC)+'</b></span>'
+      +'<span>Piso <b class="mono down">'+fU(floor)+'</b></span>'
+      +'<span>Cierres <b class="mono" style="color:var(--ink)">'+cl.length+'</b></span></div>';
+    var note='<div class="note">Sólo P&amp;L de operaciones cerradas. No incluye lo no-realizado de las posiciones abiertas ni la equity total (depósitos no registrados).</div>';
+    body.innerHTML=svg+legend+stats+note;body.dataset.done="1";
+  }
+  load().then(function(){setTimeout(render,1200);});
+  setInterval(function(){load().then(render);},20000);
+  setInterval(render,3000);
+})();
