@@ -1,9 +1,0 @@
-{
- "now": "22:37:10Z",
- "n_uniq": "1",
- "windows_err": "[]",
- "rows": "[{'type': '2', 'asset': 'AVAX', 'qty': 3.35664, 'iso': '2026-06-27', 'px': 6.679, 'usd': 22.42}]",
- "deposits_usd_type2": "22.42",
- "withdrawals_usd_type1": "0.0",
- "net_deposits_usd": "22.42"
-}
