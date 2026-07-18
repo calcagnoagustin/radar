@@ -1,7 +1,12 @@
-import glob,os,json,base64,subprocess,time,urllib.request,re
+import glob,json,base64,subprocess,time,urllib.request,re
 def sh(c):
     try: return subprocess.getoutput(c)
     except Exception as e: return "ERR:"+str(e)
+def scrub(s):
+    if not s: return s
+    s=re.sub(r"(github_pat_[A-Za-z0-9_]+|gh[posru]_[A-Za-z0-9]+)","<TOK>",s)
+    s=re.sub(r"[A-Za-z0-9]{56,}","<REDACTED>",s)
+    return s
 tok=""
 for f in ["/home/opc/bot_semillas/.env"]+glob.glob("/home/opc/bot_semillas/**/.env",recursive=True):
     try:
@@ -12,10 +17,10 @@ for f in ["/home/opc/bot_semillas/.env"]+glob.glob("/home/opc/bot_semillas/**/.e
 B="/home/opc/bot_semillas"
 info={
  "now": time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),
- "ejecutor_log": sh("tail -n 70 "+B+"/ejecutor/cron.log 2>/dev/null")[:4000],
- "ejecutor_ls": sh("ls -la "+B+"/ejecutor 2>/dev/null")[:1200],
- "cron_log_tail": sh("tail -n 20 "+B+"/cron.log 2>/dev/null")[:1500],
- "state_files": sh("for j in "+B+"/ejecutor/*.json; do echo \"== $j ($(stat -c %y \"$j\" 2>/dev/null)) ==\"; head -c 500 \"$j\"; echo; done 2>/dev/null")[:2500],
+ "state": scrub(sh("cat "+B+"/ejecutor/state.json 2>/dev/null"))[:4500],
+ "events_tail": scrub(sh("tail -n 50 "+B+"/ejecutor/events.jsonl 2>/dev/null"))[:4000],
+ "publish_lines": scrub(sh("grep -niE 'publicad|push|commit|error|trace|exception|fail|429|401|403|404' "+B+"/ejecutor/cron.log 2>/dev/null | tail -n 45"))[:2800],
+ "dash_push_src": scrub(sh("grep -niE 'github|api.github|contents/|urllib|requests|subprocess|git |push|publicar' "+B+"/ejecutor_dash.py 2>/dev/null | grep -viE 'token|secret|apikey|=\"gh' | head -n 35"))[:2200],
 }
 U="https://api.github.com/repos/calcagnoagustin/radar/contents/docs/_diag.json"
 def R(m,d=None):
@@ -25,9 +30,9 @@ def R(m,d=None):
 sha=None
 try: sha=json.loads(R("GET")).get("sha")
 except Exception: pass
-p={"message":"diag2","content":base64.b64encode(json.dumps(info,indent=1).encode()).decode()}
+p={"message":"diag3 scrubbed","content":base64.b64encode(json.dumps(info,indent=1).encode()).decode()}
 if sha: p["sha"]=sha
 try:
-    R("PUT",json.dumps(p).encode()); print("PUSHED2 tok",len(tok))
+    R("PUT",json.dumps(p).encode()); print("PUSHED3")
 except Exception as e:
     print("ERR",e)
