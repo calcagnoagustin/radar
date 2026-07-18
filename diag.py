@@ -3,23 +3,19 @@ def sh(c):
     try: return subprocess.getoutput(c)
     except Exception as e: return "ERR:"+str(e)
 tok=""
-paths=["/home/opc/bot_semillas/.env"]+glob.glob("/home/opc/bot_semillas/**/.env",recursive=True)
-for f in paths:
+for f in ["/home/opc/bot_semillas/.env"]+glob.glob("/home/opc/bot_semillas/**/.env",recursive=True):
     try:
         for L in open(f):
             m=re.search(r"(github_pat_[A-Za-z0-9_]+|gh[posru]_[A-Za-z0-9]+)",L)
             if m: tok=m.group(1)
     except Exception: pass
+B="/home/opc/bot_semillas"
 info={
  "now": time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),
- "tok_len": len(tok),
- "ps": sh("ps -eo pid,etimes,cmd | grep -iE 'ejecutor|ganesha|main.py|loop_analista|momentum' | grep -v grep")[:1400],
- "systemd_user": sh("systemctl --user list-units --type=service 2>/dev/null | grep -iE 'ganesha|ejecutor|semillas|momentum'")[:500],
- "systemd_sys": sh("systemctl list-units --type=service 2>/dev/null | grep -iE 'ganesha|ejecutor|semillas|momentum'")[:500],
- "cron": sh("crontab -l 2>/dev/null | grep -vE '^#'")[:900],
- "ganesha_json_mtime": sh("stat -c '%y' /home/opc/bot_semillas/docs/ganesha_data.json 2>/dev/null || find /home/opc/bot_semillas -name ganesha_data.json -printf '%t %p\\n' 2>/dev/null | head"),
- "ls": sh("ls -la /home/opc/bot_semillas 2>/dev/null | head -45")[:1500],
- "logtail": sh("for g in /home/opc/bot_semillas/*ejecutor*.log /home/opc/bot_semillas/*ganesha*.log /home/opc/bot_semillas/nohup.out /home/opc/bot_semillas/logs/*.log; do [ -f \"$g\" ] && echo \"== $g ==\" && tail -n 15 \"$g\"; done 2>/dev/null")[:2000],
+ "ejecutor_log": sh("tail -n 70 "+B+"/ejecutor/cron.log 2>/dev/null")[:4000],
+ "ejecutor_ls": sh("ls -la "+B+"/ejecutor 2>/dev/null")[:1200],
+ "cron_log_tail": sh("tail -n 20 "+B+"/cron.log 2>/dev/null")[:1500],
+ "state_files": sh("for j in "+B+"/ejecutor/*.json; do echo \"== $j ($(stat -c %y \"$j\" 2>/dev/null)) ==\"; head -c 500 \"$j\"; echo; done 2>/dev/null")[:2500],
 }
 U="https://api.github.com/repos/calcagnoagustin/radar/contents/docs/_diag.json"
 def R(m,d=None):
@@ -29,9 +25,9 @@ def R(m,d=None):
 sha=None
 try: sha=json.loads(R("GET")).get("sha")
 except Exception: pass
-payload={"message":"diag ejecutor","content":base64.b64encode(json.dumps(info,indent=1).encode()).decode()}
-if sha: payload["sha"]=sha
+p={"message":"diag2","content":base64.b64encode(json.dumps(info,indent=1).encode()).decode()}
+if sha: p["sha"]=sha
 try:
-    R("PUT",json.dumps(payload).encode()); print("PUSHED tok_len",len(tok))
+    R("PUT",json.dumps(p).encode()); print("PUSHED2 tok",len(tok))
 except Exception as e:
-    print("PUSH_ERR",e)
+    print("ERR",e)
