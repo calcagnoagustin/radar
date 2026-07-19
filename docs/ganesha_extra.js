@@ -85,7 +85,7 @@
     var y0=Y(0).toFixed(1);
     var dots=pts.map(function(p,i){
       if(p.a==="base")return "";
-      var col=p.a==="tp"?"var(--jade)":"var(--clay)";
+      var col=p.a==="tp"?"var(--jade)":(p.a==="manual"?"var(--grain)":"var(--clay)");
       return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(p.c).toFixed(1)+'" r="3.2" style="fill:'+col+'"></circle>';
     }).join("");
     var lastC=pts[pts.length-1].c, floor=Math.min.apply(null,vals);
@@ -97,7 +97,8 @@
       +dots+'</svg>';
     var legend='<div style="display:flex;gap:16px;margin-top:8px;font-size:12px;color:var(--muted)">'
       +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--jade);margin-right:5px"></span>cierre en TP</span>'
-      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--clay);margin-right:5px"></span>cierre en stop</span></div>';
+      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--clay);margin-right:5px"></span>cierre en stop</span>'
+      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--grain);margin-right:5px"></span>cierre manual</span></div>';
     var stats='<div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--muted)">'
       +'<span>Realizado <b class="mono" style="color:'+lastCol+'">'+fU(lastC)+'</b></span>'
       +'<span>Piso <b class="mono down">'+fU(floor)+'</b></span>'
