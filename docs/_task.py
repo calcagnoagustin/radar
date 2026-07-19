@@ -1,10 +1,9 @@
-# TASK: backtest reglas de toma de ganancias (TP2 / trailing adaptativo / parabolica)
-import base64,json,os,py_compile,re,time,urllib.request
+# TASK: validacion out-of-sample del backtest de toma de ganancias (dias 90-180 atras)
+import json,re,sys,time,base64,urllib.request
 B="/home/opc/bot_semillas"
-BT_B64="IiIiQmFja3Rlc3QgZGUgcmVnbGFzIGRlIHRvbWEgZGUgZ2FuYW5jaWFzIHBhcmEgR2FuZXNoYS4KClJlcGxpY2EgbGEgbG9naWNhIFJFQUwgZGVsIGVqZWN1dG9yIChjb3JyZSBjYWRhIDRoOyBlbnRyYSBzaSBsYSBVTFRJTUEgdmVsYSAxNW0KY29tcGxldGEgcm9tcGUgZWwgbWF4aW1vIGRlIDk2IHZlbGFzIGNvbiB2b2x1bWVuID4xLjV4U01BMjA7IHN0b3AgbmF0aXZvCjIuNXhBVFIoMTQpIDRoOyBUUDEgMzAlIGVuICsyUjsgdHJhaWxpbmcgMi41eEFUUiB0cmFzIDJSOyBzdG9wLW91dCBzaSBlbCBjaWVycmUKNGggcXVlZGEgYmFqbyBlbCBzdG9wKSB5IGNvbXBhcmEgdmFyaWFudGVzIGRlIHRvbWEgZGUgZ2FuYW5jaWFzIHNvYnJlIGxvcyBtaXNtb3MKZGF0b3MuIE5hZGEgZGUgZXN0byB0b2NhIGVsIGJvdDogZXMgc29sbyBsZWN0dXJhIGRlIG1lcmNhZG8gKyBzaW11bGFjaW9uLgoKVmFyaWFudGVzOgogIGJhc2UgICAgICAgIDogcmVnbGEgYWN0dWFsCiAgdHAyXzVyICAgICAgOiBiYXNlICsgdmVuZGUgMzAlIGV4dHJhIGVuICs1UgogIHRwMl82ciAgICAgIDogYmFzZSArIHZlbmRlIDMwJSBleHRyYSBlbiArNlIKICBhZGFwdF90cmFpbCA6IHRyYWlsaW5nIDIuNXggaGFzdGEgNFIsIDEuNXggaGFzdGEgNlIsIDEuMHggZGUgYWhpIGVuIG1hcwogIHBhcmFiXzUwICAgIDogc2kgbGEgdmVsYSBsbGV2YSArNTAlIGVuIDI0aCAtPiB2ZW5kZSAzMCUgeSBzdG9wIGEgMXhBVFIKICBwYXJhYl8xMDAgICA6IGlkZW0gY29uICsxMDAlCiAgdHAyXzVyK2FkYXB0OiBjb21iaW5hY2lvbiBkZSB0cDJfNXIgeSBhZGFwdF90cmFpbAoiIiIKaW1wb3J0IGpzb24sIHRpbWUKCkVRVUlUWSA9IDIwMC4wClJJU0tfUENUID0gMi4wCkFUUl9OID0gMTQKQVRSX01VTFQgPSAyLjUKVk9MX01VTFQgPSAxLjUKVk9MX1NNQSA9IDIwCkxPT0tCQUNLID0gOTYgICAgICAgICAgIyB2ZWxhcyAxNW0gPSAyNGgKVFAxX1IgPSAyLjAKVFAxX0ZSQUMgPSAwLjMwClRSQUlMX0FGVEVSX1IgPSAyLjAKREFZUyA9IDkwCgpWQVJJQU5UUyA9IHsKICAgICJiYXNlIjogICAgICAgICB7fSwKICAgICJ0cDJfNXIiOiAgICAgICB7InRwMl9yIjogNS4wLCAidHAyX2ZyYWMiOiAwLjMwfSwKICAgICJ0cDJfNnIiOiAgICAgICB7InRwMl9yIjogNi4wLCAidHAyX2ZyYWMiOiAwLjMwfSwKICAgICJhZGFwdF90cmFpbCI6ICB7ImFkYXB0IjogWyg2LjAsIDEuMCksICg0LjAsIDEuNSldfSwKICAgICJwYXJhYl81MCI6ICAgICB7InBhcmFiX3BjdCI6IDUwLjAsICJwYXJhYl9mcmFjIjogMC4zMCwgInBhcmFiX2F0ciI6IDEuMH0sCiAgICAicGFyYWJfMTAwIjogICAgeyJwYXJhYl9wY3QiOiAxMDAuMCwgInBhcmFiX2ZyYWMiOiAwLjMwLCAicGFyYWJfYXRyIjogMS4wfSwKICAgICJ0cDJfNXIrYWRhcHQiOiB7InRwMl9yIjogNS4wLCAidHAyX2ZyYWMiOiAwLjMwLCAiYWRhcHQiOiBbKDYuMCwgMS4wKSwgKDQuMCwgMS41KV19LAp9CgoKZGVmIHJlc2FtcGxlXzRoKGMxNSk6CiAgICAiIiJBZ3J1cGEgdmVsYXMgMTVtIGVuIDRoIGFsaW5lYWRhcyBhIGVwb2NoICgxNiB2ZWxhcykuIiIiCiAgICBvdXQgPSBbXQogICAgY3VyID0gTm9uZQogICAgZm9yIGMgaW4gYzE1OgogICAgICAgIGIgPSBpbnQoY1swXSAvLyAxNDQwMDAwMCkgKiAxNDQwMDAwMAogICAgICAgIGlmIGN1ciBpcyBOb25lIG9yIGN1clswXSAhPSBiOgogICAgICAgICAgICBpZiBjdXIgaXMgbm90IE5vbmU6CiAgICAgICAgICAgICAgICBvdXQuYXBwZW5kKGN1cikKICAgICAgICAgICAgY3VyID0gW2IsIGNbMV0sIGNbMl0sIGNbM10sIGNbNF0sIGNbNV1dCiAgICAgICAgZWxzZToKICAgICAgICAgICAgY3VyWzJdID0gbWF4KGN1clsyXSwgY1syXSkKICAgICAgICAgICAgY3VyWzNdID0gbWluKGN1clszXSwgY1szXSkKICAgICAgICAgICAgY3VyWzRdID0gY1s0XQogICAgICAgICAgICBjdXJbNV0gKz0gY1s1XQogICAgaWYgY3VyIGlzIG5vdCBOb25lOgogICAgICAgIG91dC5hcHBlbmQoY3VyKQogICAgcmV0dXJuIG91dAoKCmRlZiBhdHJfc2VyaWVzKGM0aCwgbik6CiAgICAiIiJBVFIgc2ltcGxlIChtZWRpYSBkZSBUUiBkZSBsYXMgdWx0aW1hcyBuIHZlbGFzKSwgcG9yIGluZGljZS4iIiIKICAgIGF0cnMgPSBbTm9uZV0gKiBsZW4oYzRoKQogICAgdHJzID0gW10KICAgIGZvciBpIGluIHJhbmdlKDEsIGxlbihjNGgpKToKICAgICAgICB0ciA9IG1heChjNGhbaV1bMl0gLSBjNGhbaV1bM10sCiAgICAgICAgICAgICAgICAgYWJzKGM0aFtpXVsyXSAtIGM0aFtpIC0gMV1bNF0pLAogICAgICAgICAgICAgICAgIGFicyhjNGhbaV1bM10gLSBjNGhbaSAtIDFdWzRdKSkKICAgICAgICB0cnMuYXBwZW5kKHRyKQogICAgICAgIGlmIGxlbih0cnMpID49IG46CiAgICAgICAgICAgIGF0cnNbaV0gPSBzdW0odHJzWy1uOl0pIC8gbgogICAgcmV0dXJuIGF0cnMKCgpkZWYgc2ltX3N5bWJvbChjMTUsIGNmZyk6CiAgICAiIiJTaW11bGEgdW4gc2ltYm9sbyBjb24gbGEgdmFyaWFudGUgY2ZnLiBEZXZ1ZWx2ZSBsaXN0YSBkZSB0cmFkZXMgY2VycmFkb3MuIiIiCiAgICB0cmFkZXMgPSBbXQogICAgcG9zID0gTm9uZQogICAgYzRoID0gcmVzYW1wbGVfNGgoYzE1KQogICAgYXRycyA9IGF0cl9zZXJpZXMoYzRoLCBBVFJfTikKICAgICMgaW5kaWNlOiBwYXJhIGNhZGEgdmVsYSA0aCwgZWwgcmFuZ28gZGUgdmVsYXMgMTVtIHF1ZSBsYSBjb21wb25lbgogICAgaTE1ID0gMAogICAgYnk0aCA9IFtdICAgIyAoaWR4XzRoLCBpZHhfdWx0aW1hXzE1bV9jb21wbGV0YV9kZW50cm8pCiAgICBmb3IgaiwgYzQgaW4gZW51bWVyYXRlKGM0aCk6CiAgICAgICAgZW5kX3RzID0gYzRbMF0gKyAxNDQwMDAwMAogICAgICAgIHdoaWxlIGkxNSA8IGxlbihjMTUpIGFuZCBjMTVbaTE1XVswXSArIDkwMDAwMCA8PSBlbmRfdHM6CiAgICAgICAgICAgIGkxNSArPSAxCiAgICAgICAgYnk0aC5hcHBlbmQoKGosIGkxNSAtIDEpKQoKICAgIGZvciBqLCBsYXN0MTUgaW4gYnk0aDoKICAgICAgICBpZiBqIDwgQVRSX04gKyAxIG9yIGxhc3QxNSA8IExPT0tCQUNLICsgVk9MX1NNQSArIDI6CiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgYTQgPSBhdHJzW2pdCiAgICAgICAgaWYgbm90IGE0OgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGM0Y2xvc2UgPSBjNGhbal1bNF0KICAgICAgICBweCA9IGMxNVtsYXN0MTVdWzRdCgogICAgICAgIGlmIHBvcyBpcyBOb25lOgogICAgICAgICAgICAjIGVudHJhZGE6IGxhIHVsdGltYSB2ZWxhIDE1bSBjb21wbGV0YSByb21wZSBlbCBtYXhpbW8gZGUgOTYgY29uIHZvbHVtZW4KICAgICAgICAgICAgbGFzdCA9IGMxNVtsYXN0MTVdCiAgICAgICAgICAgIHdpbmRvdyA9IGMxNVtsYXN0MTUgLSBMT09LQkFDSzpsYXN0MTVdCiAgICAgICAgICAgIGhoID0gbWF4KHhbNF0gZm9yIHggaW4gd2luZG93KQogICAgICAgICAgICB2cyA9IHN1bSh4WzVdIGZvciB4IGluIGMxNVtsYXN0MTUgLSBWT0xfU01BOmxhc3QxNV0pIC8gVk9MX1NNQQogICAgICAgICAgICBpZiBsYXN0WzRdID4gaGggYW5kIGxhc3RbNV0gPiBWT0xfTVVMVCAqIHZzOgogICAgICAgICAgICAgICAgc3RvcCA9IHB4IC0gQVRSX01VTFQgKiBhNAogICAgICAgICAgICAgICAgaWYgc3RvcCA8PSAwIG9yIHN0b3AgPj0gcHg6CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgIHJpc2sgPSBFUVVJVFkgKiBSSVNLX1BDVCAvIDEwMAogICAgICAgICAgICAgICAgcXR5ID0gcmlzayAvIChweCAtIHN0b3ApCiAgICAgICAgICAgICAgICBwb3MgPSB7ImVudHJ5IjogcHgsICJxdHkiOiBxdHksICJxdHkwIjogcXR5LCAic3RvcCI6IHN0b3AsCiAgICAgICAgICAgICAgICAgICAgICAgInIiOiBweCAtIHN0b3AsICJ0cDEiOiBGYWxzZSwgInRwMiI6IEZhbHNlLCAicGFyYWIiOiBGYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAicG5sIjogMC4wLCAicGVha19vcGVuIjogMC4wLCAiZW50cnlfdHMiOiBjNGhbal1bMF19CiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICMgZ2VzdGlvbiAoY29tbyBlbCBlamVjdXRvcjogZW4gY2FkYSBjb3JyaWRhIDRoKQogICAgICAgIHJtdWx0ID0gKHB4IC0gcG9zWyJlbnRyeSJdKSAvIHBvc1siciJdCiAgICAgICAgcG9zWyJwZWFrX29wZW4iXSA9IG1heChwb3NbInBlYWtfb3BlbiJdLCBwb3NbInF0eSJdICogKHB4IC0gcG9zWyJlbnRyeSJdKSArIHBvc1sicG5sIl0pCgogICAgICAgICMgc3RvcC1vdXQgcG9yIGNpZXJyZSA0aAogICAgICAgIGlmIGM0Y2xvc2UgPCBwb3NbInN0b3AiXToKICAgICAgICAgICAgcG5sID0gcG9zWyJwbmwiXSArIHBvc1sicXR5Il0gKiAoYzRjbG9zZSAtIHBvc1siZW50cnkiXSkKICAgICAgICAgICAgdHJhZGVzLmFwcGVuZCh7InBubCI6IHBubCwgInIiOiBwbmwgLyAocG9zWyJyIl0gKiBwb3NbInF0eTAiXSksCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJwZWFrIjogcG9zWyJwZWFrX29wZW4iXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgImhvbGRfaCI6IChjNGhbal1bMF0gLSBwb3NbImVudHJ5X3RzIl0pIC8gMzYwMDAwMH0pCiAgICAgICAgICAgIHBvcyA9IE5vbmUKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgIyBUUDEgKHJlZ2xhIGFjdHVhbCkKICAgICAgICBpZiBub3QgcG9zWyJ0cDEiXSBhbmQgcm11bHQgPj0gVFAxX1I6CiAgICAgICAgICAgIHNxID0gcG9zWyJxdHkiXSAqIFRQMV9GUkFDCiAgICAgICAgICAgIHBvc1sicG5sIl0gKz0gc3EgKiAocHggLSBwb3NbImVudHJ5Il0pCiAgICAgICAgICAgIHBvc1sicXR5Il0gLT0gc3EKICAgICAgICAgICAgcG9zWyJ0cDEiXSA9IFRydWUKICAgICAgICAgICAgcG9zWyJzdG9wIl0gPSBtYXgocG9zWyJzdG9wIl0sIHBvc1siZW50cnkiXSkKCiAgICAgICAgIyBUUDIgKHZhcmlhbnRlKQogICAgICAgIGlmIGNmZy5nZXQoInRwMl9yIikgYW5kIG5vdCBwb3NbInRwMiJdIGFuZCBybXVsdCA+PSBjZmdbInRwMl9yIl06CiAgICAgICAgICAgIHNxID0gcG9zWyJxdHkiXSAqIGNmZ1sidHAyX2ZyYWMiXQogICAgICAgICAgICBwb3NbInBubCJdICs9IHNxICogKHB4IC0gcG9zWyJlbnRyeSJdKQogICAgICAgICAgICBwb3NbInF0eSJdIC09IHNxCiAgICAgICAgICAgIHBvc1sidHAyIl0gPSBUcnVlCgogICAgICAgICMgcGFyYWJvbGljYSAodmFyaWFudGUpOiArWCUgZW4gMjRoICg5NiB2ZWxhcyAxNW0pCiAgICAgICAgaWYgY2ZnLmdldCgicGFyYWJfcGN0IikgYW5kIG5vdCBwb3NbInBhcmFiIl0gYW5kIGxhc3QxNSA+PSBMT09LQkFDSzoKICAgICAgICAgICAgcmVmID0gYzE1W2xhc3QxNSAtIExPT0tCQUNLXVs0XQogICAgICAgICAgICBpZiByZWYgPiAwIGFuZCAocHggLyByZWYgLSAxKSAqIDEwMCA+PSBjZmdbInBhcmFiX3BjdCJdOgogICAgICAgICAgICAgICAgc3EgPSBwb3NbInF0eSJdICogY2ZnWyJwYXJhYl9mcmFjIl0KICAgICAgICAgICAgICAgIHBvc1sicG5sIl0gKz0gc3EgKiAocHggLSBwb3NbImVudHJ5Il0pCiAgICAgICAgICAgICAgICBwb3NbInF0eSJdIC09IHNxCiAgICAgICAgICAgICAgICBwb3NbInBhcmFiIl0gPSBUcnVlCiAgICAgICAgICAgICAgICBucyA9IGM0Y2xvc2UgLSBjZmdbInBhcmFiX2F0ciJdICogYTQKICAgICAgICAgICAgICAgIHBvc1sic3RvcCJdID0gbWF4KHBvc1sic3RvcCJdLCBucykKCiAgICAgICAgIyB0cmFpbGluZwogICAgICAgIGlmIHJtdWx0ID49IFRSQUlMX0FGVEVSX1I6CiAgICAgICAgICAgIG11bHQgPSBBVFJfTVVMVAogICAgICAgICAgICBmb3IgdGhyLCBtIGluIGNmZy5nZXQoImFkYXB0IiwgW10pOgogICAgICAgICAgICAgICAgaWYgcm11bHQgPj0gdGhyOgogICAgICAgICAgICAgICAgICAgIG11bHQgPSBtCiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgbnMgPSBjNGNsb3NlIC0gbXVsdCAqIGE0CiAgICAgICAgICAgIGlmIG5zID4gcG9zWyJzdG9wIl06CiAgICAgICAgICAgICAgICBwb3NbInN0b3AiXSA9IG5zCgogICAgcmV0dXJuIHRyYWRlcwoKCmRlZiBtZXRyaWNzKHRyYWRlcyk6CiAgICBpZiBub3QgdHJhZGVzOgogICAgICAgIHJldHVybiB7Im4iOiAwfQogICAgcG5scyA9IFt0WyJwbmwiXSBmb3IgdCBpbiB0cmFkZXNdCiAgICB3aW5zID0gW3AgZm9yIHAgaW4gcG5scyBpZiBwID4gMF0KICAgIGxvc3NlcyA9IFstcCBmb3IgcCBpbiBwbmxzIGlmIHAgPCAwXQogICAgZ3csIGdsID0gc3VtKHdpbnMpLCBzdW0obG9zc2VzKQogICAgcnMgPSBbdFsiciJdIGZvciB0IGluIHRyYWRlc10KICAgIGVxID0gcGVhayA9IG1kZCA9IDAuMAogICAgZm9yIHAgaW4gcG5sczoKICAgICAgICBlcSArPSBwCiAgICAgICAgcGVhayA9IG1heChwZWFrLCBlcSkKICAgICAgICBtZGQgPSBtaW4obWRkLCBlcSAtIHBlYWspCiAgICBjYXBzID0gW3RbInBubCJdIC8gdFsicGVhayJdIGZvciB0IGluIHRyYWRlcyBpZiB0WyJwZWFrIl0gPiAwLjVdCiAgICByZXR1cm4geyJuIjogbGVuKHRyYWRlcyksCiAgICAgICAgICAgICJ3ciI6IHJvdW5kKDEwMC4wICogbGVuKHdpbnMpIC8gbGVuKHRyYWRlcyksIDEpLAogICAgICAgICAgICAicG5sIjogcm91bmQoc3VtKHBubHMpLCAyKSwKICAgICAgICAgICAgImV4cF91c2QiOiByb3VuZChzdW0ocG5scykgLyBsZW4odHJhZGVzKSwgMyksCiAgICAgICAgICAgICJleHBfciI6IHJvdW5kKHN1bShycykgLyBsZW4ocnMpLCAzKSwKICAgICAgICAgICAgInBmIjogcm91bmQoZ3cgLyBnbCwgMikgaWYgZ2wgPiAwIGVsc2Ugcm91bmQoZ3csIDIpLAogICAgICAgICAgICAibWF4X2RkIjogcm91bmQobWRkLCAyKSwKICAgICAgICAgICAgImF2Z193aW4iOiByb3VuZChndyAvIGxlbih3aW5zKSwgMikgaWYgd2lucyBlbHNlIDAsCiAgICAgICAgICAgICJtYXhfd2luIjogcm91bmQobWF4KHBubHMpLCAyKSwKICAgICAgICAgICAgImNhcHR1cmFfcGljbyI6IHJvdW5kKDEwMC4wICogc3VtKGNhcHMpIC8gbGVuKGNhcHMpLCAxKSBpZiBjYXBzIGVsc2UgTm9uZX0KCgpkZWYgZmV0Y2hfMTVtKGV4LCBzeW0sIGRheXMpOgogICAgIiIiQmFqYSBPSExDViAxNW0gcGFnaW5hZG8gKDEwMDAgcG9yIHJlcXVlc3QpLiIiIgogICAgc2luY2UgPSBpbnQoKHRpbWUudGltZSgpIC0gZGF5cyAqIDg2NDAwKSAqIDEwMDApCiAgICBvdXQgPSBbXQogICAgd2hpbGUgVHJ1ZToKICAgICAgICBiYXRjaCA9IGV4LmZldGNoX29obGN2KHN5bSwgIjE1bSIsIHNpbmNlPXNpbmNlLCBsaW1pdD0xMDAwKQogICAgICAgIGlmIG5vdCBiYXRjaDoKICAgICAgICAgICAgYnJlYWsKICAgICAgICBvdXQgKz0gYmF0Y2gKICAgICAgICBpZiBsZW4oYmF0Y2gpIDwgMTAwMDoKICAgICAgICAgICAgYnJlYWsKICAgICAgICBzaW5jZSA9IGJhdGNoWy0xXVswXSArIDkwMDAwMAogICAgICAgIGlmIGxlbihvdXQpID4gZGF5cyAqIDk2ICsgMjAwOgogICAgICAgICAgICBicmVhawogICAgIyBkZXNjYXJ0byBsYSB1bHRpbWEgKGluY29tcGxldGEpCiAgICByZXR1cm4gb3V0WzotMV0KCgpkZWYgcnVuKGV4LCBzeW1ib2xzLCBkYXlzPURBWVMpOgogICAgZGV0YWlsLCBhZ2cgPSB7fSwge2s6IFtdIGZvciBrIGluIFZBUklBTlRTfQogICAgZmFsbG9zID0gW10KICAgIGZvciBzeW0gaW4gc3ltYm9sczoKICAgICAgICB0cnk6CiAgICAgICAgICAgIGMxNSA9IGZldGNoXzE1bShleCwgc3ltLCBkYXlzKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgZmFsbG9zLmFwcGVuZCgiJXM6ICVzIiAlIChzeW0sIHN0cihlKVs6NjBdKSkKICAgICAgICAgICAgY29udGludWUKICAgICAgICBpZiBsZW4oYzE1KSA8IExPT0tCQUNLICsgVk9MX1NNQSArIDEwMDoKICAgICAgICAgICAgZmFsbG9zLmFwcGVuZCgiJXM6IGRhdG9zIGluc3VmaWNpZW50ZXMgKCVkKSIgJSAoc3ltLCBsZW4oYzE1KSkpCiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgZGV0YWlsW3N5bV0gPSB7fQogICAgICAgIGZvciBuYW1lLCBjZmcgaW4gVkFSSUFOVFMuaXRlbXMoKToKICAgICAgICAgICAgdHIgPSBzaW1fc3ltYm9sKGMxNSwgY2ZnKQogICAgICAgICAgICBkZXRhaWxbc3ltXVtuYW1lXSA9IG1ldHJpY3ModHIpCiAgICAgICAgICAgIGFnZ1tuYW1lXSArPSB0cgogICAgICAgIHByaW50KCJbYnQtdHBdICVzIG9rICglZCB2ZWxhcykiICUgKHN5bSwgbGVuKGMxNSkpKQogICAgcmVzdW1lbiA9IHtuYW1lOiBtZXRyaWNzKHRycykgZm9yIG5hbWUsIHRycyBpbiBhZ2cuaXRlbXMoKX0KICAgIHJldHVybiB7ImdlbmVyYXRlZCI6IHRpbWUuc3RyZnRpbWUoIiVZLSVtLSVkVCVIOiVNOiVTWiIsIHRpbWUuZ210aW1lKCkpLAogICAgICAgICAgICAiZGlhcyI6IGRheXMsICJlcXVpdHlfc2ltIjogRVFVSVRZLCAicmllc2dvX3BjdCI6IFJJU0tfUENULAogICAgICAgICAgICAibm90YSI6ICgiY2FwdHVyYV9waWNvID0gJSBkZWwgbWVqb3IgUCZMIGFiaWVydG8gcXVlIGVsIHRyYWRlIHRlcm1pbm8gY29icmFuZG8gIgogICAgICAgICAgICAgICAgICAgICAiKHByb21lZGlvIHNvYnJlIHRyYWRlcyBxdWUgbGxlZ2Fyb24gYSB0ZW5lciA+JDAuNSBhYmllcnRvcykuICIKICAgICAgICAgICAgICAgICAgICAgIlNvbG8gaW5mb3JtYXRpdm86IG5hZGEgc2UgYXBsaWNhIGFsIGJvdC4iKSwKICAgICAgICAgICAgInNpbWJvbG9zIjogc29ydGVkKGRldGFpbC5rZXlzKCkpLCAiZmFsbG9zIjogZmFsbG9zLAogICAgICAgICAgICAicmVzdW1lbiI6IHJlc3VtZW4sICJkZXRhbGxlIjogZGV0YWlsfQo="
 def scrub(s):
     if not s: return s
-    s=re.sub(r"(github_pat_[A-Za-z0-9_]+|gh[posru]_[A-Za-z0-9]+|sk-ant-[A-Za-z0-9_\\-]+)","<TOK>",s)
+    s=re.sub(r"(github_pat_[A-Za-z0-9_]+|gh[posru]_[A-Za-z0-9]+|sk-ant-[A-Za-z0-9_\-]+)","<TOK>",s)
     return re.sub(r"[A-Za-z0-9]{56,}","<REDACTED>",s)
 tok=""
 try:
@@ -12,13 +11,13 @@ try:
         m=re.search(r"(github_pat_[A-Za-z0-9_]+|gh[posru]_[A-Za-z0-9]+)",L)
         if m: tok=m.group(1)
 except Exception: pass
-info={"task":"backtest_toma_ganancias","now":time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),"pasos":[]}
-def step(s): info["pasos"].append(s); print("[bt-tp]",s)
+info={"task":"backtest_tp_oos","now":time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),"pasos":[]}
+def step(s): info["pasos"].append(s); print("[bt-oos]",s)
 U="https://api.github.com/repos/calcagnoagustin/radar/contents/%s"
 def gh_put(path,data,msg):
     u=U%path
     def R(m,d=None):
-        q=urllib.request.Request(u,data=d,method=m); q.add_header("Authorization","token "+tok); q.add_header("User-Agent","bt-tp")
+        q=urllib.request.Request(u,data=d,method=m); q.add_header("Authorization","token "+tok); q.add_header("User-Agent","bt-oos")
         return urllib.request.urlopen(q,timeout=30).read()
     sha=None
     try: sha=json.loads(R("GET")).get("sha")
@@ -27,16 +26,10 @@ def gh_put(path,data,msg):
     if sha: p["sha"]=sha
     R("PUT",json.dumps(p).encode())
 try:
-    src=base64.b64decode(BT_B64)
-    open(B+"/backtest_tp.py","wb").write(src)
-    py_compile.compile(B+"/backtest_tp.py",doraise=True)
-    step("backtest_tp.py instalado (%d bytes)"%len(src))
-    import sys
     sys.path.insert(0,B)
     import backtest_tp as BT
     import ccxt
     ex=ccxt.binance({"enableRateLimit":True})
-    # universo: todo simbolo que Ganesha toco (eventos) + confirmadas actuales
     syms=set()
     try:
         for ln in open(B+"/ejecutor/events.jsonl"):
@@ -53,18 +46,40 @@ try:
     mk=ex.load_markets()
     syms=sorted(s for s in syms if s in mk)[:16]
     step("universo: %d simbolos"%len(syms))
-    res=BT.run(ex,syms,days=90)
-    json.dump(res,open(B+"/learning/backtest_tp.json","w"),indent=1)
-    gh_put("docs/backtest_tp.json",json.dumps(res,ensure_ascii=False,indent=1).encode("utf-8"),"backtest toma de ganancias")
-    step("resultados publicados en docs/backtest_tp.json")
-    info["resumen"]=res["resumen"]
+    cut=int((time.time()-90*86400)*1000)   # solo velas ANTERIORES a la ventana ya testeada
+    detail,agg={},{k:[] for k in BT.VARIANTS}
+    fallos=[]
+    for sym in syms:
+        try:
+            c15=BT.fetch_15m(ex,sym,180)
+        except Exception as e:
+            fallos.append("%s: %s"%(sym,str(e)[:60])); continue
+        c15=[c for c in c15 if c[0]<cut]
+        if len(c15)<BT.LOOKBACK+BT.VOL_SMA+100:
+            fallos.append("%s: datos OOS insuficientes (%d)"%(sym,len(c15))); continue
+        detail[sym]={}
+        for name,cfg in BT.VARIANTS.items():
+            tr=BT.sim_symbol(c15,cfg)
+            detail[sym][name]=BT.metrics(tr)
+            agg[name]+=tr
+        print("[bt-oos] %s ok (%d velas)"%(sym,len(c15)))
+    resumen={name:BT.metrics(trs) for name,trs in agg.items()}
+    res={"generated":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
+         "ventana":"dias 90-180 atras (out-of-sample, no vista por el test in-sample)",
+         "equity_sim":BT.EQUITY,"riesgo_pct":BT.RISK_PCT,
+         "simbolos":sorted(detail.keys()),"fallos":fallos,
+         "resumen":resumen,"detalle":detail}
+    json.dump(res,open(B+"/learning/backtest_tp_oos.json","w"),indent=1)
+    gh_put("docs/backtest_tp_oos.json",json.dumps(res,ensure_ascii=False,indent=1).encode("utf-8"),"backtest tp OOS")
+    step("publicado docs/backtest_tp_oos.json")
+    info["resumen"]=resumen
     info["simbolos"]=res["simbolos"]
-    info["fallos"]=res["fallos"][:5]
+    info["fallos"]=fallos[:5]
     info["ok"]=True
 except Exception as e:
     info["ok"]=False; info["error"]=scrub(str(e)[:300])
 try:
-    gh_put("docs/_diag.json",json.dumps(info,indent=1).encode(),"backtest tp report")
+    gh_put("docs/_diag.json",json.dumps(info,indent=1).encode(),"backtest oos report")
     print("REPORTADO ok=%s"%info.get("ok"))
 except Exception as e:
     print("PUSH_ERR",e)
