@@ -42,7 +42,22 @@
       slot.insertAdjacentHTML("beforeend",html);row.dataset.tp="1";
     });
   }
-  function apply(){linkify();tpOpen();}
+  function valorize(){
+    document.querySelectorAll(".pos").forEach(function(row){
+      var t=row.textContent||"";
+      var mp=t.match(/Precio\s*\$([\d.,]+)/), mc=t.match(/Cant\s*([\d.,]+)/);
+      if(!mp||!mc)return;
+      var px=parseFloat(mp[1].replace(/,/g,"")), q=parseFloat(mc[1].replace(/,/g,""));
+      if(!(px>0)||!(q>0))return;
+      var val=px*q;
+      var txt="$"+val.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+      var slot=row.querySelector(".pos-meta")||row;
+      var el=row.querySelector(".valchip");
+      if(el){var b=el.querySelector("b");if(b&&b.textContent!==txt)b.textContent=txt;return;}
+      slot.insertAdjacentHTML("beforeend",'<span class="valchip" style="margin-left:14px">Valor <b class="mono" style="color:var(--ink)">'+txt+'</b></span>');
+    });
+  }
+  function apply(){linkify();tpOpen();valorize();}
   loadG().then(function(){setTimeout(apply,1000);});
   setInterval(function(){loadG();},20000);
   setInterval(apply,2500);
