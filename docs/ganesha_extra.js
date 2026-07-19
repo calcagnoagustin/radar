@@ -39,6 +39,8 @@
       if(p.tp1_done){html='<span style="margin-left:14px">TP1 <b class="mono up">✓ hecho</b></span>';}
       else if(p.entry!=null&&p.stop!=null&&p.entry>p.stop){var tp=p.entry+2*(p.entry-p.stop);html='<span style="margin-left:14px">TP1 <b class="mono">'+fU(tp)+'</b> (+2R · vende 30%)</span>';}
       else return;
+      var manual=(D.recent_closed||[]).some(function(c){return c.symbol===p.symbol&&c.action==="manual";});
+      if(manual){html+='<span style="margin-left:14px;color:var(--grain)">Parcial manual <b class="mono" style="color:var(--grain)">✓</b></span>';}
       slot.insertAdjacentHTML("beforeend",html);row.dataset.tp="1";
     });
   }
