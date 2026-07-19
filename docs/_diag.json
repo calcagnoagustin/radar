@@ -1,30 +1,7 @@
 {
- "task": "diag_universo_ganesha",
- "now": "2026-07-19 20:16:02Z",
- "universo_bak_pre_rec": "def confirmed_symbols():\n    st = load(SEM_STATE, {})\n    return [s for s, p in st.get(\"positions\", {}).items()\n            if p.get(\"status\") == \"confirmed\"]\n",
- "universo_instalado": "def confirmed_symbols():\n    st = load(SEM_STATE, {})\n    return [s for s, p in st.get(\"positions\", {}).items()\n            if p.get(\"status\") == \"confirmed\"]\n",
- "ultimo_scan": "{\"type\": \"scan\", \"mode\": \"LIVE\", \"confirmed\": [\"SYN/USDT\", \"ATM/USDT\", \"PYTH/USDT\", \"ZEC/USDT\"], \"open\": [\"DODO/USDT\", \"KAITO/USDT\", \"SXT/USDT\", \"SKL/USDT\", \"BANK/USDT\", \"DGB/USDT\"], \"ts\": 1784491637.8345957, \"iso\": \"2026-07-19T20:07:17Z\"}",
- "ultimos_eventos": [
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"BANK/USDT\", \"ts\": 1784477242.9554915, \"iso\": \"2026-07-19T16:07:22Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"SXT/USDT\", \"ts\": 1784477243.487184, \"iso\": \"2026-07-19T16:07:23Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"XEC/USDT\", \"ts\": 1784477244.544368, \"iso\": \"2026-07-19T16:07:24Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"KAITO/USDT\", \"ts\": 1784477245.597943, \"iso\": \"2026-07-19T16:07:25Z\"}",
-  "{\"type\": \"LIVE_STOP_OUT\", \"symbol\": \"XEC/USDT\", \"px\": 8.19e-06, \"pnl\": 2.31, \"via\": \"stop_nativo\", \"r\": 0.93, \"ts\": 1784491634.7590463, \"iso\": \"2026-07-19T20:07:14Z\"}",
-  "{\"type\": \"LIVE_MANUAL_PARTIAL\", \"symbol\": \"BANK/USDT\", \"px\": 0.2317, \"qty\": 61.2003, \"qty_left\": 142.0097, \"pnl\": 10.77, \"ts\": 1784491637.0724502, \"iso\": \"2026-07-19T20:07:17Z\"}",
-  "{\"type\": \"scan\", \"mode\": \"LIVE\", \"confirmed\": [\"SYN/USDT\", \"ATM/USDT\", \"PYTH/USDT\", \"ZEC/USDT\"], \"open\": [\"DODO/USDT\", \"KAITO/USDT\", \"SXT/USDT\", \"SKL/USDT\", \"BANK/USDT\", \"DGB/USDT\"], \"ts\": 1784491637.8345957, \"iso\": \"2026-07-19T20:07:17Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"KAITO/USDT\", \"ts\": 1784491638.9012837, \"iso\": \"2026-07-19T20:07:18Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"SKL/USDT\", \"ts\": 1784491639.9745736, \"iso\": \"2026-07-19T20:07:19Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"SXT/USDT\", \"ts\": 1784491641.0334406, \"iso\": \"2026-07-19T20:07:21Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"DGB/USDT\", \"ts\": 1784491641.570757, \"iso\": \"2026-07-19T20:07:21Z\"}",
-  "{\"type\": \"TRAIL\", \"symbol\": \"BANK/USDT\", \"stop\": 0.153446, \"ts\": 1784491642.9133997, \"iso\": \"2026-07-19T20:07:22Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"BANK/USDT\", \"ts\": 1784491642.9135983, \"iso\": \"2026-07-19T20:07:22Z\"}",
-  "{\"type\": \"note_unconfirmed\", \"symbol\": \"DODO/USDT\", \"ts\": 1784491643.4482207, \"iso\": \"2026-07-19T20:07:23Z\"}"
- ],
- "confirmadas_semillas": [
-  "SYN/USDT",
-  "ATM/USDT",
-  "PYTH/USDT",
-  "ZEC/USDT"
- ],
+ "task": "export_bak_ganesha",
+ "now": "2026-07-19 20:26:02Z",
+ "bak_bytes": 13611,
+ "bak_sha": "6a750ddbf1bdbdd9",
  "ok": true
 }
