@@ -1,6 +1,14 @@
 {
- "agent": "installed",
- "cron_has_agent": true,
- "now": "2026-07-19 05:01:45Z",
- "cron_jobs": "3"
+ "task": "install_loop_analista_v2",
+ "now": "2026-07-19 05:01:47Z",
+ "pasos": [
+  "compile OK (22921 bytes)",
+  "backup -> loop_analista.py.bak.v1",
+  "instalado loop_analista.py",
+  "test rc=0"
+ ],
+ "sha256": "81937347037fc9ed",
+ "test_stdout": "{\"finales\": 8, \"abiertas\": [\"BANK/USDT\", \"DGB/USDT\", \"DODO/USDT\", \"KAITO/USDT\", \"SKL/USDT\", \"SXT/USDT\", \"XEC/USDT\"], \"ganesha_hist\": {\"n\": 6, \"win_rate\": 16.7, \"pnl_total\": -14.39, \"expectancy_usd\": -2.398, \"expectancy_r\": -0.74, \"profit_factor\": 0.21, \"payoff\": 1.05, \"max_dd_usd\": -18.2}, \"semillas_hist\": {\"n\": 2, \"win_rate\": 0.0, \"pnl_total\": -0.26, \"expectancy_usd\": -0.132, \"expectancy_r\": null, \"profit_factor\": 0.0, \"payoff\": null, \"max_dd_usd\": -0.26}}\n",
+ "test_stderr": "",
+ "ok": true
 }
