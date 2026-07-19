@@ -1,7 +1,113 @@
 {
  "task": "backtest_toma_ganancias",
- "now": "2026-07-19 16:14:02Z",
- "pasos": [],
- "ok": false,
- "error": "  File \"/home/opc/bot_semillas/backtest_tp.py\", line 158\n    if rmult >= TRAIL_AFTERI}H\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0571\u0400\ufffd\u0005QI}5U1P(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0201\u0461\u0230\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0420\ufffd\ufffd\ufffd\ufffd\ufffd\u0408\ufffd\ufffdmt\ufffd\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0275\u0571\u0400\ufffd\ufffd\u0461\ufffd\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0571\u0400\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0255\ufffd\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0300\ufffd\u044d\ufffd\ufffd\u0354\ufffd\ufffd\ufffd\ufffd\u0571\u0400\ufffd\ufffd\ufffd\ufffd(\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0300\ufffd\ufffd\ufffd\ufffd\ufffdl\ufffd\ufffd\u047d\ufffd\ufffdt\ufffd(\ufffd\ufffd\ufffd\ufffd"
+ "now": "2026-07-19 16:20:02Z",
+ "pasos": [
+  "backtest_tp.py instalado (8732 bytes)",
+  "universo: 14 simbolos",
+  "resultados publicados en docs/backtest_tp.json"
+ ],
+ "resumen": {
+  "base": {
+   "n": 61,
+   "wr": 31.1,
+   "pnl": 323.62,
+   "exp_usd": 5.305,
+   "exp_r": 1.326,
+   "pf": 2.63,
+   "max_dd": -41.35,
+   "avg_win": 27.48,
+   "max_win": 293.15,
+   "captura_pico": -90.7
+  },
+  "tp2_5r": {
+   "n": 61,
+   "wr": 31.1,
+   "pnl": 259.6,
+   "exp_usd": 4.256,
+   "exp_r": 1.064,
+   "pf": 2.31,
+   "max_dd": -40.4,
+   "avg_win": 24.11,
+   "max_win": 210.85,
+   "captura_pico": -88.8
+  },
+  "tp2_6r": {
+   "n": 61,
+   "wr": 31.1,
+   "pnl": 258.13,
+   "exp_usd": 4.232,
+   "exp_r": 1.058,
+   "pf": 2.3,
+   "max_dd": -41.35,
+   "avg_win": 24.04,
+   "max_win": 211.68,
+   "captura_pico": -89.2
+  },
+  "adapt_trail": {
+   "n": 64,
+   "wr": 34.4,
+   "pnl": 160.58,
+   "exp_usd": 2.509,
+   "exp_r": 0.627,
+   "pf": 1.81,
+   "max_dd": -33.0,
+   "avg_win": 16.33,
+   "max_win": 72.68,
+   "captura_pico": -76.7
+  },
+  "parab_50": {
+   "n": 62,
+   "wr": 32.3,
+   "pnl": 275.13,
+   "exp_usd": 4.438,
+   "exp_r": 1.109,
+   "pf": 2.39,
+   "max_dd": -39.95,
+   "avg_win": 23.69,
+   "max_win": 218.27,
+   "captura_pico": -84.2
+  },
+  "parab_100": {
+   "n": 62,
+   "wr": 32.3,
+   "pnl": 344.98,
+   "exp_usd": 5.564,
+   "exp_r": 1.391,
+   "pf": 2.74,
+   "max_dd": -33.0,
+   "avg_win": 27.18,
+   "max_win": 223.44,
+   "captura_pico": -85.7
+  },
+  "tp2_5r+adapt": {
+   "n": 64,
+   "wr": 34.4,
+   "pnl": 161.02,
+   "exp_usd": 2.516,
+   "exp_r": 0.629,
+   "pf": 1.81,
+   "max_dd": -33.0,
+   "avg_win": 16.35,
+   "max_win": 56.52,
+   "captura_pico": -74.9
+  }
+ },
+ "simbolos": [
+  "ATM/USDT",
+  "BANK/USDT",
+  "DEXE/USDT",
+  "DGB/USDT",
+  "DODO/USDT",
+  "KAITO/USDT",
+  "PORTO/USDT",
+  "PYTH/USDT",
+  "SKL/USDT",
+  "SXT/USDT",
+  "SYN/USDT",
+  "T/USDT",
+  "XEC/USDT",
+  "ZEC/USDT"
+ ],
+ "fallos": [],
+ "ok": true
 }
