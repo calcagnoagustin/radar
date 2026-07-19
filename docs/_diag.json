@@ -1,7 +1,15 @@
 {
- "task": "export_bak_ganesha",
- "now": "2026-07-19 20:26:02Z",
- "bak_bytes": 13611,
- "bak_sha": "6a750ddbf1bdbdd9",
+ "task": "restore_universo_movers",
+ "now": "2026-07-19 20:36:03Z",
+ "pasos": [
+  "compile OK (17910 bytes)",
+  "backup -> .bak.pre_univ",
+  "instalado",
+  "test rc=0"
+ ],
+ "sha256": "1d630d9717c27282",
+ "movers_flag": true,
+ "test_stdout": "ok reconcile+movers\n",
+ "test_stderr": "",
  "ok": true
 }
