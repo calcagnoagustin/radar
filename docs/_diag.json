@@ -1,112 +1,30 @@
 {
- "task": "backtest_tp_oos",
- "now": "2026-07-19 16:36:02Z",
- "pasos": [
-  "universo: 14 simbolos",
-  "publicado docs/backtest_tp_oos.json"
+ "task": "diag_universo_ganesha",
+ "now": "2026-07-19 20:16:02Z",
+ "universo_bak_pre_rec": "def confirmed_symbols():\n    st = load(SEM_STATE, {})\n    return [s for s, p in st.get(\"positions\", {}).items()\n            if p.get(\"status\") == \"confirmed\"]\n",
+ "universo_instalado": "def confirmed_symbols():\n    st = load(SEM_STATE, {})\n    return [s for s, p in st.get(\"positions\", {}).items()\n            if p.get(\"status\") == \"confirmed\"]\n",
+ "ultimo_scan": "{\"type\": \"scan\", \"mode\": \"LIVE\", \"confirmed\": [\"SYN/USDT\", \"ATM/USDT\", \"PYTH/USDT\", \"ZEC/USDT\"], \"open\": [\"DODO/USDT\", \"KAITO/USDT\", \"SXT/USDT\", \"SKL/USDT\", \"BANK/USDT\", \"DGB/USDT\"], \"ts\": 1784491637.8345957, \"iso\": \"2026-07-19T20:07:17Z\"}",
+ "ultimos_eventos": [
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"BANK/USDT\", \"ts\": 1784477242.9554915, \"iso\": \"2026-07-19T16:07:22Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"SXT/USDT\", \"ts\": 1784477243.487184, \"iso\": \"2026-07-19T16:07:23Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"XEC/USDT\", \"ts\": 1784477244.544368, \"iso\": \"2026-07-19T16:07:24Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"KAITO/USDT\", \"ts\": 1784477245.597943, \"iso\": \"2026-07-19T16:07:25Z\"}",
+  "{\"type\": \"LIVE_STOP_OUT\", \"symbol\": \"XEC/USDT\", \"px\": 8.19e-06, \"pnl\": 2.31, \"via\": \"stop_nativo\", \"r\": 0.93, \"ts\": 1784491634.7590463, \"iso\": \"2026-07-19T20:07:14Z\"}",
+  "{\"type\": \"LIVE_MANUAL_PARTIAL\", \"symbol\": \"BANK/USDT\", \"px\": 0.2317, \"qty\": 61.2003, \"qty_left\": 142.0097, \"pnl\": 10.77, \"ts\": 1784491637.0724502, \"iso\": \"2026-07-19T20:07:17Z\"}",
+  "{\"type\": \"scan\", \"mode\": \"LIVE\", \"confirmed\": [\"SYN/USDT\", \"ATM/USDT\", \"PYTH/USDT\", \"ZEC/USDT\"], \"open\": [\"DODO/USDT\", \"KAITO/USDT\", \"SXT/USDT\", \"SKL/USDT\", \"BANK/USDT\", \"DGB/USDT\"], \"ts\": 1784491637.8345957, \"iso\": \"2026-07-19T20:07:17Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"KAITO/USDT\", \"ts\": 1784491638.9012837, \"iso\": \"2026-07-19T20:07:18Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"SKL/USDT\", \"ts\": 1784491639.9745736, \"iso\": \"2026-07-19T20:07:19Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"SXT/USDT\", \"ts\": 1784491641.0334406, \"iso\": \"2026-07-19T20:07:21Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"DGB/USDT\", \"ts\": 1784491641.570757, \"iso\": \"2026-07-19T20:07:21Z\"}",
+  "{\"type\": \"TRAIL\", \"symbol\": \"BANK/USDT\", \"stop\": 0.153446, \"ts\": 1784491642.9133997, \"iso\": \"2026-07-19T20:07:22Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"BANK/USDT\", \"ts\": 1784491642.9135983, \"iso\": \"2026-07-19T20:07:22Z\"}",
+  "{\"type\": \"note_unconfirmed\", \"symbol\": \"DODO/USDT\", \"ts\": 1784491643.4482207, \"iso\": \"2026-07-19T20:07:23Z\"}"
  ],
- "resumen": {
-  "base": {
-   "n": 55,
-   "wr": 23.6,
-   "pnl": -47.04,
-   "exp_usd": -0.855,
-   "exp_r": -0.214,
-   "pf": 0.76,
-   "max_dd": -71.37,
-   "avg_win": 11.53,
-   "max_win": 24.78,
-   "captura_pico": -116.1
-  },
-  "tp2_5r": {
-   "n": 55,
-   "wr": 23.6,
-   "pnl": -41.81,
-   "exp_usd": -0.76,
-   "exp_r": -0.19,
-   "pf": 0.79,
-   "max_dd": -65.22,
-   "avg_win": 11.94,
-   "max_win": 22.43,
-   "captura_pico": -115.0
-  },
-  "tp2_6r": {
-   "n": 55,
-   "wr": 23.6,
-   "pnl": -40.33,
-   "exp_usd": -0.733,
-   "exp_r": -0.183,
-   "pf": 0.8,
-   "max_dd": -64.37,
-   "avg_win": 12.05,
-   "max_win": 23.29,
-   "captura_pico": -115.0
-  },
-  "adapt_trail": {
-   "n": 57,
-   "wr": 24.6,
-   "pnl": -32.39,
-   "exp_usd": -0.568,
-   "exp_r": -0.142,
-   "pf": 0.84,
-   "max_dd": -53.22,
-   "avg_win": 12.06,
-   "max_win": 24.16,
-   "captura_pico": -107.5
-  },
-  "parab_50": {
-   "n": 55,
-   "wr": 23.6,
-   "pnl": -31.65,
-   "exp_usd": -0.575,
-   "exp_r": -0.144,
-   "pf": 0.84,
-   "max_dd": -57.16,
-   "avg_win": 12.72,
-   "max_win": 27.22,
-   "captura_pico": -114.2
-  },
-  "parab_100": {
-   "n": 55,
-   "wr": 23.6,
-   "pnl": -47.04,
-   "exp_usd": -0.855,
-   "exp_r": -0.214,
-   "pf": 0.76,
-   "max_dd": -71.37,
-   "avg_win": 11.53,
-   "max_win": 24.78,
-   "captura_pico": -116.1
-  },
-  "tp2_5r+adapt": {
-   "n": 57,
-   "wr": 24.6,
-   "pnl": -24.84,
-   "exp_usd": -0.436,
-   "exp_r": -0.109,
-   "pf": 0.88,
-   "max_dd": -52.65,
-   "avg_win": 12.6,
-   "max_win": 27.22,
-   "captura_pico": -106.5
-  }
- },
- "simbolos": [
-  "ATM/USDT",
-  "BANK/USDT",
-  "DEXE/USDT",
-  "DGB/USDT",
-  "DODO/USDT",
-  "KAITO/USDT",
-  "PORTO/USDT",
-  "PYTH/USDT",
-  "SKL/USDT",
-  "SXT/USDT",
+ "confirmadas_semillas": [
   "SYN/USDT",
-  "T/USDT",
-  "XEC/USDT",
+  "ATM/USDT",
+  "PYTH/USDT",
   "ZEC/USDT"
  ],
- "fallos": [],
  "ok": true
 }
