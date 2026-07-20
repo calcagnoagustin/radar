@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 219.64,
+ "equity_now": 225.05,
  "deposits_total": 0,
- "pnl_today": 13.08,
- "trades_today": 2,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": 5.58,
  "trades_total": 11,
  "win_rate": 55,
@@ -41,7 +41,7 @@
    "symbol": "BANK/USDT",
    "entry": 0.0557,
    "qty": 142.0097,
-   "stop": 0.1534464285714286,
+   "stop": 0.167325,
    "tp1_done": true
   },
   {
@@ -49,6 +49,20 @@
    "entry": 0.00301,
    "qty": 5841.2,
    "stop": 0.002368214285714286,
+   "tp1_done": false
+  },
+  {
+   "symbol": "YB/USDT",
+   "entry": 0.0906,
+   "qty": 204.9,
+   "stop": 0.07232857142857144,
+   "tp1_done": false
+  },
+  {
+   "symbol": "PYTH/USDT",
+   "entry": 0.04993,
+   "qty": 1367.3,
+   "stop": 0.046741071428571423,
    "tp1_done": false
   }
  ],
