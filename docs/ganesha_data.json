@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 200.54,
+ "equity_now": 199.87,
  "deposits_total": 0,
- "pnl_today": 15.82,
- "trades_today": 2,
- "realized_pnl": 21.4,
- "trades_total": 13,
- "win_rate": 54,
- "profit_factor": 1.98,
+ "pnl_today": 11.43,
+ "trades_today": 3,
+ "realized_pnl": 17.01,
+ "trades_total": 14,
+ "win_rate": 50,
+ "profit_factor": 1.65,
  "open_positions": [
   {
    "symbol": "KAITO/USDT",
@@ -42,13 +42,6 @@
    "entry": 0.0906,
    "qty": 204.9,
    "stop": 0.07232857142857144,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PYTH/USDT",
-   "entry": 0.04993,
-   "qty": 1367.3,
-   "stop": 0.046741071428571423,
    "tp1_done": false
   },
   {
@@ -197,6 +190,15 @@
    "pnl_net": 19.55,
    "action": "stop",
    "closed_ts": 1784621237.868379
+  },
+  {
+   "symbol": "PYTH/USDT",
+   "entry": 0.04993,
+   "exit": 0.04672,
+   "qty_total": 1367.3,
+   "pnl_net": -4.39,
+   "action": "stop",
+   "closed_ts": 1784650036.7310688
   }
  ]
 }
