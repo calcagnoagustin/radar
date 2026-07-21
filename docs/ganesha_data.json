@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 220.2,
+ "equity_now": 216.93,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 5.58,
- "trades_total": 11,
- "win_rate": 55,
- "profit_factor": 1.31,
+ "pnl_today": -3.73,
+ "trades_today": 1,
+ "realized_pnl": 1.85,
+ "trades_total": 12,
+ "win_rate": 50,
+ "profit_factor": 1.08,
  "open_positions": [
-  {
-   "symbol": "DODO/USDT",
-   "entry": 0.02296,
-   "qty": 645.5,
-   "stop": 0.017187857142857144,
-   "tp1_done": false
-  },
   {
    "symbol": "KAITO/USDT",
    "entry": 0.7885,
@@ -77,6 +70,13 @@
    "entry": 0.03878,
    "qty": 405.0,
    "stop": 0.034491071428571426,
+   "tp1_done": false
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.006195421478060046,
+   "qty": 1905.2,
+   "stop": 0.004550714285714286,
    "tp1_done": false
   }
  ],
@@ -179,6 +179,15 @@
    "pnl_net": 10.77,
    "action": "manual",
    "closed_ts": 1784491637.0724502
+  },
+  {
+   "symbol": "DODO/USDT",
+   "entry": 0.02296,
+   "exit": 0.01718,
+   "qty_total": 645.5,
+   "pnl_net": -3.73,
+   "action": "stop",
+   "closed_ts": 1784606833.4933102
   }
  ]
 }
