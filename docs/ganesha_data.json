@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 222.08,
+ "equity_now": 220.2,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -63,6 +63,20 @@
    "entry": 0.04993,
    "qty": 1367.3,
    "stop": 0.046741071428571423,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.1184,
+   "qty": 133.4,
+   "stop": 0.08371428571428571,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ZAMA/USDT",
+   "entry": 0.03878,
+   "qty": 405.0,
+   "stop": 0.034491071428571426,
    "tp1_done": false
   }
  ],
