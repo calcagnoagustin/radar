@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-20T00:17:55Z",
+ "generated": "2026-07-21T00:17:57Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -288,13 +288,16 @@
  "decay": [],
  "propuestas": [],
  "abiertas_ganesha": [
+  "ACE/USDT",
   "BANK/USDT",
   "DGB/USDT",
   "DODO/USDT",
   "KAITO/USDT",
+  "PYTH/USDT",
   "SKL/USDT",
   "SXT/USDT",
-  "YB/USDT"
+  "YB/USDT",
+  "ZAMA/USDT"
  ],
  "n_trades_consolidados": 9
 }
