@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 198.3,
+ "equity_now": 195.16,
  "deposits_total": 0,
- "pnl_today": 11.43,
- "trades_today": 3,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": 17.01,
  "trades_total": 14,
  "win_rate": 50,
@@ -70,6 +70,13 @@
    "entry": 1.86,
    "qty": 8.46,
    "stop": 1.4331428571428568,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ONDO/USDT",
+   "entry": 0.4033,
+   "qty": 62.2,
+   "stop": 0.3353607142857143,
    "tp1_done": false
   }
  ],
