@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 195.16,
+ "equity_now": 193.57,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 17.01,
- "trades_total": 14,
- "win_rate": 50,
- "profit_factor": 1.65,
+ "pnl_today": -3.63,
+ "trades_today": 1,
+ "realized_pnl": 13.38,
+ "trades_total": 15,
+ "win_rate": 47,
+ "profit_factor": 1.45,
  "open_positions": [
   {
    "symbol": "KAITO/USDT",
@@ -63,13 +63,6 @@
    "entry": 0.006195421478060046,
    "qty": 1905.2,
    "stop": 0.004550714285714286,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PROM/USDT",
-   "entry": 1.86,
-   "qty": 8.46,
-   "stop": 1.4331428571428568,
    "tp1_done": false
   },
   {
@@ -206,6 +199,15 @@
    "pnl_net": -4.39,
    "action": "stop",
    "closed_ts": 1784650036.7310688
+  },
+  {
+   "symbol": "PROM/USDT",
+   "entry": 1.86,
+   "exit": 1.431,
+   "qty_total": 8.46,
+   "pnl_net": -3.63,
+   "action": "stop",
+   "closed_ts": 1784693238.3734396
   }
  ]
 }
