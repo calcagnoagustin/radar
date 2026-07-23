@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 200.59,
+ "equity_now": 200.17,
  "deposits_total": 0,
- "pnl_today": -2.71,
- "trades_today": 2,
- "realized_pnl": 10.67,
- "trades_total": 17,
- "win_rate": 47,
- "profit_factor": 1.32,
+ "pnl_today": -7.34,
+ "trades_today": 3,
+ "realized_pnl": 6.04,
+ "trades_total": 18,
+ "win_rate": 44,
+ "profit_factor": 1.16,
  "open_positions": [
   {
    "symbol": "KAITO/USDT",
@@ -38,17 +38,10 @@
    "tp1_done": false
   },
   {
-   "symbol": "ACE/USDT",
-   "entry": 0.1184,
-   "qty": 133.4,
-   "stop": 0.08371428571428571,
-   "tp1_done": false
-  },
-  {
    "symbol": "ZAMA/USDT",
    "entry": 0.03878,
    "qty": 283.5,
-   "stop": 0.04263285714285714,
+   "stop": 0.043699999999999996,
    "tp1_done": true
   },
   {
@@ -240,6 +233,15 @@
    "pnl_net": -3.79,
    "action": "stop",
    "closed_ts": 1784779640.4227972
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.1184,
+   "exit": 0.0837,
+   "qty_total": 133.4,
+   "pnl_net": -4.63,
+   "action": "stop",
+   "closed_ts": 1784794037.5882556
   }
  ]
 }
