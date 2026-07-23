@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 197.85,
+ "equity_now": 198.55,
  "deposits_total": 0,
- "pnl_today": -3.63,
+ "pnl_today": 1.08,
  "trades_today": 1,
- "realized_pnl": 13.38,
- "trades_total": 15,
- "win_rate": 47,
- "profit_factor": 1.45,
+ "realized_pnl": 14.46,
+ "trades_total": 16,
+ "win_rate": 50,
+ "profit_factor": 1.48,
  "open_positions": [
   {
    "symbol": "KAITO/USDT",
@@ -54,9 +54,9 @@
   {
    "symbol": "ZAMA/USDT",
    "entry": 0.03878,
-   "qty": 405.0,
-   "stop": 0.034491071428571426,
-   "tp1_done": false
+   "qty": 283.5,
+   "stop": 0.04179892857142857,
+   "tp1_done": true
   },
   {
    "symbol": "HEMI/USDT",
@@ -84,6 +84,13 @@
    "entry": 0.1771,
    "qty": 38.0,
    "stop": 0.06839285714285713,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ERA/USDT",
+   "entry": 0.101,
+   "qty": 119.6,
+   "stop": 0.06617142857142858,
    "tp1_done": false
   }
  ],
@@ -222,6 +229,15 @@
    "pnl_net": -3.63,
    "action": "stop",
    "closed_ts": 1784693238.3734396
+  },
+  {
+   "symbol": "ZAMA/USDT",
+   "entry": 0.03878,
+   "exit": 0.04764,
+   "qty_total": 0,
+   "pnl_net": 1.08,
+   "action": "tp",
+   "closed_ts": 1784765257.8950787
   }
  ]
 }
