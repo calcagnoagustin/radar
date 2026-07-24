@@ -1,0 +1,131 @@
+"""P3 - Wrapper unico de ejecucion.
+
+UNICA puerta para mandar ordenes a Binance. seeds.py y main.execute NO deben
+llamar a ex.market_* directo: pasan por aca. Centraliza:
+  - validacion de min_notional con CLAMP CONTROLADO,
+  - lectura del fill real (filled/cost/avg),
+  - registro en el ledger,
+  - resultado normalizado: {ok, filled, cost, avg, order_id, reason, status, dry, clamped}.
+
+Regla de clamp (compra): si quote < min_notional, se sube al minimo SOLO si
+min_notional <= MAX_AUTO_CLAMP_USDT; si lo supera, se saltea la orden
+(status skipped_min_notional) + ledger + alerta. Nunca infla el sizing a ciegas.
+"""
+import config
+import ledger
+import notify
+
+
+def _max_clamp():
+    return float(getattr(config, "MAX_AUTO_CLAMP_USDT", 10))
+
+
+def _norm(ok=False, filled=0.0, cost=0.0, avg=0.0, order_id=None,
+          reason="", status="failed", dry=False, clamped=False):
+    return {"ok": ok, "filled": float(filled or 0), "cost": float(cost or 0),
+            "avg": float(avg or 0), "order_id": order_id, "reason": reason,
+            "status": status, "dry": dry, "clamped": clamped}
+
+
+def _read_fill(order):
+    """Extrae filled/cost/avg de una orden ccxt, con fallbacks."""
+    o = order or {}
+    filled = float(o.get("filled") or 0)
+    cost = float(o.get("cost") or 0)
+    avg = o.get("average")
+    if avg:
+        avg = float(avg)
+    elif filled > 0 and cost > 0:
+        avg = cost / filled
+    else:
+        avg = 0.0
+    return filled, cost, avg, o.get("id")
+
+
+def execute_buy_quote(ex, sym, quote, intent, run_id, dry, price=None):
+    """Compra a mercado gastando 'quote' USDT. Devuelve dict normalizado."""
+    quote = float(quote)
+    clamped = False
+    try:
+        min_notional = float(ex.min_notional(sym))
+    except Exception:
+        min_notional = 5.0
+
+    if quote < min_notional:
+        if min_notional <= _max_clamp():
+            quote = min_notional
+            clamped = True
+        else:
+            ledger.append(run_id, sym, intent, "buy", requested_quote=quote,
+                          status="skipped_min_notional",
+                          extra={"min_notional": min_notional})
+            try:
+                notify.exec_alert(sym, intent,
+                                  f"orden de ${quote} salteada: min_notional ${min_notional} > clamp ${_max_clamp()}")
+            except Exception:
+                pass
+            return _norm(reason="min_notional", status="skipped_min_notional")
+
+    if dry:
+        th_qty = (quote / price) if price else 0.0
+        ledger.append(run_id, sym, intent, "buy", requested_quote=quote,
+                      status="dry", filled=th_qty, cost=quote, avg=price or 0,
+                      extra={"clamped": clamped})
+        return _norm(ok=True, filled=th_qty, cost=quote, avg=price or 0,
+                     reason="dry", status="dry", dry=True, clamped=clamped)
+
+    try:
+        order = ex.market_buy_quote(sym, quote)
+    except Exception as e:
+        ledger.append(run_id, sym, intent, "buy", requested_quote=quote,
+                      status="failed", extra={"error": str(e)[:160], "clamped": clamped})
+        return _norm(reason=str(e)[:160], status="failed", clamped=clamped)
+
+    filled, cost, avg, oid = _read_fill(order)
+    status = "filled" if filled > 0 else "failed"
+    ledger.append(run_id, sym, intent, "buy", requested_quote=quote,
+                  order_id=oid, status=status, filled=filled, cost=cost,
+                  avg=avg, raw=order, extra={"clamped": clamped})
+    return _norm(ok=(filled > 0), filled=filled, cost=cost, avg=avg,
+                 order_id=oid, reason=status, status=status, clamped=clamped)
+
+
+def execute_sell_base(ex, sym, qty, intent, run_id, dry):
+    """Vende a mercado 'qty' del activo base. Devuelve dict normalizado.
+
+    market_sell_base ya clampea al balance libre y chequea min_notional;
+    devuelve None si no pudo vender (dust / insuficiente / rechazo).
+    """
+    qty = float(qty)
+    if qty <= 0:
+        return _norm(reason="qty<=0", status="skipped")
+
+    if dry:
+        ledger.append(run_id, sym, intent, "sell", requested_qty=qty,
+                      status="dry", filled=qty)
+        return _norm(ok=True, filled=qty, reason="dry", status="dry", dry=True)
+
+    try:
+        order = ex.market_sell_base(sym, qty)
+    except Exception as e:
+        ledger.append(run_id, sym, intent, "sell", requested_qty=qty,
+                      status="failed", extra={"error": str(e)[:160]})
+        return _norm(reason=str(e)[:160], status="failed")
+
+    if order is None:
+        # venta omitida por el exchange layer (dust / insuficiente / rechazo)
+        ledger.append(run_id, sym, intent, "sell", requested_qty=qty,
+                      status="skipped")
+        return _norm(reason="sell_skipped_or_rejected", status="skipped")
+
+    filled, cost, avg, oid = _read_fill(order)
+    if filled <= 0:
+        ledger.append(run_id, sym, intent, "sell", requested_qty=qty,
+                      order_id=oid, status="failed", raw=order)
+        return _norm(reason="no_fill", status="failed", order_id=oid)
+    status = "partial" if filled < qty * 0.999 else "filled"
+    ledger.append(run_id, sym, intent, "sell", requested_qty=qty,
+                  order_id=oid, status=status, filled=filled, cost=cost,
+                  avg=avg, raw=order)
+    return _norm(ok=True, filled=filled, cost=cost, avg=avg, order_id=oid,
+                 reason=status, status=status)
