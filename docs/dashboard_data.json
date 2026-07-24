@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-24T03:30:20Z",
+ "generated_at": "2026-07-24T03:50:10Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 55.75201982,
@@ -704,14 +704,22 @@
   ]
  },
  "deposits_ledger": {
-  "seeded": false,
+  "seeded": true,
   "semillas": {
-   "neto_usdt": 0,
-   "movs": [],
+   "neto_usdt": 132.0,
+   "movs": [
+    {
+     "asset": "USDT",
+     "qty": 132.0,
+     "type": 1,
+     "time": 1782604800000,
+     "src": "seed_estimado_pnl"
+    }
+   ],
    "otros_activos": []
   },
   "ganesha": {
-   "neto_usdt": 0,
+   "neto_usdt": 194.0,
    "movs": [
     {
      "asset": "AVAX",
@@ -719,6 +727,13 @@
      "type": 2,
      "time": 1782523200000,
      "src": "api"
+    },
+    {
+     "asset": "USDT",
+     "qty": 194.0,
+     "type": 1,
+     "time": 1782604800000,
+     "src": "seed_estimado_pnl"
     }
    ],
    "otros_activos": [
