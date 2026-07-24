@@ -117,15 +117,15 @@
 
   <section class="hero">
     <div>
-      <div class="eyebrow">P&amp;L no realizado · posiciones abiertas</div>
-      <div class="pnl-val mono" id="pnlTotal">—</div>
-      <div class="pnl-sub" id="pnlTotalSub">cargando estado…</div>
+      <div class="eyebrow">Balance (USD) · Semillas</div>
+      <div class="pnl-val mono" id="semBal">—</div>
+      <div class="pnl-sub" id="semSub">cargando estado…</div>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="k">Balance (USD)</div><div class="v mono" id="semEquity" style="font-size:1.4em">—</div></div>
-      <div class="stat"><div class="k">Valor mercado</div><div class="v mono" id="mktTotal">—</div></div>
-      <div class="stat"><div class="k">Costo base</div><div class="v mono" id="costTotal">—</div></div>
-      <div class="stat"><div class="k">Capital + depósitos</div><div class="v mono" id="capTotal">—</div></div>
+      <div class="stat"><div class="k">Ganancia / pérdida general</div><div class="v mono" id="semGen" style="font-size:1.4em">—</div></div>
+      <div class="stat"><div class="k">P&amp;L no realizado</div><div class="v mono" id="semUnreal">—</div></div>
+      <div class="stat"><div class="k">P&amp;L realizado</div><div class="v mono" id="semReal">—</div></div>
+      <div class="stat"><div class="k">Depósitos netos</div><div class="v mono" id="semDep">—</div></div>
     </div>
   </section>
 
@@ -175,14 +175,15 @@
 
 <section class="hero">
   <div>
-    <div class="eyebrow">Balance (USD)</div>
-    <div class="pnl-val mono" id="gEquity">—</div>
-    <div class="pnl-sub" id="gEquitySub">cargando estado…</div>
+    <div class="eyebrow">Balance (USD) · Ganesha</div>
+    <div class="pnl-val mono" id="gBal">—</div>
+    <div class="pnl-sub" id="gSub">cargando estado…</div>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="k">P&amp;L hoy</div><div class="v mono" id="gPnlToday">—</div></div>
-    <div class="stat"><div class="k">P&amp;L realizado</div><div class="v mono" id="gPnlReal">—</div></div>
-    <div class="stat"><div class="k">Trades hoy</div><div class="v mono" id="gTradesToday">—</div></div>
+    <div class="stat"><div class="k">Ganancia / pérdida general</div><div class="v mono" id="gGen" style="font-size:1.4em">—</div></div>
+    <div class="stat"><div class="k">P&amp;L no realizado</div><div class="v mono" id="gUnreal">—</div></div>
+    <div class="stat"><div class="k">P&amp;L realizado</div><div class="v mono" id="gReal">—</div></div>
+    <div class="stat"><div class="k">Depósitos netos</div><div class="v mono" id="gDep">—</div></div>
   </div>
 </section>
 
@@ -260,18 +261,20 @@ function render(){
   open.forEach(p=>{const px=PRICES[bSym(p.symbol)];const c=p.qty*p.avg_cost;cost+=c;if(px){mkt+=p.qty*px.price}else{priced=false}});
   const pnl=mkt-cost, pnlPct=cost>0?(pnl/cost*100):0;
 
-  document.getElementById("pnlTotal").innerHTML=priced&&open.length
-      ? `<span class="${cls(pnl)}">${fmtUSD(pnl)} <span style="font-size:.55em">${fmtPct(pnlPct)}</span></span>`
-      : (open.length?"—":'<span class="flat">sin posiciones abiertas</span>');
-  document.getElementById("pnlTotalSub").textContent =
-      open.length? `${open.length} abierta${open.length>1?"s":""} · ${closed.length} cerrada${closed.length!==1?"s":""}`
-                 : `${closed.length} cerrada${closed.length!==1?"s":""}`;
-  document.getElementById("mktTotal").textContent = priced? fmtUSD(mkt): "—";
-  document.getElementById("costTotal").textContent = fmtUSD(cost);
-  const dep=(DATA.deposits||[]).reduce((a,d)=>a+(d.amount||0),0);
-  document.getElementById("capTotal").textContent = fmtUSD((DATA.capital_inicial||0)+dep,0);
-  const _semEq=(DATA.free_usdt!=null)?DATA.free_usdt+mkt:((DATA.capital_inicial||0)+dep)+(mkt-cost);
-  document.getElementById("semEquity").textContent=priced?fmtUSD(_semEq):"—";
+  const _semBal=(DATA.free_usdt||0)+mkt;
+  document.getElementById("semBal").textContent = priced? fmtUSD(_semBal): "—";
+  document.getElementById("semSub").textContent =
+      `${open.length} abierta${open.length!==1?"s":""} · ${closed.length} cerrada${closed.length!==1?"s":""}`;
+  document.getElementById("semUnreal").innerHTML = (priced&&open.length)
+      ? `<span class="${cls(pnl)}">${fmtUSD(pnl)} <span style="font-size:.8em">(${fmtPct(pnlPct)})</span></span>` : "—";
+  const _semReal=(DATA.recent_closed||[]).reduce((a,r)=>a+(+r.pnl_net||0),0);
+  document.getElementById("semReal").innerHTML=`<span class="${cls(_semReal)}">${fmtUSD(_semReal)}</span>`;
+  const dlS=DATA.deposits_ledger;
+  if(dlS&&dlS.seeded&&dlS.semillas&&dlS.semillas.neto_usdt>0&&priced){
+    const dpS=dlS.semillas.neto_usdt, gS=_semBal-dpS;
+    document.getElementById("semGen").innerHTML=`<span class="${cls(gS)}">${fmtUSD(gS)} <span style="font-size:.8em">(${fmtPct(gS/dpS*100)})</span></span>`;
+    document.getElementById("semDep").textContent=fmtUSD(dpS,0);
+  }
 
   document.getElementById("posCount").textContent = open.length+" abiertas";
   const pc=document.getElementById("positions"); pc.innerHTML="";
@@ -349,7 +352,7 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
 (async function init(){
   try{ await loadData(); }
   catch(e){
-    document.getElementById("pnlTotalSub").innerHTML='<span class="err">No se pudo leer dashboard_data.json — ¿ya corrió el deploy?</span>';
+    document.getElementById("semSub").innerHTML='<span class="err">No se pudo leer dashboard_data.json — ¿ya corrió el deploy?</span>';
     return;
   }
   render();
@@ -366,9 +369,10 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
   const fP=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
   const cl=n=>n>0.0001?"up":(n<-0.0001?"down":"flat");
   const bS=s=>s.replace("/","").toUpperCase();
-  let D=null,PX={},lf=0;
+  let D=null,DEP=null,PX={},lf=0;
   const $=id=>document.getElementById(id);
-  async function load(){const r=await fetch("./ganesha_data.json?ts="+Date.now());if(!r.ok)throw 0;D=await r.json();}
+  async function load(){const r=await fetch("./ganesha_data.json?ts="+Date.now());if(!r.ok)throw 0;D=await r.json();
+    try{const r2=await fetch("./dashboard_data.json?ts="+Date.now());if(r2.ok){DEP=(await r2.json()).deposits_ledger;}}catch(e){}}
   async function prices(){
     const ss=new Set();(D.open_positions||[]).forEach(p=>{if(p.qty>0)ss.add(bS(p.symbol))});
     if(!ss.size){lf=Date.now();return;}
@@ -382,12 +386,20 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
   function render(){
     if(!D)return;const live=D.dry_run===false;
     const mb=$("gMode");mb.textContent=live?"EN VIVO":"DRY-RUN";mb.className="badge "+(live?"live":"dry");
-    $("gEquity").textContent=fU(D.equity_now);
-    $("gEquitySub").textContent=`${(D.open_positions||[]).length} abierta(s) · depósitos ${fU(D.deposits_total||0,0)}`;
+    let _inv=0,_mk=0,_pcd=true;
+    (D.open_positions||[]).forEach(p=>{const t=PX[bS(p.symbol)];_inv+=p.qty*p.entry;if(t)_mk+=p.qty*t.price;else _pcd=false;});
+    const _bal=_pcd?((D.equity_now||0)-_inv+_mk):(D.equity_now||0);
+    $("gBal").textContent=fU(_bal);
     const pt=D.pnl_today||0,pr=D.realized_pnl||0;
-    $("gPnlToday").innerHTML=`<span class="${cl(pt)}">${fU(pt)}</span>`;
-    $("gPnlReal").innerHTML=`<span class="${cl(pr)}">${fU(pr)}</span>`;
-    $("gTradesToday").textContent=D.trades_today??0;
+    $("gSub").textContent=`${(D.open_positions||[]).length} abierta(s) · hoy ${fU(pt)} · ${D.trades_today??0} trade(s)`;
+    const _un=_pcd?(_mk-_inv):null;
+    $("gUnreal").innerHTML=_un==null?"—":`<span class="${cl(_un)}">${fU(_un)} <span style="font-size:.8em">(${fP(_inv>0?_un/_inv*100:0)})</span></span>`;
+    $("gReal").innerHTML=`<span class="${cl(pr)}">${fU(pr)}</span>`;
+    if(DEP&&DEP.seeded&&DEP.ganesha&&DEP.ganesha.neto_usdt>0&&_pcd){
+      const _dp=DEP.ganesha.neto_usdt,_g=_bal-_dp;
+      $("gGen").innerHTML=`<span class="${cl(_g)}">${fU(_g)} <span style="font-size:.8em">(${fP(_g/_dp*100)})</span></span>`;
+      $("gDep").textContent=fU(_dp,0);
+    }
     $("gMTrades").textContent=D.trades_total??0;
     $("gMWin").textContent=(D.win_rate??0)+"%";
     $("gMPF").textContent=D.trades_total?(D.profit_factor??0):"—";
@@ -405,7 +417,7 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
     fresh();
   }
   async function cyc(){try{await prices();render();}catch(e){const f=$("gFresh");if(f)f.innerHTML='<span class="err">precios n/d</span>';}}
-  (async function(){try{await load();}catch(e){const s=$("gEquitySub");if(s)s.innerHTML='<span class="err">ganesha_data.json aún no disponible</span>';return;}render();await cyc();setInterval(async()=>{try{await load();}catch(e){}cyc();},60000);setInterval(fresh,1000);})();
+  (async function(){try{await load();}catch(e){const s=$("gSub");if(s)s.innerHTML='<span class="err">ganesha_data.json aún no disponible</span>';return;}render();await cyc();setInterval(async()=>{try{await load();}catch(e){}cyc();},60000);setInterval(fresh,1000);})();
 })();
 </script>
 
