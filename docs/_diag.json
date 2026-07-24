@@ -1,34 +1,14 @@
 {
- "task": "export_dash_probe_dep",
- "now": "2026-07-24 03:16:02Z",
+ "task": "install_dashboard_v2",
+ "now": "2026-07-24 03:30:03Z",
  "pasos": [
-  "dashboard.py exportado (10533 b)",
-  "main.py exportado (13456 b)",
-  "config.py exportado (3811 b)",
-  "execlayer.py exportado (5419 b)",
-  "probe rc=0"
+  "compile OK (14417 bytes)",
+  "backup -> .bak.pre_alertas",
+  "instalado",
+  "test rc=0"
  ],
- "probe": {
-  "semillas": {
-   "usdt_free": 55.75201982,
-   "atm_total": 0.0068,
-   "subhist": [],
-   "deposits_ext": []
-  },
-  "ganesha": {
-   "usdt_free": 63.02674682,
-   "atm_total": 0.0,
-   "subhist": [
-    {
-     "asset": "AVAX",
-     "qty": "3.35664000",
-     "type": "2",
-     "time": "1782523200000"
-    }
-   ],
-   "deposits_ext": []
-  }
- },
- "probe_stderr": "",
+ "sha256": "937bf09ff4e38853",
+ "test_stdout": "payload_ok alertas 1 seeded False\nALERTAS: ['El cerebro recomendo cerrar ATM/USDT (plan 2026-07): Fan token de Atl\u00e9tico sin n']\n[dashboard] data publicada OK\nupdate: True\n",
+ "test_stderr": "",
  "ok": true
 }
