@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-24T00:16:39Z",
+ "generated_at": "2026-07-24T03:30:20Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 50.31850877,
+ "free_usdt": 55.75201982,
  "deposits": [],
  "positions": [
   {
@@ -623,7 +623,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-23T00:59:39Z",
+  "generated": "2026-07-24T00:17:55Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -660,9 +660,78 @@
  "alertas": [
   {
    "nivel": "rojo",
-   "texto": "DCA de ATM/USDT no ejecutado (presupuesto o timing). Revisar liquidez."
+   "texto": "El cerebro recomendo cerrar ATM/USDT (plan 2026-07): Fan token de Atlético sin narrativa de sector activa este ciclo, trending False y liquidez pobre; el capital r El bot no vende tesis vivas: decision tuya (venta manual)."
   }
  ],
+ "garden_plan_pub": {
+  "month": "2026-07",
+  "verdicts": [
+   {
+    "symbol": "SYN/USDT",
+    "verdict": "mantener",
+    "dca_usdt": 0,
+    "razon": "El +770% mom fue rally puramente técnico/momentum sin catalizador fundamental nuevo y ya corrigió ~33% en una semana, con overhang del bankruptcy 2024; tesis viva pero frágil, no reforzar en régimen cauteloso.",
+    "estado": "sin accion (mantener)"
+   },
+   {
+    "symbol": "MANTA/USDT",
+    "verdict": "mantener",
+    "dca_usdt": 0,
+    "razon": "Stage 2 y trending pero sin catalizador fresco y momentum enfriándose; sin ruptura confirmada nueva, mantener sin agregar capital limitado.",
+    "estado": "sin accion (mantener)"
+   },
+   {
+    "symbol": "ATM/USDT",
+    "verdict": "liquidar",
+    "dca_usdt": 0,
+    "razon": "Fan token de Atlético sin narrativa de sector activa este ciclo, trending False y liquidez pobre; el capital rinde más en candidatos con catalizador y ruptura real.",
+    "estado": "decision de Agus pendiente"
+   },
+   {
+    "symbol": "PYTH/USDT",
+    "verdict": "reforzar",
+    "dca_usdt": 24,
+    "razon": "Catalizador institucional fresco y accionable (Nasdaq TotalView on-chain + upgrade Pyth Core 31 julio con revenue a buybacks) y salida de base larga; asigno el grueso del presupuesto por ser la tesis más fuerte con tendencia acompañando.",
+    "estado": "ejecutado"
+   },
+   {
+    "symbol": "ZEC/USDT",
+    "verdict": "reforzar",
+    "dca_usdt": 20,
+    "razon": "Posición dust ($9.5) pero tesis viva: privacidad reacelerando y ZEC entre top movers diarios; refuerzo pequeño para llevarla a tamaño operativo si la tendencia y el veto Stage 2 lo permiten.",
+    "estado": "ejecutado"
+   }
+  ]
+ },
+ "deposits_ledger": {
+  "seeded": false,
+  "semillas": {
+   "neto_usdt": 0,
+   "movs": [],
+   "otros_activos": []
+  },
+  "ganesha": {
+   "neto_usdt": 0,
+   "movs": [
+    {
+     "asset": "AVAX",
+     "qty": 3.35664,
+     "type": 2,
+     "time": 1782523200000,
+     "src": "api"
+    }
+   ],
+   "otros_activos": [
+    {
+     "asset": "AVAX",
+     "qty": 3.35664,
+     "type": 2,
+     "time": 1782523200000,
+     "src": "api"
+    }
+   ]
+  }
+ },
  "rules": {
   "freeze_days": 60,
   "max_seeds": 60,
