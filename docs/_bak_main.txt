@@ -1,0 +1,334 @@
+#!/usr/bin/env python3
+"""Sistema Semillas v2 - Bot de ejecucion diaria (JARDINERO).
+
+Flujo diario (cron):
+0. Lock anti doble-corrida + reconciliacion state<->Binance (solo alerta).
+1. Detecta depositos nuevos (fuera del P&L).
+2. Gestiona posiciones (strategy.decide): activaciones, TPs, stops con moonbag
+   dinamico (piso $10), freeze 60d, y REVIVAL de moonbags (re-confirman con
+   Stage 2 sostenido -> re-habilitan DCA y Ganesha).
+3. Scanner: barrido global SOLO como contexto (scanner_raw); no pisa shortlist.
+4. Triggers -> CEREBRO (mensual o emergencia): shortlist 10-12 + gestion de
+   cartera (garden_plan).
+5. JARDINERO planta semillas por timing (seeds) y ejecuta el plan del cerebro
+   (garden: DCA mensual con vetos, liquidaciones de tesis muertas, avisos).
+6. Reporte email + persistencia + dashboard + learning loop.
+
+v2: retirado el modo runner (P9/P11). Todo refuerzo de capital pasa por el
+plan mensual del cerebro. Historial: TODA venta realizada queda en recent_closed.
+
+Uso: python main.py [--brain] [--dry]
+"""
+import sys
+import time as _time
+from datetime import date
+
+import config
+import state as st
+import dashboard
+import strategy
+import triggers
+import notify
+import brain_monthly
+from exchange import Exchange
+import seeds
+import garden
+import scanner
+import runlock
+import ledger
+import execlayer
+import reconcile
+
+DRY = "--dry" in sys.argv
+FORCE_BRAIN = "--brain" in sys.argv
+
+def detect_deposits(ex, state):
+    known = {(d["date"], d["amount"], d["asset"]) for d in state["deposits"]}
+    new = []
+    for d in ex.deposits():
+        if d.get("status") not in ("ok", "completed", None):
+            continue
+        rec = {"date": (d.get("datetime") or "")[:10] or st.today_str(),
+               "amount": float(d.get("amount") or 0),
+               "asset": d.get("currency") or config.QUOTE_ASSET}
+        key = (rec["date"], rec["amount"], rec["asset"])
+        if key not in known and rec["amount"] > 0:
+            new.append(rec)
+            state["deposits"].append(rec)
+    return new
+
+def record_closed(state, sym, entry, exit_px, qty, action, thesis=""):
+    """v2: TODA venta realizada (tp/stop/freeze/liq) queda en el historial."""
+    if qty <= 0:
+        return
+    state.setdefault("recent_closed", []).append({
+        "symbol": sym, "entry": entry, "exit": exit_px,
+        "qty_total": round(qty, 8), "action": action,
+        "pnl_net": round((exit_px - entry) * qty, 4),
+        "thesis": thesis, "closed_ts": _time.time()})
+    state["recent_closed"] = state["recent_closed"][-1000:]
+
+def execute(ex, action, pos, state, run_id):
+    """P4: el estado SOLO se muta con fill confirmado."""
+    sym = action["symbol"]
+    typ = action["type"]
+    entry = pos.get("avg_cost", 0) or 0
+    thesis = pos.get("thesis", "")
+
+    if typ == "ACTIVATE":
+        pos["status"] = "confirmed"
+        pos["confirmed_at"] = st.today_str()
+
+    elif typ == "REVIVE":
+        pos["status"] = "confirmed"
+        pos["confirmed_at"] = st.today_str()
+        pos["revived_at"] = st.today_str()
+        print(f"[revive] {sym}: moonbag re-confirmada (habilita DCA y Ganesha)")
+
+    elif typ == "TAKE_PROFIT":
+        sell_qty = pos["qty"] * (action["sell_frac"] / 100.0)
+        res = execlayer.execute_sell_base(ex, sym, sell_qty, "TAKE_PROFIT", run_id, DRY)
+        if res["ok"] and res["filled"] > 0:
+            pos["qty"] -= res["filled"]
+            pos.setdefault("tp_hit", []).append(action["level"])
+            exit_px = res["avg"] or action["price"]
+            record_closed(state, sym, entry, exit_px, res["filled"], "tp", thesis)
+            if len(pos["tp_hit"]) >= len(config.TP_LEVELS):
+                pos["status"] = "moonbag"
+        else:
+            print(f"[tp] {sym}: venta no ejecutada ({res['reason']}); estado sin tocar")
+
+    elif typ == "STOP":
+        price = action["price"]
+        frac = action.get("moonbag_frac", config.MOONBAG_FRAC_WEAK)
+        pos_val = pos["qty"] * price
+        if pos_val < config.MOONBAG_FLOOR_USDT:
+            # demasiado chica para fabricar testigo: salir 100% y avisar
+            sell_qty = pos["qty"]
+            keep_qty = 0.0
+        else:
+            keep_qty = max(pos["qty"] * frac, config.MOONBAG_FLOOR_USDT / price)
+            keep_qty = min(keep_qty, pos["qty"])
+            sell_qty = pos["qty"] - keep_qty
+        if sell_qty <= 0:
+            pos["status"] = "stopped_moonbag"
+            return pos
+        res = execlayer.execute_sell_base(ex, sym, sell_qty, "STOP", run_id, DRY)
+        if res["ok"] and res["filled"] > 0:
+            pos["qty"] -= res["filled"]
+            exit_px = res["avg"] or price
+            record_closed(state, sym, entry, exit_px, res["filled"], "stop", thesis)
+            if keep_qty <= 0 or pos["qty"] <= 1e-9:
+                pos["qty"] = max(pos["qty"], 0)
+                pos["status"] = "closed"
+                if not DRY:
+                    try:
+                        notify.send("Semillas — stop sin testigo en " + sym,
+                                    f"<p>{sym} salio 100% por Stage 4: la posicion "
+                                    f"(${pos_val:.2f}) no llegaba al piso de moonbag "
+                                    f"(${config.MOONBAG_FLOOR_USDT:.0f}).</p>")
+                    except Exception:
+                        pass
+            else:
+                pos["status"] = "stopped_moonbag"  # terminal para ventas (P9a)
+        else:
+            print(f"[stop] {sym}: venta no ejecutada ({res['reason']}); estado sin tocar")
+
+    elif typ == "FREEZE":
+        if pos["qty"] > 0:
+            res = execlayer.execute_sell_base(ex, sym, pos["qty"], "FREEZE", run_id, DRY)
+            if res["ok"] and res["filled"] > 0:
+                exit_px = res["avg"] or action["price"]
+                record_closed(state, sym, entry, exit_px, res["filled"], "freeze", thesis)
+                pos["qty"] -= res["filled"]
+                if pos["qty"] <= 1e-9:
+                    pos["qty"] = 0
+                    pos["status"] = "frozen"
+                else:
+                    print(f"[freeze] {sym}: venta parcial; queda {pos['qty']:.8f}")
+            else:
+                print(f"[freeze] {sym}: venta no ejecutada ({res['reason']}); no congelo")
+        else:
+            pos["status"] = "frozen"
+
+    return pos
+
+def manage_positions(ex, state, run_id):
+    actions = []
+    for sym, pos in list(state["positions"].items()):
+        if pos.get("status") in ("closed", "frozen"):
+            continue
+        try:
+            ohlcv = ex.ohlcv(sym, "1d", limit=config.MA_PERIOD + config.CONFIRM_DAYS
+                             + config.STRUCT_LOOKBACK_D + 20)
+        except Exception as e:
+            actions.append({"symbol": sym, "type": "ERROR", "reason": f"sin datos: {e}"})
+            continue
+        action = strategy.decide(sym, ohlcv, pos)
+        if action and action["type"] not in ("HOLD",):
+            state["positions"][sym] = execute(ex, action, pos, state, run_id)
+            actions.append(action)
+    return actions
+
+def maybe_run_brain(ex, state, trig_hits):
+    """Despierta el cerebro si: hay triggers, es nuevo mes, o se forzo.
+    v2: ademas de shortlist (10-12), devuelve el plan de cartera (garden_plan)."""
+    if DRY:
+        print("[brain] modo dry: no se consulta el cerebro (se ahorra credito).")
+        return None
+    today = date.today().isoformat()
+    last_succ = state.get("last_brain_success") or state.get("last_brain_run")
+    new_month = (last_succ is None) or (last_succ[:7] != today[:7])
+    if not (new_month or FORCE_BRAIN):
+        return None
+    if not FORCE_BRAIN and state.get("last_brain_attempt") == today:
+        print("[brain] cooldown: ya se intento hoy; salteo.")
+        return None
+    state["last_brain_attempt"] = today
+
+    ctx_lines = [f"- {h['symbol']}: {h['signal']} ({h['detail']})" for h in trig_hits]
+    ctx = "\n".join(ctx_lines) or "Sin triggers; corrida mensual de rutina."
+    _sc = state.get("scanner_raw", [])
+    if _sc:
+        ctx += " || Scanner: " + "; ".join(
+            "%s sc %.1f st %s m30 %s%% tr %s" % (c["symbol"], c["score"], c["stage"],
+                                                 c["mom30"], c["trending"])
+            for c in _sc[:12])
+    try:
+        free = float((ex.client.fetch_balance().get(config.QUOTE_ASSET) or {}).get("free", 0) or 0)
+    except Exception:
+        free = 0.0
+    budget = max(0.0, free - config.GARDEN_RESERVE_USDT)
+
+    result = brain_monthly.run(ctx, state=state, budget=budget)
+    if result.get("shortlist"):
+        _mk = ex.markets()
+        _full = [c for c in result["shortlist"] if c.get("symbol") in _mk]
+        state["shortlist"] = [c["symbol"] for c in _full][:config.BRAIN_SHORTLIST_N]
+        state["shortlist_full"] = _full[:config.BRAIN_SHORTLIST_N]
+        state["last_brain_success"] = today
+        state["last_brain_run"] = today
+        state["regimen"] = result.get("regimen") or "neutral"
+        state["garden_plan"] = {"month": today[:7],
+                                "verdicts": result.get("portfolio", []),
+                                "done": [], "warned": []}
+        print("[brain] shortlist %d + plan de cartera %d dictamenes"
+              % (len(state["shortlist"]), len(result.get("portfolio", []))))
+    return result
+
+def build_portfolio_view(ex, state):
+    view = {}
+    for sym, p in state["positions"].items():
+        if p.get("status") in ("closed",):
+            continue
+        pnl = "-"
+        try:
+            if p.get("avg_cost"):
+                price = ex.price(sym)
+                pnl = f"{(price / p['avg_cost'] - 1) * 100:+.1f}%"
+        except Exception:
+            pass
+        view[sym] = {"status": p["status"], "qty": p.get("qty", 0), "pnl_pct": pnl}
+    return view
+
+def main():
+    run_id = ledger.new_run_id()
+    errs = config.validate(require_trading=not config.BINANCE_TESTNET)
+    for e in errs:
+        print(f"[config] aviso: {e}")
+
+    ex = Exchange()
+    state = st.load()
+
+    try:
+        diffs = reconcile.reconcile(ex, state)
+        if diffs:
+            notify.reconcile_alert(diffs)
+            print(f"[reconcile] {len(diffs)} diferencia(s) detectada(s) (ver alerta).")
+        else:
+            print("[reconcile] state y Binance coinciden.")
+    except Exception as e:
+        print("[reconcile] fallo:", str(e)[:160])
+
+    try:
+        _bal = ex.client.fetch_balance()
+        _freeq = float((_bal.get(config.QUOTE_ASSET) or {}).get("free", 0) or 0)
+        if _freeq < config.LIQUIDITY_BUFFER_USDT:
+            print(f"[liquidez] {config.QUOTE_ASSET} libre ${_freeq:.2f} < colchon "
+                  f"${config.LIQUIDITY_BUFFER_USDT}")
+            if not DRY:
+                notify.liquidity_alert(_freeq, config.LIQUIDITY_BUFFER_USDT)
+        else:
+            print(f"[liquidez] {config.QUOTE_ASSET} libre ${_freeq:.2f} OK")
+    except Exception as e:
+        print("[liquidez] check fallo:", str(e)[:120])
+
+    deposits = detect_deposits(ex, state)
+    for d in deposits:
+        print(f"[deposit] +{d['amount']} {d['asset']} (loggeado, fuera del P&L)")
+
+    try:
+        actions = manage_positions(ex, state, run_id)
+    except Exception as e:
+        actions = []
+        print('[main] manage_positions fallo:', str(e)[:160])
+
+    # v2: el scanner es contexto/vigilancia; NUNCA pisa la shortlist del cerebro
+    try:
+        state["scanner_raw"] = scanner.scan(ex, top=config.SCAN_TOP)
+        print("[scanner] %d candidatos (solo contexto)" % len(state["scanner_raw"]))
+    except Exception as e:
+        print('[main] scanner fallo:', str(e)[:160])
+
+    universe = list(set(state.get("shortlist", []) + list(state["positions"].keys())))
+    trig_hits = []
+    trig_hits += triggers.weekly_move_triggers(ex, universe)
+    vol_hits, current_rank = triggers.volume_rank_triggers(ex, state)
+    trig_hits += vol_hits
+    state["prev_volume_rank"] = current_rank
+    trig_hits += triggers.news_triggers(state, universe)
+
+    brain = maybe_run_brain(ex, state, trig_hits)
+
+    try:
+        actions += seeds.plant_seeds(ex, state, DRY, run_id)
+    except Exception as e:
+        print('[main] plant_seeds fallo:', str(e)[:160])
+    try:
+        actions += garden.run(ex, state, DRY, run_id)
+    except Exception as e:
+        print('[main] garden fallo:', str(e)[:160])
+
+    brain_summary = brain.get("summary") if brain else None
+    if brain and not brain.get("shortlist"):
+        brain_summary = "BRAIN VACIO (revisar credito Anthropic). " + (brain_summary or "")
+
+    portfolio = build_portfolio_view(ex, state)
+    html = notify.daily_report(actions, trig_hits, portfolio, brain_summary,
+                               config.BINANCE_TESTNET)
+    mode = "TESTNET" if config.BINANCE_TESTNET else "REAL"
+    dry = " [DRY]" if DRY else ""
+    notify.send(f"Semillas - {st.today_str()} ({mode}){dry}", html)
+
+    if DRY:
+        print("[dry] estado NO persistido (corrida observadora).")
+    else:
+        st.save(state)
+        dashboard.update()
+        try:
+            import learning_loop
+            learning_loop.run(state)
+            import loop_analista
+            loop_analista.run()
+        except Exception as e:
+            print("[learn] fallo no critico:", str(e)[:160])
+
+    print(f"[ok] corrida completa v2. run_id={run_id}. {len(actions)} acciones, "
+          f"{len(trig_hits)} triggers.")
+
+if __name__ == "__main__":
+    try:
+        with runlock.run_lock():
+            main()
+    except runlock.LockBusy as e:
+        print("[lock]", e)
