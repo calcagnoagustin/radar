@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 200.17,
+ "equity_now": 199.45,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 6.04,
- "trades_total": 18,
- "win_rate": 44,
- "profit_factor": 1.16,
+ "pnl_today": -3.13,
+ "trades_today": 1,
+ "realized_pnl": 2.9,
+ "trades_total": 19,
+ "win_rate": 42,
+ "profit_factor": 1.07,
  "open_positions": [
   {
    "symbol": "KAITO/USDT",
@@ -43,13 +43,6 @@
    "qty": 283.5,
    "stop": 0.04651642857142857,
    "tp1_done": true
-  },
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.006195421478060046,
-   "qty": 1905.2,
-   "stop": 0.004550714285714286,
-   "tp1_done": false
   },
   {
    "symbol": "ONDO/USDT",
@@ -249,6 +242,15 @@
    "pnl_net": -4.63,
    "action": "stop",
    "closed_ts": 1784794037.5882556
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.006195421478060046,
+   "exit": 0.00455,
+   "qty_total": 1905.2,
+   "pnl_net": -3.13,
+   "action": "stop",
+   "closed_ts": 1784866033.6401272
   }
  ]
 }
