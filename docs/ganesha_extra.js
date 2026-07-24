@@ -65,22 +65,27 @@
   setInterval(apply,2500);
 })();
 
-/* ganesha_extra.js — bloque 2 (18 jul 2026): curva de equity REALIZADA.
-   Calcula el P&L realizado acumulado desde recent_closed (que el dashboard ya carga)
-   y lo dibuja como card SVG, sin dependencias externas (CSP-safe).
-   Es realizada (cierres): la equity total mark-to-market no es reconstruible mientras
-   deposits_total no quede registrado. */
+/* ganesha_extra.js — bloque 2 (v3, 24 jul 2026): curva de equity REALIZADA con ejes + 4 colores.
+   Novedades vs v1:
+     - Eje Y con valores en $ (techo / $0 / piso rotulados) y gridlines, para que se lea qué es.
+     - Color propio para el "stop en ganancia": trailing que cierra por ENCIMA de la entrada
+       (p.ej. BANK +$19.55) ya no se pinta igual que un stop en pérdida.
+     - Punto final resaltado con su valor, y tooltip por punto (símbolo · P&L · acumulado).
+   Sin dependencias externas (CSP-safe). Realizada = solo cierres. */
 (function(){
+  var COL={tp:"#6FBF8E",stopwin:"#57B8A9",stoploss:"#E07A5F",manual:"#E8C36A"};
+  var LBL={tp:"cierre en TP (+2R)",stopwin:"stop en ganancia (trailing)",stoploss:"stop en pérdida",manual:"cierre manual"};
   var G=null, lastSig="";
   function load(){return fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)G=j;}).catch(function(){});}
   function fU(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function outcome(t){if(t.action==="tp")return "tp";if(t.action==="manual")return "manual";return (t.pnl_net>0)?"stopwin":"stoploss";}
   function anchor(){var h=document.getElementById("gHistory");return h?h.closest(".card"):null;}
   function ensureCard(){
     if(document.getElementById("gEqCurveCard"))return document.getElementById("gEqCurveBody");
     var a=anchor();if(!a||!a.parentNode)return null;
     var card=document.createElement("div");
     card.className="card";card.id="gEqCurveCard";card.style.marginTop="18px";
-    card.innerHTML='<div class="head"><span class="title">Curva de equity</span><span class="eyebrow">realizada · acumulado</span></div><div class="body" id="gEqCurveBody"></div>';
+    card.innerHTML='<div class="head"><span class="title">Curva de equity</span><span class="eyebrow">realizada &middot; acumulado</span></div><div class="body" id="gEqCurveBody"></div>';
     a.parentNode.insertBefore(card,a);
     return card.querySelector("#gEqCurveBody");
   }
@@ -90,40 +95,110 @@
     var sig=cl.length+":"+(cl[cl.length-1].closed_ts||0);
     var body=ensureCard();if(!body)return;
     if(sig===lastSig&&body.dataset.done)return;lastSig=sig;
-    var cum=0, pts=[{c:0,a:"base"}];
-    cl.forEach(function(t){cum+=(t.pnl_net||0);pts.push({c:cum,a:t.action||"stop"});});
+    var cum=0, pts=[{c:0,o:"base",t:null}];
+    cl.forEach(function(t){cum+=(t.pnl_net||0);pts.push({c:cum,o:outcome(t),t:t});});
     var vals=pts.map(function(p){return p.c;});
-    var mx=Math.max.apply(null,vals.concat([0])), mn=Math.min.apply(null,vals.concat([0]));
-    var pad=(mx-mn)*0.12||1; mx+=pad; mn-=pad;
-    var W=320,H=132,L=10,R=10,T=12,B=20, pw=W-L-R, ph=H-T-B;
+    var realMax=Math.max.apply(null,vals), realMin=Math.min.apply(null,vals);
+    var mx=Math.max(realMax,0), mn=Math.min(realMin,0);
+    var pad=(mx-mn)*0.16||1; mx+=pad; mn-=pad;
+    var W=380,H=182,L=50,R=14,T=16,B=24, pw=W-L-R, ph=H-T-B;
     function X(i){return L+(pts.length<2?0:pw*i/(pts.length-1));}
     function Y(v){return T+ph*(mx-v)/(mx-mn);}
+    function gy(v,txt,strong){return '<line x1="'+L+'" y1="'+Y(v).toFixed(1)+'" x2="'+(W-R)+'" y2="'+Y(v).toFixed(1)+'" style="stroke:'+(strong?"var(--faint)":"var(--hair)")+';stroke-dasharray:'+(strong?"3 3":"2 4")+';stroke-width:1"></line>'
+      +'<text x="'+(L-7)+'" y="'+(Y(v)+3).toFixed(1)+'" text-anchor="end" style="fill:var(--faint);font:9.5px \'IBM Plex Mono\',monospace">'+txt+'</text>';}
+    var grid=gy(0,"$0",true);
+    if(realMax>0.01)grid+=gy(realMax,fU(realMax),false);
+    if(realMin<-0.01)grid+=gy(realMin,fU(realMin),false);
     var line=pts.map(function(p,i){return (i?"L":"M")+X(i).toFixed(1)+" "+Y(p.c).toFixed(1);}).join(" ");
-    var y0=Y(0).toFixed(1);
     var dots=pts.map(function(p,i){
-      if(p.a==="base")return "";
-      var col=p.a==="tp"?"var(--jade)":(p.a==="manual"?"var(--grain)":"var(--clay)");
-      return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(p.c).toFixed(1)+'" r="3.2" style="fill:'+col+'"></circle>';
+      if(p.o==="base")return "";
+      var tt=(p.t.symbol||"")+" · "+(p.t.pnl_net>=0?"+":"")+fU(p.t.pnl_net)+" ("+LBL[p.o]+") · acum "+fU(p.c);
+      return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(p.c).toFixed(1)+'" r="3.3" style="fill:'+COL[p.o]+'"><title>'+tt+'</title></circle>';
     }).join("");
-    var lastC=pts[pts.length-1].c, floor=Math.min.apply(null,vals);
-    var lastCol=lastC>=0?"var(--jade)":"var(--clay)";
-    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curva de P&L realizado acumulado de Ganesha">'
-      +'<line x1="'+L+'" y1="'+y0+'" x2="'+(W-R)+'" y2="'+y0+'" style="stroke:var(--faint);stroke-dasharray:3 3;stroke-width:1"></line>'
-      +'<text x="'+(W-R)+'" y="'+(+y0-3)+'" text-anchor="end" style="fill:var(--faint);font:10px \'IBM Plex Mono\',monospace">0</text>'
+    var li=pts.length-1, lastC=pts[li].c, lastCol=lastC>=0?"var(--jade)":"var(--clay)";
+    var lastRing='<circle cx="'+X(li).toFixed(1)+'" cy="'+Y(lastC).toFixed(1)+'" r="6" style="fill:none;stroke:'+lastCol+';stroke-width:1.5"></circle>'
+      +'<text x="'+(X(li)-9).toFixed(1)+'" y="'+(Y(lastC)-9).toFixed(1)+'" text-anchor="end" style="fill:'+lastCol+';font:11px \'IBM Plex Mono\',monospace">'+fU(lastC)+'</text>';
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curva de P&L realizado acumulado de Ganesha con ejes en dólares">'
+      +grid
       +'<path d="'+line+'" style="fill:none;stroke:var(--sky);stroke-width:2;stroke-linejoin:round;stroke-linecap:round"></path>'
-      +dots+'</svg>';
-    var legend='<div style="display:flex;gap:16px;margin-top:8px;font-size:12px;color:var(--muted)">'
-      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--jade);margin-right:5px"></span>cierre en TP</span>'
-      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--clay);margin-right:5px"></span>cierre en stop</span>'
-      +'<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--grain);margin-right:5px"></span>cierre manual</span></div>';
+      +dots+lastRing
+      +'<text x="'+L+'" y="'+(H-6)+'" style="fill:var(--faint);font:9.5px \'IBM Plex Mono\',monospace">1er cierre</text>'
+      +'<text x="'+(W-R)+'" y="'+(H-6)+'" text-anchor="end" style="fill:var(--faint);font:9.5px \'IBM Plex Mono\',monospace">cierre #'+cl.length+'</text>'
+      +'</svg>';
+    var order=["tp","stopwin","stoploss","manual"];
+    var legend='<div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-size:11.5px;color:var(--muted)">'
+      +order.map(function(k){return '<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:'+COL[k]+';margin-right:5px"></span>'+LBL[k]+'</span>';}).join("")+'</div>';
     var stats='<div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--muted)">'
       +'<span>Realizado <b class="mono" style="color:'+lastCol+'">'+fU(lastC)+'</b></span>'
-      +'<span>Piso <b class="mono down">'+fU(floor)+'</b></span>'
+      +'<span>Techo <b class="mono up">'+fU(realMax)+'</b></span>'
+      +'<span>Piso <b class="mono down">'+fU(realMin)+'</b></span>'
       +'<span>Cierres <b class="mono" style="color:var(--ink)">'+cl.length+'</b></span></div>';
-    var note='<div class="note">Sólo P&amp;L de operaciones cerradas. No incluye lo no-realizado de las posiciones abiertas ni la equity total (depósitos no registrados).</div>';
+    var note='<div class="note">Sólo P&amp;L de operaciones cerradas (acumulado). No incluye lo no-realizado de las abiertas ni la equity total. Pasá el cursor sobre cada punto para ver el trade.</div>';
     body.innerHTML=svg+legend+stats+note;body.dataset.done="1";
   }
   load().then(function(){setTimeout(render,1200);});
   setInterval(function(){load().then(render);},20000);
+  setInterval(render,3000);
+})();
+
+/* ganesha_extra.js — bloque 3 (v1, 24 jul 2026): panel "Aprendizaje — Auditor Loop".
+   Lee learning_data.json (que loop_analista ya publica) y lo muestra en el dashboard:
+   métricas rodantes de Ganesha, la atribución clave (TP1 antes del stop) y las propuestas.
+   Nada se aplica solo: el auditor sólo propone con evidencia. */
+(function(){
+  var L=null, done=false;
+  function load(){return fetch("./learning_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)L=j;}).catch(function(){});}
+  function fU(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function anchor(){var c=document.getElementById("gEqCurveCard");if(c)return c;var h=document.getElementById("gHistory");return h?h.closest(".card"):null;}
+  function ensureCard(){
+    if(document.getElementById("gAuditCard"))return document.getElementById("gAuditBody");
+    var a=anchor();if(!a||!a.parentNode)return null;
+    var d=document.createElement("div");
+    d.className="card";d.id="gAuditCard";d.style.marginTop="18px";
+    d.innerHTML='<div class="head"><span class="title">Aprendizaje &mdash; Auditor Loop</span><span class="eyebrow" id="gAuditGen">&mdash;</span></div><div class="body" id="gAuditBody"></div>';
+    if(a.nextSibling)a.parentNode.insertBefore(d,a.nextSibling);else a.parentNode.appendChild(d);
+    return d.querySelector("#gAuditBody");
+  }
+  function metricRow(m){
+    if(!m||!m.n)return '<span class="lbl">sin datos aún</span>';
+    function cell(k,v,c){return '<div style="min-width:70px"><div style="font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em">'+k+'</div><div class="mono" style="font-size:14px;color:'+(c||"var(--ink)")+'">'+v+'</div></div>';}
+    return '<div style="display:flex;gap:16px;flex-wrap:wrap">'
+      +cell("Trades",m.n)
+      +cell("Win rate",m.win_rate+"%")
+      +cell("Profit factor",m.profit_factor,(m.profit_factor>=1?"var(--jade)":"var(--clay)"))
+      +cell("Expectancy",((m.expectancy_r>=0?"+":"")+m.expectancy_r+"R"),(m.expectancy_r>=0?"var(--jade)":"var(--clay)"))
+      +cell("Payoff",m.payoff)
+      +cell("P&L",fU(m.pnl_total),(m.pnl_total>=0?"var(--jade)":"var(--clay)"))
+      +cell("Max DD",fU(m.max_dd_usd),"var(--clay)")+'</div>';
+  }
+  function tp1Block(atr){
+    var si=null,no=null;
+    (atr||[]).forEach(function(r){if(r.tag==="tp1_antes_del_stop=si")si=r;if(r.tag==="tp1_antes_del_stop=no")no=r;});
+    if(!si&&!no)return "";
+    function box(r,ok){
+      if(!r)return "";
+      return '<div style="flex:1;min-width:190px;border:1px solid var(--hair);border-radius:10px;padding:11px 13px;background:'+(ok?"rgba(111,191,142,.07)":"rgba(224,122,95,.07)")+'">'
+        +'<div style="font-size:12px;color:'+(ok?"var(--jade)":"var(--clay)")+';font-weight:600">'+(ok?"Tocó TP1 antes del stop ✓":"Murió antes del TP1 ✗")+'</div>'
+        +'<div class="mono" style="font-size:13px;margin-top:5px">'+r.n+' trades &middot; WR '+r.win_rate+'% &middot; '+(r.pnl_total>=0?"+":"")+fU(r.pnl_total)+'</div></div>';
+    }
+    return '<div class="note" style="margin-top:14px;margin-bottom:8px">Hallazgo del auditor: el resultado de Ganesha vive o muere en si el trade llega a +2R (TP1) antes de que lo saque el stop.</div>'
+      +'<div style="display:flex;gap:10px;flex-wrap:wrap">'+box(si,true)+box(no,false)+'</div>';
+  }
+  function propBlock(props){
+    if(!props||!props.length)return '<div class="note" style="margin-top:14px">Sin propuestas nuevas: el auditor sólo propone con evidencia (n&ge;15 y, p.ej., PF&lt;0.7). Nada se aplica automáticamente.</div>';
+    return '<div style="margin-top:14px">'+props.map(function(p){return '<div class="row"><span class="lbl">'+(p.id||"")+'</span><span style="color:var(--ink);text-align:right;max-width:70%">'+(p.texto||"")+'</span></div>';}).join("")+'</div>';
+  }
+  function render(){
+    if(!L)return;var b=ensureCard();if(!b)return;if(done&&b.dataset.sig===L.generated)return;
+    var g=(L.metricas&&L.metricas.ganesha)||{};
+    var m=g.historico||g.ult_20_trades||{};
+    var gen=document.getElementById("gAuditGen");if(gen)gen.textContent=(L.generated||"").replace("T"," ").replace("Z"," UTC");
+    b.innerHTML='<div class="note" style="margin-top:0;margin-bottom:8px;border-left-color:var(--sky)">Métricas rodantes de Ganesha (histórico consolidado)</div>'
+      +metricRow(m)+tp1Block(L.atribucion)+propBlock(L.propuestas)
+      +'<div class="note" style="margin-top:12px;color:var(--faint)">'+(L.nota||"")+' &middot; '+(L.n_trades_consolidados||0)+' trades consolidados.</div>';
+    b.dataset.sig=L.generated;done=true;
+  }
+  load().then(function(){setTimeout(render,1400);});
+  setInterval(function(){load().then(render);},30000);
   setInterval(render,3000);
 })();
