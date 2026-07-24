@@ -1,14 +1,13 @@
 {
- "task": "install_dashboard_v2",
- "now": "2026-07-24 03:30:03Z",
+ "task": "seed_deposits",
+ "now": "2026-07-24 03:50:02Z",
  "pasos": [
-  "compile OK (14417 bytes)",
-  "backup -> .bak.pre_alertas",
-  "instalado",
-  "test rc=0"
+  "seed semillas 132",
+  "seed ganesha 194",
+  "ledger guardado",
+  "publicado rc=0"
  ],
- "sha256": "937bf09ff4e38853",
- "test_stdout": "payload_ok alertas 1 seeded False\nALERTAS: ['El cerebro recomendo cerrar ATM/USDT (plan 2026-07): Fan token de Atl\u00e9tico sin n']\n[dashboard] data publicada OK\nupdate: True\n",
- "test_stderr": "",
+ "pub_stdout": "[dashboard] data publicada OK\nupdate: True\n",
+ "pub_stderr": "",
  "ok": true
 }
