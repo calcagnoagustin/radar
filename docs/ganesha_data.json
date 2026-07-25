@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 201.18,
+ "equity_now": 199.35,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -41,7 +41,7 @@
    "symbol": "ZAMA/USDT",
    "entry": 0.03878,
    "qty": 283.5,
-   "stop": 0.04651642857142857,
+   "stop": 0.04833571428571429,
    "tp1_done": true
   },
   {
