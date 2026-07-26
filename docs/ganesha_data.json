@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 206.58,
+ "equity_now": 194.36,
  "deposits_total": 0,
  "pnl_today": 2.25,
  "trades_today": 1,
@@ -105,6 +105,13 @@
    "entry": 0.00148250747644408,
    "qty": 9764.0,
    "stop": 0.0010652500000000002,
+   "tp1_done": false
+  },
+  {
+   "symbol": "LA/USDT",
+   "entry": 0.0751,
+   "qty": 179.7,
+   "stop": 0.057478571428571434,
    "tp1_done": false
   }
  ],
