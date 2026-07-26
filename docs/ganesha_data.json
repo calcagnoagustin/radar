@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 206.54,
+ "equity_now": 206.58,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 2.9,
- "trades_total": 19,
- "win_rate": 42,
- "profit_factor": 1.07,
+ "pnl_today": 2.25,
+ "trades_today": 1,
+ "realized_pnl": 5.16,
+ "trades_total": 20,
+ "win_rate": 45,
+ "profit_factor": 1.12,
  "open_positions": [
   {
    "symbol": "KAITO/USDT",
@@ -96,9 +96,9 @@
   {
    "symbol": "EUL/USDT",
    "entry": 1.923,
-   "qty": 12.89,
-   "stop": 1.6459642857142858,
-   "tp1_done": false
+   "qty": 9.023,
+   "stop": 1.923,
+   "tp1_done": true
   },
   {
    "symbol": "QI/USDT",
@@ -279,6 +279,15 @@
    "pnl_net": -3.13,
    "action": "stop",
    "closed_ts": 1784866033.6401272
+  },
+  {
+   "symbol": "EUL/USDT",
+   "entry": 1.923,
+   "exit": 2.506,
+   "qty_total": 0,
+   "pnl_net": 2.25,
+   "action": "tp",
+   "closed_ts": 1785068240.5261264
   }
  ]
 }
