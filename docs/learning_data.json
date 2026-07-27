@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-26T00:18:44Z",
+ "generated": "2026-07-27T00:18:18Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -286,7 +286,16 @@
   }
  ],
  "decay": [],
- "propuestas": [],
+ "propuestas": [
+  {
+   "id": "grid_atr_drift",
+   "texto": "El atr_mult vivo (2.5) lleva 7 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
+   "evidencia": {
+    "runs_live_fuera_top3": 7,
+    "hist_n": 7
+   }
+  }
+ ],
  "abiertas_ganesha": [
   "ACE/USDT",
   "BANK/USDT",
@@ -295,6 +304,7 @@
   "EUL/USDT",
   "HEMI/USDT",
   "KAITO/USDT",
+  "LA/USDT",
   "ONDO/USDT",
   "PROM/USDT",
   "QI/USDT",
