@@ -1,12 +1,18 @@
 {
- "task": "fix_atm_close",
- "now": "2026-07-27 18:34:03Z",
+ "task": "mig1_sshkey_inventario",
+ "now": "2026-07-27 22:12:03Z",
  "pasos": [
-  "fix rc=0",
-  "verificado"
+  "keygen: Generating public/private ed25519 key pair.\nYour identification has been saved in /home/opc/.ssh/id_migracion\nYour publi",
+  "pubkey listo",
+  "inventario ok"
  ],
- "fix_stdout": "{\"exit_px\": 1.705, \"qty_sold\": 3.19, \"pnl\": -1.5025, \"fuente\": \"fetch_my_trades\"}\n[dashboard] data publicada OK\nupdate: True\n",
- "fix_stderr": "",
- "ok": true,
- "verif": "{\"status\": \"closed\", \"qty\": 0.0}\n"
+ "pubkey": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJUY8o9Kzngm9P64PLSL8F9OSIMv+ezl7SQPP8zYOTqg migracion-a1",
+ "os": "NAME=\"Oracle Linux Server\"\nVERSION=\"9.7\"\nID=\"ol\"\nx86_64",
+ "python": "Python 3.9.25\nPython 3.9.25",
+ "pip_freeze": "aiodns==3.6.1\naiohappyeyeballs==2.6.1\naiohttp==3.13.5\naiosignal==1.4.0\nasync-timeout==5.0.1\nattrs==26.1.0\nccxt==4.5.59\ncertifi==2026.6.17\ncffi==2.0.0\ncharset-normalizer==3.4.7\ncoincurve==21.0.0\ncryptography==49.0.0\nfeedparser==6.0.12\nfrozenlist==1.8.0\nidna==3.18\nmultidict==6.7.1\npropcache==0.4.1\npycares==4.11.0\npycparser==2.23\npyflakes==3.4.0\npython-dotenv==1.2.1\nrequests==2.32.5\nsgmllib3k==1.0.0\ntyping_extensions==4.15.0\nurllib3==2.6.3\nyarl==1.22.0",
+ "du": "113M\t/home/opc/bot_semillas\n111M\t/home/opc/bot_semillas/venv",
+ "opt_ganesha": "total 0\ndrwxr-xr-x. 2 root root  6 Jul  6 22:07 .\ndrwxr-xr-x. 4 root root 35 Jul  6 22:07 ..",
+ "crontab": "15 0 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python main.py >> /home/opc/bot_semillas/cron.log 2>&1\n7 0,4,8,12,16,20 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python ganesha_ejecutor.py >> /home/opc/bot_semillas/ejecutor/cron.log 2>&1\n*/2 * * * * /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/agent.py >> /home/opc/bot_semillas/agent.log 2>&1",
+ "envfiles": "-rw-------. 1 opc opc  153 Jul  7 19:31 /home/opc/bot_semillas/ejecutor/keys.json\n-rw-r--r--. 1 opc opc    0 Jul  3 16:39 /home/opc/bot_semillas/ejecutor/LIVE\n-rw-------. 1 opc opc 2030 Jul 11 05:10 /home/opc/bot_semillas/.env",
+ "ok": true
 }
