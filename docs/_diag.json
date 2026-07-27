@@ -1,13 +1,79 @@
 {
- "task": "seed_deposits",
- "now": "2026-07-24 03:50:02Z",
+ "task": "diag_atm_ciclo",
+ "now": "2026-07-27 18:14:03Z",
  "pasos": [
-  "seed semillas 132",
-  "seed ganesha 194",
-  "ledger guardado",
-  "publicado rc=0"
+  "state leido",
+  "diagnostico ok"
  ],
- "pub_stdout": "[dashboard] data publicada OK\nupdate: True\n",
- "pub_stderr": "",
+ "reconcile_py": "\"\"\"P5 - Reconciliacion state <-> Binance.\n\nAl inicio de cada corrida compara lo que el bot CREE tener (state.json) contra\nlo que REALMENTE hay en Binance. SOLO ALERTA: no auto-corrige (al principio,\nobservar antes de automatizar). Detecta:\n  - el state dice tener X pero Binance tiene bastante mas/menos (venta que fallo, etc.),\n  - Binance tiene un activo que el state no trackea,\n  - posiciones que el state da por vivas pero en Binance no estan.\n\"\"\"\nimport config\n\n# tolerancia relativa para considerar \"coincide\" (fees/dust/redondeo)\nREL_TOL = 0.05      # 5%\nDUST_USDT = 1.0     # diferencias por debajo de ~1 USD se ignoran\n\n\ndef _base(sym):\n    return sym.split(\"/\")[0]\n\n\ndef reconcile(ex, state):\n    \"\"\"Devuelve lista de discrepancias [{symbol, kind, state_qty, real_qty, detail}].\"\"\"\n    diffs = []\n    try:\n        bal = ex.balance()\n        totals = (bal or {}).get(\"total\", {}) or {}\n    except Exception as e:\n        return [{\"symbol\": \"-\", \"kind\": \"balance_error\",\n                 \"state_qty\": None, \"real_qty\": None, \"detail\": str(e)[:140]}]\n\n    quote = config.QUOTE_ASSET\n    tracked_assets = set()\n\n    # 1) cada posicion viva del state vs Binance\n    for sym, p in state.get(\"positions\", {}).items():\n        if p.get(\"status\") in (\"closed\", \"frozen\"):\n            continue\n        base = _base(sym)\n        tracked_assets.add(base)\n        sqty = float(p.get(\"qty\", 0) or 0)\n        rqty = float(totals.get(base, 0) or 0)\n        if sqty <= 0 and rqty <= 0:\n            continue\n        denom = max(sqty, rqty, 1e-12)\n        rel = abs(sqty - rqty) / denom\n        # estimo el valor en USD de la diferencia para no alertar por polvo\n        try:\n            px = ex.price(sym)\n        except Exception:\n            px = 0.0\n        usd_diff = abs(sqty - rqty) * (px or 0)\n        if rel > REL_TOL and usd_diff >= DUST_USDT:\n            diffs.append({\n                \"symbol\": sym, \"kind\": \"qty_mismatch\",\n                \"state_qty\": round(sqty, 8), \"real_qty\": round(rqty, 8),\n                \"detail\": f\"state {sqty:.6f} vs binance {rqty:.6f} (~${usd_diff:.2f})\",\n            })\n\n    # 2) activos en Binance que el state no trackea (posible holding fantasma)\n    for asset, amt in totals.items():\n        amt = float(amt or 0)\n        if asset == quote or amt <= 0:\n            continue\n        if asset in tracked_assets:\n            continue\n        sym = f\"{asset}/{quote}\"\n        try:\n            px = ex.price(sym)\n        except Exception:\n            px = 0.0\n        usd = amt * (px or 0)\n        if usd >= DUST_USDT:\n            diffs.append({\n                \"symbol\": sym, \"kind\": \"untracked_holding\",\n                \"state_qty\": 0.0, \"real_qty\": round(amt, 8),\n                \"detail\": f\"Binance tiene {amt:.6f} {asset} (~${usd:.2f}) que el bot no trackea\",\n            })\n\n    return diffs\n",
+ "state_atm": {
+  "symbol": "ATM/USDT",
+  "status": "confirmed",
+  "qty": 3.2169117647058822,
+  "avg_cost": 2.176,
+  "dca_adds": 0,
+  "tp_hit": [],
+  "planted_at": "2026-06-28",
+  "thesis": "scanner score 6.2 stage 2 mom30 118.8% trending False",
+  "confirmed_at": "2026-06-29",
+  "initial_qty": 3.2169117647058822,
+  "max_qty": 3.2169117647058822,
+  "moonbag_qty": 0.0,
+  "moonbag_type": "none",
+  "moonbag_locked": false,
+  "capital_recovered": false,
+  "recovered_usd": 0.0,
+  "origen": "scanner"
+ },
+ "state_positions_status": {
+  "ONDO/USDT": [
+   "closed",
+   0.0
+  ],
+  "NEAR/USDT": [
+   "closed",
+   0.0
+  ],
+  "SYN/USDT": [
+   "confirmed",
+   18.7386
+  ],
+  "MANTA/USDT": [
+   "seed",
+   46.4376
+  ],
+  "ATM/USDT": [
+   "confirmed",
+   3.2169
+  ],
+  "PYTH/USDT": [
+   "confirmed",
+   479.6
+  ],
+  "GLM/USDT": [
+   "closed",
+   0.0
+  ],
+  "BIO/USDT": [
+   "closed",
+   0.0
+  ],
+  "ZEC/USDT": [
+   "confirmed",
+   0.043
+  ],
+  "T/USDT": [
+   "seed",
+   2024.2
+  ]
+ },
+ "crontab": "15 0 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python main.py >> /home/opc/bot_semillas/cron.log 2>&1\n7 0,4,8,12,16,20 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python ganesha_ejecutor.py >> /home/opc/bot_semillas/ejecutor/cron.log 2>&1\n*/2 * * * * /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/agent.py >> /home/opc/bot_semillas/agent.log 2>&1",
+ "logs_ls": "-rw-r--r--. 1 opc opc  2641 Jul 24 03:50 /home/opc/bot_semillas/agent.log\n-rw-r--r--. 1 opc opc 36453 Jul 27 00:18 /home/opc/bot_semillas/cron.log",
+ "grep_reconcile": "[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] state y Binance coinciden.\n[reconcile] qty_mismatch ATM/USDT: state 3.216912 vs binance 0.006800 (~$5.90)\n[reconcile] 1 diferencia(s) detectada(s) (ver alerta).\n[reconcile] qty_mismatch ATM/USDT: state 3.216912 vs binance 0.006800 (~$5.68)\n[reconcile] 1 diferencia(s) detectada(s) (ver alerta).",
+ "grep_atm_log": "[learn] ATM/USDT: +24 velas 1h (total 600)\n[learn] ATM/USDT: +24 velas 1h (total 624)\n[learn] ATM/USDT: +48 velas 1h (total 672)\n[learn] ATM/USDT: +24 velas 1h (total 696)\n[learn] ATM/USDT: +24 velas 1h (total 720)\n[learn] ATM/USDT: +24 velas 1h (total 744)\n[learn] ATM/USDT: +24 velas 1h (total 768)\n[reconcile] qty_mismatch ATM/USDT: state 3.216912 vs binance 0.006800 (~$5.90)\n[learn] ATM/USDT: +48 velas 1h (total 816)\n[reconcile] qty_mismatch ATM/USDT: state 3.216912 vs binance 0.006800 (~$5.68)\n[stop] ATM/USDT: venta no ejecutada (binance amount of ATM/USDT must be greater than minimum amount precision of 0.01); estado sin tocar\n[learn] ATM/USDT: +24 velas 1h (total 840)",
+ "oom": "Jul 27 15:05:14 semillas-bot kernel: crond invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0\nJul 27 15:05:15 semillas-bot kernel:  oom_kill_process.cold+0x8/0x83\nJul 27 15:05:15 semillas-bot kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name\nJul 27 15:05:15 semillas-bot kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/system.slice/dnf-makecache.service,task=dnf,pid=878547,uid=0\nJul 27 15:05:15 semillas-bot kernel: Out of memory: Killed process 878547 (dnf) total-vm:1026780kB, anon-rss:315732kB, file-rss:5992kB, shmem-rss:0kB, UID:0 pgtables:1512kB oom_score_adj:0\nJul 27 15:05:15 semillas-bot kernel: oom_reaper: reaped process 878547 (dnf), now anon-rss:80kB, file-rss:64kB, shmem-rss:0kB\nJul 27 17:27:15 semillas-bot kernel: gomon invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0\nJul 27 17:27:15 semillas-bot kernel:  oom_kill_process.cold+0x8/0x83\nJul 27 17:27:16 semillas-bot kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name\nJul 27 17:27:16 semillas-bot kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/system.slice/dnf-makecache.service,task=dnf,pid=884562,uid=0\nJul 27 17:27:16 semillas-bot kernel: Out of memory: Killed process 884562 (dnf) total-vm:1026780kB, anon-rss:306008kB, file-rss:6024kB, shmem-rss:0kB, UID:0 pgtables:1504kB oom_score_adj:0\nJul 27 17:27:16 semillas-bot kernel: oom_reaper: reaped process 884562 (dnf), now anon-rss:76kB, file-rss:0kB, shmem-rss:0kB",
+ "cron_2425": "",
+ "tail_daily_log": "0260724T001504Z. 2 acciones, 5 triggers.\n[reconcile] qty_mismatch ATM/USDT: state 3.216912 vs binance 0.006800 (~$5.90)\n[reconcile] 1 diferencia(s) detectada(s) (ver alerta).\n[liquidez] USDT libre $55.75 OK\n[sell] SYN/USDT: dust < min_notional, venta omitida\n[stop] SYN/USDT: venta no ejecutada (sell_skipped_or_rejected); estado sin tocar\n[sell] MANTA/USDT: dust < min_notional, venta omitida\n[stop] MANTA/USDT: venta no ejecutada (sell_skipped_or_rejected); estado sin tocar\n[scanner] 12 candidatos (solo contexto)\n[dashboard] data publicada OK\n[learn] SYN/USDT: +48 velas 1h (total 816)\n[learn] ATM/USDT: +48 velas 1h (total 816)\n[learn] PYTH/USDT: +48 velas 1h (total 456)\n[learn] ZEC/USDT: +48 velas 1h (total 408)\n[learn] ok. 4 simbolos trackeados.\n[analista] HEMI/USDT: contexto 15m 561 velas\n[analista] ACE/USDT: contexto 15m 481 velas\n[analista] EUL/USDT: contexto 15m 193 velas\n[analista] QI/USDT: contexto 15m 193 velas\n[analista] top: [{\"atr_mult\": 2.0, \"vol_mult\": 1.5, \"r_promedio\": 0.21, \"n\": 4}, {\"atr_mult\": 2.0, \"vol_mult\": 1.3, \"r_promedio\": 0.2, \"n\": 4}]\n[analista] learning_data publicado al dashboard\n[analista] ok. 16 trades consolidados, 0 alertas decay, 0 propuestas.\n[ok] corrida completa v2. run_id=20260726T001503Z. 2 acciones, 17 triggers.\n[reconcile] qty_mismatch ATM/USDT: state 3.216912 vs binance 0.006800 (~$5.68)\n[reconcile] 1 diferencia(s) detectada(s) (ver alerta).\n[liquidez] USDT libre $55.75 OK\n[sell] SYN/USDT: dust < min_notional, venta omitida\n[stop] SYN/USDT: venta no ejecutada (sell_skipped_or_rejected); estado sin tocar\n[sell] MANTA/USDT: dust < min_notional, venta omitida\n[stop] MANTA/USDT: venta no ejecutada (sell_skipped_or_rejected); estado sin tocar\n[stop] ATM/USDT: venta no ejecutada (binance amount of ATM/USDT must be greater than minimum amount precision of 0.01); estado sin tocar\n[scanner] 12 candidatos (solo contexto)\n[dashboard] data publicada OK\n[learn] SYN/USDT: +24 velas 1h (total 840)\n[learn] ATM/USDT: +24 velas 1h (total 840)\n[learn] PYTH/USDT: +24 velas 1h (total 480)\n[learn] ZEC/USDT: +24 velas 1h (total 432)\n[learn] ok. 4 simbolos trackeados.\n[analista] LA/USDT: contexto 15m 224 velas\n[analista] top: [{\"atr_mult\": 2.0, \"vol_mult\": 1.5, \"r_promedio\": 0.21, \"n\": 4}, {\"atr_mult\": 2.0, \"vol_mult\": 1.3, \"r_promedio\": 0.2, \"n\": 4}]\n[analista] learning_data publicado al dashboard\n[analista] ok. 16 trades consolidados, 0 alertas decay, 1 propuestas.\n[ok] corrida completa v2. run_id=20260727T001504Z. 3 acciones, 16 triggers.",
+ "mem": "total        used        free      shared  buff/cache   available\nMem:             498         237          98           3         190         261\nSwap:            497         139         358\n 18:14:03 up 14 days, 23:29,  0 users,  load average: 0.00, 0.00, 2.22",
  "ok": true
 }
