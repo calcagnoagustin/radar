@@ -1,12 +1,12 @@
 {
  "dry_run": false,
- "equity_now": 204.21,
+ "equity_now": 205.1,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
+ "pnl_today": 0.0,
+ "trades_today": 1,
  "realized_pnl": 5.16,
- "trades_total": 20,
- "win_rate": 45,
+ "trades_total": 21,
+ "win_rate": 43,
  "profit_factor": 1.12,
  "open_positions": [
   {
@@ -94,13 +94,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "EUL/USDT",
-   "entry": 1.923,
-   "qty": 9.023,
-   "stop": 1.923,
-   "tp1_done": true
-  },
-  {
    "symbol": "QI/USDT",
    "entry": 0.00148250747644408,
    "qty": 9764.0,
@@ -112,6 +105,13 @@
    "entry": 0.0751,
    "qty": 179.7,
    "stop": 0.057478571428571434,
+   "tp1_done": false
+  },
+  {
+   "symbol": "DIA/USDT",
+   "entry": 0.1698,
+   "qty": 99.6,
+   "stop": 0.1495642857142857,
    "tp1_done": false
   }
  ],
@@ -295,6 +295,15 @@
    "pnl_net": 2.25,
    "action": "tp",
    "closed_ts": 1785068240.5261264
+  },
+  {
+   "symbol": "EUL/USDT",
+   "entry": 1.923,
+   "exit": 1.923,
+   "qty_total": 12.89,
+   "pnl_net": 0.0,
+   "action": "stop",
+   "closed_ts": 1785155316.3933158
   }
  ]
 }
