@@ -1,21 +1,10 @@
 {
- "generated_at": "2026-07-27T00:16:35Z",
+ "generated_at": "2026-07-27T18:34:50Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 55.75201982,
  "deposits": [],
  "positions": [
-  {
-   "symbol": "ATM/USDT",
-   "binance": "ATMUSDT",
-   "status": "confirmed",
-   "qty": 3.2169117647058822,
-   "avg_cost": 2.176,
-   "dca_adds": 0,
-   "tp_hit": [],
-   "confirmed_at": "2026-06-29",
-   "note": ""
-  },
   {
    "symbol": "MANTA/USDT",
    "binance": "MANTAUSDT",
@@ -196,6 +185,15 @@
    "qty_total": 295.5,
    "pnl_net": 0,
    "closed_ts": 1784247340.2792747
+  },
+  {
+   "symbol": "ATM/USDT",
+   "action": "MANUAL",
+   "entry": 2.176,
+   "exit": 1.705,
+   "qty_total": 3.19,
+   "pnl_net": -1.5025,
+   "closed_ts": 1785177255.6821232
   }
  ],
  "shortlist_full": [
@@ -623,7 +621,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-26T00:18:44Z",
+  "generated": "2026-07-27T00:18:18Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -657,12 +655,7 @@
    }
   ]
  },
- "alertas": [
-  {
-   "nivel": "rojo",
-   "texto": "El cerebro recomendo cerrar ATM/USDT (plan 2026-07): Fan token de Atlético sin narrativa de sector activa este ciclo, trending False y liquidez pobre; el capital r El bot no vende tesis vivas: decision tuya (venta manual)."
-  }
- ],
+ "alertas": [],
  "garden_plan_pub": {
   "month": "2026-07",
   "verdicts": [
@@ -685,7 +678,7 @@
     "verdict": "liquidar",
     "dca_usdt": 0,
     "razon": "Fan token de Atlético sin narrativa de sector activa este ciclo, trending False y liquidez pobre; el capital rinde más en candidatos con catalizador y ruptura real.",
-    "estado": "decision de Agus pendiente"
+    "estado": "resuelto"
    },
    {
     "symbol": "PYTH/USDT",
