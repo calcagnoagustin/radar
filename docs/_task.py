@@ -12,10 +12,10 @@ def sh(c):
         r=subprocess.run(c,shell=True,capture_output=True,text=True,timeout=30)
         return (r.stdout+r.stderr).strip()[-2000:]
     except Exception as e: return "ERR "+str(e)[:80]
-info={"task":"a1_tail","now":time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),
-      "log":sh("tail -25 %s/a1_retry.log"%B),
+info={"task":"a1_tail2","now":time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),
+      "log":sh("tail -8 %s/a1_retry.log"%B),
       "proceso":sh("pgrep -af a1_launcher.py"),
-      "mem":sh("free -m | head -2"),"ok":True}
+      "intentos":sh("grep -c 'intento' %s/a1_retry.log"%B),"ultimo":sh("tail -1 %s/a1_retry.log"%B),"mem":sh("free -m | head -2"),"ok":True}
 U="https://api.github.com/repos/calcagnoagustin/radar/contents/docs/_diag.json"
 def R(m,d=None):
     q=urllib.request.Request(U,data=d,method=m); q.add_header("Authorization","token "+tok); q.add_header("User-Agent","a1tail")
@@ -23,7 +23,7 @@ def R(m,d=None):
 sha=None
 try: sha=json.loads(R("GET")).get("sha")
 except Exception: pass
-p={"message":"a1 tail","content":base64.b64encode(json.dumps(info,indent=1,ensure_ascii=False).encode()).decode()}
+p={"message":"a1 tail2","content":base64.b64encode(json.dumps(info,indent=1,ensure_ascii=False).encode()).decode()}
 if sha: p["sha"]=sha
 try: R("PUT",json.dumps(p).encode()); print("REPORTADO")
 except Exception as e: print("PUSH_ERR",e)
