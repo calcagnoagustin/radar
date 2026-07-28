@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 208.29,
+ "equity_now": 202.15,
  "deposits_total": 0,
- "pnl_today": 5.5,
- "trades_today": 4,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": 10.66,
  "trades_total": 24,
  "win_rate": 46,
@@ -13,7 +13,7 @@
    "symbol": "KAITO/USDT",
    "entry": 0.7885,
    "qty": 12.39,
-   "stop": 1.0834535714285713,
+   "stop": 1.113192857142857,
    "tp1_done": true
   },
   {
@@ -98,6 +98,13 @@
    "entry": 0.0751,
    "qty": 179.7,
    "stop": 0.057478571428571434,
+   "tp1_done": false
+  },
+  {
+   "symbol": "PEOPLE/USDT",
+   "entry": 0.00676,
+   "qty": 4591.7,
+   "stop": 0.005918571428571428,
    "tp1_done": false
   }
  ],
