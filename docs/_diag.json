@@ -1,10 +1,10 @@
 {
- "task": "audit_divergencia",
- "now": "2026-07-28 01:10:02Z",
+ "task": "fix_dust_close",
+ "now": "2026-07-28 01:44:02Z",
  "pasos": [
-  "audit rc=0"
+  "fix rc=0"
  ],
- "audit_stdout": "{\"semillas\": {\"total_usd\": 109.15, \"assets\": {\"ATM\": {\"qty\": 0.0068, \"usd\": 0.01}, \"MANTA\": {\"qty\": 46.3536, \"usd\": 2.73}, \"PYTH\": {\"qty\": 479.1204, \"usd\": 20.69}, \"SYN\": {\"qty\": 18.6813, \"usd\": 2.7}, \"T\": {\"qty\": 2022.1758, \"usd\": 6.9}, \"USDT\": {\"qty\": 55.75202, \"usd\": 55.75}, \"ZEC\": {\"qty\": 0.042957, \"usd\": 20.36}}, \"free_usdt\": 55.75, \"state_positions\": {\"SYN/USDT\": 18.738623, \"MANTA/USDT\": 46.437575, \"PYTH/USDT\": 479.6, \"ZEC/USDT\": 0.043, \"T/USDT\": 2024.2}}, \"ganesha\": {\"total_usd\": 201.64, \"assets\": {\"ACE\": {\"qty\": 88.7, \"usd\": 6.95}, \"DGB\": {\"qty\": 5835.3588, \"usd\": 24.57}, \"ERA\": {\"qty\": 119.3, \"usd\": 8.92}, \"HEMI\": {\"qty\": 1870.2, \"usd\": 8.58}, \"KAITO\": {\"qty\": 12.3823, \"usd\": 15.99}, \"LA\": {\"qty\": 179.5203, \"usd\": 12.23}, \"ONDO\": {\"qty\": 62.1378, \"usd\": 24.19}, \"PEOPLE\": {\"qty\": 4587.1083, \"usd\": 30.73}, \"PROM\": {\"qty\": 5.82572, \"usd\": 11.83}, \"QI\": {\"qty\": 9754.236, \"usd\": 11.5}, \"SKL\": {\"qty\": 2257.0, \"usd\": 8.69}, \"SXT\": {\"qty\": 1250.8, \"usd\": 8.21}, \"USDT\": {\"qty\": 3.254592, \"usd\": 3.25}, \"XEC\": {\"qty\": 1319315.0, \"usd\": 8.81}, \"ZAMA\": {\"qty\": 283.595, \"usd\": 17.18}}, \"free_usdt\": 3.25, \"state_positions\": {\"KAITO/USDT\": {\"qty\": 12.39, \"entry\": 0.7885}, \"SXT/USDT\": {\"qty\": 1253.4, \"entry\": 0.00929}, \"SKL/USDT\": {\"qty\": 2262.0, \"entry\": 0.00461}, \"DGB/USDT\": {\"qty\": 5841.2, \"entry\": 0.00301}, \"ZAMA/USDT\": {\"qty\": 283.5, \"entry\": 0.03878}, \"ONDO/USDT\": {\"qty\": 62.2, \"entry\": 0.4033}, \"XEC/USDT\": {\"qty\": 1320636.0, \"entry\": 7.87e-06}, \"ERA/USDT\": {\"qty\": 119.6, \"entry\": 0.101}, \"PROM/USDT\": {\"qty\": 5.82, \"entry\": 1.772}, \"HEMI/USDT\": {\"qty\": 1872.1, \"entry\": 0.00526}, \"ACE/USDT\": {\"qty\": 88.8, \"entry\": 0.1089}, \"QI/USDT\": {\"qty\": 9764.0, \"entry\": 0.00148250747644408}, \"LA/USDT\": {\"qty\": 179.7, \"entry\": 0.0751}, \"PEOPLE/USDT\": {\"qty\": 4591.7, \"entry\": 0.00676}}}, \"people_trades\": {\"ganesha\": [{\"side\": \"buy\", \"amt\": 4591.7, \"px\": 0.00676, \"iso\": \"2026-07-28T00:07:26.982Z\"}], \"semillas\": []}}\n",
- "audit_stderr": "",
+ "fix_stdout": "{\"cerradas\": [{\"SYN/USDT\": {\"exit_est\": 0.1452, \"qty\": 18.738622978905664, \"pnl_est\": -4.2792, \"resto_binance\": 0.0}}, {\"MANTA/USDT\": {\"exit_est\": 0.05947, \"qty\": 46.43757463181637, \"pnl_est\": -4.2384, \"resto_binance\": 0.0}}], \"saltadas\": [], \"usdt_free\": 61.12, \"bnb_total\": 0.0}\n[dashboard] data publicada OK\nupdate: True\n",
+ "fix_stderr": "",
  "ok": true
 }
