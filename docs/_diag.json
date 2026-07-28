@@ -1,12 +1,13 @@
 {
- "task": "oci_api_key",
- "now": "2026-07-28 02:16:02Z",
+ "task": "a1_loop_start",
+ "now": "2026-07-28 02:38:02Z",
  "pasos": [
-  "",
-  "keypair listo",
-  "pip install oci lanzado en background"
+  "config escrito",
+  "launcher instalado y compila (4362 bytes)",
+  "launcher corriendo pid=908648"
  ],
- "public_pem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApbmaHrMcd2q4OEYINRzY\n/wHD/pZTJeFhaI1MG+9i79Rw1xane5sUmg+af45NkfvPclgV+AdQz14EpI7RUV4T\nWdU89qE5vdAj/brzQXkhrZxb037lClYBzzq9V+ZqdSUoxFCtDhra19/3iHakFDBr\nGlfoTDo25/jl/JjMHS+NZ3B95blEEp4sXtX2dxKlLwg8MW5owUIilS0NsJXpcdtM\n7hCse838noK/glCHSF7aMPYe4q7VvMRXoN03rONVRKA4qk0UA+l/d6ymS9MV+y4J\nl/VuBAPzPPeYa7r0ChyKnhxxUC8gYLIfuBD4prMQe7GOKh6F1n1HmitjSdV+fLc9\nmQIDAQAB\n-----END PUBLIC KEY-----\n",
- "fingerprint": "b8:dc:98:e6:b7:0c:4b:e9:3f:c0:2f:96:d6:f5:9e:6a",
+ "launcher_pid": "908648",
+ "sdk_oci": "oci                2.182.1",
+ "pip_tail": "oci-2.182.1 pyOpenSSL-26.3.0 python-dateutil-2.9.0.post0 pytz-2026.3.post1 six-1.17.0 urllib3-1.26.20\nWARNING: You are using pip version 21.3.1; however, version 26.0.1 is available.\nYou should consider upgrading via the '/home/opc/bot_semillas/venv/bin/python3 -m pip install --upgrade pip' command.",
  "ok": true
 }
