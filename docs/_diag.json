@@ -1,8 +1,10 @@
 {
- "task": "a1_tail",
- "now": "2026-07-28 02:40:02Z",
- "log": "2026-07-28 02:38:03Z === launcher arranca ===\n2026-07-28 02:38:05Z AD: HvAF:SA-SAOPAULO-1-AD-1\n2026-07-28 02:38:06Z vcn=vcn-20260618-2344 subnet=subnet-20260618-2344\n2026-07-28 02:38:07Z imagen: Oracle-Linux-9.8-aarch64-2026.07.20-0\n2026-07-28 02:38:08Z intento 1: HTTP 500 Out of host capacity.",
+ "task": "a1_tail2",
+ "now": "2026-07-28 11:28:02Z",
+ "log": "2026-07-28 10:52:10Z intento 88: HTTP 500 Out of host capacity.\n2026-07-28 10:57:11Z intento 89: HTTP 500 Out of host capacity.\n2026-07-28 11:02:13Z intento 90: HTTP 500 Out of host capacity.\n2026-07-28 11:07:14Z intento 91: HTTP 500 Out of host capacity.\n2026-07-28 11:12:15Z intento 92: HTTP 500 Out of host capacity.\n2026-07-28 11:17:16Z intento 93: HTTP 500 Out of host capacity.\n2026-07-28 11:22:17Z intento 94: HTTP 500 Out of host capacity.\n2026-07-28 11:27:18Z intento 95: HTTP 500 Out of host capacity.",
  "proceso": "908648 /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/a1_launcher.py",
- "mem": "total        used        free      shared  buff/cache   available\nMem:             498         317          25           2         178         181",
+ "intentos": "95",
+ "ultimo": "2026-07-28 11:27:18Z intento 95: HTTP 500 Out of host capacity.",
+ "mem": "total        used        free      shared  buff/cache   available\nMem:             498         234          74           2         212         263",
  "ok": true
 }
