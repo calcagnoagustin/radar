@@ -45,7 +45,7 @@
     });
   }
   function valorize(){
-    document.querySelectorAll(".pos").forEach(function(row){
+    document.querySelectorAll("#gPositions .pos").forEach(function(row){
       var t=row.textContent||"";
       var mp=t.match(/Precio\s*\$([\d.,]+)/), mc=t.match(/Cant\s*([\d.,]+)/);
       if(!mp||!mc)return;
