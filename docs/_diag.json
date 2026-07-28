@@ -1,13 +1,8 @@
 {
- "task": "a1_loop_start",
- "now": "2026-07-28 02:38:02Z",
- "pasos": [
-  "config escrito",
-  "launcher instalado y compila (4362 bytes)",
-  "launcher corriendo pid=908648"
- ],
- "launcher_pid": "908648",
- "sdk_oci": "oci                2.182.1",
- "pip_tail": "oci-2.182.1 pyOpenSSL-26.3.0 python-dateutil-2.9.0.post0 pytz-2026.3.post1 six-1.17.0 urllib3-1.26.20\nWARNING: You are using pip version 21.3.1; however, version 26.0.1 is available.\nYou should consider upgrading via the '/home/opc/bot_semillas/venv/bin/python3 -m pip install --upgrade pip' command.",
+ "task": "a1_tail",
+ "now": "2026-07-28 02:40:02Z",
+ "log": "2026-07-28 02:38:03Z === launcher arranca ===\n2026-07-28 02:38:05Z AD: HvAF:SA-SAOPAULO-1-AD-1\n2026-07-28 02:38:06Z vcn=vcn-20260618-2344 subnet=subnet-20260618-2344\n2026-07-28 02:38:07Z imagen: Oracle-Linux-9.8-aarch64-2026.07.20-0\n2026-07-28 02:38:08Z intento 1: HTTP 500 Out of host capacity.",
+ "proceso": "908648 /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/a1_launcher.py",
+ "mem": "total        used        free      shared  buff/cache   available\nMem:             498         317          25           2         178         181",
  "ok": true
 }
