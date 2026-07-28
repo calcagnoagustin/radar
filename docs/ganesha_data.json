@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 197.28,
+ "equity_now": 196.32,
  "deposits_total": 0,
- "pnl_today": -4.16,
- "trades_today": 1,
- "realized_pnl": 6.5,
- "trades_total": 25,
+ "pnl_today": -1.62,
+ "trades_today": 3,
+ "realized_pnl": 9.04,
+ "trades_total": 27,
  "win_rate": 44,
- "profit_factor": 1.14,
+ "profit_factor": 1.18,
  "open_positions": [
-  {
-   "symbol": "KAITO/USDT",
-   "entry": 0.7885,
-   "qty": 12.39,
-   "stop": 1.113192857142857,
-   "tp1_done": true
-  },
   {
    "symbol": "SXT/USDT",
    "entry": 0.00929,
@@ -102,9 +95,9 @@
   },
   {
    "symbol": "COTI/USDT",
-   "entry": 0.01404,
-   "qty": 777.0,
-   "stop": 0.012143571428571429,
+   "entry": 0.01317,
+   "qty": 1736.0,
+   "stop": 0.011253571428571429,
    "tp1_done": false
   }
  ],
@@ -333,6 +326,24 @@
    "pnl_net": -4.16,
    "action": "stop",
    "closed_ts": 1785255019.7880738
+  },
+  {
+   "symbol": "KAITO/USDT",
+   "entry": 0.7885,
+   "exit": 1.1132,
+   "qty_total": 17.7,
+   "pnl_net": 4.02,
+   "action": "stop",
+   "closed_ts": 1785269233.5931573
+  },
+  {
+   "symbol": "COTI/USDT",
+   "entry": 0.01404,
+   "exit": 0.01213,
+   "qty_total": 777.0,
+   "pnl_net": -1.48,
+   "action": "stop",
+   "closed_ts": 1785269240.8250155
   }
  ]
 }
