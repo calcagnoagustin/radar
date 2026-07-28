@@ -1,49 +1,56 @@
-# TASK: migracion A1 por API — paso 1: keypair API de OCI en la VM + instalar SDK oci (la privada NUNCA sale de la VM)
+# TASK: migracion A1 por API — paso final: escribir ~/.oci/config + lanzar retry-loop autonomo (nohup)
 import base64,json,os,re,subprocess,time,urllib.request
 B="/home/opc/bot_semillas"
-def sh(cmd,t=120):
-    try:
-        r=subprocess.run(cmd,shell=True,capture_output=True,text=True,timeout=t)
-        return (r.stdout+"\n"+r.stderr).strip()[-1500:]
-    except Exception as e: return "ERR "+str(e)[:120]
 tok=""
 try:
     for L in open(B+"/.env"):
         m=re.search(r"(github_pat_[A-Za-z0-9_]+|gh[posru]_[A-Za-z0-9]+)",L)
         if m: tok=m.group(1)
 except Exception: pass
-info={"task":"oci_api_key","now":time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),"pasos":[]}
+info={"task":"a1_loop_start","now":time.strftime("%Y-%m-%d %H:%M:%SZ",time.gmtime()),"pasos":[]}
 def step(s): info["pasos"].append(s)
+CONFIG="""[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaa6eo6l6g7iqivmv4kqwlsangic7ixxqrll57a2m3xfro2akvjwnnq
+fingerprint=b8:dc:98:e6:b7:0c:4b:e9:3f:c0:2f:96:d6:f5:9e:6a
+tenancy=ocid1.tenancy.oc1..aaaaaaaany4g5lotc4p6jmw6u3ufq6r6wr2xwnxokafk3qlqellam4aqsn7q
+region=sa-saopaulo-1
+key_file=/home/opc/.oci/oci_api_key.pem
+"""
+LAUNCHER_B64="IiIiTGFuemFkb3IgYXV0b25vbW8gZGUgc2VtaWxsYXMtYm90LWExOiByZWludGVudGEgTGF1bmNoSW5zdGFuY2UgY2FkYSA1IG1pbiBoYXN0YSBxdWUgaGF5YSBjYXBhY2lkYWQuCkNvcnJlIGNvbiBub2h1cCBlbiBsYSBWTSB2aWVqYS4gTG9nOiBhMV9yZXRyeS5sb2cuIEFsIGNyZWFyOiBlc3BlcmEgUlVOTklORytJUCwgcmVwb3J0YSBhIGRvY3MvX2RpYWcuanNvbiB5IGF2aXNhIHBvciBtYWlsLiIiIgppbXBvcnQganNvbixvcyxyZSx0aW1lLGJhc2U2NCx1cmxsaWIucmVxdWVzdApCPSIvaG9tZS9vcGMvYm90X3NlbWlsbGFzIgpMT0c9b3BlbihCKyIvYTFfcmV0cnkubG9nIiwiYSIsYnVmZmVyaW5nPTEpCmRlZiBsb2cobSk6CiAgICBMT0cud3JpdGUodGltZS5zdHJmdGltZSgiJVktJW0tJWQgJUg6JU06JVNaICIsdGltZS5nbXRpbWUoKSkrbSsiXG4iKQpsb2coIj09PSBsYXVuY2hlciBhcnJhbmNhID09PSIpCm9rX3Nkaz1GYWxzZQpmb3IgayBpbiByYW5nZSgzNjApOgogICAgdHJ5OgogICAgICAgIGltcG9ydCBvY2kKICAgICAgICBva19zZGs9VHJ1ZQogICAgICAgIGJyZWFrCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHRpbWUuc2xlZXAoMzApCmlmIG5vdCBva19zZGs6CiAgICBsb2coIlNESyBvY2kgbnVuY2EgYXBhcmVjaW87IGFiYW5kb25vIik7IHJhaXNlIFN5c3RlbUV4aXQoMSkKaW1wb3J0IG9jaQpjZmc9b2NpLmNvbmZpZy5mcm9tX2ZpbGUoKQppZGVudD1vY2kuaWRlbnRpdHkuSWRlbnRpdHlDbGllbnQoY2ZnKQpjb21wPWNmZ1sidGVuYW5jeSJdCmFkPWlkZW50Lmxpc3RfYXZhaWxhYmlsaXR5X2RvbWFpbnMoY29tcCkuZGF0YVswXS5uYW1lCmxvZygiQUQ6ICIrYWQpCm5ldD1vY2kuY29yZS5WaXJ0dWFsTmV0d29ya0NsaWVudChjZmcpCnZjbnM9W3YgZm9yIHYgaW4gbmV0Lmxpc3RfdmNucyhjb21wKS5kYXRhIGlmICIyMDI2MDYxOCIgaW4gKHYuZGlzcGxheV9uYW1lIG9yICIiKV0KdmNuPXZjbnNbMF0Kc3ViPW5ldC5saXN0X3N1Ym5ldHMoY29tcCwgdmNuX2lkPXZjbi5pZCkuZGF0YVswXQpsb2coInZjbj0lcyBzdWJuZXQ9JXMiJSh2Y24uZGlzcGxheV9uYW1lLHN1Yi5kaXNwbGF5X25hbWUpKQpjbXBfPW9jaS5jb3JlLkNvbXB1dGVDbGllbnQoY2ZnKQppbWdzPWNtcF8ubGlzdF9pbWFnZXMoY29tcCwgb3BlcmF0aW5nX3N5c3RlbT0iT3JhY2xlIExpbnV4Iiwgb3BlcmF0aW5nX3N5c3RlbV92ZXJzaW9uPSI5IiwKICAgICAgICAgICAgICAgICAgICAgIHNoYXBlPSJWTS5TdGFuZGFyZC5BMS5GbGV4Iiwgc29ydF9ieT0iVElNRUNSRUFURUQiLCBzb3J0X29yZGVyPSJERVNDIikuZGF0YQppbWc9aW1nc1swXQpsb2coImltYWdlbjogIitpbWcuZGlzcGxheV9uYW1lKQpwdWI9b3Blbihvcy5wYXRoLmV4cGFuZHVzZXIoIn4vLnNzaC9pZF9taWdyYWNpb24ucHViIikpLnJlYWQoKS5zdHJpcCgpCmRldD1vY2kuY29yZS5tb2RlbHMuTGF1bmNoSW5zdGFuY2VEZXRhaWxzKAogICAgYXZhaWxhYmlsaXR5X2RvbWFpbj1hZCwgY29tcGFydG1lbnRfaWQ9Y29tcCwgZGlzcGxheV9uYW1lPSJzZW1pbGxhcy1ib3QtYTEiLAogICAgc2hhcGU9IlZNLlN0YW5kYXJkLkExLkZsZXgiLAogICAgc2hhcGVfY29uZmlnPW9jaS5jb3JlLm1vZGVscy5MYXVuY2hJbnN0YW5jZVNoYXBlQ29uZmlnRGV0YWlscyhvY3B1cz0xLjAsIG1lbW9yeV9pbl9nYnM9Ni4wKSwKICAgIHNvdXJjZV9kZXRhaWxzPW9jaS5jb3JlLm1vZGVscy5JbnN0YW5jZVNvdXJjZVZpYUltYWdlRGV0YWlscyhpbWFnZV9pZD1pbWcuaWQpLAogICAgY3JlYXRlX3ZuaWNfZGV0YWlscz1vY2kuY29yZS5tb2RlbHMuQ3JlYXRlVm5pY0RldGFpbHMoc3VibmV0X2lkPXN1Yi5pZCwgYXNzaWduX3B1YmxpY19pcD1UcnVlKSwKICAgIG1ldGFkYXRhPXsic3NoX2F1dGhvcml6ZWRfa2V5cyI6IHB1Yn0pCmluc3Q9Tm9uZTsgbj0wCndoaWxlIGluc3QgaXMgTm9uZToKICAgIG4rPTEKICAgIHRyeToKICAgICAgICByPWNtcF8ubGF1bmNoX2luc3RhbmNlKGRldCkKICAgICAgICBpbnN0PXIuZGF0YQogICAgICAgIGxvZygiQ1JFQURBIGVuIGludGVudG8gJWQhIG9jaWQ9JXMiJShuLGluc3QuaWQpKQogICAgZXhjZXB0IG9jaS5leGNlcHRpb25zLlNlcnZpY2VFcnJvciBhcyBlOgogICAgICAgIG1zZz1zdHIoZS5tZXNzYWdlKVs6MTAwXQogICAgICAgIGxvZygiaW50ZW50byAlZDogSFRUUCAlcyAlcyIlKG4sZS5zdGF0dXMsbXNnKSkKICAgICAgICBpZiAiY2FwYWNpdHkiIGluIG1zZy5sb3dlcigpIG9yIGUuc3RhdHVzIGluICg0MjksNTAwKToKICAgICAgICAgICAgdGltZS5zbGVlcCgzMDApCiAgICAgICAgZWxpZiBlLnN0YXR1cz09NDA5IGFuZCAiYWxyZWFkeSIgaW4gbXNnLmxvd2VyKCk6CiAgICAgICAgICAgIGxvZygieWEgZXhpc3RlPyBmcmVubyIpOyByYWlzZSBTeXN0ZW1FeGl0KDApCiAgICAgICAgZWxzZToKICAgICAgICAgICAgdGltZS5zbGVlcCg2MDApCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgbG9nKCJlcnIgaW50ZW50byAlZDogJXMiJShuLHN0cihlKVs6MTIwXSkpOyB0aW1lLnNsZWVwKDMwMCkKaXA9Tm9uZQpmb3IgayBpbiByYW5nZSg5MCk6CiAgICB0cnk6CiAgICAgICAgaTI9Y21wXy5nZXRfaW5zdGFuY2UoaW5zdC5pZCkuZGF0YQogICAgICAgIGlmIGkyLmxpZmVjeWNsZV9zdGF0ZT09IlJVTk5JTkciOgogICAgICAgICAgICB2YT1jbXBfLmxpc3Rfdm5pY19hdHRhY2htZW50cyhjb21wLCBpbnN0YW5jZV9pZD1pbnN0LmlkKS5kYXRhCiAgICAgICAgICAgIGlmIHZhOgogICAgICAgICAgICAgICAgdm49bmV0LmdldF92bmljKHZhWzBdLnZuaWNfaWQpLmRhdGEKICAgICAgICAgICAgICAgIGlmIHZuLnB1YmxpY19pcDoKICAgICAgICAgICAgICAgICAgICBpcD12bi5wdWJsaWNfaXA7IGJyZWFrCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgbG9nKCJ3YWl0OiAiK3N0cihlKVs6ODBdKQogICAgdGltZS5zbGVlcCgyMCkKbG9nKCJSVU5OSU5HLiBJUCBwdWJsaWNhOiAlcyIlaXApCnRvaz0iIgp0cnk6CiAgICBmb3IgTCBpbiBvcGVuKEIrIi8uZW52Iik6CiAgICAgICAgbT1yZS5zZWFyY2gociIoZ2l0aHViX3BhdF9bQS1aYS16MC05X10rfGdoW3Bvc3J1XV9bQS1aYS16MC05XSspIixMKQogICAgICAgIGlmIG06IHRvaz1tLmdyb3VwKDEpCmV4Y2VwdCBFeGNlcHRpb246IHBhc3MKaW5mbz17InRhc2siOiJhMV9jcmVhdGVkIiwibm93Ijp0aW1lLnN0cmZ0aW1lKCIlWS0lbS0lZCAlSDolTTolU1oiLHRpbWUuZ210aW1lKCkpLCJvayI6VHJ1ZSwKICAgICAgImluc3RhbmNlX29jaWQiOmluc3QuaWQsInB1YmxpY19pcCI6aXAsImludGVudG9zIjpuLCJhZCI6YWQsCiAgICAgICJzaGFwZSI6IlZNLlN0YW5kYXJkLkExLkZsZXggMW9jcHUvNmdiIiwiaW1hZ2VuIjppbWcuZGlzcGxheV9uYW1lfQpVPSJodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL2NhbGNhZ25vYWd1c3Rpbi9yYWRhci9jb250ZW50cy9kb2NzL19kaWFnLmpzb24iCmRlZiBSKG0sZD1Ob25lKToKICAgIHE9dXJsbGliLnJlcXVlc3QuUmVxdWVzdChVLGRhdGE9ZCxtZXRob2Q9bSk7IHEuYWRkX2hlYWRlcigiQXV0aG9yaXphdGlvbiIsInRva2VuICIrdG9rKTsgcS5hZGRfaGVhZGVyKCJVc2VyLUFnZW50IiwiYTFsYXVuY2giKQogICAgcmV0dXJuIHVybGxpYi5yZXF1ZXN0LnVybG9wZW4ocSx0aW1lb3V0PTMwKS5yZWFkKCkKc2hhPU5vbmUKdHJ5OiBzaGE9anNvbi5sb2FkcyhSKCJHRVQiKSkuZ2V0KCJzaGEiKQpleGNlcHQgRXhjZXB0aW9uOiBwYXNzCnA9eyJtZXNzYWdlIjoiYTEgY3JlYWRhIiwiY29udGVudCI6YmFzZTY0LmI2NGVuY29kZShqc29uLmR1bXBzKGluZm8saW5kZW50PTEpLmVuY29kZSgpKS5kZWNvZGUoKX0KaWYgc2hhOiBwWyJzaGEiXT1zaGEKdHJ5OiBSKCJQVVQiLGpzb24uZHVtcHMocCkuZW5jb2RlKCkpOyBsb2coInJlcG9ydGFkbyBhIF9kaWFnIikKZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOiBsb2coInB1c2ggZXJyICIrc3RyKGUpWzo4MF0pCnRyeToKICAgIGltcG9ydCBzeXMKICAgIHN5cy5wYXRoLmluc2VydCgwLEIpCiAgICBpbXBvcnQgbm90aWZ5CiAgICBub3RpZnkuc2VuZCgiW01pZ3JhY2lvbl0gVk0gQTEgQ1JFQURBIiwiPGgzPnNlbWlsbGFzLWJvdC1hMSBjcmVhZGE8L2gzPjxwPklQIHB1YmxpY2E6ICVzPGJyPkludGVudG9zOiAlZDxicj5TaWd1aWVudGUgcGFzbzogYm9vdHN0cmFwIChDbGF1ZGUgbG8gaGFjZSBwb3IgY2FuYWwgdGFzaykuPC9wPiIlKGlwLG4pKQogICAgbG9nKCJtYWlsIGVudmlhZG8iKQpleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICBsb2coIm1haWwgZXJyICIrc3RyKGUpWzo4MF0pCmxvZygiPT09IGxhdW5jaGVyIHRlcm1pbmEgPT09IikK"
 try:
     O=os.path.expanduser("~/.oci")
     os.makedirs(O,exist_ok=True)
-    K=O+"/oci_api_key.pem"
-    if not os.path.exists(K):
-        step(sh("openssl genrsa -out %s 2048 2>&1 | tail -1"%K)[:80])
-        sh("chmod 600 "+K)
-    sh("openssl rsa -in %s -pubout -out %s/oci_api_key_public.pem 2>/dev/null"%(K,O))
-    info["public_pem"]=open(O+"/oci_api_key_public.pem").read()
-    # fingerprint estilo OCI: md5 con dos puntos del DER de la publica
-    fp=sh("openssl rsa -in %s -pubout -outform DER 2>/dev/null | openssl md5 -c | awk '{print $2}'"%K)
-    info["fingerprint"]=fp.strip()
-    step("keypair listo")
-    # instalar SDK oci en el venv en background (tarda; log a /tmp/pip_oci.log)
-    if "oci" not in sh(B+"/venv/bin/pip list 2>/dev/null | grep -i '^oci '"):
-        sh("nohup %s/venv/bin/pip install --no-cache-dir oci > /tmp/pip_oci.log 2>&1 &"%B,10)
-        step("pip install oci lanzado en background")
-    else:
-        step("SDK oci ya instalado")
+    open(O+"/config","w").write(CONFIG)
+    os.chmod(O+"/config",0o600)
+    step("config escrito")
+    src=base64.b64decode(LAUNCHER_B64)
+    open(B+"/a1_launcher.py","wb").write(src)
+    import py_compile
+    py_compile.compile(B+"/a1_launcher.py",doraise=True)
+    step("launcher instalado y compila (%d bytes)"%len(src))
+    # matar instancias previas del launcher si las hubiera
+    subprocess.run("pkill -f a1_launcher.py",shell=True)
+    time.sleep(1)
+    subprocess.Popen("nohup %s/venv/bin/python %s/a1_launcher.py >> %s/a1_retry.log 2>&1 &"%(B,B,B),shell=True)
+    time.sleep(3)
+    r=subprocess.run("pgrep -f a1_launcher.py",shell=True,capture_output=True,text=True)
+    info["launcher_pid"]=r.stdout.strip()
+    step("launcher corriendo pid="+(r.stdout.strip() or "?"))
+    r2=subprocess.run(B+"/venv/bin/pip list 2>/dev/null | grep -i '^oci '",shell=True,capture_output=True,text=True)
+    info["sdk_oci"]=(r2.stdout.strip() or "instalando aun (el launcher espera solo)")
+    r3=subprocess.run("tail -5 /tmp/pip_oci.log 2>/dev/null",shell=True,capture_output=True,text=True)
+    info["pip_tail"]=r3.stdout.strip()[-300:]
     info["ok"]=True
 except Exception as e:
     info["ok"]=False; info["error"]=str(e)[:250]
 U="https://api.github.com/repos/calcagnoagustin/radar/contents/docs/_diag.json"
 def R(m,d=None):
-    q=urllib.request.Request(U,data=d,method=m); q.add_header("Authorization","token "+tok); q.add_header("User-Agent","ocikey")
+    q=urllib.request.Request(U,data=d,method=m); q.add_header("Authorization","token "+tok); q.add_header("User-Agent","a1loop")
     return urllib.request.urlopen(q,timeout=30).read()
 sha=None
 try: sha=json.loads(R("GET")).get("sha")
 except Exception: pass
-p={"message":"oci api key","content":base64.b64encode(json.dumps(info,indent=1,ensure_ascii=False).encode()).decode()}
+p={"message":"a1 loop start","content":base64.b64encode(json.dumps(info,indent=1,ensure_ascii=False).encode()).decode()}
 if sha: p["sha"]=sha
 try: R("PUT",json.dumps(p).encode()); print("REPORTADO")
 except Exception as e: print("PUSH_ERR",e)
