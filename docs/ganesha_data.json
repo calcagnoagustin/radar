@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 193.13,
+ "equity_now": 190.32,
  "deposits_total": 0,
  "pnl_today": -3.33,
  "trades_today": 1,
@@ -91,6 +91,13 @@
    "entry": 0.00676,
    "qty": 4591.7,
    "stop": 0.005918571428571428,
+   "tp1_done": false
+  },
+  {
+   "symbol": "EUL/USDT",
+   "entry": 1.801,
+   "qty": 6.46,
+   "stop": 1.1943214285714285,
    "tp1_done": false
   }
  ],
