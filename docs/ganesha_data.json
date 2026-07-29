@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 191.31,
+ "equity_now": 188.92,
  "deposits_total": 0,
- "pnl_today": -3.33,
- "trades_today": 1,
- "realized_pnl": 5.7,
- "trades_total": 28,
- "win_rate": 43,
- "profit_factor": 1.11,
+ "pnl_today": -6.51,
+ "trades_today": 2,
+ "realized_pnl": 2.52,
+ "trades_total": 29,
+ "win_rate": 41,
+ "profit_factor": 1.05,
  "open_positions": [
   {
    "symbol": "SXT/USDT",
@@ -34,7 +34,7 @@
    "symbol": "ZAMA/USDT",
    "entry": 0.03878,
    "qty": 283.5,
-   "stop": 0.05275607142857143,
+   "stop": 0.054376785714285704,
    "tp1_done": true
   },
   {
@@ -77,13 +77,6 @@
    "entry": 0.00148250747644408,
    "qty": 9764.0,
    "stop": 0.0010652500000000002,
-   "tp1_done": false
-  },
-  {
-   "symbol": "LA/USDT",
-   "entry": 0.0751,
-   "qty": 179.7,
-   "stop": 0.057478571428571434,
    "tp1_done": false
   },
   {
@@ -360,6 +353,15 @@
    "pnl_net": -3.33,
    "action": "stop",
    "closed_ts": 1785283764.782225
+  },
+  {
+   "symbol": "LA/USDT",
+   "entry": 0.0751,
+   "exit": 0.0574,
+   "qty_total": 179.7,
+   "pnl_net": -3.18,
+   "action": "stop",
+   "closed_ts": 1785327001.864656
   }
  ]
 }
