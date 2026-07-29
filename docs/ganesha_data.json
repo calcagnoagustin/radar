@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 196.32,
+ "equity_now": 193.13,
  "deposits_total": 0,
- "pnl_today": -1.62,
- "trades_today": 3,
- "realized_pnl": 9.04,
- "trades_total": 27,
- "win_rate": 44,
- "profit_factor": 1.18,
+ "pnl_today": -3.33,
+ "trades_today": 1,
+ "realized_pnl": 5.7,
+ "trades_total": 28,
+ "win_rate": 43,
+ "profit_factor": 1.11,
  "open_positions": [
   {
    "symbol": "SXT/USDT",
@@ -91,13 +91,6 @@
    "entry": 0.00676,
    "qty": 4591.7,
    "stop": 0.005918571428571428,
-   "tp1_done": false
-  },
-  {
-   "symbol": "COTI/USDT",
-   "entry": 0.01317,
-   "qty": 1736.0,
-   "stop": 0.011253571428571429,
    "tp1_done": false
   }
  ],
@@ -344,6 +337,15 @@
    "pnl_net": -1.48,
    "action": "stop",
    "closed_ts": 1785269240.8250155
+  },
+  {
+   "symbol": "COTI/USDT",
+   "entry": 0.01317,
+   "exit": 0.01125,
+   "qty_total": 1736.0,
+   "pnl_net": -3.33,
+   "action": "stop",
+   "closed_ts": 1785283764.782225
   }
  ]
 }
