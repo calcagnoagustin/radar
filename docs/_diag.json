@@ -1,10 +1,10 @@
 {
- "task": "a1_tail2",
- "now": "2026-07-28 11:28:02Z",
- "log": "2026-07-28 10:52:10Z intento 88: HTTP 500 Out of host capacity.\n2026-07-28 10:57:11Z intento 89: HTTP 500 Out of host capacity.\n2026-07-28 11:02:13Z intento 90: HTTP 500 Out of host capacity.\n2026-07-28 11:07:14Z intento 91: HTTP 500 Out of host capacity.\n2026-07-28 11:12:15Z intento 92: HTTP 500 Out of host capacity.\n2026-07-28 11:17:16Z intento 93: HTTP 500 Out of host capacity.\n2026-07-28 11:22:17Z intento 94: HTTP 500 Out of host capacity.\n2026-07-28 11:27:18Z intento 95: HTTP 500 Out of host capacity.",
+ "task": "a1_tail3",
+ "now": "2026-07-29 19:44:27Z",
+ "log": "2026-07-29 17:02:32Z intento 392: HTTP 500 Out of host capacity.\n2026-07-29 17:07:33Z intento 393: HTTP 500 Out of host capacity.\n2026-07-29 17:12:34Z intento 394: HTTP 500 Out of host capacity.\n2026-07-29 17:17:35Z intento 395: HTTP 500 Out of host capacity.\n2026-07-29 17:22:36Z intento 396: HTTP 500 Out of host capacity.\n2026-07-29 17:27:37Z intento 397: HTTP 500 Out of host capacity.\n2026-07-29 17:32:38Z intento 398: HTTP 500 Out of host capacity.\n2026-07-29 17:37:39Z intento 399: HTTP 500 Out of host capacity.\n2026-07-29 17:42:40Z intento 400: HTTP 500 Out of host capacity.\n2026-07-29 17:47:40Z intento 401: HTTP 500 Out of host capacity.\n2026-07-29 17:52:45Z intento 402: HTTP 500 Out of host capacity.\n2026-07-29 18:27:52Z intento 403: HTTP 500 Out of host capacity.\n2026-07-29 18:32:53Z intento 404: HTTP 500 Out of host capacity.\n2026-07-29 18:37:54Z intento 405: HTTP 500 Out of host capacity.\n2026-07-29 18:42:55Z intento 406: HTTP 500 Out of host capacity.\n2026-07-29 18:47:56Z intento 407: HTTP 500 Out of host capacity.\n2026-07-29 18:52:57Z intento 408: HTTP 500 Out of host capacity.\n2026-07-29 18:57:58Z intento 409: HTTP 500 Out of host capacity.\n2026-07-29 19:02:59Z intento 410: HTTP 500 Out of host capacity.\n2026-07-29 19:07:59Z intento 411: HTTP 500 Out of host capacity.\n2026-07-29 19:13:00Z intento 412: HTTP 500 Out of host capacity.\n2026-07-29 19:18:01Z intento 413: HTTP 500 Out of host capacity.\n2026-07-29 19:23:02Z intento 414: HTTP 500 Out of host capacity.\n2026-07-29 19:28:03Z intento 415: HTTP 500 Out of host capacity.\n2026-07-29 19:33:04Z intento 416: HTTP 500 Out of host capacity.",
  "proceso": "908648 /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/a1_launcher.py",
- "intentos": "95",
- "ultimo": "2026-07-28 11:27:18Z intento 95: HTTP 500 Out of host capacity.",
- "mem": "total        used        free      shared  buff/cache   available\nMem:             498         234          74           2         212         263",
+ "mem": "total        used        free      shared  buff/cache   available\nMem:             498         243         105           1         171         254",
+ "intentos": "416",
+ "ultimo": "2026-07-29 19:33:04Z intento 416: HTTP 500 Out of host capacity.",
  "ok": true
 }
