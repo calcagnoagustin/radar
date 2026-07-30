@@ -1,89 +1,89 @@
 {
- "generated": "2026-07-29T00:17:24Z",
+ "generated": "2026-07-30T00:18:38Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
    "historico": {
-    "n": 23,
-    "win_rate": 26.1,
-    "pnl_total": 4.36,
-    "expectancy_usd": 0.189,
-    "expectancy_r": -0.0,
-    "profit_factor": 1.08,
-    "payoff": 3.07,
-    "max_dd_usd": -19.57
+    "n": 24,
+    "win_rate": 25.0,
+    "pnl_total": 1.18,
+    "expectancy_usd": 0.049,
+    "expectancy_r": -0.05,
+    "profit_factor": 1.02,
+    "payoff": 3.06,
+    "max_dd_usd": -19.95
    },
    "ult_20_trades": {
     "n": 20,
     "win_rate": 25.0,
-    "pnl_total": 0.81,
-    "expectancy_usd": 0.041,
+    "pnl_total": 1.91,
+    "expectancy_usd": 0.096,
     "expectancy_r": -0.06,
-    "profit_factor": 1.02,
-    "payoff": 3.05,
-    "max_dd_usd": -19.57
+    "profit_factor": 1.04,
+    "payoff": 3.11,
+    "max_dd_usd": -19.95
    },
    "ult_30d": {
-    "n": 23,
-    "win_rate": 26.1,
-    "pnl_total": 4.36,
-    "expectancy_usd": 0.189,
-    "expectancy_r": -0.0,
-    "profit_factor": 1.08,
-    "payoff": 3.07,
-    "max_dd_usd": -19.57
+    "n": 24,
+    "win_rate": 25.0,
+    "pnl_total": 1.18,
+    "expectancy_usd": 0.049,
+    "expectancy_r": -0.05,
+    "profit_factor": 1.02,
+    "payoff": 3.06,
+    "max_dd_usd": -19.95
    },
    "ult_90d": {
-    "n": 23,
-    "win_rate": 26.1,
-    "pnl_total": 4.36,
-    "expectancy_usd": 0.189,
-    "expectancy_r": -0.0,
-    "profit_factor": 1.08,
-    "payoff": 3.07,
-    "max_dd_usd": -19.57
+    "n": 24,
+    "win_rate": 25.0,
+    "pnl_total": 1.18,
+    "expectancy_usd": 0.049,
+    "expectancy_r": -0.05,
+    "profit_factor": 1.02,
+    "payoff": 3.06,
+    "max_dd_usd": -19.95
    }
   },
   "ganesha": {
    "historico": {
-    "n": 21,
-    "win_rate": 28.6,
-    "pnl_total": 4.62,
-    "expectancy_usd": 0.22,
-    "expectancy_r": -0.0,
-    "profit_factor": 1.09,
-    "payoff": 2.72,
-    "max_dd_usd": -19.57
+    "n": 22,
+    "win_rate": 27.3,
+    "pnl_total": 1.44,
+    "expectancy_usd": 0.065,
+    "expectancy_r": -0.05,
+    "profit_factor": 1.03,
+    "payoff": 2.74,
+    "max_dd_usd": -19.95
    },
    "ult_20_trades": {
     "n": 20,
     "win_rate": 25.0,
-    "pnl_total": 0.81,
-    "expectancy_usd": 0.041,
+    "pnl_total": 1.91,
+    "expectancy_usd": 0.096,
     "expectancy_r": -0.06,
-    "profit_factor": 1.02,
-    "payoff": 3.05,
-    "max_dd_usd": -19.57
+    "profit_factor": 1.04,
+    "payoff": 3.11,
+    "max_dd_usd": -19.95
    },
    "ult_30d": {
-    "n": 21,
-    "win_rate": 28.6,
-    "pnl_total": 4.62,
-    "expectancy_usd": 0.22,
-    "expectancy_r": -0.0,
-    "profit_factor": 1.09,
-    "payoff": 2.72,
-    "max_dd_usd": -19.57
+    "n": 22,
+    "win_rate": 27.3,
+    "pnl_total": 1.44,
+    "expectancy_usd": 0.065,
+    "expectancy_r": -0.05,
+    "profit_factor": 1.03,
+    "payoff": 2.74,
+    "max_dd_usd": -19.95
    },
    "ult_90d": {
-    "n": 21,
-    "win_rate": 28.6,
-    "pnl_total": 4.62,
-    "expectancy_usd": 0.22,
-    "expectancy_r": -0.0,
-    "profit_factor": 1.09,
-    "payoff": 2.72,
-    "max_dd_usd": -19.57
+    "n": 22,
+    "win_rate": 27.3,
+    "pnl_total": 1.44,
+    "expectancy_usd": 0.065,
+    "expectancy_r": -0.05,
+    "profit_factor": 1.03,
+    "payoff": 2.74,
+    "max_dd_usd": -19.95
    }
   },
   "semillas": {
@@ -131,14 +131,14 @@
  },
  "atribucion": [
   {
-   "n": 16,
-   "win_rate": 6.2,
-   "pnl_total": -47.39,
-   "expectancy_usd": -2.962,
+   "n": 17,
+   "win_rate": 5.9,
+   "pnl_total": -50.57,
+   "expectancy_usd": -2.975,
    "expectancy_r": -0.9,
-   "profit_factor": 0.1,
-   "payoff": 1.45,
-   "max_dd_usd": -47.39,
+   "profit_factor": 0.09,
+   "payoff": 1.46,
+   "max_dd_usd": -50.57,
    "tag": "tp1_antes_del_stop=no"
   },
   {
@@ -219,57 +219,57 @@
    "tag": "dca_adds=dca_0"
   },
   {
-   "n": 23,
-   "win_rate": 26.1,
-   "pnl_total": 4.36,
-   "expectancy_usd": 0.189,
-   "expectancy_r": -0.0,
-   "profit_factor": 1.08,
-   "payoff": 3.07,
-   "max_dd_usd": -19.57,
+   "n": 24,
+   "win_rate": 25.0,
+   "pnl_total": 1.18,
+   "expectancy_usd": 0.049,
+   "expectancy_r": -0.05,
+   "profit_factor": 1.02,
+   "payoff": 3.06,
+   "max_dd_usd": -19.95,
    "tag": "mode=LIVE"
   },
   {
-   "n": 21,
-   "win_rate": 28.6,
-   "pnl_total": 4.62,
-   "expectancy_usd": 0.22,
-   "expectancy_r": -0.0,
-   "profit_factor": 1.09,
-   "payoff": 2.72,
-   "max_dd_usd": -19.57,
+   "n": 22,
+   "win_rate": 27.3,
+   "pnl_total": 1.44,
+   "expectancy_usd": 0.065,
+   "expectancy_r": -0.05,
+   "profit_factor": 1.03,
+   "payoff": 2.74,
+   "max_dd_usd": -19.95,
    "tag": "strategy=ganesha"
   },
   {
-   "n": 21,
-   "win_rate": 28.6,
-   "pnl_total": 4.62,
-   "expectancy_usd": 0.22,
-   "expectancy_r": -0.0,
-   "profit_factor": 1.09,
-   "payoff": 2.72,
-   "max_dd_usd": -19.57,
+   "n": 22,
+   "win_rate": 27.3,
+   "pnl_total": 1.44,
+   "expectancy_usd": 0.065,
+   "expectancy_r": -0.05,
+   "profit_factor": 1.03,
+   "payoff": 2.74,
+   "max_dd_usd": -19.95,
    "tag": "signal=breakout24h+vol"
   },
   {
-   "n": 21,
-   "win_rate": 28.6,
-   "pnl_total": 4.62,
-   "expectancy_usd": 0.22,
-   "expectancy_r": -0.0,
-   "profit_factor": 1.09,
-   "payoff": 2.72,
-   "max_dd_usd": -19.57,
+   "n": 22,
+   "win_rate": 27.3,
+   "pnl_total": 1.44,
+   "expectancy_usd": 0.065,
+   "expectancy_r": -0.05,
+   "profit_factor": 1.03,
+   "payoff": 2.74,
+   "max_dd_usd": -19.95,
    "tag": "regimen=neutral"
   },
   {
-   "n": 19,
-   "win_rate": 26.3,
-   "pnl_total": 5.2,
-   "expectancy_usd": 0.274,
-   "expectancy_r": -0.01,
-   "profit_factor": 1.11,
-   "payoff": 3.1,
+   "n": 20,
+   "win_rate": 25.0,
+   "pnl_total": 2.02,
+   "expectancy_usd": 0.101,
+   "expectancy_r": -0.06,
+   "profit_factor": 1.04,
+   "payoff": 3.12,
    "max_dd_usd": -18.2,
    "tag": "atr_bucket=atr>4%"
   },
@@ -288,80 +288,81 @@
  "decay": [
   {
    "tag": "strategy=ganesha",
-   "n_total": 21,
+   "n_total": 22,
    "n_rodante": 10,
-   "expectancy_hist": 0.22,
-   "expectancy_rodante": -0.875,
-   "msg": "La senal 'strategy=ganesha' rendia 0.22 USD/trade y en los ultimos 10 trades rinde -0.88. Puede estar muriendo."
+   "expectancy_hist": 0.065,
+   "expectancy_rodante": -0.814,
+   "msg": "La senal 'strategy=ganesha' rendia 0.07 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo."
   },
   {
    "tag": "signal=breakout24h+vol",
-   "n_total": 21,
+   "n_total": 22,
    "n_rodante": 10,
-   "expectancy_hist": 0.22,
-   "expectancy_rodante": -0.875,
-   "msg": "La senal 'signal=breakout24h+vol' rendia 0.22 USD/trade y en los ultimos 10 trades rinde -0.88. Puede estar muriendo."
+   "expectancy_hist": 0.065,
+   "expectancy_rodante": -0.814,
+   "msg": "La senal 'signal=breakout24h+vol' rendia 0.07 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo."
   },
   {
    "tag": "atr_bucket=atr>4%",
-   "n_total": 19,
-   "n_rodante": 9,
-   "expectancy_hist": 0.274,
-   "expectancy_rodante": -0.551,
-   "msg": "La senal 'atr_bucket=atr>4%' rendia 0.27 USD/trade y en los ultimos 9 trades rinde -0.55. Puede estar muriendo."
+   "n_total": 20,
+   "n_rodante": 10,
+   "expectancy_hist": 0.101,
+   "expectancy_rodante": -0.814,
+   "msg": "La senal 'atr_bucket=atr>4%' rendia 0.10 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo."
   }
  ],
  "propuestas": [
   {
    "id": "grid_atr_drift",
-   "texto": "El atr_mult vivo (2.5) lleva 9 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
+   "texto": "El atr_mult vivo (2.5) lleva 10 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
    "evidencia": {
-    "runs_live_fuera_top3": 9,
-    "hist_n": 9
+    "runs_live_fuera_top3": 10,
+    "hist_n": 10
    }
   },
   {
    "id": "decay:strategy=ganesha",
-   "texto": "Revisar o pausar la senal 'strategy=ganesha': La senal 'strategy=ganesha' rendia 0.22 USD/trade y en los ultimos 10 trades rinde -0.88. Puede estar muriendo.",
+   "texto": "Revisar o pausar la senal 'strategy=ganesha': La senal 'strategy=ganesha' rendia 0.07 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo.",
    "evidencia": {
     "tag": "strategy=ganesha",
-    "n_total": 21,
+    "n_total": 22,
     "n_rodante": 10,
-    "expectancy_hist": 0.22,
-    "expectancy_rodante": -0.875,
-    "msg": "La senal 'strategy=ganesha' rendia 0.22 USD/trade y en los ultimos 10 trades rinde -0.88. Puede estar muriendo."
+    "expectancy_hist": 0.065,
+    "expectancy_rodante": -0.814,
+    "msg": "La senal 'strategy=ganesha' rendia 0.07 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo."
    }
   },
   {
    "id": "decay:signal=breakout24h+vol",
-   "texto": "Revisar o pausar la senal 'signal=breakout24h+vol': La senal 'signal=breakout24h+vol' rendia 0.22 USD/trade y en los ultimos 10 trades rinde -0.88. Puede estar muriendo.",
+   "texto": "Revisar o pausar la senal 'signal=breakout24h+vol': La senal 'signal=breakout24h+vol' rendia 0.07 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo.",
    "evidencia": {
     "tag": "signal=breakout24h+vol",
-    "n_total": 21,
+    "n_total": 22,
     "n_rodante": 10,
-    "expectancy_hist": 0.22,
-    "expectancy_rodante": -0.875,
-    "msg": "La senal 'signal=breakout24h+vol' rendia 0.22 USD/trade y en los ultimos 10 trades rinde -0.88. Puede estar muriendo."
+    "expectancy_hist": 0.065,
+    "expectancy_rodante": -0.814,
+    "msg": "La senal 'signal=breakout24h+vol' rendia 0.07 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo."
    }
   },
   {
    "id": "decay:atr_bucket=atr>4%",
-   "texto": "Revisar o pausar la senal 'atr_bucket=atr>4%': La senal 'atr_bucket=atr>4%' rendia 0.27 USD/trade y en los ultimos 9 trades rinde -0.55. Puede estar muriendo.",
+   "texto": "Revisar o pausar la senal 'atr_bucket=atr>4%': La senal 'atr_bucket=atr>4%' rendia 0.10 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo.",
    "evidencia": {
     "tag": "atr_bucket=atr>4%",
-    "n_total": 19,
-    "n_rodante": 9,
-    "expectancy_hist": 0.274,
-    "expectancy_rodante": -0.551,
-    "msg": "La senal 'atr_bucket=atr>4%' rendia 0.27 USD/trade y en los ultimos 9 trades rinde -0.55. Puede estar muriendo."
+    "n_total": 20,
+    "n_rodante": 10,
+    "expectancy_hist": 0.101,
+    "expectancy_rodante": -0.814,
+    "msg": "La senal 'atr_bucket=atr>4%' rendia 0.10 USD/trade y en los ultimos 10 trades rinde -0.81. Puede estar muriendo."
    }
   }
  ],
  "abiertas_ganesha": [
   "ACE/USDT",
+  "COTI/USDT",
   "DGB/USDT",
+  "EUL/USDT",
   "HEMI/USDT",
-  "LA/USDT",
   "ONDO/USDT",
   "PEOPLE/USDT",
   "PROM/USDT",
@@ -371,5 +372,5 @@
   "XEC/USDT",
   "ZAMA/USDT"
  ],
- "n_trades_consolidados": 23
+ "n_trades_consolidados": 24
 }
