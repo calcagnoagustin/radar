@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 185.68,
+ "equity_now": 184.13,
  "deposits_total": 0,
- "pnl_today": 4.42,
- "trades_today": 1,
- "realized_pnl": 6.95,
- "trades_total": 30,
- "win_rate": 43,
- "profit_factor": 1.12,
+ "pnl_today": 0.33,
+ "trades_today": 2,
+ "realized_pnl": 2.85,
+ "trades_total": 31,
+ "win_rate": 42,
+ "profit_factor": 1.05,
  "open_positions": [
   {
    "symbol": "SXT/USDT",
@@ -59,13 +59,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "ACE/USDT",
-   "entry": 0.1089,
-   "qty": 88.8,
-   "stop": 0.06281428571428571,
-   "tp1_done": false
-  },
-  {
    "symbol": "QI/USDT",
    "entry": 0.00148250747644408,
    "qty": 9764.0,
@@ -91,6 +84,13 @@
    "entry": 0.01324,
    "qty": 615.0,
    "stop": 0.01058107142857143,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BOME/USDT",
+   "entry": 0.0005924,
+   "qty": 47579.0,
+   "stop": 0.0005084499999999999,
    "tp1_done": false
   }
  ],
@@ -364,6 +364,15 @@
    "pnl_net": 4.42,
    "action": "stop",
    "closed_ts": 1785384435.3871164
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.1089,
+   "exit": 0.0628,
+   "qty_total": 88.8,
+   "pnl_net": -4.09,
+   "action": "stop",
+   "closed_ts": 1785442038.903147
   }
  ]
 }
