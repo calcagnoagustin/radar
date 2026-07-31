@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-30T00:16:30Z",
+ "generated_at": "2026-07-31T00:16:44Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 61.12390653,
+ "free_usdt": 67.62855737,
  "deposits": [],
  "positions": [
   {
@@ -14,17 +14,6 @@
    "dca_adds": 1,
    "tp_hit": [],
    "confirmed_at": "2026-07-14",
-   "note": ""
-  },
-  {
-   "symbol": "T/USDT",
-   "binance": "TUSDT",
-   "status": "seed",
-   "qty": 2024.2,
-   "avg_cost": 0.00494,
-   "dca_adds": 0,
-   "tp_hit": [],
-   "confirmed_at": null,
    "note": ""
   },
   {
@@ -190,6 +179,15 @@
    "qty_total": 46.43757463,
    "pnl_net": -4.2384,
    "closed_ts": 1785203053.021836
+  },
+  {
+   "symbol": "T/USDT",
+   "action": "STOP",
+   "entry": 0.00494,
+   "exit": 0.00322,
+   "qty_total": 2022.1,
+   "pnl_net": -3.478,
+   "closed_ts": 1785456918.0140922
   }
  ],
  "shortlist_full": [
@@ -617,7 +615,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-29T00:17:24Z",
+  "generated": "2026-07-30T00:18:38Z",
   "ranking": [
    {
     "atr_mult": 2.0,
