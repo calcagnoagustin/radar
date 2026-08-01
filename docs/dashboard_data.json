@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-31T00:16:44Z",
+ "generated_at": "2026-08-01T00:17:53Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 67.62855737,
@@ -29,21 +29,20 @@
   }
  ],
  "shortlist": [
-  "DEXE/USDT",
-  "PYTH/USDT",
-  "THETA/USDT",
-  "ANKR/USDT",
+  "CFX/USDT",
+  "ONDO/USDT",
+  "SEI/USDT",
+  "PUMP/USDT",
+  "COTI/USDT",
+  "GIGGLE/USDT",
   "UNI/USDT",
-  "SXT/USDT",
-  "T/USDT",
-  "SKL/USDT",
-  "ARB/USDT",
-  "ZEC/USDT",
-  "VANRY/USDT"
+  "PEPE/USDT",
+  "MMT/USDT",
+  "ERA/USDT"
  ],
  "narrativa_active": null,
  "regimen": "neutral",
- "last_brain_run": "2026-07-12",
+ "last_brain_run": "2026-08-01",
  "recent_closed": [
   {
    "symbol": "PYTH/USDT",
@@ -192,315 +191,288 @@
  ],
  "shortlist_full": [
   {
-   "symbol": "DEXE/USDT",
+   "symbol": "CFX/USDT",
    "rank": 1,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Ruptura confirmada en price discovery sobre ATH 2021 ($32.38) con float ultra-fino; comprar retrocesos a $28-32, invalidación bajo $27. Scanner score 6.4 stage 2 mom30 93.8%.",
-   "fundamentals": "Infra no-code para crear/gestionar DAOs con capa de validadores; sector gobernanza AI-native con $2.55B TVL en 229 DAOs y captura de fees al treasury.",
-   "catalyst": "Iniciativa 'Dexelization' (DAO Studio) mid-2026 e integración DeAI vía iExec; short squeeze reciente con 96% de liquidaciones en cortos.",
-   "signals": {
-    "google_trends": "repunte de búsquedas 'DeXe DAO' tras ATH",
-    "social": "euforia de breakout pero advertencias de sobrecompra (RSI/Stoch extremos)",
-    "binance": "nuevo top-100 por volumen (260->84), volumen sano ~$20-24M/día",
-    "onchain": "máximos históricos en whale txns, wallets nuevas y direcciones activas; >60% supply staked/off-exchange"
-   },
-   "risk": "Extendido y sobrecomprado; dependencia de la narrativa gobernanza y unlock Q4 2026 pueden revertir con fuerza. Float fino amplifica caídas.",
-   "sources": [
-    "https://ethnews.com/dexe-price-hits-new-all-time-high-after-violent-short-squeeze/",
-    "https://www.bitget.com/amp/news/detail/12560605498057"
-   ],
-   "tokenomics": {
-    "mcap": 1758336856,
-    "fdv": 3629657126,
-    "fdv_mcap": 2.06,
-    "float_pct": 48.4,
-    "cg_id": "dexe",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "PYTH/USDT",
-   "rank": 2,
    "type": "historica",
    "stage": "2",
-   "thesis": "Oráculo saliendo de base larga (-80% anual) con catalizador institucional fresco y buybacks vía revenue; scanner-friendly con rupturas activables. Comprar sobre confirmación de tendencia.",
-   "fundamentals": "Oráculo first-party líder que lleva data de mercado a smart contracts; pivote a modelo pago apuntando al sector de $50B+ de market data tradicional.",
-   "catalyst": "Nasdaq selecciona a Pyth para distribuir TotalView on-chain (30 jun); upgrade Pyth Core 31 julio con suscripciones pagas y revenue dirigido a compras de PYTH.",
+   "thesis": "Rompio canal descendente multi-mes con volumen +570%; comprar retesteos de $0.045-0.047 sobre medias con confirmacion de ruptura hacia $0.070.",
+   "fundamentals": "L1 regulatorio-compliant unico dentro del marco de China (Tree-Graph PoW+PoS); catalizador central es la stablecoin AxCNH (yuan offshore) para corredores Belt&Road y el upgrade Conflux 3.0 (15k TPS + infra RWA).",
+   "catalyst": "Expansion AxCNH en corredores comerciales asiaticos, partnership con Fireblocks (custodia institucional) y listado OKX; suministro en exchanges declinante.",
    "signals": {
-    "google_trends": "alza por integración Nasdaq",
-    "social": "buzz institucional fuerte (@PythNetwork 287K), entradas long celebradas",
-    "binance": "par líquido en top-100, rebote +6% con estabilización de mercado",
-    "onchain": "integración Arc testnet como oráculo core; nuevo revenue stream de TradFi"
+    "google_trends": "repunte de la narrativa 'Chinese Ethereum' en rallies",
+    "social": "chatter mezcla de setups tecnicos y narrativa China",
+    "binance": "nuevo en top-100 por volumen este ciclo",
+    "onchain": "caida de supply en exchanges y +570% volumen intradia"
    },
-   "risk": "Tokenomics con unlocks pendientes; el modelo pago podría reducir adopción permissionless. Beta alto a BTC.",
+   "risk": "Alta beta a BTC: si BTC corrige post-FOMC devuelve ganancias mas rapido que large-caps; dependiente de adopcion real de AxCNH.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/pyth-network/latest-updates/"
+    "https://coinstats.app/ai/a/latest-news-for-conflux-token",
+    "https://coinmarketcap.com/cmc-ai/conflux-network/latest-updates/"
    ],
    "tokenomics": {
-    "mcap": 370436010,
-    "fdv": 470396025,
-    "fdv_mcap": 1.27,
-    "float_pct": 78.7,
-    "cg_id": "pyth-network",
+    "mcap": 218641451,
+    "fdv": 218677654,
+    "fdv_mcap": 1.0,
+    "float_pct": 100.0,
+    "cg_id": "conflux-token",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "THETA/USDT",
+   "symbol": "ONDO/USDT",
+   "rank": 2,
+   "type": "momentum",
+   "stage": "2",
+   "thesis": "Lider RWA con rotacion de capital sectorial fresca; comprar continuacion sobre $0.40 con volumen, stop bajo el piso ~$0.35.",
+   "fundamentals": "Emisor DeFi-nativo dominante de treasuries y equities tokenizadas (>70% market share, ~$2.6-3.7B TVL); productos USDY/OUSG con revenue real y ahora Ondo Network + Ondo Perps.",
+   "catalyst": "DTCC iniciando produccion de valores tokenizados (jul 2026), lanzamiento Ondo Network/Perps y discusiones regulatorias SEC/CFTC favorables al sector RWA.",
+   "signals": {
+    "google_trends": "interes RWA en alza sostenida 2026",
+    "social": "rotacion visible hacia tokens RWA en X",
+    "binance": "scanner Stage 2 (sc 2.6, m30 +19.5%)",
+    "onchain": "TVL cruzando $1.5B+ y USDY/OUSG en 30+ protocolos DeFi"
+   },
+   "risk": "Token con captura de valor limitada del revenue del protocolo; presion de unlock (4.87B de 10B circulantes).",
+   "sources": [
+    "https://intellectia.ai/blog/rwa-tokenization-2026",
+    "https://en.bloomingbit.io/feed/news/116709"
+   ],
+   "tokenomics": {
+    "mcap": 1908187321,
+    "fdv": 3918787734,
+    "fdv_mcap": 2.05,
+    "float_pct": 48.7,
+    "cg_id": "ondo-finance",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "SEI/USDT",
    "rank": 3,
    "type": "historica",
    "stage": "2",
-   "thesis": "Reaceleración de volumen (222->66), +11% semanal desde piso multianual con narrativa DePIN/AI compute; solo con ruptura confirmada sobre SMA200 ($0.224) por riesgo legal. Comprar en fuerza, stop ajustado.",
-   "fundamentals": "Cloud descentralizado para AI/media con EdgeCloud GPU; validadores enterprise (Google, Samsung, Sony, Deutsche Telekom) y adopción académica.",
-   "catalyst": "Frameworks de LLM distribuido H2 2026, upgrade a GPUs H200, integración RapidAPI y economía de agentes AI con TFUEL.",
+   "thesis": "Saliendo de drawdown largo con ruptura desde soporte y cuna descendente; operar rupturas confirmadas con volumen, evitar comprar extendido.",
+   "fundamentals": "L1 orientado a trading/CLOB; upgrade Giga (200k TPS, sub-400ms) en H1 2026 y partnership Xiaomi (wallet pre-instalada + pagos stablecoin en 20k+ tiendas) como catalizador de adopcion masiva.",
+   "catalyst": "Rollout Giga, integracion Xiaomi Q2 2026, pending SEI ETF y pilot stablecoin Wyoming; DAA ya en 1.3M a inicios de 2026.",
    "signals": {
-    "google_trends": "interés moderado ligado a narrativa AI DePIN",
-    "social": "comunidad cautelosamente optimista, frustración por consolidación prolongada",
-    "binance": "salto de volumen 222->66, listado principal",
-    "onchain": "validador reshuffle, 10K+ nodos y 80 PetaFLOPS de compute"
+    "google_trends": "repunte con narrativa 'mass adoption 2026'",
+    "social": "traders marcan soporte y ruptura de trendline bajista",
+    "binance": "salto 147->86 en ranking de volumen",
+    "onchain": "TVL y transacciones diarias en fuerte crecimiento QoQ"
    },
-   "risk": "ALTO: demandas de whistleblowers (dic 2025) por presunto fraude/manipulación; cotiza bajo todas las medias clave y delistings recientes reducen liquidez. Fundamentos bullish pero long-term.",
+   "risk": "Overhang de unlocks de tokens y competencia con Solana/Sui; catalizadores dependen de ejecucion del roadmap.",
    "sources": [
-    "https://coinmarketcap.com/cmc-ai/theta-network/price-prediction/",
-    "https://coinmarketcap.com/cmc-ai/theta-network/latest-updates/"
+    "https://www.mexc.co/news/451399",
+    "https://coinmarketcap.com/top-stories/6a5f0c340787ae5558351f0f/"
    ],
    "tokenomics": {
-    "mcap": 152800559,
-    "fdv": 152800559,
-    "fdv_mcap": 1.0,
-    "float_pct": 100.0,
-    "cg_id": "theta-token",
+    "mcap": 280624370,
+    "fdv": 416768866,
+    "fdv_mcap": 1.49,
+    "float_pct": 67.3,
+    "cg_id": "sei-network",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "ANKR/USDT",
+   "symbol": "PUMP/USDT",
    "rank": 4,
-   "type": "historica",
+   "type": "momentum",
    "stage": "2",
-   "thesis": "Nuevo en top-100 por volumen desde niveles deprimidos (-97% del ATH); DePIN con utilidad real y catalizador RPCfi. Play de rotación a infra si BTC estabiliza; comprar rupturas sobre SMA200.",
-   "fundamentals": "Red de infraestructura RPC/nodos DePIN procesando >12 billones de requests/año para Microsoft, Tencent, Binance, Polygon; token para pago y staking.",
-   "catalyst": "RPCfi con Neura convierte tráfico RPC en yield on-chain (nuevo sink de ANKR); Heurist Chain L2 para AI descentralizado y arm enterprise Asphere.",
+   "thesis": "Absorbio unlock masivo sin colapsar y rompio $0.002 (maximo de 11 semanas); operar continuacion pero con stops ajustados por RSI sobrecomprado.",
+   "fundamentals": "Launchpad de memecoins en Solana con el buyback-and-burn mas agresivo del sector (quemo ~$370M, ~36% del supply; 50% del revenue neto a recompras 12 meses).",
+   "catalyst": "Mecanismo BOOST recuperando liquidez para buybacks, revenue diario record y absorcion exitosa del unlock de julio; compra publica de Ansem catalizo el rally.",
    "signals": {
-    "google_trends": "picos por episodios de FOMO retail (Upbit greed 95)",
-    "social": "interés especulativo y momentum, propenso a spikes regionales",
-    "binance": "nuevo en top-100 por volumen",
-    "onchain": ">1 billón de requests RPC mensuales; migración a fibra privada Asphere"
+    "google_trends": "pico en interes 'pump.fun' con el burn",
+    "social": "Ansem long ~$0.001675 detono el rally +27% semanal",
+    "binance": "volumen +500% vs niveles previos",
+    "onchain": ">41% del supply eliminado por buybacks/burns historicos"
    },
-   "risk": "Cap técnico fuerte en SMA200; supply totalmente circulante (10B) limita reflexividad; rallies suelen venderse. Historial de exploit en liquid staking.",
+   "risk": "RSI sobrecomprado y patron rising wedge sugieren pullback; riesgo regulatorio (MiCA/DAC8) y dependencia del revenue de la plataforma.",
    "sources": [
-    "https://www.bitget.com/news/detail/12560605313040",
-    "https://coinmarketcap.com/cmc-ai/ankr/price-prediction/"
+    "https://coinmarketcap.com/cmc-ai/pump-fun/latest-updates/",
+    "https://www.kucoin.com/news/flash/pump-fun-rallies-above-0-002-amid-boost-buybacks-and-major-token-unlock"
    ],
    "tokenomics": {
-    "mcap": 41280781,
-    "fdv": 41280781,
+    "mcap": 827164450,
+    "fdv": 1762752836,
+    "fdv_mcap": 2.13,
+    "float_pct": 39.6,
+    "cg_id": "pump-fun",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "COTI/USDT",
+   "rank": 5,
+   "type": "historica",
+   "stage": "2",
+   "thesis": "Top del scanner (sc 6.3, Stage 2, m30 +91.4%): momentum fuerte de mediana data; operar solo pullbacks a medias, no comprar extendido tras +91%.",
+   "fundamentals": "Infra de privacidad/pagos enterprise (garbled circuits, privacy-on-Ethereum); apuesta a confidencialidad on-chain alineada con el renacer de la narrativa privacidad de 2026.",
+   "catalyst": "Reaceleracion de momentum tecnico con la narrativa privacidad en foco tras el rally ZEC; rotacion sectorial.",
+   "signals": {
+    "google_trends": "narrativa privacidad reactivada en 2026",
+    "social": "interes en tokens de privacidad tras ZEC",
+    "binance": "scanner sc 6.3 Stage 2, m30 +91.4%",
+    "onchain": "expansion de actividad confidencial (a validar)"
+   },
+   "risk": "m30 +91% ya muy extendido: riesgo de comprar techo local; tesis de privacidad es de alta volatilidad bidireccional.",
+   "sources": [
+    "https://www.mexc.com/news/1113123"
+   ],
+   "tokenomics": {
+    "mcap": 47978143,
+    "fdv": 47978700,
+    "fdv_mcap": 1.0,
+    "float_pct": 60.3,
+    "cg_id": "coti",
+    "warning": "",
+    "penalty": 0
+   }
+  },
+  {
+   "symbol": "GIGGLE/USDT",
+   "rank": 7,
+   "type": "historica",
+   "stage": "2",
+   "thesis": "Scanner sc 6.3 Stage 2 (m30 +89.8%): momentum fuerte pero muy extendido; operar solo pullbacks a soporte, tamaño chico por ser memecoin.",
+   "fundamentals": "Memecoin BSC lanzado en Four.meme con modelo deflacionario: 5% tax convertido a BNB donado a Giggle Academy (>11,500 BNB / ~$7M donados), listado en Binance Spot.",
+   "catalyst": "Volumen en Binance alimenta quema/donacion; CZ defendio publicamente el modelo, manteniendo atencion; potencial integracion de fees de Binance Spot.",
+   "signals": {
+    "google_trends": "picos ligados a posts de CZ",
+    "social": "comunidad activa y debate CZ jul-2026",
+    "binance": "nuevo en top-100 por volumen; listado Spot",
+    "onchain": "5% tax deflacionario ligado a volumen de trading"
+   },
+   "risk": "CZ aclaro que NO es proyecto oficial: narrativa fragil y venta periodica de tokens donados; +89% ya extendido.",
+   "sources": [
+    "https://coinmarketcap.com/cmc-ai/giggle-fund/latest-updates/",
+    "https://www.cryptotimes.io/2026/07/31/binances-cz-responds-to-giggle-academy-meme-coin-criticism/"
+   ],
+   "tokenomics": {
+    "mcap": 47378087,
+    "fdv": 47378087,
     "fdv_mcap": 1.0,
     "float_pct": 100.0,
-    "cg_id": "ankr",
+    "cg_id": "giggle-fund",
     "warning": "",
     "penalty": 0
    }
   },
   {
    "symbol": "UNI/USDT",
-   "rank": 5,
+   "rank": 8,
    "type": "momentum",
    "stage": "2",
-   "thesis": "Scanner score 5.2 stage 2 mom30 46.2% con trending True: uno de los pocos candidatos con ruptura ACTIVA confirmada por el scanner. DEX líder, liquidez profunda. Comprar continuación.",
-   "fundamentals": "Token de gobernanza del mayor DEX; blue-chip DeFi con volúmenes y liquidez de primer nivel en Binance Spot.",
-   "catalyst": "Rotación selectiva hacia DeFi de calidad; narrativa de claridad regulatoria (borrador Clarity Act) favorece tokens de gobernanza establecidos.",
+   "thesis": "Scanner Stage 2 (sc 3.6, m30 +36.5%): blue-chip DeFi con momentum saludable y liquidez profunda; operar rupturas sobre medias.",
+   "fundamentals": "DEX lider de Ethereum; beneficiario de rotacion DeFi y de posibles mejoras de fee-switch/gobernanza; liquidez y profundidad de las mas sanas del sector.",
+   "catalyst": "Momentum de mediana data confirmado por scanner en un entorno de rotacion selectiva hacia DeFi con fundamentos.",
    "signals": {
-    "google_trends": "estable, base amplia de reconocimiento",
-    "social": "interés constante como referente DeFi",
-    "binance": "trending True en scanner, par de máxima liquidez",
-    "onchain": "volumen DEX y fees consistentes"
+    "google_trends": "interes estable en Uniswap",
+    "social": "discusion recurrente de fee-switch",
+    "binance": "scanner sc 3.6 Stage 2 m30 +36.5%",
+    "onchain": "volumen y TVL de DEX solidos"
    },
-   "risk": "Beta alto a ETH/BTC; upside menor que small-caps. Si BTC pierde $58K, arrastra a DeFi.",
+   "risk": "Large-cap: asimetria menor que small-caps; movimiento depende de continuidad del apetito DeFi.",
    "sources": [
     "https://coindcx.com/blog/crypto-deep-dives/crypto-bull-run/"
    ],
    "tokenomics": {
-    "mcap": 2266318164,
-    "fdv": 3259504066,
-    "fdv_mcap": 1.44,
-    "float_pct": 62.1,
+    "mcap": 2712823108,
+    "fdv": 3873002415,
+    "fdv_mcap": 1.43,
+    "float_pct": 62.5,
     "cg_id": "uniswap",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "SXT/USDT",
-   "rank": 6,
-   "type": "launch",
-   "stage": "2",
-   "thesis": "Scanner score 3.4 stage 3 trending True; launch reciente de Binance profundamente sobrevendido (RSI ~31, -95% del ATH) con backers de primer nivel. Micro-cap especulativo: tamaño chico, ruptura obligatoria.",
-   "fundamentals": "Primera base de datos verificable ZK (Proof of SQL) para smart contracts y agentes AI; respaldo de Microsoft (M12), Chainlink, Framework, Lightspeed.",
-   "catalyst": "Virtual Vaults para lending institucional (mayo 2026); inclusión en Grayscale Space and Time Trust; narrativa cruce ZK+AI+data.",
-   "signals": {
-    "google_trends": "bajo, proyecto emergente",
-    "social": "comunidad bullish pero mercado thin",
-    "binance": "listado en Binance vía Launchpool 2025, trending en scanner",
-    "onchain": "51%+ supply a comunidad; unlock 8 julio (~1.6% supply) ya absorbido"
-   },
-   "risk": "Liquidez muy fina ($2-4M/día) y volatilidad extrema; supply inflacionario con unlocks hasta 2029. Solo posición pequeña.",
-   "sources": [
-    "https://coinmarketcap.com/cmc-ai/space-and-time/price-prediction/",
-    "https://www.coingecko.com/en/coins/space-and-time"
-   ],
-   "tokenomics": {
-    "mcap": 24493346,
-    "fdv": 47124091,
-    "fdv_mcap": 1.92,
-    "float_pct": 52.0,
-    "cg_id": "space-and-time",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "T/USDT",
-   "rank": 7,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Nuevo en top-100 por volumen y scanner score 4.4 stage 2 mom30 28.1%: momentum de mediana data con ruptura activable. Threshold Network (privacidad/BTC bridge). Comprar continuación sobre ruptura.",
-   "fundamentals": "Red Threshold: tBTC (Bitcoin descentralizado en Ethereum) y servicios de criptografía de umbral/privacidad, alineado con narrativa privacidad activa este ciclo.",
-   "catalyst": "Renovado interés en privacidad (ZEC como top mover) y en bridges BTC descentralizados; salto de volumen fresco.",
-   "signals": {
-    "google_trends": "moderado, ligado a narrativa privacidad/tBTC",
-    "social": "interés creciente en el sector privacidad",
-    "binance": "nuevo en top-100 por volumen",
-    "onchain": "crecimiento de tBTC como colateral descentralizado"
-   },
-   "risk": "Momentum sin catalizador único fuerte; supply grande. Beta a BTC.",
-   "sources": [
-    "https://thecurrencyanalytics.com/daily-movers/macro-signals-steer-crypto-as-risk-sentiment-shifts-271853"
-   ],
-   "tokenomics": {
-    "mcap": 53951010,
-    "fdv": 53951010,
-    "fdv_mcap": 1.0,
-    "float_pct": 100.0,
-    "cg_id": "threshold-network-token",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "SKL/USDT",
-   "rank": 8,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Scanner score 3.5 stage 2 mom30 9.2%: inicio temprano de reaceleración desde base baja. SKALE (compute L2 gas-free). Entrada temprana Stage 1->2 si confirma volumen.",
-   "fundamentals": "Red L2 modular de ejecución sin gas fees para dApps/gaming/AI; sector infra escalabilidad relevante en 2026.",
-   "catalyst": "Narrativa de escalabilidad y gaming/AI on-chain; volumen apareciendo en scanner desde niveles deprimidos.",
-   "signals": {
-    "google_trends": "bajo, temprano en el ciclo",
-    "social": "interés incipiente",
-    "binance": "presente en scanner stage 2",
-    "onchain": "actividad de dApps sin gas como métrica de adopción"
-   },
-   "risk": "Mom30 aún bajo (9.2%): ruptura no confirmada, puede quedar lateral. Requiere paciencia y timing del jardinero.",
-   "sources": [
-    "https://coindcx.com/blog/crypto-deep-dives/crypto-bull-run/"
-   ],
-   "tokenomics": {
-    "mcap": 28220230,
-    "fdv": 29240191,
-    "fdv_mcap": 1.04,
-    "float_pct": 87.1,
-    "cg_id": "skale",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "ARB/USDT",
+   "symbol": "PEPE/USDT",
    "rank": 9,
    "type": "momentum",
-   "stage": "2",
-   "thesis": "Scanner score 3.2 stage 2 mom30 13.9%: L2 blue-chip sobrevendido con posible reaceleración. Comprar ruptura confirmada de rango; liquidez profunda en Binance.",
-   "fundamentals": "Arbitrum, principal rollup optimista de Ethereum por TVL y actividad; ecosistema DeFi/infra amplio.",
-   "catalyst": "Rotación selectiva a L2 de calidad si BTC estabiliza; expansión continua de escalabilidad L2 destacada en outlook 2026.",
+   "stage": "1",
+   "thesis": "Scanner Stage 1 con trigger ACTIVO (tr True, m30 +12.7%): transicion temprana 1->2 en gestacion; entrar solo si confirma ruptura de base con volumen.",
+   "fundamentals": "Memecoin de alta liquidez y beta; vehiculo de rotacion risk-on retail cuando el apetito especulativo regresa.",
+   "catalyst": "Ruptura de base incipiente marcada por el scanner; retorno de flujos especulativos en memecoins (spillover de PUMP/Solana).",
    "signals": {
-    "google_trends": "estable, alta notoriedad",
-    "social": "seguimiento fuerte como L2 líder",
-    "binance": "par líquido, stage 2 en scanner",
-    "onchain": "TVL y actividad L2 líderes del sector"
+    "google_trends": "repuntes ligados a movimientos meme",
+    "social": "comunidad amplia y activa",
+    "binance": "liquidez profunda en Spot",
+    "onchain": "acumulacion temprana Stage 1 a confirmar"
    },
-   "risk": "Presión de unlocks/emisiones históricas; beta alto a ETH. Upside limitado vs small-caps.",
+   "risk": "Stage 1: sin confirmacion de tendencia aun; puro sentimiento, sin fundamentales; falso breakout probable.",
    "sources": [
-    "https://coindcx.com/blog/crypto-deep-dives/crypto-bull-run/"
+    "https://blog.kraken.com/crypto-education/crypto-markets-in-2026"
    ],
    "tokenomics": {
-    "mcap": 607170191,
-    "fdv": 954243847,
-    "fdv_mcap": 1.57,
-    "float_pct": 63.6,
-    "cg_id": "arbitrum",
-    "warning": "",
-    "penalty": 0
-   }
-  },
-  {
-   "symbol": "ZEC/USDT",
-   "rank": 10,
-   "type": "momentum",
-   "stage": "2",
-   "thesis": "Top mover reciente junto a SOL/LINK/ADA con narrativa privacidad reacelerando; scanner score 3.0 stage 2 mom30 23.8%. Play de sector caliente; comprar en fuerza con stop bajo soporte.",
-   "fundamentals": "Zcash, moneda de privacidad de referencia (zk-SNARKs); sector privacidad recibiendo flujo especulativo este ciclo.",
-   "catalyst": "Reaceleración de la narrativa privacidad; ZEC figurando repetidamente entre los top movers diarios de julio.",
-   "signals": {
-    "google_trends": "repunte por narrativa privacidad",
-    "social": "interés creciente en el sector privacy coins",
-    "binance": "listado principal, aparece en top movers",
-    "onchain": "aumento de transacciones blindadas como métrica de uso"
-   },
-   "risk": "Riesgo regulatorio sobre monedas de privacidad; movimientos rápidos y reversibles. Sesgo cauteloso del régimen.",
-   "sources": [
-    "https://thecurrencyanalytics.com/daily-movers/macro-signals-steer-crypto-as-risk-sentiment-shifts-271853"
-   ],
-   "tokenomics": {
-    "mcap": 8556571001,
-    "fdv": 8557364847,
+    "mcap": 1162778716,
+    "fdv": 1162778716,
     "fdv_mcap": 1.0,
-    "float_pct": 80.0,
-    "cg_id": "zcash",
+    "float_pct": 100.0,
+    "cg_id": "pepe",
     "warning": "",
     "penalty": 0
    }
   },
   {
-   "symbol": "VANRY/USDT",
-   "rank": 11,
+   "symbol": "MMT/USDT",
+   "rank": 6,
    "type": "momentum",
    "stage": "2",
-   "thesis": "Scanner score 3.4 stage 2 mom30 64.1%: momentum fuerte de mediana data. Vanar Chain (L1 para entretenimiento/AI/gaming). Play especulativo con ruptura; tamaño chico.",
-   "fundamentals": "Vanar Chain: L1 EVM enfocada en marcas, gaming, metaverso y AI; narrativa consumer/entertainment.",
-   "catalyst": "Momentum de volumen elevado (mom30 64%) y narrativa gaming/AI; en fase temprana de expansión.",
+   "thesis": "Scanner Stage 2 con trigger de ruptura ACTIVO (tr True, m30 +36%): setup accionable inmediato para el timing diario; entrar en confirmacion de breakout.",
+   "fundamentals": "Token de ecosistema DeFi de mediana data en reaceleracion; sc 5.1 indica alineacion de indicadores alcistas.",
+   "catalyst": "Ruptura tecnica confirmada por el scanner con momentum saludable, no parabolico.",
    "signals": {
-    "google_trends": "bajo, nicho",
-    "social": "interés especulativo creciente",
-    "binance": "stage 2 con mom30 alto en scanner",
-    "onchain": "crecimiento de actividad de la cadena consumer"
+    "google_trends": "n/d relevante",
+    "social": "interes creciente en el par",
+    "binance": "scanner sc 5.1 Stage 2 m30 +36% tr True",
+    "onchain": "a validar liquidez y actividad"
    },
-   "risk": "Small-cap volátil con liquidez limitada; narrativa consumer/gaming poco probada. Riesgo de reversión rápida.",
+   "risk": "Menor cobertura fundamental/noticiosa: liquidez y catalizador a verificar antes de tamaño pleno. | TOKENOMICS: float 20.4% (poco supply circulando)",
    "sources": [
-    "https://coindcx.com/blog/crypto-deep-dives/crypto-bull-run/"
+    "https://www.coinbase.com/institutional/research-insights/research/market-intelligence/2026-crypto-market-outlook"
    ],
    "tokenomics": {
-    "mcap": 12208693,
-    "fdv": 13499530,
-    "fdv_mcap": 1.11,
-    "float_pct": 89.6,
-    "cg_id": "vanar-chain",
-    "warning": "",
-    "penalty": 0
+    "mcap": 41926825,
+    "fdv": 205427560,
+    "fdv_mcap": 4.9,
+    "float_pct": 20.4,
+    "cg_id": "momentum-3",
+    "warning": "float 20.4% (poco supply circulando)",
+    "penalty": 1
+   }
+  },
+  {
+   "symbol": "ERA/USDT",
+   "rank": 10,
+   "type": "launch",
+   "stage": "2",
+   "thesis": "Launch reciente de Binance con salto de ranking 176->55: expansion temprana de volumen; operar solo primera ruptura limpia con volumen, tamaño chico.",
+   "fundamentals": "Token de lanzamiento reciente en Binance; canasta launch de alta rotacion inicial, requiere validar utilidad/sector antes de escalar.",
+   "catalyst": "Reaceleracion de volumen y visibilidad post-listado en Binance Spot.",
+   "signals": {
+    "google_trends": "pico tipico post-listado",
+    "social": "atencion elevada de nuevos listados",
+    "binance": "salto 176->55 en ranking de volumen",
+    "onchain": "a validar distribucion y liquidez"
+   },
+   "risk": "Launch reciente: precio-descubrimiento volatil, historia corta y liquidez a confirmar; alto riesgo de Stage 3 rapido. | TOKENOMICS: FDV/MCAP 5.72x (dilucion alta); float 17.5% (poco supply circulando)",
+   "sources": [
+    "https://www.coinbase.com/institutional/research-insights/research/market-intelligence/2026-crypto-market-outlook"
+   ],
+   "tokenomics": {
+    "mcap": 11974499,
+    "fdv": 68523598,
+    "fdv_mcap": 5.72,
+    "float_pct": 17.5,
+    "cg_id": "caldera",
+    "warning": "FDV/MCAP 5.72x (dilucion alta); float 17.5% (poco supply circulando)",
+    "penalty": 1
    }
   }
  ],
@@ -612,10 +584,27 @@
     "VANRY/USDT"
    ],
    "regimen": "neutral"
+  },
+  {
+   "date": "2026-08-01",
+   "narrativa": null,
+   "shortlist": [
+    "CFX/USDT",
+    "ONDO/USDT",
+    "SEI/USDT",
+    "PUMP/USDT",
+    "COTI/USDT",
+    "GIGGLE/USDT",
+    "UNI/USDT",
+    "PEPE/USDT",
+    "MMT/USDT",
+    "ERA/USDT"
+   ],
+   "regimen": "neutral"
   }
  ],
  "loop_recs": {
-  "generated": "2026-07-30T00:18:38Z",
+  "generated": "2026-07-31T00:19:01Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -649,44 +638,28 @@
    }
   ]
  },
- "alertas": [],
+ "alertas": [
+  {
+   "nivel": "amarillo",
+   "texto": "Refuerzo (DCA) de PYTH/USDT pendiente: $23 esperando timing (Stage 2 + cierre en maximos). Por diseno nunca promedia a la baja."
+  }
+ ],
  "garden_plan_pub": {
-  "month": "2026-07",
+  "month": "2026-08",
   "verdicts": [
-   {
-    "symbol": "SYN/USDT",
-    "verdict": "mantener",
-    "dca_usdt": 0,
-    "razon": "El +770% mom fue rally puramente técnico/momentum sin catalizador fundamental nuevo y ya corrigió ~33% en una semana, con overhang del bankruptcy 2024; tesis viva pero frágil, no reforzar en régimen cauteloso.",
-    "estado": "sin accion (mantener)"
-   },
-   {
-    "symbol": "MANTA/USDT",
-    "verdict": "mantener",
-    "dca_usdt": 0,
-    "razon": "Stage 2 y trending pero sin catalizador fresco y momentum enfriándose; sin ruptura confirmada nueva, mantener sin agregar capital limitado.",
-    "estado": "sin accion (mantener)"
-   },
-   {
-    "symbol": "ATM/USDT",
-    "verdict": "liquidar",
-    "dca_usdt": 0,
-    "razon": "Fan token de Atlético sin narrativa de sector activa este ciclo, trending False y liquidez pobre; el capital rinde más en candidatos con catalizador y ruptura real.",
-    "estado": "resuelto"
-   },
    {
     "symbol": "PYTH/USDT",
     "verdict": "reforzar",
-    "dca_usdt": 24,
-    "razon": "Catalizador institucional fresco y accionable (Nasdaq TotalView on-chain + upgrade Pyth Core 31 julio con revenue a buybacks) y salida de base larga; asigno el grueso del presupuesto por ser la tesis más fuerte con tendencia acompañando.",
-    "estado": "ejecutado"
+    "dca_usdt": 23,
+    "razon": "Tesis viva: oraculo first-party saliendo de base larga (~$0.047-0.049) con Pyth Pro superando $1M ARR y el mecanismo Reserve comprando PYTH con revenue; partnership con Dept. of Commerce sostiene la narrativa institucional. Reforzar solo si la tendencia confirma sobre medias; unlock de mayo ya digerido.",
+    "estado": "esperando timing (Stage 2 + maximos)"
    },
    {
     "symbol": "ZEC/USDT",
-    "verdict": "reforzar",
-    "dca_usdt": 20,
-    "razon": "Posición dust ($9.5) pero tesis viva: privacidad reacelerando y ZEC entre top movers diarios; refuerzo pequeño para llevarla a tamaño operativo si la tendencia y el veto Stage 2 lo permiten.",
-    "estado": "ejecutado"
+    "verdict": "mantener",
+    "dca_usdt": 0,
+    "razon": "Tesis de privacidad sigue viva (SEC cerro investigacion, shielded pool ~30%, ETF Grayscale pendiente) pero tras rally de $250 a ~$500-675 el activo esta extendido/Stage 3 en zonas altas; no perseguir aca, mantener y dejar correr sin agregar.",
+    "estado": "sin accion (mantener)"
    }
   ]
  },
