@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-31T00:19:01Z",
+ "generated": "2026-08-01T00:18:54Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -300,10 +300,10 @@
  "propuestas": [
   {
    "id": "grid_atr_drift",
-   "texto": "El atr_mult vivo (2.5) lleva 11 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
+   "texto": "El atr_mult vivo (2.5) lleva 12 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
    "evidencia": {
-    "runs_live_fuera_top3": 11,
-    "hist_n": 11
+    "runs_live_fuera_top3": 12,
+    "hist_n": 12
    }
   }
  ],
