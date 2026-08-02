@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-01T00:18:54Z",
+ "generated": "2026-08-02T00:17:44Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -24,13 +24,13 @@
     "max_dd_usd": -22.02
    },
    "ult_30d": {
-    "n": 27,
-    "win_rate": 25.9,
-    "pnl_total": -0.89,
-    "expectancy_usd": -0.033,
+    "n": 25,
+    "win_rate": 28.0,
+    "pnl_total": -0.63,
+    "expectancy_usd": -0.025,
     "expectancy_r": 0.05,
     "profit_factor": 0.99,
-    "payoff": 2.82,
+    "payoff": 2.55,
     "max_dd_usd": -22.02
    },
    "ult_90d": {
@@ -108,14 +108,14 @@
     "max_dd_usd": -3.74
    },
    "ult_30d": {
-    "n": 3,
+    "n": 1,
     "win_rate": 0.0,
-    "pnl_total": -3.74,
-    "expectancy_usd": -1.247,
+    "pnl_total": -3.48,
+    "expectancy_usd": -3.478,
     "expectancy_r": null,
     "profit_factor": 0.0,
     "payoff": null,
-    "max_dd_usd": -3.74
+    "max_dd_usd": -3.48
    },
    "ult_90d": {
     "n": 3,
@@ -300,10 +300,10 @@
  "propuestas": [
   {
    "id": "grid_atr_drift",
-   "texto": "El atr_mult vivo (2.5) lleva 12 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
+   "texto": "El atr_mult vivo (2.5) lleva 13 corridas fuera del top-3 de la grilla de sims. Considerar ajustarlo al lider actual.",
    "evidencia": {
-    "runs_live_fuera_top3": 12,
-    "hist_n": 12
+    "runs_live_fuera_top3": 13,
+    "hist_n": 13
    }
   }
  ],
