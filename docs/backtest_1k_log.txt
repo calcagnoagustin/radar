@@ -1,0 +1,112 @@
+PY=/home/opc/bot_semillas/venv/bin/python3
+Mon Aug  3 02:41:55 PM UTC 2026
+[bt1k] ACE/USDT ok (11519 velas)
+[bt1k] ATM/USDT ok (11519 velas)
+[bt1k] BANK/USDT ok (11519 velas)
+[bt1k] BOME/USDT ok (11519 velas)
+[bt1k] COTI/USDT ok (11519 velas)
+[bt1k] DEXE/USDT ok (11519 velas)
+[bt1k] DGB/USDT ok (11519 velas)
+[bt1k] DIA/USDT ok (11519 velas)
+[bt1k] DODO/USDT ok (11519 velas)
+[bt1k] ERA/USDT ok (11519 velas)
+[bt1k] EUL/USDT ok (11519 velas)
+[bt1k] HEMI/USDT ok (11519 velas)
+[bt1k] KAITO/USDT ok (11519 velas)
+[bt1k] LA/USDT ok (11519 velas)
+[bt1k] ONDO/USDT ok (11519 velas)
+[bt1k] PEOPLE/USDT ok (11519 velas)
+[bt1k] PORTO/USDT ok (11519 velas)
+[bt1k] PROM/USDT ok (11519 velas)
+[bt1k] QI/USDT ok (11519 velas)
+[bt1k] SKL/USDT ok (11519 velas)
+[bt1k] SXT/USDT ok (11519 velas)
+[bt1k] T/USDT ok (11519 velas)
+[bt1k] XEC/USDT ok (11519 velas)
+[bt1k] YB/USDT ok (11519 velas)
+[bt1k] ZAMA/USDT ok (11519 velas)
+[bt1k] variante base -> pnl -47.51
+[bt1k] variante parab -> pnl -53.04
+[bt1k] variante escalera -> pnl -132.20
+[bt1k] variante esc+parab -> pnl -133.26
+[bt1k] variante esc+parab+trail -> pnl 67.86
+{
+ "base": {
+  "n": 119,
+  "wr": 33.6,
+  "pnl": -47.51,
+  "final": 938.26,
+  "ret_pct": -4.8,
+  "pf": 0.95,
+  "max_dd_pct": -44.9,
+  "avg_win": 24.15,
+  "max_win": 75.17,
+  "pnl_sin_mejor": -122.68,
+  "cargas": 0,
+  "captura_pico": -158.7
+ },
+ "parab": {
+  "n": 120,
+  "wr": 33.3,
+  "pnl": -53.04,
+  "final": 932.74,
+  "ret_pct": -5.3,
+  "pf": 0.95,
+  "max_dd_pct": -44.9,
+  "avg_win": 24.07,
+  "max_win": 74.69,
+  "pnl_sin_mejor": -127.73,
+  "cargas": 0,
+  "captura_pico": -158.8
+ },
+ "escalera": {
+  "n": 102,
+  "wr": 28.4,
+  "pnl": -132.2,
+  "final": 853.95,
+  "ret_pct": -13.2,
+  "pf": 0.85,
+  "max_dd_pct": -46.3,
+  "avg_win": 26.72,
+  "max_win": 67.45,
+  "pnl_sin_mejor": -199.66,
+  "cargas": 36,
+  "captura_pico": -166.6
+ },
+ "esc+parab": {
+  "n": 102,
+  "wr": 28.4,
+  "pnl": -133.26,
+  "final": 852.9,
+  "ret_pct": -13.3,
+  "pf": 0.85,
+  "max_dd_pct": -46.3,
+  "avg_win": 26.63,
+  "max_win": 67.35,
+  "pnl_sin_mejor": -200.61,
+  "cargas": 37,
+  "captura_pico": -167.2
+ },
+ "esc+parab+trail": {
+  "n": 116,
+  "wr": 29.3,
+  "pnl": 67.86,
+  "final": 1050.86,
+  "ret_pct": 6.8,
+  "pf": 1.06,
+  "max_dd_pct": -43.2,
+  "avg_win": 34.2,
+  "max_win": 90.89,
+  "pnl_sin_mejor": -23.03,
+  "cargas": 41,
+  "captura_pico": -177.9
+ }
+}
+Traceback (most recent call last):
+  File "/tmp/bt1k.py", line 339, in <module>
+    main()
+  File "/tmp/bt1k.py", line 335, in main
+    publish("backtest_1k.json")
+NameError: name 'publish' is not defined
+EXIT=1
+Mon Aug  3 02:43:56 PM UTC 2026
