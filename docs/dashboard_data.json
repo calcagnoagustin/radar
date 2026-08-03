@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-08-02T00:16:41Z",
+ "generated_at": "2026-08-03T00:16:37Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 57.62970137,
+ "free_usdt": 81.62970137,
  "deposits": [],
  "positions": [
   {
    "symbol": "PUMP/USDT",
    "binance": "PUMPUSDT",
-   "status": "seed",
+   "status": "confirmed",
    "qty": 4668.0,
    "avg_cost": 0.002142,
    "dca_adds": 0,
    "tp_hit": [],
-   "confirmed_at": null,
+   "confirmed_at": "2026-08-03",
    "note": ""
   },
   {
@@ -624,7 +624,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-01T00:18:54Z",
+  "generated": "2026-08-02T00:17:44Z",
   "ranking": [
    {
     "atr_mult": 2.0,
