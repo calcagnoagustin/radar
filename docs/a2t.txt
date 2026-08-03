@@ -1,0 +1,3 @@
+/home/opc/bot_semillas/venv/bin/python3: can't open file '/tmp/anat2.py': [Errno 2] No such file or directory
+EXIT=2
+ls: cannot access '/tmp/anatomia2.json': No such file or directory
