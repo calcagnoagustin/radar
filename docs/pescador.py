@@ -156,28 +156,53 @@ def prefiltro(ex):
 
 
 def confirmar(ex, sym, qv_hoy, pc_hoy):
-    """Segunda pasada sobre velas diarias: semana >= +20% y volumen >= 15x."""
+    """Segunda pasada sobre la ULTIMA VELA DIARIA CERRADA.
+
+    Critico: se usa la vela cerrada, nunca la del dia en curso. El backtest se
+    midio asi (confirmacion al cierre UTC, entrada a la apertura siguiente) y
+    la vela en curso tiene volumen parcial: subestima qv y vol_ratio, y hace
+    disparar con datos que todavia no existen. Ademas se re-chequean los
+    CUATRO umbrales aca, no solo semana y ratio: el prefiltro por ticker es
+    criba barata sobre el rolling 24h, no la confirmacion."""
     try:
-        d = ex.fetch_ohlcv(sym, "1d", limit=P["vol_median_n"] + 10)
+        d = ex.fetch_ohlcv(sym, "1d", limit=P["vol_median_n"] + 12)
     except Exception:
         return None
-    if len(d) < P["vol_median_n"] + 8:
+    if len(d) < P["vol_median_n"] + 9:
         return None
-    hoy = d[-1]
-    prev = d[:-1]
+    # d[-1] es la vela EN CURSO (incompleta) -> se descarta
+    cerr = d[:-1]
+    vela = cerr[-1]
+    prev = cerr[:-1]
     c = [x[4] for x in prev]
     q = [x[5] * x[4] for x in prev]
     if len(c) < 8:
         return None
-    wk = 100 * (hoy[4] / c[-7] - 1) if c[-7] > 0 else 0
-    med = st.median(q[-P["vol_median_n"]:]) or 1
-    qv = hoy[5] * hoy[4] or qv_hoy
-    vr = qv / med
-    if wk < P["min_week_pct"] or vr < P["vol_ratio"]:
+
+    # la confirmacion tiene que ser del cierre mas reciente, no de hace dias
+    edad_h = (time.time() - vela[0] / 1000.0) / 3600.0
+    if edad_h > 30:
         return None
-    return {"symbol": sym, "px": hoy[4], "dia_pct": round(pc_hoy, 2),
-            "sem_pct": round(wk, 2), "vol_ratio": round(vr, 1),
-            "qv_musd": round(qv / 1e6, 1)}
+
+    px = vela[4]
+    qv = vela[5] * vela[4]
+    pc = 100 * (px / c[-1] - 1) if c[-1] > 0 else 0
+    wk = 100 * (px / c[-7] - 1) if c[-7] > 0 else 0
+    med = st.median(q[-P["vol_median_n"]:]) or 1
+    vr = qv / med
+    if (qv < P["min_qv_usd"] or pc < P["min_day_pct"]
+            or wk < P["min_week_pct"] or vr < P["vol_ratio"]):
+        return None
+
+    # precio de entrada = mercado actual, no el cierre de ayer
+    try:
+        px_now = ex.fetch_ticker(sym)["last"] or px
+    except Exception:
+        px_now = px
+    return {"symbol": sym, "px": px_now, "px_cierre": px,
+            "dia_pct": round(pc, 2), "sem_pct": round(wk, 2),
+            "vol_ratio": round(vr, 1), "qv_musd": round(qv / 1e6, 1),
+            "vela_ts": vela[0], "edad_h": round(edad_h, 1)}
 
 
 # --------------------------------------------------------------------------
@@ -492,6 +517,7 @@ def main():
     stt.setdefault("realized_pnl", 0.0)
     stt.setdefault("trades_total", 0)
     stt.setdefault("equity_paper", 1000.0)
+    stt.setdefault("ultima_vela", {})
 
     ex, live = get_ex()
     log({"type": "RUN", "modo": "LIVE" if live else "PAPER",
@@ -519,7 +545,10 @@ def main():
             sig = confirmar(ex, sym, qv, pc)
             if not sig:
                 continue
+            if stt.get("ultima_vela", {}).get(sym) == sig["vela_ts"]:
+                continue
             log({"type": "CONFIRMACION", **sig})
+            stt.setdefault("ultima_vela", {})[sym] = sig["vela_ts"]
             if entrar(ex, live, stt, sig, eq, cash, reg):
                 cash = cash_libre(ex, live, stt, eq)
 
