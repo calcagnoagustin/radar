@@ -1,0 +1,37 @@
+38d1a60fa4780f14824e5b3648a4a6df  /home/opc/bot_semillas/pescador.py
+esperado=38d1a60fa4780f14824e5b3648a4a6df
+SINTAXIS_OK
+[pescador] {"type": "RUN", "modo": "PAPER", "abiertas": 0, "ts": 1785814483.8198617, "iso": "2026-08-04T03:34:43Z"}
+[pescador] {"type": "REGIMEN", "px": 63520.0, "ema200": 71007.16, "sobre_ema200": false, "vs_ema200_pct": -10.54, "btc30_pct": 0.6, "ts": 1785814489.2592814, "iso": "2026-08-04T03:34:49Z"}
+[pescador] {"type": "CONFIRMACION", "symbol": "VIC/USDT", "px": 0.0592, "px_cierre": 0.0524, "dia_pct": 53.67, "sem_pct": 51.01, "vol_ratio": 88.0, "qv_musd": 21.2, "vela_ts": 1785715200000, "edad_h": 27.6, "ts": 1785814491.491005, "iso": "2026-08-04T03:34:51Z"}
+[pescador] {"type": "ENTRY", "symbol": "VIC/USDT", "px": 0.0592, "qty": 4222.97297297, "notional": 250.0, "tp": 0.06808, "sl": 0.04736, "vol_ratio": 88.0, "qv_musd": 21.2, "sem_pct": 51.01, "modo": "PAPER", "ts": 1785814491.4927719, "iso": "2026-08-04T03:34:51Z"}
+[notify] exec_alert: PESCADOR_ENTRY VIC/USDT: Pescador PAPER: entrada VIC/USDT @ 0.0592, $250, vol 88.0x, semana +51%. TP 0.06808 / SL 0.04736, salida forzada en 24h.
+[pescador] {"type": "FIN", "equity": 1000.0, "abiertas": 1, "trades": 0, "wr": 0, "pf": 0, "ts": 1785814497.1737003, "iso": "2026-08-04T03:34:57Z"}
+--- state limpio ---
+{
+ "positions": {
+  "VIC/USDT": {
+   "entry": 0.0592,
+   "qty": 4222.9729729729725,
+   "tp": 0.06808,
+   "sl": 0.047360000000000006,
+   "prot": null,
+   "abierta_ts": 1785814491.4927573,
+   "notional": 250.0,
+   "dia_pct": 53.67,
+   "sem_pct": 51.01,
+   "vol_ratio": 88.0,
+   "qv_musd": 21.2,
+   "btc_sobre_ema200": false,
+   "btc_vs_ema200_pct": -10.54
+  }
+ },
+ "closed": [],
+ "cooldown": {},
+ "realized_pnl": 0.0,
+ "trades_total": 0,
+ "equity_paper": 1000.0,
+ "ultima_vela": {
+  "VIC/USDT": 1785715200000
+ }
+}
