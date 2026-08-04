@@ -1,0 +1,29 @@
+{
+ "generated_at": "2026-08-04T02:29:30Z",
+ "modo": "PAPER",
+ "equity_now": 1000.0,
+ "realized_pnl": 0.0,
+ "trades_total": 0,
+ "win_rate": 0,
+ "profit_factor": 0,
+ "reglas": {
+  "tp_pct": 15.0,
+  "sl_pct": 20.0,
+  "max_hold_h": 24.0,
+  "size_pct": 25.0,
+  "vol_ratio": 15.0,
+  "min_qv_usd": 10000000
+ },
+ "open_positions": [
+  {
+   "symbol": "VIC/USDT",
+   "entry": 0.0611,
+   "qty": 4091.6530278232403,
+   "tp": 0.070265,
+   "sl": 0.04888000000000001,
+   "horas": 0.0,
+   "vol_ratio": 19.2
+  }
+ ],
+ "recent_closed": []
+}
