@@ -1,0 +1,33 @@
+{"type": "RUN", "modo": "PAPER", "abiertas": 0, "ts": 1785810561.8015075, "iso": "2026-08-04T02:29:21Z"}
+{"type": "REGIMEN", "px": 63520.0, "ema200": 71007.16, "sobre_ema200": false, "vs_ema200_pct": -10.54, "btc30_pct": 0.6, "ts": 1785810568.052934, "iso": "2026-08-04T02:29:28Z"}
+{"type": "CONFIRMACION", "symbol": "VIC/USDT", "px": 0.0611, "dia_pct": 80.83, "sem_pct": 76.59, "vol_ratio": 19.2, "qv_musd": 4.6, "ts": 1785810570.0336518, "iso": "2026-08-04T02:29:30Z"}
+{"type": "ENTRY", "symbol": "VIC/USDT", "px": 0.0611, "qty": 4091.65302782, "notional": 250.0, "tp": 0.070265, "sl": 0.04888, "vol_ratio": 19.2, "qv_musd": 4.6, "sem_pct": 76.59, "modo": "PAPER", "ts": 1785810570.0339143, "iso": "2026-08-04T02:29:30Z"}
+{"type": "FIN", "equity": 1000.0, "abiertas": 1, "trades": 0, "wr": 0, "pf": 0, "ts": 1785810571.8814554, "iso": "2026-08-04T02:29:31Z"}
+{"type": "RUN", "modo": "PAPER", "abiertas": 1, "ts": 1785812199.7962565, "iso": "2026-08-04T02:56:39Z"}
+{"type": "REGIMEN", "px": 63520.0, "ema200": 71007.16, "sobre_ema200": false, "vs_ema200_pct": -10.54, "btc30_pct": 0.6, "ts": 1785812208.3374257, "iso": "2026-08-04T02:56:48Z"}
+{"type": "FIN", "equity": 1000.0, "abiertas": 1, "trades": 0, "wr": 0, "pf": 0, "ts": 1785812211.5323668, "iso": "2026-08-04T02:56:51Z"}
+--- STATE ---
+{
+ "positions": {
+  "VIC/USDT": {
+   "entry": 0.0611,
+   "qty": 4091.6530278232403,
+   "tp": 0.070265,
+   "sl": 0.04888000000000001,
+   "prot": null,
+   "abierta_ts": 1785810570.033889,
+   "notional": 250.0,
+   "dia_pct": 80.83,
+   "sem_pct": 76.59,
+   "vol_ratio": 19.2,
+   "qv_musd": 4.6,
+   "btc_sobre_ema200": false,
+   "btc_vs_ema200_pct": -10.54
+  }
+ },
+ "closed": [],
+ "cooldown": {},
+ "realized_pnl": 0.0,
+ "trades_total": 0,
+ "equity_paper": 1000.0
+}
