@@ -1,9 +1,6 @@
-Traceback (most recent call last):
-  File "/tmp/p5.py", line 10, in <module>
-    sl=(e/e30-1)*100
-ZeroDivisionError: float division by zero
-Traceback (most recent call last):
-  File "/tmp/p6.py", line 3, in <module>
-    H=json.load(open("/tmp/p5h.json"));out=[]
-FileNotFoundError: [Errno 2] No such file or directory: '/tmp/p5h.json'
-EXIT=1
+regimenes 499
+Counter({'BAJA': 239, 'ALZA': 196, 'LATERAL': 64})
+universo 77
+confirmaciones 77
+medidos 77 OK
+EXIT=0
