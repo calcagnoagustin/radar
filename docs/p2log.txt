@@ -1,0 +1,4 @@
+universo 78
+simbolos 73 confirmaciones 40
+medidas 40 OK
+EXIT=0
