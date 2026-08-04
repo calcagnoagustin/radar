@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-04T07:07:16Z",
+ "generated_at": "2026-08-04T08:08:52Z",
  "modo": "PAPER",
  "equity_now": 1000.0,
- "realized_pnl": 0.0,
- "trades_total": 0,
+ "realized_pnl": -50.0,
+ "trades_total": 1,
  "win_rate": 0,
- "profit_factor": 0,
+ "profit_factor": 0.0,
  "reglas": {
   "tp_pct": 15.0,
   "sl_pct": 20.0,
@@ -14,16 +14,21 @@
   "vol_ratio": 15.0,
   "min_qv_usd": 10000000
  },
- "open_positions": [
+ "open_positions": [],
+ "recent_closed": [
   {
    "symbol": "VIC/USDT",
    "entry": 0.0592,
+   "exit": 0.04736,
    "qty": 4222.9729729729725,
-   "tp": 0.06808,
-   "sl": 0.047360000000000006,
-   "horas": 3.5,
-   "vol_ratio": 88.0
+   "pnl": -50.0,
+   "ret_pct": -20.0,
+   "motivo": "sl",
+   "horas": 4.6,
+   "btc_sobre_ema200": false,
+   "vol_ratio": 88.0,
+   "qv_musd": 21.2,
+   "closed_ts": 1785830928.07419
   }
- ],
- "recent_closed": []
+ ]
 }
