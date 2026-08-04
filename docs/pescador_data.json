@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-04T03:07:13Z",
+ "generated_at": "2026-08-04T03:34:56Z",
  "modo": "PAPER",
  "equity_now": 1000.0,
  "realized_pnl": 0.0,
@@ -17,12 +17,12 @@
  "open_positions": [
   {
    "symbol": "VIC/USDT",
-   "entry": 0.0611,
-   "qty": 4091.6530278232403,
-   "tp": 0.070265,
-   "sl": 0.04888000000000001,
-   "horas": 0.6,
-   "vol_ratio": 19.2
+   "entry": 0.0592,
+   "qty": 4222.9729729729725,
+   "tp": 0.06808,
+   "sl": 0.047360000000000006,
+   "horas": 0.0,
+   "vol_ratio": 88.0
   }
  ],
  "recent_closed": []
