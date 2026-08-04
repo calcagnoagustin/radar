@@ -1,0 +1,2 @@
+cruzados 77 OK
+EXIT=0
