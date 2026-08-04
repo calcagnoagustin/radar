@@ -1,0 +1,4 @@
+15 0 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python main.py >> /home/opc/bot_semillas/cron.log 2>&1
+7 0,4,8,12,16,20 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python ganesha_ejecutor.py >> /home/opc/bot_semillas/ejecutor/cron.log 2>&1
+*/2 * * * * /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/agent.py >> /home/opc/bot_semillas/agent.log 2>&1
+7 * * * * cd /home/opc/bot_semillas && venv/bin/python3 pescador.py >> pescador/cron.log 2>&1
