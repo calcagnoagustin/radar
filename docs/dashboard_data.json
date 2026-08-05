@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-08-04T00:16:19Z",
+ "generated_at": "2026-08-05T00:16:21Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 81.62970137,
+ "free_usdt": 90.68988811,
  "deposits": [],
  "positions": [
   {
@@ -19,8 +19,8 @@
   {
    "symbol": "PYTH/USDT",
    "binance": "PYTHUSDT",
-   "status": "confirmed",
-   "qty": 479.6,
+   "status": "stopped_moonbag",
+   "qty": 251.50000000000003,
    "avg_cost": 0.045871926605504584,
    "dca_adds": 1,
    "tp_hit": [],
@@ -207,6 +207,15 @@
    "qty_total": 4668.0,
    "pnl_net": 0,
    "closed_ts": 1785629737.68706
+  },
+  {
+   "symbol": "PYTH/USDT",
+   "action": "STOP",
+   "entry": 0.045871926605504584,
+   "exit": 0.03976,
+   "qty_total": 228.1,
+   "pnl_net": -1.3941,
+   "closed_ts": 1785888914.5949626
   }
  ],
  "shortlist_full": [
@@ -624,37 +633,37 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-03T00:17:42Z",
+  "generated": "2026-08-04T00:16:39Z",
   "ranking": [
    {
     "atr_mult": 2.0,
     "vol_mult": 1.5,
-    "r_promedio": 0.21,
-    "n": 4
+    "r_promedio": 0.08,
+    "n": 5
    },
    {
     "atr_mult": 2.0,
     "vol_mult": 1.3,
-    "r_promedio": 0.2,
-    "n": 4
+    "r_promedio": 0.08,
+    "n": 5
    },
    {
     "atr_mult": 3.0,
     "vol_mult": 1.3,
-    "r_promedio": -0.39,
-    "n": 4
+    "r_promedio": -0.37,
+    "n": 5
    },
    {
     "atr_mult": 3.0,
     "vol_mult": 1.5,
-    "r_promedio": -0.39,
-    "n": 4
+    "r_promedio": -0.37,
+    "n": 5
    },
    {
     "atr_mult": 2.5,
     "vol_mult": 1.3,
-    "r_promedio": -0.46,
-    "n": 4
+    "r_promedio": -0.44,
+    "n": 5
    }
   ]
  },
