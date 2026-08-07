@@ -1,100 +1,149 @@
 {
- "task": "ganesha_v3_timestop",
- "now": "2026-08-07 21:58:02Z",
- "pasos": [
-  "4/4 anchors verificados unicos",
-  "backup -> ganesha_ejecutor.py.bak.pre_v3",
-  "backup -> loop_analista.py.bak.pre_v3",
-  "aplicado: params atr_mult 2.0 + max_hold_d",
-  "aplicado: opened_ts + max_r en ENTRY",
-  "aplicado: bloque TIME STOP",
-  "aplicado: loop_analista compara contra 2.0",
-  "py_compile OK",
-  "verificacion OK",
-  "simulacion: 9 de 12 posiciones caerian al vencer la gracia"
+ "t": "schema",
+ "trades_type": "<class 'dict'>",
+ "trades_keys": [
+  "generated",
+  "n",
+  "trades"
  ],
- "params": {
-  "atr_mult": 2.0,
-  "max_hold_d": 10.0,
-  "min_r": 1.0,
-  "grace_d": 0.0
- },
- "test_stdout": "{\"atr_mult\": 2.0, \"max_hold_d\": 10.0, \"min_r\": 1.0, \"grace_hasta\": 1786139882}\n",
- "test_stderr": "",
- "simulacion_time_stop": [
+ "muestra_lista_trades": [
   {
-   "symbol": "SXT/USDT",
-   "edad_d": 23.9,
-   "tp1": false,
-   "caeria": true
+   "id": "semillas:GLM/USDT:1782865010",
+   "strategy": "semillas",
+   "symbol": "GLM/USDT",
+   "mode": "LIVE",
+   "entry_ts": 1782865010.3781042,
+   "close_ts": 1782954395.7646663,
+   "avg_cost": 0.1052,
+   "buy_cost": 6.9958,
+   "qty_sold": 59.8,
+   "qty_rest": 6.7,
+   "pnl": -0.2392,
+   "status": "closed",
+   "final": true,
+   "intents": {
+    "SEED": 1,
+    "STOP": 1
+   },
+   "tags": {
+    "strategy": "semillas",
+    "mode": "LIVE",
+    "signal": "seed",
+    "origen": "brain",
+    "salida": "stop",
+    "dca_adds": "dca_0",
+    "regimen": "desconocido"
+   }
   },
   {
-   "symbol": "SKL/USDT",
-   "edad_d": 22.9,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "DGB/USDT",
-   "edad_d": 21.7,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "ONDO/USDT",
-   "edad_d": 16.9,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "XEC/USDT",
-   "edad_d": 16.6,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "PROM/USDT",
-   "edad_d": 14.9,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "HEMI/USDT",
-   "edad_d": 13.9,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "QI/USDT",
-   "edad_d": 12.9,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "PEOPLE/USDT",
-   "edad_d": 10.9,
-   "tp1": false,
-   "caeria": true
-  },
-  {
-   "symbol": "EUL/USDT",
-   "edad_d": 9.7,
-   "tp1": false,
-   "caeria": false
-  },
-  {
-   "symbol": "COTI/USDT",
-   "edad_d": 9.6,
-   "tp1": false,
-   "caeria": false
-  },
-  {
-   "symbol": "BOME/USDT",
-   "edad_d": 8.1,
-   "tp1": false,
-   "caeria": false
+   "id": "semillas:BIO/USDT:1782865010",
+   "strategy": "semillas",
+   "symbol": "BIO/USDT",
+   "mode": "LIVE",
+   "entry_ts": 1782865010.9127245,
+   "close_ts": 1782954397.0642097,
+   "avg_cost": 0.03006,
+   "buy_cost": 6.998,
+   "qty_sold": 209.5,
+   "qty_rest": 23.3,
+   "pnl": -0.0251,
+   "status": "closed",
+   "final": true,
+   "intents": {
+    "SEED": 1,
+    "STOP": 1
+   },
+   "tags": {
+    "strategy": "semillas",
+    "mode": "LIVE",
+    "signal": "seed",
+    "origen": "brain",
+    "salida": "stop",
+    "dca_adds": "dca_0",
+    "regimen": "desconocido"
+   }
   }
  ],
- "caerian": 9,
- "ok": true
+ "ohlcv_type": "<class 'list'>",
+ "ohlcv_muestra": [
+  [
+   1783901700000,
+   0.6762,
+   0.6762,
+   0.6704,
+   0.6708,
+   37473.0
+  ],
+  [
+   1783902600000,
+   0.6707,
+   0.6716,
+   0.6659,
+   0.6673,
+   28304.8
+  ]
+ ],
+ "ohlcv_n": 193,
+ "summary": {
+  "SYN/USDT": {
+   "symbol": "SYN/USDT",
+   "status": "confirmed",
+   "confirmed_at": "2026-06-29",
+   "ref_close": 0.42004,
+   "last": 0.14203,
+   "max_runup_pct": 71.01,
+   "max_dd_pct": -69.41,
+   "ret_pct": -66.19,
+   "hours": 696,
+   "atr14h_pct": 2.717
+  },
+  "ATM/USDT": {
+   "symbol": "ATM/USDT",
+   "status": "confirmed",
+   "confirmed_at": "2026-06-29",
+   "ref_close": 2.084,
+   "last": 1.774,
+   "max_runup_pct": 48.99,
+   "max_dd_pct": -27.3,
+   "ret_pct": -14.88,
+   "hours": 672,
+   "atr14h_pct": 1.445
+  },
+  "PYTH/USDT": {
+   "symbol": "PYTH/USDT",
+   "status": "confirmed",
+   "confirmed_at": "2026-07-14",
+   "ref_close": 0.04716,
+   "last": 0.03919,
+   "max_runup_pct": 11.15,
+   "max_dd_pct": -18.7,
+   "ret_pct": -16.9,
+   "hours": 504,
+   "atr14h_pct": 0.762
+  },
+  "ZEC/USDT": {
+   "symbol": "ZEC/USDT",
+   "status": "confirmed",
+   "confirmed_at": "2026-07-16",
+   "ref_close": 567.64,
+   "last": 502.5,
+   "max_runup_pct": 1.09,
+   "max_dd_pct": -20.42,
+   "ret_pct": -11.48,
+   "hours": 528,
+   "atr14h_pct": 0.994
+  },
+  "PUMP/USDT": {
+   "symbol": "PUMP/USDT",
+   "status": "confirmed",
+   "confirmed_at": "2026-08-03",
+   "ref_close": 0.002081,
+   "last": 0.00239,
+   "max_runup_pct": 24.46,
+   "max_dd_pct": -1.68,
+   "ret_pct": 14.85,
+   "hours": 96,
+   "atr14h_pct": 1.59
+  }
+ }
 }
