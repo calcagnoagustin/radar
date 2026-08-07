@@ -1,10 +1,100 @@
 {
- "task": "a1_tail3",
- "now": "2026-07-29 19:44:27Z",
- "log": "2026-07-29 17:02:32Z intento 392: HTTP 500 Out of host capacity.\n2026-07-29 17:07:33Z intento 393: HTTP 500 Out of host capacity.\n2026-07-29 17:12:34Z intento 394: HTTP 500 Out of host capacity.\n2026-07-29 17:17:35Z intento 395: HTTP 500 Out of host capacity.\n2026-07-29 17:22:36Z intento 396: HTTP 500 Out of host capacity.\n2026-07-29 17:27:37Z intento 397: HTTP 500 Out of host capacity.\n2026-07-29 17:32:38Z intento 398: HTTP 500 Out of host capacity.\n2026-07-29 17:37:39Z intento 399: HTTP 500 Out of host capacity.\n2026-07-29 17:42:40Z intento 400: HTTP 500 Out of host capacity.\n2026-07-29 17:47:40Z intento 401: HTTP 500 Out of host capacity.\n2026-07-29 17:52:45Z intento 402: HTTP 500 Out of host capacity.\n2026-07-29 18:27:52Z intento 403: HTTP 500 Out of host capacity.\n2026-07-29 18:32:53Z intento 404: HTTP 500 Out of host capacity.\n2026-07-29 18:37:54Z intento 405: HTTP 500 Out of host capacity.\n2026-07-29 18:42:55Z intento 406: HTTP 500 Out of host capacity.\n2026-07-29 18:47:56Z intento 407: HTTP 500 Out of host capacity.\n2026-07-29 18:52:57Z intento 408: HTTP 500 Out of host capacity.\n2026-07-29 18:57:58Z intento 409: HTTP 500 Out of host capacity.\n2026-07-29 19:02:59Z intento 410: HTTP 500 Out of host capacity.\n2026-07-29 19:07:59Z intento 411: HTTP 500 Out of host capacity.\n2026-07-29 19:13:00Z intento 412: HTTP 500 Out of host capacity.\n2026-07-29 19:18:01Z intento 413: HTTP 500 Out of host capacity.\n2026-07-29 19:23:02Z intento 414: HTTP 500 Out of host capacity.\n2026-07-29 19:28:03Z intento 415: HTTP 500 Out of host capacity.\n2026-07-29 19:33:04Z intento 416: HTTP 500 Out of host capacity.",
- "proceso": "908648 /home/opc/bot_semillas/venv/bin/python /home/opc/bot_semillas/a1_launcher.py",
- "mem": "total        used        free      shared  buff/cache   available\nMem:             498         243         105           1         171         254",
- "intentos": "416",
- "ultimo": "2026-07-29 19:33:04Z intento 416: HTTP 500 Out of host capacity.",
+ "task": "ganesha_v3_timestop",
+ "now": "2026-08-07 21:58:02Z",
+ "pasos": [
+  "4/4 anchors verificados unicos",
+  "backup -> ganesha_ejecutor.py.bak.pre_v3",
+  "backup -> loop_analista.py.bak.pre_v3",
+  "aplicado: params atr_mult 2.0 + max_hold_d",
+  "aplicado: opened_ts + max_r en ENTRY",
+  "aplicado: bloque TIME STOP",
+  "aplicado: loop_analista compara contra 2.0",
+  "py_compile OK",
+  "verificacion OK",
+  "simulacion: 9 de 12 posiciones caerian al vencer la gracia"
+ ],
+ "params": {
+  "atr_mult": 2.0,
+  "max_hold_d": 10.0,
+  "min_r": 1.0,
+  "grace_d": 0.0
+ },
+ "test_stdout": "{\"atr_mult\": 2.0, \"max_hold_d\": 10.0, \"min_r\": 1.0, \"grace_hasta\": 1786139882}\n",
+ "test_stderr": "",
+ "simulacion_time_stop": [
+  {
+   "symbol": "SXT/USDT",
+   "edad_d": 23.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "SKL/USDT",
+   "edad_d": 22.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "DGB/USDT",
+   "edad_d": 21.7,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "ONDO/USDT",
+   "edad_d": 16.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "XEC/USDT",
+   "edad_d": 16.6,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "PROM/USDT",
+   "edad_d": 14.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "edad_d": 13.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "QI/USDT",
+   "edad_d": 12.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "PEOPLE/USDT",
+   "edad_d": 10.9,
+   "tp1": false,
+   "caeria": true
+  },
+  {
+   "symbol": "EUL/USDT",
+   "edad_d": 9.7,
+   "tp1": false,
+   "caeria": false
+  },
+  {
+   "symbol": "COTI/USDT",
+   "edad_d": 9.6,
+   "tp1": false,
+   "caeria": false
+  },
+  {
+   "symbol": "BOME/USDT",
+   "edad_d": 8.1,
+   "tp1": false,
+   "caeria": false
+  }
+ ],
+ "caerian": 9,
  "ok": true
 }
