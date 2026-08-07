@@ -1,0 +1,573 @@
+{
+ "t": "anatomia",
+ "n_eventos": 3965,
+ "n_trades_reconstruidos": 24,
+ "n_con_tp1": 6,
+ "ganadoras": [
+  {
+   "symbol": "ATM/USDT",
+   "tp1": true,
+   "pnl": 1.34,
+   "salida": "LIVE_NATIVE_STOP_OUT",
+   "r_pct": 6.5,
+   "max_r": 3.85,
+   "min_r": -0.44,
+   "h_max": 12.6,
+   "mae_antes_1r": -0.44,
+   "horas_total": 16.1,
+   "n_velas": 65,
+   "h_0.5R": 12.1,
+   "h_1.0R": 12.1,
+   "h_1.5R": 12.1,
+   "h_2.0R": 12.4
+  },
+  {
+   "symbol": "BANK/USDT",
+   "tp1": true,
+   "pnl": 19.55,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 22.5,
+   "max_r": 22.68,
+   "min_r": -0.22,
+   "h_max": 123.6,
+   "mae_antes_1r": -0.22,
+   "horas_total": 123.9,
+   "n_velas": 161,
+   "h_0.5R": 7.1,
+   "h_1.0R": 104.1,
+   "h_1.5R": 104.1,
+   "h_2.0R": 104.1
+  },
+  {
+   "symbol": "EUL/USDT",
+   "tp1": true,
+   "pnl": 0.0,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 14.4,
+   "max_r": 0.45,
+   "min_r": -0.45,
+   "h_max": 28.4,
+   "mae_antes_1r": -0.45,
+   "horas_total": 36.1,
+   "n_velas": 33
+  }
+ ],
+ "perdedoras": [
+  {
+   "symbol": "XEC/USDT",
+   "tp1": false,
+   "pnl": -3.35,
+   "salida": "LIVE_NATIVE_STOP_OUT",
+   "r_pct": 10.2,
+   "max_r": 0.47,
+   "min_r": -1.6,
+   "h_max": 27.6,
+   "mae_antes_1r": -1.6,
+   "horas_total": 27.6,
+   "n_velas": 111
+  },
+  {
+   "symbol": "PORTO/USDT",
+   "tp1": false,
+   "pnl": -3.02,
+   "salida": "LIVE_NATIVE_STOP_OUT",
+   "r_pct": 11.8,
+   "max_r": 0.27,
+   "min_r": -1.29,
+   "h_max": 0.4,
+   "mae_antes_1r": -1.29,
+   "horas_total": 3.9,
+   "n_velas": 16
+  },
+  {
+   "symbol": "PORTO/USDT",
+   "tp1": false,
+   "pnl": -3.64,
+   "salida": "LIVE_NATIVE_STOP_OUT",
+   "r_pct": 13.8,
+   "max_r": 0.11,
+   "min_r": -1.19,
+   "h_max": 4.6,
+   "mae_antes_1r": -1.19,
+   "horas_total": 7.6,
+   "n_velas": 31
+  },
+  {
+   "symbol": "PYTH/USDT",
+   "tp1": false,
+   "pnl": -4.39,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 6.4,
+   "max_r": 0.13,
+   "min_r": -0.89,
+   "h_max": 2.6,
+   "mae_antes_1r": -0.89,
+   "horas_total": 19.6,
+   "n_velas": 79
+  },
+  {
+   "symbol": "PROM/USDT",
+   "tp1": false,
+   "pnl": -3.63,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 22.9,
+   "max_r": -0.13,
+   "min_r": -1.08,
+   "h_max": 0.1,
+   "mae_antes_1r": -1.08,
+   "horas_total": 19.9,
+   "n_velas": 80
+  },
+  {
+   "symbol": "ACE/USDT",
+   "tp1": false,
+   "pnl": -4.63,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 29.3,
+   "max_r": -0.02,
+   "min_r": -1.01,
+   "h_max": 0.1,
+   "mae_antes_1r": -1.01,
+   "horas_total": 55.9,
+   "n_velas": 32
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "tp1": false,
+   "pnl": -3.13,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 26.5,
+   "max_r": 0.05,
+   "min_r": -1.02,
+   "h_max": 3.1,
+   "mae_antes_1r": -1.02,
+   "horas_total": 71.9,
+   "n_velas": 192
+  },
+  {
+   "symbol": "BANK/USDT",
+   "tp1": false,
+   "pnl": 5.09,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 61.4,
+   "max_r": 0.63,
+   "min_r": -0.1,
+   "h_max": 12.6,
+   "mae_antes_1r": -0.1,
+   "horas_total": 12.6,
+   "n_velas": 51,
+   "h_0.5R": 7.1
+  },
+  {
+   "symbol": "DIA/USDT",
+   "tp1": false,
+   "pnl": -2.01,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 11.9,
+   "max_r": 0.07,
+   "min_r": -1.46,
+   "h_max": 0.0,
+   "mae_antes_1r": -1.46,
+   "horas_total": 7.5,
+   "n_velas": 31
+  },
+  {
+   "symbol": "ERA/USDT",
+   "tp1": false,
+   "pnl": -4.16,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 34.5,
+   "max_r": 0.13,
+   "min_r": -0.07,
+   "h_max": 0.1,
+   "mae_antes_1r": -0.07,
+   "horas_total": 0.6,
+   "n_velas": 3
+  },
+  {
+   "symbol": "COTI/USDT",
+   "tp1": false,
+   "pnl": -1.48,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 13.5,
+   "max_r": -0.08,
+   "min_r": -1.08,
+   "h_max": 0.8,
+   "mae_antes_1r": -1.08,
+   "horas_total": 3.8,
+   "n_velas": 16
+  },
+  {
+   "symbol": "COTI/USDT",
+   "tp1": false,
+   "pnl": -3.33,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 14.5,
+   "max_r": -0.04,
+   "min_r": -1.39,
+   "h_max": 0.1,
+   "mae_antes_1r": -1.39,
+   "horas_total": 3.9,
+   "n_velas": 16
+  },
+  {
+   "symbol": "LA/USDT",
+   "tp1": false,
+   "pnl": -3.18,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 23.5,
+   "max_r": 0.36,
+   "min_r": -0.02,
+   "h_max": 0.5,
+   "mae_antes_1r": -0.02,
+   "horas_total": 8.0,
+   "n_velas": 32
+  },
+  {
+   "symbol": "ACE/USDT",
+   "tp1": false,
+   "pnl": -4.09,
+   "salida": "LIVE_STOP_OUT",
+   "r_pct": 42.3,
+   "max_r": 0.08,
+   "min_r": -0.52,
+   "h_max": 1.2,
+   "mae_antes_1r": -0.52,
+   "horas_total": 23.9,
+   "n_velas": 96
+  }
+ ],
+ "sin_velas": [
+  "T/USDT",
+  "DEXE/USDT",
+  "XEC/USDT",
+  "DODO/USDT",
+  "YB/USDT",
+  "KAITO/USDT",
+  "ZAMA/USDT"
+ ],
+ "comparativa": {
+  "ganadoras": {
+   "h_0.5R": {
+    "n": 2,
+    "min": 7.1,
+    "p50": 12.1,
+    "max": 12.1,
+    "prom": 9.6
+   },
+   "h_1.0R": {
+    "n": 2,
+    "min": 12.1,
+    "p50": 104.1,
+    "max": 104.1,
+    "prom": 58.1
+   },
+   "h_2.0R": {
+    "n": 2,
+    "min": 12.4,
+    "p50": 104.1,
+    "max": 104.1,
+    "prom": 58.25
+   },
+   "min_r": {
+    "n": 3,
+    "min": -0.45,
+    "p50": -0.44,
+    "max": -0.22,
+    "prom": -0.37
+   },
+   "mae_antes_1r": {
+    "n": 3,
+    "min": -0.45,
+    "p50": -0.44,
+    "max": -0.22,
+    "prom": -0.37
+   },
+   "max_r": {
+    "n": 3,
+    "min": 0.45,
+    "p50": 3.85,
+    "max": 22.68,
+    "prom": 8.99
+   }
+  },
+  "perdedoras": {
+   "h_0.5R": {
+    "n": 1,
+    "min": 7.1,
+    "p50": 7.1,
+    "max": 7.1,
+    "prom": 7.1
+   },
+   "h_1.0R": null,
+   "min_r": {
+    "n": 14,
+    "min": -1.6,
+    "p50": -1.02,
+    "max": -0.02,
+    "prom": -0.91
+   },
+   "max_r": {
+    "n": 14,
+    "min": -0.13,
+    "p50": 0.11,
+    "max": 0.63,
+    "prom": 0.14
+   }
+  }
+ },
+ "grilla_fastfail": [
+  {
+   "horas": 8,
+   "umbral_R": 0.25,
+   "cortadas": 8,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": 2.01,
+   "delta_R": 2.79
+  },
+  {
+   "horas": 8,
+   "umbral_R": 0.5,
+   "cortadas": 8,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": 2.01,
+   "delta_R": 2.79
+  },
+  {
+   "horas": 12,
+   "umbral_R": 0.25,
+   "cortadas": 8,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": 1.95,
+   "delta_R": 2.73
+  },
+  {
+   "horas": 12,
+   "umbral_R": 0.5,
+   "cortadas": 8,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": 1.95,
+   "delta_R": 2.73
+  },
+  {
+   "horas": 36,
+   "umbral_R": 0.25,
+   "cortadas": 2,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": 0.63,
+   "delta_R": 1.41
+  },
+  {
+   "horas": 36,
+   "umbral_R": 0.5,
+   "cortadas": 3,
+   "ganadoras_matadas": 1,
+   "R_original": -0.78,
+   "R_con_regla": 0.63,
+   "delta_R": 1.41
+  },
+  {
+   "horas": 24,
+   "umbral_R": 0.25,
+   "cortadas": 4,
+   "ganadoras_matadas": 1,
+   "R_original": -0.78,
+   "R_con_regla": 0.58,
+   "delta_R": 1.36
+  },
+  {
+   "horas": 24,
+   "umbral_R": 0.5,
+   "cortadas": 4,
+   "ganadoras_matadas": 1,
+   "R_original": -0.78,
+   "R_con_regla": 0.58,
+   "delta_R": 1.36
+  },
+  {
+   "horas": 48,
+   "umbral_R": 0.25,
+   "cortadas": 2,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": 0.43,
+   "delta_R": 1.21
+  },
+  {
+   "horas": 48,
+   "umbral_R": 0.5,
+   "cortadas": 2,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": 0.43,
+   "delta_R": 1.21
+  },
+  {
+   "horas": 36,
+   "umbral_R": 0.0,
+   "cortadas": 1,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": 0.14,
+   "delta_R": 0.92
+  },
+  {
+   "horas": 48,
+   "umbral_R": 0.0,
+   "cortadas": 1,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": 0.14,
+   "delta_R": 0.92
+  },
+  {
+   "horas": 24,
+   "umbral_R": 0.0,
+   "cortadas": 2,
+   "ganadoras_matadas": 1,
+   "R_original": -0.78,
+   "R_con_regla": 0.08,
+   "delta_R": 0.85
+  },
+  {
+   "horas": 8,
+   "umbral_R": 0.0,
+   "cortadas": 4,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": -0.07,
+   "delta_R": 0.71
+  },
+  {
+   "horas": 12,
+   "umbral_R": 0.0,
+   "cortadas": 4,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": -0.15,
+   "delta_R": 0.63
+  },
+  {
+   "horas": 4,
+   "umbral_R": 0.0,
+   "cortadas": 4,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": -0.18,
+   "delta_R": 0.6
+  },
+  {
+   "horas": 72,
+   "umbral_R": 0.0,
+   "cortadas": 0,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": -0.78,
+   "delta_R": 0.0
+  },
+  {
+   "horas": 72,
+   "umbral_R": 0.25,
+   "cortadas": 0,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": -0.78,
+   "delta_R": 0.0
+  },
+  {
+   "horas": 72,
+   "umbral_R": 0.5,
+   "cortadas": 0,
+   "ganadoras_matadas": 0,
+   "R_original": -0.78,
+   "R_con_regla": -0.78,
+   "delta_R": 0.0
+  },
+  {
+   "horas": 4,
+   "umbral_R": 0.5,
+   "cortadas": 13,
+   "ganadoras_matadas": 4,
+   "R_original": -0.78,
+   "R_con_regla": -8.23,
+   "delta_R": -7.46
+  },
+  {
+   "horas": 4,
+   "umbral_R": 1.0,
+   "cortadas": 13,
+   "ganadoras_matadas": 4,
+   "R_original": -0.78,
+   "R_con_regla": -8.23,
+   "delta_R": -7.46
+  },
+  {
+   "horas": 4,
+   "umbral_R": 0.25,
+   "cortadas": 12,
+   "ganadoras_matadas": 4,
+   "R_original": -0.78,
+   "R_con_regla": -9.28,
+   "delta_R": -8.5
+  },
+  {
+   "horas": 12,
+   "umbral_R": 1.0,
+   "cortadas": 10,
+   "ganadoras_matadas": 4,
+   "R_original": -0.78,
+   "R_con_regla": -9.44,
+   "delta_R": -8.66
+  },
+  {
+   "horas": 8,
+   "umbral_R": 1.0,
+   "cortadas": 10,
+   "ganadoras_matadas": 4,
+   "R_original": -0.78,
+   "R_con_regla": -9.51,
+   "delta_R": -8.73
+  },
+  {
+   "horas": 36,
+   "umbral_R": 1.0,
+   "cortadas": 4,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": -9.9,
+   "delta_R": -9.12
+  },
+  {
+   "horas": 24,
+   "umbral_R": 1.0,
+   "cortadas": 5,
+   "ganadoras_matadas": 2,
+   "R_original": -0.78,
+   "R_con_regla": -9.95,
+   "delta_R": -9.17
+  },
+  {
+   "horas": 48,
+   "umbral_R": 1.0,
+   "cortadas": 3,
+   "ganadoras_matadas": 1,
+   "R_original": -0.78,
+   "R_con_regla": -10.1,
+   "delta_R": -9.32
+  },
+  {
+   "horas": 72,
+   "umbral_R": 1.0,
+   "cortadas": 1,
+   "ganadoras_matadas": 1,
+   "R_original": -0.78,
+   "R_con_regla": -11.31,
+   "delta_R": -10.53
+  }
+ ]
+}
