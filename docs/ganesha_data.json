@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 183.0,
+ "equity_now": 179.02,
  "deposits_total": 0,
- "pnl_today": -5.22,
- "trades_today": 9,
- "realized_pnl": -2.36,
- "trades_total": 40,
- "win_rate": 40,
- "profit_factor": 0.97,
+ "pnl_today": -12.72,
+ "trades_today": 11,
+ "realized_pnl": -9.85,
+ "trades_total": 42,
+ "win_rate": 38,
+ "profit_factor": 0.88,
  "open_positions": [
-  {
-   "symbol": "EUL/USDT",
-   "entry": 1.801,
-   "qty": 6.46,
-   "stop": 1.1943214285714285,
-   "tp1_done": false
-  },
   {
    "symbol": "COTI/USDT",
    "entry": 0.01324,
@@ -66,32 +59,21 @@
    "tp1_done": false
   },
   {
-   "symbol": "C98/USDT",
-   "entry": 0.01704,
-   "qty": 1816.9,
-   "stop": 0.014667142857142858,
+   "symbol": "NIL/USDT",
+   "entry": 0.03700879751954705,
+   "qty": 370.9,
+   "stop": 0.02657714285714286,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BICO/USDT",
+   "entry": 0.05935217423133236,
+   "qty": 327.84,
+   "stop": 0.04755571428571429,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ATM/USDT",
-   "entry": 2.484,
-   "exit": 2.866,
-   "qty_total": 0,
-   "pnl_net": 2.47,
-   "action": "tp",
-   "closed_ts": 1783720789.763385
-  },
-  {
-   "symbol": "ATM/USDT",
-   "entry": 2.484,
-   "exit": 2.5732098273572377,
-   "qty_total": 21.55,
-   "pnl_net": 1.34,
-   "action": "stop",
-   "closed_ts": 1783752662.9234464
-  },
   {
    "symbol": "T/USDT",
    "entry": 0.0055,
@@ -433,6 +415,24 @@
    "pnl_net": 2.03,
    "action": "stop",
    "closed_ts": 1786147805.464586
+  },
+  {
+   "symbol": "C98/USDT",
+   "entry": 0.01704,
+   "exit": 0.01494,
+   "qty_total": 1816.9,
+   "pnl_net": -3.82,
+   "action": "stop",
+   "closed_ts": 1786162133.5789773
+  },
+  {
+   "symbol": "EUL/USDT",
+   "entry": 1.801,
+   "exit": 1.232,
+   "qty_total": 6.46,
+   "pnl_net": -3.68,
+   "action": "stop",
+   "closed_ts": 1786162135.1500344
   }
  ]
 }
