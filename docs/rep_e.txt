@@ -1,0 +1,12 @@
+DGB/USDT     fin=+0.87 peor_low_antes=-0.33 
+ZAMA/USDT    fin=+3.64 peor_low_antes=-0.21 
+BANK/USDT    fin=+1.23 peor_low_antes=-0.10 
+PROM/USDT    fin=+0.53 peor_low_antes=-0.37 
+
+== SIM conjunta: zombi 48h/0.5 (instalada) + depth stop a -X con LOW ==
+X     ncut_depth winkill dR_vs_solo_zombi
+0.5   17         0       +6.52
+0.6   16         0       +4.83
+0.7   15         0       +3.42
+0.8   12         0       +1.91
+0.9   12         0       +0.71
