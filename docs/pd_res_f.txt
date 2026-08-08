@@ -1,0 +1,5 @@
+e292841001f457268c7f876cb3e1d5dd  /tmp/patch_depth.py
+OK backup= /home/opc/bot_semillas/ganesha_ejecutor.py.bak.depth.1786151779
+md5 nuevo= 689ece2f3b6ef34f0290b663942b8bff
+VENV_OK
+12
