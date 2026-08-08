@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 188.38,
+ "equity_now": 193.19,
  "deposits_total": 0,
  "pnl_today": -10.08,
  "trades_today": 13,
@@ -48,7 +48,7 @@
    "symbol": "TUT/USDT",
    "entry": 0.03911,
    "qty": 345.1,
-   "stop": 0.048735714285714285,
+   "stop": 0.06006285714285715,
    "tp1_done": true
   },
   {
@@ -63,6 +63,13 @@
    "entry": 0.05935217423133236,
    "qty": 327.84,
    "stop": 0.04755571428571429,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.1544,
+   "qty": 101.4,
+   "stop": 0.1255,
    "tp1_done": false
   }
  ],
