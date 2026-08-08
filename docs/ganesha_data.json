@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 179.02,
+ "equity_now": 183.17,
  "deposits_total": 0,
- "pnl_today": -12.72,
- "trades_today": 11,
- "realized_pnl": -9.85,
- "trades_total": 42,
- "win_rate": 38,
- "profit_factor": 0.88,
+ "pnl_today": -13.11,
+ "trades_today": 12,
+ "realized_pnl": -10.24,
+ "trades_total": 43,
+ "win_rate": 37,
+ "profit_factor": 0.87,
  "open_positions": [
-  {
-   "symbol": "COTI/USDT",
-   "entry": 0.01324,
-   "qty": 615.0,
-   "stop": 0.01058107142857143,
-   "tp1_done": false
-  },
   {
    "symbol": "BOME/USDT",
    "entry": 0.0005924,
@@ -74,15 +67,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "T/USDT",
-   "entry": 0.0055,
-   "exit": 0.00442,
-   "qty_total": 3972.2,
-   "pnl_net": -4.28,
-   "action": "stop",
-   "closed_ts": 1784030837.527158
-  },
   {
    "symbol": "XEC/USDT",
    "entry": 6.68e-06,
@@ -433,6 +417,15 @@
    "pnl_net": -3.68,
    "action": "stop",
    "closed_ts": 1786162135.1500344
+  },
+  {
+   "symbol": "COTI/USDT",
+   "entry": 0.01324,
+   "exit": 0.01261,
+   "qty_total": 615.0,
+   "pnl_net": -0.39,
+   "action": "stop",
+   "closed_ts": 1786176472.748842
   }
  ]
 }
