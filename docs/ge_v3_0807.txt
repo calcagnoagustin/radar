@@ -1,0 +1,472 @@
+"""Ganesha-Ejecutor v2. Trend-bot corto plazo sobre semillas confirmadas.
+Scan de entrada en velas 15m, stops ATR gestionados en velas 4h (confirmados al cierre).
+Cron cada 4h. Modo por defecto: PAPER. Modo LIVE solo si existe ejecutor/LIVE
+(archivo que crea Agus a mano) y hay API keys. En live: ordenes market reales +
+stop-loss-limit NATIVO en Binance como red de seguridad."""
+import json, os, time
+import ccxt
+import notify
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+GDIR = os.path.join(BASE, "ejecutor")
+GSTATE = os.path.join(GDIR, "state.json")
+GLOG = os.path.join(GDIR, "events.jsonl")
+SEM_STATE = os.path.join(BASE, "state.json")
+LIVEFLAG = os.path.join(GDIR, "LIVE")
+KEYS = os.path.join(GDIR, "keys.json")
+FT_CONFIG = "/opt/ganesha_bot/config.json"
+
+P = {"equity": 46.0, "risk_pct": 2.0, "min_notional": 5.0,
+     "vol_mult": 1.5, "vol_sma": 20, "mom_lookback": 96,
+     "atr_n": 14, "atr_mult": 2.0,
+     "scaleout_r": 2.0, "scaleout_frac": 0.30, "trail_after_r": 2.0,
+     "max_hold_d": 10.0, "time_stop_min_r": 1.0}
+
+# TIME STOP: una posicion que no progresa es capital muerto. Si pasaron max_hold_d
+# dias y nunca toco time_stop_min_r ni hizo TP1, se cierra a mercado y libera el
+# capital. NUNCA mata una posicion que ya hizo TP1 (esa es la cola de ganancia:
+# tiene stop en breakeven + trailing y se la deja correr).
+TS_DEPLOY = 1786139882          # epoch del deploy: gracia para las posiciones preexistentes
+TS_GRACE_D = 0.0
+
+# reconciliacion state <-> Binance (deteccion de ventas manuales de Agus)
+REC_REL_TOL = 0.05   # <5% de diferencia = fees/dust/redondeo, no es venta
+REC_DUST_USD = 1.0   # restos por debajo de ~1 USD = cierre total
+
+def load(p, d):
+    try:
+        return json.load(open(p))
+    except Exception:
+        return d
+
+def log(ev):
+    ev["ts"] = time.time()
+    ev["iso"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    with open(GLOG, "a") as f:
+        f.write(json.dumps(ev) + "\n")
+    print("[ejecutor]", json.dumps(ev))
+
+def atr(c, n):
+    trs = [max(c[i][2] - c[i][3], abs(c[i][2] - c[i-1][4]), abs(c[i][3] - c[i-1][4]))
+           for i in range(len(c) - n, len(c))]
+    return sum(trs) / len(trs)
+
+def confirmed_symbols():
+    st = load(SEM_STATE, {})
+    return [s for s, p in st.get("positions", {}).items()
+            if p.get("status") == "confirmed"]
+
+def scan_entry(c15):
+    last = c15[-1]
+    hh = max(x[4] for x in c15[-P["mom_lookback"] - 1:-1])
+    vs = sum(x[5] for x in c15[-P["vol_sma"] - 1:-1]) / P["vol_sma"]
+    return last[4] > hh and last[5] > P["vol_mult"] * vs
+
+def get_ex():
+    live = os.path.exists(LIVEFLAG)
+    creds = None
+    if live:
+        k = load(KEYS, {})
+        if not k.get("apiKey"):
+            try:
+                import importlib.util as iu
+                sp = iu.spec_from_file_location("gcfg", "/opt/ganesha_bot/config.py")
+                m = iu.module_from_spec(sp)
+                sp.loader.exec_module(m)
+                k = {"apiKey": getattr(m, "BINANCE_API_KEY", None),
+                     "secret": getattr(m, "BINANCE_API_SECRET", None)}
+            except Exception:
+                k = {}
+        if k.get("apiKey") and k.get("secret"):
+            creds = k
+        else:
+            live = False
+            log({"type": "warn", "msg": "LIVE presente pero sin keys; sigo en paper"})
+    cfg = {"enableRateLimit": True}
+    if creds:
+        cfg.update({"apiKey": creds["apiKey"], "secret": creds["secret"]})
+    return ccxt.binance(cfg), live
+
+def buy_market(ex, sym, qty, px):
+    bal = ex.fetch_balance()
+    free = bal.get("USDT", {}).get("free", 0)
+    if qty * px > free * 0.98:
+        qty = free * 0.98 / px
+    if qty * px < P["min_notional"]:
+        return None, 0
+    q = float(ex.amount_to_precision(sym, qty))
+    o = ex.create_order(sym, "market", "buy", q)
+    return o, q
+
+def sell_market(ex, sym, qty):
+    base = sym.split("/")[0]
+    free = ex.fetch_balance().get(base, {}).get("free", 0)
+    q = float(ex.amount_to_precision(sym, min(qty, free)))
+    if q <= 0:
+        return None
+    return ex.create_order(sym, "market", "sell", q)
+
+def place_stop(ex, sym, qty, stop):
+    try:
+        base = sym.split("/")[0]
+        free = ex.fetch_balance().get(base, {}).get("free", 0) or 0
+        qty = min(qty, free) * 0.999
+        if qty <= 0:
+            log({"type": "warn", "symbol": sym, "msg": "place_stop: sin balance libre, skip"})
+            return None
+        q = float(ex.amount_to_precision(sym, qty))
+        if q <= 0:
+            return None
+        sp = float(ex.price_to_precision(sym, stop))
+        px = float(ex.price_to_precision(sym, stop * 0.99))
+        o = ex.create_order(sym, "limit", "sell", q, px, {"stopPrice": sp})
+        return o.get("id")
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "place_stop: " + str(e)[:100]})
+        return None
+
+def cancel_stop(ex, sym, oid):
+    try:
+        if oid:
+            ex.cancel_order(oid, sym)
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "cancel_stop: " + str(e)[:80]})
+
+def mover_symbols(ex):
+    if not os.path.exists(os.path.join(GDIR, "MOVERS")):
+        return []
+    try:
+        tk = ex.fetch_tickers()
+    except Exception:
+        return []
+    import statistics as _st
+    cand = []
+    for s, t in tk.items():
+        if not s.endswith("/USDT"):
+            continue
+        qv = t.get("quoteVolume") or 0
+        pc = t.get("percentage") or 0
+        if qv >= 3000000 and pc >= 8:
+            cand.append((s, qv))
+    cand.sort(key=lambda x: -x[1])
+    out = []
+    for s, _q in cand[:25]:
+        try:
+            d = ex.fetch_ohlcv(s, "1d", limit=25)[:-1]
+        except Exception:
+            continue
+        if len(d) < 21:
+            continue
+        c = [x[4] for x in d]
+        qd = [x[5] * x[4] for x in d]
+        wk = (c[-1] / c[-8] - 1) * 100 if c[-8] > 0 else 0
+        med = _st.median(qd[-21:-1]) or 1
+        if wk >= 20 and (qd[-1] / med) >= 3:
+            out.append(s)
+    return out[:8]
+
+
+def _manual_exit_px(ex, sym, since_ts, fallback):
+    """Precio real de salida de una venta manual: promedio ponderado de los
+    sells en Binance desde since_ts. Si no se puede, fallback (precio actual)."""
+    try:
+        since = int(since_ts * 1000) if since_ts else None
+        trades = ex.fetch_my_trades(sym, since=since, limit=50)
+        sells = [t for t in trades if t.get("side") == "sell"]
+        amt = sum(float(t.get("amount") or 0) for t in sells)
+        if amt > 0:
+            cost = sum(float(t.get("price") or 0) * float(t.get("amount") or 0)
+                       for t in sells)
+            return cost / amt
+    except Exception as e:
+        log({"type": "warn", "symbol": sym, "msg": "exit_px: " + str(e)[:80]})
+    return fallback
+
+
+def reconcile_manual(ex, gs, live):
+    """Antes de gestionar: compara cada posicion LIVE contra Binance.
+    Si Agus vendio a mano (total o parcial), el bot lo registra solo,
+    cancela la orden de stop huerfana y re-sincroniza el estado.
+    Tambien detecta stops nativos ejecutados entre corridas."""
+    if not live or not gs.get("positions"):
+        return
+    try:
+        bal = ex.fetch_balance()
+    except Exception as e:
+        log({"type": "warn", "msg": "reconcile balance: " + str(e)[:100]})
+        return
+    since_ts = gs.get("last_run_ts") or 0
+    for sym in list(gs["positions"].keys()):
+        pos = gs["positions"][sym]
+        if pos.get("mode") != "LIVE":
+            continue
+        sqty = float(pos.get("qty", 0) or 0)
+        if sqty <= 0:
+            continue
+        base = sym.split("/")[0]
+        b = bal.get(base, {}) or {}
+        real = float(b.get("total", 0) or 0)   # free + locked (stop nativo)
+        try:
+            px = float(ex.fetch_ticker(sym).get("last") or 0)
+        except Exception:
+            px = pos.get("entry", 0)
+
+        # 1) estado de la orden de stop nativa
+        oid = pos.get("stop_oid")
+        stop_filled, stop_fill_px = False, None
+        if oid:
+            try:
+                o = ex.fetch_order(oid, sym)
+                st = o.get("status")
+                if st == "closed":
+                    stop_filled = True
+                    stop_fill_px = o.get("average") or o.get("price")
+                elif st in ("canceled", "cancelled", "expired", "rejected"):
+                    # orden muerta (p.ej. Agus la cancelo): STOP_REPAIR la repone
+                    pos["stop_oid"] = None
+            except Exception as e:
+                log({"type": "warn", "symbol": sym,
+                     "msg": "reconcile order: " + str(e)[:80]})
+
+        if stop_filled:
+            fill = float(stop_fill_px or pos.get("stop") or px)
+            pnl = sqty * (fill - pos["entry"])
+            gs["paper_pnl"] = gs.get("paper_pnl", 0.0) + pnl
+            log({"type": "LIVE_STOP_OUT", "symbol": sym, "px": fill,
+                 "pnl": round(pnl, 2), "via": "stop_nativo",
+                 "r": round((fill - pos["entry"]) / pos["r"], 2) if pos.get("r") else None})
+            try:
+                notify.exec_alert(sym, "LIVE_STOP_OUT",
+                                  f"Ejecutor LIVE: stop nativo ejecutado {sym} @ {fill:.6g}, pnl {pnl:.2f} USDT")
+            except Exception:
+                pass
+            del gs["positions"][sym]
+            continue
+
+        # 2) balance real vs lo que cree el bot
+        diff = sqty - real
+        rel = diff / sqty if sqty > 0 else 0
+        if rel <= REC_REL_TOL:
+            continue  # coincide (o Agus compro de mas: no tocamos)
+        exit_px = _manual_exit_px(ex, sym, since_ts, px)
+        if real * (px or 0) < REC_DUST_USD:
+            # venta manual TOTAL
+            pnl = sqty * (exit_px - pos["entry"])
+            gs["paper_pnl"] = gs.get("paper_pnl", 0.0) + pnl
+            cancel_stop(ex, sym, pos.get("stop_oid"))
+            log({"type": "LIVE_MANUAL_CLOSE", "symbol": sym, "px": exit_px,
+                 "qty": round(sqty, 6), "pnl": round(pnl, 2),
+                 "r": round((exit_px - pos["entry"]) / pos["r"], 2) if pos.get("r") else None})
+            try:
+                notify.exec_alert(sym, "LIVE_MANUAL_CLOSE",
+                                  f"Ejecutor LIVE: cierre manual detectado {sym} @ {exit_px:.6g}, pnl {pnl:.2f} USDT. Estado re-sincronizado.")
+            except Exception:
+                pass
+            del gs["positions"][sym]
+        else:
+            # venta manual PARCIAL: ajusto qty y repongo stop por el resto
+            pnl = diff * (exit_px - pos["entry"])
+            gs["paper_pnl"] = gs.get("paper_pnl", 0.0) + pnl
+            pos["qty"] = real
+            cancel_stop(ex, sym, pos.get("stop_oid"))
+            pos["stop_oid"] = place_stop(ex, sym, pos["qty"], pos["stop"])
+            log({"type": "LIVE_MANUAL_PARTIAL", "symbol": sym, "px": exit_px,
+                 "qty": round(diff, 6), "qty_left": round(real, 6),
+                 "pnl": round(pnl, 2)})
+            try:
+                notify.exec_alert(sym, "LIVE_MANUAL_PARTIAL",
+                                  f"Ejecutor LIVE: venta parcial manual detectada {sym} ({diff:.6g} @ {exit_px:.6g}, pnl {pnl:.2f}). Stop repuesto por {real:.6g}.")
+            except Exception:
+                pass
+
+
+def run():
+    os.makedirs(GDIR, exist_ok=True)
+    ex, live = get_ex()
+    mode = "LIVE" if live else "PAPER"
+    gs = load(GSTATE, {"positions": {}, "paper_pnl": 0.0})
+    if live:
+        try:
+            free = ex.fetch_balance().get("USDT", {}).get("free", 0)
+            inv = sum(q.get("entry", 0) * q.get("qty", 0)
+                      for q in gs.get("positions", {}).values())
+            if free + inv > 1:
+                P["equity"] = round(free + inv, 2)
+        except Exception as e:
+            log({"type": "warn", "msg": "equity fetch: " + str(e)[:80]})
+    gs["equity_base"] = P["equity"]
+    try:
+        reconcile_manual(ex, gs, live)
+    except Exception as e:
+        log({"type": "warn", "msg": "reconcile_manual: " + str(e)[:120]})
+    syms = confirmed_symbols()
+    movers = mover_symbols(ex) if live else []
+    log({"type": "scan", "mode": mode, "confirmed": syms, "movers": movers,
+         "open": list(gs["positions"].keys())})
+    for sym in set(syms) | set(movers) | set(gs["positions"].keys()):
+        try:
+            c15 = ex.fetch_ohlcv(sym, "15m", limit=120)[:-1]
+            c4h = ex.fetch_ohlcv(sym, "4h", limit=60)[:-1]
+        except Exception as e:
+            log({"type": "error", "symbol": sym, "msg": str(e)[:120]})
+            continue
+        pos = gs["positions"].get(sym)
+        px = c15[-1][4]
+        a4 = atr(c4h, P["atr_n"])
+        if pos is None:
+            is_seed = sym in syms and scan_entry(c15)
+            is_mover = (not is_seed) and (sym in movers)
+            if is_seed or is_mover:
+                if is_mover:
+                    try:
+                        a_stop = atr(ex.fetch_ohlcv(sym, "1d", limit=30)[:-1], P["atr_n"])
+                    except Exception:
+                        a_stop = None
+                    if not a_stop:
+                        continue
+                else:
+                    a_stop = a4
+                stop = px - P["atr_mult"] * a_stop
+                if stop <= 0 or stop >= px:
+                    continue
+                risk = P["equity"] * P["risk_pct"] / 100
+                qty = risk / (px - stop)
+                if qty * px < P["min_notional"]:
+                    log({"type": "skip_min_notional", "symbol": sym,
+                         "notional": round(qty * px, 2)})
+                    continue
+                oid = None
+                if live:
+                    try:
+                        o, qty = buy_market(ex, sym, qty, px)
+                        if o is None:
+                            log({"type": "skip_no_balance", "symbol": sym})
+                            continue
+                        px = o.get("average") or px
+                        oid = place_stop(ex, sym, qty, stop)
+                    except Exception as e:
+                        log({"type": "error", "symbol": sym,
+                             "msg": "entry live: " + str(e)[:120]})
+                        continue
+                gs["positions"][sym] = {"entry": px, "qty": qty, "stop": stop,
+                                        "r": px - stop, "so": False, "stop_oid": oid,
+                                        "mode": mode,
+                                        "opened": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                                        "opened_ts": time.time(), "max_r": 0.0}
+                log({"type": mode + "_ENTRY", "symbol": sym, "px": px,
+                     "qty": round(qty, 6), "stop": round(stop, 6),
+                     "stop_oid": oid, "atr4h_pct": round(a4 / px * 100, 2)})
+                try:
+                    notify.exec_alert(sym, mode + "_ENTRY", f"Ejecutor {mode}: entrada {sym} @ {px:.6g}, qty {qty:.6g}, stop {stop:.6g}")
+                except Exception:
+                    pass
+            continue
+        close4 = c4h[-1][4]
+        rmult = (px - pos["entry"]) / pos["r"]
+        pos["max_r"] = max(float(pos.get("max_r") or 0.0), rmult)
+
+        # ---- TIME STOP: capital muerto ----
+        _op = pos.get("opened_ts")
+        if not _op:
+            try:
+                _op = time.mktime(time.strptime(pos.get("opened", ""), "%Y-%m-%dT%H:%M:%SZ")) - time.timezone
+            except Exception:
+                _op = None
+            pos["opened_ts"] = _op
+        _age_d = ((time.time() - _op) / 86400.0) if _op else 0.0
+        _grace_ok = time.time() >= TS_DEPLOY + TS_GRACE_D * 86400
+        if (P.get("max_hold_d") and _grace_ok and not pos["so"]
+                and _age_d >= P["max_hold_d"] and pos["max_r"] < P["time_stop_min_r"]):
+            if live and pos.get("mode") == "LIVE":
+                cancel_stop(ex, sym, pos.get("stop_oid"))
+                try:
+                    sell_market(ex, sym, pos["qty"])
+                except Exception as e:
+                    log({"type": "error", "symbol": sym,
+                         "msg": "time_stop live: " + str(e)[:120]})
+                    continue
+            pnl = pos["qty"] * (px - pos["entry"])
+            gs["paper_pnl"] += pnl
+            log({"type": mode + "_STOP_OUT", "symbol": sym, "px": px,
+                 "pnl": round(pnl, 2), "via": "time_stop",
+                 "edad_d": round(_age_d, 1), "max_r": round(pos["max_r"], 2),
+                 "r": round((px - pos["entry"]) / pos["r"], 2)})
+            try:
+                notify.exec_alert(sym, mode + "_TIME_STOP",
+                                  f"Ejecutor {mode}: TIME STOP {sym} @ {px:.6g} tras {_age_d:.1f}d sin progreso (max {pos['max_r']:.2f}R), pnl {pnl:.2f} USDT")
+            except Exception:
+                pass
+            del gs["positions"][sym]
+            continue
+
+        if close4 < pos["stop"]:
+            if live and pos.get("mode") == "LIVE":
+                cancel_stop(ex, sym, pos.get("stop_oid"))
+                try:
+                    sell_market(ex, sym, pos["qty"])
+                except Exception as e:
+                    log({"type": "error", "symbol": sym,
+                         "msg": "stop live: " + str(e)[:120]})
+                    continue
+            pnl = pos["qty"] * (close4 - pos["entry"])
+            gs["paper_pnl"] += pnl
+            log({"type": mode + "_STOP_OUT", "symbol": sym, "px": close4,
+                 "pnl": round(pnl, 2),
+                 "r": round((close4 - pos["entry"]) / pos["r"], 2)})
+            try:
+                notify.exec_alert(sym, mode + "_STOP_OUT", f"Ejecutor {mode}: STOP {sym} @ {close4:.6g}, pnl {pnl:.2f} USDT")
+            except Exception:
+                pass
+            del gs["positions"][sym]
+            continue
+        if live and pos.get("mode") == "LIVE" and not pos.get("stop_oid"):
+            pos["stop_oid"] = place_stop(ex, sym, pos["qty"], pos["stop"])
+            if pos["stop_oid"]:
+                log({"type": "STOP_REPAIR", "symbol": sym,
+                     "stop": round(pos["stop"], 6), "oid": pos["stop_oid"]})
+        if not pos["so"] and rmult >= P["scaleout_r"]:
+            sq = pos["qty"] * P["scaleout_frac"]
+            if not live or sq * px >= P["min_notional"]:
+                if live and pos.get("mode") == "LIVE":
+                    cancel_stop(ex, sym, pos.get("stop_oid"))
+                    try:
+                        sell_market(ex, sym, sq)
+                    except Exception as e:
+                        log({"type": "error", "symbol": sym,
+                             "msg": "scaleout live: " + str(e)[:120]})
+                        continue
+                pnl = sq * (px - pos["entry"])
+                gs["paper_pnl"] += pnl
+                pos["qty"] -= sq
+                pos["so"] = True
+                pos["stop"] = max(pos["stop"], pos["entry"])
+                if live and pos.get("mode") == "LIVE":
+                    pos["stop_oid"] = place_stop(ex, sym, pos["qty"], pos["stop"])
+                log({"type": mode + "_SCALE_OUT", "symbol": sym, "px": px,
+                     "pnl": round(pnl, 2)})
+                try:
+                    notify.exec_alert(sym, mode + "_SCALE_OUT", f"Ejecutor {mode}: TP parcial {sym} @ {px:.6g}")
+                except Exception:
+                    pass
+        if rmult >= P["trail_after_r"]:
+            ns = close4 - P["atr_mult"] * a4
+            if ns > pos["stop"]:
+                pos["stop"] = ns
+                if live and pos.get("mode") == "LIVE":
+                    cancel_stop(ex, sym, pos.get("stop_oid"))
+                    pos["stop_oid"] = place_stop(ex, sym, pos["qty"], ns)
+                log({"type": "TRAIL", "symbol": sym, "stop": round(ns, 6)})
+        if sym not in syms:
+            log({"type": "note_unconfirmed", "symbol": sym})
+    gs["last_run_ts"] = time.time()
+    json.dump(gs, open(GSTATE, "w"), indent=1)
+    try:
+        import ejecutor_dash
+        ejecutor_dash.publish()
+    except Exception as e:
+        log({"type": "warn", "msg": "dash: " + str(e)[:100]})
+    print("[ejecutor] ok (%s). abiertas: %s pnl: %s" %
+          (mode, list(gs["positions"].keys()), round(gs["paper_pnl"], 2)))
+
+if __name__ == "__main__":
+    run()
