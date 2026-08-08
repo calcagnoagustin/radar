@@ -1,0 +1,85 @@
+nohup: ignoring input
+got ATM/USDT     n=91   fin=+0.55 maxr=+3.75 
+got T/USDT       n=144  fin=-1.00 maxr=+0.15 
+got DODO/USDT    n=784  fin=-1.00 maxr=+1.06 
+got DEXE/USDT    n=225  fin=-1.00 maxr=+0.05 
+got XEC/USDT     n=111  fin=-1.00 maxr=+0.27 
+got KAITO/USDT   n=1328 fin=+1.45 maxr=+2.50 
+got SXT/USDT     n=2303 fin=-0.64 maxr=+0.03 OPEN
+got PORTO/USDT   n=16   fin=-1.01 maxr=-0.06 
+got PORTO/USDT   n=31   fin=-1.00 maxr=-0.01 
+got XEC/USDT     n=368  fin=+0.93 maxr=+2.19 
+got SKL/USDT     n=2207 fin=-0.69 maxr=+0.17 OPEN
+got BANK/USDT    n=496  fin=+11.01 maxr=+21.01 
+got DGB/USDT     n=2094 fin=+0.87 maxr=+2.56 OPEN
+got YB/USDT      n=304  fin=-1.01 maxr=+0.33 
+got PYTH/USDT    n=142  fin=-1.01 maxr=+0.09 
+got ACE/USDT     n=224  fin=-1.00 maxr=-0.08 
+got ZAMA/USDT    n=880  fin=+3.64 maxr=+6.42 
+got HEMI/USDT    n=288  fin=-1.00 maxr=-0.06 
+got PROM/USDT    n=80   fin=-1.01 maxr=-0.35 
+got ONDO/USDT    n=1631 fin=-0.81 maxr=+0.31 OPEN
+got XEC/USDT     n=1599 fin=-0.41 maxr=+0.05 OPEN
+got BANK/USDT    n=496  fin=+1.23 maxr=+3.16 
+got ERA/USDT     n=544  fin=-1.00 maxr=+0.45 
+got PROM/USDT    n=1439 fin=+0.54 maxr=+0.62 OPEN
+got HEMI/USDT    n=1342 fin=-0.04 maxr=+0.18 OPEN
+got ACE/USDT     n=559  fin=-1.00 maxr=+0.07 
+got EUL/USDT     n=145  fin=+0.00 maxr=+2.59 
+got QI/USDT      n=1247 fin=-0.55 maxr=+0.25 OPEN
+got LA/USDT      n=271  fin=-1.00 maxr=+1.86 
+got DIA/USDT     n=31   fin=-1.00 maxr=-0.11 
+got PEOPLE/USDT  n=1055 fin=+0.45 maxr=+1.03 OPEN
+got COTI/USDT    n=16   fin=-1.01 maxr=-0.20 
+got COTI/USDT    n=16   fin=-1.00 maxr=-0.34 
+got EUL/USDT     n=942  fin=-0.90 maxr=+0.11 OPEN
+got COTI/USDT    n=927  fin=-0.26 maxr=+2.60 OPEN
+got BOME/USDT    n=783  fin=+0.09 maxr=+0.44 OPEN
+
+== GRID: corte si max_r<U y r<0 a las N horas ==
+Nh   U    ncut winkill dR_total
+24   0.1  14   0       +2.52
+24   0.2  20   2       +0.65
+24   0.3  21   2       +0.63
+24   0.4  24   2       +2.68
+24   0.5  26   3       +2.93
+48   0.1  14   0       +1.67
+48   0.2  17   0       +2.34
+48   0.3  20   0       +2.45
+48   0.4  21   0       +2.53
+48   0.5  22   0       +3.37
+72   0.1  14   0       +0.54
+72   0.2  17   0       +0.91
+72   0.3  19   0       +1.30
+72   0.4  20   0       +1.47
+72   0.5  21   0       +2.01
+96   0.1  14   0       +0.23
+96   0.2  17   0       +1.18
+96   0.3  19   0       +1.51
+96   0.4  20   0       +1.51
+96   0.5  21   0       +1.89
+120  0.1  14   0       -0.06
+120  0.2  17   0       +0.53
+120  0.3  18   0       +0.45
+120  0.4  19   0       +0.46
+120  0.5  20   0       +0.61
+168  0.1  14   0       -0.32
+168  0.2  17   0       +0.15
+168  0.3  18   0       +0.13
+168  0.4  19   0       +0.14
+168  0.5  21   0       +0.07
+
+== abiertas HOY (edad, r, maxr) ==
+SXT/USDT     edad= 24.0d r=-0.64 maxr=+0.03
+SKL/USDT     edad= 23.0d r=-0.69 maxr=+0.17
+DGB/USDT     edad= 21.8d r=+0.87 maxr=+2.56
+ONDO/USDT    edad= 17.0d r=-0.81 maxr=+0.31
+XEC/USDT     edad= 16.7d r=-0.41 maxr=+0.05
+PROM/USDT    edad= 15.0d r=+0.54 maxr=+0.62
+HEMI/USDT    edad= 14.0d r=-0.04 maxr=+0.18
+QI/USDT      edad= 13.0d r=-0.55 maxr=+0.25
+PEOPLE/USDT  edad= 11.0d r=+0.45 maxr=+1.03
+EUL/USDT     edad=  9.8d r=-0.90 maxr=+0.11
+COTI/USDT    edad=  9.7d r=-0.26 maxr=+2.60
+BOME/USDT    edad=  8.2d r=+0.09 maxr=+0.44
+saved /tmp/zombi_res.json /tmp/zombi_seqs.json
