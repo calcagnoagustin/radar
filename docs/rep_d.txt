@@ -1,0 +1,25 @@
+== CRON ==
+15 0 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python main.py >> /home/opc/bot_semillas/cron.log 2>&1
+7 0,4,8,12,16,20 * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python ganesha_ejecutor.py >> /home/opc/bot_semillas/ejecutor/cron.log 2>&1
+7 * * * * cd /home/opc/bot_semillas && /home/opc/bot_semillas/venv/bin/python3 pescador.py >> /home/opc/bot_semillas/pescador/cron.log 2>&1
+== DEPTH ==
+nohup: ignoring input
+trades con datos: 42
+
+== ganadoras (fin>0.5): peor LOW antes del primer toque +0.5R (close) ==
+ATM/USDT     fin=+0.55 peor_low_antes=-0.44 
+KAITO/USDT   fin=+1.45 peor_low_antes=-0.39 
+XEC/USDT     fin=+0.93 peor_low_antes=-0.26 
+BANK/USDT    fin=+11.01 peor_low_antes=-0.22 
+DGB/USDT     fin=+0.87 peor_low_antes=-0.33 
+ZAMA/USDT    fin=+3.64 peor_low_antes=-0.21 
+BANK/USDT    fin=+1.23 peor_low_antes=-0.10 
+PROM/USDT    fin=+0.53 peor_low_antes=-0.37 
+
+== SIM conjunta: zombi 48h/0.5 (instalada) + depth stop a -X con LOW ==
+X     ncut_depth winkill dR_vs_solo_zombi
+0.5   21         1       -5.71
+0.6   19         1       -6.75
+0.7   17         0       +3.26
+0.8   14         0       +2.31
+0.9   14         0       +0.91
