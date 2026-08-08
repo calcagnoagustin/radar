@@ -1,0 +1,9 @@
+OK backup= /home/opc/bot_semillas/ganesha_ejecutor.py.bak.zombie.1786147659
+md5 nuevo= 4f6fdf1a24659729c51f8ffc669ef944
+4f6fdf1a24659729c51f8ffc669ef944  /home/opc/bot_semillas/ganesha_ejecutor.py
+24:     "zombie_h": 48.0, "zombie_min_r": 0.5}
+407:        if (P.get("zombie_h") and _grace_ok and not pos["so"]
+408:                and _age_d * 24.0 >= P["zombie_h"]
+409:                and pos["max_r"] < P["zombie_min_r"] and rmult < 0.0):
+416:                         "msg": "zombie_stop live: " + str(e)[:120]})
+421:                 "pnl": round(pnl, 2), "via": "zombie",
