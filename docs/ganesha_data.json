@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 183.17,
+ "equity_now": 188.38,
  "deposits_total": 0,
- "pnl_today": -13.11,
- "trades_today": 12,
- "realized_pnl": -10.24,
- "trades_total": 43,
- "win_rate": 37,
- "profit_factor": 0.87,
+ "pnl_today": -10.08,
+ "trades_today": 13,
+ "realized_pnl": -7.21,
+ "trades_total": 44,
+ "win_rate": 39,
+ "profit_factor": 0.91,
  "open_positions": [
   {
    "symbol": "BOME/USDT",
@@ -47,9 +47,9 @@
   {
    "symbol": "TUT/USDT",
    "entry": 0.03911,
-   "qty": 493.0,
-   "stop": 0.031194285714285716,
-   "tp1_done": false
+   "qty": 345.1,
+   "stop": 0.048735714285714285,
+   "tp1_done": true
   },
   {
    "symbol": "NIL/USDT",
@@ -67,15 +67,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "XEC/USDT",
-   "entry": 6.68e-06,
-   "exit": 5.63e-06,
-   "qty_total": 3197583.0,
-   "pnl_net": -3.35,
-   "action": "stop",
-   "closed_ts": 1784088438.8097138
-  },
   {
    "symbol": "PORTO/USDT",
    "entry": 0.597,
@@ -426,6 +417,15 @@
    "pnl_net": -0.39,
    "action": "stop",
    "closed_ts": 1786176472.748842
+  },
+  {
+   "symbol": "TUT/USDT",
+   "entry": 0.03911,
+   "exit": 0.05957,
+   "qty_total": 0,
+   "pnl_net": 3.03,
+   "action": "tp",
+   "closed_ts": 1786192920.8167787
   }
  ]
 }
