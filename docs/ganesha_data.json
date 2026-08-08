@@ -1,77 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 183.15,
+ "equity_now": 183.0,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 2.85,
- "trades_total": 31,
- "win_rate": 42,
- "profit_factor": 1.05,
+ "pnl_today": -5.22,
+ "trades_today": 9,
+ "realized_pnl": -2.36,
+ "trades_total": 40,
+ "win_rate": 40,
+ "profit_factor": 0.97,
  "open_positions": [
-  {
-   "symbol": "SXT/USDT",
-   "entry": 0.00929,
-   "qty": 1253.4,
-   "stop": 0.0062125,
-   "tp1_done": false
-  },
-  {
-   "symbol": "SKL/USDT",
-   "entry": 0.00461,
-   "qty": 2262.0,
-   "stop": 0.0031064285714285716,
-   "tp1_done": false
-  },
-  {
-   "symbol": "DGB/USDT",
-   "entry": 0.00301,
-   "qty": 5841.2,
-   "stop": 0.002368214285714286,
-   "tp1_done": false
-  },
-  {
-   "symbol": "ONDO/USDT",
-   "entry": 0.4033,
-   "qty": 62.2,
-   "stop": 0.3353607142857143,
-   "tp1_done": false
-  },
-  {
-   "symbol": "XEC/USDT",
-   "entry": 7.87e-06,
-   "qty": 1320636.0,
-   "stop": 4.926785714285714e-06,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PROM/USDT",
-   "entry": 1.772,
-   "qty": 5.82,
-   "stop": 1.1166428571428568,
-   "tp1_done": false
-  },
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00526,
-   "qty": 1872.1,
-   "stop": 0.0032164285714285723,
-   "tp1_done": false
-  },
-  {
-   "symbol": "QI/USDT",
-   "entry": 0.00148250747644408,
-   "qty": 9764.0,
-   "stop": 0.0010652500000000002,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PEOPLE/USDT",
-   "entry": 0.00676,
-   "qty": 4591.7,
-   "stop": 0.005918571428571428,
-   "tp1_done": false
-  },
   {
    "symbol": "EUL/USDT",
    "entry": 1.801,
@@ -91,6 +28,48 @@
    "entry": 0.0005924,
    "qty": 47579.0,
    "stop": 0.0005084499999999999,
+   "tp1_done": false
+  },
+  {
+   "symbol": "EPIC/USDT",
+   "entry": 1.1428,
+   "qty": 10.0,
+   "stop": 0.8060999999999998,
+   "tp1_done": false
+  },
+  {
+   "symbol": "HEI/USDT",
+   "entry": 0.2358,
+   "qty": 35.8,
+   "stop": 0.11818571428571428,
+   "tp1_done": false
+  },
+  {
+   "symbol": "AAOIB/USDT",
+   "entry": 137.27,
+   "qty": 0.127,
+   "stop": 105.87857142857143,
+   "tp1_done": false
+  },
+  {
+   "symbol": "SPCXB/USDT",
+   "entry": 133.5,
+   "qty": 0.224,
+   "stop": 117.0042857142857,
+   "tp1_done": false
+  },
+  {
+   "symbol": "TUT/USDT",
+   "entry": 0.03911,
+   "qty": 493.0,
+   "stop": 0.031194285714285716,
+   "tp1_done": false
+  },
+  {
+   "symbol": "C98/USDT",
+   "entry": 0.01704,
+   "qty": 1816.9,
+   "stop": 0.014667142857142858,
    "tp1_done": false
   }
  ],
@@ -373,6 +352,87 @@
    "pnl_net": -4.09,
    "action": "stop",
    "closed_ts": 1785442038.903147
+  },
+  {
+   "symbol": "XEC/USDT",
+   "entry": 7.87e-06,
+   "exit": 6.7e-06,
+   "qty_total": 1320636.0,
+   "pnl_net": -1.55,
+   "action": "stop",
+   "closed_ts": 1786147771.1777353
+  },
+  {
+   "symbol": "DGB/USDT",
+   "entry": 0.00301,
+   "exit": 0.00357,
+   "qty_total": 5841.2,
+   "pnl_net": 3.27,
+   "action": "stop",
+   "closed_ts": 1786147773.0210934
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.00526,
+   "exit": 0.00519,
+   "qty_total": 1872.1,
+   "pnl_net": -0.13,
+   "action": "stop",
+   "closed_ts": 1786147778.147147
+  },
+  {
+   "symbol": "SXT/USDT",
+   "entry": 0.00929,
+   "exit": 0.00729,
+   "qty_total": 1253.4,
+   "pnl_net": -2.51,
+   "action": "stop",
+   "closed_ts": 1786147784.161648
+  },
+  {
+   "symbol": "PEOPLE/USDT",
+   "entry": 0.00676,
+   "exit": 0.00714,
+   "qty_total": 4591.7,
+   "pnl_net": 1.74,
+   "action": "stop",
+   "closed_ts": 1786147785.7515385
+  },
+  {
+   "symbol": "SKL/USDT",
+   "entry": 0.00461,
+   "exit": 0.00357,
+   "qty_total": 2262.0,
+   "pnl_net": -2.35,
+   "action": "stop",
+   "closed_ts": 1786147787.3518722
+  },
+  {
+   "symbol": "QI/USDT",
+   "entry": 0.00148250747644408,
+   "exit": 0.00125,
+   "qty_total": 9764.0,
+   "pnl_net": -2.27,
+   "action": "stop",
+   "closed_ts": 1786147788.9180293
+  },
+  {
+   "symbol": "ONDO/USDT",
+   "entry": 0.4033,
+   "exit": 0.3479,
+   "qty_total": 62.2,
+   "pnl_net": -3.45,
+   "action": "stop",
+   "closed_ts": 1786147794.240293
+  },
+  {
+   "symbol": "PROM/USDT",
+   "entry": 1.772,
+   "exit": 2.12,
+   "qty_total": 5.82,
+   "pnl_net": 2.03,
+   "action": "stop",
+   "closed_ts": 1786147805.464586
   }
  ]
 }
