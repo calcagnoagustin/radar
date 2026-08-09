@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 194.42,
+ "equity_now": 207.51,
  "deposits_total": 0,
- "pnl_today": -10.08,
- "trades_today": 13,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -7.21,
  "trades_total": 44,
  "win_rate": 39,
@@ -48,7 +48,7 @@
    "symbol": "TUT/USDT",
    "entry": 0.03911,
    "qty": 345.1,
-   "stop": 0.06547142857142857,
+   "stop": 0.09045428571428571,
    "tp1_done": true
   },
   {
@@ -70,6 +70,20 @@
    "entry": 0.1544,
    "qty": 101.4,
    "stop": 0.1255,
+   "tp1_done": false
+  },
+  {
+   "symbol": "COOKIE/USDT",
+   "entry": 0.0133,
+   "qty": 1385.0,
+   "stop": 0.01037142857142857,
+   "tp1_done": false
+  },
+  {
+   "symbol": "HMSTR/USDT",
+   "entry": 0.0002198,
+   "qty": 26663.0,
+   "stop": 0.0001877,
    "tp1_done": false
   }
  ],
