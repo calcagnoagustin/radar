@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 198.75,
+ "equity_now": 198.01,
  "deposits_total": 0,
- "pnl_today": 14.04,
- "trades_today": 5,
- "realized_pnl": 6.83,
- "trades_total": 49,
- "win_rate": 37,
- "profit_factor": 1.07,
+ "pnl_today": 8.16,
+ "trades_today": 7,
+ "realized_pnl": 0.95,
+ "trades_total": 51,
+ "win_rate": 35,
+ "profit_factor": 1.01,
  "open_positions": [
   {
    "symbol": "BOME/USDT",
@@ -52,24 +52,10 @@
    "tp1_done": false
   },
   {
-   "symbol": "SAGA/USDT",
-   "entry": 0.01716,
-   "qty": 2002.8,
-   "stop": 0.014552857142857142,
-   "tp1_done": false
-  },
-  {
    "symbol": "ACE/USDT",
    "entry": 0.1303,
    "qty": 106.7,
    "stop": 0.08744285714285714,
-   "tp1_done": false
-  },
-  {
-   "symbol": "TUT/USDT",
-   "entry": 0.17091723404255318,
-   "qty": 141.0,
-   "stop": 0.1533685714285714,
    "tp1_done": false
   },
   {
@@ -78,27 +64,23 @@
    "qty": 490.3,
    "stop": 0.017052857142857144,
    "tp1_done": false
+  },
+  {
+   "symbol": "IOTX/USDT",
+   "entry": 0.00306,
+   "qty": 6963.0,
+   "stop": 0.0026500000000000004,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BROCCOLI714/USDT",
+   "entry": 0.02029,
+   "qty": 1521.0,
+   "stop": 0.017404285714285712,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "XEC/USDT",
-   "entry": 6.63e-06,
-   "exit": 8.19e-06,
-   "qty_total": 2114406.0,
-   "pnl_net": 2.31,
-   "action": "stop",
-   "closed_ts": 1784491634.7590463
-  },
-  {
-   "symbol": "BANK/USDT",
-   "entry": 0.0557,
-   "exit": 0.2317,
-   "qty_total": 61.2003,
-   "pnl_net": 10.77,
-   "action": "manual",
-   "closed_ts": 1784491637.0724502
-  },
   {
    "symbol": "DODO/USDT",
    "entry": 0.02296,
@@ -440,6 +422,24 @@
    "pnl_net": -2.16,
    "action": "stop",
    "closed_ts": 1786277349.3822246
+  },
+  {
+   "symbol": "TUT/USDT",
+   "entry": 0.17091723404255318,
+   "exit": 0.1533632857142857,
+   "qty_total": 141.0,
+   "pnl_net": -2.48,
+   "action": "stop",
+   "closed_ts": 1786291692.088528
+  },
+  {
+   "symbol": "SAGA/USDT",
+   "entry": 0.01716,
+   "exit": 0.01546,
+   "qty_total": 2002.8,
+   "pnl_net": -3.4,
+   "action": "stop",
+   "closed_ts": 1786291714.6115708
   }
  ]
 }
