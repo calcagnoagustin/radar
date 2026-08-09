@@ -1,26 +1,19 @@
 {
  "dry_run": false,
- "equity_now": 202.68,
+ "equity_now": 198.75,
  "deposits_total": 0,
- "pnl_today": 20.07,
- "trades_today": 3,
- "realized_pnl": 12.86,
- "trades_total": 47,
- "win_rate": 38,
- "profit_factor": 1.15,
+ "pnl_today": 14.04,
+ "trades_today": 5,
+ "realized_pnl": 6.83,
+ "trades_total": 49,
+ "win_rate": 37,
+ "profit_factor": 1.07,
  "open_positions": [
   {
    "symbol": "BOME/USDT",
    "entry": 0.0005924,
    "qty": 47579.0,
    "stop": 0.0005084499999999999,
-   "tp1_done": false
-  },
-  {
-   "symbol": "EPIC/USDT",
-   "entry": 1.1428,
-   "qty": 10.0,
-   "stop": 0.8060999999999998,
    "tp1_done": false
   },
   {
@@ -42,13 +35,6 @@
    "entry": 0.03700879751954705,
    "qty": 370.9,
    "stop": 0.02657714285714286,
-   "tp1_done": false
-  },
-  {
-   "symbol": "BICO/USDT",
-   "entry": 0.05935217423133236,
-   "qty": 327.84,
-   "stop": 0.04755571428571429,
    "tp1_done": false
   },
   {
@@ -78,27 +64,23 @@
    "qty": 106.7,
    "stop": 0.08744285714285714,
    "tp1_done": false
+  },
+  {
+   "symbol": "TUT/USDT",
+   "entry": 0.17091723404255318,
+   "qty": 141.0,
+   "stop": 0.1533685714285714,
+   "tp1_done": false
+  },
+  {
+   "symbol": "MUBARAK/USDT",
+   "entry": 0.019894642055884152,
+   "qty": 490.3,
+   "stop": 0.017052857142857144,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "XEC/USDT",
-   "entry": 6.63e-06,
-   "exit": 1.007e-05,
-   "qty_total": 0,
-   "pnl_net": 2.18,
-   "action": "tp",
-   "closed_ts": 1784378315.8888724
-  },
-  {
-   "symbol": "BANK/USDT",
-   "entry": 0.0557,
-   "exit": 0.1097,
-   "qty_total": 0,
-   "pnl_net": 4.7,
-   "action": "tp",
-   "closed_ts": 1784407630.412163
-  },
   {
    "symbol": "XEC/USDT",
    "entry": 6.63e-06,
@@ -440,6 +422,24 @@
    "pnl_net": -2.63,
    "action": "stop",
    "closed_ts": 1786262888.2955163
+  },
+  {
+   "symbol": "BICO/USDT",
+   "entry": 0.05935217423133236,
+   "exit": 0.04755,
+   "qty_total": 327.84,
+   "pnl_net": -3.87,
+   "action": "stop",
+   "closed_ts": 1786277325.599294
+  },
+  {
+   "symbol": "EPIC/USDT",
+   "entry": 1.1428,
+   "exit": 0.9268,
+   "qty_total": 10.0,
+   "pnl_net": -2.16,
+   "action": "stop",
+   "closed_ts": 1786277349.3822246
   }
  ]
 }
