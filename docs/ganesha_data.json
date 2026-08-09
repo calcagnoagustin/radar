@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 215.39,
+ "equity_now": 202.68,
  "deposits_total": 0,
- "pnl_today": -2.31,
- "trades_today": 1,
- "realized_pnl": -9.52,
- "trades_total": 45,
+ "pnl_today": 20.07,
+ "trades_today": 3,
+ "realized_pnl": 12.86,
+ "trades_total": 47,
  "win_rate": 38,
- "profit_factor": 0.88,
+ "profit_factor": 1.15,
  "open_positions": [
   {
    "symbol": "BOME/USDT",
@@ -24,13 +24,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "HEI/USDT",
-   "entry": 0.2358,
-   "qty": 35.8,
-   "stop": 0.11818571428571428,
-   "tp1_done": false
-  },
-  {
    "symbol": "AAOIB/USDT",
    "entry": 137.27,
    "qty": 0.127,
@@ -43,13 +36,6 @@
    "qty": 0.224,
    "stop": 117.0042857142857,
    "tp1_done": false
-  },
-  {
-   "symbol": "TUT/USDT",
-   "entry": 0.03911,
-   "qty": 345.1,
-   "stop": 0.11271857142857143,
-   "tp1_done": true
   },
   {
    "symbol": "NIL/USDT",
@@ -78,27 +64,23 @@
    "qty": 26663.0,
    "stop": 0.0001877,
    "tp1_done": false
+  },
+  {
+   "symbol": "SAGA/USDT",
+   "entry": 0.01716,
+   "qty": 2002.8,
+   "stop": 0.014552857142857142,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.1303,
+   "qty": 106.7,
+   "stop": 0.08744285714285714,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "DEXE/USDT",
-   "entry": 48.322435897435895,
-   "exit": 38.03,
-   "qty_total": 0.39,
-   "pnl_net": -3.91,
-   "action": "stop",
-   "closed_ts": 1784103677.4625063
-  },
-  {
-   "symbol": "PORTO/USDT",
-   "entry": 0.598,
-   "exit": 0.516,
-   "qty_total": 44.41,
-   "pnl_net": -3.64,
-   "action": "stop",
-   "closed_ts": 1784131642.7436383
-  },
   {
    "symbol": "XEC/USDT",
    "entry": 6.63e-06,
@@ -440,6 +422,24 @@
    "pnl_net": -2.31,
    "action": "stop",
    "closed_ts": 1786248488.0425038
+  },
+  {
+   "symbol": "TUT/USDT",
+   "entry": 0.03911,
+   "exit": 0.11159,
+   "qty_total": 493.0,
+   "pnl_net": 25.01,
+   "action": "stop",
+   "closed_ts": 1786262859.324167
+  },
+  {
+   "symbol": "HEI/USDT",
+   "entry": 0.2358,
+   "exit": 0.1624,
+   "qty_total": 35.8,
+   "pnl_net": -2.63,
+   "action": "stop",
+   "closed_ts": 1786262888.2955163
   }
  ]
 }
