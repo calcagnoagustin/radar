@@ -1,27 +1,20 @@
 {
  "dry_run": false,
- "equity_now": 204.78,
+ "equity_now": 208.95,
  "deposits_total": 0,
- "pnl_today": 11.24,
- "trades_today": 8,
- "realized_pnl": 4.04,
- "trades_total": 52,
- "win_rate": 37,
+ "pnl_today": -0.09,
+ "trades_today": 1,
+ "realized_pnl": 3.94,
+ "trades_total": 53,
+ "win_rate": 36,
  "profit_factor": 1.04,
  "open_positions": [
   {
    "symbol": "BOME/USDT",
    "entry": 0.0005924,
    "qty": 33305.3,
-   "stop": 0.0007489285714285715,
+   "stop": 0.0007767428571428572,
    "tp1_done": true
-  },
-  {
-   "symbol": "AAOIB/USDT",
-   "entry": 137.27,
-   "qty": 0.127,
-   "stop": 105.87857142857143,
-   "tp1_done": false
   },
   {
    "symbol": "SPCXB/USDT",
@@ -88,15 +81,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "BANK/USDT",
-   "entry": 0.0557,
-   "exit": 0.1934,
-   "qty_total": 290.3,
-   "pnl_net": 19.55,
-   "action": "stop",
-   "closed_ts": 1784621237.868379
-  },
   {
    "symbol": "PYTH/USDT",
    "entry": 0.04993,
@@ -447,6 +431,15 @@
    "pnl_net": 3.08,
    "action": "tp",
    "closed_ts": 1786306070.564052
+  },
+  {
+   "symbol": "AAOIB/USDT",
+   "entry": 137.27,
+   "exit": 136.54,
+   "qty_total": 0.127,
+   "pnl_net": -0.09,
+   "action": "stop",
+   "closed_ts": 1786320860.2153287
   }
  ]
 }
