@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 187.34,
+ "equity_now": 183.87,
  "deposits_total": 0,
- "pnl_today": -7.66,
- "trades_today": 8,
- "realized_pnl": -3.63,
- "trades_total": 60,
- "win_rate": 33,
- "profit_factor": 0.97,
+ "pnl_today": -10.86,
+ "trades_today": 10,
+ "realized_pnl": -6.83,
+ "trades_total": 62,
+ "win_rate": 32,
+ "profit_factor": 0.94,
  "open_positions": [
-  {
-   "symbol": "SPCXB/USDT",
-   "entry": 133.5,
-   "qty": 0.224,
-   "stop": 117.0042857142857,
-   "tp1_done": false
-  },
   {
    "symbol": "NIL/USDT",
    "entry": 0.03700879751954705,
@@ -45,13 +38,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "BROCCOLI714/USDT",
-   "entry": 0.02029,
-   "qty": 1521.0,
-   "stop": 0.017404285714285712,
-   "tp1_done": false
-  },
-  {
    "symbol": "NEIRO/USDT",
    "entry": 7.242e-05,
    "qty": 435276.0,
@@ -71,27 +57,16 @@
    "qty": 1465.7,
    "stop": 0.0073014285714285716,
    "tp1_done": false
+  },
+  {
+   "symbol": "TST/USDT",
+   "entry": 0.02238,
+   "qty": 746.2,
+   "stop": 0.016484285714285715,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "EUL/USDT",
-   "entry": 1.923,
-   "exit": 1.923,
-   "qty_total": 12.89,
-   "pnl_net": 0.0,
-   "action": "stop",
-   "closed_ts": 1785155316.3933158
-  },
-  {
-   "symbol": "BANK/USDT",
-   "entry": 0.1771,
-   "exit": 0.31104274406332455,
-   "qty_total": 38.0,
-   "pnl_net": 5.09,
-   "action": "stop",
-   "closed_ts": 1785168436.1979244
-  },
   {
    "symbol": "DIA/USDT",
    "entry": 0.1698,
@@ -433,6 +408,24 @@
    "pnl_net": -3.13,
    "action": "stop",
    "closed_ts": 1786363638.6834197
+  },
+  {
+   "symbol": "BROCCOLI714/USDT",
+   "entry": 0.02029,
+   "exit": 0.01825,
+   "qty_total": 1521.0,
+   "pnl_net": -3.1,
+   "action": "stop",
+   "closed_ts": 1786378043.5477426
+  },
+  {
+   "symbol": "SPCXB/USDT",
+   "entry": 133.5,
+   "exit": 133.07,
+   "qty_total": 0.224,
+   "pnl_net": -0.1,
+   "action": "stop",
+   "closed_ts": 1786378046.255074
   }
  ]
 }
