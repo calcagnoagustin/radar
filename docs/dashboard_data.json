@@ -1,10 +1,32 @@
 {
- "generated_at": "2026-08-09T00:16:20Z",
+ "generated_at": "2026-08-10T00:16:32Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 90.68988811,
+ "free_usdt": 70.68989845,
  "deposits": [],
  "positions": [
+  {
+   "symbol": "MMT/USDT",
+   "binance": "MMTUSDT",
+   "status": "seed",
+   "qty": 48.1,
+   "avg_cost": 0.2079,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "binance": "PEPEUSDT",
+   "status": "seed",
+   "qty": 3436426.0,
+   "avg_cost": 2.91e-06,
+   "dca_adds": 0,
+   "tp_hit": [],
+   "confirmed_at": null,
+   "note": ""
+  },
   {
    "symbol": "PUMP/USDT",
    "binance": "PUMPUSDT",
@@ -216,6 +238,24 @@
    "qty_total": 228.1,
    "pnl_net": -1.3941,
    "closed_ts": 1785888914.5949626
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "action": "SEED",
+   "entry": 2.91e-06,
+   "exit": 2.91e-06,
+   "qty_total": 3436426.0,
+   "pnl_net": 0,
+   "closed_ts": 1786320945.2526796
+  },
+  {
+   "symbol": "MMT/USDT",
+   "action": "SEED",
+   "entry": 0.2079,
+   "exit": 0.2079,
+   "qty_total": 48.1,
+   "pnl_net": 0,
+   "closed_ts": 1786320945.798842
   }
  ],
  "shortlist_full": [
@@ -633,7 +673,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-08T00:27:24Z",
+  "generated": "2026-08-09T00:17:52Z",
   "ranking": [
    {
     "atr_mult": 2.0,
