@@ -1,21 +1,14 @@
 {
  "dry_run": false,
- "equity_now": 208.95,
+ "equity_now": 199.08,
  "deposits_total": 0,
- "pnl_today": -0.09,
- "trades_today": 1,
- "realized_pnl": 3.94,
- "trades_total": 53,
+ "pnl_today": 5.27,
+ "trades_today": 3,
+ "realized_pnl": 9.3,
+ "trades_total": 55,
  "win_rate": 36,
- "profit_factor": 1.04,
+ "profit_factor": 1.1,
  "open_positions": [
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.0005924,
-   "qty": 33305.3,
-   "stop": 0.0007767428571428572,
-   "tp1_done": true
-  },
   {
    "symbol": "SPCXB/USDT",
    "entry": 133.5,
@@ -35,13 +28,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "HMSTR/USDT",
-   "entry": 0.0002198,
-   "qty": 26663.0,
-   "stop": 0.0001877,
    "tp1_done": false
   },
   {
@@ -78,27 +64,23 @@
    "qty": 562.2,
    "stop": 0.017374285714285714,
    "tp1_done": false
+  },
+  {
+   "symbol": "BANANAS31/USDT",
+   "entry": 0.009466,
+   "qty": 3619.0,
+   "stop": 0.008187999999999999,
+   "tp1_done": false
+  },
+  {
+   "symbol": "THE/USDT",
+   "entry": 0.07446175710594315,
+   "qty": 193.5,
+   "stop": 0.06492857142857142,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PYTH/USDT",
-   "entry": 0.04993,
-   "exit": 0.04672,
-   "qty_total": 1367.3,
-   "pnl_net": -4.39,
-   "action": "stop",
-   "closed_ts": 1784650036.7310688
-  },
-  {
-   "symbol": "PROM/USDT",
-   "entry": 1.86,
-   "exit": 1.431,
-   "qty_total": 8.46,
-   "pnl_net": -3.63,
-   "action": "stop",
-   "closed_ts": 1784693238.3734396
-  },
   {
    "symbol": "ZAMA/USDT",
    "entry": 0.03878,
@@ -440,6 +422,24 @@
    "pnl_net": -0.09,
    "action": "stop",
    "closed_ts": 1786320860.2153287
+  },
+  {
+   "symbol": "BOME/USDT",
+   "entry": 0.0005924,
+   "exit": 0.0007733,
+   "qty_total": 47579.0,
+   "pnl_net": 6.02,
+   "action": "stop",
+   "closed_ts": 1786334836.7714756
+  },
+  {
+   "symbol": "HMSTR/USDT",
+   "entry": 0.0002198,
+   "exit": 0.0001949,
+   "qty_total": 26663.0,
+   "pnl_net": -0.66,
+   "action": "stop",
+   "closed_ts": 1786334852.0730946
   }
  ]
 }
