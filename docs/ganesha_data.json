@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 199.08,
+ "equity_now": 188.24,
  "deposits_total": 0,
- "pnl_today": 5.27,
- "trades_today": 3,
- "realized_pnl": 9.3,
- "trades_total": 55,
- "win_rate": 36,
- "profit_factor": 1.1,
+ "pnl_today": -4.53,
+ "trades_today": 7,
+ "realized_pnl": -0.5,
+ "trades_total": 59,
+ "win_rate": 34,
+ "profit_factor": 1.0,
  "open_positions": [
   {
    "symbol": "SPCXB/USDT",
@@ -45,13 +45,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "IOTX/USDT",
-   "entry": 0.00306,
-   "qty": 6963.0,
-   "stop": 0.0026500000000000004,
-   "tp1_done": false
-  },
-  {
    "symbol": "BROCCOLI714/USDT",
    "entry": 0.02029,
    "qty": 1521.0,
@@ -59,64 +52,21 @@
    "tp1_done": false
   },
   {
-   "symbol": "TST/USDT",
-   "entry": 0.02121,
-   "qty": 562.2,
-   "stop": 0.017374285714285714,
+   "symbol": "ACT/USDT",
+   "entry": 0.01284,
+   "qty": 2270.5,
+   "stop": 0.01146,
    "tp1_done": false
   },
   {
-   "symbol": "BANANAS31/USDT",
-   "entry": 0.009466,
-   "qty": 3619.0,
-   "stop": 0.008187999999999999,
-   "tp1_done": false
-  },
-  {
-   "symbol": "THE/USDT",
-   "entry": 0.07446175710594315,
-   "qty": 193.5,
-   "stop": 0.06492857142857142,
+   "symbol": "NEIRO/USDT",
+   "entry": 7.242e-05,
+   "qty": 435276.0,
+   "stop": 6.379999999999999e-05,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ZAMA/USDT",
-   "entry": 0.03878,
-   "exit": 0.04764,
-   "qty_total": 0,
-   "pnl_net": 1.08,
-   "action": "tp",
-   "closed_ts": 1784765257.8950787
-  },
-  {
-   "symbol": "YB/USDT",
-   "entry": 0.0906,
-   "exit": 0.0721,
-   "qty_total": 204.9,
-   "pnl_net": -3.79,
-   "action": "stop",
-   "closed_ts": 1784779640.4227972
-  },
-  {
-   "symbol": "ACE/USDT",
-   "entry": 0.1184,
-   "exit": 0.0837,
-   "qty_total": 133.4,
-   "pnl_net": -4.63,
-   "action": "stop",
-   "closed_ts": 1784794037.5882556
-  },
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.006195421478060046,
-   "exit": 0.00455,
-   "qty_total": 1905.2,
-   "pnl_net": -3.13,
-   "action": "stop",
-   "closed_ts": 1784866033.6401272
-  },
   {
    "symbol": "EUL/USDT",
    "entry": 1.923,
@@ -440,6 +390,42 @@
    "pnl_net": -0.66,
    "action": "stop",
    "closed_ts": 1786334852.0730946
+  },
+  {
+   "symbol": "IOTX/USDT",
+   "entry": 0.00306,
+   "exit": 0.00264,
+   "qty_total": 6963.0,
+   "pnl_net": -2.92,
+   "action": "stop",
+   "closed_ts": 1786349236.4648204
+  },
+  {
+   "symbol": "THE/USDT",
+   "entry": 0.07446175710594315,
+   "exit": 0.0649,
+   "qty_total": 193.5,
+   "pnl_net": -1.85,
+   "action": "stop",
+   "closed_ts": 1786349251.774818
+  },
+  {
+   "symbol": "BANANAS31/USDT",
+   "entry": 0.009466,
+   "exit": 0.008442,
+   "qty_total": 3619.0,
+   "pnl_net": -3.71,
+   "action": "stop",
+   "closed_ts": 1786349264.3159304
+  },
+  {
+   "symbol": "TST/USDT",
+   "entry": 0.02121,
+   "exit": 0.01886,
+   "qty_total": 562.2,
+   "pnl_net": -1.32,
+   "action": "stop",
+   "closed_ts": 1786349271.689086
   }
  ]
 }
