@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-10T00:16:32Z",
+ "generated_at": "2026-08-11T00:15:45Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 70.68989845,
@@ -19,12 +19,12 @@
   {
    "symbol": "PEPE/USDT",
    "binance": "PEPEUSDT",
-   "status": "seed",
+   "status": "confirmed",
    "qty": 3436426.0,
    "avg_cost": 2.91e-06,
    "dca_adds": 0,
    "tp_hit": [],
-   "confirmed_at": null,
+   "confirmed_at": "2026-08-11",
    "note": ""
   },
   {
@@ -673,7 +673,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-09T00:17:52Z",
+  "generated": "2026-08-10T00:18:00Z",
   "ranking": [
    {
     "atr_mult": 2.0,
