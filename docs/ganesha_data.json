@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 183.43,
+ "equity_now": 175.61,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -6.83,
- "trades_total": 62,
+ "pnl_today": -2.67,
+ "trades_today": 1,
+ "realized_pnl": -9.5,
+ "trades_total": 63,
  "win_rate": 32,
- "profit_factor": 0.94,
+ "profit_factor": 0.92,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -66,23 +66,28 @@
    "tp1_done": false
   },
   {
-   "symbol": "RAD/USDT",
-   "entry": 0.27,
-   "qty": 148.3,
-   "stop": 0.2518571428571429,
+   "symbol": "DODO/USDT",
+   "entry": 0.02257,
+   "qty": 511.4,
+   "stop": 0.01401857142857143,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BICO/USDT",
+   "entry": 0.04938,
+   "qty": 197.14,
+   "stop": 0.02730285714285714,
+   "tp1_done": false
+  },
+  {
+   "symbol": "CRV/USDT",
+   "entry": 0.2646,
+   "qty": 63.8,
+   "stop": 0.24312857142857142,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "DIA/USDT",
-   "entry": 0.1698,
-   "exit": 0.1496,
-   "qty_total": 99.6,
-   "pnl_net": -2.01,
-   "action": "stop",
-   "closed_ts": 1785182842.6517797
-  },
   {
    "symbol": "KAITO/USDT",
    "entry": 0.7885,
@@ -433,6 +438,15 @@
    "pnl_net": -0.1,
    "action": "stop",
    "closed_ts": 1786378046.255074
+  },
+  {
+   "symbol": "RAD/USDT",
+   "entry": 0.27,
+   "exit": 0.252,
+   "qty_total": 148.3,
+   "pnl_net": -2.67,
+   "action": "stop",
+   "closed_ts": 1786421240.3982482
   }
  ]
 }
