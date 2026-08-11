@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 165.63,
+ "equity_now": 168.77,
  "deposits_total": 0,
- "pnl_today": -8.49,
- "trades_today": 3,
- "realized_pnl": -15.31,
- "trades_total": 65,
- "win_rate": 31,
- "profit_factor": 0.87,
+ "pnl_today": -10.82,
+ "trades_today": 4,
+ "realized_pnl": -17.64,
+ "trades_total": 66,
+ "win_rate": 30,
+ "profit_factor": 0.86,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -21,13 +21,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "ACE/USDT",
-   "entry": 0.1303,
-   "qty": 106.7,
-   "stop": 0.08744285714285714,
    "tp1_done": false
   },
   {
@@ -88,15 +81,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "KAITO/USDT",
-   "entry": 0.7885,
-   "exit": 1.1132,
-   "qty_total": 17.7,
-   "pnl_net": 4.02,
-   "action": "stop",
-   "closed_ts": 1785269233.5931573
-  },
   {
    "symbol": "COTI/USDT",
    "entry": 0.01404,
@@ -447,6 +431,15 @@
    "pnl_net": -4.42,
    "action": "stop",
    "closed_ts": 1786435640.232815
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.1303,
+   "exit": 0.1085,
+   "qty_total": 106.7,
+   "pnl_net": -2.33,
+   "action": "stop",
+   "closed_ts": 1786450052.8486643
   }
  ]
 }
