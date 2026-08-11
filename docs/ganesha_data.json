@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 168.77,
+ "equity_now": 167.38,
  "deposits_total": 0,
- "pnl_today": -10.82,
- "trades_today": 4,
- "realized_pnl": -17.64,
- "trades_total": 66,
- "win_rate": 30,
- "profit_factor": 0.86,
+ "pnl_today": -14.34,
+ "trades_today": 6,
+ "realized_pnl": -21.16,
+ "trades_total": 68,
+ "win_rate": 29,
+ "profit_factor": 0.83,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -21,13 +21,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "NEIRO/USDT",
-   "entry": 7.242e-05,
-   "qty": 435276.0,
-   "stop": 6.379999999999999e-05,
    "tp1_done": false
   },
   {
@@ -74,31 +67,20 @@
   },
   {
    "symbol": "RAD/USDT",
-   "entry": 0.283,
-   "qty": 42.8,
-   "stop": 0.26685714285714285,
+   "entry": 0.266,
+   "qty": 165.8,
+   "stop": 0.24185714285714288,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BANANAS31/USDT",
+   "entry": 0.010276,
+   "qty": 760.0,
+   "stop": 0.008935285714285713,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "COTI/USDT",
-   "entry": 0.01404,
-   "exit": 0.01213,
-   "qty_total": 777.0,
-   "pnl_net": -1.48,
-   "action": "stop",
-   "closed_ts": 1785269240.8250155
-  },
-  {
-   "symbol": "COTI/USDT",
-   "entry": 0.01317,
-   "exit": 0.01125,
-   "qty_total": 1736.0,
-   "pnl_net": -3.33,
-   "action": "stop",
-   "closed_ts": 1785283764.782225
-  },
   {
    "symbol": "LA/USDT",
    "entry": 0.0751,
@@ -440,6 +422,24 @@
    "pnl_net": -2.33,
    "action": "stop",
    "closed_ts": 1786450052.8486643
+  },
+  {
+   "symbol": "RAD/USDT",
+   "entry": 0.283,
+   "exit": 0.267,
+   "qty_total": 42.8,
+   "pnl_net": -0.68,
+   "action": "stop",
+   "closed_ts": 1786464439.631059
+  },
+  {
+   "symbol": "NEIRO/USDT",
+   "entry": 7.242e-05,
+   "exit": 6.59e-05,
+   "qty_total": 435276.0,
+   "pnl_net": -2.84,
+   "action": "stop",
+   "closed_ts": 1786464447.4064362
   }
  ]
 }
