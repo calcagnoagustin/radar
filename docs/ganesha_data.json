@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 183.55,
+ "equity_now": 183.43,
  "deposits_total": 0,
- "pnl_today": -10.86,
- "trades_today": 10,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -6.83,
  "trades_total": 62,
  "win_rate": 32,
@@ -63,6 +63,13 @@
    "entry": 0.02238,
    "qty": 746.2,
    "stop": 0.016484285714285715,
+   "tp1_done": false
+  },
+  {
+   "symbol": "RAD/USDT",
+   "entry": 0.27,
+   "qty": 148.3,
+   "stop": 0.2518571428571429,
    "tp1_done": false
   }
  ],
