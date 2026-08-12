@@ -1,12 +1,12 @@
 {
  "dry_run": false,
- "equity_now": 157.43,
+ "equity_now": 157.94,
  "deposits_total": 0,
- "pnl_today": -10.65,
- "trades_today": 4,
- "realized_pnl": -31.81,
- "trades_total": 72,
- "win_rate": 28,
+ "pnl_today": -11.43,
+ "trades_today": 6,
+ "realized_pnl": -32.59,
+ "trades_total": 74,
+ "win_rate": 27,
  "profit_factor": 0.77,
  "open_positions": [
   {
@@ -21,20 +21,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.000766687016148915,
-   "qty": 32448.0,
-   "stop": 0.0006333714285714285,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PEOPLE/USDT",
-   "entry": 0.00875,
-   "qty": 1465.7,
-   "stop": 0.0073014285714285716,
    "tp1_done": false
   },
   {
@@ -67,24 +53,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "DGB/USDT",
-   "entry": 0.00301,
-   "exit": 0.00357,
-   "qty_total": 5841.2,
-   "pnl_net": 3.27,
-   "action": "stop",
-   "closed_ts": 1786147773.0210934
-  },
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00526,
-   "exit": 0.00519,
-   "qty_total": 1872.1,
-   "pnl_net": -0.13,
-   "action": "stop",
-   "closed_ts": 1786147778.147147
-  },
   {
    "symbol": "SXT/USDT",
    "entry": 0.00929,
@@ -426,6 +394,24 @@
    "pnl_net": -2.73,
    "action": "stop",
    "closed_ts": 1786522046.4617238
+  },
+  {
+   "symbol": "BOME/USDT",
+   "entry": 0.000766687016148915,
+   "exit": 0.0007658,
+   "qty_total": 32448.0,
+   "pnl_net": -0.03,
+   "action": "stop",
+   "closed_ts": 1786550850.110924
+  },
+  {
+   "symbol": "PEOPLE/USDT",
+   "entry": 0.00875,
+   "exit": 0.00824,
+   "qty_total": 1465.7,
+   "pnl_net": -0.75,
+   "action": "stop",
+   "closed_ts": 1786550852.8001716
   }
  ]
 }
