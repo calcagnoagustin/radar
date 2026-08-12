@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 158.94,
+ "equity_now": 156.76,
  "deposits_total": 0,
- "pnl_today": -5.0,
- "trades_today": 2,
- "realized_pnl": -26.16,
- "trades_total": 70,
- "win_rate": 29,
- "profit_factor": 0.8,
+ "pnl_today": -10.65,
+ "trades_today": 4,
+ "realized_pnl": -31.81,
+ "trades_total": 72,
+ "win_rate": 28,
+ "profit_factor": 0.77,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -45,13 +45,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "BICO/USDT",
-   "entry": 0.04938,
-   "qty": 197.14,
-   "stop": 0.02730285714285714,
-   "tp1_done": false
-  },
-  {
    "symbol": "CRV/USDT",
    "entry": 0.2646,
    "qty": 63.8,
@@ -67,31 +60,13 @@
   },
   {
    "symbol": "HOLO/USDT",
-   "entry": 0.0906,
-   "qty": 304.4,
-   "stop": 0.08104285714285715,
+   "entry": 0.0757,
+   "qty": 265.8,
+   "stop": 0.06064285714285715,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ACE/USDT",
-   "entry": 0.1089,
-   "exit": 0.0628,
-   "qty_total": 88.8,
-   "pnl_net": -4.09,
-   "action": "stop",
-   "closed_ts": 1785442038.903147
-  },
-  {
-   "symbol": "XEC/USDT",
-   "entry": 7.87e-06,
-   "exit": 6.7e-06,
-   "qty_total": 1320636.0,
-   "pnl_net": -1.55,
-   "action": "stop",
-   "closed_ts": 1786147771.1777353
-  },
   {
    "symbol": "DGB/USDT",
    "entry": 0.00301,
@@ -433,6 +408,24 @@
    "pnl_net": -1.02,
    "action": "stop",
    "closed_ts": 1786507647.9551618
+  },
+  {
+   "symbol": "HOLO/USDT",
+   "entry": 0.0906,
+   "exit": 0.081,
+   "qty_total": 304.4,
+   "pnl_net": -2.92,
+   "action": "stop",
+   "closed_ts": 1786522038.852179
+  },
+  {
+   "symbol": "BICO/USDT",
+   "entry": 0.04938,
+   "exit": 0.03554,
+   "qty_total": 197.14,
+   "pnl_net": -2.73,
+   "action": "stop",
+   "closed_ts": 1786522046.4617238
   }
  ]
 }
