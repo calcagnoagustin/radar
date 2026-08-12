@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 163.73,
+ "equity_now": 158.94,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -21.16,
- "trades_total": 68,
+ "pnl_today": -5.0,
+ "trades_today": 2,
+ "realized_pnl": -26.16,
+ "trades_total": 70,
  "win_rate": 29,
- "profit_factor": 0.83,
+ "profit_factor": 0.8,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -66,39 +66,14 @@
    "tp1_done": false
   },
   {
-   "symbol": "RAD/USDT",
-   "entry": 0.266,
-   "qty": 165.8,
-   "stop": 0.24185714285714288,
-   "tp1_done": false
-  },
-  {
-   "symbol": "BANANAS31/USDT",
-   "entry": 0.010276,
-   "qty": 760.0,
-   "stop": 0.008935285714285713,
+   "symbol": "HOLO/USDT",
+   "entry": 0.0906,
+   "qty": 304.4,
+   "stop": 0.08104285714285715,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "LA/USDT",
-   "entry": 0.0751,
-   "exit": 0.0574,
-   "qty_total": 179.7,
-   "pnl_net": -3.18,
-   "action": "stop",
-   "closed_ts": 1785327001.864656
-  },
-  {
-   "symbol": "ZAMA/USDT",
-   "entry": 0.03878,
-   "exit": 0.05438,
-   "qty_total": 405.0,
-   "pnl_net": 4.42,
-   "action": "stop",
-   "closed_ts": 1785384435.3871164
-  },
   {
    "symbol": "ACE/USDT",
    "entry": 0.1089,
@@ -440,6 +415,24 @@
    "pnl_net": -2.84,
    "action": "stop",
    "closed_ts": 1786464447.4064362
+  },
+  {
+   "symbol": "RAD/USDT",
+   "entry": 0.266,
+   "exit": 0.242,
+   "qty_total": 165.8,
+   "pnl_net": -3.98,
+   "action": "stop",
+   "closed_ts": 1786507647.0679321
+  },
+  {
+   "symbol": "BANANAS31/USDT",
+   "entry": 0.010276,
+   "exit": 0.008932,
+   "qty_total": 760.0,
+   "pnl_net": -1.02,
+   "action": "stop",
+   "closed_ts": 1786507647.9551618
   }
  ]
 }
