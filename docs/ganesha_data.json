@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 153.2,
+ "equity_now": 153.27,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -56,6 +56,13 @@
    "entry": 2.686,
    "qty": 3.69,
    "stop": 1.8285714285714283,
+   "tp1_done": false
+  },
+  {
+   "symbol": "TST/USDT",
+   "entry": 0.01613,
+   "qty": 428.4,
+   "stop": 0.008384285714285716,
    "tp1_done": false
   }
  ],
