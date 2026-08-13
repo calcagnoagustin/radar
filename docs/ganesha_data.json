@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 154.9,
+ "equity_now": 154.95,
  "deposits_total": 0,
- "pnl_today": -11.43,
- "trades_today": 6,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -32.59,
  "trades_total": 74,
  "win_rate": 27,
@@ -49,6 +49,13 @@
    "entry": 0.0757,
    "qty": 265.8,
    "stop": 0.06064285714285715,
+   "tp1_done": false
+  },
+  {
+   "symbol": "PROM/USDT",
+   "entry": 2.686,
+   "qty": 3.69,
+   "stop": 1.8285714285714283,
    "tp1_done": false
   }
  ],
