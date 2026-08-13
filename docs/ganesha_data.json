@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 153.27,
+ "equity_now": 152.35,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -32.59,
- "trades_total": 74,
+ "pnl_today": -2.08,
+ "trades_today": 1,
+ "realized_pnl": -34.67,
+ "trades_total": 75,
  "win_rate": 27,
- "profit_factor": 0.77,
+ "profit_factor": 0.75,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -38,13 +38,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "MMT/USDT",
-   "entry": 0.2266,
-   "qty": 37.4,
-   "stop": 0.11385714285714285,
-   "tp1_done": false
-  },
-  {
    "symbol": "HOLO/USDT",
    "entry": 0.0757,
    "qty": 265.8,
@@ -67,15 +60,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "SXT/USDT",
-   "entry": 0.00929,
-   "exit": 0.00729,
-   "qty_total": 1253.4,
-   "pnl_net": -2.51,
-   "action": "stop",
-   "closed_ts": 1786147784.161648
-  },
   {
    "symbol": "PEOPLE/USDT",
    "entry": 0.00676,
@@ -426,6 +410,15 @@
    "pnl_net": -0.75,
    "action": "stop",
    "closed_ts": 1786550852.8001716
+  },
+  {
+   "symbol": "MMT/USDT",
+   "entry": 0.2266,
+   "exit": 0.171,
+   "qty_total": 37.4,
+   "pnl_net": -2.08,
+   "action": "stop",
+   "closed_ts": 1786622847.428351
   }
  ]
 }
