@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 147.5,
+ "equity_now": 146.14,
  "deposits_total": 0,
  "pnl_today": -6.63,
  "trades_today": 4,
@@ -49,6 +49,13 @@
    "entry": 0.4399,
    "qty": 57.9,
    "stop": 0.38904285714285713,
+   "tp1_done": false
+  },
+  {
+   "symbol": "EDEN/USDT",
+   "entry": 0.05479,
+   "qty": 240.8,
+   "stop": 0.04280428571428572,
    "tp1_done": false
   }
  ],
