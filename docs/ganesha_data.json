@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 152.8,
+ "equity_now": 147.5,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -34.67,
- "trades_total": 75,
- "win_rate": 27,
- "profit_factor": 0.75,
+ "pnl_today": -6.63,
+ "trades_today": 4,
+ "realized_pnl": -41.3,
+ "trades_total": 79,
+ "win_rate": 25,
+ "profit_factor": 0.72,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -24,24 +24,10 @@
    "tp1_done": false
   },
   {
-   "symbol": "DODO/USDT",
-   "entry": 0.02257,
-   "qty": 511.4,
-   "stop": 0.01401857142857143,
-   "tp1_done": false
-  },
-  {
    "symbol": "CRV/USDT",
    "entry": 0.2646,
    "qty": 63.8,
    "stop": 0.24312857142857142,
-   "tp1_done": false
-  },
-  {
-   "symbol": "HOLO/USDT",
-   "entry": 0.0757,
-   "qty": 265.8,
-   "stop": 0.06064285714285715,
    "tp1_done": false
   },
   {
@@ -59,64 +45,14 @@
    "tp1_done": false
   },
   {
-   "symbol": "EDEN/USDT",
-   "entry": 0.07533,
-   "qty": 251.2,
-   "stop": 0.05914428571428572,
-   "tp1_done": false
-  },
-  {
    "symbol": "ETHFI/USDT",
    "entry": 0.4399,
    "qty": 57.9,
    "stop": 0.38904285714285713,
    "tp1_done": false
-  },
-  {
-   "symbol": "AVNT/USDT",
-   "entry": 0.1082,
-   "qty": 118.4,
-   "stop": 0.09514285714285715,
-   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PEOPLE/USDT",
-   "entry": 0.00676,
-   "exit": 0.00714,
-   "qty_total": 4591.7,
-   "pnl_net": 1.74,
-   "action": "stop",
-   "closed_ts": 1786147785.7515385
-  },
-  {
-   "symbol": "SKL/USDT",
-   "entry": 0.00461,
-   "exit": 0.00357,
-   "qty_total": 2262.0,
-   "pnl_net": -2.35,
-   "action": "stop",
-   "closed_ts": 1786147787.3518722
-  },
-  {
-   "symbol": "QI/USDT",
-   "entry": 0.00148250747644408,
-   "exit": 0.00125,
-   "qty_total": 9764.0,
-   "pnl_net": -2.27,
-   "action": "stop",
-   "closed_ts": 1786147788.9180293
-  },
-  {
-   "symbol": "ONDO/USDT",
-   "entry": 0.4033,
-   "exit": 0.3479,
-   "qty_total": 62.2,
-   "pnl_net": -3.45,
-   "action": "stop",
-   "closed_ts": 1786147794.240293
-  },
   {
    "symbol": "PROM/USDT",
    "entry": 1.772,
@@ -440,6 +376,42 @@
    "pnl_net": -2.08,
    "action": "stop",
    "closed_ts": 1786622847.428351
+  },
+  {
+   "symbol": "EDEN/USDT",
+   "entry": 0.07533,
+   "exit": 0.05988,
+   "qty_total": 251.2,
+   "pnl_net": -3.88,
+   "action": "stop",
+   "closed_ts": 1786694847.1402335
+  },
+  {
+   "symbol": "AVNT/USDT",
+   "entry": 0.1082,
+   "exit": 0.0986,
+   "qty_total": 118.4,
+   "pnl_net": -1.14,
+   "action": "stop",
+   "closed_ts": 1786694852.9465086
+  },
+  {
+   "symbol": "HOLO/USDT",
+   "entry": 0.0757,
+   "exit": 0.0701,
+   "qty_total": 265.8,
+   "pnl_net": -1.49,
+   "action": "stop",
+   "closed_ts": 1786694856.654951
+  },
+  {
+   "symbol": "DODO/USDT",
+   "entry": 0.02257,
+   "exit": 0.02233,
+   "qty_total": 511.4,
+   "pnl_net": -0.12,
+   "action": "stop",
+   "closed_ts": 1786694858.2667575
   }
  ]
 }
