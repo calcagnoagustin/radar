@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 150.92,
+ "equity_now": 152.34,
  "deposits_total": 0,
- "pnl_today": -2.08,
- "trades_today": 1,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -34.67,
  "trades_total": 75,
  "win_rate": 27,
@@ -56,6 +56,27 @@
    "entry": 0.01613,
    "qty": 428.4,
    "stop": 0.008384285714285716,
+   "tp1_done": false
+  },
+  {
+   "symbol": "EDEN/USDT",
+   "entry": 0.07533,
+   "qty": 251.2,
+   "stop": 0.05914428571428572,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ETHFI/USDT",
+   "entry": 0.4399,
+   "qty": 57.9,
+   "stop": 0.38904285714285713,
+   "tp1_done": false
+  },
+  {
+   "symbol": "AVNT/USDT",
+   "entry": 0.1082,
+   "qty": 118.4,
+   "stop": 0.09514285714285715,
    "tp1_done": false
   }
  ],
