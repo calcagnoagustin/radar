@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 146.14,
+ "equity_now": 147.41,
  "deposits_total": 0,
- "pnl_today": -6.63,
- "trades_today": 4,
- "realized_pnl": -41.3,
- "trades_total": 79,
+ "pnl_today": -8.0,
+ "trades_today": 5,
+ "realized_pnl": -42.67,
+ "trades_total": 80,
  "win_rate": 25,
- "profit_factor": 0.72,
+ "profit_factor": 0.71,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -21,13 +21,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "CRV/USDT",
-   "entry": 0.2646,
-   "qty": 63.8,
-   "stop": 0.24312857142857142,
    "tp1_done": false
   },
   {
@@ -60,15 +53,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PROM/USDT",
-   "entry": 1.772,
-   "exit": 2.12,
-   "qty_total": 5.82,
-   "pnl_net": 2.03,
-   "action": "stop",
-   "closed_ts": 1786147805.464586
-  },
   {
    "symbol": "C98/USDT",
    "entry": 0.01704,
@@ -419,6 +403,15 @@
    "pnl_net": -0.12,
    "action": "stop",
    "closed_ts": 1786694858.2667575
+  },
+  {
+   "symbol": "CRV/USDT",
+   "entry": 0.2646,
+   "exit": 0.2431,
+   "qty_total": 63.8,
+   "pnl_net": -1.37,
+   "action": "stop",
+   "closed_ts": 1786723635.8866968
   }
  ]
 }
