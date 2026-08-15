@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 148.56,
+ "equity_now": 140.08,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -42.67,
- "trades_total": 80,
- "win_rate": 25,
- "profit_factor": 0.71,
+ "pnl_today": -7.53,
+ "trades_today": 2,
+ "realized_pnl": -50.2,
+ "trades_total": 82,
+ "win_rate": 24,
+ "profit_factor": 0.68,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -21,13 +21,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PROM/USDT",
-   "entry": 2.686,
-   "qty": 3.69,
-   "stop": 1.8285714285714283,
    "tp1_done": false
   },
   {
@@ -52,13 +45,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "ALICE/USDT",
-   "entry": 0.1749,
-   "qty": 159.78,
-   "stop": 0.1462857142857143,
-   "tp1_done": false
-  },
-  {
    "symbol": "ACE/USDT",
    "entry": 0.2413,
    "qty": 32.9,
@@ -67,24 +53,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "C98/USDT",
-   "entry": 0.01704,
-   "exit": 0.01494,
-   "qty_total": 1816.9,
-   "pnl_net": -3.82,
-   "action": "stop",
-   "closed_ts": 1786162133.5789773
-  },
-  {
-   "symbol": "EUL/USDT",
-   "entry": 1.801,
-   "exit": 1.232,
-   "qty_total": 6.46,
-   "pnl_net": -3.68,
-   "action": "stop",
-   "closed_ts": 1786162135.1500344
-  },
   {
    "symbol": "COTI/USDT",
    "entry": 0.01324,
@@ -426,6 +394,24 @@
    "pnl_net": -1.37,
    "action": "stop",
    "closed_ts": 1786723635.8866968
+  },
+  {
+   "symbol": "PROM/USDT",
+   "entry": 2.686,
+   "exit": 2.378,
+   "qty_total": 3.69,
+   "pnl_net": -1.14,
+   "action": "stop",
+   "closed_ts": 1786766840.871471
+  },
+  {
+   "symbol": "ALICE/USDT",
+   "entry": 0.1749,
+   "exit": 0.1349,
+   "qty_total": 159.78,
+   "pnl_net": -6.39,
+   "action": "stop",
+   "closed_ts": 1786766842.2089603
   }
  ]
 }
