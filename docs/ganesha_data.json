@@ -1,11 +1,11 @@
 {
  "dry_run": false,
- "equity_now": 140.08,
+ "equity_now": 144.94,
  "deposits_total": 0,
- "pnl_today": -7.53,
- "trades_today": 2,
- "realized_pnl": -50.2,
- "trades_total": 82,
+ "pnl_today": -8.23,
+ "trades_today": 3,
+ "realized_pnl": -50.9,
+ "trades_total": 83,
  "win_rate": 24,
  "profit_factor": 0.68,
  "open_positions": [
@@ -21,13 +21,6 @@
    "entry": 0.0133,
    "qty": 1385.0,
    "stop": 0.01037142857142857,
-   "tp1_done": false
-  },
-  {
-   "symbol": "TST/USDT",
-   "entry": 0.01613,
-   "qty": 428.4,
-   "stop": 0.008384285714285716,
    "tp1_done": false
   },
   {
@@ -50,18 +43,16 @@
    "qty": 32.9,
    "stop": 0.1643,
    "tp1_done": false
+  },
+  {
+   "symbol": "ALICE/USDT",
+   "entry": 0.1343,
+   "qty": 151.62,
+   "stop": 0.11588571428571429,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "COTI/USDT",
-   "entry": 0.01324,
-   "exit": 0.01261,
-   "qty_total": 615.0,
-   "pnl_net": -0.39,
-   "action": "stop",
-   "closed_ts": 1786176472.748842
-  },
   {
    "symbol": "TUT/USDT",
    "entry": 0.03911,
@@ -412,6 +403,15 @@
    "pnl_net": -6.39,
    "action": "stop",
    "closed_ts": 1786766842.2089603
+  },
+  {
+   "symbol": "TST/USDT",
+   "entry": 0.01613,
+   "exit": 0.0145,
+   "qty_total": 428.4,
+   "pnl_net": -0.7,
+   "action": "stop",
+   "closed_ts": 1786781248.0101714
   }
  ]
 }
