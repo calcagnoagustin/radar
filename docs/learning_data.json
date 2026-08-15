@@ -1,89 +1,89 @@
 {
- "generated": "2026-08-14T00:16:00Z",
+ "generated": "2026-08-15T00:15:59Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
    "historico": {
-    "n": 72,
-    "win_rate": 18.1,
-    "pnl_total": -39.29,
-    "expectancy_usd": -0.546,
-    "expectancy_r": -0.2,
-    "profit_factor": 0.73,
-    "payoff": 3.32,
-    "max_dd_usd": -60.42
+    "n": 77,
+    "win_rate": 16.9,
+    "pnl_total": -47.29,
+    "expectancy_usd": -0.614,
+    "expectancy_r": -0.23,
+    "profit_factor": 0.69,
+    "payoff": 3.42,
+    "max_dd_usd": -68.42
    },
    "ult_20_trades": {
     "n": 20,
     "win_rate": 0.0,
-    "pnl_total": -40.46,
-    "expectancy_usd": -2.023,
+    "pnl_total": -37.1,
+    "expectancy_usd": -1.855,
     "expectancy_r": -0.71,
     "profit_factor": 0.0,
     "payoff": null,
-    "max_dd_usd": -40.46
+    "max_dd_usd": -37.1
    },
    "ult_30d": {
-    "n": 68,
-    "win_rate": 17.6,
-    "pnl_total": -38.56,
-    "expectancy_usd": -0.567,
-    "expectancy_r": -0.21,
-    "profit_factor": 0.73,
-    "payoff": 3.4,
-    "max_dd_usd": -60.42
+    "n": 69,
+    "win_rate": 17.4,
+    "pnl_total": -32.64,
+    "expectancy_usd": -0.473,
+    "expectancy_r": -0.18,
+    "profit_factor": 0.76,
+    "payoff": 3.61,
+    "max_dd_usd": -68.42
    },
    "ult_90d": {
-    "n": 72,
-    "win_rate": 18.1,
-    "pnl_total": -39.29,
-    "expectancy_usd": -0.546,
-    "expectancy_r": -0.2,
-    "profit_factor": 0.73,
-    "payoff": 3.32,
-    "max_dd_usd": -60.42
+    "n": 77,
+    "win_rate": 16.9,
+    "pnl_total": -47.29,
+    "expectancy_usd": -0.614,
+    "expectancy_r": -0.23,
+    "profit_factor": 0.69,
+    "payoff": 3.42,
+    "max_dd_usd": -68.42
    }
   },
   "ganesha": {
    "historico": {
-    "n": 66,
-    "win_rate": 18.2,
-    "pnl_total": -34.7,
-    "expectancy_usd": -0.526,
-    "expectancy_r": -0.2,
-    "profit_factor": 0.75,
-    "payoff": 3.4,
-    "max_dd_usd": -56.09
+    "n": 71,
+    "win_rate": 16.9,
+    "pnl_total": -42.7,
+    "expectancy_usd": -0.601,
+    "expectancy_r": -0.23,
+    "profit_factor": 0.71,
+    "payoff": 3.51,
+    "max_dd_usd": -64.09
    },
    "ult_20_trades": {
     "n": 20,
     "win_rate": 0.0,
-    "pnl_total": -43.98,
-    "expectancy_usd": -2.199,
-    "expectancy_r": -0.74,
+    "pnl_total": -39.05,
+    "expectancy_usd": -1.953,
+    "expectancy_r": -0.68,
     "profit_factor": 0.0,
     "payoff": null,
-    "max_dd_usd": -43.98
+    "max_dd_usd": -39.05
    },
    "ult_30d": {
-    "n": 64,
-    "win_rate": 17.2,
-    "pnl_total": -34.23,
-    "expectancy_usd": -0.535,
-    "expectancy_r": -0.21,
-    "profit_factor": 0.75,
-    "payoff": 3.62,
-    "max_dd_usd": -56.09
+    "n": 65,
+    "win_rate": 16.9,
+    "pnl_total": -28.31,
+    "expectancy_usd": -0.436,
+    "expectancy_r": -0.18,
+    "profit_factor": 0.78,
+    "payoff": 3.85,
+    "max_dd_usd": -64.09
    },
    "ult_90d": {
-    "n": 66,
-    "win_rate": 18.2,
-    "pnl_total": -34.7,
-    "expectancy_usd": -0.526,
-    "expectancy_r": -0.2,
-    "profit_factor": 0.75,
-    "payoff": 3.4,
-    "max_dd_usd": -56.09
+    "n": 71,
+    "win_rate": 16.9,
+    "pnl_total": -42.7,
+    "expectancy_usd": -0.601,
+    "expectancy_r": -0.23,
+    "profit_factor": 0.71,
+    "payoff": 3.51,
+    "max_dd_usd": -64.09
    }
   },
   "semillas": {
@@ -131,70 +131,81 @@
  },
  "atribucion": [
   {
-   "n": 58,
-   "win_rate": 6.9,
-   "pnl_total": -129.35,
-   "expectancy_usd": -2.23,
+   "n": 63,
+   "win_rate": 6.3,
+   "pnl_total": -137.35,
+   "expectancy_usd": -2.18,
    "expectancy_r": -0.69,
-   "profit_factor": 0.09,
-   "payoff": 1.16,
-   "max_dd_usd": -129.35,
+   "profit_factor": 0.08,
+   "payoff": 1.2,
+   "max_dd_usd": -137.35,
    "tag": "tp1_antes_del_stop=no"
   },
   {
-   "n": 69,
-   "win_rate": 17.4,
-   "pnl_total": -39.42,
-   "expectancy_usd": -0.571,
-   "expectancy_r": -0.2,
-   "profit_factor": 0.73,
-   "payoff": 3.47,
-   "max_dd_usd": -60.81,
+   "n": 74,
+   "win_rate": 16.2,
+   "pnl_total": -47.42,
+   "expectancy_usd": -0.641,
+   "expectancy_r": -0.23,
+   "profit_factor": 0.69,
+   "payoff": 3.58,
+   "max_dd_usd": -68.81,
    "tag": "regimen=neutral"
   },
   {
-   "n": 72,
-   "win_rate": 18.1,
-   "pnl_total": -39.29,
-   "expectancy_usd": -0.546,
-   "expectancy_r": -0.2,
-   "profit_factor": 0.73,
-   "payoff": 3.32,
-   "max_dd_usd": -60.42,
+   "n": 77,
+   "win_rate": 16.9,
+   "pnl_total": -47.29,
+   "expectancy_usd": -0.614,
+   "expectancy_r": -0.23,
+   "profit_factor": 0.69,
+   "payoff": 3.42,
+   "max_dd_usd": -68.42,
    "tag": "mode=LIVE"
   },
   {
-   "n": 66,
-   "win_rate": 18.2,
-   "pnl_total": -34.7,
-   "expectancy_usd": -0.526,
-   "expectancy_r": -0.2,
-   "profit_factor": 0.75,
-   "payoff": 3.4,
-   "max_dd_usd": -56.09,
+   "n": 71,
+   "win_rate": 16.9,
+   "pnl_total": -42.7,
+   "expectancy_usd": -0.601,
+   "expectancy_r": -0.23,
+   "profit_factor": 0.71,
+   "payoff": 3.51,
+   "max_dd_usd": -64.09,
    "tag": "strategy=ganesha"
   },
   {
-   "n": 66,
-   "win_rate": 18.2,
-   "pnl_total": -34.7,
-   "expectancy_usd": -0.526,
-   "expectancy_r": -0.2,
-   "profit_factor": 0.75,
-   "payoff": 3.4,
-   "max_dd_usd": -56.09,
+   "n": 71,
+   "win_rate": 16.9,
+   "pnl_total": -42.7,
+   "expectancy_usd": -0.601,
+   "expectancy_r": -0.23,
+   "profit_factor": 0.71,
+   "payoff": 3.51,
+   "max_dd_usd": -64.09,
    "tag": "signal=breakout24h+vol"
   },
   {
-   "n": 59,
-   "win_rate": 16.9,
-   "pnl_total": -30.56,
-   "expectancy_usd": -0.518,
-   "expectancy_r": -0.23,
-   "profit_factor": 0.76,
-   "payoff": 3.73,
-   "max_dd_usd": -48.14,
+   "n": 63,
+   "win_rate": 15.9,
+   "pnl_total": -37.19,
+   "expectancy_usd": -0.59,
+   "expectancy_r": -0.25,
+   "profit_factor": 0.72,
+   "payoff": 3.84,
+   "max_dd_usd": -54.77,
    "tag": "atr_bucket=atr>4%"
+  },
+  {
+   "n": 8,
+   "win_rate": 25.0,
+   "pnl_total": -5.51,
+   "expectancy_usd": -0.689,
+   "expectancy_r": -0.04,
+   "profit_factor": 0.63,
+   "payoff": 1.88,
+   "max_dd_usd": -10.43,
+   "tag": "atr_bucket=atr2-4%"
   },
   {
    "n": 6,
@@ -252,17 +263,6 @@
    "tag": "origen=scanner"
   },
   {
-   "n": 7,
-   "win_rate": 28.6,
-   "pnl_total": -4.14,
-   "expectancy_usd": -0.591,
-   "expectancy_r": 0.09,
-   "profit_factor": 0.69,
-   "payoff": 1.73,
-   "max_dd_usd": -9.06,
-   "tag": "atr_bucket=atr2-4%"
-  },
-  {
    "n": 4,
    "win_rate": 25.0,
    "pnl_total": -0.32,
@@ -315,26 +315,24 @@
    "evidencia": {
     "n": 20,
     "win_rate": 0.0,
-    "pnl_total": -43.98,
-    "expectancy_usd": -2.199,
-    "expectancy_r": -0.74,
+    "pnl_total": -39.05,
+    "expectancy_usd": -1.953,
+    "expectancy_r": -0.68,
     "profit_factor": 0.0,
     "payoff": null,
-    "max_dd_usd": -43.98
+    "max_dd_usd": -39.05
    }
   }
  ],
  "abiertas_ganesha": [
-  "AVNT/USDT",
+  "ACE/USDT",
+  "ALICE/USDT",
   "COOKIE/USDT",
-  "CRV/USDT",
-  "DODO/USDT",
   "EDEN/USDT",
   "ETHFI/USDT",
-  "HOLO/USDT",
   "NIL/USDT",
   "PROM/USDT",
   "TST/USDT"
  ],
- "n_trades_consolidados": 72
+ "n_trades_consolidados": 77
 }
