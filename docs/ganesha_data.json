@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 149.4,
+ "equity_now": 148.56,
  "deposits_total": 0,
- "pnl_today": -8.0,
- "trades_today": 5,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -42.67,
  "trades_total": 80,
  "win_rate": 25,
@@ -49,6 +49,20 @@
    "entry": 0.05479,
    "qty": 240.8,
    "stop": 0.04280428571428572,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ALICE/USDT",
+   "entry": 0.1749,
+   "qty": 159.78,
+   "stop": 0.1462857142857143,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.2413,
+   "qty": 32.9,
+   "stop": 0.1643,
    "tp1_done": false
   }
  ],
