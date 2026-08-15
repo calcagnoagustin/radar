@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 138.06,
+ "equity_now": 136.79,
  "deposits_total": 0,
- "pnl_today": -8.23,
- "trades_today": 3,
- "realized_pnl": -50.9,
- "trades_total": 83,
+ "pnl_today": -10.19,
+ "trades_today": 4,
+ "realized_pnl": -52.86,
+ "trades_total": 84,
  "win_rate": 24,
- "profit_factor": 0.68,
+ "profit_factor": 0.67,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -38,13 +38,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "ACE/USDT",
-   "entry": 0.2413,
-   "qty": 32.9,
-   "stop": 0.1643,
-   "tp1_done": false
-  },
-  {
    "symbol": "ALICE/USDT",
    "entry": 0.1343,
    "qty": 151.62,
@@ -53,15 +46,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "TUT/USDT",
-   "entry": 0.03911,
-   "exit": 0.05957,
-   "qty_total": 0,
-   "pnl_net": 3.03,
-   "action": "tp",
-   "closed_ts": 1786192920.8167787
-  },
   {
    "symbol": "ACE/USDT",
    "entry": 0.1544,
@@ -412,6 +396,15 @@
    "pnl_net": -0.7,
    "action": "stop",
    "closed_ts": 1786781248.0101714
+  },
+  {
+   "symbol": "ACE/USDT",
+   "entry": 0.2413,
+   "exit": 0.1817,
+   "qty_total": 32.9,
+   "pnl_net": -1.96,
+   "action": "stop",
+   "closed_ts": 1786810045.3614979
   }
  ]
 }
