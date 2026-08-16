@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 132.19,
+ "equity_now": 130.39,
  "deposits_total": 0,
- "pnl_today": -6.73,
- "trades_today": 3,
- "realized_pnl": -59.59,
- "trades_total": 87,
+ "pnl_today": -9.84,
+ "trades_today": 4,
+ "realized_pnl": -62.7,
+ "trades_total": 88,
  "win_rate": 23,
- "profit_factor": 0.64,
+ "profit_factor": 0.63,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -31,13 +31,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00717,
-   "qty": 2336.8,
-   "stop": 0.005841428571428571,
-   "tp1_done": false
-  },
-  {
    "symbol": "BOME/USDT",
    "entry": 0.000861,
    "qty": 16478.0,
@@ -46,15 +39,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "BICO/USDT",
-   "entry": 0.05935217423133236,
-   "exit": 0.04755,
-   "qty_total": 327.84,
-   "pnl_net": -3.87,
-   "action": "stop",
-   "closed_ts": 1786277325.599294
-  },
   {
    "symbol": "EPIC/USDT",
    "entry": 1.1428,
@@ -405,6 +389,15 @@
    "pnl_net": -1.98,
    "action": "stop",
    "closed_ts": 1786882046.6959565
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.00717,
+   "exit": 0.00584,
+   "qty_total": 2336.8,
+   "pnl_net": -3.11,
+   "action": "stop",
+   "closed_ts": 1786910835.3299897
   }
  ]
 }
