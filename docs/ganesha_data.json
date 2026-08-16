@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 137.45,
+ "equity_now": 133.06,
  "deposits_total": 0,
- "pnl_today": -4.75,
- "trades_today": 2,
- "realized_pnl": -57.62,
- "trades_total": 86,
+ "pnl_today": -6.73,
+ "trades_today": 3,
+ "realized_pnl": -59.59,
+ "trades_total": 87,
  "win_rate": 23,
- "profit_factor": 0.65,
+ "profit_factor": 0.64,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -38,13 +38,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "COW/USDT",
-   "entry": 0.1387,
-   "qty": 130.1,
-   "stop": 0.1200142857142857,
-   "tp1_done": false
-  },
-  {
    "symbol": "BOME/USDT",
    "entry": 0.000861,
    "qty": 16478.0,
@@ -53,15 +46,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "HEI/USDT",
-   "entry": 0.2358,
-   "exit": 0.1624,
-   "qty_total": 35.8,
-   "pnl_net": -2.63,
-   "action": "stop",
-   "closed_ts": 1786262888.2955163
-  },
   {
    "symbol": "BICO/USDT",
    "entry": 0.05935217423133236,
@@ -412,6 +396,15 @@
    "pnl_net": -1.86,
    "action": "stop",
    "closed_ts": 1786853241.2827249
+  },
+  {
+   "symbol": "COW/USDT",
+   "entry": 0.1387,
+   "exit": 0.1235,
+   "qty_total": 130.1,
+   "pnl_net": -1.98,
+   "action": "stop",
+   "closed_ts": 1786882046.6959565
   }
  ]
 }
