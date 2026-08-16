@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 137.03,
+ "equity_now": 135.27,
  "deposits_total": 0,
- "pnl_today": -10.19,
- "trades_today": 4,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -52.86,
  "trades_total": 84,
  "win_rate": 24,
@@ -42,6 +42,20 @@
    "entry": 0.1343,
    "qty": 151.62,
    "stop": 0.11588571428571429,
+   "tp1_done": false
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.00717,
+   "qty": 2336.8,
+   "stop": 0.005841428571428571,
+   "tp1_done": false
+  },
+  {
+   "symbol": "COW/USDT",
+   "entry": 0.1387,
+   "qty": 130.1,
+   "stop": 0.1200142857142857,
    "tp1_done": false
   }
  ],
