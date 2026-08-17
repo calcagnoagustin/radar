@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 135.8,
+ "equity_now": 133.42,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -49,6 +49,13 @@
    "entry": 0.01673,
    "qty": 730.4,
    "stop": 0.013084285714285713,
+   "tp1_done": false
+  },
+  {
+   "symbol": "CHIP/USDT",
+   "entry": 0.03216,
+   "qty": 445.0,
+   "stop": 0.026844285714285716,
    "tp1_done": false
   }
  ],
