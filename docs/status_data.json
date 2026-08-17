@@ -1,17 +1,29 @@
 {
  "meta": {
   "actualizado": "2026-08-17",
-  "version": "1.0",
+  "version": "1.1",
   "nota": "Documento maestro del proyecto. Se actualiza en cada sesion donde haya decisiones o cambios de estado."
  },
  "resumen": {
   "titulo": "Sistema Semillas 2.0",
   "bajada": "Especulacion cripto de largo plazo en Binance Spot. Sin apalancamiento, sin futuros. Revision diaria, ejecucion por reglas.",
   "kpis": [
-   {"k": "Horizonte", "v": "~10 anios"},
-   {"k": "Aporte objetivo", "v": "$500-1000 / mes"},
-   {"k": "Capital hoy", "v": "~$1.000 + $46 Ganesha"},
-   {"k": "Inyeccion actual", "v": "~$100 / mes"}
+   {
+    "k": "Horizonte",
+    "v": "~10 anios"
+   },
+   {
+    "k": "Aporte objetivo",
+    "v": "$500-1000 / mes"
+   },
+   {
+    "k": "Capital hoy",
+    "v": "~$1.000 + $46 Ganesha"
+   },
+   {
+    "k": "Inyeccion actual",
+    "v": "~$100 / mes"
+   }
   ]
  },
  "secciones": [
@@ -19,222 +31,534 @@
    "id": "norte",
    "titulo": "El norte",
    "bloques": [
-    {"tipo": "p", "t": "Construir capital y un sistema de bots validado que reduzca la dependencia del ingreso por empleo. Horizonte ~10 anios con aportes de $500-1000/mes."},
-    {"tipo": "alerta", "nivel": "info", "t": "Lo que mueve la aguja a 10 anios es la TASA DE APORTE, no el rendimiento del bot. Duplicar aportes duplica el resultado con certeza; mejorar el retorno de 10% a 15% lo mejora ~30% con enorme incertidumbre."},
-    {"tipo": "p", "t": "A escala actual (~$1.000) el bot no mueve la aguja economica. Su valor hoy es aprendizaje y validacion. Empieza a importar cerca de los ~$50k."},
-    {"tipo": "p", "t": "Ningun bot sobrevive 10 anios. Lo que puede sobrevivir es el proceso: medir, matar lo que no tiene edge, reconstruir."}
+    {
+     "tipo": "p",
+     "t": "Construir capital y un sistema de bots validado que reduzca la dependencia del ingreso por empleo. Horizonte ~10 anios con aportes de $500-1000/mes."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Lo que mueve la aguja a 10 anios es la TASA DE APORTE, no el rendimiento del bot. Duplicar aportes duplica el resultado con certeza; mejorar el retorno de 10% a 15% lo mejora ~30% con enorme incertidumbre."
+    },
+    {
+     "tipo": "p",
+     "t": "A escala actual (~$1.000) el bot no mueve la aguja economica. Su valor hoy es aprendizaje y validacion. Empieza a importar cerca de los ~$50k."
+    },
+    {
+     "tipo": "p",
+     "t": "Ningun bot sobrevive 10 anios. Lo que puede sobrevivir es el proceso: medir, matar lo que no tiene edge, reconstruir."
+    }
    ]
   },
   {
    "id": "reglas",
    "titulo": "Reglas inviolables",
    "bloques": [
-    {"tipo": "ul", "items": [
-     "Nunca salir 100% de un activo con tesis activa (moonbag).",
-     "Pausar no es fallar.",
-     "Nunca promediar a la baja por esperanza. Solo se agrega con confirmacion de tendencia.",
-     "Regla de freeze 60 dias: sin activacion, congela.",
-     "Nunca operar para cubrir una obligacion financiera.",
-     "Liquidar posiciones sin tesis y consolidar en el nucleo.",
-     "Sin apalancamiento. Sin futuros. Solo Spot."
-    ]},
-    {"tipo": "alerta", "nivel": "warn", "t": "BARRERA DE GO-LIVE (inviolable): Claude nunca pone dry_run en false, nunca carga API keys, nunca coloca ordenes. Esa accion final es siempre de Agus. Vale aun si Agus pide lo contrario."},
-    {"tipo": "p", "t": "Regla manual de Agus: +100% -> vender 30% una vez. Por debajo de +100% no vender. Cancelar stop -> vender -> reconcilia (automatico solo en Ganesha)."}
+    {
+     "tipo": "ul",
+     "items": [
+      "Nunca salir 100% de un activo con tesis activa (moonbag).",
+      "Pausar no es fallar.",
+      "Nunca promediar a la baja por esperanza. Solo se agrega con confirmacion de tendencia.",
+      "Regla de freeze 60 dias: sin activacion, congela.",
+      "Nunca operar para cubrir una obligacion financiera.",
+      "Liquidar posiciones sin tesis y consolidar en el nucleo.",
+      "Sin apalancamiento. Sin futuros. Solo Spot."
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "BARRERA DE GO-LIVE (inviolable): Claude nunca pone dry_run en false, nunca carga API keys, nunca coloca ordenes. Esa accion final es siempre de Agus. Vale aun si Agus pide lo contrario."
+    },
+    {
+     "tipo": "p",
+     "t": "Regla manual de Agus: +100% -> vender 30% una vez. Por debajo de +100% no vender. Cancelar stop -> vender -> reconcilia (automatico solo en Ganesha)."
+    }
    ]
   },
   {
    "id": "arquitectura",
    "titulo": "Arquitectura objetivo: 6 capas por regimen",
    "bloques": [
-    {"tipo": "tabla",
-     "headers": ["#", "Capa", "Regimen", "Estado"],
+    {
+     "tipo": "tabla",
+     "headers": [
+      "#",
+      "Capa",
+      "Regimen",
+      "Estado"
+     ],
      "rows": [
-      ["1", "Core DCA BTC/ETH/BNB", "Alcista", "Conceptual"],
-      ["2", "Semillas: tendencia / swing", "Alcista", "Activo"],
-      ["3", "Ganesha: intradia por volumen", "Alcista", "Activo (LIVE)"],
-      ["4", "Neutral BTC-ETH: cointegracion / rotacion de ratio", "Lateral", "Conceptual"],
-      ["5", "Risk-off macro a USDT en Stage 4", "Bajista", "Conceptual"],
-      ["6", "Solana launch/pump como casino aislado (dead money)", "Cola", "Conceptual"]
-     ]},
-    {"tipo": "p", "t": "Transversal: brain_monthly emite senal ofensiva (Watchlist \"Salto de Nivel\") y senal defensiva (Regimen)."},
-    {"tipo": "p", "t": "Short perp 1x fue evaluado y NO adoptado: rompe la regla de no futuros."},
-    {"tipo": "alerta", "nivel": "info", "t": "Principio de diseno: dos motores en paralelo, no un filtro unico. Ganesha = movers puros (velocidad, no calidad). Brain = calidad + confirmacion. Conectarlos como filtro mataria el edge de Ganesha."}
+      [
+       "1",
+       "Core DCA BTC/ETH/BNB",
+       "Alcista",
+       "Conceptual"
+      ],
+      [
+       "2",
+       "Semillas: tendencia / swing",
+       "Alcista",
+       "Activo"
+      ],
+      [
+       "3",
+       "Ganesha: intradia por volumen",
+       "Alcista",
+       "Activo (LIVE)"
+      ],
+      [
+       "4",
+       "Neutral BTC-ETH: cointegracion / rotacion de ratio",
+       "Lateral",
+       "Conceptual"
+      ],
+      [
+       "5",
+       "Risk-off macro a USDT en Stage 4",
+       "Bajista",
+       "Conceptual"
+      ],
+      [
+       "6",
+       "Solana launch/pump como casino aislado (dead money)",
+       "Cola",
+       "Conceptual"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Transversal: brain_monthly emite senal ofensiva (Watchlist \"Salto de Nivel\") y senal defensiva (Regimen)."
+    },
+    {
+     "tipo": "p",
+     "t": "Short perp 1x fue evaluado y NO adoptado: rompe la regla de no futuros."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Principio de diseno: dos motores en paralelo, no un filtro unico. Ganesha = movers puros (velocidad, no calidad). Brain = calidad + confirmacion. Conectarlos como filtro mataria el edge de Ganesha."
+    }
    ]
   },
   {
    "id": "ganesha",
    "titulo": "Ganesha — momentum intradia (LIVE)",
    "bloques": [
-    {"tipo": "kv", "items": [
-     ["Modo", "LIVE — Binance Spot, sub-cuenta aislada, IP restringida a la VM"],
-     ["Estrategia", "Momentum 15m sobre altcoins (movers). NO es Donchian BTC/USDT 1h (descartado)"],
-     ["Cron", "cada 4h — minuto :07 (00/04/08/12/16/20 UTC)"],
-     ["Entrada", "cierre 15m sobre maximo de 96 velas + volumen > vol_mult x SMA20"],
-     ["Stop", "entrada - atr_mult x ATR(14) 4h, nativo en Binance (stop-loss-limit)"],
-     ["Gestion", "riesgo 2%/trade; TP1 a +2R vende 30% y stop a breakeven; resto trailing solo-sube"],
-     ["Reglas v3", "zombie stop (48h, max_r < 0.5R) y depth stop (-0.6R condicionado a no mostrar vida)"]
-    ]},
-    {"tipo": "alerta", "nivel": "alta", "t": "FUSIBLE CRUZADO (17/08/2026): PF consolidado 0.63 con n=87. El umbral acordado era PF < 0.70 con n >= 15. Las ultimas 30 operaciones cerradas: 0 ganadoras. La decision es de Agus; Claude no cambia el modo ni toca posiciones."},
-    {"tipo": "p", "t": "Diagnostico medido (12/08): el problema son las ENTRADAS, no los cambios de v3. Contrafactual: 30 de 35 entradas post-v3 quedaron bajo el precio de entrada; sin stops la perdida seria ~-$95 en vez de ~-$35. Los stops hacen su trabajo. Contexto de regimen: BTC muy por debajo de la EMA200 (risk-off) -> las senales de momentum en altcoins se vuelven trampas."},
-    {"tipo": "p", "t": "Decision vigente de Agus (12/08): \"No hagamos nada\" (opcion C). Sin cambios. Sigue LIVE acumulando muestra limpia."},
-    {"tipo": "alerta", "nivel": "warn", "t": "Barrera: las posiciones abiertas y el archivo ejecutor/LIVE los toca solo Agus. Claude nunca cierra posiciones ni cambia el modo."},
-    {"tipo": "p", "t": "El edge historico de Ganesha (~100%) vino del scanner ciego de movers, no de la seleccion del Brain. BANK, el mejor trade, lo cerro Agus a mano: el sistema no lo capturo. Sin BANK, Ganesha realiza aprox -$37."}
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Modo",
+       "LIVE — Binance Spot, sub-cuenta aislada, IP restringida a la VM"
+      ],
+      [
+       "Estrategia",
+       "Momentum 15m sobre altcoins (movers). NO es Donchian BTC/USDT 1h (descartado)"
+      ],
+      [
+       "Cron",
+       "cada 4h — minuto :07 (00/04/08/12/16/20 UTC)"
+      ],
+      [
+       "Entrada",
+       "cierre 15m sobre maximo de 96 velas + volumen > vol_mult x SMA20"
+      ],
+      [
+       "Stop",
+       "entrada - atr_mult x ATR(14) 4h, nativo en Binance (stop-loss-limit)"
+      ],
+      [
+       "Gestion",
+       "riesgo 2%/trade; TP1 a +2R vende 30% y stop a breakeven; resto trailing solo-sube"
+      ],
+      [
+       "Version en vivo",
+       "ROLLBACK 17/08/2026 al codigo del 19/07 (bak.pre_v3): atr_mult 2.5, sin zombie, sin depth, sin time_stop. Decision de Agus."
+      ]
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "ROLLBACK 17/08/2026 (decision de Agus): se restauro el ejecutor al codigo del 19/07 (pre-v3). Motivo: desde los cambios del 7-8/08 (atr 2.0 + time_stop + zombie + depth) el bot fue 8 de 9 dias en rojo, PF cayo de 1.05 a 0.40 y el fusible (PF<0.70, n>=15) se cruzo con PF 0.63 n=87. Backups: ganesha_ejecutor.py.bak.v3_full.* y ejecutor/state.json.bak.pre_rollback.*. Las 6 posiciones abiertas se heredan con sus stops nativos; el modo (LIVE/paper) lo decide Agus con el archivo ejecutor/LIVE."
+    },
+    {
+     "tipo": "p",
+     "t": "Lo que se midio antes del rollback: (1) las reglas v3 por si solas no eran la causa: sobre las mismas entradas, las reglas viejas simulan -$68 vs -$48 real. (2) PERO las salidas rapidas de v3 liberaban capital y triplicaron la frecuencia de entrada (1.7 -> 4.9 entradas/dia; skip_no_balance 142 -> 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo por accidente: le faltaba plata. (3) BTC lleva ~77 dias bajo la EMA200; el motor de entrada por momentum de altcoins no tiene edge en ese clima con ninguna de las dos versiones. Contador de muestra: se reinicia."
+    },
+    {
+     "tipo": "p",
+     "t": "Riesgo conocido del rollback: cuando el capital crezca y deje de trabar, la frecuencia sube sola y puede volver la sangria. La solucion de fondo seria un tope explicito de entradas/dia o max_open, medido antes de encender. Pendiente."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "Barrera: las posiciones abiertas y el archivo ejecutor/LIVE los toca solo Agus. Claude nunca cierra posiciones ni cambia el modo."
+    },
+    {
+     "tipo": "p",
+     "t": "El edge historico de Ganesha (~100%) vino del scanner ciego de movers, no de la seleccion del Brain. BANK, el mejor trade, lo cerro Agus a mano: el sistema no lo capturo. Sin BANK, Ganesha realiza aprox -$37."
+    }
    ]
   },
   {
    "id": "pescador",
    "titulo": "Pescador — captura de rallies (PAPER)",
    "bloques": [
-    {"tipo": "kv", "items": [
-     ["Modo", "PAPER (v2). Datos de v1 invalidos: median otra estrategia"],
-     ["Tesis", "capturar 20-50% de rallies ya ultra-confirmados"],
-     ["Universo", "mismo scanner que Ganesha: todo /USDT de Binance, vol 24h >= $10M absoluto y >= 15x mediana 20d, dia >= +8%, semana >= +20%"],
-     ["Evaluacion", "solo sobre la ultima vela diaria CERRADA"],
-     ["Gestion", "TP +15%, SL -20%, salida forzada a 24h"],
-     ["Sizing", "25% del equity, max_open 4, cooldown 20h por simbolo, min_notional $12"],
-     ["Cron", "cada hora, minuto :07"],
-     ["Archivos", "/home/opc/bot_semillas/pescador/ — md5 v2: 38d1a60fa4780f14824e5b3648a4a6df"]
-    ]},
-    {"tipo": "alerta", "nivel": "warn", "t": "El SL de -20% es intocable. Medido: con SL a -8% el sistema pierde plata. El edge viene de aguantar el sacudon inicial. Si duele, se reduce el size, no el stop."},
-    {"tipo": "p", "t": "Para pasar a LIVE (solo Agus): crear pescador/keys.json, crear archivo vacio pescador/LIVE, fondear la sub-cuenta. En LIVE, TP y SL van como OCO nativo en Binance."}
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Modo",
+       "PAPER (v2). Datos de v1 invalidos: median otra estrategia"
+      ],
+      [
+       "Tesis",
+       "capturar 20-50% de rallies ya ultra-confirmados"
+      ],
+      [
+       "Universo",
+       "mismo scanner que Ganesha: todo /USDT de Binance, vol 24h >= $10M absoluto y >= 15x mediana 20d, dia >= +8%, semana >= +20%"
+      ],
+      [
+       "Evaluacion",
+       "solo sobre la ultima vela diaria CERRADA"
+      ],
+      [
+       "Gestion",
+       "TP +15%, SL -20%, salida forzada a 24h"
+      ],
+      [
+       "Sizing",
+       "25% del equity, max_open 4, cooldown 20h por simbolo, min_notional $12"
+      ],
+      [
+       "Cron",
+       "cada hora, minuto :07"
+      ],
+      [
+       "Archivos",
+       "/home/opc/bot_semillas/pescador/ — md5 v2: 38d1a60fa4780f14824e5b3648a4a6df"
+      ]
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "El SL de -20% es intocable. Medido: con SL a -8% el sistema pierde plata. El edge viene de aguantar el sacudon inicial. Si duele, se reduce el size, no el stop."
+    },
+    {
+     "tipo": "p",
+     "t": "Para pasar a LIVE (solo Agus): crear pescador/keys.json, crear archivo vacio pescador/LIVE, fondear la sub-cuenta. En LIVE, TP y SL van como OCO nativo en Binance."
+    }
    ]
   },
   {
    "id": "semillas",
    "titulo": "Semillas / Jardinero / Brain",
    "bloques": [
-    {"tipo": "kv", "items": [
-     ["Cron diario", "00:15 UTC (21:15 ART) — main.py"],
-     ["Brain", "mensual, ~$0.60-1.50 por corrida via API de Anthropic"],
-     ["Codigo", "/home/opc/bot_semillas/ — el espejo del repo puede estar desactualizado"]
-    ]},
-    {"tipo": "p", "t": "Organigrama: BRAIN (estratega mensual, garden_plan) -> JARDINERO (swing paciente, garden.py) -> GANESHA (intradia) + AUDITOR LOOP (no opera; consolida y propone con evidencia n>=15)."},
-    {"tipo": "alerta", "nivel": "alta", "t": "Los 4 cambios de Brain/Jardinero estan EN SUSPENSO. Eran \"obligatorios post-backtest\", pero el backtest que los justificaba se derrumbo (ver Hallazgos). El spec sigue valido como diseno."},
-    {"tipo": "p", "t": "Los 4 cambios especificados: (1) Brain filtra solo lo que crece en semanal (aduana semanal); (2) Brain vigila proyectos de calidad cerca de minimos (antena de valor); (3) Brain lee los movers que Ganesha gano ese mes (loop de aprendizaje); (4) Jardinero planta en dias lo que la watchlist asigna, DCA en pullback a EMA diaria en tendencia alcista + vela de reclaim, nunca el cuchillo."},
-    {"tipo": "p", "t": "Pregunta abierta para Agus: que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. Propuesta de Agus: Jardinero cripto por fundamentals (TVL, revenue de protocolo, valor con descuento) con DCA en proyectos tier-1."},
-    {"tipo": "p", "t": "Tier-1 = filtro de SUPERVIVENCIA (proyecto vivo, uso o narrativa real, liquidez, sobrevive el invierno), no filtro de tamanio. La lista la firma Agus; Claude propone candidatos."}
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Cron diario",
+       "00:15 UTC (21:15 ART) — main.py"
+      ],
+      [
+       "Brain",
+       "mensual, ~$0.60-1.50 por corrida via API de Anthropic"
+      ],
+      [
+       "Codigo",
+       "/home/opc/bot_semillas/ — el espejo del repo puede estar desactualizado"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Organigrama: BRAIN (estratega mensual, garden_plan) -> JARDINERO (swing paciente, garden.py) -> GANESHA (intradia) + AUDITOR LOOP (no opera; consolida y propone con evidencia n>=15)."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "Los 4 cambios de Brain/Jardinero estan EN SUSPENSO. Eran \"obligatorios post-backtest\", pero el backtest que los justificaba se derrumbo (ver Hallazgos). El spec sigue valido como diseno."
+    },
+    {
+     "tipo": "p",
+     "t": "Los 4 cambios especificados: (1) Brain filtra solo lo que crece en semanal (aduana semanal); (2) Brain vigila proyectos de calidad cerca de minimos (antena de valor); (3) Brain lee los movers que Ganesha gano ese mes (loop de aprendizaje); (4) Jardinero planta en dias lo que la watchlist asigna, DCA en pullback a EMA diaria en tendencia alcista + vela de reclaim, nunca el cuchillo."
+    },
+    {
+     "tipo": "p",
+     "t": "Pregunta abierta para Agus: que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. Propuesta de Agus: Jardinero cripto por fundamentals (TVL, revenue de protocolo, valor con descuento) con DCA en proyectos tier-1."
+    },
+    {
+     "tipo": "p",
+     "t": "Tier-1 = filtro de SUPERVIVENCIA (proyecto vivo, uso o narrativa real, liquidez, sobrevive el invierno), no filtro de tamanio. La lista la firma Agus; Claude propone candidatos."
+    }
    ]
   },
   {
    "id": "hallazgos",
    "titulo": "Hallazgos medidos — donde NO hay edge",
    "bloques": [
-    {"tipo": "alerta", "nivel": "alta", "t": "La confirmacion semanal de Weinstein NO tiene edge medible como senal de seleccion. Ni en acciones (Dow-30) ni en cripto, testeado con motores identicos."},
-    {"tipo": "ul", "items": [
-     "Acciones (Fase 0, 12/08): ~2.000 eventos y ~72.000 semanas de control. CONFIRMADO no le gana a comprar el MISMO activo en una semana al azar, en ninguna de las 4 variantes de media ni en los 5 horizontes. Le gana al indice, pero eso es efecto-activo, no efecto-senal.",
-     "Bug encontrado en el motor cripto original (bt_confirmacion.py): la senal dispara al cierre del viernes pero la entrada se tomaba en la apertura del lunes de ESA MISMA semana -> hasta 7 dias de regalo de look-ahead.",
-     "Cripto re-corrido sin look-ahead (bt_cripto.py): SMA-40w a 30d cae de +18% a +1,9%. Las otras 3 variantes dan negativo.",
-     "Peor: BTC comprado en la fecha de la senal le gana a la altcoin confirmada en 20 de 20 combinaciones (4 medias x 5 horizontes). La senal selecciona PEOR que no elegir.",
-     "El Dow-30 es el peor universo para demostrar Weinstein: vive en Stage 2 estructural. El test justo requiere small/mid caps con acciones deslistadas.",
-     "La regla del \"cuchillo\" tambien valida en acciones: comprar bajo la media rinde menos que comprar al azar (+0,8 vs +1,5 a 30d)."
-    ]},
-    {"tipo": "p", "t": "Separador medido en los datos de aprendizaje de Ganesha: trades donde TP1 llega antes que el stop -> n=6, WR 100%, PF 57,5. Trades donde no -> n=18, WR 5,6%, PF 0,09."},
-    {"tipo": "p", "t": "Backtest de portafolio con capital finito ($1.000, fees reales, caja compartida): el PF 2,63 del Ganesha viejo era un artefacto de asumir capital infinito por simbolo. Con restricciones reales la estrategia base pierde (-$47, PF 0,95, maxDD -44,9%). La piramide sola empeora todo; solo piramide + parabolica + trailing apretado da positivo."},
-    {"tipo": "p", "t": "El regimen de BTC (precio vs EMA200) es el separador relevante: apetito de riesgo lento, de semanas. BTC 7d y EMA50 no separan nada util."},
-    {"tipo": "p", "t": "Frecuencia es un resultado observado, no un parametro. Cambiar parametros a mitad de muestra reinicia el contador efectivo y contamina la medicion."}
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "La confirmacion semanal de Weinstein NO tiene edge medible como senal de seleccion. Ni en acciones (Dow-30) ni en cripto, testeado con motores identicos."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "Acciones (Fase 0, 12/08): ~2.000 eventos y ~72.000 semanas de control. CONFIRMADO no le gana a comprar el MISMO activo en una semana al azar, en ninguna de las 4 variantes de media ni en los 5 horizontes. Le gana al indice, pero eso es efecto-activo, no efecto-senal.",
+      "Bug encontrado en el motor cripto original (bt_confirmacion.py): la senal dispara al cierre del viernes pero la entrada se tomaba en la apertura del lunes de ESA MISMA semana -> hasta 7 dias de regalo de look-ahead.",
+      "Cripto re-corrido sin look-ahead (bt_cripto.py): SMA-40w a 30d cae de +18% a +1,9%. Las otras 3 variantes dan negativo.",
+      "Peor: BTC comprado en la fecha de la senal le gana a la altcoin confirmada en 20 de 20 combinaciones (4 medias x 5 horizontes). La senal selecciona PEOR que no elegir.",
+      "El Dow-30 es el peor universo para demostrar Weinstein: vive en Stage 2 estructural. El test justo requiere small/mid caps con acciones deslistadas.",
+      "La regla del \"cuchillo\" tambien valida en acciones: comprar bajo la media rinde menos que comprar al azar (+0,8 vs +1,5 a 30d)."
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Separador medido en los datos de aprendizaje de Ganesha: trades donde TP1 llega antes que el stop -> n=6, WR 100%, PF 57,5. Trades donde no -> n=18, WR 5,6%, PF 0,09."
+    },
+    {
+     "tipo": "p",
+     "t": "Backtest de portafolio con capital finito ($1.000, fees reales, caja compartida): el PF 2,63 del Ganesha viejo era un artefacto de asumir capital infinito por simbolo. Con restricciones reales la estrategia base pierde (-$47, PF 0,95, maxDD -44,9%). La piramide sola empeora todo; solo piramide + parabolica + trailing apretado da positivo."
+    },
+    {
+     "tipo": "p",
+     "t": "El regimen de BTC (precio vs EMA200) es el separador relevante: apetito de riesgo lento, de semanas. BTC 7d y EMA50 no separan nada util."
+    },
+    {
+     "tipo": "p",
+     "t": "Frecuencia es un resultado observado, no un parametro. Cambiar parametros a mitad de muestra reinicia el contador efectivo y contamina la medicion."
+    }
    ]
   },
   {
    "id": "acciones",
    "titulo": "Expansion a acciones / ETFs / bonos",
    "bloques": [
-    {"tipo": "p", "t": "Track paralelo via Interactive Brokers. Objetivo: sistema companion al de cripto."},
-    {"tipo": "kv", "items": [
-     ["Fase 0", "COMPLETADA (12/08/2026, autonoma). Entregables: acciones/bt_acciones.py + test_bt.py (18 asserts OK) + REPORTE_FASE0.md, publicados en el repo radar."],
-     ["Datos", "Yahoo Finance chart API, cierre ajustado, gratis, sin key, solo stdlib. Stooq descartado (bot detection con proof-of-work en JS)."],
-     ["Universo", "Dow-30 actual, benchmark SPY, historia desde 1970 en varios simbolos."]
-    ]},
-    {"tipo": "p", "t": "Fase 1 ($9/mes Sharadar): bakeoff Weinstein Stage 2 vs Momentum 12-1 vs Dual Momentum (Antonacci) vs Faber SMA10 vs buy-and-hold del indice, sobre universo amplio con acciones deslistadas (sin sesgo de supervivencia). Ademas: DCA mensual fijo vs DCA con trigger del Jardinero sobre 25 anios de datos limpios."},
-    {"tipo": "alerta", "nivel": "info", "t": "Si el trigger no le gana al DCA ciego, el Jardinero de acciones NO se construye. La literatura de \"buy the dip\" es mayormente negativa contra DCA fijo. Medir tambien drawdown, no solo retorno."},
-    {"tipo": "p", "t": "El core del portafolio deberia ser indexado (VTI/VOO/bonos, definido una vez, el Brain no lo elige) + satelites donde el Brain agregue valor. A 30 anios el benchmark es el indice y ~90% de los gestores profesionales le pierden (SPIVA)."},
-    {"tipo": "ul", "items": [
-     "Ganesha de acciones (gap-up / small-cap momentum): DEGRADADO a opcional y posterior. Terreno mas competitivo, infraestructura institucional, restriccion de rotacion de capital T+1. Va despues de validar el Jardinero.",
-     "Pescador de acciones: DESCARTADO. Datos en vivo pagos, competencia HFT."
-    ]}
+    {
+     "tipo": "p",
+     "t": "Track paralelo via Interactive Brokers. Objetivo: sistema companion al de cripto."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Fase 0",
+       "COMPLETADA (12/08/2026, autonoma). Entregables: acciones/bt_acciones.py + test_bt.py (18 asserts OK) + REPORTE_FASE0.md, publicados en el repo radar."
+      ],
+      [
+       "Datos",
+       "Yahoo Finance chart API, cierre ajustado, gratis, sin key, solo stdlib. Stooq descartado (bot detection con proof-of-work en JS)."
+      ],
+      [
+       "Universo",
+       "Dow-30 actual, benchmark SPY, historia desde 1970 en varios simbolos."
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Fase 1 ($9/mes Sharadar): bakeoff Weinstein Stage 2 vs Momentum 12-1 vs Dual Momentum (Antonacci) vs Faber SMA10 vs buy-and-hold del indice, sobre universo amplio con acciones deslistadas (sin sesgo de supervivencia). Ademas: DCA mensual fijo vs DCA con trigger del Jardinero sobre 25 anios de datos limpios."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Si el trigger no le gana al DCA ciego, el Jardinero de acciones NO se construye. La literatura de \"buy the dip\" es mayormente negativa contra DCA fijo. Medir tambien drawdown, no solo retorno."
+    },
+    {
+     "tipo": "p",
+     "t": "El core del portafolio deberia ser indexado (VTI/VOO/bonos, definido una vez, el Brain no lo elige) + satelites donde el Brain agregue valor. A 30 anios el benchmark es el indice y ~90% de los gestores profesionales le pierden (SPIVA)."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "Ganesha de acciones (gap-up / small-cap momentum): DEGRADADO a opcional y posterior. Terreno mas competitivo, infraestructura institucional, restriccion de rotacion de capital T+1. Va despues de validar el Jardinero.",
+      "Pescador de acciones: DESCARTADO. Datos en vivo pagos, competencia HFT."
+     ]
+    }
    ]
   },
   {
    "id": "pendientes",
    "titulo": "Pendientes de Agus",
    "bloques": [
-    {"tipo": "alerta", "nivel": "alta", "t": "(a) Upgrade de billing a PAYG en Oracle (tarjeta prepaga). Es prerequisito de la instancia A1 (2 OCPU / 12GB), que a su vez es prerequisito de IB Gateway (Java) + correr los 3 bots simultaneos. Sin esto, el sistema de acciones no puede correr."},
-    {"tipo": "alerta", "nivel": "warn", "t": "(b) Revocar el token temporal de GitHub del 7-8 de agosto (quedo en texto plano en ese chat)."},
-    {"tipo": "p", "t": "(c) Decision sobre el fusible de Ganesha: PF 0,63 con n=87. Opciones: seguir igual, volver a PAPER, o pausar. Claude no decide esto."}
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "(a) Upgrade de billing a PAYG en Oracle (tarjeta prepaga). Es prerequisito de la instancia A1 (2 OCPU / 12GB), que a su vez es prerequisito de IB Gateway (Java) + correr los 3 bots simultaneos. Sin esto, el sistema de acciones no puede correr."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "(b) Revocar el token temporal de GitHub del 7-8 de agosto (quedo en texto plano en ese chat)."
+    },
+    {
+     "tipo": "p",
+     "t": "(c) Ganesha: decidir modo tras el rollback (LIVE con el codigo viejo, o borrar ejecutor/LIVE para pasar a paper). Hoy el archivo LIVE sigue puesto."
+    }
    ]
   },
   {
    "id": "horizonte",
    "titulo": "En el horizonte",
    "bloques": [
-    {"tipo": "ul", "items": [
-     "Definir que reemplaza a la confirmacion semanal como criterio del Jardinero (decision de Agus).",
-     "Antena de valor: antena.json en el repo radar (simbolo + tesis + condicion, editable por Agus desde la app de GitHub), chequeo diario 21:15, trigger de Stage 2 sostenido -> mail + corrida ad-hoc del Brain -> avisa al Jardinero. Opcion C tentativa, confirmar con Agus.",
-     "Primer candidato de la antena: IOTA (tesis INCUCAI on-chain). Hoy en Stage 4, solo observacion.",
-     "Leer el codigo real de Semillas/Jardinero desde la VM (seeds.py, strategy.py, main.py): el espejo del repo puede estar viejo.",
-     "Migracion a instancia A1 (bloqueada por PAYG).",
-     "Setup de IB Gateway (bloqueado por A1).",
-     "B4 = \"Auditor General / CEO conversacional\": cerebro conversable con acceso a codigo + estado + memoria; nunca decide, es el espejo de Agus. Idea futura, no ahora.",
-     "Cifrado del dashboard del lado del cliente (passphrase): se agrega cuando el portafolio pase los $2.000. Hoy es publico por diseno."
-    ]}
+    {
+     "tipo": "ul",
+     "items": [
+      "Definir que reemplaza a la confirmacion semanal como criterio del Jardinero (decision de Agus).",
+      "Antena de valor: antena.json en el repo radar (simbolo + tesis + condicion, editable por Agus desde la app de GitHub), chequeo diario 21:15, trigger de Stage 2 sostenido -> mail + corrida ad-hoc del Brain -> avisa al Jardinero. Opcion C tentativa, confirmar con Agus.",
+      "Primer candidato de la antena: IOTA (tesis INCUCAI on-chain). Hoy en Stage 4, solo observacion.",
+      "Leer el codigo real de Semillas/Jardinero desde la VM (seeds.py, strategy.py, main.py): el espejo del repo puede estar viejo.",
+      "Migracion a instancia A1 (bloqueada por PAYG).",
+      "Setup de IB Gateway (bloqueado por A1).",
+      "B4 = \"Auditor General / CEO conversacional\": cerebro conversable con acceso a codigo + estado + memoria; nunca decide, es el espejo de Agus. Idea futura, no ahora.",
+      "Cifrado del dashboard del lado del cliente (passphrase): se agrega cuando el portafolio pase los $2.000. Hoy es publico por diseno."
+     ]
+    }
    ]
   },
   {
    "id": "infra",
    "titulo": "Infraestructura",
    "bloques": [
-    {"tipo": "kv", "items": [
-     ["VM", "Oracle Cloud Always Free — opc@163.176.185.60, sa-saopaulo-1, Oracle Linux, hostname semillas-bot"],
-     ["Specs", "E2.1.Micro (1GB RAM + ~3.5GB swap). A1 (2 OCPU / 12GB) pendiente de PAYG"],
-     ["Canal primario", "MCP \"VM Semillas\" — https://vm.semillaredes.com/mcp (read_file, write_file, run_script, tail_log, md5, list_dir)"],
-     ["Denegados en MCP", ".env, keys.json, id_rsa"],
-     ["Kill switch", "sudo systemctl stop caddy-vm"],
-     ["Fallback", "OCI Cloud Shell via Chrome (cloud.oracle.com/?region=sa-saopaulo-1)"],
-     ["Dashboard", "GitHub Pages, repo calcagnoagustin/radar, carpeta docs/ -> cripto.semillaredes.com"],
-     ["Publicacion", "la VM publica via GitHub Contents API (token en .env, nunca expuesto a Claude)"],
-     ["Email", "Resend, bot@semillaredes.com -> calcagnoagustin@gmail.com"]
-    ]},
-    {"tipo": "p", "t": "Crontab: 15 0 * * * main.py | 7 0,4,8,12,16,20 * * * ganesha_ejecutor.py | 7 * * * * pescador.py"},
-    {"tipo": "ul", "items": [
-     "Yahoo Finance chart API funciona gratis para diario historico ajustado, pero SOLO con User-Agent corto (\"Mozilla/5.0\"). Los UA completos de Chrome disparan 429. Patron: urllib con backoff exponencial hasta 6 reintentos, fallback a curl, sleep entre simbolos.",
-     "Los scripts que publican al repo deben correr con /home/opc/bot_semillas/venv/bin/python desde /home/opc/bot_semillas/. El Python del sistema no tiene dotenv y dashboard.TOKEN queda vacio.",
-     "Verificacion del dashboard: fetch mismo-origen desde la pestania de cripto.semillaredes.com. NO via raw.githubusercontent.com (cache de CDN agresivo). Para diagnosticos, subir el script con nombre NUEVO cada vez.",
-     "Gmail archiva todo lo que llega de bot@semillaredes.com salteando el inbox. Si un mail importa, hay que moverlo a INBOX+STARRED.",
-     "Si el token fine-grained se edita, hay que reconfirmar explicitamente Contents: R/W o GitHub lo limpia en silencio."
-    ]}
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "VM",
+       "Oracle Cloud Always Free — opc@163.176.185.60, sa-saopaulo-1, Oracle Linux, hostname semillas-bot"
+      ],
+      [
+       "Specs",
+       "E2.1.Micro (1GB RAM + ~3.5GB swap). A1 (2 OCPU / 12GB) pendiente de PAYG"
+      ],
+      [
+       "Canal primario",
+       "MCP \"VM Semillas\" — https://vm.semillaredes.com/mcp (read_file, write_file, run_script, tail_log, md5, list_dir)"
+      ],
+      [
+       "Denegados en MCP",
+       ".env, keys.json, id_rsa"
+      ],
+      [
+       "Kill switch",
+       "sudo systemctl stop caddy-vm"
+      ],
+      [
+       "Fallback",
+       "OCI Cloud Shell via Chrome (cloud.oracle.com/?region=sa-saopaulo-1)"
+      ],
+      [
+       "Dashboard",
+       "GitHub Pages, repo calcagnoagustin/radar, carpeta docs/ -> cripto.semillaredes.com"
+      ],
+      [
+       "Publicacion",
+       "la VM publica via GitHub Contents API (token en .env, nunca expuesto a Claude)"
+      ],
+      [
+       "Email",
+       "Resend, bot@semillaredes.com -> calcagnoagustin@gmail.com"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Crontab: 15 0 * * * main.py | 7 0,4,8,12,16,20 * * * ganesha_ejecutor.py | 7 * * * * pescador.py"
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "Yahoo Finance chart API funciona gratis para diario historico ajustado, pero SOLO con User-Agent corto (\"Mozilla/5.0\"). Los UA completos de Chrome disparan 429. Patron: urllib con backoff exponencial hasta 6 reintentos, fallback a curl, sleep entre simbolos.",
+      "Los scripts que publican al repo deben correr con /home/opc/bot_semillas/venv/bin/python desde /home/opc/bot_semillas/. El Python del sistema no tiene dotenv y dashboard.TOKEN queda vacio.",
+      "Verificacion del dashboard: fetch mismo-origen desde la pestania de cripto.semillaredes.com. NO via raw.githubusercontent.com (cache de CDN agresivo). Para diagnosticos, subir el script con nombre NUEVO cada vez.",
+      "Gmail archiva todo lo que llega de bot@semillaredes.com salteando el inbox. Si un mail importa, hay que moverlo a INBOX+STARRED.",
+      "Si el token fine-grained se edita, hay que reconfirmar explicitamente Contents: R/W o GitHub lo limpia en silencio."
+     ]
+    }
    ]
   },
   {
    "id": "metodo",
    "titulo": "Metodo de trabajo",
    "bloques": [
-    {"tipo": "ul", "items": [
-     "Agus es CEO y no hace trabajo operativo. Claude ejecuta todo lo tecnico de punta a punta: codigo, VM, automatizacion, dashboard, documentacion.",
-     "Claude nunca pide pegar codigo, correr comandos ni hacer pasos operativos. Solo se pide accion a Agus en casos extremos: credenciales que el controla, go-live real, acciones en el exchange.",
-     "Medir antes de construir: backtest primero, calibrar con datos, despues construir. Si el trigger no le gana al benchmark ciego, el componente no se construye.",
-     "Avisar una vez, no repetir: las advertencias metodologicas se dicen una vez; Agus decide.",
-     "Los documentos externos se evaluan criticamente pieza por pieza, no como doctrina (precedente: el doc de auditoria de ChatGPT).",
-     "Los problemas se nombran honestamente, con sus riesgos, sin suavizar."
-    ]},
-    {"tipo": "p", "t": "Del doc de auditoria de ChatGPT: el allocator dinamico y las matrices de correlacion son ruido a esta escala (n < 20 trades, ~$1.000). Lo barato, falsable y util ya: benchmarks / operaciones de control virtuales, logging que permita atribucion futura, reglas de salida del bull definidas ANTES de la euforia."}
+    {
+     "tipo": "ul",
+     "items": [
+      "Agus es CEO y no hace trabajo operativo. Claude ejecuta todo lo tecnico de punta a punta: codigo, VM, automatizacion, dashboard, documentacion.",
+      "Claude nunca pide pegar codigo, correr comandos ni hacer pasos operativos. Solo se pide accion a Agus en casos extremos: credenciales que el controla, go-live real, acciones en el exchange.",
+      "Medir antes de construir: backtest primero, calibrar con datos, despues construir. Si el trigger no le gana al benchmark ciego, el componente no se construye.",
+      "Avisar una vez, no repetir: las advertencias metodologicas se dicen una vez; Agus decide.",
+      "Los documentos externos se evaluan criticamente pieza por pieza, no como doctrina (precedente: el doc de auditoria de ChatGPT).",
+      "Los problemas se nombran honestamente, con sus riesgos, sin suavizar."
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Del doc de auditoria de ChatGPT: el allocator dinamico y las matrices de correlacion son ruido a esta escala (n < 20 trades, ~$1.000). Lo barato, falsable y util ya: benchmarks / operaciones de control virtuales, logging que permita atribucion futura, reglas de salida del bull definidas ANTES de la euforia."
+    }
    ]
   },
   {
    "id": "vocabulario",
    "titulo": "Vocabulario",
    "bloques": [
-    {"tipo": "kv", "items": [
-     ["Moonbag", "el resto que nunca se vende de un activo con tesis activa"],
-     ["Freeze 60d", "una semilla nueva no se vende durante 60 dias"],
-     ["Veda de cambios", "acuerdo humano, no parametro del sistema"],
-     ["DCA del Jardinero", "refuerzo EN FUERZA (veto Weinstein), nunca promedio a la baja"],
-     ["atr_mult", "cuantos ATR de aire tiene el trade. Mas chico = stop apretado"],
-     ["vol_mult", "cuan exigente es el filtro de volumen de la entrada"],
-     ["Stop en ganancia", "el trailing cierra por encima de la entrada"],
-     ["PF (profit factor)", "ganancia bruta / perdida bruta"],
-     ["Fusible", "umbral pre-acordado que dispara un aviso, no una accion automatica"],
-     ["Cuchillo", "comprar cayendo, por debajo de la media. Prohibido"],
-     ["Aduana semanal", "el Brain como filtro de entrada, no como etiqueta de salida"]
-    ]}
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Moonbag",
+       "el resto que nunca se vende de un activo con tesis activa"
+      ],
+      [
+       "Freeze 60d",
+       "una semilla nueva no se vende durante 60 dias"
+      ],
+      [
+       "Veda de cambios",
+       "acuerdo humano, no parametro del sistema"
+      ],
+      [
+       "DCA del Jardinero",
+       "refuerzo EN FUERZA (veto Weinstein), nunca promedio a la baja"
+      ],
+      [
+       "atr_mult",
+       "cuantos ATR de aire tiene el trade. Mas chico = stop apretado"
+      ],
+      [
+       "vol_mult",
+       "cuan exigente es el filtro de volumen de la entrada"
+      ],
+      [
+       "Stop en ganancia",
+       "el trailing cierra por encima de la entrada"
+      ],
+      [
+       "PF (profit factor)",
+       "ganancia bruta / perdida bruta"
+      ],
+      [
+       "Fusible",
+       "umbral pre-acordado que dispara un aviso, no una accion automatica"
+      ],
+      [
+       "Cuchillo",
+       "comprar cayendo, por debajo de la media. Prohibido"
+      ],
+      [
+       "Aduana semanal",
+       "el Brain como filtro de entrada, no como etiqueta de salida"
+      ]
+     ]
+    }
    ]
   }
  ]
