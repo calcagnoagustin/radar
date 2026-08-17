@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 130.39,
+ "equity_now": 130.44,
  "deposits_total": 0,
- "pnl_today": -9.84,
- "trades_today": 4,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -62.7,
  "trades_total": 88,
  "win_rate": 23,
@@ -35,6 +35,20 @@
    "entry": 0.000861,
    "qty": 16478.0,
    "stop": 0.0006827142857142856,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ONG/USDT",
+   "entry": 0.05436061124694377,
+   "qty": 409.0,
+   "stop": 0.04713285714285715,
+   "tp1_done": false
+  },
+  {
+   "symbol": "PORTAL/USDT",
+   "entry": 0.01673,
+   "qty": 730.4,
+   "stop": 0.013084285714285713,
    "tp1_done": false
   }
  ],
