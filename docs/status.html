@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Semillas 2.0 · Estado del proyecto</title>
+<title>TRADING · Estado del proyecto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -104,6 +104,40 @@
   .pos{color:var(--jade)} .neg{color:var(--clay)}
   .hint{font-size:12px;color:var(--faint);margin-top:10px}
 
+  /* --- tareas priorizadas --- */
+  .tareas{display:grid;gap:1px;background:var(--hair-soft);border:1px solid var(--hair);
+          border-radius:10px;overflow:hidden;margin-bottom:12px}
+  .tarea{background:var(--surface-2);padding:13px 15px;display:grid;gap:8px;
+         grid-template-columns:1fr}
+  @media(min-width:720px){.tarea{grid-template-columns:52px 1fr;gap:14px}}
+  .tarea .p{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600;color:var(--jade);
+            letter-spacing:.02em}
+  .tarea .body .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:5px}
+  .tarea .body .t{font-size:14px;color:#c9d4cc;max-width:82ch}
+  .who{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+       padding:3px 8px;border-radius:20px;border:1px solid var(--hair)}
+  .who.agus{color:var(--grain);border-color:rgba(232,195,106,.35);background:rgba(232,195,106,.08)}
+  .who.claude{color:var(--sky);border-color:rgba(127,176,201,.35);background:rgba(127,176,201,.08)}
+  .who.mix{color:var(--jade);border-color:rgba(111,191,142,.35);background:rgba(111,191,142,.08)}
+  .st{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .st.hot{color:var(--clay)}
+
+  /* --- pulso por frente --- */
+  .pulso{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;
+         background:var(--hair-soft);border:1px solid var(--hair);border-radius:10px;
+         overflow:hidden;margin-bottom:14px}
+  .pulso .f{background:var(--surface-2);padding:13px 15px}
+  .pulso .f .hd{display:flex;align-items:center;gap:7px;margin-bottom:5px}
+  .pulso .f .nm{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+  .pulso .f .tx{font-size:12.5px;color:var(--muted);line-height:1.45}
+  .sem{width:9px;height:9px;border-radius:50%;flex:none;background:var(--faint)}
+  .sem.rojo{background:var(--clay)} .sem.ambar{background:var(--grain)}
+  .sem.verde{background:var(--jade)} .sem.gris{background:var(--faint)}
+
+  /* --- destacadas --- */
+  #top section{border-color:rgba(111,191,142,.22)}
+  #top section h2{font-size:19px}
+
   footer{color:var(--faint);font-size:12px;text-align:center;padding:26px 0 10px;line-height:1.7}
   .hidden{display:none}
 </style>
@@ -113,7 +147,7 @@
 <header>
   <div class="brand">
     <div class="eyebrow">Documento maestro</div>
-    <h1 id="h-titulo">Sistema Semillas 2.0</h1>
+    <h1 id="h-titulo">TRADING</h1>
     <div class="sub" id="h-bajada"></div>
   </div>
   <div class="stamp">
@@ -128,10 +162,7 @@
   <div class="kpis" id="h-kpis"></div>
 </div>
 
-<div class="toolbar">
-  <input id="q" placeholder="Buscar en todo el documento…" autocomplete="off">
-  <a class="btn" href="./index.html">← Dashboard en vivo</a>
-</div>
+<main id="top"></main>
 
 <section id="vivo">
   <h2>Estado en vivo</h2>
@@ -139,13 +170,18 @@
   <div class="hint" id="live-hint">Leído directamente de los JSON que publica la VM en cada corrida.</div>
 </section>
 
+<div class="toolbar">
+  <input id="q" placeholder="Buscar en el resto del documento…" autocomplete="off">
+  <a class="btn" href="./index.html">← Dashboard en vivo</a>
+</div>
+
 <div class="layout">
   <nav id="nav"></nav>
   <main id="main"></main>
 </div>
 
 <footer>
-  Sistema Semillas 2.0 · Documento maestro del proyecto<br>
+  TRADING · Documento maestro del proyecto · cripto + acciones<br>
   Contenido en <span class="mono">docs/status_data.json</span> · Actualizado por Claude en cada sesión con cambios de estado
 </footer>
 
@@ -162,6 +198,19 @@ function bloque(b){
       `<div class="row"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join('')}</div>`;
   if(b.tipo==='tabla') return `<table><thead><tr>${b.headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>`+
       `<tbody>${b.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  if(b.tipo==='tareas') return `<div class="tareas">${b.items.map(i=>{
+      const w = /claude/i.test(i.quien) && /agus/i.test(i.quien) ? 'mix'
+              : (/claude/i.test(i.quien) ? 'claude' : 'agus');
+      const hot = /bloque/i.test(i.estado||'') ? ' hot' : '';
+      return `<div class="tarea"><div class="p">${esc(i.p||'')}</div><div class="body">`+
+        `<div class="meta"><span class="who ${w}">${esc(i.quien||'')}</span>`+
+        (i.estado?`<span class="st${hot}">${esc(i.estado)}</span>`:'')+`</div>`+
+        `<div class="t">${esc(i.t)}</div></div></div>`;
+    }).join('')}</div>`;
+  if(b.tipo==='pulso') return `<div class="pulso">${b.items.map(i=>
+      `<div class="f"><div class="hd"><span class="sem ${esc(i.estado||'gris')}"></span>`+
+      `<span class="nm">${esc(i.frente)}</span></div>`+
+      `<div class="tx">${esc(i.t||'')}</div></div>`).join('')}</div>`;
   if(b.tipo==='alerta'){
     const n = b.nivel||'info';
     const tag = n==='alta'?'Atención':(n==='warn'?'Cuidado':'Nota');
@@ -178,11 +227,15 @@ function render(d){
   document.getElementById('h-version').textContent = 'v' + d.meta.version;
   document.getElementById('h-kpis').innerHTML = d.resumen.kpis.map(k=>
     `<div class="kpi"><div class="k">${esc(k.k)}</div><div class="v mono">${esc(k.v)}</div></div>`).join('');
+  const sec = s => `<section id="${s.id}"><h2>${esc(s.titulo)}</h2>${s.bloques.map(bloque).join('')}</section>`;
+  const top  = d.secciones.filter(s=>s.destacada);
+  const rest = d.secciones.filter(s=>!s.destacada);
+  document.getElementById('top').innerHTML  = top.map(sec).join('');
+  document.getElementById('main').innerHTML = rest.map(sec).join('');
   document.getElementById('nav').innerHTML =
+    top.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('') +
     `<a href="#vivo">Estado en vivo</a>` +
-    d.secciones.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('');
-  document.getElementById('main').innerHTML = d.secciones.map(s=>
-    `<section id="${s.id}"><h2>${esc(s.titulo)}</h2>${s.bloques.map(bloque).join('')}</section>`).join('');
+    rest.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('');
 }
 
 // ---- buscador ----
