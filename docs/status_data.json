@@ -1,32 +1,161 @@
 {
  "meta": {
   "actualizado": "2026-08-17",
-  "version": "1.1",
-  "nota": "Documento maestro del proyecto. Se actualiza en cada sesion donde haya decisiones o cambios de estado."
+  "version": "2.0",
+  "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
  "resumen": {
-  "titulo": "Sistema Semillas 2.0",
-  "bajada": "Especulacion cripto de largo plazo en Binance Spot. Sin apalancamiento, sin futuros. Revision diaria, ejecucion por reglas.",
+  "titulo": "TRADING",
+  "bajada": "Sistema propio de especulacion de largo plazo. Dos tracks en paralelo: cripto en Binance Spot (sin apalancamiento, sin futuros) y acciones/ETFs/bonos via Interactive Brokers. Revision diaria, ejecucion por reglas, todo se mide antes de construirse.",
   "kpis": [
    {
     "k": "Horizonte",
     "v": "~10 anios"
    },
    {
+    "k": "Capital hoy",
+    "v": "~$1.000 + $46"
+   },
+   {
+    "k": "Inyeccion",
+    "v": "~$100 / mes"
+   },
+   {
     "k": "Aporte objetivo",
     "v": "$500-1000 / mes"
    },
    {
-    "k": "Capital hoy",
-    "v": "~$1.000 + $46 Ganesha"
-   },
-   {
-    "k": "Inyeccion actual",
-    "v": "~$100 / mes"
+    "k": "Tracks",
+    "v": "Cripto · Acciones"
    }
   ]
  },
  "secciones": [
+  {
+   "id": "prioridades",
+   "titulo": "Prioridades y tareas",
+   "destacada": true,
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Orden real de trabajo. Lo de arriba destraba lo de abajo. Las tareas de Agus son las unicas que Claude no puede ejecutar."
+    },
+    {
+     "tipo": "tareas",
+     "items": [
+      {
+       "p": "P1",
+       "quien": "Agus",
+       "estado": "bloqueante",
+       "t": "Oracle: upgrade de billing a PAYG con tarjeta prepaga. Destraba la instancia A1 (2 OCPU / 12GB), que destraba IB Gateway (Java) y correr los 3 bots simultaneos. Sin esto, todo el track de acciones queda parado."
+      },
+      {
+       "p": "P2",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "Ganesha: decidir el modo despues del rollback. Hoy el archivo ejecutor/LIVE sigue puesto y corre con el codigo viejo (pre-v3). La alternativa es borrar LIVE y volver a paper. El modo lo decide solo Agus."
+      },
+      {
+       "p": "P3",
+       "quien": "Agus",
+       "estado": "higiene",
+       "t": "Revocar el token temporal de GitHub del 7-8 de agosto (quedo en texto plano en aquel chat). Riesgo bajo pero no cuesta nada cerrarlo."
+      },
+      {
+       "p": "P4",
+       "quien": "Claude",
+       "estado": "en curso",
+       "t": "Ganesha: disenar y medir un tope explicito de entradas por dia (o max_open) ANTES de que el capital crezca. La selectividad vieja era un accidente por falta de plata, no un diseno; cuando deje de trabar, la frecuencia sube sola y vuelve la sangria."
+      },
+      {
+       "p": "P5",
+       "quien": "Agus + Claude",
+       "estado": "a decidir",
+       "t": "Definir que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. El backtest que la justificaba se cayo. Propuesta de Agus sobre la mesa: Jardinero cripto por fundamentals (TVL, revenue, valor a descuento) con DCA en tier-1."
+      },
+      {
+       "p": "P6",
+       "quien": "Claude",
+       "estado": "bloqueada por P1",
+       "t": "Acciones Fase 1: bakeoff Weinstein Stage 2 vs Momentum 12-1 vs Dual Momentum vs Faber SMA10 vs comprar el indice, sobre universo amplio con delisted (Sharadar, $9/mes). Ademas: DCA fijo vs DCA con trigger del Jardinero sobre 25 anios limpios. Si el trigger no le gana al DCA ciego, el Jardinero de acciones no se construye."
+      }
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Decision del 17 ago: los dos tracks van en paralelo, no se condicionan entre si. Que Ganesha vaya mal no frena acciones — acciones hoy no arriesga capital, solo mide. El unico cruce real es el capital, y eso recien se discute cuando acciones pida plata."
+    }
+   ]
+  },
+  {
+   "id": "ahora",
+   "titulo": "Donde estamos / que nos esta pasando",
+   "destacada": true,
+   "bloques": [
+    {
+     "tipo": "pulso",
+     "items": [
+      {
+       "frente": "Ganesha",
+       "estado": "rojo",
+       "t": "En vivo, con rollback al codigo viejo. Realizado -$62,70."
+      },
+      {
+       "frente": "Pescador",
+       "estado": "ambar",
+       "t": "Paper v2, juntando muestra limpia. Sin decisiones."
+      },
+      {
+       "frente": "Semillas / Brain",
+       "estado": "gris",
+       "t": "Los 4 cambios, en suspension: se cayo su backtest."
+      },
+      {
+       "frente": "Acciones",
+       "estado": "ambar",
+       "t": "Fase 0 cerrada. Fase 1 bloqueada por infra."
+      },
+      {
+       "frente": "Infra",
+       "estado": "rojo",
+       "t": "E2.1.Micro (1GB). A1 esperando el PAYG."
+      }
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "La foto honesta: el track cripto esta perdiendo plata y el track acciones esta produciendo los hallazgos mas valiosos del proyecto. No es contradictorio — son dos etapas distintas del mismo metodo."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "Ganesha, 17 ago: se hizo rollback al ejecutor previo a v3 (atr_mult 2.5, sin time_stop, sin zombie, sin depth), a pedido de Agus. Post-v3 (8-16 ago) habia dado n=55, -$65,58, WR 9,1%, PF 0,40, con 8 de 9 dias en rojo. El fusible PF<0,70 con n>=15 se cruzo (PF 0,63 con n=87). Realizado total: -$62,70. El contador de muestra arranca de cero. Las 6 abiertas (NIL, COOKIE, ETHFI, BOME, ONG, PORTAL) se heredaron con sus stops nativos."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "Lo que la medicion enseno y no hay que olvidar: el contrafactual mostro que las reglas de salida v3 no eran la causa por si solas (-$68 vs -$48 real). El problema real fue que las salidas rapidas liberaban capital y triplicaron la frecuencia de entrada (1,7 a 4,9 por dia; skip_no_balance de 142 a 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo POR ACCIDENTE — le faltaba plata. Eso no estaba medido; Agus lo vio en la practica."
+    },
+    {
+     "tipo": "p",
+     "t": "Contexto de regimen: BTC lleva ~77 dias por debajo de la EMA200 (-10,6%). Es el mismo clima que en julio, asi que no explica por si solo la diferencia entre los dos periodos. Pero en risk-off el momentum de alts devuelve lo que da."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "Dicho una vez y no se repite: volver a operar para recuperar lo perdido choca con una regla inviolable. Los -$62,70 son costo hundido. La decision de modo se toma por lo que se espera hacia adelante, no por lo que se perdio atras."
+    },
+    {
+     "tipo": "p",
+     "t": "En acciones, Fase 0 cerro con un resultado incomodo y valioso: la confirmacion semanal de Weinstein no tiene edge medible como senal de seleccion, ni en el Dow-30 ni en cripto, probado con el mismo motor en los dos mercados. Ademas aparecio un look-ahead bias que contaminaba el resultado cripto original (+18% caia a +1,9%). Eso obligo a poner en suspension los 4 cambios de Brain/Jardinero."
+    },
+    {
+     "tipo": "p",
+     "t": "Traducido: hoy el sistema sabe bastante mejor donde NO hay edge que donde si. Eso es progreso real, aunque no se vea en el P&L."
+    }
+   ]
+  },
   {
    "id": "norte",
    "titulo": "El norte",
@@ -382,26 +511,6 @@
       "Ganesha de acciones (gap-up / small-cap momentum): DEGRADADO a opcional y posterior. Terreno mas competitivo, infraestructura institucional, restriccion de rotacion de capital T+1. Va despues de validar el Jardinero.",
       "Pescador de acciones: DESCARTADO. Datos en vivo pagos, competencia HFT."
      ]
-    }
-   ]
-  },
-  {
-   "id": "pendientes",
-   "titulo": "Pendientes de Agus",
-   "bloques": [
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "(a) Upgrade de billing a PAYG en Oracle (tarjeta prepaga). Es prerequisito de la instancia A1 (2 OCPU / 12GB), que a su vez es prerequisito de IB Gateway (Java) + correr los 3 bots simultaneos. Sin esto, el sistema de acciones no puede correr."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "(b) Revocar el token temporal de GitHub del 7-8 de agosto (quedo en texto plano en ese chat)."
-    },
-    {
-     "tipo": "p",
-     "t": "(c) Ganesha: decidir modo tras el rollback (LIVE con el codigo viejo, o borrar ejecutor/LIVE para pasar a paper). Hoy el archivo LIVE sigue puesto."
     }
    ]
   },
