@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Semillas 2.0 · Estado del proyecto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --soil:#0E1411; --surface:#15201B; --surface-2:#192A22;
+    --hair:#243029; --hair-soft:#1d281f;
+    --ink:#E8EDE9; --muted:#7E9085; --faint:#586860;
+    --jade:#6FBF8E; --grain:#E8C36A; --clay:#E07A5F; --sky:#7FB0C9;
+    --r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    background:var(--soil);color:var(--ink);
+    font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.5;
+    padding:clamp(16px,4vw,40px);max-width:1180px;margin:0 auto;
+    background-image:radial-gradient(120% 80% at 50% -10%, #16241c 0%, var(--soil) 55%);
+    min-height:100vh;
+  }
+  .mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  a{color:var(--jade)}
+
+  header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:22px}
+  .brand h1{font-size:clamp(22px,3.6vw,32px);font-weight:700;letter-spacing:-.01em}
+  .brand .sub{color:var(--muted);font-size:13px;margin-top:4px;max-width:56ch}
+  .stamp{text-align:right;font-size:12px;color:var(--muted)}
+  .stamp .d{color:var(--ink);font-size:14px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--jade);margin-right:6px;
+       box-shadow:0 0 0 0 rgba(111,191,142,.6);animation:beat 2.6s infinite}
+  @keyframes beat{0%{box-shadow:0 0 0 0 rgba(111,191,142,.45)}70%{box-shadow:0 0 0 7px rgba(111,191,142,0)}100%{box-shadow:0 0 0 0 rgba(111,191,142,0)}}
+
+  .hero{background:linear-gradient(180deg,var(--surface) 0%, #121b16 100%);border:1px solid var(--hair);
+        border-radius:var(--r);padding:clamp(18px,3vw,26px);margin-bottom:18px}
+  .hero .bajada{color:var(--muted);font-size:14px;max-width:70ch;margin-bottom:18px}
+  .kpis{display:flex;gap:clamp(16px,4vw,44px);flex-wrap:wrap}
+  .kpi .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .kpi .v{font-size:19px;margin-top:3px;font-weight:500}
+
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+  #q{flex:1;min-width:220px;background:var(--surface);border:1px solid var(--hair);color:var(--ink);
+     border-radius:10px;padding:11px 14px;font-family:inherit;font-size:14px;outline:none}
+  #q:focus{border-color:var(--jade)}
+  .btn{background:var(--surface);border:1px solid var(--hair);color:var(--muted);border-radius:10px;
+       padding:11px 14px;font-family:inherit;font-size:13px;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn:hover{border-color:var(--jade);color:var(--ink)}
+
+  .layout{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:900px){.layout{grid-template-columns:210px 1fr;align-items:start}}
+  nav{display:none}
+  @media(min-width:900px){
+    nav{display:block;position:sticky;top:24px;background:var(--surface);border:1px solid var(--hair);
+        border-radius:var(--r);padding:14px}
+    nav a{display:block;color:var(--muted);text-decoration:none;font-size:13px;padding:6px 8px;border-radius:7px}
+    nav a:hover{background:var(--surface-2);color:var(--ink)}
+  }
+
+  section{background:var(--surface);border:1px solid var(--hair);border-radius:var(--r);
+          padding:clamp(16px,2.5vw,24px);margin-bottom:16px;scroll-margin-top:20px}
+  section h2{font-size:17px;font-weight:700;margin-bottom:14px;letter-spacing:-.01em;
+             display:flex;align-items:center;gap:10px}
+  section h2::before{content:"";width:3px;height:16px;background:var(--jade);border-radius:2px}
+  section p{color:#c9d4cc;font-size:14px;margin-bottom:11px;max-width:82ch}
+  section ul{margin:0 0 12px 0;padding-left:0;list-style:none}
+  section ul li{color:#c9d4cc;font-size:14px;padding:5px 0 5px 18px;position:relative;max-width:82ch}
+  section ul li::before{content:"";position:absolute;left:2px;top:13px;width:5px;height:5px;
+                        border-radius:50%;background:var(--faint)}
+
+  .kv{display:grid;gap:1px;background:var(--hair-soft);border:1px solid var(--hair);
+      border-radius:10px;overflow:hidden;margin-bottom:12px}
+  .kv .row{display:grid;grid-template-columns:1fr;background:var(--surface-2);padding:9px 13px;gap:2px}
+  @media(min-width:620px){.kv .row{grid-template-columns:190px 1fr;gap:14px;align-items:baseline}}
+  .kv .row .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .kv .row .v{font-size:13.5px;color:#c9d4cc;word-break:break-word}
+
+  table{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:13.5px}
+  th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+     padding:8px 10px;border-bottom:1px solid var(--hair)}
+  td{padding:9px 10px;border-bottom:1px solid var(--hair-soft);color:#c9d4cc}
+  tr:last-child td{border-bottom:none}
+
+  .alert{border-radius:10px;padding:12px 14px;margin-bottom:12px;font-size:13.5px;
+         border-left:3px solid var(--sky);background:rgba(127,176,201,.07);color:#cfdbd3}
+  .alert.warn{border-left-color:var(--grain);background:rgba(232,195,106,.07)}
+  .alert.alta{border-left-color:var(--clay);background:rgba(224,122,95,.09)}
+  .alert .tag{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+              color:var(--sky);margin-bottom:5px;font-weight:600}
+  .alert.warn .tag{color:var(--grain)}
+  .alert.alta .tag{color:var(--clay)}
+
+  .live{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+        background:var(--hair-soft);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .live .cell{background:var(--surface-2);padding:12px 14px}
+  .live .cell .k{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .live .cell .v{font-size:19px;margin-top:4px;font-weight:500}
+  .pos{color:var(--jade)} .neg{color:var(--clay)}
+  .hint{font-size:12px;color:var(--faint);margin-top:10px}
+
+  footer{color:var(--faint);font-size:12px;text-align:center;padding:26px 0 10px;line-height:1.7}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="eyebrow">Documento maestro</div>
+    <h1 id="h-titulo">Sistema Semillas 2.0</h1>
+    <div class="sub" id="h-bajada"></div>
+  </div>
+  <div class="stamp">
+    <div class="eyebrow"><span class="dot"></span>Actualizado</div>
+    <div class="d mono" id="h-fecha">—</div>
+    <div id="h-version" class="mono" style="font-size:11px;color:var(--faint)"></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="bajada" id="h-resumen"></div>
+  <div class="kpis" id="h-kpis"></div>
+</div>
+
+<div class="toolbar">
+  <input id="q" placeholder="Buscar en todo el documento…" autocomplete="off">
+  <a class="btn" href="./index.html">← Dashboard en vivo</a>
+</div>
+
+<section id="vivo">
+  <h2>Estado en vivo</h2>
+  <div class="live" id="live-grid"><div class="cell"><div class="k">Cargando</div><div class="v mono">…</div></div></div>
+  <div class="hint" id="live-hint">Leído directamente de los JSON que publica la VM en cada corrida.</div>
+</section>
+
+<div class="layout">
+  <nav id="nav"></nav>
+  <main id="main"></main>
+</div>
+
+<footer>
+  Sistema Semillas 2.0 · Documento maestro del proyecto<br>
+  Contenido en <span class="mono">docs/status_data.json</span> · Actualizado por Claude en cada sesión con cambios de estado
+</footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = (n,d=2) => (n===null||n===undefined||isNaN(n)) ? '—' : Number(n).toFixed(d);
+const usd = n => (n===null||n===undefined||isNaN(n)) ? '—' : (n<0?'-$':'$')+Math.abs(Number(n)).toFixed(2);
+const cls = n => (n===null||n===undefined||isNaN(n)) ? '' : (n>0?'pos':(n<0?'neg':''));
+
+function bloque(b){
+  if(b.tipo==='p') return `<p>${esc(b.t)}</p>`;
+  if(b.tipo==='ul') return `<ul>${b.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`;
+  if(b.tipo==='kv') return `<div class="kv">${b.items.map(([k,v])=>
+      `<div class="row"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join('')}</div>`;
+  if(b.tipo==='tabla') return `<table><thead><tr>${b.headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>`+
+      `<tbody>${b.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  if(b.tipo==='alerta'){
+    const n = b.nivel||'info';
+    const tag = n==='alta'?'Atención':(n==='warn'?'Cuidado':'Nota');
+    return `<div class="alert ${n==='info'?'':n}"><span class="tag">${tag}</span>${esc(b.t)}</div>`;
+  }
+  return '';
+}
+
+function render(d){
+  document.getElementById('h-titulo').textContent = d.resumen.titulo;
+  document.getElementById('h-bajada').textContent = d.resumen.bajada;
+  document.getElementById('h-resumen').textContent = d.resumen.bajada;
+  document.getElementById('h-fecha').textContent = d.meta.actualizado;
+  document.getElementById('h-version').textContent = 'v' + d.meta.version;
+  document.getElementById('h-kpis').innerHTML = d.resumen.kpis.map(k=>
+    `<div class="kpi"><div class="k">${esc(k.k)}</div><div class="v mono">${esc(k.v)}</div></div>`).join('');
+  document.getElementById('nav').innerHTML =
+    `<a href="#vivo">Estado en vivo</a>` +
+    d.secciones.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('');
+  document.getElementById('main').innerHTML = d.secciones.map(s=>
+    `<section id="${s.id}"><h2>${esc(s.titulo)}</h2>${s.bloques.map(bloque).join('')}</section>`).join('');
+}
+
+// ---- buscador ----
+document.getElementById('q').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('#main section').forEach(s => {
+    s.classList.toggle('hidden', q && !s.textContent.toLowerCase().includes(q));
+  });
+});
+
+// ---- estado en vivo ----
+async function j(p){ const r = await fetch(p + '?cb=' + Date.now()); if(!r.ok) throw 0; return r.json(); }
+
+async function vivo(){
+  const cells = [];
+  try{
+    const g = await j('./ganesha_data.json');
+    const pnl = g.paper_pnl ?? g.realized_pnl ?? g.pnl_realizado;
+    if(pnl!==undefined) cells.push(['Ganesha · P&L realizado', usd(pnl), cls(pnl)]);
+    const ab = g.open_positions ? g.open_positions.length : (g.posiciones ? g.posiciones.length : null);
+    if(ab!==null) cells.push(['Ganesha · abiertas', ab, '']);
+    if(g.profit_factor!==undefined) cells.push(['Ganesha · PF', fmt(g.profit_factor), g.profit_factor<0.7?'neg':'']);
+    if(g.win_rate!==undefined) cells.push(['Ganesha · win rate', fmt(g.win_rate,1)+'%', '']);
+  }catch(e){}
+  try{
+    const p = await j('./pescador_data.json');
+    cells.push(['Pescador · modo', p.modo||'—', '']);
+    cells.push(['Pescador · P&L (paper)', usd(p.realized_pnl), cls(p.realized_pnl)]);
+    cells.push(['Pescador · trades', p.trades_total ?? '—', '']);
+  }catch(e){}
+  try{
+    const d = await j('./dashboard_data.json');
+    if(d.generated_at) document.getElementById('live-hint').textContent =
+      'Último ciclo publicado por la VM: ' + d.generated_at + ' · leído de los JSON del repo.';
+  }catch(e){}
+  document.getElementById('live-grid').innerHTML = cells.length
+    ? cells.map(([k,v,c])=>`<div class="cell"><div class="k">${esc(k)}</div><div class="v mono ${c}">${esc(v)}</div></div>`).join('')
+    : '<div class="cell"><div class="k">Sin datos</div><div class="v mono">—</div></div>';
+}
+
+j('./status_data.json').then(render).catch(()=>{
+  document.getElementById('main').innerHTML =
+    '<section><h2>Error</h2><p>No se pudo cargar status_data.json.</p></section>';
+});
+vivo();
+</script>
+</body>
+</html>
