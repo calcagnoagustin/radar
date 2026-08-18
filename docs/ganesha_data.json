@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 127.45,
+ "equity_now": 127.52,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -56,6 +56,13 @@
    "entry": 0.03216,
    "qty": 445.0,
    "stop": 0.026844285714285716,
+   "tp1_done": false
+  },
+  {
+   "symbol": "GPS/USDT",
+   "entry": 0.01645,
+   "qty": 353.2,
+   "stop": 0.013323571428571428,
    "tp1_done": false
   }
  ],
