@@ -1,26 +1,19 @@
 {
  "dry_run": false,
- "equity_now": 128.54,
+ "equity_now": 125.9,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -62.7,
- "trades_total": 88,
- "win_rate": 23,
- "profit_factor": 0.63,
+ "pnl_today": -4.02,
+ "trades_today": 1,
+ "realized_pnl": -66.72,
+ "trades_total": 89,
+ "win_rate": 22,
+ "profit_factor": 0.62,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
    "entry": 0.03700879751954705,
    "qty": 370.9,
    "stop": 0.02657714285714286,
-   "tp1_done": false
-  },
-  {
-   "symbol": "COOKIE/USDT",
-   "entry": 0.0133,
-   "qty": 1385.0,
-   "stop": 0.01037142857142857,
    "tp1_done": false
   },
   {
@@ -64,18 +57,16 @@
    "qty": 353.2,
    "stop": 0.013323571428571428,
    "tp1_done": false
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.00691,
+   "qty": 1261.8,
+   "stop": 0.004646071428571428,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "EPIC/USDT",
-   "entry": 1.1428,
-   "exit": 0.9268,
-   "qty_total": 10.0,
-   "pnl_net": -2.16,
-   "action": "stop",
-   "closed_ts": 1786277349.3822246
-  },
   {
    "symbol": "TUT/USDT",
    "entry": 0.17091723404255318,
@@ -426,6 +417,15 @@
    "pnl_net": -3.11,
    "action": "stop",
    "closed_ts": 1786910835.3299897
+  },
+  {
+   "symbol": "COOKIE/USDT",
+   "entry": 0.0133,
+   "exit": 0.0104,
+   "qty_total": 1385.0,
+   "pnl_net": -4.02,
+   "action": "stop",
+   "closed_ts": 1787054837.2645373
   }
  ]
 }
