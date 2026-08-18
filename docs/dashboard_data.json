@@ -1,21 +1,10 @@
 {
- "generated_at": "2026-08-17T00:15:49Z",
+ "generated_at": "2026-08-18T00:15:47Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 90.46131776,
+ "free_usdt": 98.41655456,
  "deposits": [],
  "positions": [
-  {
-   "symbol": "MMT/USDT",
-   "binance": "MMTUSDT",
-   "status": "seed",
-   "qty": 48.1,
-   "avg_cost": 0.2079,
-   "dca_adds": 0,
-   "tp_hit": [],
-   "confirmed_at": null,
-   "note": ""
-  },
   {
    "symbol": "PUMP/USDT",
    "binance": "PUMPUSDT",
@@ -263,6 +252,15 @@
    "qty_total": 3432989.0,
    "pnl_net": -0.7896,
    "closed_ts": 1786666515.3451154
+  },
+  {
+   "symbol": "MMT/USDT",
+   "action": "STOP",
+   "entry": 0.2079,
+   "exit": 0.1659,
+   "qty_total": 48.0,
+   "pnl_net": -2.016,
+   "closed_ts": 1787012114.355862
   }
  ],
  "shortlist_full": [
@@ -680,7 +678,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-16T00:15:54Z",
+  "generated": "2026-08-17T00:16:01Z",
   "ranking": [
    {
     "atr_mult": 2.0,
