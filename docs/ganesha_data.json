@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 123.67,
+ "equity_now": 122.71,
  "deposits_total": 0,
  "pnl_today": -6.4,
  "trades_today": 2,
@@ -56,6 +56,13 @@
    "entry": 0.00691,
    "qty": 1261.8,
    "stop": 0.004646071428571428,
+   "tp1_done": false
+  },
+  {
+   "symbol": "PUMP/USDT",
+   "entry": 0.002852,
+   "qty": 6098.0,
+   "stop": 0.0025910714285714287,
    "tp1_done": false
   }
  ],
