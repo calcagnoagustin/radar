@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 125.9,
+ "equity_now": 123.67,
  "deposits_total": 0,
- "pnl_today": -4.02,
- "trades_today": 1,
- "realized_pnl": -66.72,
- "trades_total": 89,
+ "pnl_today": -6.4,
+ "trades_today": 2,
+ "realized_pnl": -69.09,
+ "trades_total": 90,
  "win_rate": 22,
- "profit_factor": 0.62,
+ "profit_factor": 0.61,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -45,13 +45,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "CHIP/USDT",
-   "entry": 0.03216,
-   "qty": 445.0,
-   "stop": 0.026844285714285716,
-   "tp1_done": false
-  },
-  {
    "symbol": "GPS/USDT",
    "entry": 0.01645,
    "qty": 353.2,
@@ -67,15 +60,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "TUT/USDT",
-   "entry": 0.17091723404255318,
-   "exit": 0.1533632857142857,
-   "qty_total": 141.0,
-   "pnl_net": -2.48,
-   "action": "stop",
-   "closed_ts": 1786291692.088528
-  },
   {
    "symbol": "SAGA/USDT",
    "entry": 0.01716,
@@ -426,6 +410,15 @@
    "pnl_net": -4.02,
    "action": "stop",
    "closed_ts": 1787054837.2645373
+  },
+  {
+   "symbol": "CHIP/USDT",
+   "entry": 0.03216,
+   "exit": 0.02682,
+   "qty_total": 445.0,
+   "pnl_net": -2.38,
+   "action": "stop",
+   "closed_ts": 1787069235.757451
   }
  ]
 }
