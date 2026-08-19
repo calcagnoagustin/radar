@@ -1,6 +1,6 @@
 {
  "meta": {
-  "actualizado": "2026-08-17",
+  "actualizado": "2026-08-19",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
@@ -78,6 +78,12 @@
        "quien": "Claude",
        "estado": "bloqueada por P1",
        "t": "Acciones Fase 1: bakeoff Weinstein Stage 2 vs Momentum 12-1 vs Dual Momentum vs Faber SMA10 vs comprar el indice, sobre universo amplio con delisted (Sharadar, $9/mes). Ademas: DCA fijo vs DCA con trigger del Jardinero sobre 25 anios limpios. Si el trigger no le gana al DCA ciego, el Jardinero de acciones no se construye."
+      },
+      {
+       "p": "P7",
+       "quien": "Agus + Claude",
+       "estado": "a decidir",
+       "t": "Stops anchos vs red en el exchange: con atr_mult 2.5 el stop nativo es imposible de colocar hasta que el precio se acerque a ~9% de el. Mientras tanto la unica proteccion es software cada 4h (ahora reintento cada 15 min). Opciones: (a) convivir, asumiendo que si la VM muere las posiciones quedan sueltas; (b) stop nativo de catastrofe en el borde permitido, que cierra antes y cambia la estrategia; (c) revisar atr_mult. Hoy queda en (a), que es lo que ya habia sin saberlo."
       }
      ]
     },
@@ -317,6 +323,79 @@
     {
      "tipo": "p",
      "t": "Lo que se midio antes del rollback: (1) las reglas v3 por si solas no eran la causa: sobre las mismas entradas, las reglas viejas simulan -$68 vs -$48 real. (2) PERO las salidas rapidas de v3 liberaban capital y triplicaron la frecuencia de entrada (1.7 -> 4.9 entradas/dia; skip_no_balance 142 -> 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo por accidente: le faltaba plata. (3) BTC lleva ~77 dias bajo la EMA200; el motor de entrada por momentum de altcoins no tiene edge en ese clima con ninguna de las dos versiones. Contador de muestra: se reinicia."
+    },
+    {
+     "tipo": "p",
+     "t": "Foto post-rollback al 19/08 (47h, 12 corridas): 8 posiciones abiertas, $119.76 invertidos, PnL abierto +$5.08 (+4.2%). Realizado: -$6.40 (COOKIE -4.02, CHIP -2.38), 2 de 2 cierres en rojo. Frecuencia de entrada 2.0/dia -- vuelve al nivel pre-v3 (1.7) y lejos del v3 (4.9): el objetivo del rollback se cumplio a nivel mecanismo. El resultado, con n=2, no dice nada todavia, y el verde abierto es beta de alts, no edge del bot."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "HALLAZGO 19/08/2026 — los stops nativos no se estaban colocando. 6 de 8 posiciones abiertas quedaron SIN stop en el exchange (solo gestionado por software, evaluado cada 4h). Causa medida: el filtro PERCENT_PRICE_BY_SIDE de Binance exige, para una venta, price >= avgPrice(5m) x 0.9. Con atr_mult 2.5 el stop queda a -16%/-40% del precio y el exchange lo rechaza siempre. Verificado con order/test: ni STOP_LOSS_LIMIT ni STOP_LOSS market lo evaden. NO es un bug del codigo: es un limite estructural de Binance spot incompatible con stops anchos."
+    },
+    {
+     "tipo": "p",
+     "t": "Fix aplicado 19/08 (Claude): (1) place_stop ahora calcula el borde real del filtro leyendo askMultiplierDown del par y el avgPrice de 5m. Si el stop esta fuera de rango NO lo fuerza al borde -- forzarlo cerraria el trade antes de tiempo y cambiaria la estrategia por la ventana; lo registra como stop_pending_filter con la distancia que falta y lo deja en software. Si el stop entra pero el precio limite se pasaba, sube el limite al borde (caso que antes se perdia). (2) Nuevo watcher ganesha_stops.py, cron 22/37/52 de cada hora: solo reintenta colocar stops pendientes, no escanea ni abre ni cierra nada. La ventana de desproteccion baja de 4h a ~15 min. Cuando el precio baja hacia el stop, la red se arma sola. Backup: ganesha_ejecutor.py.bak.pre_stopfilter.1787103064"
+    },
+    {
+     "tipo": "tabla",
+     "t": "Proteccion en exchange al 19/08 01:30 UTC (falta% = cuanto debe bajar el precio para que el stop sea colocable)",
+     "headers": [
+      "Simbolo",
+      "PnL abierto",
+      "Stop nativo",
+      "Falta para armarlo"
+     ],
+     "filas": [
+      [
+       "NIL/USDT",
+       "+19.7%",
+       "SI",
+       "-"
+      ],
+      [
+       "GPS/USDT",
+       "+12.3%",
+       "NO",
+       "25.4%"
+      ],
+      [
+       "ETHFI/USDT",
+       "+9.2%",
+       "NO",
+       "11.7%"
+      ],
+      [
+       "PUMP/USDT",
+       "+8.7%",
+       "NO",
+       "8.5%"
+      ],
+      [
+       "ONG/USDT",
+       "+5.8%",
+       "NO",
+       "11.1%"
+      ],
+      [
+       "HEMI/USDT",
+       "+1.4%",
+       "NO",
+       "37.9%"
+      ],
+      [
+       "BOME/USDT",
+       "-10.8%",
+       "NO",
+       "1.8%"
+      ],
+      [
+       "PORTAL/USDT",
+       "-17.1%",
+       "SI",
+       "-"
+      ]
+     ]
     },
     {
      "tipo": "p",
