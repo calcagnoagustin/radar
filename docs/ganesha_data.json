@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 125.36,
+ "equity_now": 124.52,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -69.09,
- "trades_total": 90,
+ "pnl_today": -2.67,
+ "trades_today": 1,
+ "realized_pnl": -71.77,
+ "trades_total": 91,
  "win_rate": 22,
- "profit_factor": 0.61,
+ "profit_factor": 0.6,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -38,13 +38,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "PORTAL/USDT",
-   "entry": 0.01673,
-   "qty": 730.4,
-   "stop": 0.013084285714285713,
-   "tp1_done": false
-  },
-  {
    "symbol": "GPS/USDT",
    "entry": 0.01645,
    "qty": 353.2,
@@ -67,15 +60,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "SAGA/USDT",
-   "entry": 0.01716,
-   "exit": 0.01546,
-   "qty_total": 2002.8,
-   "pnl_net": -3.4,
-   "action": "stop",
-   "closed_ts": 1786291714.6115708
-  },
   {
    "symbol": "BOME/USDT",
    "entry": 0.0005924,
@@ -426,6 +410,15 @@
    "pnl_net": -2.38,
    "action": "stop",
    "closed_ts": 1787069235.757451
+  },
+  {
+   "symbol": "PORTAL/USDT",
+   "entry": 0.01673,
+   "exit": 0.01307,
+   "qty_total": 730.4,
+   "pnl_net": -2.67,
+   "action": "stop",
+   "closed_ts": 1787141236.6467493
   }
  ]
 }
