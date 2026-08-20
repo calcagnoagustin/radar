@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 139.41,
+ "equity_now": 145.69,
  "deposits_total": 0,
- "pnl_today": 5.5,
- "trades_today": 3,
- "realized_pnl": -66.27,
- "trades_total": 94,
- "win_rate": 24,
- "profit_factor": 0.63,
+ "pnl_today": 11.38,
+ "trades_today": 5,
+ "realized_pnl": -60.39,
+ "trades_total": 96,
+ "win_rate": 26,
+ "profit_factor": 0.66,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -24,18 +24,11 @@
    "tp1_done": true
   },
   {
-   "symbol": "BOME/USDT",
-   "entry": 0.000861,
-   "qty": 11534.6,
-   "stop": 0.001144142857142857,
-   "tp1_done": true
-  },
-  {
    "symbol": "ONG/USDT",
    "entry": 0.05436061124694377,
-   "qty": 409.0,
-   "stop": 0.04713285714285715,
-   "tp1_done": false
+   "qty": 286.3,
+   "stop": 0.06396964285714286,
+   "tp1_done": true
   },
   {
    "symbol": "GPS/USDT",
@@ -55,7 +48,7 @@
    "symbol": "PUMP/USDT",
    "entry": 0.002852,
    "qty": 4268.6,
-   "stop": 0.003021642857142857,
+   "stop": 0.0031901785714285712,
    "tp1_done": true
   },
   {
@@ -78,27 +71,16 @@
    "qty": 1.17,
    "stop": 9.709321428571428,
    "tp1_done": false
+  },
+  {
+   "symbol": "RE/USDT",
+   "entry": 0.5186,
+   "qty": 21.5,
+   "stop": 0.39343928571428566,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "HMSTR/USDT",
-   "entry": 0.0002198,
-   "exit": 0.0001949,
-   "qty_total": 26663.0,
-   "pnl_net": -0.66,
-   "action": "stop",
-   "closed_ts": 1786334852.0730946
-  },
-  {
-   "symbol": "IOTX/USDT",
-   "entry": 0.00306,
-   "exit": 0.00264,
-   "qty_total": 6963.0,
-   "pnl_net": -2.92,
-   "action": "stop",
-   "closed_ts": 1786349236.4648204
-  },
   {
    "symbol": "THE/USDT",
    "entry": 0.07446175710594315,
@@ -440,6 +422,24 @@
    "pnl_net": 2.21,
    "action": "tp",
    "closed_ts": 1787227662.184839
+  },
+  {
+   "symbol": "BOME/USDT",
+   "entry": 0.000861,
+   "exit": 0.0011437,
+   "qty_total": 16478.0,
+   "pnl_net": 3.26,
+   "action": "stop",
+   "closed_ts": 1787242037.439166
+  },
+  {
+   "symbol": "ONG/USDT",
+   "entry": 0.05436061124694377,
+   "exit": 0.0757,
+   "qty_total": 0,
+   "pnl_net": 2.62,
+   "action": "tp",
+   "closed_ts": 1787242061.0667696
   }
  ]
 }
