@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 137.63,
+ "equity_now": 139.41,
  "deposits_total": 0,
- "pnl_today": 2.24,
- "trades_today": 1,
- "realized_pnl": -69.53,
- "trades_total": 92,
- "win_rate": 23,
- "profit_factor": 0.61,
+ "pnl_today": 5.5,
+ "trades_today": 3,
+ "realized_pnl": -66.27,
+ "trades_total": 94,
+ "win_rate": 24,
+ "profit_factor": 0.63,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -26,9 +26,9 @@
   {
    "symbol": "BOME/USDT",
    "entry": 0.000861,
-   "qty": 16478.0,
-   "stop": 0.0006827142857142856,
-   "tp1_done": false
+   "qty": 11534.6,
+   "stop": 0.001144142857142857,
+   "tp1_done": true
   },
   {
    "symbol": "ONG/USDT",
@@ -54,9 +54,9 @@
   {
    "symbol": "PUMP/USDT",
    "entry": 0.002852,
-   "qty": 6098.0,
-   "stop": 0.0025910714285714287,
-   "tp1_done": false
+   "qty": 4268.6,
+   "stop": 0.003021642857142857,
+   "tp1_done": true
   },
   {
    "symbol": "ARB/USDT",
@@ -71,27 +71,16 @@
    "qty": 5.953,
    "stop": 1.4500714285714287,
    "tp1_done": false
+  },
+  {
+   "symbol": "LINK/USDT",
+   "entry": 10.619,
+   "qty": 1.17,
+   "stop": 9.709321428571428,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "AAOIB/USDT",
-   "entry": 137.27,
-   "exit": 136.54,
-   "qty_total": 0.127,
-   "pnl_net": -0.09,
-   "action": "stop",
-   "closed_ts": 1786320860.2153287
-  },
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.0005924,
-   "exit": 0.0007733,
-   "qty_total": 47579.0,
-   "pnl_net": 6.02,
-   "action": "stop",
-   "closed_ts": 1786334836.7714756
-  },
   {
    "symbol": "HMSTR/USDT",
    "entry": 0.0002198,
@@ -433,6 +422,24 @@
    "pnl_net": 2.24,
    "action": "tp",
    "closed_ts": 1787213255.669681
+  },
+  {
+   "symbol": "PUMP/USDT",
+   "entry": 0.002852,
+   "exit": 0.003427,
+   "qty_total": 0,
+   "pnl_net": 1.05,
+   "action": "tp",
+   "closed_ts": 1787227658.9125814
+  },
+  {
+   "symbol": "BOME/USDT",
+   "entry": 0.000861,
+   "exit": 0.0013085,
+   "qty_total": 0,
+   "pnl_net": 2.21,
+   "action": "tp",
+   "closed_ts": 1787227662.184839
   }
  ]
 }
