@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 128.5,
+ "equity_now": 129.11,
  "deposits_total": 0,
- "pnl_today": -2.67,
- "trades_today": 1,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -71.77,
  "trades_total": 91,
  "win_rate": 22,
@@ -56,6 +56,13 @@
    "entry": 0.002852,
    "qty": 6098.0,
    "stop": 0.0025910714285714287,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ARB/USDT",
+   "entry": 0.089,
+   "qty": 107.9,
+   "stop": 0.07898214285714286,
    "tp1_done": false
   }
  ],
