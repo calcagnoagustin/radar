@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 145.69,
+ "equity_now": 151.46,
  "deposits_total": 0,
  "pnl_today": 11.38,
  "trades_today": 5,
@@ -27,7 +27,7 @@
    "symbol": "ONG/USDT",
    "entry": 0.05436061124694377,
    "qty": 286.3,
-   "stop": 0.06396964285714286,
+   "stop": 0.07974428571428573,
    "tp1_done": true
   },
   {
@@ -77,6 +77,13 @@
    "entry": 0.5186,
    "qty": 21.5,
    "stop": 0.39343928571428566,
+   "tp1_done": false
+  },
+  {
+   "symbol": "MET/USDT",
+   "entry": 0.2114,
+   "qty": 54.1,
+   "stop": 0.1816357142857143,
    "tp1_done": false
   }
  ],
