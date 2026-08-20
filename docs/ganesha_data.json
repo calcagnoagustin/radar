@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 130.88,
+ "equity_now": 137.63,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -71.77,
- "trades_total": 91,
- "win_rate": 22,
- "profit_factor": 0.6,
+ "pnl_today": 2.24,
+ "trades_today": 1,
+ "realized_pnl": -69.53,
+ "trades_total": 92,
+ "win_rate": 23,
+ "profit_factor": 0.61,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -19,9 +19,9 @@
   {
    "symbol": "ETHFI/USDT",
    "entry": 0.4399,
-   "qty": 57.9,
-   "stop": 0.38904285714285713,
-   "tp1_done": false
+   "qty": 40.53,
+   "stop": 0.5197607142857144,
+   "tp1_done": true
   },
   {
    "symbol": "BOME/USDT",
@@ -64,18 +64,16 @@
    "qty": 107.9,
    "stop": 0.07898214285714286,
    "tp1_done": false
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "entry": 1.67,
+   "qty": 5.953,
+   "stop": 1.4500714285714287,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.0005924,
-   "exit": 0.0008084,
-   "qty_total": 0,
-   "pnl_net": 3.08,
-   "action": "tp",
-   "closed_ts": 1786306070.564052
-  },
   {
    "symbol": "AAOIB/USDT",
    "entry": 137.27,
@@ -426,6 +424,15 @@
    "pnl_net": -2.67,
    "action": "stop",
    "closed_ts": 1787141236.6467493
+  },
+  {
+   "symbol": "ETHFI/USDT",
+   "entry": 0.4399,
+   "exit": 0.5686,
+   "qty_total": 0,
+   "pnl_net": 2.24,
+   "action": "tp",
+   "closed_ts": 1787213255.669681
   }
  ]
 }
