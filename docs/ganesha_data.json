@@ -1,6 +1,6 @@
 {
  "dry_run": false,
- "equity_now": 158.57,
+ "equity_now": 174.69,
  "deposits_total": 0,
  "pnl_today": 0,
  "trades_today": 0,
@@ -27,7 +27,7 @@
    "symbol": "ONG/USDT",
    "entry": 0.05436061124694377,
    "qty": 286.3,
-   "stop": 0.0820775,
+   "stop": 0.1026,
    "tp1_done": true
   },
   {
@@ -48,7 +48,7 @@
    "symbol": "PUMP/USDT",
    "entry": 0.002852,
    "qty": 4268.6,
-   "stop": 0.0033073214285714286,
+   "stop": 0.003315857142857143,
    "tp1_done": true
   },
   {
