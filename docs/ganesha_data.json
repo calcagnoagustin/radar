@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 167.75,
+ "equity_now": 166.67,
  "deposits_total": 0,
- "pnl_today": 16.62,
- "trades_today": 2,
- "realized_pnl": -43.77,
- "trades_total": 98,
- "win_rate": 28,
- "profit_factor": 0.75,
+ "pnl_today": 25.65,
+ "trades_today": 4,
+ "realized_pnl": -34.73,
+ "trades_total": 100,
+ "win_rate": 29,
+ "profit_factor": 0.81,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -20,7 +20,7 @@
    "symbol": "ETHFI/USDT",
    "entry": 0.4399,
    "qty": 40.53,
-   "stop": 0.5197607142857144,
+   "stop": 0.5264285714285715,
    "tp1_done": true
   },
   {
@@ -29,20 +29,6 @@
    "qty": 353.2,
    "stop": 0.013323571428571428,
    "tp1_done": false
-  },
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00691,
-   "qty": 883.26,
-   "stop": 0.010702857142857142,
-   "tp1_done": true
-  },
-  {
-   "symbol": "PUMP/USDT",
-   "entry": 0.002852,
-   "qty": 4268.6,
-   "stop": 0.003485964285714286,
-   "tp1_done": true
   },
   {
    "symbol": "ARB/USDT",
@@ -92,27 +78,16 @@
    "qty": 129555.0,
    "stop": 8.47317857142857e-05,
    "tp1_done": false
+  },
+  {
+   "symbol": "ENA/USDT",
+   "entry": 0.1494,
+   "qty": 215.05,
+   "stop": 0.1338464285714286,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "TST/USDT",
-   "entry": 0.02121,
-   "exit": 0.01886,
-   "qty_total": 562.2,
-   "pnl_net": -1.32,
-   "action": "stop",
-   "closed_ts": 1786349271.689086
-  },
-  {
-   "symbol": "ACT/USDT",
-   "entry": 0.01284,
-   "exit": 0.01146,
-   "qty_total": 2270.5,
-   "pnl_net": -3.13,
-   "action": "stop",
-   "closed_ts": 1786363638.6834197
-  },
   {
    "symbol": "BROCCOLI714/USDT",
    "entry": 0.02029,
@@ -454,6 +429,24 @@
    "pnl_net": 2.84,
    "action": "tp",
    "closed_ts": 1787314069.9716253
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.00691,
+   "exit": 0.01068,
+   "qty_total": 1261.8,
+   "pnl_net": 3.33,
+   "action": "stop",
+   "closed_ts": 1787328434.0393286
+  },
+  {
+   "symbol": "PUMP/USDT",
+   "entry": 0.002852,
+   "exit": 0.004188,
+   "qty_total": 4268.6,
+   "pnl_net": 5.7,
+   "action": "manual",
+   "closed_ts": 1787328434.824626
   }
  ]
 }
