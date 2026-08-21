@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 163.29,
+ "equity_now": 167.75,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -60.39,
- "trades_total": 96,
- "win_rate": 26,
- "profit_factor": 0.66,
+ "pnl_today": 16.62,
+ "trades_today": 2,
+ "realized_pnl": -43.77,
+ "trades_total": 98,
+ "win_rate": 28,
+ "profit_factor": 0.75,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -24,13 +24,6 @@
    "tp1_done": true
   },
   {
-   "symbol": "ONG/USDT",
-   "entry": 0.05436061124694377,
-   "qty": 286.3,
-   "stop": 0.1026,
-   "tp1_done": true
-  },
-  {
    "symbol": "GPS/USDT",
    "entry": 0.01645,
    "qty": 353.2,
@@ -40,15 +33,15 @@
   {
    "symbol": "HEMI/USDT",
    "entry": 0.00691,
-   "qty": 1261.8,
-   "stop": 0.004646071428571428,
-   "tp1_done": false
+   "qty": 883.26,
+   "stop": 0.010702857142857142,
+   "tp1_done": true
   },
   {
    "symbol": "PUMP/USDT",
    "entry": 0.002852,
    "qty": 4268.6,
-   "stop": 0.003378464285714286,
+   "stop": 0.003485964285714286,
    "tp1_done": true
   },
   {
@@ -85,27 +78,23 @@
    "qty": 54.1,
    "stop": 0.1816357142857143,
    "tp1_done": false
+  },
+  {
+   "symbol": "ONT/USDT",
+   "entry": 0.04889,
+   "qty": 331.0,
+   "stop": 0.039366071428571424,
+   "tp1_done": false
+  },
+  {
+   "symbol": "NEIRO/USDT",
+   "entry": 0.00010121,
+   "qty": 129555.0,
+   "stop": 8.47317857142857e-05,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "THE/USDT",
-   "entry": 0.07446175710594315,
-   "exit": 0.0649,
-   "qty_total": 193.5,
-   "pnl_net": -1.85,
-   "action": "stop",
-   "closed_ts": 1786349251.774818
-  },
-  {
-   "symbol": "BANANAS31/USDT",
-   "entry": 0.009466,
-   "exit": 0.008442,
-   "qty_total": 3619.0,
-   "pnl_net": -3.71,
-   "action": "stop",
-   "closed_ts": 1786349264.3159304
-  },
   {
    "symbol": "TST/USDT",
    "entry": 0.02121,
@@ -447,6 +436,24 @@
    "pnl_net": 2.62,
    "action": "tp",
    "closed_ts": 1787242061.0667696
+  },
+  {
+   "symbol": "ONG/USDT",
+   "entry": 0.05436061124694377,
+   "exit": 0.1025,
+   "qty_total": 409.0,
+   "pnl_net": 13.78,
+   "action": "stop",
+   "closed_ts": 1787314037.6306276
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "entry": 0.00691,
+   "exit": 0.01441,
+   "qty_total": 0,
+   "pnl_net": 2.84,
+   "action": "tp",
+   "closed_ts": 1787314069.9716253
   }
  ]
 }
