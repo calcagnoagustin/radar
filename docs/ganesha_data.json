@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 163.51,
+ "equity_now": 166.93,
  "deposits_total": 0,
- "pnl_today": 25.65,
- "trades_today": 4,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -34.73,
  "trades_total": 100,
  "win_rate": 29,
