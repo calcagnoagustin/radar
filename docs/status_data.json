@@ -1,6 +1,6 @@
 {
  "meta": {
-  "actualizado": "2026-08-19",
+  "actualizado": "2026-08-22",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
@@ -14,7 +14,7 @@
    },
    {
     "k": "Capital hoy",
-    "v": "~$1.000 + $46"
+    "v": "~$1.000 + $294 Ganesha"
    },
    {
     "k": "Inyeccion",
@@ -317,6 +317,79 @@
     },
     {
      "tipo": "alerta",
+     "nivel": "info",
+     "t": "APORTE DE CAPITAL 22/08/2026 — Agus deposito $100 USDT en la sub-cuenta Ganesha (master->sub, 17:58 UTC, tranId 403653749542). Aportes netos Ganesha: $194 -> $294. El aporte NO es ganancia: el panel ahora separa equity de aportes."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "BUGFIX CONTABLE 22/08/2026 — dos errores que inflaban el P&L del panel de Ganesha. (1) ejecutor_dash.py tenia deposits_total HARDCODEADO EN 0: cada aporte de capital aparecia como si fuera equity ganado. (2) dashboard._update_deposit_ledger() llamaba a sapiGetSubAccountTransferSubUserHistory SIN el parametro type, y ese endpoint devuelve lista vacia si falta: el ledger no detectaba ningun deposito nuevo desde junio. Corregidos ambos: ahora consulta type=1 (entradas) y type=2 (salidas), y el panel publica deposits_total, pnl_vs_depositos y pnl_vs_depositos_pct. Backups: dashboard.py.bak.pre_depositos.*, ejecutor_dash.py.bak.pre_depositos.*, deposits_ledger.json.bak.*"
+    },
+    {
+     "tipo": "tabla",
+     "t": "Ganesha por version — resultados realizados medidos sobre ejecutor/events.jsonl (22/08/2026)",
+     "headers": [
+      "Periodo",
+      "n",
+      "PnL",
+      "WR",
+      "PF",
+      "ops/dia"
+     ],
+     "filas": [
+      [
+       "pre-v3 (hasta 07/08)",
+       "31",
+       "+$2,85",
+       "41,9%",
+       "1,05",
+       "1,6"
+      ],
+      [
+       "v3 (08/08 - 16/08)",
+       "57",
+       "-$65,58",
+       "12,3%",
+       "0,40",
+       "6,5"
+      ],
+      [
+       "post-rollback v2 (17/08 -)",
+       "17",
+       "+$33,28",
+       "64,7%",
+       "3,49",
+       "4,1"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Lectura del post-rollback (n=17, 5 dias): el numero es bueno y coincide con la tesis de Agus de que la v2 es mejor bot. Advertencia registrada una sola vez: n=17 no distingue el merito del bot del regimen alcista diario de BTC, y las ops/dia (4,1) siguen mas cerca de v3 (6,5) que de pre-v3 (1,6) -- el mecanismo de seleccion por escasez de caja ya no esta operando, y el aporte de $100 lo afloja mas. Decision de Agus: no se toca nada. Queda P4 abierta (tope explicito de frecuencia de entrada)."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Foto 22/08 18:05 UTC",
+       "equity $270,44 · aportes netos $294 · P&L vs aportes -$23,56 (-8,0%)"
+      ],
+      [
+       "Posiciones abiertas",
+       "11"
+      ],
+      [
+       "Realizado acumulado",
+       "-$29,42 · 105 trades · WR 30% · PF 0,84"
+      ],
+      [
+       "Gestion",
+       "Agus mira, corta perdidas y toma ganancia a mano cuando lo considera prudente. El bot no se toca."
+      ]
+     ]
+    },
+    {
+     "tipo": "alerta",
      "nivel": "alta",
      "t": "ROLLBACK 17/08/2026 (decision de Agus): se restauro el ejecutor al codigo del 19/07 (pre-v3). Motivo: desde los cambios del 7-8/08 (atr 2.0 + time_stop + zombie + depth) el bot fue 8 de 9 dias en rojo, PF cayo de 1.05 a 0.40 y el fusible (PF<0.70, n>=15) se cruzo con PF 0.63 n=87. Backups: ganesha_ejecutor.py.bak.v3_full.* y ejecutor/state.json.bak.pre_rollback.*. Las 6 posiciones abiertas se heredan con sus stops nativos; el modo (LIVE/paper) lo decide Agus con el archivo ejecutor/LIVE."
     },
@@ -461,6 +534,10 @@
     {
      "tipo": "p",
      "t": "Para pasar a LIVE (solo Agus): crear pescador/keys.json, crear archivo vacio pescador/LIVE, fondear la sub-cuenta. En LIVE, TP y SL van como OCO nativo en Binance."
+    },
+    {
+     "tipo": "p",
+     "t": "22/08/2026 — por que PUMP (+124%) no activo al Pescador. El filtro que lo bloquea es vol_ratio >= 15x la mediana de 20 dias: PUMP llego a 4,17x. Su mediana ya es ~$12M/dia, asi que necesitaria ~$180M en una jornada. El 20/08 paso 3 de los 4 umbrales (dia +27,7%, semana +31,9%, $44M absolutos) y solo lo freno el ratio. Efecto de diseno registrado: el Pescador solo puede cazar activos que venian ILIQUIDOS y explotan; por construccion nunca va a tocar un top-100 ya liquido. Selectividad real: 447 corridas desde el 04/08, 1 sola confirmacion (VIC, cerro en stop -20%). No es un bug."
     }
    ]
   },
