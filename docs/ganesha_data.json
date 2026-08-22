@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 172.72,
+ "equity_now": 168.2,
  "deposits_total": 0,
- "pnl_today": 8.52,
- "trades_today": 3,
- "realized_pnl": -26.22,
- "trades_total": 103,
+ "pnl_today": 5.32,
+ "trades_today": 5,
+ "realized_pnl": -29.42,
+ "trades_total": 105,
  "win_rate": 30,
- "profit_factor": 0.85,
+ "profit_factor": 0.84,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -59,24 +59,10 @@
    "tp1_done": false
   },
   {
-   "symbol": "NEIRO/USDT",
-   "entry": 0.00010121,
-   "qty": 129555.0,
-   "stop": 8.47317857142857e-05,
-   "tp1_done": false
-  },
-  {
    "symbol": "ENA/USDT",
    "entry": 0.1494,
    "qty": 215.05,
    "stop": 0.1338464285714286,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PEPE/USDT",
-   "entry": 4.26e-06,
-   "qty": 6681579.0,
-   "stop": 3.6782142857142858e-06,
    "tp1_done": false
   },
   {
@@ -85,27 +71,23 @@
    "qty": 0.009,
    "stop": 715.63,
    "tp1_done": false
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "entry": 4.05e-06,
+   "qty": 7287611.0,
+   "stop": 3.4482142857142854e-06,
+   "tp1_done": false
+  },
+  {
+   "symbol": "AAVE/USDT",
+   "entry": 122.35,
+   "qty": 0.072,
+   "stop": 109.11857142857144,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "MUBARAK/USDT",
-   "entry": 0.019894642055884152,
-   "exit": 0.017043415082771306,
-   "qty_total": 490.3,
-   "pnl_net": -1.4,
-   "action": "stop",
-   "closed_ts": 1786435637.8911955
-  },
-  {
-   "symbol": "TST/USDT",
-   "entry": 0.02238,
-   "exit": 0.016462170001342823,
-   "qty_total": 746.2,
-   "pnl_net": -4.42,
-   "action": "stop",
-   "closed_ts": 1786435640.232815
-  },
   {
    "symbol": "ACE/USDT",
    "entry": 0.1303,
@@ -447,6 +429,24 @@
    "pnl_net": 2.11,
    "action": "tp",
    "closed_ts": 1787386059.330344
+  },
+  {
+   "symbol": "NEIRO/USDT",
+   "entry": 0.00010121,
+   "exit": 8.992e-05,
+   "qty_total": 129555.0,
+   "pnl_net": -1.46,
+   "action": "manual",
+   "closed_ts": 1787414838.6339722
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "entry": 4.26e-06,
+   "exit": 4e-06,
+   "qty_total": 6681579.0,
+   "pnl_net": -1.74,
+   "action": "manual",
+   "closed_ts": 1787414840.581856
   }
  ]
 }
