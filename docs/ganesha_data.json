@@ -1,13 +1,13 @@
 {
  "dry_run": false,
- "equity_now": 181.87,
+ "equity_now": 174.55,
  "deposits_total": 0,
- "pnl_today": 6.41,
- "trades_today": 2,
- "realized_pnl": -28.32,
- "trades_total": 102,
- "win_rate": 29,
- "profit_factor": 0.84,
+ "pnl_today": 8.52,
+ "trades_today": 3,
+ "realized_pnl": -26.22,
+ "trades_total": 103,
+ "win_rate": 30,
+ "profit_factor": 0.85,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -26,9 +26,9 @@
   {
    "symbol": "TRUMP/USDT",
    "entry": 1.67,
-   "qty": 5.953,
+   "qty": 4.1671000000000005,
    "stop": 2.277142857142857,
-   "tp1_done": false
+   "tp1_done": true
   },
   {
    "symbol": "LINK/USDT",
@@ -78,18 +78,16 @@
    "qty": 6681579.0,
    "stop": 3.6782142857142858e-06,
    "tp1_done": false
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "entry": 813.2,
+   "qty": 0.009,
+   "stop": 715.63,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "RAD/USDT",
-   "entry": 0.27,
-   "exit": 0.252,
-   "qty_total": 148.3,
-   "pnl_net": -2.67,
-   "action": "stop",
-   "closed_ts": 1786421240.3982482
-  },
   {
    "symbol": "MUBARAK/USDT",
    "entry": 0.019894642055884152,
@@ -440,6 +438,15 @@
    "pnl_net": -1.11,
    "action": "manual",
    "closed_ts": 1787371637.3060777
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "entry": 1.67,
+   "exit": 2.849,
+   "qty_total": 0,
+   "pnl_net": 2.11,
+   "action": "tp",
+   "closed_ts": 1787386059.330344
   }
  ]
 }
