@@ -1,33 +1,19 @@
 {
  "dry_run": false,
- "equity_now": 166.93,
+ "equity_now": 181.87,
  "deposits_total": 0,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -34.73,
- "trades_total": 100,
+ "pnl_today": 6.41,
+ "trades_today": 2,
+ "realized_pnl": -28.32,
+ "trades_total": 102,
  "win_rate": 29,
- "profit_factor": 0.81,
+ "profit_factor": 0.84,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
    "entry": 0.03700879751954705,
    "qty": 370.9,
    "stop": 0.02657714285714286,
-   "tp1_done": false
-  },
-  {
-   "symbol": "ETHFI/USDT",
-   "entry": 0.4399,
-   "qty": 40.53,
-   "stop": 0.5264285714285715,
-   "tp1_done": true
-  },
-  {
-   "symbol": "GPS/USDT",
-   "entry": 0.01645,
-   "qty": 353.2,
-   "stop": 0.013323571428571428,
    "tp1_done": false
   },
   {
@@ -41,7 +27,7 @@
    "symbol": "TRUMP/USDT",
    "entry": 1.67,
    "qty": 5.953,
-   "stop": 1.4500714285714287,
+   "stop": 2.277142857142857,
    "tp1_done": false
   },
   {
@@ -85,27 +71,16 @@
    "qty": 215.05,
    "stop": 0.1338464285714286,
    "tp1_done": false
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "entry": 4.26e-06,
+   "qty": 6681579.0,
+   "stop": 3.6782142857142858e-06,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "BROCCOLI714/USDT",
-   "entry": 0.02029,
-   "exit": 0.01825,
-   "qty_total": 1521.0,
-   "pnl_net": -3.1,
-   "action": "stop",
-   "closed_ts": 1786378043.5477426
-  },
-  {
-   "symbol": "SPCXB/USDT",
-   "entry": 133.5,
-   "exit": 133.07,
-   "qty_total": 0.224,
-   "pnl_net": -0.1,
-   "action": "stop",
-   "closed_ts": 1786378046.255074
-  },
   {
    "symbol": "RAD/USDT",
    "entry": 0.27,
@@ -447,6 +422,24 @@
    "pnl_net": 5.7,
    "action": "manual",
    "closed_ts": 1787328434.824626
+  },
+  {
+   "symbol": "ETHFI/USDT",
+   "entry": 0.4399,
+   "exit": 0.6255,
+   "qty_total": 40.53,
+   "pnl_net": 7.52,
+   "action": "manual",
+   "closed_ts": 1787371636.2989295
+  },
+  {
+   "symbol": "GPS/USDT",
+   "entry": 0.01645,
+   "exit": 0.01331,
+   "qty_total": 353.2,
+   "pnl_net": -1.11,
+   "action": "manual",
+   "closed_ts": 1787371637.3060777
   }
  ]
 }
