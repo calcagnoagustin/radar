@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 270.5,
+ "equity_now": 271.36,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -23.5,
- "pnl_vs_depositos_pct": -7.99,
+ "pnl_vs_depositos": -22.64,
+ "pnl_vs_depositos_pct": -7.7,
  "pnl_today": 5.32,
  "trades_today": 5,
  "realized_pnl": -29.42,
@@ -86,6 +86,20 @@
    "entry": 122.35,
    "qty": 0.072,
    "stop": 109.11857142857144,
+   "tp1_done": false
+  },
+  {
+   "symbol": "XRP/USDT",
+   "entry": 1.5049,
+   "qty": 33.5,
+   "stop": 1.3466357142857144,
+   "tp1_done": false
+  },
+  {
+   "symbol": "DOGE/USDT",
+   "entry": 0.09381,
+   "qty": 521.0,
+   "stop": 0.08478250000000001,
    "tp1_done": false
   }
  ],
