@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-22T00:15:45Z",
+ "generated_at": "2026-08-22T18:12:36Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 98.41655456,
@@ -678,7 +678,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-21T00:15:59Z",
+  "generated": "2026-08-22T00:15:58Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -740,7 +740,7 @@
  "deposits_ledger": {
   "seeded": true,
   "semillas": {
-   "neto_usdt": 132.0,
+   "neto_usdt": 156.0,
    "movs": [
     {
      "asset": "USDT",
@@ -748,12 +748,19 @@
      "type": 1,
      "time": 1782604800000,
      "src": "seed_estimado_pnl"
+    },
+    {
+     "asset": "USDT",
+     "qty": 24.0,
+     "type": 1,
+     "time": 1785635773000,
+     "src": "api"
     }
    ],
    "otros_activos": []
   },
   "ganesha": {
-   "neto_usdt": 194.0,
+   "neto_usdt": 294.0,
    "movs": [
     {
      "asset": "AVAX",
@@ -768,6 +775,13 @@
      "type": 1,
      "time": 1782604800000,
      "src": "seed_estimado_pnl"
+    },
+    {
+     "asset": "USDT",
+     "qty": 100.0,
+     "type": 1,
+     "time": 1787421539000,
+     "src": "api"
     }
    ],
    "otros_activos": [
