@@ -1,18 +1,20 @@
 {
- "generated_at": "2026-08-22T18:12:36Z",
+ "generated_at": "2026-08-23T00:15:48Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 98.41655456,
+ "free_usdt": 104.17926707,
  "deposits": [],
  "positions": [
   {
    "symbol": "PUMP/USDT",
    "binance": "PUMPUSDT",
    "status": "confirmed",
-   "qty": 4668.0,
+   "qty": 3501.0,
    "avg_cost": 0.002142,
    "dca_adds": 0,
-   "tp_hit": [],
+   "tp_hit": [
+    30.0
+   ],
    "confirmed_at": "2026-08-03",
    "note": ""
   },
@@ -261,6 +263,15 @@
    "qty_total": 48.0,
    "pnl_net": -2.016,
    "closed_ts": 1787012114.355862
+  },
+  {
+   "symbol": "PUMP/USDT",
+   "action": "TAKE_PROFIT",
+   "entry": 0.002142,
+   "exit": 0.004943,
+   "qty_total": 1167.0,
+   "pnl_net": 3.2688,
+   "closed_ts": 1787444116.1837506
   }
  ],
  "shortlist_full": [
