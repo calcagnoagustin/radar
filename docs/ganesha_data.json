@@ -1,15 +1,15 @@
 {
  "dry_run": false,
- "equity_now": 271.36,
+ "equity_now": 267.18,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -22.64,
- "pnl_vs_depositos_pct": -7.7,
- "pnl_today": 5.32,
- "trades_today": 5,
- "realized_pnl": -29.42,
- "trades_total": 105,
+ "pnl_vs_depositos": -26.82,
+ "pnl_vs_depositos_pct": -9.12,
+ "pnl_today": 2.52,
+ "trades_today": 1,
+ "realized_pnl": -26.89,
+ "trades_total": 106,
  "win_rate": 30,
- "profit_factor": 0.84,
+ "profit_factor": 0.85,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -24,13 +24,6 @@
    "qty": 107.9,
    "stop": 0.07898214285714286,
    "tp1_done": false
-  },
-  {
-   "symbol": "TRUMP/USDT",
-   "entry": 1.67,
-   "qty": 4.1671000000000005,
-   "stop": 2.277142857142857,
-   "tp1_done": true
   },
   {
    "symbol": "LINK/USDT",
@@ -101,18 +94,16 @@
    "qty": 521.0,
    "stop": 0.08478250000000001,
    "tp1_done": false
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "entry": 2.384,
+   "qty": 4.27,
+   "stop": 1.76425,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ACE/USDT",
-   "entry": 0.1303,
-   "exit": 0.1085,
-   "qty_total": 106.7,
-   "pnl_net": -2.33,
-   "action": "stop",
-   "closed_ts": 1786450052.8486643
-  },
   {
    "symbol": "RAD/USDT",
    "entry": 0.283,
@@ -463,6 +454,15 @@
    "pnl_net": -1.74,
    "action": "manual",
    "closed_ts": 1787414840.581856
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "entry": 1.67,
+   "exit": 2.275,
+   "qty_total": 5.953,
+   "pnl_net": 2.52,
+   "action": "stop",
+   "closed_ts": 1787443638.1533093
   }
  ]
 }
