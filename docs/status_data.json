@@ -1,6 +1,6 @@
 {
  "meta": {
-  "actualizado": "2026-08-22",
+  "actualizado": "2026-08-23",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
@@ -620,6 +620,40 @@
     {
      "tipo": "p",
      "t": "Frecuencia es un resultado observado, no un parametro. Cambiar parametros a mitad de muestra reinicia el contador efectivo y contamina la medicion."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "media",
+     "t": "Regimen y Ganesha (23/08, 91 trades cerrados, 10/07-20/08): toda la perdida se concentra en el estado BBB (4h, diario y semanal los tres bajo EMA200). Hallazgo INFORMATIVO: no se aplico ningun filtro al bot."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "BBB: n=31, PnL -49,83, WR 12,9%, PF 0,29. Todo el resto junto: n=60, PnL +22,90, PF 1,20. El sistema entero pierde -26,93.",
+      "Replica en dos configuraciones distintas del bot: BBB da PF 0,21 en v2 pre-rollback y PF 0,31 en v3. No es casualidad de muestreo.",
+      "En v3 hasta el 'resto' da PF 0,62: un filtro de regimen no arregla un bot roto.",
+      "LIMITE DURO: 88 de 91 trades ocurrieron con BTC bajo la EMA200 diaria (regimen 1d ALZA n=3; 1w ALZA n=9). NO hay muestra de Ganesha en mercado alcista. La hipotesis 'en alza va bien' no esta testeada.",
+      "Lo medido no es 'alza vs baja' sino 'rebote dentro de bear vs bear sin rebote'. Ganesha no necesita bull market, necesita rebote con volumen: es ruptura de momentum en alts, no tendencia de BTC.",
+      "Simulacion con caja finita (sim_regimen_bbb.py, incluye skip_no_balance): sin filtro -47,05 / no_bbb -27,46. El filtro reduce la perdida ~$20 pero NO vuelve positivo al sistema.",
+      "El multiescala colapsa: 'no_bbb' y 'solo_4h_alza' dan identico (n=42), porque en este sample 4h bajista implico BBB casi siempre. Un filtro mas simple (BTC > hace 72h) rinde mejor: -2,00 con n=63.",
+      "Advertencia: el corte BBB se eligio despues de ver los datos. Lo salva que replica entre versiones y que tiene mecanismo (alts sin bid en bear alineado no tienen a quien venderle el breakout)."
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Escalas de regimen medidas (BTCUSDT, EMA200, desde ago-2017): 4h cambia 65,3 veces/ano (episodio mediano ~1 dia); 1d 11,1/ano (~4 dias); 1w 1,5/ano (~63 dias); mensual nunca cruzo. Acuerdo 4h vs 1w: 55,5%, una moneda. El regimen como concepto solo existe de diario para arriba."
+    },
+    {
+     "tipo": "p",
+     "t": "El regimen no predice retorno, predice drawdown. BTC a 30d: ALZA 4h +1,99% vs BAJA +1,16% (gap 0,83 pp, nada). Pero el maxDD a 30d va de -5,7% en estado AAA a -11,4% en ABB. Los estados caros no son los bajistas sino los CONTRADICTORIOS (4h en alza con diario en baja = rally de bear market)."
+    },
+    {
+     "tipo": "p",
+     "t": "Corolario operativo (no implementado): el filtro de regimen debe medirse en una escala MAS LENTA que la que opera el bot. Filtrar Ganesha (4h) con el regimen 4h es circular. Y el regimen decide SI entrar, nunca CUANTO MAS SEGUIDO: aflojar la frecuencia en alza reconstruye el modo de falla de v3."
+    },
+    {
+     "tipo": "p",
+     "t": "Datos crudos para el Auditor en ejecutor/regimen_trades.json: los 91 trades etiquetados con reg_4h/reg_1d/reg_1w al momento de la entrada, sin look-ahead. Se acumula n hasta poder decidir."
     }
    ]
   },
