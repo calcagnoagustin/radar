@@ -654,6 +654,26 @@
     {
      "tipo": "p",
      "t": "Datos crudos para el Auditor en ejecutor/regimen_trades.json: los 91 trades etiquetados con reg_4h/reg_1d/reg_1w al momento de la entrada, sin look-ahead. Se acumula n hasta poder decidir."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "Barrido de filtros SIMPLES (23/08, sim_simple.py, 16 modos sobre los mismos 61 trades base): NINGUN filtro sobrevive el corte por periodo. El mejor resultado es ruido de 4 trades."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "Ventanas cortas no sirven: BTC sube en 8h/12h/24h da igual o peor que sin filtro (-45,02 / -42,77 / -48,36 vs -47,05). 'Subio hoy' es ruido.",
+      "Ventanas de 48-120h si mueven la aguja: btc_sube_72h -13,86, btc_sube_120h -16,52. A 168h deja de andar. La senal util es MAS LENTA que la ventana de operacion (coherente con el hallazgo de escalas).",
+      "Amplitud de mercado (% del universo con vela 4h positiva) >=50%: -16,46 con n=49. Mide algo distinto de BTC y por eso combina.",
+      "El unico modo POSITIVO fue btc72h + amplitud>=50%: +7,65 total, n=40. Pero partido por periodo: -0,10 (pre-v3) / -9,95 (v3) / +19,10 (post-rollback, n=4, WR 100%). Todo el resultado son 4 trades de la ultima semana, justo cuando BTC hizo +23%. No es un filtro andando: es el mercado subiendo.",
+      "El menos malo y mas robusto es el mas simple: btc_sube_72h da -16,51 / +1,32 / +8,26 por periodo. No es positivo, pero es el unico que no empeora.",
+      "PROBLEMA DE FONDO: se probaron 16 filtros sobre 61 trades de 6 semanas, en una sola condicion de mercado, donde el tramo 'bueno' son 6 dias de rally vertical. Con ese sample el ganador de cualquier barrido es azar por construccion. No se puede concluir nada."
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Corolario: no se resuelve tuneando filtros sobre 6 semanas de events.jsonl. Requiere backtestear la LOGICA DEL SCANNER de Ganesha sobre 2+ anos de historia (varios regimenes reales), no replayear el log. Hasta entonces, cualquier filtro de regimen es opinion, no medicion."
     }
    ]
   },
