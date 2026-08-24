@@ -674,6 +674,31 @@
     {
      "tipo": "p",
      "t": "Corolario: no se resuelve tuneando filtros sobre 6 semanas de events.jsonl. Requiere backtestear la LOGICA DEL SCANNER de Ganesha sobre 2+ anos de historia (varios regimenes reales), no replayear el log. Hasta entonces, cualquier filtro de regimen es opinion, no medicion."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "BACKTEST 3 ANOS (23/08/2026, /home/opc/bt2y/): la senal de Ganesha NO tiene edge. 2.478 senales jul-2023 a ago-2026, 383 monedas, comisiones 0,1%. Es el hallazgo mas importante del proyecto hasta hoy."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "EV BRUTO de la senal (retorno del precio, sin stops): mediana -3,61% a 24h, -8,01% a 7d, -15,16% a 30d. Solo 36,7% de las senales sube en 24h. El scanner compra agotamiento, no continuacion.",
+      "La media a 24h es +0,02% con mediana -3,61%: distribucion de loteria. Muchisimas perdidas chicas y pocas ganancias enormes. Coincide con la anatomia de BANK (+977% y vuelta por debajo de la entrada).",
+      "Regla real de Ganesha (stop 2.5xATR diario, scaleout 2R, trailing): EV -1,36%/op, mediana -15,76%, WR 29,8%, PF 0,90 sobre n=2.478. El stop mediano queda a -19,2%.",
+      "Ninguna regla de salida lo arregla. TP+15/SL-20 PF 0,96; TP+30/SL-15 PF 0,99; solo SL-8 PF 0,91. La unica levemente positiva es TP+50/SL-20 a 15 dias (PF 1,08, EV +0,97%), margen que se lo come el sesgo de supervivencia y el slippage.",
+      "Simulacion con caja finita $1.000: sin_filtro -93,4% (maxDD -97,9%). Con filtros: btc_ema20_4h -54,3% (el mejor), btc_ema200_1d -72,9%, btc72h -75,5%, btc72h+amplitud50 -78,7%, no_bbb -92,3%. NINGUN filtro de regimen lo vuelve positivo. Comprar y esperar BTC en el mismo periodo hizo +157%.",
+      "PESCADOR TAMBIEN: con sus umbrales propios (vol >=$10M y >=15x mediana, dia >=+8%, semana >=+20%), 1.070 senales en 3 anos con TP+15/SL-20/24h dan EV -0,19%/op, WR 43,9%, PF 0,97. El EV +3,95% medido sobre 77 confirmaciones era ruido de muestra chica. Impacta directo la decision de go-live.",
+      "Sesgos que empeoran el resultado real: solo estan las monedas AUN LISTADAS (las que pumpearon y murieron no figuran); entrada aproximada en velas de 4h en vez de 15m; slippage no modelado mas alla del fee."
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Conclusion: el filtro de regimen mejora la curva (de -93% a -54%) pero no cambia el signo, porque el problema no es CUANDO se opera sino QUE se compra. Una moneda que ya subio +8% en el dia y +20% en la semana, rompiendo maximos, tiene esperanza negativa. El edge que se le atribuia al scanner era un artefacto de muestras de 20-80 trades."
+    },
+    {
+     "tipo": "p",
+     "t": "Implicancia para las 6 capas: la Capa 3 (Ganesha intradia) y el Pescador comparten la misma premisa de momentum-continuation en alts, y esa premisa acaba de quedar refutada sobre 3 anos. Antes de seguir tuneando parametros hay que decidir si la tesis se abandona o se reemplaza. Decision de Agus."
     }
    ]
   },
