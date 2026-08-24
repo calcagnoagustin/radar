@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 271.38,
+ "equity_now": 273.05,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -22.62,
- "pnl_vs_depositos_pct": -7.69,
+ "pnl_vs_depositos": -20.95,
+ "pnl_vs_depositos_pct": -7.13,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -26.89,
