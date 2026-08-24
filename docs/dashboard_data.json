@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-23T00:15:48Z",
+ "generated_at": "2026-08-24T00:15:50Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
  "free_usdt": 104.17926707,
@@ -689,7 +689,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-22T00:15:58Z",
+  "generated": "2026-08-23T00:16:03Z",
   "ranking": [
    {
     "atr_mult": 2.0,
