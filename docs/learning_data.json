@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-23T00:16:03Z",
+ "generated": "2026-08-24T00:15:58Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -24,13 +24,13 @@
     "max_dd_usd": -29.98
    },
    "ult_30d": {
-    "n": 83,
-    "win_rate": 19.3,
-    "pnl_total": -38.22,
-    "expectancy_usd": -0.46,
-    "expectancy_r": -0.12,
-    "profit_factor": 0.75,
-    "payoff": 3.13,
+    "n": 82,
+    "win_rate": 19.5,
+    "pnl_total": -35.09,
+    "expectancy_usd": -0.428,
+    "expectancy_r": -0.1,
+    "profit_factor": 0.76,
+    "payoff": 3.15,
     "max_dd_usd": -90.53
    },
    "ult_90d": {
@@ -66,13 +66,13 @@
     "max_dd_usd": -29.1
    },
    "ult_30d": {
-    "n": 78,
-    "win_rate": 19.2,
-    "pnl_total": -31.88,
-    "expectancy_usd": -0.409,
-    "expectancy_r": -0.12,
-    "profit_factor": 0.78,
-    "payoff": 3.27,
+    "n": 77,
+    "win_rate": 19.5,
+    "pnl_total": -28.75,
+    "expectancy_usd": -0.373,
+    "expectancy_r": -0.1,
+    "profit_factor": 0.8,
+    "payoff": 3.29,
     "max_dd_usd": -87.27
    },
    "ult_90d": {
