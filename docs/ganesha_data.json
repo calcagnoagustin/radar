@@ -1,15 +1,15 @@
 {
  "dry_run": false,
- "equity_now": 256.22,
+ "equity_now": 257.45,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -37.78,
- "pnl_vs_depositos_pct": -12.85,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -26.89,
- "trades_total": 106,
- "win_rate": 30,
- "profit_factor": 0.85,
+ "pnl_vs_depositos": -36.55,
+ "pnl_vs_depositos_pct": -12.43,
+ "pnl_today": -8.94,
+ "trades_today": 4,
+ "realized_pnl": -35.83,
+ "trades_total": 110,
+ "win_rate": 29,
+ "profit_factor": 0.81,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -54,24 +54,10 @@
    "tp1_done": false
   },
   {
-   "symbol": "ENA/USDT",
-   "entry": 0.1494,
-   "qty": 215.05,
-   "stop": 0.1338464285714286,
-   "tp1_done": false
-  },
-  {
    "symbol": "ZEC/USDT",
    "entry": 813.2,
    "qty": 0.009,
    "stop": 715.63,
-   "tp1_done": false
-  },
-  {
-   "symbol": "PEPE/USDT",
-   "entry": 4.05e-06,
-   "qty": 7287611.0,
-   "stop": 3.4482142857142854e-06,
    "tp1_done": false
   },
   {
@@ -82,64 +68,49 @@
    "tp1_done": false
   },
   {
-   "symbol": "XRP/USDT",
-   "entry": 1.5049,
-   "qty": 33.5,
-   "stop": 1.3466357142857144,
-   "tp1_done": false
-  },
-  {
-   "symbol": "DOGE/USDT",
-   "entry": 0.09381,
-   "qty": 521.0,
-   "stop": 0.08478250000000001,
-   "tp1_done": false
-  },
-  {
    "symbol": "TRUMP/USDT",
    "entry": 2.384,
    "qty": 4.27,
    "stop": 1.76425,
    "tp1_done": false
+  },
+  {
+   "symbol": "ONG/USDT",
+   "entry": 0.10352,
+   "qty": 122.0,
+   "stop": 0.03433857142857143,
+   "tp1_done": false
+  },
+  {
+   "symbol": "STX/USDT",
+   "entry": 0.2813,
+   "qty": 156.1,
+   "stop": 0.22571785714285714,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BMT/USDT",
+   "entry": 0.02208,
+   "qty": 910.6,
+   "stop": 0.012837857142857144,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ZRO/USDT",
+   "entry": 1.214,
+   "qty": 30.05,
+   "stop": 0.9238214285714286,
+   "tp1_done": false
+  },
+  {
+   "symbol": "FF/USDT",
+   "entry": 0.10115,
+   "qty": 379.0,
+   "stop": 0.08542857142857144,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "RAD/USDT",
-   "entry": 0.283,
-   "exit": 0.267,
-   "qty_total": 42.8,
-   "pnl_net": -0.68,
-   "action": "stop",
-   "closed_ts": 1786464439.631059
-  },
-  {
-   "symbol": "NEIRO/USDT",
-   "entry": 7.242e-05,
-   "exit": 6.59e-05,
-   "qty_total": 435276.0,
-   "pnl_net": -2.84,
-   "action": "stop",
-   "closed_ts": 1786464447.4064362
-  },
-  {
-   "symbol": "RAD/USDT",
-   "entry": 0.266,
-   "exit": 0.242,
-   "qty_total": 165.8,
-   "pnl_net": -3.98,
-   "action": "stop",
-   "closed_ts": 1786507647.0679321
-  },
-  {
-   "symbol": "BANANAS31/USDT",
-   "entry": 0.010276,
-   "exit": 0.008932,
-   "qty_total": 760.0,
-   "pnl_net": -1.02,
-   "action": "stop",
-   "closed_ts": 1786507647.9551618
-  },
   {
    "symbol": "HOLO/USDT",
    "entry": 0.0906,
@@ -463,6 +434,42 @@
    "pnl_net": 2.52,
    "action": "stop",
    "closed_ts": 1787443638.1533093
+  },
+  {
+   "symbol": "ENA/USDT",
+   "entry": 0.1494,
+   "exit": 0.1423,
+   "qty_total": 215.05,
+   "pnl_net": -1.53,
+   "action": "manual",
+   "closed_ts": 1787717237.223348
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "entry": 4.05e-06,
+   "exit": 3.85e-06,
+   "qty_total": 7287611.0,
+   "pnl_net": -1.46,
+   "action": "manual",
+   "closed_ts": 1787717238.779773
+  },
+  {
+   "symbol": "XRP/USDT",
+   "entry": 1.5049,
+   "exit": 1.4387,
+   "qty_total": 33.5,
+   "pnl_net": -2.22,
+   "action": "manual",
+   "closed_ts": 1787717240.107107
+  },
+  {
+   "symbol": "DOGE/USDT",
+   "entry": 0.09381,
+   "exit": 0.08665000000000002,
+   "qty_total": 521.0,
+   "pnl_net": -3.73,
+   "action": "manual",
+   "closed_ts": 1787717241.1218324
   }
  ]
 }
