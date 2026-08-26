@@ -1,15 +1,15 @@
 {
  "dry_run": false,
- "equity_now": 258.15,
+ "equity_now": 248.85,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -35.85,
- "pnl_vs_depositos_pct": -12.19,
- "pnl_today": -8.94,
- "trades_today": 4,
- "realized_pnl": -35.83,
- "trades_total": 110,
+ "pnl_vs_depositos": -45.15,
+ "pnl_vs_depositos_pct": -15.36,
+ "pnl_today": -14.96,
+ "trades_today": 5,
+ "realized_pnl": -41.85,
+ "trades_total": 111,
  "win_rate": 29,
- "profit_factor": 0.81,
+ "profit_factor": 0.79,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -104,22 +104,13 @@
   },
   {
    "symbol": "FF/USDT",
-   "entry": 0.10115,
-   "qty": 379.0,
-   "stop": 0.08542857142857144,
+   "entry": 0.1,
+   "qty": 320.6,
+   "stop": 0.08490857142857143,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "HOLO/USDT",
-   "entry": 0.0906,
-   "exit": 0.081,
-   "qty_total": 304.4,
-   "pnl_net": -2.92,
-   "action": "stop",
-   "closed_ts": 1786522038.852179
-  },
   {
    "symbol": "BICO/USDT",
    "entry": 0.04938,
@@ -470,6 +461,15 @@
    "pnl_net": -3.73,
    "action": "manual",
    "closed_ts": 1787717241.1218324
+  },
+  {
+   "symbol": "FF/USDT",
+   "entry": 0.10115,
+   "exit": 0.08526,
+   "qty_total": 379.0,
+   "pnl_net": -6.02,
+   "action": "stop",
+   "closed_ts": 1787746040.2184145
   }
  ]
 }
