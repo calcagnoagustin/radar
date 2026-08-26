@@ -1,15 +1,15 @@
 {
  "dry_run": false,
- "equity_now": 255.92,
+ "equity_now": 252.51,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -38.08,
- "pnl_vs_depositos_pct": -12.95,
- "pnl_today": -14.96,
- "trades_today": 5,
- "realized_pnl": -41.85,
- "trades_total": 111,
- "win_rate": 29,
- "profit_factor": 0.79,
+ "pnl_vs_depositos": -41.49,
+ "pnl_vs_depositos_pct": -14.11,
+ "pnl_today": -19.65,
+ "trades_today": 7,
+ "realized_pnl": -46.54,
+ "trades_total": 113,
+ "win_rate": 28,
+ "profit_factor": 0.77,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -82,24 +82,10 @@
    "tp1_done": false
   },
   {
-   "symbol": "STX/USDT",
-   "entry": 0.2813,
-   "qty": 156.1,
-   "stop": 0.22571785714285714,
-   "tp1_done": false
-  },
-  {
    "symbol": "BMT/USDT",
    "entry": 0.02208,
    "qty": 910.6,
    "stop": 0.012837857142857144,
-   "tp1_done": false
-  },
-  {
-   "symbol": "ZRO/USDT",
-   "entry": 1.214,
-   "qty": 30.05,
-   "stop": 0.9238214285714286,
    "tp1_done": false
   },
   {
@@ -111,24 +97,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "BICO/USDT",
-   "entry": 0.04938,
-   "exit": 0.03554,
-   "qty_total": 197.14,
-   "pnl_net": -2.73,
-   "action": "stop",
-   "closed_ts": 1786522046.4617238
-  },
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.000766687016148915,
-   "exit": 0.0007658,
-   "qty_total": 32448.0,
-   "pnl_net": -0.03,
-   "action": "stop",
-   "closed_ts": 1786550850.110924
-  },
   {
    "symbol": "PEOPLE/USDT",
    "entry": 0.00875,
@@ -470,6 +438,24 @@
    "pnl_net": -6.02,
    "action": "stop",
    "closed_ts": 1787746040.2184145
+  },
+  {
+   "symbol": "STX/USDT",
+   "entry": 0.2813,
+   "exit": 0.2711,
+   "qty_total": 156.1,
+   "pnl_net": -1.59,
+   "action": "manual",
+   "closed_ts": 1787774840.172857
+  },
+  {
+   "symbol": "ZRO/USDT",
+   "entry": 1.214,
+   "exit": 1.111,
+   "qty_total": 30.05,
+   "pnl_net": -3.1,
+   "action": "manual",
+   "closed_ts": 1787774841.5915504
   }
  ]
 }
