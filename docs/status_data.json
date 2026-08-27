@@ -1,12 +1,12 @@
 {
  "meta": {
-  "actualizado": "2026-08-23",
+  "actualizado": "2026-08-27",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
  "resumen": {
   "titulo": "TRADING",
-  "bajada": "Sistema propio de especulacion de largo plazo. Dos tracks en paralelo: cripto en Binance Spot (sin apalancamiento, sin futuros) y acciones/ETFs/bonos via Interactive Brokers. Revision diaria, ejecucion por reglas, todo se mide antes de construirse.",
+  "bajada": "Sistema propio de especulacion disciplinada. Dos tracks: cripto en Binance Spot (Ganesha/Pescador, asimetria en mercado ineficiente) y Fondo Semillas sobre bStocks (captura de indice + gestion de riesgo, en construccion). Todo se mide antes de construirse.",
   "kpis": [
    {
     "k": "Horizonte",
@@ -46,8 +46,8 @@
       {
        "p": "P1",
        "quien": "Agus",
-       "estado": "bloqueante",
-       "t": "Oracle: upgrade de billing a PAYG con tarjeta prepaga. Destraba la instancia A1 (2 OCPU / 12GB), que destraba IB Gateway (Java) y correr los 3 bots simultaneos. Sin esto, todo el track de acciones queda parado."
+       "estado": "pendiente",
+       "t": "Oracle: upgrade billing a PAYG (tarjeta prepaga) -> A1 (2 OCPU/12GB) -> IB Gateway. YA NO bloquea el track acciones: Fondo Semillas corre sobre bStocks con la infra actual. Queda para cuando se evalue IB como vehiculo final."
       },
       {
        "p": "P2",
@@ -64,8 +64,8 @@
       {
        "p": "P4",
        "quien": "Claude",
-       "estado": "en curso",
-       "t": "Ganesha: disenar y medir un tope explicito de entradas por dia (o max_open) ANTES de que el capital crezca. La selectividad vieja era un accidente por falta de plata, no un diseno; cuando deje de trabar, la frecuencia sube sola y vuelve la sangria."
+       "estado": "resuelto",
+       "t": "RESUELTO por la via negativa: 5 backtests (timing, semaforo, seleccion, canonicas) muestran que ninguna senial tecnica reemplaza a la confirmacion semanal porque ninguna agrega edge. El criterio del Fondo Semillas es estructural (indice + momentum satelite + filtro defensivo), no de senial."
       },
       {
        "p": "P5",
@@ -91,6 +91,55 @@
      "tipo": "alerta",
      "nivel": "info",
      "t": "Decision del 17 ago: los dos tracks van en paralelo, no se condicionan entre si. Que Ganesha vaya mal no frena acciones — acciones hoy no arriesga capital, solo mide. El unico cruce real es el capital, y eso recien se discute cuando acciones pida plata."
+    }
+   ]
+  },
+  {
+   "id": "fondo_semillas",
+   "titulo": "Fondo Semillas (Jardinero 2.0) - aprobado, en construccion",
+   "destacada": true,
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Rediseno completo del Jardinero tras 5 backtests propios (20 anios, sin look-ahead). Hallazgo central: ni el timing de entrada ni la seleccion por seniales tecnicas le ganan al indice; lo unico robusto (aparecio 3 veces con disenios independientes) es que el filtro de tendencia recorta el drawdown a la mitad cediendo ~2 pts de CAGR. El sistema captura mercado con la mitad del dolor; no promete ganarle al indice."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      {
+       "k": "Nucleo ~70%",
+       "v": "DCA mensual ciego en SPYB+QQQB. Nadie lo toca, ni el Brain."
+      },
+      {
+       "k": "Satelite ~20%",
+       "v": "Top 3-5 bStocks por momentum 12-1, rebalanceo mensual, absolute momentum (slot frio -> USDT)."
+      },
+      {
+       "k": "Caja ~10%",
+       "v": "Operativa."
+      },
+      {
+       "k": "Paraguas",
+       "v": "SPY vs SMA10 mensual. Tormenta -> frena aportes nuevos, avisa por mail/dashboard, reactiva solo."
+      },
+      {
+       "k": "Brain",
+       "v": "Mensual, solo informa: fundamentales del satelite + radar de nuevas listadas de calidad + regimen."
+      },
+      {
+       "k": "Evidencia",
+       "v": "bt_timing / bt_semaforo / bt_seleccion / bt_canonicas en jardinero/ (VM). ETFs sin survivorship, 2006-2026."
+      }
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Pendiente de Agus: (1) paraguas suave o duro (sugerido: suave), (2) confirmar reparto 70/20/10. Con eso arranca Fase 1: motor + paper trading contra precios reales de bStocks."
+    },
+    {
+     "tipo": "p",
+     "t": "Jardinero v1 CERRADO 27-ago: Agus vendio manualmente PYTH (+$0.98), PUMP (+$9.45) y ZEC (+$5.00), total $44.70 a USDT (principal: $150.39). state.json reconciliado, cierres registrados como 'cierre manual', SEEDS_PER_MONTH=0 (no planta mas). El cron main.py sigue activo solo por dashboard/regimen."
     }
    ]
   },
