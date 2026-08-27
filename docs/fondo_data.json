@@ -1,0 +1,129 @@
+{
+ "generated_at": "2026-08-27T03:24",
+ "modo": "paper",
+ "diseno": {
+  "nucleo": 0.6,
+  "satelite": 0.3,
+  "caja": 0.1,
+  "nota": "satelite cripto descartado por backtest (mom 12-1: -15.6% CAGR, DD -96%)"
+ },
+ "equity": 999.7,
+ "aportado": 1000.0,
+ "pnl": -0.3,
+ "cash_espera": 600.0,
+ "caja": 100.0,
+ "semaforos": {
+  "acciones": "sol",
+  "cripto": "tormenta",
+  "eval": "2026-08"
+ },
+ "posiciones": {
+  "AXTIB/USDT": {
+   "qty": 0.8566528512219522,
+   "cost": 60.0
+  },
+  "SNDKB/USDT": {
+   "qty": 0.038586575167858676,
+   "cost": 60.0
+  },
+  "MUB/USDT": {
+   "qty": 0.06181930693069307,
+   "cost": 60.0
+  },
+  "WDCB/USDT": {
+   "qty": 0.12400695134061568,
+   "cost": 60.0
+  },
+  "LITEB/USDT": {
+   "qty": 0.06208246589814498,
+   "cost": 60.0
+  }
+ },
+ "equity_hist": [
+  {
+   "d": "2026-08-27",
+   "eq": 999.7,
+   "aportado": 1000.0
+  }
+ ],
+ "eventos": [
+  {
+   "type": "PARAGUAS",
+   "pata": "nucleo",
+   "msg": "aporte espera en USDT",
+   "ts": 1787801029.1590073,
+   "iso": "2026-08-27T03:23"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "AXTIB/USDT",
+   "usd": 60.0,
+   "px": 69.97,
+   "qty": 0.8566528512219522,
+   "ts": 1787801031.8438413,
+   "iso": "2026-08-27T03:23"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "SNDKB/USDT",
+   "usd": 60.0,
+   "px": 1553.39,
+   "qty": 0.038586575167858676,
+   "ts": 1787801032.1116974,
+   "iso": "2026-08-27T03:23"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "MUB/USDT",
+   "usd": 60.0,
+   "px": 969.6,
+   "qty": 0.06181930693069307,
+   "ts": 1787801032.3777647,
+   "iso": "2026-08-27T03:23"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "WDCB/USDT",
+   "usd": 60.0,
+   "px": 483.36,
+   "qty": 0.12400695134061568,
+   "ts": 1787801032.642625,
+   "iso": "2026-08-27T03:23"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "LITEB/USDT",
+   "usd": 60.0,
+   "px": 965.49,
+   "qty": 0.06208246589814498,
+   "ts": 1787801032.907378,
+   "iso": "2026-08-27T03:23"
+  },
+  {
+   "type": "MENSUAL_OK",
+   "equity": 999.7,
+   "aportado": 1000.0,
+   "semaforos": {
+    "acciones": "sol",
+    "cripto": "tormenta",
+    "eval": "2026-08"
+   },
+   "top": [
+    "AXTI",
+    "SNDK",
+    "MU",
+    "WDC",
+    "LITE"
+   ],
+   "elegidos": [
+    "AXTIB/USDT",
+    "SNDKB/USDT",
+    "MUB/USDT",
+    "WDCB/USDT",
+    "LITEB/USDT"
+   ],
+   "ts": 1787801034.21966,
+   "iso": "2026-08-27T03:23"
+  }
+ ]
+}
