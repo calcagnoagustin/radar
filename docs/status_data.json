@@ -96,7 +96,7 @@
   },
   {
    "id": "fondo_semillas",
-   "titulo": "Fondo Semillas (Jardinero 2.0) - aprobado, en construccion",
+   "titulo": "Fondo Semillas (Jardinero 2.0) - DISENO APROBADO, Fase 1 en construccion",
    "destacada": true,
    "bloques": [
     {
@@ -107,35 +107,35 @@
      "tipo": "kv",
      "items": [
       {
-       "k": "Nucleo ~70%",
-       "v": "DCA mensual ciego en SPYB+QQQB. Nadie lo toca, ni el Brain."
+       "k": "Nucleo 40%",
+       "v": "DCA mensual BTC+ETH. Nadie vende, nunca. Solo acumula."
       },
       {
-       "k": "Satelite ~20%",
-       "v": "Top 3-5 bStocks por momentum 12-1, rebalanceo mensual, absolute momentum (slot frio -> USDT)."
+       "k": "Satelite acciones 30%",
+       "v": "Momentum 12-1 top 3-5 bStocks, rotacion mensual (el bot vende al rotar). Brain narra la tesis de cada pick y puede vetar; no elige."
       },
       {
-       "k": "Caja ~10%",
+       "k": "Satelite cripto 20%",
+       "v": "Momentum 12-1 sobre top-30 liquido Binance, absolute momentum (slot frio -> USDT). Rotacion mensual automatica. PENDIENTE: backtest propio antes de encender."
+      },
+      {
+       "k": "Caja 10%",
        "v": "Operativa."
       },
       {
-       "k": "Paraguas",
-       "v": "SPY vs SMA10 mensual. Tormenta -> frena aportes nuevos, avisa por mail/dashboard, reactiva solo."
+       "k": "Paraguas SUAVE",
+       "v": "SPY vs SMA10m. Tormenta: frena aportes nuevos (no vende nada), avisa, reactiva solo. Historico 2000-2026: 76% del tiempo comprando normal; 4 crisis esquivadas, ~13 falsas alarmas de costo minimo."
       },
       {
-       "k": "Brain",
-       "v": "Mensual, solo informa: fundamentales del satelite + radar de nuevas listadas de calidad + regimen."
-      },
-      {
-       "k": "Evidencia",
-       "v": "bt_timing / bt_semaforo / bt_seleccion / bt_canonicas en jardinero/ (VM). ETFs sin survivorship, 2006-2026."
+       "k": "Rol de Agus",
+       "v": "Depositar todos los meses + leer el mail mensual + go-live (barrera inviolable). Nada mas."
       }
      ]
     },
     {
      "tipo": "alerta",
      "nivel": "info",
-     "t": "Pendiente de Agus: (1) paraguas suave o duro (sugerido: suave), (2) confirmar reparto 70/20/10. Con eso arranca Fase 1: motor + paper trading contra precios reales de bStocks."
+     "t": "Decisiones tomadas 27-ago: paraguas suave, 40/30/20/10, ventas de rotacion delegadas al bot (nucleo intocable). Fase 1 iniciada: motor + backtest satelite cripto + paper contra precios reales de bStocks. Sin plata real hasta que el paper valide y Agus encienda."
     },
     {
      "tipo": "p",
