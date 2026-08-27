@@ -1,15 +1,15 @@
 {
  "dry_run": false,
- "equity_now": 252.51,
+ "equity_now": 268.53,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -41.49,
- "pnl_vs_depositos_pct": -14.11,
- "pnl_today": -19.65,
- "trades_today": 7,
- "realized_pnl": -46.54,
- "trades_total": 113,
- "win_rate": 28,
- "profit_factor": 0.77,
+ "pnl_vs_depositos": -25.47,
+ "pnl_vs_depositos_pct": -8.66,
+ "pnl_today": 21.24,
+ "trades_today": 5,
+ "realized_pnl": -25.29,
+ "trades_total": 118,
+ "win_rate": 29,
+ "profit_factor": 0.88,
  "open_positions": [
   {
    "symbol": "NIL/USDT",
@@ -47,16 +47,9 @@
    "tp1_done": false
   },
   {
-   "symbol": "ONT/USDT",
-   "entry": 0.04889,
-   "qty": 331.0,
-   "stop": 0.039366071428571424,
-   "tp1_done": false
-  },
-  {
    "symbol": "ZEC/USDT",
    "entry": 813.2,
-   "qty": 0.009,
+   "qty": 0.008,
    "stop": 715.63,
    "tp1_done": false
   },
@@ -75,73 +68,49 @@
    "tp1_done": false
   },
   {
-   "symbol": "ONG/USDT",
-   "entry": 0.10352,
-   "qty": 122.0,
-   "stop": 0.03433857142857143,
+   "symbol": "PORTAL/USDT",
+   "entry": 0.01609,
+   "qty": 741.6,
+   "stop": 0.006776785714285714,
    "tp1_done": false
   },
   {
-   "symbol": "BMT/USDT",
-   "entry": 0.02208,
-   "qty": 910.6,
-   "stop": 0.012837857142857144,
+   "symbol": "ONT/USDT",
+   "entry": 0.07168,
+   "qty": 379.0,
+   "stop": 0.05013571428571428,
    "tp1_done": false
   },
   {
-   "symbol": "FF/USDT",
-   "entry": 0.1,
-   "qty": 320.6,
-   "stop": 0.08490857142857143,
+   "symbol": "S/USDT",
+   "entry": 0.03192,
+   "qty": 1168.1,
+   "stop": 0.02610035714285714,
+   "tp1_done": false
+  },
+  {
+   "symbol": "VET/USDT",
+   "entry": 0.006821,
+   "qty": 6946.0,
+   "stop": 0.005716464285714285,
+   "tp1_done": false
+  },
+  {
+   "symbol": "CVX/USDT",
+   "entry": 2.462,
+   "qty": 13.334,
+   "stop": 1.9554285714285715,
+   "tp1_done": false
+  },
+  {
+   "symbol": "BICO/USDT",
+   "entry": 0.02526,
+   "qty": 590.57,
+   "stop": 0.012951071428571426,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PEOPLE/USDT",
-   "entry": 0.00875,
-   "exit": 0.00824,
-   "qty_total": 1465.7,
-   "pnl_net": -0.75,
-   "action": "stop",
-   "closed_ts": 1786550852.8001716
-  },
-  {
-   "symbol": "MMT/USDT",
-   "entry": 0.2266,
-   "exit": 0.171,
-   "qty_total": 37.4,
-   "pnl_net": -2.08,
-   "action": "stop",
-   "closed_ts": 1786622847.428351
-  },
-  {
-   "symbol": "EDEN/USDT",
-   "entry": 0.07533,
-   "exit": 0.05988,
-   "qty_total": 251.2,
-   "pnl_net": -3.88,
-   "action": "stop",
-   "closed_ts": 1786694847.1402335
-  },
-  {
-   "symbol": "AVNT/USDT",
-   "entry": 0.1082,
-   "exit": 0.0986,
-   "qty_total": 118.4,
-   "pnl_net": -1.14,
-   "action": "stop",
-   "closed_ts": 1786694852.9465086
-  },
-  {
-   "symbol": "HOLO/USDT",
-   "entry": 0.0757,
-   "exit": 0.0701,
-   "qty_total": 265.8,
-   "pnl_net": -1.49,
-   "action": "stop",
-   "closed_ts": 1786694856.654951
-  },
   {
    "symbol": "DODO/USDT",
    "entry": 0.02257,
@@ -456,6 +425,51 @@
    "pnl_net": -3.1,
    "action": "manual",
    "closed_ts": 1787774841.5915504
+  },
+  {
+   "symbol": "ONT/USDT",
+   "entry": 0.04889,
+   "exit": 0.0688,
+   "qty_total": 331.0,
+   "pnl_net": 6.59,
+   "action": "manual",
+   "closed_ts": 1787789237.1404712
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "entry": 813.2,
+   "exit": 812.4,
+   "qty_total": 0.001,
+   "pnl_net": -0.0,
+   "action": "manual",
+   "closed_ts": 1787789239.3122246
+  },
+  {
+   "symbol": "ONG/USDT",
+   "entry": 0.10352,
+   "exit": 0.2416243442622951,
+   "qty_total": 122.0,
+   "pnl_net": 16.85,
+   "action": "manual",
+   "closed_ts": 1787789241.0957541
+  },
+  {
+   "symbol": "BMT/USDT",
+   "entry": 0.02208,
+   "exit": 0.021380000000000003,
+   "qty_total": 910.6,
+   "pnl_net": -0.64,
+   "action": "manual",
+   "closed_ts": 1787789241.8420737
+  },
+  {
+   "symbol": "FF/USDT",
+   "entry": 0.1,
+   "exit": 0.09514,
+   "qty_total": 320.6,
+   "pnl_net": -1.56,
+   "action": "manual",
+   "closed_ts": 1787789242.8383718
   }
  ]
 }
