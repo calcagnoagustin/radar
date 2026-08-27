@@ -96,7 +96,7 @@
   },
   {
    "id": "fondo_semillas",
-   "titulo": "Fondo Semillas (Jardinero 2.0) - DISENO APROBADO, Fase 1 en construccion",
+   "titulo": "Fondo Semillas - PAPER CORRIENDO desde 27-ago-2026",
    "destacada": true,
    "bloques": [
     {
@@ -152,7 +152,7 @@
     {
      "tipo": "alerta",
      "nivel": "info",
-     "t": "Decisiones tomadas 27-ago: paraguas suave, 40/30/20/10, ventas de rotacion delegadas al bot (nucleo intocable). Fase 1 iniciada: motor + backtest satelite cripto + paper contra precios reales de bStocks. Sin plata real hasta que el paper valide y Agus encienda."
+     "t": "FASE 1 ACTIVA. Backtest satelite cripto (mom 12-1, universo por fecha, 2019-2026): -15.6% CAGR y DD -96% vs BTC +28% -> DESCARTADO; su 20% se pliega al nucleo. Diseno final: 60 nucleo BTC/ETH + 30 satelite bStocks + 10 caja. Primera corrida real: semaforo cripto TORMENTA (nucleo $600 espera en USDT), acciones SOL (satelite: AXTI, SNDK, MU, WDC, LITE). Cron: mensual dia 1 15:10 UTC + mark diario 23:50 UTC. Datos: cripto.semillaredes.com/fondo_data.json. Mail mensual activo. Go-live: solo Agus, tras 2-3 meses de paper sano."
     },
     {
      "tipo": "p",
