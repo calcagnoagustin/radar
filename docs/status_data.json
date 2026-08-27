@@ -100,6 +100,23 @@
    "destacada": true,
    "bloques": [
     {
+     "tipo": "kv",
+     "items": [
+      {
+       "k": "MAPA TOTAL 1/3 - Nucleo Retiro",
+       "v": "DCA mensual CEDEARs (SPY, MSCI, FXI; a veces YPF/BYMA como tesis locales). Manual de Agus, corriendo, SIN paraguas ni gestion del bot: el DCA ciego es el ganador de todos los tests. El sistema solo lo muestra en el mapa."
+      },
+      {
+       "k": "MAPA TOTAL 2/3 - Fondo Semillas",
+       "v": "Riesgo medio en Binance (bot): 40 BTC/ETH DCA + 30 satelite acciones + 20 satelite cripto + 10 caja. Paraguas suave DOBLE: SPY/SMA10m para pata acciones, BTC/SMA10m para pata cripto. El viejo DCA BTC manual (hoy parado) queda absorbido aca: lo ejecuta el bot al encender."
+      },
+      {
+       "k": "MAPA TOTAL 3/3 - Casino controlado",
+       "v": "Ganesha (live) + Pescador (paper): asimetria en cripto chica e ineficiente. Se mide con la guillotina de siempre."
+      }
+     ]
+    },
+    {
      "tipo": "p",
      "t": "Rediseno completo del Jardinero tras 5 backtests propios (20 anios, sin look-ahead). Hallazgo central: ni el timing de entrada ni la seleccion por seniales tecnicas le ganan al indice; lo unico robusto (aparecio 3 veces con disenios independientes) es que el filtro de tendencia recorta el drawdown a la mitad cediendo ~2 pts de CAGR. El sistema captura mercado con la mitad del dolor; no promete ganarle al indice."
     },
