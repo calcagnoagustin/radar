@@ -1,23 +1,16 @@
 {
  "dry_run": false,
- "equity_now": 339.65,
+ "equity_now": 258.91,
  "deposits_total": 294.0,
- "pnl_vs_depositos": 45.65,
- "pnl_vs_depositos_pct": 15.53,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -25.29,
- "trades_total": 118,
- "win_rate": 29,
- "profit_factor": 0.88,
+ "pnl_vs_depositos": -35.09,
+ "pnl_vs_depositos_pct": -11.94,
+ "pnl_today": -3.43,
+ "trades_today": 4,
+ "realized_pnl": -28.73,
+ "trades_total": 122,
+ "win_rate": 30,
+ "profit_factor": 0.86,
  "open_positions": [
-  {
-   "symbol": "NIL/USDT",
-   "entry": 0.03700879751954705,
-   "qty": 370.9,
-   "stop": 0.02657714285714286,
-   "tp1_done": false
-  },
   {
    "symbol": "ARB/USDT",
    "entry": 0.089,
@@ -75,13 +68,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "ONT/USDT",
-   "entry": 0.07168,
-   "qty": 379.0,
-   "stop": 0.05013571428571428,
-   "tp1_done": false
-  },
-  {
    "symbol": "S/USDT",
    "entry": 0.03192,
    "qty": 1168.1,
@@ -96,64 +82,14 @@
    "tp1_done": false
   },
   {
-   "symbol": "CVX/USDT",
-   "entry": 2.462,
-   "qty": 13.334,
-   "stop": 1.9554285714285715,
-   "tp1_done": false
-  },
-  {
    "symbol": "BICO/USDT",
    "entry": 0.02526,
    "qty": 590.57,
    "stop": 0.012951071428571426,
    "tp1_done": false
-  },
-  {
-   "symbol": "PROM/USDT",
-   "entry": 4.46268085106383,
-   "qty": 1.88,
-   "stop": 2.938607142857143,
-   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "DODO/USDT",
-   "entry": 0.02257,
-   "exit": 0.02233,
-   "qty_total": 511.4,
-   "pnl_net": -0.12,
-   "action": "stop",
-   "closed_ts": 1786694858.2667575
-  },
-  {
-   "symbol": "CRV/USDT",
-   "entry": 0.2646,
-   "exit": 0.2431,
-   "qty_total": 63.8,
-   "pnl_net": -1.37,
-   "action": "stop",
-   "closed_ts": 1786723635.8866968
-  },
-  {
-   "symbol": "PROM/USDT",
-   "entry": 2.686,
-   "exit": 2.378,
-   "qty_total": 3.69,
-   "pnl_net": -1.14,
-   "action": "stop",
-   "closed_ts": 1786766840.871471
-  },
-  {
-   "symbol": "ALICE/USDT",
-   "entry": 0.1749,
-   "exit": 0.1349,
-   "qty_total": 159.78,
-   "pnl_net": -6.39,
-   "action": "stop",
-   "closed_ts": 1786766842.2089603
-  },
   {
    "symbol": "TST/USDT",
    "entry": 0.01613,
@@ -477,6 +413,42 @@
    "pnl_net": -1.56,
    "action": "manual",
    "closed_ts": 1787789242.8383718
+  },
+  {
+   "symbol": "NIL/USDT",
+   "entry": 0.03700879751954705,
+   "exit": 0.04391,
+   "qty_total": 370.9,
+   "pnl_net": 2.56,
+   "action": "manual",
+   "closed_ts": 1787926355.6571372
+  },
+  {
+   "symbol": "ONT/USDT",
+   "entry": 0.07168,
+   "exit": 0.0565828835978836,
+   "qty_total": 379.0,
+   "pnl_net": -5.72,
+   "action": "manual",
+   "closed_ts": 1787926361.6740842
+  },
+  {
+   "symbol": "CVX/USDT",
+   "entry": 2.462,
+   "exit": 2.347,
+   "qty_total": 13.334,
+   "pnl_net": -1.53,
+   "action": "manual",
+   "closed_ts": 1787926364.255127
+  },
+  {
+   "symbol": "PROM/USDT",
+   "entry": 4.46268085106383,
+   "exit": 5.131,
+   "qty_total": 1.88,
+   "pnl_net": 1.26,
+   "action": "manual",
+   "closed_ts": 1787926365.777843
   }
  ],
  "equity_curve": [
@@ -1187,7 +1159,31 @@
    "pnl_net": -1.56,
    "action": "manual",
    "closed_ts": 1787789242.8383718
+  },
+  {
+   "symbol": "NIL/USDT",
+   "pnl_net": 2.56,
+   "action": "manual",
+   "closed_ts": 1787926355.6571372
+  },
+  {
+   "symbol": "ONT/USDT",
+   "pnl_net": -5.72,
+   "action": "manual",
+   "closed_ts": 1787926361.6740842
+  },
+  {
+   "symbol": "CVX/USDT",
+   "pnl_net": -1.53,
+   "action": "manual",
+   "closed_ts": 1787926364.255127
+  },
+  {
+   "symbol": "PROM/USDT",
+   "pnl_net": 1.26,
+   "action": "manual",
+   "closed_ts": 1787926365.777843
   }
  ],
- "realized_total_events": -25.34
+ "realized_total_events": -28.77
 }
