@@ -90,8 +90,10 @@
     return card.querySelector("#gEqCurveBody");
   }
   function render(){
-    if(!G||!G.recent_closed||!G.recent_closed.length)return;
-    var cl=G.recent_closed.slice().sort(function(x,y){return (x.closed_ts||0)-(y.closed_ts||0);});
+    var src=(G&&G.equity_curve&&G.equity_curve.length)?G.equity_curve:(G&&G.recent_closed)||[];
+    if(!src.length)return;
+    var full=!!(G&&G.equity_curve&&G.equity_curve.length);
+    var cl=src.slice().sort(function(x,y){return (x.closed_ts||0)-(y.closed_ts||0);});
     var sig=cl.length+":"+(cl[cl.length-1].closed_ts||0);
     var body=ensureCard();if(!body)return;
     if(sig===lastSig&&body.dataset.done)return;lastSig=sig;
@@ -133,7 +135,9 @@
       +'<span>Techo <b class="mono up">'+fU(realMax)+'</b></span>'
       +'<span>Piso <b class="mono down">'+fU(realMin)+'</b></span>'
       +'<span>Cierres <b class="mono" style="color:var(--ink)">'+cl.length+'</b></span></div>';
-    var note='<div class="note">Sólo P&amp;L de operaciones cerradas (acumulado). No incluye lo no-realizado de las abiertas ni la equity total. Pasá el cursor sobre cada punto para ver el trade.</div>';
+    var note='<div class="note">'+(full
+      ?'Historia completa: P&amp;L de todas las operaciones cerradas desde el primer trade del ejecutor, acumulado desde cero real. No incluye lo no-realizado de las abiertas. Pasá el cursor sobre cada punto para ver el trade.'
+      :'ATENCIÓN: solo últimos 40 cierres, acumulados desde un cero arbitrario — no es el resultado real del sistema.')+'</div>';
     body.innerHTML=svg+legend+stats+note;body.dataset.done="1";
   }
   load().then(function(){setTimeout(render,1200);});
