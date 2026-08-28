@@ -59,7 +59,15 @@
       slot.insertAdjacentHTML("beforeend",'<span class="valchip" style="margin-left:14px">Valor <b class="mono" style="color:var(--ink)">'+txt+'</b></span>');
     });
   }
-  function apply(){linkify();tpOpen();valorize();}
+  function paperLabels(){
+    if(!D||!D.dry_run)return;
+    document.querySelectorAll(".stat .k, .k").forEach(function(el){
+      var t=(el.textContent||"").trim().toLowerCase();
+      if(t==="depósitos netos"||t==="depositos netos")el.textContent="Base paper (28/08)";
+      if(t.indexOf("ganancia")===0)el.textContent="P&L del paper (desde 28/08)";
+    });
+  }
+  function apply(){linkify();tpOpen();valorize();paperLabels();}
   loadG().then(function(){setTimeout(apply,1000);});
   setInterval(function(){loadG();},20000);
   setInterval(apply,2500);
