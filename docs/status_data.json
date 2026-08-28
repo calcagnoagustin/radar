@@ -90,6 +90,12 @@
        "quien": "Claude",
        "estado": "resuelto",
        "t": "Gates de entrada de Ganesha (28/08). La frecuencia de entrada era un resultado del cash disponible, no una decision: el 27/08 a las 00:07 Agus cerro 4 posiciones a mano, se liberaron ~$60 y el ejecutor metio 6 entradas en 15 segundos. Implementado y testeado: cooldown de 20h por simbolo tras cerrarlo, max_open 8, max_new_per_run 2. Ademas se corrigio el bug de slippage que salio en el mismo analisis."
+      },
+      {
+       "p": "P8",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "Gates de entrada de Ganesha (28/08). La frecuencia de entrada era un resultado del cash disponible, no una decision: el 27/08 a las 00:07 Agus cerro 4 posiciones a mano, se liberaron ~$60 y el ejecutor metio 6 entradas en 15 segundos. Implementado y testeado: cooldown de 20h por simbolo tras cerrarlo, max_open 8, max_new_per_run 2. Ademas se corrigio el bug de slippage que salio en el mismo analisis."
       }
      ]
     },
@@ -354,6 +360,54 @@
    "id": "ganesha",
    "titulo": "Ganesha — momentum intradia (LIVE)",
    "bloques": [
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "28/08/2026 - El caso ONT: el bot recompro lo que Agus acababa de vender. A las 00:07:17 del 27/08 Agus cerro ONT a mano en $0.0688 (+$6.59, 2.09R). Diecisiete segundos despues, a las 00:07:34, el ejecutor la recompro a $0.07168 -- 4.2% mas caro y con mas tamanio (379 vs 331). El activo cayo a $0.0565 (-21%). Neto real de ONT: +$0.84, no la perdida que se veia en pantalla."
+    },
+    {
+     "tipo": "p",
+     "t": "Los cierres manuales destrababan la avalancha. En esos mismos 15 segundos el ejecutor abrio 6 posiciones (PORTAL, ONT, S, VET, CVX, BICO). No habia cooldown por simbolo ni tope de cartera: el unico freno era la falta de plata. Al liberarla, vacio el cargador. Es el hallazgo de julio confirmado con un caso nuevo: el Ganesha viejo era selectivo por restriccion de cash, no por diseno."
+    },
+    {
+     "tipo": "p",
+     "t": "Segundo bug, encontrado en el mismo analisis: el sizing y el stop se calculaban con el cierre de la vela 15m anterior ($0.06835), pero la compra es market al precio vivo ($0.07168). Son +4.9% de slippage sobre una vela que hizo +7.4% vertical; el techo llego 8 minutos despues de la compra. El stop no se re-anclaba al fill, asi que quedaba a 2.96 ATR en vez de los 2.5 ATR de disenio: 18% mas de riesgo del pedido, y una posicion que tolera -30% antes de cortar."
+    },
+    {
+     "tipo": "kv",
+     "titulo": "Gates de entrada (28/08/2026)",
+     "items": [
+      {
+       "k": "max_open",
+       "v": "8 posiciones simultaneas (habia 15 abiertas)"
+      },
+      {
+       "k": "max_new_per_run",
+       "v": "2 entradas nuevas por ciclo (hubo 6 en 15 seg)"
+      },
+      {
+       "k": "cooldown_h",
+       "v": "20 h de veda por simbolo tras cerrarlo (habia 0)"
+      },
+      {
+       "k": "max_slip_pct",
+       "v": "3% de desvio precio vivo vs vela de referencia"
+      },
+      {
+       "k": "stop re-anclado",
+       "v": "el stop se recalcula sobre el fill real"
+      },
+      {
+       "k": "tests",
+       "v": "31 unitarios + 5 escenarios LIVE con exchange simulado"
+      }
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Efecto inmediato: con 15 posiciones abiertas y max_open en 8, Ganesha no abre nada nuevo hasta bajar a 7. No liquida nada -- la cartera se drena sola por stops y salidas. Es intencional."
+    },
     {
      "tipo": "kv",
      "items": [
