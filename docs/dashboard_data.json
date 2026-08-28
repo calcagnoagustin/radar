@@ -1,46 +1,10 @@
 {
- "generated_at": "2026-08-27T00:15:47Z",
+ "generated_at": "2026-08-28T00:15:41Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 116.67258957,
+ "free_usdt": 150.3865494,
  "deposits": [],
- "positions": [
-  {
-   "symbol": "PUMP/USDT",
-   "binance": "PUMPUSDT",
-   "status": "confirmed",
-   "qty": 3501.0,
-   "avg_cost": 0.002142,
-   "dca_adds": 0,
-   "tp_hit": [
-    30.0
-   ],
-   "confirmed_at": "2026-08-03",
-   "note": ""
-  },
-  {
-   "symbol": "PYTH/USDT",
-   "binance": "PYTHUSDT",
-   "status": "stopped_moonbag",
-   "qty": 251.50000000000003,
-   "avg_cost": 0.045871926605504584,
-   "dca_adds": 1,
-   "tp_hit": [],
-   "confirmed_at": "2026-07-14",
-   "note": ""
-  },
-  {
-   "symbol": "ZEC/USDT",
-   "binance": "ZECUSDT",
-   "status": "stopped_moonbag",
-   "qty": 0.020999999999999998,
-   "avg_cost": 540.6425581395349,
-   "dca_adds": 1,
-   "tp_hit": [],
-   "confirmed_at": "2026-07-16",
-   "note": ""
-  }
- ],
+ "positions": [],
  "shortlist": [
   "CFX/USDT",
   "ONDO/USDT",
@@ -689,7 +653,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-26T00:15:53Z",
+  "generated": "2026-08-27T00:16:02Z",
   "ranking": [
    {
     "atr_mult": 2.0,
