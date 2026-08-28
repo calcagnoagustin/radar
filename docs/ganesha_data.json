@@ -1,9 +1,9 @@
 {
  "dry_run": false,
- "equity_now": 263.06,
+ "equity_now": 339.65,
  "deposits_total": 294.0,
- "pnl_vs_depositos": -30.94,
- "pnl_vs_depositos_pct": -10.52,
+ "pnl_vs_depositos": 45.65,
+ "pnl_vs_depositos_pct": 15.53,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -25.29,
@@ -478,5 +478,716 @@
    "action": "manual",
    "closed_ts": 1787789242.8383718
   }
- ]
+ ],
+ "equity_curve": [
+  {
+   "symbol": "ATM/USDT",
+   "pnl_net": 2.47,
+   "action": "tp",
+   "closed_ts": 1783720789.763385
+  },
+  {
+   "symbol": "ATM/USDT",
+   "pnl_net": 1.34,
+   "action": "stop",
+   "closed_ts": 1783752662.9234464
+  },
+  {
+   "symbol": "T/USDT",
+   "pnl_net": -4.28,
+   "action": "stop",
+   "closed_ts": 1784030837.527158
+  },
+  {
+   "symbol": "XEC/USDT",
+   "pnl_net": -3.35,
+   "action": "stop",
+   "closed_ts": 1784088438.8097138
+  },
+  {
+   "symbol": "PORTO/USDT",
+   "pnl_net": -3.02,
+   "action": "stop",
+   "closed_ts": 1784088441.4751234
+  },
+  {
+   "symbol": "DEXE/USDT",
+   "pnl_net": -3.91,
+   "action": "stop",
+   "closed_ts": 1784103677.4625063
+  },
+  {
+   "symbol": "PORTO/USDT",
+   "pnl_net": -3.64,
+   "action": "stop",
+   "closed_ts": 1784131642.7436383
+  },
+  {
+   "symbol": "XEC/USDT",
+   "pnl_net": 2.18,
+   "action": "tp",
+   "closed_ts": 1784378315.8888724
+  },
+  {
+   "symbol": "BANK/USDT",
+   "pnl_net": 4.7,
+   "action": "tp",
+   "closed_ts": 1784407630.412163
+  },
+  {
+   "symbol": "XEC/USDT",
+   "pnl_net": 2.31,
+   "action": "stop",
+   "closed_ts": 1784491634.7590463
+  },
+  {
+   "symbol": "BANK/USDT",
+   "pnl_net": 10.77,
+   "action": "manual",
+   "closed_ts": 1784491637.0724502
+  },
+  {
+   "symbol": "DODO/USDT",
+   "pnl_net": -3.73,
+   "action": "stop",
+   "closed_ts": 1784606833.4933102
+  },
+  {
+   "symbol": "BANK/USDT",
+   "pnl_net": 19.55,
+   "action": "stop",
+   "closed_ts": 1784621237.868379
+  },
+  {
+   "symbol": "PYTH/USDT",
+   "pnl_net": -4.39,
+   "action": "stop",
+   "closed_ts": 1784650036.7310688
+  },
+  {
+   "symbol": "PROM/USDT",
+   "pnl_net": -3.63,
+   "action": "stop",
+   "closed_ts": 1784693238.3734396
+  },
+  {
+   "symbol": "ZAMA/USDT",
+   "pnl_net": 1.08,
+   "action": "tp",
+   "closed_ts": 1784765257.8950787
+  },
+  {
+   "symbol": "YB/USDT",
+   "pnl_net": -3.79,
+   "action": "stop",
+   "closed_ts": 1784779640.4227972
+  },
+  {
+   "symbol": "ACE/USDT",
+   "pnl_net": -4.63,
+   "action": "stop",
+   "closed_ts": 1784794037.5882556
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "pnl_net": -3.13,
+   "action": "stop",
+   "closed_ts": 1784866033.6401272
+  },
+  {
+   "symbol": "EUL/USDT",
+   "pnl_net": 2.25,
+   "action": "tp",
+   "closed_ts": 1785068240.5261264
+  },
+  {
+   "symbol": "EUL/USDT",
+   "pnl_net": 0.0,
+   "action": "stop",
+   "closed_ts": 1785155316.3933158
+  },
+  {
+   "symbol": "BANK/USDT",
+   "pnl_net": 5.09,
+   "action": "stop",
+   "closed_ts": 1785168436.1979244
+  },
+  {
+   "symbol": "DIA/USDT",
+   "pnl_net": -2.01,
+   "action": "stop",
+   "closed_ts": 1785182842.6517797
+  },
+  {
+   "symbol": "KAITO/USDT",
+   "pnl_net": 2.42,
+   "action": "tp",
+   "closed_ts": 1785182850.215691
+  },
+  {
+   "symbol": "ERA/USDT",
+   "pnl_net": -4.16,
+   "action": "stop",
+   "closed_ts": 1785255019.7880738
+  },
+  {
+   "symbol": "KAITO/USDT",
+   "pnl_net": 4.02,
+   "action": "stop",
+   "closed_ts": 1785269233.5931573
+  },
+  {
+   "symbol": "COTI/USDT",
+   "pnl_net": -1.48,
+   "action": "stop",
+   "closed_ts": 1785269240.8250155
+  },
+  {
+   "symbol": "COTI/USDT",
+   "pnl_net": -3.33,
+   "action": "stop",
+   "closed_ts": 1785283764.782225
+  },
+  {
+   "symbol": "LA/USDT",
+   "pnl_net": -3.18,
+   "action": "stop",
+   "closed_ts": 1785327001.864656
+  },
+  {
+   "symbol": "ZAMA/USDT",
+   "pnl_net": 4.42,
+   "action": "stop",
+   "closed_ts": 1785384435.3871164
+  },
+  {
+   "symbol": "ACE/USDT",
+   "pnl_net": -4.09,
+   "action": "stop",
+   "closed_ts": 1785442038.903147
+  },
+  {
+   "symbol": "XEC/USDT",
+   "pnl_net": -1.55,
+   "action": "stop",
+   "closed_ts": 1786147771.1777353
+  },
+  {
+   "symbol": "DGB/USDT",
+   "pnl_net": 3.27,
+   "action": "stop",
+   "closed_ts": 1786147773.0210934
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "pnl_net": -0.13,
+   "action": "stop",
+   "closed_ts": 1786147778.147147
+  },
+  {
+   "symbol": "SXT/USDT",
+   "pnl_net": -2.51,
+   "action": "stop",
+   "closed_ts": 1786147784.161648
+  },
+  {
+   "symbol": "PEOPLE/USDT",
+   "pnl_net": 1.74,
+   "action": "stop",
+   "closed_ts": 1786147785.7515385
+  },
+  {
+   "symbol": "SKL/USDT",
+   "pnl_net": -2.35,
+   "action": "stop",
+   "closed_ts": 1786147787.3518722
+  },
+  {
+   "symbol": "QI/USDT",
+   "pnl_net": -2.27,
+   "action": "stop",
+   "closed_ts": 1786147788.9180293
+  },
+  {
+   "symbol": "ONDO/USDT",
+   "pnl_net": -3.45,
+   "action": "stop",
+   "closed_ts": 1786147794.240293
+  },
+  {
+   "symbol": "PROM/USDT",
+   "pnl_net": 2.03,
+   "action": "stop",
+   "closed_ts": 1786147805.464586
+  },
+  {
+   "symbol": "C98/USDT",
+   "pnl_net": -3.82,
+   "action": "stop",
+   "closed_ts": 1786162133.5789773
+  },
+  {
+   "symbol": "EUL/USDT",
+   "pnl_net": -3.68,
+   "action": "stop",
+   "closed_ts": 1786162135.1500344
+  },
+  {
+   "symbol": "COTI/USDT",
+   "pnl_net": -0.39,
+   "action": "stop",
+   "closed_ts": 1786176472.748842
+  },
+  {
+   "symbol": "TUT/USDT",
+   "pnl_net": 3.03,
+   "action": "tp",
+   "closed_ts": 1786192920.8167787
+  },
+  {
+   "symbol": "ACE/USDT",
+   "pnl_net": -2.31,
+   "action": "stop",
+   "closed_ts": 1786248488.0425038
+  },
+  {
+   "symbol": "TUT/USDT",
+   "pnl_net": 25.01,
+   "action": "stop",
+   "closed_ts": 1786262859.324167
+  },
+  {
+   "symbol": "HEI/USDT",
+   "pnl_net": -2.63,
+   "action": "stop",
+   "closed_ts": 1786262888.2955163
+  },
+  {
+   "symbol": "BICO/USDT",
+   "pnl_net": -3.87,
+   "action": "stop",
+   "closed_ts": 1786277325.599294
+  },
+  {
+   "symbol": "EPIC/USDT",
+   "pnl_net": -2.16,
+   "action": "stop",
+   "closed_ts": 1786277349.3822246
+  },
+  {
+   "symbol": "TUT/USDT",
+   "pnl_net": -2.48,
+   "action": "stop",
+   "closed_ts": 1786291692.088528
+  },
+  {
+   "symbol": "SAGA/USDT",
+   "pnl_net": -3.4,
+   "action": "stop",
+   "closed_ts": 1786291714.6115708
+  },
+  {
+   "symbol": "BOME/USDT",
+   "pnl_net": 3.08,
+   "action": "tp",
+   "closed_ts": 1786306070.564052
+  },
+  {
+   "symbol": "AAOIB/USDT",
+   "pnl_net": -0.09,
+   "action": "stop",
+   "closed_ts": 1786320860.2153287
+  },
+  {
+   "symbol": "BOME/USDT",
+   "pnl_net": 6.02,
+   "action": "stop",
+   "closed_ts": 1786334836.7714756
+  },
+  {
+   "symbol": "HMSTR/USDT",
+   "pnl_net": -0.66,
+   "action": "stop",
+   "closed_ts": 1786334852.0730946
+  },
+  {
+   "symbol": "IOTX/USDT",
+   "pnl_net": -2.92,
+   "action": "stop",
+   "closed_ts": 1786349236.4648204
+  },
+  {
+   "symbol": "THE/USDT",
+   "pnl_net": -1.85,
+   "action": "stop",
+   "closed_ts": 1786349251.774818
+  },
+  {
+   "symbol": "BANANAS31/USDT",
+   "pnl_net": -3.71,
+   "action": "stop",
+   "closed_ts": 1786349264.3159304
+  },
+  {
+   "symbol": "TST/USDT",
+   "pnl_net": -1.32,
+   "action": "stop",
+   "closed_ts": 1786349271.689086
+  },
+  {
+   "symbol": "ACT/USDT",
+   "pnl_net": -3.13,
+   "action": "stop",
+   "closed_ts": 1786363638.6834197
+  },
+  {
+   "symbol": "BROCCOLI714/USDT",
+   "pnl_net": -3.1,
+   "action": "stop",
+   "closed_ts": 1786378043.5477426
+  },
+  {
+   "symbol": "SPCXB/USDT",
+   "pnl_net": -0.1,
+   "action": "stop",
+   "closed_ts": 1786378046.255074
+  },
+  {
+   "symbol": "RAD/USDT",
+   "pnl_net": -2.67,
+   "action": "stop",
+   "closed_ts": 1786421240.3982482
+  },
+  {
+   "symbol": "MUBARAK/USDT",
+   "pnl_net": -1.4,
+   "action": "stop",
+   "closed_ts": 1786435637.8911955
+  },
+  {
+   "symbol": "TST/USDT",
+   "pnl_net": -4.42,
+   "action": "stop",
+   "closed_ts": 1786435640.232815
+  },
+  {
+   "symbol": "ACE/USDT",
+   "pnl_net": -2.33,
+   "action": "stop",
+   "closed_ts": 1786450052.8486643
+  },
+  {
+   "symbol": "RAD/USDT",
+   "pnl_net": -0.68,
+   "action": "stop",
+   "closed_ts": 1786464439.631059
+  },
+  {
+   "symbol": "NEIRO/USDT",
+   "pnl_net": -2.84,
+   "action": "stop",
+   "closed_ts": 1786464447.4064362
+  },
+  {
+   "symbol": "RAD/USDT",
+   "pnl_net": -3.98,
+   "action": "stop",
+   "closed_ts": 1786507647.0679321
+  },
+  {
+   "symbol": "BANANAS31/USDT",
+   "pnl_net": -1.02,
+   "action": "stop",
+   "closed_ts": 1786507647.9551618
+  },
+  {
+   "symbol": "HOLO/USDT",
+   "pnl_net": -2.92,
+   "action": "stop",
+   "closed_ts": 1786522038.852179
+  },
+  {
+   "symbol": "BICO/USDT",
+   "pnl_net": -2.73,
+   "action": "stop",
+   "closed_ts": 1786522046.4617238
+  },
+  {
+   "symbol": "BOME/USDT",
+   "pnl_net": -0.03,
+   "action": "stop",
+   "closed_ts": 1786550850.110924
+  },
+  {
+   "symbol": "PEOPLE/USDT",
+   "pnl_net": -0.75,
+   "action": "stop",
+   "closed_ts": 1786550852.8001716
+  },
+  {
+   "symbol": "MMT/USDT",
+   "pnl_net": -2.08,
+   "action": "stop",
+   "closed_ts": 1786622847.428351
+  },
+  {
+   "symbol": "EDEN/USDT",
+   "pnl_net": -3.88,
+   "action": "stop",
+   "closed_ts": 1786694847.1402335
+  },
+  {
+   "symbol": "AVNT/USDT",
+   "pnl_net": -1.14,
+   "action": "stop",
+   "closed_ts": 1786694852.9465086
+  },
+  {
+   "symbol": "HOLO/USDT",
+   "pnl_net": -1.49,
+   "action": "stop",
+   "closed_ts": 1786694856.654951
+  },
+  {
+   "symbol": "DODO/USDT",
+   "pnl_net": -0.12,
+   "action": "stop",
+   "closed_ts": 1786694858.2667575
+  },
+  {
+   "symbol": "CRV/USDT",
+   "pnl_net": -1.37,
+   "action": "stop",
+   "closed_ts": 1786723635.8866968
+  },
+  {
+   "symbol": "PROM/USDT",
+   "pnl_net": -1.14,
+   "action": "stop",
+   "closed_ts": 1786766840.871471
+  },
+  {
+   "symbol": "ALICE/USDT",
+   "pnl_net": -6.39,
+   "action": "stop",
+   "closed_ts": 1786766842.2089603
+  },
+  {
+   "symbol": "TST/USDT",
+   "pnl_net": -0.7,
+   "action": "stop",
+   "closed_ts": 1786781248.0101714
+  },
+  {
+   "symbol": "ACE/USDT",
+   "pnl_net": -1.96,
+   "action": "stop",
+   "closed_ts": 1786810045.3614979
+  },
+  {
+   "symbol": "EDEN/USDT",
+   "pnl_net": -2.89,
+   "action": "stop",
+   "closed_ts": 1786853235.354809
+  },
+  {
+   "symbol": "ALICE/USDT",
+   "pnl_net": -1.86,
+   "action": "stop",
+   "closed_ts": 1786853241.2827249
+  },
+  {
+   "symbol": "COW/USDT",
+   "pnl_net": -1.98,
+   "action": "stop",
+   "closed_ts": 1786882046.6959565
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "pnl_net": -3.11,
+   "action": "stop",
+   "closed_ts": 1786910835.3299897
+  },
+  {
+   "symbol": "COOKIE/USDT",
+   "pnl_net": -4.02,
+   "action": "stop",
+   "closed_ts": 1787054837.2645373
+  },
+  {
+   "symbol": "CHIP/USDT",
+   "pnl_net": -2.38,
+   "action": "stop",
+   "closed_ts": 1787069235.757451
+  },
+  {
+   "symbol": "PORTAL/USDT",
+   "pnl_net": -2.67,
+   "action": "stop",
+   "closed_ts": 1787141236.6467493
+  },
+  {
+   "symbol": "ETHFI/USDT",
+   "pnl_net": 2.24,
+   "action": "tp",
+   "closed_ts": 1787213255.669681
+  },
+  {
+   "symbol": "PUMP/USDT",
+   "pnl_net": 1.05,
+   "action": "tp",
+   "closed_ts": 1787227658.9125814
+  },
+  {
+   "symbol": "BOME/USDT",
+   "pnl_net": 2.21,
+   "action": "tp",
+   "closed_ts": 1787227662.184839
+  },
+  {
+   "symbol": "BOME/USDT",
+   "pnl_net": 3.26,
+   "action": "stop",
+   "closed_ts": 1787242037.439166
+  },
+  {
+   "symbol": "ONG/USDT",
+   "pnl_net": 2.62,
+   "action": "tp",
+   "closed_ts": 1787242061.0667696
+  },
+  {
+   "symbol": "ONG/USDT",
+   "pnl_net": 13.78,
+   "action": "stop",
+   "closed_ts": 1787314037.6306276
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "pnl_net": 2.84,
+   "action": "tp",
+   "closed_ts": 1787314069.9716253
+  },
+  {
+   "symbol": "HEMI/USDT",
+   "pnl_net": 3.33,
+   "action": "stop",
+   "closed_ts": 1787328434.0393286
+  },
+  {
+   "symbol": "PUMP/USDT",
+   "pnl_net": 5.7,
+   "action": "manual",
+   "closed_ts": 1787328434.824626
+  },
+  {
+   "symbol": "ETHFI/USDT",
+   "pnl_net": 7.52,
+   "action": "manual",
+   "closed_ts": 1787371636.2989295
+  },
+  {
+   "symbol": "GPS/USDT",
+   "pnl_net": -1.11,
+   "action": "manual",
+   "closed_ts": 1787371637.3060777
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "pnl_net": 2.11,
+   "action": "tp",
+   "closed_ts": 1787386059.330344
+  },
+  {
+   "symbol": "NEIRO/USDT",
+   "pnl_net": -1.46,
+   "action": "manual",
+   "closed_ts": 1787414838.6339722
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "pnl_net": -1.74,
+   "action": "manual",
+   "closed_ts": 1787414840.581856
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "pnl_net": 2.52,
+   "action": "stop",
+   "closed_ts": 1787443638.1533093
+  },
+  {
+   "symbol": "ENA/USDT",
+   "pnl_net": -1.53,
+   "action": "manual",
+   "closed_ts": 1787717237.223348
+  },
+  {
+   "symbol": "PEPE/USDT",
+   "pnl_net": -1.46,
+   "action": "manual",
+   "closed_ts": 1787717238.779773
+  },
+  {
+   "symbol": "XRP/USDT",
+   "pnl_net": -2.22,
+   "action": "manual",
+   "closed_ts": 1787717240.107107
+  },
+  {
+   "symbol": "DOGE/USDT",
+   "pnl_net": -3.73,
+   "action": "manual",
+   "closed_ts": 1787717241.1218324
+  },
+  {
+   "symbol": "FF/USDT",
+   "pnl_net": -6.02,
+   "action": "stop",
+   "closed_ts": 1787746040.2184145
+  },
+  {
+   "symbol": "STX/USDT",
+   "pnl_net": -1.59,
+   "action": "manual",
+   "closed_ts": 1787774840.172857
+  },
+  {
+   "symbol": "ZRO/USDT",
+   "pnl_net": -3.1,
+   "action": "manual",
+   "closed_ts": 1787774841.5915504
+  },
+  {
+   "symbol": "ONT/USDT",
+   "pnl_net": 6.59,
+   "action": "manual",
+   "closed_ts": 1787789237.1404712
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "pnl_net": -0.0,
+   "action": "manual",
+   "closed_ts": 1787789239.3122246
+  },
+  {
+   "symbol": "ONG/USDT",
+   "pnl_net": 16.85,
+   "action": "manual",
+   "closed_ts": 1787789241.0957541
+  },
+  {
+   "symbol": "BMT/USDT",
+   "pnl_net": -0.64,
+   "action": "manual",
+   "closed_ts": 1787789241.8420737
+  },
+  {
+   "symbol": "FF/USDT",
+   "pnl_net": -1.56,
+   "action": "manual",
+   "closed_ts": 1787789242.8383718
+  }
+ ],
+ "realized_total_events": -25.34
 }
