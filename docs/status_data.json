@@ -90,12 +90,6 @@
        "quien": "Claude",
        "estado": "resuelto",
        "t": "Gates de entrada de Ganesha (28/08). La frecuencia de entrada era un resultado del cash disponible, no una decision: el 27/08 a las 00:07 Agus cerro 4 posiciones a mano, se liberaron ~$60 y el ejecutor metio 6 entradas en 15 segundos. Implementado y testeado: cooldown de 20h por simbolo tras cerrarlo, max_open 8, max_new_per_run 2. Ademas se corrigio el bug de slippage que salio en el mismo analisis."
-      },
-      {
-       "p": "P8",
-       "quien": "Claude",
-       "estado": "resuelto",
-       "t": "Gates de entrada de Ganesha (28/08). La frecuencia de entrada era un resultado del cash disponible, no una decision: el 27/08 a las 00:07 Agus cerro 4 posiciones a mano, se liberaron ~$60 y el ejecutor metio 6 entradas en 15 segundos. Implementado y testeado: cooldown de 20h por simbolo tras cerrarlo, max_open 8, max_new_per_run 2. Ademas se corrigio el bug de slippage que salio en el mismo analisis."
       }
      ]
     },
