@@ -355,6 +355,10 @@
    "titulo": "Ganesha — momentum intradia (LIVE)",
    "bloques": [
     {
+     "tipo": "p",
+     "t": "28/08 (9) - Cierre del dia: (a) elegibilidad Binance Stocks CONFIRMADA por Agus -- la opcion aparece funcional en master y sub-cuentas; el camino API stocks sin IB queda habilitado para investigar. (b) Colchon ejecutado: $1,018 USDT en Simple Earn Flexible con auto-subscribe (tasa 'Max 6.79%' es por tramos; la efectiva sobre el total sera menor). Capital de proyecto en Spot: ~$405 USDT. (c) PAYG pendiente de tarjeta fisica; pasos: cloud.oracle.com -> menu -> Billing & Cost Management -> Upgrade and Manage Payment -> Upgrade to Pay As You Go; tarjeta de credito real, no prepaga. (d) Filtro btc3d aclarado: NO bloquea todo -- en el backtest opero n=63 (vs 61 sin filtro); solo exige BTC 3d positivo al entrar. Hoy 28/08 esta ABIERTO (+1.59%)."
+    },
+    {
      "tipo": "alerta",
      "nivel": "warn",
      "t": "28/08 (6) - Backtest de regimen LEIDO (sim_regimen_bbb.py, replica event-driven con caja virtual sobre trades reales): sin filtro -47.05 total. El unico modo que elimina casi toda la perdida es btc3d (solo entrar con BTC 3d positivo): -2.00 total con realizado +6.48 (n=63). El filtro semanal (no_1w_baja) bloqueo el 100% de los trades: TODA la muestra ocurrio con BTC semanal bajista -- sigue sin existir muestra de Ganesha en bull. Lectura: el filtro de regimen correcto evita perder pero NINGUN modo demuestra que Ganesha gane. Candidato para el paper: btc3d. Cambiarlo o no lo decide Agus (cambiar parametros corta la muestra paper recien iniciada)."
