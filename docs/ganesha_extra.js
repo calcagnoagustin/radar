@@ -61,6 +61,7 @@
   }
   function paperLabels(){
     if(!D||!D.dry_run)return;
+    if(!("paper_base_date" in D))return;  // payload viejo: no re-etiquetar (evita label nuevo + dato viejo)
     document.querySelectorAll(".stat .k, .k").forEach(function(el){
       var t=(el.textContent||"").trim().toLowerCase();
       if(t==="depósitos netos"||t==="depositos netos")el.textContent="Base paper (28/08)";
