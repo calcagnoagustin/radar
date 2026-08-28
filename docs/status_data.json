@@ -356,6 +356,19 @@
    "bloques": [
     {
      "tipo": "alerta",
+     "nivel": "warn",
+     "t": "28/08 (2) - Medido con bt_salidas.py: la salida NO es el problema principal. Sobre las 117 entradas reales del bot, con velas 4h reales y sin ventas manuales, se probaron 6 reglas de salida. Todas dan negativo. La actual (-$13, PF 0.94) es la segunda mejor; breakeven en +1R la EMPEORA (-$36, el BE saca en el ruido de las alts); TP total en +2R tambien peor (-$30). La unica que mejora algo es trailing 1.5 ATR desde +1R: -$8.5, WR 35%, PF 0.96 -- sigue sin ser un sistema."
+    },
+    {
+     "tipo": "p",
+     "t": "La materia prima existe: 51% de las entradas alcanza +1R y 40% alcanza +2R (MFE sobre velas reales). Pero ninguna forma de cosechar eso compensa el 60% que muere en el stop. Conclusion: con estas entradas, en este regimen (la muestra es casi toda BTC bajo EMA200 diario), no hay regla de salida que de positivo. El deficit es de entrada+regimen, no de salida. Esto conecta directo con el backtest de 3 anios en curso (filtros de regimen) y coincide con el hallazgo previo del backtest con capital finito: solo trailing apretado mejoraba. No se cambia la salida del ejecutor: no hay candidata con evidencia positiva, y el cambio de regla lo decide Agus."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (3) - Dashboard: la curva de equity mostraba +$15.87 porque graficaba solo los ultimos 40 cierres acumulados desde un cero arbitrario (14/08); los 72 anteriores sumaban -$41 y no se veian. Corregido: ganesha_data.json publica equity_curve completa (118 cierres) y la curva del panel arranca en el cero real. Realizado verdadero: -$25.34. Atribucion sobre los 118: cierres del bot -$52.63 (n=101), cierres manuales de Agus +$27.29 (n=17) -- con la salvedad de que Agus cierra ganadores y el stop carga los perdedores, asi que la particion favorece al humano por construccion."
+    },
+    {
+     "tipo": "alerta",
      "nivel": "alta",
      "t": "28/08/2026 - El caso ONT: el bot recompro lo que Agus acababa de vender. A las 00:07:17 del 27/08 Agus cerro ONT a mano en $0.0688 (+$6.59, 2.09R). Diecisiete segundos despues, a las 00:07:34, el ejecutor la recompro a $0.07168 -- 4.2% mas caro y con mas tamanio (379 vs 331). El activo cayo a $0.0565 (-21%). Neto real de ONT: +$0.84, no la perdida que se veia en pantalla."
     },
