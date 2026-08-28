@@ -106,6 +106,15 @@
    "destacada": true,
    "bloques": [
     {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "28/08 (10) - FONDO SEMILLAS EN PAPER CON BASE REAL (FONDO_REBASE). El paper de $1,000 ficticios del 27/08 se reseteo a la cartera real de Agus: nucleo designado BTC 0.00924475 + ETH 0.07476581 (~$901, cost = valor de designacion; cost historico real anotado como metadato), caja $130.65 (10%), satelite $274.93 en top-5 momentum 12-1 bStocks REALES: AXTIB, SNDKB, MUB, WDCB, LITEB (~$55 c/u). Total base $1,306.52. Semaforos al rebase: acciones SOL, cripto TORMENTA (cierre mensual jul vs SMA10). APORTE_MENSUAL simulado = 0: los aportes reales se registran con engine.py --aporte <usd> y se despliegan 60/30/10 con semaforos. Cron nuevo: refresco de datos Yahoo dia 1 14:00 UTC antes del mensual. Validacion pre-noviembre EN MARCHA con activos reales."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (11) - Ganesha paper: filtro de regimen btc-72h APLICADO por decision de Agus (regime_window_h=72, solo entradas; la gestion de abiertas no se toca). Barrido de ventanas sobre trades reales: 24h PEOR que sin filtro (-50.61 vs -47.05), plateau robusto 72-168h, optimo 72h (-2.00). La intuicion de ventana corta quedo refutada con datos. CONFIG_CHANGE en events.jsonl. Nota honesta: n=61, plateau da robustez pero el parametro exacto puede ser suerte de muestra."
+    },
+    {
      "tipo": "kv",
      "items": [
       {
