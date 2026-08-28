@@ -356,6 +356,19 @@
    "bloques": [
     {
      "tipo": "alerta",
+     "nivel": "warn",
+     "t": "28/08 (6) - Backtest de regimen LEIDO (sim_regimen_bbb.py, replica event-driven con caja virtual sobre trades reales): sin filtro -47.05 total. El unico modo que elimina casi toda la perdida es btc3d (solo entrar con BTC 3d positivo): -2.00 total con realizado +6.48 (n=63). El filtro semanal (no_1w_baja) bloqueo el 100% de los trades: TODA la muestra ocurrio con BTC semanal bajista -- sigue sin existir muestra de Ganesha en bull. Lectura: el filtro de regimen correcto evita perder pero NINGUN modo demuestra que Ganesha gane. Candidato para el paper: btc3d. Cambiarlo o no lo decide Agus (cambiar parametros corta la muestra paper recien iniciada)."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (7) - Binance lanzo API REST de stocks (20/07/2026): trading programatico de acciones y ETFs US, posiciones, data, y conversion a bStocks. Si la cuenta de Agus es elegible, la ejecucion del track de acciones podria NO necesitar IB Gateway ni la instancia A1 -- una API REST corre en la E2.1.Micro actual. Pendiente: verificar elegibilidad y leer la doc oficial. P1 (PAYG) sigue valiendo por la RAM para backtests Sharadar de universo amplio, pero deja de ser bloqueante unico de la ejecucion."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (8) - Cash: Agus vendio todo en sub-cuentas y consolido en master. Decision: $1,000 USDT como colchon de liquidez (candidato: Simple Earn Flexible, master cobra bono de primeros 200) + $418 USDT en Spot como capital de proyecto (seed Fondo Semillas + margen). Cartera restante: BTC ~$716 + ETH ~$182 (nucleo designable), BNB ~$122, WLD ~$13 (sin tesis declarada), BANK moonbag."
+    },
+    {
+     "tipo": "alerta",
      "nivel": "info",
      "t": "28/08 (5) - DECISION DE AGUS: Ganesha pasa de LIVE a PAPER con la cartera heredada tal cual estaba (11 posiciones, cash simulado $78.66, equity base $256). La simulacion continua el sistema completo con precios reales: gestion de las 11 abiertas, scanner de movers, gates P3, gate de slippage y contabilidad de cash simulado (sin el cual el paper seria de capital infinito, el artefacto que ya invalido un backtest). El P&L realizado historico LIVE queda congelado en -$28.73 como referencia; evento PAPER_MIGRATION en events.jsonl marca el corte de muestra. Motivo: 118 cierres con PF 0.88 en regimen BTC<EMA200, sin salida alternativa que de positivo (bt_salidas). El paper acumula muestra mientras el backtest de regimen responde si Ganesha tiene edge en algun contexto. Regla aplicada: pausar no es fallar. IMPORTANTE: las 11 posiciones REALES siguen en Binance con stops nativos activos; el sistema ya no las gestiona -- venderlas o mantenerlas es decision y accion de Agus."
     },
