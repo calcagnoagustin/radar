@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T23:12",
+ "generated_at": "2026-08-28T23:50",
  "modo": "paper",
  "diseno": {
   "nucleo": 0.6,
@@ -7,9 +7,9 @@
   "caja": 0.1,
   "nota": "satelite cripto descartado por backtest (mom 12-1: -15.6% CAGR, DD -96%)"
  },
- "equity": 1306.08,
+ "equity": 1305.68,
  "aportado": 1306.52,
- "pnl": -0.44,
+ "pnl": -0.84,
  "cash_espera": 0.0,
  "caja": 130.65,
  "semaforos": {
@@ -50,7 +50,7 @@
  "equity_hist": [
   {
    "d": "2026-08-28",
-   "eq": 1306.08,
+   "eq": 1305.68,
    "aportado": 1306.52
   }
  ],
