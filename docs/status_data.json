@@ -356,6 +356,11 @@
    "bloques": [
     {
      "tipo": "alerta",
+     "nivel": "alta",
+     "t": "28/08 (4) - INCIDENTE, detectado por Agus: el panel mostro equity $336 y +14.4% cuando el real era $259 y -11.8%. Causa: doble conteo en _real_equity (USDT libre + posiciones del state); si habia ventas manuales sin reconciliar, la plata de la venta se contaba dos veces. El bug era viejo, pero Claude lo expuso al publicar el panel a mano en medio de la ventana, sin reconciliar antes. Corregido de raiz: el equity ahora valora TODOS los assets reales de la sub-cuenta a mercado, sin depender del state. Verificado publicado: equity $258.91, P&L vs aportes -$35.09 (-11.94%), 11 abiertas. Leccion operativa nueva: nunca publicar el dashboard sin reconciliar primero."
+    },
+    {
+     "tipo": "alerta",
      "nivel": "warn",
      "t": "28/08 (2) - Medido con bt_salidas.py: la salida NO es el problema principal. Sobre las 117 entradas reales del bot, con velas 4h reales y sin ventas manuales, se probaron 6 reglas de salida. Todas dan negativo. La actual (-$13, PF 0.94) es la segunda mejor; breakeven en +1R la EMPEORA (-$36, el BE saca en el ruido de las alts); TP total en +2R tambien peor (-$30). La unica que mejora algo es trailing 1.5 ATR desde +1R: -$8.5, WR 35%, PF 0.96 -- sigue sin ser un sistema."
     },
