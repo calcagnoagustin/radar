@@ -61,11 +61,13 @@
   }
   function paperLabels(){
     if(!D||!D.dry_run)return;
-    if(!("paper_base_date" in D))return;  // payload viejo: no re-etiquetar (evita label nuevo + dato viejo)
-    document.querySelectorAll(".stat .k, .k").forEach(function(el){
-      var t=(el.textContent||"").trim().toLowerCase();
-      if(t==="depósitos netos"||t==="depositos netos")el.textContent="Base paper (28/08)";
-      if(t.indexOf("ganancia")===0)el.textContent="P&L del paper (desde 28/08)";
+    if(!("paper_base_date" in D))return;
+    // SOLO la card de Ganesha: por id, nunca por texto global (28/08: el selector
+    // global contamino la seccion Semillas con labels de Ganesha)
+    [["gDep","Base paper (28/08)"],["gGen","P&L del paper (desde 28/08)"]].forEach(function(par){
+      var v=document.getElementById(par[0]);if(!v)return;
+      var st=v.closest(".stat");if(!st)return;
+      var k=st.querySelector(".k");if(k&&k.textContent!==par[1])k.textContent=par[1];
     });
   }
   function apply(){linkify();tpOpen();valorize();paperLabels();}
@@ -214,4 +216,59 @@
   load().then(function(){setTimeout(render,1400);});
   setInterval(function(){load().then(render);},30000);
   setInterval(render,3000);
+})();
+
+
+/* ganesha_extra.js — bloque 4 (28 ago 2026): card "Fondo Semillas" (paper, base real)
+   + banner de cierre sobre el panel del sistema Semillas 1.0. */
+(function(){
+  var F=null, done="";
+  function load(){return fetch("./fondo_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)F=j;}).catch(function(){});}
+  function fU(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function banner(){
+    var h=document.querySelector("h1");
+    if(!h||document.getElementById("semCerrado"))return;
+    if((h.textContent||"").indexOf("Semillas")<0)return;
+    var d=document.createElement("div");
+    d.id="semCerrado";d.className="note";
+    d.style.cssText="margin:10px 0 14px;border-left:3px solid var(--grain);padding:10px 14px";
+    d.innerHTML="Estrategia <b>Semillas 1.0 cerrada</b> (ago-2026): PYTH/PUMP/ZEC vendidos y capital consolidado. Este panel queda como registro hist\u00f3rico. La continuidad es el <b>Fondo Semillas</b> (card m\u00e1s abajo) y el capital consolidado vive en la cuenta principal.";
+    h.parentNode.insertBefore(d,h.nextSibling);
+  }
+  function card(){
+    if(!F)return;
+    var sig=F.generated_at||"";
+    var b=document.getElementById("fondoCardBody");
+    if(!b){
+      var anchor=document.getElementById("gEqCurveCard")||document.querySelector(".card");
+      if(!anchor||!anchor.parentNode)return;
+      var c=document.createElement("div");
+      c.className="card";c.id="fondoCard";c.style.marginTop="18px";
+      c.innerHTML='<div class="head"><span class="title">Fondo Semillas &mdash; PAPER (base real 28/08)</span><span class="eyebrow" id="fondoGen"></span></div><div class="body" id="fondoCardBody"></div>';
+      anchor.parentNode.insertBefore(c,anchor);
+      b=c.querySelector("#fondoCardBody");
+    }
+    if(done===sig&&b.dataset.ok)return;done=sig;
+    var g=document.getElementById("fondoGen");if(g)g.textContent=(sig||"").replace("T"," ")+" UTC";
+    var pos=F.posiciones||{};
+    var nuc=["BTC/USDT","ETH/USDT"].filter(function(k){return pos[k];});
+    var sat=Object.keys(pos).filter(function(k){return nuc.indexOf(k)<0;});
+    function chip(k){var p=pos[k];return '<span style="display:inline-block;border:1px solid var(--hair);border-radius:8px;padding:4px 9px;margin:3px 5px 3px 0;font-size:12px" class="mono">'+k.replace("/USDT","")+" &middot; "+fU(p.cost)+"</span>";}
+    var sem=F.semaforos||{};
+    function semTxt(x){return x==="sol"?'<b style="color:var(--jade)">sol</b>':'<b style="color:var(--clay)">tormenta</b>';}
+    b.innerHTML=
+      '<div style="display:flex;gap:26px;flex-wrap:wrap;margin-bottom:10px">'
+      +'<span>Total <b class="mono" style="font-size:1.25em;color:var(--ink)">'+fU(F.equity||0)+'</b></span>'
+      +'<span>Base <b class="mono">'+fU(F.aportado||0)+'</b></span>'
+      +'<span>P&L <b class="mono" style="color:'+((F.pnl||0)>=0?"var(--jade)":"var(--clay)")+'">'+fU(F.pnl||0)+'</b></span>'
+      +'<span>Caja <b class="mono">'+fU(F.caja||0)+'</b></span></div>'
+      +'<div style="margin-bottom:6px;font-size:12.5px;color:var(--muted)">Sem\u00e1foros: acciones '+semTxt(sem.acciones)+' &middot; cripto '+semTxt(sem.cripto)+' <span style="color:var(--faint)">(eval '+(sem.eval||"&mdash;")+')</span></div>'
+      +'<div style="font-size:12px;color:var(--faint);margin-top:8px">N\u00facleo (designado, nunca se vende)</div><div>'+nuc.map(chip).join("")+'</div>'
+      +'<div style="font-size:12px;color:var(--faint);margin-top:8px">Sat\u00e9lite momentum 12-1 (rota el d\u00eda 1)</div><div>'+(sat.map(chip).join("")||'<span class="lbl">en cash (paraguas)</span>')+'</div>'
+      +'<div class="note" style="margin-top:10px">Paper con la cartera REAL como base: BTC+ETH designados n\u00facleo, sat\u00e9lite en bStocks. Aportes reales se registran con <span class="mono">--aporte</span>. Fuera del per\u00edmetro: BNB, WLD, BANK y el colch\u00f3n en Earn.</div>';
+    b.dataset.ok="1";
+  }
+  load().then(function(){setTimeout(function(){banner();card();},1500);});
+  setInterval(function(){load().then(card);},30000);
+  setInterval(function(){banner();card();},4000);
 })();
