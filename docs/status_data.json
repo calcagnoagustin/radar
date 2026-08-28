@@ -176,8 +176,8 @@
      "items": [
       {
        "frente": "Ganesha",
-       "estado": "rojo",
-       "t": "En vivo, con rollback al codigo viejo. Realizado -$62,70."
+       "estado": "ambar",
+       "t": "PAPER desde 28/08 con cartera heredada; LIVE congelado en -$28.73"
       },
       {
        "frente": "Pescador",
@@ -354,6 +354,11 @@
    "id": "ganesha",
    "titulo": "Ganesha — momentum intradia (LIVE)",
    "bloques": [
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "28/08 (5) - DECISION DE AGUS: Ganesha pasa de LIVE a PAPER con la cartera heredada tal cual estaba (11 posiciones, cash simulado $78.66, equity base $256). La simulacion continua el sistema completo con precios reales: gestion de las 11 abiertas, scanner de movers, gates P3, gate de slippage y contabilidad de cash simulado (sin el cual el paper seria de capital infinito, el artefacto que ya invalido un backtest). El P&L realizado historico LIVE queda congelado en -$28.73 como referencia; evento PAPER_MIGRATION en events.jsonl marca el corte de muestra. Motivo: 118 cierres con PF 0.88 en regimen BTC<EMA200, sin salida alternativa que de positivo (bt_salidas). El paper acumula muestra mientras el backtest de regimen responde si Ganesha tiene edge en algun contexto. Regla aplicada: pausar no es fallar. IMPORTANTE: las 11 posiciones REALES siguen en Binance con stops nativos activos; el sistema ya no las gestiona -- venderlas o mantenerlas es decision y accion de Agus."
+    },
     {
      "tipo": "alerta",
      "nivel": "alta",
