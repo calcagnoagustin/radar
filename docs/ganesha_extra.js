@@ -69,6 +69,22 @@
       var st=v.closest(".stat");if(!st)return;
       var k=st.querySelector(".k");if(k&&k.textContent!==par[1])k.textContent=par[1];
     });
+    // el script base del index pisa gDep/gGen con el ledger de depositos REALES
+    // (dashboard_data.json, $294): en paper esos valores se sobreescriben aca
+    // con la base y el P&L del paper, en cada tick, gane el ultimo que escribe.
+    function fU2(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+    var dep=document.getElementById("gDep");
+    if(dep&&D.deposits_total!=null){
+      var t=fU2(D.deposits_total);
+      if(dep.textContent!==t)dep.textContent=t;
+    }
+    var gen=document.getElementById("gGen");
+    if(gen&&D.pnl_vs_depositos!=null){
+      var p=D.pnl_vs_depositos, pc=D.pnl_vs_depositos_pct;
+      var col=p>=0?"var(--jade)":"var(--clay)";
+      var html='<span style="color:'+col+'">'+fU2(p)+' <span style="font-size:.8em">('+(p>=0?"+":"")+(pc!=null?pc:0)+'%)</span></span>';
+      if(gen.innerHTML!==html)gen.innerHTML=html;
+    }
   }
   function apply(){linkify();tpOpen();valorize();paperLabels();}
   loadG().then(function(){setTimeout(apply,1000);});
