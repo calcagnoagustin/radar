@@ -5,7 +5,7 @@
   var pct=function(n){return (n>=0?"+":"")+n.toFixed(2)+"%";};
   var cls=function(n){return n>0.0001?"up":(n<-0.0001?"down":"flat");};
   var bS=function(s){return s.replace("/","").toUpperCase();};
-  var SEM=null,GAN=null,PX={};
+  var SEM=null,GAN=null,FON=null,PX={};
   var $=function(id){return document.getElementById(id);};
 
   // ---- Header TOTAL SISTEMA (arriba de todo) ----
@@ -14,13 +14,13 @@
   hero.style.borderColor="rgba(111,191,142,.35)";
   hero.style.marginBottom="26px";
   hero.innerHTML='<div>'+
-    '<div class="eyebrow">Total sistema &middot; Semillas + Ganesha</div>'+
+    '<div class="eyebrow">Sistema en PAPER &middot; Ganesha + Fondo Semillas</div>'+
     '<div class="pnl-val mono" id="sysBal">&mdash;</div>'+
     '<div class="pnl-sub" id="sysSub">cargando&hellip;</div></div>'+
     '<div class="hero-stats">'+
-    '<div class="stat"><div class="k">Ganancia / p&eacute;rdida general</div><div class="v mono" id="sysPct" style="font-size:1.6em">&mdash;</div></div>'+
-    '<div class="stat"><div class="k">P&amp;L no realizado</div><div class="v mono" id="sysUnreal" style="font-size:1.6em">&mdash;</div></div>'+
-    '<div class="stat"><div class="k">Dep&oacute;sitos netos</div><div class="v mono" id="sysDep">&mdash;</div></div>'+
+    '<div class="stat"><div class="k">P&amp;L papers (desde 28/08)</div><div class="v mono" id="sysPct" style="font-size:1.6em">&mdash;</div></div>'+
+    '<div class="stat"><div class="k">Semillas 1.0</div><div class="v mono" id="sysUnreal" style="font-size:1.1em">cerrada &middot; LIVE -$28.73</div></div>'+
+    '<div class="stat"><div class="k">Dinero real en riesgo</div><div class="v mono" id="sysDep">$0</div></div>'+
     '</div>';
   var firstHeader=document.querySelector("header");
   if(firstHeader) firstHeader.parentNode.insertBefore(hero,firstHeader);
@@ -53,46 +53,25 @@
   }
 
   function renderTotals(){
-    if(!SEM||!GAN) return;
-    var semMkt=0,semCost=0,priced=true;
-    (SEM.positions||[]).forEach(function(p){
-      if(!(p.qty>0)) return;
-      var t=PX[bS(p.symbol)];
-      semCost+=p.qty*p.avg_cost;
-      if(t) semMkt+=p.qty*t.price; else priced=false;
-    });
-    var semBal=(SEM.free_usdt||0)+semMkt;
-    var ganInv=0,ganMkt=0;
-    (GAN.open_positions||[]).forEach(function(p){
-      var t=PX[bS(p.symbol)];
-      ganInv+=p.qty*p.entry;
-      if(t) ganMkt+=p.qty*t.price; else priced=false;
-    });
-    var ganFree=(GAN.equity_now||0)-ganInv;
-    var ganBal=ganFree+ganMkt;
-    var total=semBal+ganBal;
-    var unreal=(semMkt-semCost)+(ganMkt-ganInv);
-    if(!priced) return;
-    $("sysBal").textContent=fmt(total);
-    $("sysSub").textContent="Semillas "+fmt(semBal)+" · Ganesha "+fmt(ganBal);
-    $("sysUnreal").innerHTML='<span class="'+cls(unreal)+'">'+fmt(unreal)+'</span>';
-    var dl=SEM.deposits_ledger;
-    if(dl&&dl.seeded){
-      var dep=((dl.semillas||{}).neto_usdt||0)+((dl.ganesha||{}).neto_usdt||0);
-      if(dep>0){
-        var g=total-dep;
-        $("sysPct").innerHTML='<span class="'+cls(g)+'">'+pct(g/dep*100)+'</span>';
-        $("sysDep").textContent=fmt(dep);
-        return;
-      }
-    }
-    $("sysPct").innerHTML='<span class="flat" style="font-size:.55em">falta sembrar hist&oacute;rico de dep&oacute;sitos</span>';
-    $("sysDep").textContent="—";
+    // 28/08: Semillas 1.0 cerrada y Ganesha en paper. El hero suma los PAPERS
+    // (ganesha_data + fondo_data) y no toca ledger de depositos reales.
+    var g=GAN||{}, f=FON||{};
+    var ge=(g.equity_now!=null)?g.equity_now:null;
+    var fe=(f.equity!=null)?f.equity:null;
+    if(ge==null&&fe==null) return;
+    var tot=(ge||0)+(fe||0);
+    var pg=(g.pnl_vs_depositos!=null)?g.pnl_vs_depositos:0;
+    var pf=(f.pnl!=null)?f.pnl:0;
+    var p=pg+pf;
+    $("sysBal").textContent=fmt(tot);
+    $("sysSub").textContent="Ganesha "+(ge!=null?fmt(ge):"\u2014")+" \u00b7 Fondo "+(fe!=null?fmt(fe):"\u2014")+" \u00b7 todo simulado";
+    $("sysPct").innerHTML='<span class="'+cls(p)+'">'+fmt(p)+'</span>';
   }
 
   async function load(){
     try{SEM=await(await fetch("./dashboard_data.json?ts="+Date.now())).json();}catch(e){}
-    try{GAN=await(await fetch("./ganesha_data.json?ts="+Date.now())).json();}catch(e){}
+    try{GAN=await(await fetch("./ganesha_data.json?ts="+Date.now())).json();
+  fetch("./fondo_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)FON=j;}).catch(function(){});}catch(e){}
   }
   async function prices(){
     var ss=new Set();
@@ -111,4 +90,37 @@
   async function cycle(){await load();renderBrain();await prices();renderTotals();}
   cycle();
   setInterval(cycle,60000);
+})();
+
+
+/* sistema_extra.js — bloque archivo (28/08): la card Semillas es un registro
+   historico; sus numeros en vivo ($0, -100%, alertas de liquidez) confunden. */
+(function(){
+  function archivo(){
+    var b=document.getElementById("semBal");
+    if(b&&b.textContent!=="cerrada"){
+      b.textContent="cerrada";
+      b.style.fontSize="1.6em";b.style.color="var(--muted)";
+    }
+    var sub=document.getElementById("semSub");
+    if(sub)sub.textContent="capital consolidado en cuenta principal (28/08)";
+    var gen=document.getElementById("semGen");
+    if(gen)gen.innerHTML='<span style="color:var(--muted)">\u2014</span>';
+    var un=document.getElementById("semUnreal");
+    if(un)un.innerHTML='<span style="color:var(--muted)">\u2014</span>';
+    var re=document.getElementById("semReal");
+    if(re)re.innerHTML='<span class="down">-$15.81</span> <span style="font-size:.75em;color:var(--faint)">final</span>';
+    var de=document.getElementById("semDep");
+    if(de)de.textContent="$156 hist.";
+    // alertas de liquidez del sistema cerrado: fuera
+    var al=document.getElementById("alertas");
+    if(al){
+      Array.prototype.slice.call(al.children).forEach(function(ch){
+        var t=(ch.textContent||"");
+        if(t.indexOf("Liquidez baja")>=0||t.indexOf("Considerar depositar")>=0)ch.remove();
+      });
+    }
+  }
+  setInterval(archivo,2000);
+  setTimeout(archivo,800);
 })();
