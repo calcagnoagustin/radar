@@ -30,8 +30,8 @@
   bc.className="card"; bc.style.marginBottom="18px";
   bc.innerHTML='<div class="head"><span class="title">Dictamen del Cerebro</span><span class="eyebrow" id="gpMonth"></span></div>'+
                '<div class="body" id="gpBody"><div class="row"><span class="lbl">Cargando&hellip;</span></div></div>';
-  var ac=$("alertCard");
-  if(ac&&ac.parentNode) ac.parentNode.insertBefore(bc,ac.nextSibling);
+  // 28/08: Dictamen del Cerebro NO se inyecta mas -- Semillas 1.0 cerrada.
+  // (bc queda creado pero jamas insertado)
 
   function renderBrain(){
     var gp=(SEM&&SEM.garden_plan_pub)||{verdicts:[]};
