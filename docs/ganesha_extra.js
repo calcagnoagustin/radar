@@ -235,71 +235,126 @@
 })();
 
 
-/* ganesha_extra.js — bloque 4 (28 ago 2026): card "Fondo Semillas" (paper, base real)
-   + banner de cierre sobre el panel del sistema Semillas 1.0. */
+/* ganesha_extra.js — bloque 4 v2 (28/08 noche): el Fondo Semillas TOMA la seccion
+   de Semillas 1.0: se ocultan todas las cards del sistema cerrado y se renderiza
+   el Fondo con la MISMA estructura visual (hero + stats + posiciones + movimientos). */
 (function(){
-  var F=null, done="";
+  var F=null, sig="";
   function load(){return fetch("./fondo_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)F=j;}).catch(function(){});}
   function fU(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
-  function banner(){
+  function pC(n){return '<span style="color:'+(n>=0?"var(--jade)":"var(--clay)")+'">'+(n>=0?"+":"")+n.toFixed(2)+"%</span>";}
+
+  function ocultar1punto0(){
+    // titulo y subtitulo de la seccion
     var h=document.querySelector("h1");
-    if(!h||document.getElementById("semCerrado"))return;
-    if((h.textContent||"").indexOf("Semillas")<0)return;
-    var d=document.createElement("div");
-    d.id="semCerrado";d.className="note";
-    d.style.cssText="margin:10px 0 14px;border-left:3px solid var(--grain);padding:10px 14px";
-    d.innerHTML="Estrategia <b>Semillas 1.0 cerrada</b> (ago-2026): PYTH/PUMP/ZEC vendidos y capital consolidado. Este panel queda como registro hist\u00f3rico. La continuidad es el <b>Fondo Semillas</b> (card m\u00e1s abajo) y el capital consolidado vive en la cuenta principal.";
-    h.parentNode.insertBefore(d,h.nextSibling);
-  }
-  function card(){
-    if(!F)return;
-    var sig=F.generated_at||"";
-    var b=document.getElementById("fondoCardBody");
-    if(!b){
-      var c=document.createElement("div");
-      c.className="card";c.id="fondoCard";c.style.marginTop="18px";c.style.marginBottom="18px";
-      c.style.borderColor="rgba(111,191,142,.45)";
-      c.innerHTML='<div class="head"><span class="title">Fondo Semillas (Jardinero 2.0) &mdash; PAPER con activos reales</span><span class="eyebrow" id="fondoGen"></span></div><div class="body" id="fondoCardBody"></div>';
-      var ban=document.getElementById("semCerrado");
-      if(ban&&ban.parentNode){ ban.parentNode.insertBefore(c,ban.nextSibling); }
-      else{
-        var anchor=document.getElementById("gEqCurveCard")||document.querySelector(".card");
-        if(!anchor||!anchor.parentNode)return;
-        anchor.parentNode.insertBefore(c,anchor);
+    if(h&&(h.textContent||"").indexOf("Semillas")>=0&&h.textContent.indexOf("Fondo")<0)
+      h.textContent="Radar \u2014 Fondo Semillas";
+    var sub=document.querySelector("header .sub");
+    if(sub&&sub.textContent.indexOf("Fondo")<0)
+      sub.textContent="Fondo patrimonial \u00b7 n\u00facleo + sat\u00e9lite + caja \u00b7 PAPER con activos reales";
+    // hero de Semillas 1.0
+    var sb=document.getElementById("semBal");
+    if(sb){var he=sb.closest("section.hero")||sb.closest(".hero");if(he)he.style.display="none";}
+    // banner de cierre: ya no hace falta
+    var ban=document.getElementById("semCerrado");if(ban)ban.remove();
+    // cards del 1.0 por titulo (solo las que no son de Ganesha ni del Fondo)
+    document.querySelectorAll(".card").forEach(function(c){
+      if(c.id==="fondoCard"||c.id==="fondoPos"||c.id==="fondoMov")return;
+      if(c.querySelector("[id^=g]")&&c.querySelector("#gpBody")===null)return; // ganesha
+      var t=(c.querySelector(".head .title")||{}).textContent||"";
+      t=t.trim();
+      if(["Alertas","Dictamen del Cerebro","Posiciones","Bot diario","Cerebro","Historial"].indexOf(t)>=0){
+        // el "Historial" de ganesha tiene #gHistory adentro: no tocarlo
+        if(t==="Historial"&&c.querySelector("#gHistory"))return;
+        if(t==="Posiciones"&&c.querySelector("#gPositions"))return;
+        c.style.display="none";
       }
-      b=c.querySelector("#fondoCardBody");
-    }
-    if(done===sig&&b.dataset.ok)return;done=sig;
-    var g=document.getElementById("fondoGen");if(g)g.textContent=(sig||"").replace("T"," ")+" UTC";
+    });
+    // notas sueltas del 1.0
+    document.querySelectorAll(".note").forEach(function(n){
+      if((n.textContent||"").indexOf("Vista de control, no de trading")>=0)n.style.display="none";
+    });
+    // los .cols que quedaron vacios (todas sus cards ocultas)
+    document.querySelectorAll(".cols").forEach(function(co){
+      var vis=Array.prototype.filter.call(co.querySelectorAll(".card"),function(c){return c.style.display!=="none";});
+      if(!vis.length)co.style.display="none";
+    });
+  }
+
+  function ensure(){
+    if(document.getElementById("fondoHero"))return true;
+    var sb=document.getElementById("semBal");
+    var ref=sb?(sb.closest("section.hero")||sb.closest(".hero")):null;
+    if(!ref||!ref.parentNode)return false;
+    var wrap=document.createElement("div");wrap.id="fondoWrap";
+    wrap.innerHTML=
+      '<section class="hero" id="fondoHero" style="border-color:rgba(111,191,142,.4)">'
+      +'<div><div class="eyebrow">Balance (USD) \u00b7 Fondo Semillas (Jardinero 2.0) \u00b7 PAPER</div>'
+      +'<div class="pnl-val mono" id="fBal">\u2014</div>'
+      +'<div class="pnl-sub" id="fSub">cargando\u2026</div></div>'
+      +'<div class="hero-stats">'
+      +'<div class="stat"><div class="k">P&amp;L del paper (desde 28/08)</div><div class="v mono" id="fPnl" style="font-size:1.4em">\u2014</div></div>'
+      +'<div class="stat"><div class="k">Sem\u00e1foros</div><div class="v mono" id="fSem" style="font-size:1.05em">\u2014</div></div>'
+      +'<div class="stat"><div class="k">Pr\u00f3xima rotaci\u00f3n</div><div class="v mono" id="fRot">1 sep</div></div>'
+      +'<div class="stat"><div class="k">Base paper (28/08)</div><div class="v mono" id="fBase">\u2014</div></div>'
+      +'</div></section>'
+      +'<div class="card" id="fondoPos" style="margin-bottom:18px"><div class="head"><span class="title">Posiciones del Fondo</span><span class="eyebrow" id="fPosN"></span></div><div class="body" id="fPosBody"></div></div>'
+      +'<div class="card" id="fondoMov" style="margin-bottom:18px"><div class="head"><span class="title">Movimientos</span><span class="eyebrow" id="fMovN"></span></div><div class="body" id="fMovBody"></div></div>';
+    ref.parentNode.insertBefore(wrap,ref);
+    return true;
+  }
+
+  function posRow(sym,p,badge,badgeCls){
+    var val=(p.val!=null)?p.val:null, d=(val!=null&&p.cost>0)?(val/p.cost-1)*100:null;
+    return '<div class="pos"><div class="pos-top"><div>'
+      +'<span class="sym">'+sym.replace("/USDT","")+'</span>'
+      +' <span class="badge '+badgeCls+'" style="margin-left:8px">'+badge+'</span></div>'
+      +'<div class="pos-pnl">'+(d!=null?pC(d):"")+(val!=null?' <span class="mono" style="margin-left:8px;color:var(--ink)">'+fU(val)+'</span>':"")+'</div></div>'
+      +'<div class="pos-meta"><span>Cant <b class="mono">'+(+p.qty).toLocaleString("en-US",{maximumFractionDigits:8})+'</b></span>'
+      +'<span style="margin-left:14px">Costo <b class="mono">'+fU(p.cost)+'</b></span>'
+      +(p.px?'<span style="margin-left:14px">Precio <b class="mono">'+fU(p.px)+'</b></span>':"")
+      +'</div></div>';
+  }
+
+  function render(){
+    if(!F)return;
+    ocultar1punto0();
+    if(!ensure())return;
+    var s2=F.generated_at||"";
+    if(sig===s2&&document.getElementById("fBal").dataset.ok)return;sig=s2;
     var pos=F.posiciones||{};
     var nuc=["BTC/USDT","ETH/USDT"].filter(function(k){return pos[k];});
     var sat=Object.keys(pos).filter(function(k){return nuc.indexOf(k)<0;});
-    function chip(k){
-      var p=pos[k];
-      var val=(p.val!=null)?p.val:null;
-      var extra="";
-      if(val!=null&&p.cost>0){
-        var d=(val/p.cost-1)*100;
-        var col=d>=0?"var(--jade)":"var(--clay)";
-        extra=" &middot; "+fU(val)+' <span style="color:'+col+'">('+(d>=0?"+":"")+d.toFixed(1)+"%)</span>";
-      }
-      return '<span style="display:inline-block;border:1px solid var(--hair);border-radius:8px;padding:4px 9px;margin:3px 5px 3px 0;font-size:12px" class="mono">'+k.replace("/USDT","")+" "+extra+"</span>";
-    }
-    var sem=F.semaforos||{};
-    function semTxt(x){return x==="sol"?'<b style="color:var(--jade)">sol</b>':'<b style="color:var(--clay)">tormenta</b>';}
-    b.innerHTML=
-      '<div style="display:flex;gap:26px;flex-wrap:wrap;margin-bottom:10px">'
-      +'<span>Total <b class="mono" style="font-size:1.25em;color:var(--ink)">'+fU(F.equity||0)+'</b></span>'
-      +'<span>Base <b class="mono">'+fU(F.aportado||0)+'</b></span>'
-      +'<span>P&L <b class="mono" style="color:'+((F.pnl||0)>=0?"var(--jade)":"var(--clay)")+'">'+fU(F.pnl||0)+'</b></span>'
-      +'<span>Caja <b class="mono">'+fU(F.caja||0)+'</b></span></div>'
-      +'<div style="margin-bottom:6px;font-size:12.5px;color:var(--muted)">Sem\u00e1foros: acciones '+semTxt(sem.acciones)+' &middot; cripto '+semTxt(sem.cripto)+' <span style="color:var(--faint)">(eval '+(sem.eval||"&mdash;")+')</span></div>'
-      +'<div style="font-size:12px;color:var(--faint);margin-top:8px">N\u00facleo (designado, nunca se vende)</div><div>'+nuc.map(chip).join("")+'</div>'
-      +'<div style="font-size:12px;color:var(--faint);margin-top:8px">Sat\u00e9lite momentum 12-1 (rota el d\u00eda 1)</div><div>'+(sat.map(chip).join("")||'<span class="lbl">en cash (paraguas)</span>')+'</div>'
-      +'<div class="note" style="margin-top:10px">Paper con la cartera REAL como base: BTC+ETH designados n\u00facleo, sat\u00e9lite en bStocks. Aportes reales se registran con <span class="mono">--aporte</span>. Fuera del per\u00edmetro: BNB, WLD, BANK y el colch\u00f3n en Earn.</div>';
-    b.dataset.ok="1";
+    var vN=nuc.reduce(function(a,k){return a+(pos[k].val||pos[k].cost||0);},0);
+    var vS=sat.reduce(function(a,k){return a+(pos[k].val||pos[k].cost||0);},0);
+    var el=function(id){return document.getElementById(id);};
+    el("fBal").textContent=fU(F.equity||0);el("fBal").dataset.ok="1";
+    el("fSub").textContent="N\u00facleo "+fU(vN)+" \u00b7 Sat\u00e9lite "+fU(vS)+" \u00b7 Caja "+fU(F.caja||0)+((F.cash_espera||0)>0?" \u00b7 en espera "+fU(F.cash_espera):"");
+    var p=F.pnl||0;
+    el("fPnl").innerHTML='<span style="color:'+(p>=0?"var(--jade)":"var(--clay)")+'">'+fU(p)+' <span style="font-size:.8em">('+(p>=0?"+":"")+((F.aportado?100*p/F.aportado:0)).toFixed(2)+'%)</span></span>';
+    var sm=F.semaforos||{};
+    function semi(x){return x==="sol"?'<b style="color:var(--jade)">sol</b>':'<b style="color:var(--clay)">tormenta</b>';}
+    el("fSem").innerHTML="acciones "+semi(sm.acciones)+" \u00b7 cripto "+semi(sm.cripto);
+    el("fBase").textContent=fU(F.aportado||0);
+    el("fPosN").textContent=(nuc.length+sat.length)+" activos";
+    el("fPosBody").innerHTML=
+      nuc.map(function(k){return posRow(k,pos[k],"N\u00daCLEO \u00b7 no se vende","confirmed");}).join("")
+      +sat.map(function(k){return posRow(k,pos[k],"SAT\u00c9LITE \u00b7 rota mensual","seed");}).join("")
+      +'<div class="note" style="margin-top:10px">Fuera del per\u00edmetro del Fondo: BNB, WLD, BANK y el colch\u00f3n en Earn. Aportes reales: <span class="mono">engine.py --aporte &lt;usd&gt;</span>.</div>';
+    var evs=(F.eventos||[]).slice().reverse().slice(0,12);
+    el("fMovN").textContent=(F.eventos||[]).length+" eventos";
+    el("fMovBody").innerHTML=evs.length?evs.map(function(e){
+      var t=e.type||"", d=(e.iso||"").replace("T"," ");
+      var txt=t==="PAPER_BUY"?("compra "+String(e.sym||"").replace("/USDT","")+" "+fU(e.usd||0)+" @ "+fU(e.px||0))
+        :t==="PAPER_SELL"?("venta "+String(e.sym||"").replace("/USDT","")+" "+fU(e.usd||0))
+        :t==="PARAGUAS"?("paraguas: "+(e.msg||"")+(e.pata?" ("+e.pata+")":""))
+        :t==="MENSUAL_OK"?("ciclo mensual \u00b7 equity "+fU(e.equity||0))
+        :t;
+      var col=t==="PAPER_BUY"?"var(--jade)":(t==="PAPER_SELL"?"var(--clay)":"var(--muted)");
+      return '<div class="row"><span class="lbl"><b style="color:'+col+'">'+txt+'</b></span><span style="color:var(--faint);font-size:11.5px" class="mono">'+d+'</span></div>';
+    }).join(""):'<div class="row"><span class="lbl">sin movimientos a\u00fan</span></div>';
   }
-  load().then(function(){setTimeout(function(){banner();card();},1500);});
-  setInterval(function(){load().then(card);},30000);
-  setInterval(function(){banner();card();},4000);
+  load().then(function(){setTimeout(render,900);});
+  setInterval(function(){load().then(render);},30000);
+  setInterval(render,3500);
 })();
