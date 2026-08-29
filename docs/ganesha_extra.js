@@ -306,9 +306,13 @@
 
   function posRow(sym,p,badge,badgeCls){
     var val=(p.val!=null)?p.val:null, d=(val!=null&&p.cost>0)?(val/p.cost-1)*100:null;
+    var base=sym.replace("B/USDT","").replace("/USDT","");
+    var esBS=sym.indexOf("B/USDT")>0;
+    var nom=p.nombre||"";
     return '<div class="pos"><div class="pos-top"><div>'
       +'<span class="sym">'+sym.replace("/USDT","")+'</span>'
-      +' <span class="badge '+badgeCls+'" style="margin-left:8px">'+badge+'</span></div>'
+      +' <span class="badge '+badgeCls+'" style="margin-left:8px">'+badge+'</span>'
+      +(nom?'<div style="font-size:11.5px;color:var(--faint);margin-top:3px">'+nom+(esBS?' \u00b7 bStock del ticker real <b class="mono">'+base+'</b>':"")+'</div>':"")+'</div>'
       +'<div class="pos-pnl">'+(d!=null?pC(d):"")+(val!=null?' <span class="mono" style="margin-left:8px;color:var(--ink)">'+fU(val)+'</span>':"")+'</div></div>'
       +'<div class="pos-meta"><span>Cant <b class="mono">'+(+p.qty).toLocaleString("en-US",{maximumFractionDigits:8})+'</b></span>'
       +'<span style="margin-left:14px">Costo <b class="mono">'+fU(p.cost)+'</b></span>'
