@@ -256,12 +256,17 @@
     var sig=F.generated_at||"";
     var b=document.getElementById("fondoCardBody");
     if(!b){
-      var anchor=document.getElementById("gEqCurveCard")||document.querySelector(".card");
-      if(!anchor||!anchor.parentNode)return;
       var c=document.createElement("div");
-      c.className="card";c.id="fondoCard";c.style.marginTop="18px";
-      c.innerHTML='<div class="head"><span class="title">Fondo Semillas &mdash; PAPER (base real 28/08)</span><span class="eyebrow" id="fondoGen"></span></div><div class="body" id="fondoCardBody"></div>';
-      anchor.parentNode.insertBefore(c,anchor);
+      c.className="card";c.id="fondoCard";c.style.marginTop="18px";c.style.marginBottom="18px";
+      c.style.borderColor="rgba(111,191,142,.45)";
+      c.innerHTML='<div class="head"><span class="title">Fondo Semillas (Jardinero 2.0) &mdash; PAPER con activos reales</span><span class="eyebrow" id="fondoGen"></span></div><div class="body" id="fondoCardBody"></div>';
+      var ban=document.getElementById("semCerrado");
+      if(ban&&ban.parentNode){ ban.parentNode.insertBefore(c,ban.nextSibling); }
+      else{
+        var anchor=document.getElementById("gEqCurveCard")||document.querySelector(".card");
+        if(!anchor||!anchor.parentNode)return;
+        anchor.parentNode.insertBefore(c,anchor);
+      }
       b=c.querySelector("#fondoCardBody");
     }
     if(done===sig&&b.dataset.ok)return;done=sig;
@@ -269,7 +274,17 @@
     var pos=F.posiciones||{};
     var nuc=["BTC/USDT","ETH/USDT"].filter(function(k){return pos[k];});
     var sat=Object.keys(pos).filter(function(k){return nuc.indexOf(k)<0;});
-    function chip(k){var p=pos[k];return '<span style="display:inline-block;border:1px solid var(--hair);border-radius:8px;padding:4px 9px;margin:3px 5px 3px 0;font-size:12px" class="mono">'+k.replace("/USDT","")+" &middot; "+fU(p.cost)+"</span>";}
+    function chip(k){
+      var p=pos[k];
+      var val=(p.val!=null)?p.val:null;
+      var extra="";
+      if(val!=null&&p.cost>0){
+        var d=(val/p.cost-1)*100;
+        var col=d>=0?"var(--jade)":"var(--clay)";
+        extra=" &middot; "+fU(val)+' <span style="color:'+col+'">('+(d>=0?"+":"")+d.toFixed(1)+"%)</span>";
+      }
+      return '<span style="display:inline-block;border:1px solid var(--hair);border-radius:8px;padding:4px 9px;margin:3px 5px 3px 0;font-size:12px" class="mono">'+k.replace("/USDT","")+" "+extra+"</span>";
+    }
     var sem=F.semaforos||{};
     function semTxt(x){return x==="sol"?'<b style="color:var(--jade)">sol</b>':'<b style="color:var(--clay)">tormenta</b>';}
     b.innerHTML=
