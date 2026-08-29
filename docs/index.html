@@ -458,8 +458,8 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
   fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.json();}).then(function(d){paint("gHistory","gHistCount",d.recent_closed);}).catch(function(){});
 })();
 </script>
-<script src="./ganesha_extra.js?v=28f"></script>
-<script src="./sistema_extra.js?v=28f"></script>
+<script src="./ganesha_extra.js?v=28g"></script>
+<script src="./sistema_extra.js?v=28g"></script>
 <script src="./pescador_extra.js"></script>
 <script src="./pescador_card.js"></script>
 </body>
