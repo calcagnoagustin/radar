@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T00:40",
+ "generated_at": "2026-08-29T01:01",
  "modo": "paper",
  "diseno": {
   "nucleo": 0.6,
@@ -21,44 +21,51 @@
   "BTC/USDT": {
    "qty": 0.00924475,
    "cost": 718.49,
-   "px": 77794.59,
-   "val": 719.19
+   "px": 77720.01,
+   "val": 718.5,
+   "nombre": "Bitcoin"
   },
   "ETH/USDT": {
    "qty": 0.07476581,
    "cost": 182.44,
-   "px": 2443.85,
-   "val": 182.72
+   "px": 2442.21,
+   "val": 182.59,
+   "nombre": "Ethereum"
   },
   "AXTIB/USDT": {
    "qty": 0.9247645454545456,
    "cost": 54.99,
-   "px": 59.3,
-   "val": 54.84
+   "px": 59.34,
+   "val": 54.88,
+   "nombre": "AXT Inc"
   },
   "SNDKB/USDT": {
    "qty": 0.03713938947297252,
    "cost": 54.99,
-   "px": 1482.35,
-   "val": 55.05
+   "px": 1483.68,
+   "val": 55.1,
+   "nombre": "Sandisk Corporation"
   },
   "MUB/USDT": {
    "qty": 0.05913555172785015,
    "cost": 54.99,
-   "px": 930.09,
-   "val": 55.0
+   "px": 930.35,
+   "val": 55.02,
+   "nombre": "Micron Technology, Inc."
   },
   "WDCB/USDT": {
    "qty": 0.11949317815966937,
    "cost": 54.99,
-   "px": 459.78,
-   "val": 54.94
+   "px": 459.73,
+   "val": 54.93,
+   "nombre": "Western Digital Corporation"
   },
   "LITEB/USDT": {
    "qty": 0.06123927134081763,
    "cost": 54.99,
    "px": 896.23,
-   "val": 54.88
+   "val": 54.88,
+   "nombre": "Lumentum Holdings Inc."
   }
  },
  "equity_hist": [
