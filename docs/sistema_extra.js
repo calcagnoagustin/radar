@@ -117,7 +117,8 @@
     if(al){
       Array.prototype.slice.call(al.children).forEach(function(ch){
         var t=(ch.textContent||"");
-        if(t.indexOf("Liquidez baja")>=0||t.indexOf("Considerar depositar")>=0)ch.remove();
+        if(t.indexOf("Liquidez baja")>=0||t.indexOf("Considerar depositar")>=0
+           ||t.indexOf("Refuerzo (DCA) de PYTH")>=0||t.indexOf("PYTH/USDT pendiente")>=0)ch.remove();
       });
     }
   }
