@@ -365,6 +365,10 @@
    "bloques": [
     {
      "tipo": "p",
+     "t": "28/08 (13) - DATO CLAVE DE AGUS: compra SPY todos los meses A MANO (DCA manual propio, fuera de Binance). Eso ES el nucleo de acciones del hogar y resuelve la pregunta abierta: NO se agrega SPYB al Fondo (duplicaria). Mapa patrimonial completo: SPY manual (nucleo acciones) + Fondo Semillas (nucleo cripto BTC/ETH + satelite momentum bStocks + caja) + colchon $1,018 en Earn + fuera de perimetro (BNB/WLD/BANK). Dato del universo medido hoy: estadia promedio en el top-5 del satelite 3.5 meses (mediana 2, max 12); rotan 1.3 de 5 posiciones por mes. Duracion del satelite y semaforos explicados a Agus; pendiente de escribir manana: 'El Fondo en 10 lineas'."
+    },
+    {
+     "tipo": "p",
      "t": "28/08 (9) - Cierre del dia: (a) elegibilidad Binance Stocks CONFIRMADA por Agus -- la opcion aparece funcional en master y sub-cuentas; el camino API stocks sin IB queda habilitado para investigar. (b) Colchon ejecutado: $1,018 USDT en Simple Earn Flexible con auto-subscribe (tasa 'Max 6.79%' es por tramos; la efectiva sobre el total sera menor). Capital de proyecto en Spot: ~$405 USDT. (c) PAYG pendiente de tarjeta fisica; pasos: cloud.oracle.com -> menu -> Billing & Cost Management -> Upgrade and Manage Payment -> Upgrade to Pay As You Go; tarjeta de credito real, no prepaga. (d) Filtro btc3d aclarado: NO bloquea todo -- en el backtest opero n=63 (vs 61 sin filtro); solo exige BTC 3d positivo al entrar. Hoy 28/08 esta ABIERTO (+1.59%)."
     },
     {
