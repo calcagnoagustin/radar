@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-08-28T00:15:41Z",
+ "generated_at": "2026-08-29T00:15:40Z",
  "cron": "15 0 * * * (00:15 UTC / 21:15 ART)",
  "capital_inicial": 100.0,
- "free_usdt": 150.3865494,
+ "free_usdt": 0.0,
  "deposits": [],
  "positions": [],
  "shortlist": [
@@ -653,7 +653,7 @@
   }
  ],
  "loop_recs": {
-  "generated": "2026-08-27T00:16:02Z",
+  "generated": "2026-08-28T00:15:48Z",
   "ranking": [
    {
     "atr_mult": 2.0,
@@ -689,6 +689,10 @@
  },
  "alertas": [
   {
+   "nivel": "rojo",
+   "texto": "Liquidez baja: $0.00 USDT libres (colchon $15). Considerar depositar."
+  },
+  {
    "nivel": "amarillo",
    "texto": "Refuerzo (DCA) de PYTH/USDT pendiente: $23 esperando timing (Stage 2 + cierre en maximos). Por diseno nunca promedia a la baja."
   }
@@ -715,7 +719,7 @@
  "deposits_ledger": {
   "seeded": true,
   "semillas": {
-   "neto_usdt": 156.0,
+   "neto_usdt": 5.61,
    "movs": [
     {
      "asset": "USDT",
@@ -730,12 +734,19 @@
      "type": 1,
      "time": 1785635773000,
      "src": "api"
+    },
+    {
+     "asset": "USDT",
+     "qty": 150.3865494,
+     "type": 2,
+     "time": 1787954952000,
+     "src": "api"
     }
    ],
    "otros_activos": []
   },
   "ganesha": {
-   "neto_usdt": 294.0,
+   "neto_usdt": 39.57,
    "movs": [
     {
      "asset": "AVAX",
@@ -756,6 +767,13 @@
      "qty": 100.0,
      "type": 1,
      "time": 1787421539000,
+     "src": "api"
+    },
+    {
+     "asset": "USDT",
+     "qty": 254.42780173,
+     "type": 2,
+     "time": 1787954975000,
      "src": "api"
     }
    ],
