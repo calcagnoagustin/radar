@@ -1,23 +1,23 @@
 {
  "dry_run": true,
- "equity_now": 253.85,
+ "equity_now": 254.76,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -2.32,
- "pnl_vs_depositos_pct": -0.91,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -28.73,
- "trades_total": 122,
+ "pnl_vs_depositos": -1.41,
+ "pnl_vs_depositos_pct": -0.55,
+ "pnl_today": 0.66,
+ "trades_today": 1,
+ "realized_pnl": -28.07,
+ "trades_total": 123,
  "win_rate": 30,
- "profit_factor": 0.86,
+ "profit_factor": 0.87,
  "open_positions": [
   {
    "symbol": "ARB/USDT",
    "entry": 0.089,
-   "qty": 107.9,
-   "stop": 0.07898214285714286,
-   "tp1_done": false
+   "qty": 75.53,
+   "stop": 0.1004,
+   "tp1_done": true
   },
   {
    "symbol": "LINK/USDT",
@@ -91,15 +91,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "TST/USDT",
-   "entry": 0.01613,
-   "exit": 0.0145,
-   "qty_total": 428.4,
-   "pnl_net": -0.7,
-   "action": "stop",
-   "closed_ts": 1786781248.0101714
-  },
   {
    "symbol": "ACE/USDT",
    "entry": 0.2413,
@@ -450,6 +441,15 @@
    "pnl_net": 1.26,
    "action": "manual",
    "closed_ts": 1787926365.777843
+  },
+  {
+   "symbol": "ARB/USDT",
+   "entry": 0.089,
+   "exit": 0.1094,
+   "qty_total": 0,
+   "pnl_net": 0.66,
+   "action": "tp",
+   "closed_ts": 1788221243.0586863
   }
  ],
  "equity_curve": [
@@ -1184,7 +1184,13 @@
    "pnl_net": 1.26,
    "action": "manual",
    "closed_ts": 1787926365.777843
+  },
+  {
+   "symbol": "ARB/USDT",
+   "pnl_net": 0.66,
+   "action": "tp",
+   "closed_ts": 1788221243.0586863
   }
  ],
- "realized_total_events": -28.77
+ "realized_total_events": -28.11
 }
