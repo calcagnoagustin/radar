@@ -111,6 +111,10 @@
      "t": "04/09 - AUDITOR LOOP ENCENDIDO Y APUNTANDO AL FONDO (N5). Dos problemas encontrados: (1) el auditor no corria desde el 29/08 - solo se disparaba desde main.py y ese cron quedo comentado al cerrar Semillas 1.0; (2) nunca miro al Fondo: consolidaba Ganesha y Semillas 1.0 solamente. Ahora tiene cron propio (00:20 UTC, despues del mark del Fondo) y un modulo nuevo fondo/auditor.py que mide al Fondo contra CONTROLES, no contra cero: cartera congelada (no hacer nada desde el dia base), 100% BTC, 50/50 BTC-ETH y SPY. Publica en learning_data.json -> .fondo y se ve en el dashboard como card 'Auditoria del Fondo'. Primera corrida (7 dias, 2026-08-28 -> 2026-09-03): Fondo +2.64%, congelado +2.49%, BTC +4.40%, 50/50 +3.52%, SPY +0.50%. El Fondo pierde 1.76 pp contra tener BTC y solo. Veredicto del auditor: muestra insuficiente (minimo 90 dias) - a 7 dias todo esto es ruido, lo unico auditable hoy es la disciplina. Desvio real detectado: nucleo 70% vs 60% de disenio (+10 pp), satelite 20.2% vs 30% (-9.8 pp): el rebase del 28/08 designo la cartera real y nunca cuadro con el 60/30/10."
     },
     {
+     "tipo": "p",
+     "t": "Aclaracion de alcance (04/09): el nucleo BTC/ETH del Fondo vive en la CUENTA PRINCIPAL de Agus, fuera del alcance del bot y de Claude por disenio de seguridad. El sistema solo ve las subcuentas ganesha@ y agus@semillaredes.com. Por eso el paper valua el nucleo por cantidades designadas contra precios publicos de Binance, y no por lectura de balance. El satelite bStocks y la caja son 100%% simulados: nunca se compraron. Dinero real en riesgo del sistema: $0."
+    },
+    {
      "tipo": "alerta",
      "nivel": "info",
      "t": "28/08 (10) - FONDO SEMILLAS EN PAPER CON BASE REAL (FONDO_REBASE). El paper de $1,000 ficticios del 27/08 se reseteo a la cartera real de Agus: nucleo designado BTC 0.00924475 + ETH 0.07476581 (~$901, cost = valor de designacion; cost historico real anotado como metadato), caja $130.65 (10%), satelite $274.93 en top-5 momentum 12-1 bStocks REALES: AXTIB, SNDKB, MUB, WDCB, LITEB (~$55 c/u). Total base $1,306.52. Semaforos al rebase: acciones SOL, cripto TORMENTA (cierre mensual jul vs SMA10). APORTE_MENSUAL simulado = 0: los aportes reales se registran con engine.py --aporte <usd> y se despliegan 60/30/10 con semaforos. Cron nuevo: refresco de datos Yahoo dia 1 14:00 UTC antes del mensual. Validacion pre-noviembre EN MARCHA con activos reales."
@@ -988,6 +992,19 @@
       [
        "Email",
        "Resend, bot@semillaredes.com -> calcagnoagustin@gmail.com"
+      ]
+     ]
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "ALCANCE DE CUENTAS BINANCE (limite de seguridad, por disenio)",
+       "El bot y Claude SOLO tienen claves de las SUBCUENTAS: ganesha@semillaredes.com (uid 1253377178) y agus@semillaredes.com (uid 1251544862). La CUENTA PRINCIPAL de Agus - donde vive el patrimonio real, incluido el nucleo BTC/ETH del Fondo - NO es accesible ni consultable por el sistema. Es asi a proposito: la plata de verdad esta fuera del alcance de cualquier bot y de Claude."
+      ],
+      [
+       "Consecuencia operativa",
+       "Cualquier lectura de balances que haga el sistema devuelve SOLO las subcuentas. Un balance en cero ahi NO significa que no haya patrimonio: significa que el patrimonio esta donde el bot no llega. El nucleo del Fondo (BTC 0.00924475 + ETH 0.07476581) se mide en el paper por CANTIDADES DESIGNADAS y precios de mercado publicos, no por lectura de cuenta."
       ]
      ]
     },
