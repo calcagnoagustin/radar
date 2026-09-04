@@ -1,6 +1,6 @@
 {
  "meta": {
-  "actualizado": "2026-08-28",
+  "actualizado": "2026-09-04",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
@@ -105,6 +105,11 @@
    "titulo": "Fondo Semillas - PAPER CORRIENDO desde 27-ago-2026",
    "destacada": true,
    "bloques": [
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "04/09 - AUDITOR LOOP ENCENDIDO Y APUNTANDO AL FONDO (N5). Dos problemas encontrados: (1) el auditor no corria desde el 29/08 - solo se disparaba desde main.py y ese cron quedo comentado al cerrar Semillas 1.0; (2) nunca miro al Fondo: consolidaba Ganesha y Semillas 1.0 solamente. Ahora tiene cron propio (00:20 UTC, despues del mark del Fondo) y un modulo nuevo fondo/auditor.py que mide al Fondo contra CONTROLES, no contra cero: cartera congelada (no hacer nada desde el dia base), 100% BTC, 50/50 BTC-ETH y SPY. Publica en learning_data.json -> .fondo y se ve en el dashboard como card 'Auditoria del Fondo'. Primera corrida (7 dias, 2026-08-28 -> 2026-09-03): Fondo +2.64%, congelado +2.49%, BTC +4.40%, 50/50 +3.52%, SPY +0.50%. El Fondo pierde 1.76 pp contra tener BTC y solo. Veredicto del auditor: muestra insuficiente (minimo 90 dias) - a 7 dias todo esto es ruido, lo unico auditable hoy es la disciplina. Desvio real detectado: nucleo 70% vs 60% de disenio (+10 pp), satelite 20.2% vs 30% (-9.8 pp): el rebase del 28/08 designo la cartera real y nunca cuadro con el 60/30/10."
+    },
     {
      "tipo": "alerta",
      "nivel": "info",
