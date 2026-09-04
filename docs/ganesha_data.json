@@ -1,15 +1,15 @@
 {
  "dry_run": true,
- "equity_now": 259.5,
+ "equity_now": 262.04,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 3.33,
- "pnl_vs_depositos_pct": 1.3,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -28.07,
- "trades_total": 123,
- "win_rate": 30,
+ "pnl_vs_depositos": 5.87,
+ "pnl_vs_depositos_pct": 2.29,
+ "pnl_today": 0.47,
+ "trades_today": 1,
+ "realized_pnl": -27.6,
+ "trades_total": 124,
+ "win_rate": 31,
  "profit_factor": 0.87,
  "open_positions": [
   {
@@ -43,9 +43,9 @@
   {
    "symbol": "ZEC/USDT",
    "entry": 813.2,
-   "qty": 0.008,
-   "stop": 715.63,
-   "tp1_done": false
+   "qty": 0.005600000000000001,
+   "stop": 919.6942857142857,
+   "tp1_done": true
   },
   {
    "symbol": "AAVE/USDT",
@@ -91,15 +91,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ACE/USDT",
-   "entry": 0.2413,
-   "exit": 0.1817,
-   "qty_total": 32.9,
-   "pnl_net": -1.96,
-   "action": "stop",
-   "closed_ts": 1786810045.3614979
-  },
   {
    "symbol": "EDEN/USDT",
    "entry": 0.05479,
@@ -450,6 +441,15 @@
    "pnl_net": 0.66,
    "action": "tp",
    "closed_ts": 1788221243.0586863
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "entry": 813.2,
+   "exit": 1010.33,
+   "qty_total": 0,
+   "pnl_net": 0.47,
+   "action": "tp",
+   "closed_ts": 1788523645.1357393
   }
  ],
  "equity_curve": [
@@ -1190,7 +1190,13 @@
    "pnl_net": 0.66,
    "action": "tp",
    "closed_ts": 1788221243.0586863
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "pnl_net": 0.47,
+   "action": "tp",
+   "closed_ts": 1788523645.1357393
   }
  ],
- "realized_total_events": -28.11
+ "realized_total_events": -27.64
 }
