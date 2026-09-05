@@ -295,7 +295,7 @@
       +'<div class="hero-stats">'
       +'<div class="stat"><div class="k">P&amp;L del paper (desde 28/08)</div><div class="v mono" id="fPnl" style="font-size:1.4em">\u2014</div></div>'
       +'<div class="stat"><div class="k">Sem\u00e1foros</div><div class="v mono" id="fSem" style="font-size:1.05em">\u2014</div></div>'
-      +'<div class="stat"><div class="k">Pr\u00f3xima rotaci\u00f3n</div><div class="v mono" id="fRot">1 sep</div></div>'
+      +'<div class="stat"><div class="k">Pr\u00f3xima rotaci\u00f3n</div><div class="v mono" id="fRot">\u2014</div></div>'
       +'<div class="stat"><div class="k">Base paper (28/08)</div><div class="v mono" id="fBase">\u2014</div></div>'
       +'</div></section>'
       +'<div class="card" id="fondoPos" style="margin-bottom:18px"><div class="head"><span class="title">Posiciones del Fondo</span><span class="eyebrow" id="fPosN"></span></div><div class="body" id="fPosBody"></div></div>'
@@ -339,7 +339,7 @@
     var sm=F.semaforos||{};
     function semi(x){return x==="sol"?'<b style="color:var(--jade)">sol</b>':'<b style="color:var(--clay)">tormenta</b>';}
     el("fSem").innerHTML="acciones "+semi(sm.acciones)+" \u00b7 cripto "+semi(sm.cripto);
-    el("fBase").textContent=fU(F.aportado||0);
+    el("fBase").textContent=fU(F.aportado||0);el("fRot").textContent=F.proxima_rotacion||"\u2014";
     el("fPosN").textContent=(nuc.length+sat.length)+" activos";
     el("fPosBody").innerHTML=
       nuc.map(function(k){return posRow(k,pos[k],"N\u00daCLEO \u00b7 no se vende","confirmed");}).join("")
