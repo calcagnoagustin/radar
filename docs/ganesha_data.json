@@ -1,9 +1,9 @@
 {
  "dry_run": true,
- "equity_now": 262.46,
+ "equity_now": 262.47,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 6.29,
+ "pnl_vs_depositos": 6.3,
  "pnl_vs_depositos_pct": 2.46,
  "pnl_today": 0,
  "trades_today": 0,
@@ -16,7 +16,7 @@
    "symbol": "ARB/USDT",
    "entry": 0.089,
    "qty": 75.53,
-   "stop": 0.12697857142857144,
+   "stop": 0.1283357142857143,
    "tp1_done": true
   },
   {
@@ -44,7 +44,7 @@
    "symbol": "ZEC/USDT",
    "entry": 813.2,
    "qty": 0.005600000000000001,
-   "stop": 944.0696428571429,
+   "stop": 945.7339285714286,
    "tp1_done": true
   },
   {
@@ -94,6 +94,13 @@
    "entry": 68.82,
    "qty": 0.3594023719281085,
    "stop": 54.21464285714285,
+   "tp1_done": false
+  },
+  {
+   "symbol": "ZEN/USDT",
+   "entry": 7.296,
+   "qty": 3.1543421335050437,
+   "stop": 5.632071428571429,
    "tp1_done": false
   }
  ],
