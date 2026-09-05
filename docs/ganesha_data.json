@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 263.03,
+ "equity_now": 262.36,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 6.86,
- "pnl_vs_depositos_pct": 2.68,
+ "pnl_vs_depositos": 6.19,
+ "pnl_vs_depositos_pct": 2.42,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -27.6,
@@ -16,7 +16,7 @@
    "symbol": "ARB/USDT",
    "entry": 0.089,
    "qty": 75.53,
-   "stop": 0.1283357142857143,
+   "stop": 0.1298035714285714,
    "tp1_done": true
   },
   {
