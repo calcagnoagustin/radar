@@ -1,9 +1,9 @@
 {
  "dry_run": true,
- "equity_now": 262.47,
+ "equity_now": 262.46,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 6.3,
+ "pnl_vs_depositos": 6.29,
  "pnl_vs_depositos_pct": 2.46,
  "pnl_today": 0,
  "trades_today": 0,
@@ -87,6 +87,13 @@
    "entry": 0.02526,
    "qty": 590.57,
    "stop": 0.012951071428571426,
+   "tp1_done": false
+  },
+  {
+   "symbol": "DASH/USDT",
+   "entry": 68.82,
+   "qty": 0.3594023719281085,
+   "stop": 54.21464285714285,
    "tp1_done": false
   }
  ],
