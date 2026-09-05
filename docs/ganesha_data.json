@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 262.47,
+ "equity_now": 263.03,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 6.3,
- "pnl_vs_depositos_pct": 2.46,
+ "pnl_vs_depositos": 6.86,
+ "pnl_vs_depositos_pct": 2.68,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -27.6,
@@ -101,6 +101,13 @@
    "entry": 7.296,
    "qty": 3.1543421335050437,
    "stop": 5.632071428571429,
+   "tp1_done": false
+  },
+  {
+   "symbol": "CHIP/USDT",
+   "entry": 0.05965,
+   "qty": 295.5986353602248,
+   "stop": 0.041853571428571434,
    "tp1_done": false
   }
  ],
