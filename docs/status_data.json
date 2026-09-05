@@ -1,6 +1,6 @@
 {
  "meta": {
-  "actualizado": "2026-09-05",
+  "actualizado": "2026-09-06",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
@@ -43,6 +43,12 @@
     {
      "tipo": "tareas",
      "items": [
+      {
+       "p": "P0",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "06/09 - DECISION DE DISENO: ¿el nucleo del Fondo (BTC/ETH) puede venderse PARCIALMENTE por ensamble de tendencia (0/25/50/75/100% segun 4 lookbacks semanales)? Es el unico cambio medido que le gana al DCA con la mitad del drawdown, en dos eras y dos activos. Contradice 'nucleo no se vende'. Si es SI: Claude implementa en paper como 'Jardinero 2.1' y el Fondo lo mide contra DCA puro como control. Si es NO: queda registrado que se elige aceptar drawdowns de -75/-90% a cambio de nunca vender."
+      },
       {
        "p": "P1",
        "quien": "Agus",
@@ -839,6 +845,27 @@
    "id": "hallazgos",
    "titulo": "Hallazgos medidos — donde NO hay edge",
    "bloques": [
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "06/09 - LO QUE SI LE GANA AL DCA (bt_lento.py, bt_lento2.py, bt_tsmom_robusto.py). BTC y ETH, Binance 2017-08 -> 2026-09, fees 0.1% por lado, senal al cierre de t y ejecucion al cierre de t+1, dos escenarios ($1000 de una vez / $0 + $100 por mes) y dos sub-periodos (2017-2020 fuera de muestra respecto a 2021-2026). Regla: ENSAMBLE DE TENDENCIA = cada semana, peso en el activo = fraccion de {21,28,35,42} dias en que el cierre esta por encima del cierre de hace L dias (0/25/50/75/100%), el resto en USDT. Resultado en 12 comparaciones (2 activos x 3 periodos x 2 escenarios): drawdown maximo MENOR en 12 de 12 (tipicamente 25-40 puntos menos: BTC todo -83% -> -59%, ETH todo -94% -> -67%); retorno mayor en 7, igual (+-6%) en 4, peor en 1 (BTC 2021-26 con aportes: 1.75x vs 1.86x). BTC todo con $100/mes: 5.35x vs 5.24x DCA con DD -49% vs -75%. ETH todo con $100/mes: 9.03x vs 4.53x. Coincide con la literatura (Liu-Tsyvinski, J. Finance 2022: momentum de serie temporal 1-4 semanas es el efecto mas robusto en cripto). NO es un edge magico: es la misma exposicion con la mitad del dolor, y le gana al DCA a lo largo de ciclos completos porque no se come el bear entero."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "06/09 - HALLAZGO INCOMODO PARA EL DISENO DEL FONDO: el 'paraguas suave' (aportes esperan en cash, nucleo NUNCA se vende) NO protege nada. Medido: 'DCA gated ensamble (no vende)' BTC todo 5.11x DD -75% vs DCA puro 5.24x DD -75%. 'DCA gated SMA10m (no vende)' idem. Toda la reduccion de drawdown viene de VENDER el nucleo (parcial, por semaforo) en tendencia bajista. La regla que protege el capital es exactamente la que el diseno actual prohibe. Decision de Agus, no de Claude."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "06/09 - Un solo lookback es sobreajuste: TSMOM 28d fue lo mejor en 2021-26 y peor que hold en 2017-20 con aportes; 35d al reves; 14d semanal fue lo mejor de 2017-20 y lo PEOR de 2021-26. El ensamble 21/28/35/42 es lo unico estable. Nunca usar un L solo.",
+      "06/09 - SMA10 mensual (Faber, el semaforo actual del Fondo) es fragil: ETH 2021-26 lump 0.31x (-69%). SMA200d reduce DD de forma consistente pero rinde menos. EMA200d como regla de tenencia es peor que SMA200d (BTC 2021-26: 1.18x vs 1.84x): para Ganesha como gate de entrada probablemente da igual, pero conviene unificar el regimen del sistema en el ensamble.",
+      "06/09 - Vol-targeting (50% anual): baja el retorno mas de lo que baja el DD. No suma en BTC/ETH.",
+      "06/09 - Dual momentum BTC/ETH 90d mensual (Antonacci): PIERDE (0.58x en 2021-26). El whipsaw entre dos activos correlacionados lo mata.",
+      "06/09 - Momentum de seccion cruzada en alts (top5 por retorno 28d, semanal, gate SMA200): 4.7x lump / 3.1x con aportes, DD -60%. PARECE lo mejor pero el universo es el top-70 por volumen HOY = sesgo de supervivencia grave. No es evidencia hasta correrlo con universo historico (top-N por capitalizacion en cada fecha, con deslistadas). Tarea Fase 1.",
+      "06/09 - Flash crashes -7% en 15m (pedido via Gemini): 1,822 eventos, rebote +2% 64.5% de las veces pero EV -0.68%/trade (PF 0.63) por la asimetria +2/-5 y seleccion adversa (23% de los fills tocan el -5% en la misma vela). Desde el maximo 4h: EV -3.2%. Enterrado. Cuchillo medido en 3 timeframes y 2 mercados."
+     ]
+    },
     {
      "tipo": "alerta",
      "nivel": "alta",
