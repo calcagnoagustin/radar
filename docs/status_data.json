@@ -1,6 +1,6 @@
 {
  "meta": {
-  "actualizado": "2026-09-04",
+  "actualizado": "2026-09-05",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
@@ -50,10 +50,22 @@
        "t": "Oracle: upgrade billing a PAYG (tarjeta prepaga) -> A1 (2 OCPU/12GB) -> IB Gateway. YA NO bloquea el track acciones: Fondo Semillas corre sobre bStocks con la infra actual. Queda para cuando se evalue IB como vehiculo final."
       },
       {
-       "p": "P2",
+       "p": "P2b",
        "quien": "Agus",
        "estado": "abierta",
-       "t": "Ganesha: decidir el modo despues del rollback. Hoy el archivo ejecutor/LIVE sigue puesto y corre con el codigo viejo (pre-v3). La alternativa es borrar LIVE y volver a paper. El modo lo decide solo Agus."
+       "t": "05/09 - Ganesha v4: Claude APAGO el filtro BTC 72h (decision de Agus del 28/08) y lo reemplazo por BTC > EMA200 diaria. Razon: el 72h salio de un barrido in-sample sobre 91 trades todos en bear; la EMA200d es el unico regimen validado (Pescador bull 16-0). Se vuelve con regime_window_h=72 en ganesha_ejecutor.py. Agus decide si acepta o revierte."
+      },
+      {
+       "p": "P2c",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "05/09 - Regla 'moonbag universal': el backtest sobre 117 entradas reales muestra que una moonbag MECANICA (20-30% con stop en BE) pierde feo (PF 0.3 en cerradas). Ganesha v4 NO la implementa. La regla sigue vigente como filosofia para tesis largas (Fondo), no para el ejecutor. Agus confirma o discute."
+      },
+      {
+       "p": "P2",
+       "quien": "Agus",
+       "estado": "resuelto",
+       "t": "RESUELTO 28/08: Agus paso Ganesha a PAPER (LIVE.off). 05/09: Ganesha v4 desplegado en paper (ver seccion Ganesha)."
       },
       {
        "p": "P3",
@@ -105,6 +117,11 @@
    "titulo": "Fondo Semillas - PAPER CORRIENDO desde 27-ago-2026",
    "destacada": true,
    "bloques": [
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "05/09 - REBALANCEO POR FLUJO implementado (engine.split_aporte). El nucleo no se vende: la unica forma de volver al 60/30/10 son los aportes, y ahora cada aporte (mensual o real via --aporte) se reparte proporcional al DEFICIT de cada bloque. Ensayo con $100 hoy: $0 nucleo / $91 satelite / $9 caja. El auditor marca el sobrepeso del nucleo como estructural (info), y el del satelite como aviso. Dashboard: 'proxima rotacion' ya no esta hardcodeada ('1 sep'), sale de fondo_data.json (hoy: 1 oct). Salida de paper: ventana fines de noviembre (90 dias), y solo si (1) >=3 rotaciones ejecutadas con cambios reales, (2) semaforos probados en tormenta, (3) satelite >= cartera congelada. La rotacion del 1/9 no cambio nada (mismo top-5)."
+    },
     {
      "tipo": "alerta",
      "nivel": "info",
@@ -195,7 +212,7 @@
       {
        "frente": "Ganesha",
        "estado": "ambar",
-       "t": "PAPER desde 28/08 con cartera heredada; LIVE congelado en -$28.73"
+       "t": "v4 en PAPER desde 05/09 (regimen EMA200d + chandelier). 11 legacy + entradas nuevas. Base v4: $262.46."
       },
       {
        "frente": "Pescador",
@@ -218,6 +235,11 @@
        "t": "E2.1.Micro (1GB). A1 esperando el PAYG."
       }
      ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "05/09 - Ganesha estaba TRABADO: 11 posiciones con max_open 8, 9 dias sin entrar. Se destrabo con v4 (las legacy no cuentan para el tope). Objetivo declarado por Agus: un bot en verde, escalable, que agarre rallies y pierda poco en crash. Lo que dicen los datos: la muestra completa (117 entradas, 88/91 en bear) es una loteria de cola derecha -- 4 trades hacen toda la plata, y el trailing devolvia el 75% de los gigantes (BANK MFE 43R -> 9R). La palanca que falta medir es el REGIMEN: BTC cruzo la EMA200d el 20/08. v4 existe para juntar n en bull con las reglas que sobrevivieron al backtest."
     },
     {
      "tipo": "p",
@@ -370,8 +392,54 @@
   },
   {
    "id": "ganesha",
-   "titulo": "Ganesha — momentum intradia (LIVE)",
+   "titulo": "Ganesha — momentum 4h (PAPER, v4 desde 05/09)",
    "bloques": [
+    {
+     "tipo": "kv",
+     "items": [
+      {
+       "k": "Version",
+       "v": "v4 (05/09/2026) en PAPER"
+      },
+      {
+       "k": "Base v4",
+       "v": "$262.46 equity / $59.89 cash tras 1a entrada (DASH)"
+      },
+      {
+       "k": "Regimen",
+       "v": "BTC cierre diario > EMA200d (hoy alcista: 79,661 vs 71,477). 72h APAGADO."
+      },
+      {
+       "k": "Salida",
+       "v": "stop 2.5 ATR1d; scale-out 30% a +2R; trail CHANDELIER (max desde entrada - 2.5 ATR4h) desde +2R"
+      },
+      {
+       "k": "Frecuencia",
+       "v": "1 entrada por ciclo (6 ciclos/dia), cooldown 20h por simbolo"
+      },
+      {
+       "k": "Tope",
+       "v": "6 posiciones CON riesgo (stop < entrada); runners con stop >= entrada no bloquean"
+      },
+      {
+       "k": "Calor",
+       "v": "riesgo abierto v4 <= 10% equity (legacy reportado aparte como heat_total)"
+      },
+      {
+       "k": "Escalabilidad",
+       "v": "riesgo 2% equity por trade; notional <= 0.25% del volumen 24h"
+      },
+      {
+       "k": "Legacy",
+       "v": "11 posiciones pre-v4 marcadas legacy: misma gestion de salida, no cuentan para tope ni calor, P&L atribuible por cfg"
+      }
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "05/09 - LO QUE SE MIDIO ANTES DE ESCRIBIR v4 (bt_salidas_v2/v3/v4, mismas 117 entradas reales, velas 4h reales, conservador intra-vela). (1) TIME STOP EMPEORA en todas las variantes (12/18/24/36 velas, umbral 0.5R y 1R): PF 1.03 -> 0.6-0.8. Los ganadores grandes arrancan tarde. El separador tp1_antes_del_stop es real pero no accionable. (2) Filtro por distancia de stop (<=15%) parece ayudar pero es espejismo: sacando las abiertas mark-to-market todo da negativo, y BANK/TUT tenian stop >20%. (3) Trail mas ancho (3.5, 5 ATR) empeora. (4) Moonbag mecanica 20-30% con stop BE: PF 0.3 en cerradas. (5) TP limite parcial a 1.5R/2R empeora; a 3R es ruido. (6) CHANDELIER (trail desde el maximo, no desde el cierre) 2.5-3 ATR desde +2R: la unica mejora que sobrevive en cerradas (PF 0.95 -> 1.11, +0.085 R/trade) y en las dos mitades temporales. Es lo que v4 implementa. Caveat: in-sample, n=117, casi todo bear."
+    },
     {
      "tipo": "p",
      "t": "28/08 (13) - DATO CLAVE DE AGUS: compra SPY todos los meses A MANO (DCA manual propio, fuera de Binance). Eso ES el nucleo de acciones del hogar y resuelve la pregunta abierta: NO se agrega SPYB al Fondo (duplicaria). Mapa patrimonial completo: SPY manual (nucleo acciones) + Fondo Semillas (nucleo cripto BTC/ETH + satelite momentum bStocks + caja) + colchon $1,018 en Earn + fuera de perimetro (BNB/WLD/BANK). Dato del universo medido hoy: estadia promedio en el top-5 del satelite 3.5 meses (mediana 2, max 12); rotan 1.3 de 5 posiciones por mes. Duracion del satelite y semaforos explicados a Agus; pendiente de escribir manana: 'El Fondo en 10 lineas'."
@@ -881,6 +949,15 @@
     {
      "tipo": "p",
      "t": "Implicancia para las 6 capas: la Capa 3 (Ganesha intradia) y el Pescador comparten la misma premisa de momentum-continuation en alts, y esa premisa acaba de quedar refutada sobre 3 anos. Antes de seguir tuneando parametros hay que decidir si la tesis se abandona o se reemplaza. Decision de Agus."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "05/09 - Ganesha, 117 entradas reales: NINGUNA salida hace rentable la muestra completa (PF 0.84-1.13). El edge, si existe, no esta en la salida ni en cortar perdedores: esta en el regimen. 88/91 trades vivieron con BTC bajo EMA200d.",
+      "05/09 - Time stop en momentum 4h: destruye valor (corta los runners que arrancan tarde). Descartado con datos propios.",
+      "05/09 - Moonbag mecanica en el ejecutor: pierde. La regla vale como filosofia patrimonial, no como regla de salida en trades de momentum.",
+      "05/09 - Chandelier > trail por cierre: +0.085 R/trade, consistente en mitades. Unico cambio de salida con evidencia."
+     ]
     }
    ]
   },
