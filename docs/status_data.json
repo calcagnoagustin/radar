@@ -125,6 +125,11 @@
    "bloques": [
     {
      "tipo": "alerta",
+     "nivel": "warn",
+     "t": "06/09 - CORRECCION de Claude: el 05/09 dije que el P&L del Fondo era 'basicamente BTC'. Falso. Al 05/09: nucleo +2.75% sobre su capital, satelite +6.56% sobre el suyo (SNDK +19%, MU +9%, AXTI +6%). En dolares 58/42 por el tamanio de cada bloque, pero por dolar invertido el satelite rinde 2.4x lo que BTC. El satelite es el bloque que esta funcionando."
+    },
+    {
+     "tipo": "alerta",
      "nivel": "info",
      "t": "05/09 - REBALANCEO POR FLUJO implementado (engine.split_aporte). El nucleo no se vende: la unica forma de volver al 60/30/10 son los aportes, y ahora cada aporte (mensual o real via --aporte) se reparte proporcional al DEFICIT de cada bloque. Ensayo con $100 hoy: $0 nucleo / $91 satelite / $9 caja. El auditor marca el sobrepeso del nucleo como estructural (info), y el del satelite como aviso. Dashboard: 'proxima rotacion' ya no esta hardcodeada ('1 sep'), sale de fondo_data.json (hoy: 1 oct). Salida de paper: ventana fines de noviembre (90 dias), y solo si (1) >=3 rotaciones ejecutadas con cambios reales, (2) semaforos probados en tormenta, (3) satelite >= cartera congelada. La rotacion del 1/9 no cambio nada (mismo top-5)."
     },
@@ -405,41 +410,38 @@
      "items": [
       {
        "k": "Version",
-       "v": "v4 (05/09/2026) en PAPER"
-      },
-      {
-       "k": "Base v4",
-       "v": "$262.46 equity / $59.89 cash tras 1a entrada (DASH)"
+       "v": "v5 (06/09/2026) en PAPER"
       },
       {
        "k": "Regimen",
-       "v": "BTC cierre diario > EMA200d (hoy alcista: 79,661 vs 71,477). 72h APAGADO."
+       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
+      },
+      {
+       "k": "Entrada",
+       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
+      },
+      {
+       "k": "Piramide",
+       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
       },
       {
        "k": "Salida",
-       "v": "stop 2.5 ATR1d; scale-out 30% a +2R; trail CHANDELIER (max desde entrada - 2.5 ATR4h) desde +2R"
+       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
       },
       {
-       "k": "Frecuencia",
-       "v": "1 entrada por ciclo (6 ciclos/dia), cooldown 20h por simbolo"
+       "k": "Frenos",
+       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
       },
       {
-       "k": "Tope",
-       "v": "6 posiciones CON riesgo (stop < entrada); runners con stop >= entrada no bloquean"
-      },
-      {
-       "k": "Calor",
-       "v": "riesgo abierto v4 <= 10% equity (legacy reportado aparte como heat_total)"
-      },
-      {
-       "k": "Escalabilidad",
-       "v": "riesgo 2% equity por trade; notional <= 0.25% del volumen 24h"
-      },
-      {
-       "k": "Legacy",
-       "v": "11 posiciones pre-v4 marcadas legacy: misma gestion de salida, no cuentan para tope ni calor, P&L atribuible por cfg"
+       "k": "Base v4/v5",
+       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
       }
      ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "06/09 - v5. bt_salidas_v5 sobre las 117 entradas reales: PIRAMIDE a +2R (agregar 50%, stop a entrada original) sin scale-out = +0.228 R/trade, PF 1.36, positivo en cerradas y en ambas mitades (vs +0.084 de v4). Es la mejora mas grande encontrada hasta ahora en la gestion. Gate cambiado a ensamble (EMA200d era la peor senal de tendencia en bt_lento2). Pausa diaria -3%."
     },
     {
      "tipo": "alerta",
@@ -508,28 +510,32 @@
      "titulo": "Gates de entrada (28/08/2026)",
      "items": [
       {
-       "k": "max_open",
-       "v": "8 posiciones simultaneas (habia 15 abiertas)"
+       "k": "Version",
+       "v": "v5 (06/09/2026) en PAPER"
       },
       {
-       "k": "max_new_per_run",
-       "v": "2 entradas nuevas por ciclo (hubo 6 en 15 seg)"
+       "k": "Regimen",
+       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
       },
       {
-       "k": "cooldown_h",
-       "v": "20 h de veda por simbolo tras cerrarlo (habia 0)"
+       "k": "Entrada",
+       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
       },
       {
-       "k": "max_slip_pct",
-       "v": "3% de desvio precio vivo vs vela de referencia"
+       "k": "Piramide",
+       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
       },
       {
-       "k": "stop re-anclado",
-       "v": "el stop se recalcula sobre el fill real"
+       "k": "Salida",
+       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
       },
       {
-       "k": "tests",
-       "v": "31 unitarios + 5 escenarios LIVE con exchange simulado"
+       "k": "Frenos",
+       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
+      },
+      {
+       "k": "Base v4/v5",
+       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
       }
      ]
     },
@@ -541,34 +547,34 @@
     {
      "tipo": "kv",
      "items": [
-      [
-       "Modo",
-       "LIVE — Binance Spot, sub-cuenta aislada, IP restringida a la VM"
-      ],
-      [
-       "Estrategia",
-       "Momentum 15m sobre altcoins (movers). NO es Donchian BTC/USDT 1h (descartado)"
-      ],
-      [
-       "Cron",
-       "cada 4h — minuto :07 (00/04/08/12/16/20 UTC)"
-      ],
-      [
-       "Entrada",
-       "cierre 15m sobre maximo de 96 velas + volumen > vol_mult x SMA20"
-      ],
-      [
-       "Stop",
-       "entrada - atr_mult x ATR(14) 4h, nativo en Binance (stop-loss-limit)"
-      ],
-      [
-       "Gestion",
-       "riesgo 2%/trade; TP1 a +2R vende 30% y stop a breakeven; resto trailing solo-sube"
-      ],
-      [
-       "Version en vivo",
-       "ROLLBACK 17/08/2026 al codigo del 19/07 (bak.pre_v3): atr_mult 2.5, sin zombie, sin depth, sin time_stop. Decision de Agus."
-      ]
+      {
+       "k": "Version",
+       "v": "v5 (06/09/2026) en PAPER"
+      },
+      {
+       "k": "Regimen",
+       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
+      },
+      {
+       "k": "Entrada",
+       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
+      },
+      {
+       "k": "Piramide",
+       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
+      },
+      {
+       "k": "Salida",
+       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
+      },
+      {
+       "k": "Frenos",
+       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
+      },
+      {
+       "k": "Base v4/v5",
+       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
+      }
      ]
     },
     {
@@ -626,22 +632,34 @@
     {
      "tipo": "kv",
      "items": [
-      [
-       "Foto 22/08 18:05 UTC",
-       "equity $270,44 · aportes netos $294 · P&L vs aportes -$23,56 (-8,0%)"
-      ],
-      [
-       "Posiciones abiertas",
-       "11"
-      ],
-      [
-       "Realizado acumulado",
-       "-$29,42 · 105 trades · WR 30% · PF 0,84"
-      ],
-      [
-       "Gestion",
-       "Agus mira, corta perdidas y toma ganancia a mano cuando lo considera prudente. El bot no se toca."
-      ]
+      {
+       "k": "Version",
+       "v": "v5 (06/09/2026) en PAPER"
+      },
+      {
+       "k": "Regimen",
+       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
+      },
+      {
+       "k": "Entrada",
+       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
+      },
+      {
+       "k": "Piramide",
+       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
+      },
+      {
+       "k": "Salida",
+       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
+      },
+      {
+       "k": "Frenos",
+       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
+      },
+      {
+       "k": "Base v4/v5",
+       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
+      }
      ]
     },
     {
