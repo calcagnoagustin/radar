@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 269.3,
+ "equity_now": 265.34,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 13.13,
- "pnl_vs_depositos_pct": 5.13,
+ "pnl_vs_depositos": 9.17,
+ "pnl_vs_depositos_pct": 3.58,
  "pnl_today": 6.52,
  "trades_today": 1,
  "realized_pnl": -21.08,
@@ -16,7 +16,7 @@
    "symbol": "LINK/USDT",
    "entry": 10.619,
    "qty": 1.17,
-   "stop": 12.660642857142857,
+   "stop": 12.862321428571429,
    "tp1_done": false
   },
   {
