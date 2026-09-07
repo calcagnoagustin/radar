@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 270.67,
+ "equity_now": 274.91,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 14.5,
- "pnl_vs_depositos_pct": 5.66,
+ "pnl_vs_depositos": 18.74,
+ "pnl_vs_depositos_pct": 7.32,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -27.6,
@@ -23,7 +23,7 @@
    "symbol": "LINK/USDT",
    "entry": 10.619,
    "qty": 1.17,
-   "stop": 9.709321428571428,
+   "stop": 12.660642857142857,
    "tp1_done": false
   },
   {
@@ -44,7 +44,7 @@
    "symbol": "ZEC/USDT",
    "entry": 813.2,
    "qty": 0.005600000000000001,
-   "stop": 1113.0142857142857,
+   "stop": 1131.097857142857,
    "tp1_done": true
   },
   {
