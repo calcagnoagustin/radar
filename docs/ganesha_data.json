@@ -1,24 +1,17 @@
 {
  "dry_run": true,
- "equity_now": 263.64,
+ "equity_now": 265.24,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 7.47,
- "pnl_vs_depositos_pct": 2.92,
- "pnl_today": 6.52,
- "trades_today": 1,
- "realized_pnl": -21.08,
- "trades_total": 125,
- "win_rate": 31,
- "profit_factor": 0.9,
+ "pnl_vs_depositos": 9.07,
+ "pnl_vs_depositos_pct": 3.54,
+ "pnl_today": 9.11,
+ "trades_today": 2,
+ "realized_pnl": -18.5,
+ "trades_total": 126,
+ "win_rate": 32,
+ "profit_factor": 0.91,
  "open_positions": [
-  {
-   "symbol": "LINK/USDT",
-   "entry": 10.619,
-   "qty": 1.17,
-   "stop": 12.862321428571429,
-   "tp1_done": false
-  },
   {
    "symbol": "RE/USDT",
    "entry": 0.5186,
@@ -119,15 +112,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ALICE/USDT",
-   "entry": 0.1343,
-   "exit": 0.122,
-   "qty_total": 151.62,
-   "pnl_net": -1.86,
-   "action": "stop",
-   "closed_ts": 1786853241.2827249
-  },
   {
    "symbol": "COW/USDT",
    "entry": 0.1387,
@@ -478,6 +462,15 @@
    "pnl_net": 6.52,
    "action": "stop",
    "closed_ts": 1788754045.1561224
+  },
+  {
+   "symbol": "LINK/USDT",
+   "entry": 10.619,
+   "exit": 12.829,
+   "qty_total": 1.17,
+   "pnl_net": 2.59,
+   "action": "stop",
+   "closed_ts": 1788811646.8173738
   }
  ],
  "equity_curve": [
@@ -1230,7 +1223,13 @@
    "pnl_net": 6.52,
    "action": "stop",
    "closed_ts": 1788754045.1561224
+  },
+  {
+   "symbol": "LINK/USDT",
+   "pnl_net": 2.59,
+   "action": "stop",
+   "closed_ts": 1788811646.8173738
   }
  ],
- "realized_total_events": -21.12
+ "realized_total_events": -18.53
 }
