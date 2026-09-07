@@ -1,24 +1,17 @@
 {
  "dry_run": true,
- "equity_now": 274.91,
+ "equity_now": 269.3,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 18.74,
- "pnl_vs_depositos_pct": 7.32,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -27.6,
- "trades_total": 124,
+ "pnl_vs_depositos": 13.13,
+ "pnl_vs_depositos_pct": 5.13,
+ "pnl_today": 6.52,
+ "trades_today": 1,
+ "realized_pnl": -21.08,
+ "trades_total": 125,
  "win_rate": 31,
- "profit_factor": 0.87,
+ "profit_factor": 0.9,
  "open_positions": [
-  {
-   "symbol": "ARB/USDT",
-   "entry": 0.089,
-   "qty": 75.53,
-   "stop": 0.178225,
-   "tp1_done": true
-  },
   {
    "symbol": "LINK/USDT",
    "entry": 10.619,
@@ -44,7 +37,7 @@
    "symbol": "ZEC/USDT",
    "entry": 813.2,
    "qty": 0.005600000000000001,
-   "stop": 1131.097857142857,
+   "stop": 1132.2835714285713,
    "tp1_done": true
   },
   {
@@ -116,18 +109,16 @@
    "qty": 8.397369545859306,
    "stop": 1.9288571428571428,
    "tp1_done": false
+  },
+  {
+   "symbol": "NEAR/USDT",
+   "entry": 2.402,
+   "qty": 5.559031640299749,
+   "stop": 2.0018214285714286,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "EDEN/USDT",
-   "entry": 0.05479,
-   "exit": 0.04277,
-   "qty_total": 240.8,
-   "pnl_net": -2.89,
-   "action": "stop",
-   "closed_ts": 1786853235.354809
-  },
   {
    "symbol": "ALICE/USDT",
    "entry": 0.1343,
@@ -478,6 +469,15 @@
    "pnl_net": 0.47,
    "action": "tp",
    "closed_ts": 1788523645.1357393
+  },
+  {
+   "symbol": "ARB/USDT",
+   "entry": 0.089,
+   "exit": 0.1753,
+   "qty_total": 107.9,
+   "pnl_net": 6.52,
+   "action": "stop",
+   "closed_ts": 1788754045.1561224
   }
  ],
  "equity_curve": [
@@ -1224,7 +1224,13 @@
    "pnl_net": 0.47,
    "action": "tp",
    "closed_ts": 1788523645.1357393
+  },
+  {
+   "symbol": "ARB/USDT",
+   "pnl_net": 6.52,
+   "action": "stop",
+   "closed_ts": 1788754045.1561224
   }
  ],
- "realized_total_events": -27.64
+ "realized_total_events": -21.12
 }
