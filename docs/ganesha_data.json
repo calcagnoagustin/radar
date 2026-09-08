@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 263.44,
+ "equity_now": 266.08,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 7.27,
- "pnl_vs_depositos_pct": 2.84,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -18.5,
- "trades_total": 126,
+ "pnl_vs_depositos": 9.91,
+ "pnl_vs_depositos_pct": 3.87,
+ "pnl_today": 1.74,
+ "trades_today": 1,
+ "realized_pnl": -16.75,
+ "trades_total": 127,
  "win_rate": 32,
- "profit_factor": 0.91,
+ "profit_factor": 0.92,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -25,13 +25,6 @@
    "qty": 54.1,
    "stop": 0.1816357142857143,
    "tp1_done": false
-  },
-  {
-   "symbol": "ZEC/USDT",
-   "entry": 813.2,
-   "qty": 0.005600000000000001,
-   "stop": 1132.2835714285713,
-   "tp1_done": true
   },
   {
    "symbol": "AAVE/USDT",
@@ -119,15 +112,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "COW/USDT",
-   "entry": 0.1387,
-   "exit": 0.1235,
-   "qty_total": 130.1,
-   "pnl_net": -1.98,
-   "action": "stop",
-   "closed_ts": 1786882046.6959565
-  },
   {
    "symbol": "HEMI/USDT",
    "entry": 0.00717,
@@ -478,6 +462,15 @@
    "pnl_net": 2.59,
    "action": "stop",
    "closed_ts": 1788811646.8173738
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "entry": 813.2,
+   "exit": 1124.41,
+   "qty_total": 0.009,
+   "pnl_net": 1.74,
+   "action": "stop",
+   "closed_ts": 1788854848.0128021
   }
  ],
  "equity_curve": [
@@ -1236,7 +1229,13 @@
    "pnl_net": 2.59,
    "action": "stop",
    "closed_ts": 1788811646.8173738
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "pnl_net": 1.74,
+   "action": "stop",
+   "closed_ts": 1788854848.0128021
   }
  ],
- "realized_total_events": -18.53
+ "realized_total_events": -16.79
 }
