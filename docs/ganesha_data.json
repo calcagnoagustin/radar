@@ -1,12 +1,12 @@
 {
  "dry_run": true,
- "equity_now": 265.24,
+ "equity_now": 265.6,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 9.07,
- "pnl_vs_depositos_pct": 3.54,
- "pnl_today": 9.11,
- "trades_today": 2,
+ "pnl_vs_depositos": 9.43,
+ "pnl_vs_depositos_pct": 3.68,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": -18.5,
  "trades_total": 126,
  "win_rate": 32,
@@ -108,6 +108,13 @@
    "entry": 2.402,
    "qty": 5.559031640299749,
    "stop": 2.0018214285714286,
+   "tp1_done": false
+  },
+  {
+   "symbol": "WLD/USDT",
+   "entry": 0.479,
+   "qty": 31.266705636743218,
+   "stop": 0.3955714285714286,
    "tp1_done": false
   }
  ],
