@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 254.57,
+ "equity_now": 251.02,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -1.6,
- "pnl_vs_depositos_pct": -0.62,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -16.75,
- "trades_total": 127,
+ "pnl_vs_depositos": -5.15,
+ "pnl_vs_depositos_pct": -2.01,
+ "pnl_today": -5.31,
+ "trades_today": 1,
+ "realized_pnl": -22.06,
+ "trades_total": 128,
  "win_rate": 32,
- "profit_factor": 0.92,
+ "profit_factor": 0.9,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -69,13 +69,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "DASH/USDT",
-   "entry": 68.82,
-   "qty": 0.3594023719281085,
-   "stop": 54.21464285714285,
-   "tp1_done": false
-  },
-  {
    "symbol": "ZEN/USDT",
    "entry": 7.296,
    "qty": 3.1543421335050437,
@@ -109,18 +102,16 @@
    "qty": 31.266705636743218,
    "stop": 0.3955714285714286,
    "tp1_done": false
+  },
+  {
+   "symbol": "RAY/USDT",
+   "entry": 1.458,
+   "qty": 13.815387638793354,
+   "stop": 1.0945357142857142,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00717,
-   "exit": 0.00584,
-   "qty_total": 2336.8,
-   "pnl_net": -3.11,
-   "action": "stop",
-   "closed_ts": 1786910835.3299897
-  },
   {
    "symbol": "COOKIE/USDT",
    "entry": 0.0133,
@@ -471,6 +462,15 @@
    "pnl_net": 1.74,
    "action": "stop",
    "closed_ts": 1788854848.0128021
+  },
+  {
+   "symbol": "DASH/USDT",
+   "entry": 68.82,
+   "exit": 54.04,
+   "qty_total": 0.359402,
+   "pnl_net": -5.31,
+   "action": "stop",
+   "closed_ts": 1789085253.731481
   }
  ],
  "equity_curve": [
@@ -1235,7 +1235,13 @@
    "pnl_net": 1.74,
    "action": "stop",
    "closed_ts": 1788854848.0128021
+  },
+  {
+   "symbol": "DASH/USDT",
+   "pnl_net": -5.31,
+   "action": "stop",
+   "closed_ts": 1789085253.731481
   }
  ],
- "realized_total_events": -16.79
+ "realized_total_events": -22.1
 }
