@@ -1,15 +1,15 @@
 {
  "dry_run": true,
- "equity_now": 258.2,
+ "equity_now": 254.85,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 2.03,
- "pnl_vs_depositos_pct": 0.79,
- "pnl_today": -5.31,
+ "pnl_vs_depositos": -1.32,
+ "pnl_vs_depositos_pct": -0.52,
+ "pnl_today": 1.06,
  "trades_today": 1,
- "realized_pnl": -22.06,
- "trades_total": 128,
- "win_rate": 32,
+ "realized_pnl": -21.0,
+ "trades_total": 129,
+ "win_rate": 33,
  "profit_factor": 0.9,
  "open_positions": [
   {
@@ -17,13 +17,6 @@
    "entry": 0.5186,
    "qty": 21.5,
    "stop": 0.39343928571428566,
-   "tp1_done": false
-  },
-  {
-   "symbol": "MET/USDT",
-   "entry": 0.2114,
-   "qty": 54.1,
-   "stop": 0.2514,
    "tp1_done": false
   },
   {
@@ -112,15 +105,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "COOKIE/USDT",
-   "entry": 0.0133,
-   "exit": 0.0104,
-   "qty_total": 1385.0,
-   "pnl_net": -4.02,
-   "action": "stop",
-   "closed_ts": 1787054837.2645373
-  },
   {
    "symbol": "CHIP/USDT",
    "entry": 0.03216,
@@ -471,6 +455,15 @@
    "pnl_net": -5.31,
    "action": "stop",
    "closed_ts": 1789085253.731481
+  },
+  {
+   "symbol": "MET/USDT",
+   "entry": 0.2114,
+   "exit": 0.231,
+   "qty_total": 54.1,
+   "pnl_net": 1.06,
+   "action": "stop",
+   "closed_ts": 1789171641.310665
   }
  ],
  "equity_curve": [
@@ -1241,7 +1234,13 @@
    "pnl_net": -5.31,
    "action": "stop",
    "closed_ts": 1789085253.731481
+  },
+  {
+   "symbol": "MET/USDT",
+   "pnl_net": 1.06,
+   "action": "stop",
+   "closed_ts": 1789171641.310665
   }
  ],
- "realized_total_events": -22.1
+ "realized_total_events": -21.04
 }
