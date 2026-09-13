@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 254.52,
+ "equity_now": 254.4,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -1.65,
- "pnl_vs_depositos_pct": -0.64,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -21.0,
- "trades_total": 129,
- "win_rate": 33,
- "profit_factor": 0.9,
+ "pnl_vs_depositos": -1.77,
+ "pnl_vs_depositos_pct": -0.69,
+ "pnl_today": -2.7,
+ "trades_today": 1,
+ "realized_pnl": -23.7,
+ "trades_total": 130,
+ "win_rate": 32,
+ "profit_factor": 0.89,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -90,30 +90,21 @@
    "tp1_done": false
   },
   {
-   "symbol": "WLD/USDT",
-   "entry": 0.479,
-   "qty": 31.266705636743218,
-   "stop": 0.3955714285714286,
-   "tp1_done": false
-  },
-  {
    "symbol": "RAY/USDT",
    "entry": 1.458,
    "qty": 13.815387638793354,
    "stop": 1.0945357142857142,
    "tp1_done": false
+  },
+  {
+   "symbol": "LSK/USDT",
+   "entry": 0.7965,
+   "qty": 37.72390960451977,
+   "stop": 0.7330535714285714,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "CHIP/USDT",
-   "entry": 0.03216,
-   "exit": 0.02682,
-   "qty_total": 445.0,
-   "pnl_net": -2.38,
-   "action": "stop",
-   "closed_ts": 1787069235.757451
-  },
   {
    "symbol": "PORTAL/USDT",
    "entry": 0.01673,
@@ -464,6 +455,15 @@
    "pnl_net": 1.06,
    "action": "stop",
    "closed_ts": 1789171641.310665
+  },
+  {
+   "symbol": "WLD/USDT",
+   "entry": 0.479,
+   "exit": 0.3928,
+   "qty_total": 31.266706,
+   "pnl_net": -2.7,
+   "action": "stop",
+   "closed_ts": 1789286850.1702619
   }
  ],
  "equity_curve": [
@@ -1240,7 +1240,13 @@
    "pnl_net": 1.06,
    "action": "stop",
    "closed_ts": 1789171641.310665
+  },
+  {
+   "symbol": "WLD/USDT",
+   "pnl_net": -2.7,
+   "action": "stop",
+   "closed_ts": 1789286850.1702619
   }
  ],
- "realized_total_events": -21.04
+ "realized_total_events": -23.74
 }
