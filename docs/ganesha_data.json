@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 260.69,
+ "equity_now": 248.73,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 4.52,
- "pnl_vs_depositos_pct": 1.76,
- "pnl_today": -2.7,
+ "pnl_vs_depositos": -7.44,
+ "pnl_vs_depositos_pct": -2.9,
+ "pnl_today": -5.47,
  "trades_today": 1,
- "realized_pnl": -23.7,
- "trades_total": 130,
+ "realized_pnl": -29.17,
+ "trades_total": 131,
  "win_rate": 32,
- "profit_factor": 0.89,
+ "profit_factor": 0.87,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -69,13 +69,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "CHIP/USDT",
-   "entry": 0.05965,
-   "qty": 295.5986353602248,
-   "stop": 0.041853571428571434,
-   "tp1_done": false
-  },
-  {
    "symbol": "CAKE/USDT",
    "entry": 2.246,
    "qty": 8.397369545859306,
@@ -102,18 +95,16 @@
    "qty": 37.72390960451977,
    "stop": 0.7330535714285714,
    "tp1_done": false
+  },
+  {
+   "symbol": "REZ/USDT",
+   "entry": 0.00452,
+   "qty": 2769.6057522123897,
+   "stop": 0.0033799999999999993,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PORTAL/USDT",
-   "entry": 0.01673,
-   "exit": 0.01307,
-   "qty_total": 730.4,
-   "pnl_net": -2.67,
-   "action": "stop",
-   "closed_ts": 1787141236.6467493
-  },
   {
    "symbol": "ETHFI/USDT",
    "entry": 0.4399,
@@ -464,6 +455,15 @@
    "pnl_net": -2.7,
    "action": "stop",
    "closed_ts": 1789286850.1702619
+  },
+  {
+   "symbol": "CHIP/USDT",
+   "entry": 0.05965,
+   "exit": 0.04114,
+   "qty_total": 295.598635,
+   "pnl_net": -5.47,
+   "action": "stop",
+   "closed_ts": 1789344447.7946904
   }
  ],
  "equity_curve": [
@@ -1246,7 +1246,13 @@
    "pnl_net": -2.7,
    "action": "stop",
    "closed_ts": 1789286850.1702619
+  },
+  {
+   "symbol": "CHIP/USDT",
+   "pnl_net": -5.47,
+   "action": "stop",
+   "closed_ts": 1789344447.7946904
   }
  ],
- "realized_total_events": -23.74
+ "realized_total_events": -29.21
 }
