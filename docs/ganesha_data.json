@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 249.66,
+ "equity_now": 235.8,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -6.51,
- "pnl_vs_depositos_pct": -2.54,
- "pnl_today": -5.47,
- "trades_today": 1,
- "realized_pnl": -29.17,
- "trades_total": 131,
+ "pnl_vs_depositos": -20.37,
+ "pnl_vs_depositos_pct": -7.95,
+ "pnl_today": -19.33,
+ "trades_today": 2,
+ "realized_pnl": -43.03,
+ "trades_total": 132,
  "win_rate": 32,
- "profit_factor": 0.87,
+ "profit_factor": 0.82,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -90,13 +90,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "LSK/USDT",
-   "entry": 0.7965,
-   "qty": 37.72390960451977,
-   "stop": 0.7330535714285714,
-   "tp1_done": false
-  },
-  {
    "symbol": "REZ/USDT",
    "entry": 0.00452,
    "qty": 2769.6057522123897,
@@ -105,15 +98,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ETHFI/USDT",
-   "entry": 0.4399,
-   "exit": 0.5686,
-   "qty_total": 0,
-   "pnl_net": 2.24,
-   "action": "tp",
-   "closed_ts": 1787213255.669681
-  },
   {
    "symbol": "PUMP/USDT",
    "entry": 0.002852,
@@ -464,6 +448,15 @@
    "pnl_net": -5.47,
    "action": "stop",
    "closed_ts": 1789344447.7946904
+  },
+  {
+   "symbol": "LSK/USDT",
+   "entry": 0.7965,
+   "exit": 0.4291,
+   "qty_total": 37.72391,
+   "pnl_net": -13.86,
+   "action": "stop",
+   "closed_ts": 1789402047.2153816
   }
  ],
  "equity_curve": [
@@ -1252,7 +1245,13 @@
    "pnl_net": -5.47,
    "action": "stop",
    "closed_ts": 1789344447.7946904
+  },
+  {
+   "symbol": "LSK/USDT",
+   "pnl_net": -13.86,
+   "action": "stop",
+   "closed_ts": 1789402047.2153816
   }
  ],
- "realized_total_events": -29.21
+ "realized_total_events": -43.07
 }
