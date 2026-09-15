@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 232.53,
+ "equity_now": 228.83,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -23.64,
- "pnl_vs_depositos_pct": -9.23,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -43.03,
- "trades_total": 132,
+ "pnl_vs_depositos": -27.34,
+ "pnl_vs_depositos_pct": -10.67,
+ "pnl_today": -7.0,
+ "trades_today": 1,
+ "realized_pnl": -50.03,
+ "trades_total": 133,
  "win_rate": 32,
- "profit_factor": 0.82,
+ "profit_factor": 0.8,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -38,13 +38,6 @@
    "entry": 0.01609,
    "qty": 741.6,
    "stop": 0.006776785714285714,
-   "tp1_done": false
-  },
-  {
-   "symbol": "S/USDT",
-   "entry": 0.03192,
-   "qty": 1168.1,
-   "stop": 0.02610035714285714,
    "tp1_done": false
   },
   {
@@ -105,15 +98,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PUMP/USDT",
-   "entry": 0.002852,
-   "exit": 0.003427,
-   "qty_total": 0,
-   "pnl_net": 1.05,
-   "action": "tp",
-   "closed_ts": 1787227658.9125814
-  },
   {
    "symbol": "BOME/USDT",
    "entry": 0.000861,
@@ -464,6 +448,15 @@
    "pnl_net": -13.86,
    "action": "stop",
    "closed_ts": 1789402047.2153816
+  },
+  {
+   "symbol": "S/USDT",
+   "entry": 0.03192,
+   "exit": 0.02593,
+   "qty_total": 1168.1,
+   "pnl_net": -7.0,
+   "action": "stop",
+   "closed_ts": 1789459645.1349247
   }
  ],
  "equity_curve": [
@@ -1258,7 +1251,13 @@
    "pnl_net": -13.86,
    "action": "stop",
    "closed_ts": 1789402047.2153816
+  },
+  {
+   "symbol": "S/USDT",
+   "pnl_net": -7.0,
+   "action": "stop",
+   "closed_ts": 1789459645.1349247
   }
  ],
- "realized_total_events": -43.07
+ "realized_total_events": -50.07
 }
