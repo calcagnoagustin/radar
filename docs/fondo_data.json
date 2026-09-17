@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-16T23:50",
+ "generated_at": "2026-09-17T23:50",
  "modo": "paper",
  "diseno": {
   "nucleo": 0.6,
@@ -7,9 +7,9 @@
   "caja": 0.1,
   "nota": "satelite cripto descartado por backtest (mom 12-1: -15.6% CAGR, DD -96%)"
  },
- "equity": 1297.41,
+ "equity": 1306.75,
  "aportado": 1306.52,
- "pnl": -9.11,
+ "pnl": 0.23,
  "cash_espera": 0.0,
  "caja": 130.65,
  "semaforos": {
@@ -21,50 +21,50 @@
   "BTC/USDT": {
    "qty": 0.00924475,
    "cost": 718.49,
-   "px": 76210.0,
-   "val": 704.54,
+   "px": 76444.37,
+   "val": 706.71,
    "nombre": "Bitcoin"
   },
   "ETH/USDT": {
    "qty": 0.07476581,
    "cost": 182.44,
-   "px": 2418.21,
-   "val": 180.8,
+   "px": 2448.79,
+   "val": 183.09,
    "nombre": "Ethereum"
   },
   "AXTIB/USDT": {
    "qty": 0.9247645454545456,
    "cost": 54.99,
-   "px": 66.25,
-   "val": 61.27,
+   "px": 67.6,
+   "val": 62.51,
    "nombre": "AXT Inc"
   },
   "SNDKB/USDT": {
    "qty": 0.03713938947297252,
    "cost": 54.99,
-   "px": 1542.85,
-   "val": 57.3,
+   "px": 1616.18,
+   "val": 60.02,
    "nombre": "Sandisk Corporation"
   },
   "MUB/USDT": {
    "qty": 0.05913555172785015,
    "cost": 54.99,
-   "px": 936.05,
-   "val": 55.35,
+   "px": 982.36,
+   "val": 58.09,
    "nombre": "Micron Technology, Inc."
   },
   "WDCB/USDT": {
    "qty": 0.11949317815966937,
    "cost": 54.99,
-   "px": 423.27,
-   "val": 50.58,
+   "px": 424.22,
+   "val": 50.69,
    "nombre": "Western Digital Corporation"
   },
   "LITEB/USDT": {
    "qty": 0.06123927134081763,
    "cost": 54.99,
-   "px": 929.65,
-   "val": 56.93,
+   "px": 897.81,
+   "val": 54.98,
    "nombre": "Lumentum Holdings Inc."
   }
  },
@@ -167,6 +167,11 @@
   {
    "d": "2026-09-16",
    "eq": 1297.41,
+   "aportado": 1306.52
+  },
+  {
+   "d": "2026-09-17",
+   "eq": 1306.75,
    "aportado": 1306.52
   }
  ],
