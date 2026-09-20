@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 254.0,
+ "equity_now": 253.34,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -2.17,
- "pnl_vs_depositos_pct": -0.85,
+ "pnl_vs_depositos": -2.83,
+ "pnl_vs_depositos_pct": -1.1,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -50.03,
@@ -72,7 +72,7 @@
    "symbol": "NEAR/USDT",
    "entry": 2.767,
    "qty": 8.338547460449623,
-   "stop": 3.402571428571429,
+   "stop": 3.40275,
    "tp1_done": false
   },
   {
