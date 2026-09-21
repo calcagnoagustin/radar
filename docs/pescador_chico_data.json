@@ -1,0 +1,14 @@
+{
+ "generated_at": "2026-09-21T20:34:40Z",
+ "modo": "PAPER",
+ "version": "chico",
+ "subtitulo": "250 USD por posicion &middot; TP +10%% &middot; stop 1.5x ATR &middot; tope 10 ruedas",
+ "equity_now": 1000.0,
+ "caja": 1000.0,
+ "realized_pnl": 0.0,
+ "trades_total": 0,
+ "win_rate": 0,
+ "profit_factor": 0,
+ "open_positions": [],
+ "recent_closed": []
+}
