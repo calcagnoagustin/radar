@@ -1,10 +1,10 @@
-/* Tarjeta del Pescador. Se auto-inyecta antes del footer. */
+/* Tarjeta del Pescador (v2 bStocks). Se auto-inyecta antes del footer. */
 (function(){
   var host=document.createElement("div");
   host.innerHTML=[
 '<hr class="gan-sep">',
 '<div class="gan-head"><div class="brand"><h1>Radar - Pescador</h1>',
-'<div class="sub">Explosiones ultra confirmadas &middot; entra tarde y sale rapido</div></div>',
+'<div class="sub" id="pHeadSub">&mdash;</div></div>',
 '<div style="display:flex;align-items:center;gap:14px"><span class="badge dry" id="pMode">&mdash;</span>',
 '<div class="pulse"><span class="dot"></span><span id="pFresh">&mdash;</span></div></div></div>',
 '<section class="hero"><div><div class="eyebrow">Equity (USD) &middot; Pescador</div>',
@@ -27,35 +27,56 @@
 
   var $=function(i){return document.getElementById(i)};
   var f=function(n){return (n<0?"-":"")+"$"+Math.abs(Number(n)||0).toFixed(2)};
+  var p4=function(n){return Number(n).toPrecision(4)};
+
   function pinta(d){
     var r=d.reglas||{};
     $("pMode").textContent=d.modo;
     $("pMode").className="badge "+(d.modo==="LIVE"?"live":"dry");
     $("pFresh").textContent=(d.generated_at||"").replace("T"," ").replace("Z"," UTC");
     $("pBal").textContent=f(d.equity_now);
-    $("pSub").textContent="objetivo +"+r.tp_pct+"% / stop -"+r.sl_pct+"% / salida forzada "+r.max_hold_h+"h";
+    $("pHeadSub").innerHTML=d.sub||"Explosiones ultra confirmadas &middot; entra tarde y sale rapido";
+    $("pSub").innerHTML=d.subtitulo||
+      ("objetivo +"+r.tp_pct+"% / stop -"+r.sl_pct+"% / salida forzada "+r.max_hold_h+"h");
     var pr=$("pReal"); pr.textContent=f(d.realized_pnl);
     pr.style.color=(d.realized_pnl>0?"#3fb950":(d.realized_pnl<0?"#f85149":""));
     $("pTrades").textContent=d.trades_total;
     $("pWin").textContent=(d.win_rate||0)+"%";
     $("pPF").textContent=d.profit_factor;
+
     var op=d.open_positions||[];
-    $("pPosCount").textContent=op.length?op.length+" abierta":"ninguna";
+    $("pPosCount").textContent=op.length?op.length+" abierta"+(op.length>1?"s":""):"ninguna";
     $("pPositions").innerHTML=op.length?op.map(function(p){
-      return '<div class="row"><span class="lbl">'+p.symbol+'</span><span class="mono">'+
-        Number(p.entry).toPrecision(4)+" &middot; TP "+Number(p.tp).toPrecision(4)+
-        " &middot; SL "+Number(p.sl).toPrecision(4)+" &middot; "+p.horas+"h &middot; vol "+p.vol_ratio+"x</span></div>";
-    }).join(""):'<div class="row"><span class="lbl">Sin posiciones. Esperando confirmacion.</span></div>';
-    $("pRules").innerHTML=
-      '<div class="row"><span class="lbl">Volumen 24h minimo</span><span class="mono">$'+(r.min_qv_usd/1e6)+'M</span></div>'+
-      '<div class="row"><span class="lbl">Volumen vs mediana 20d</span><span class="mono">&ge; '+r.vol_ratio+'x</span></div>'+
-      '<div class="row"><span class="lbl">Tamano por entrada</span><span class="mono">'+r.size_pct+'% del equity</span></div>'+
-      '<div class="row"><span class="lbl">Dia / semana</span><span class="mono">&ge; +8% / &ge; +20%</span></div>';
+      var det;
+      if(p.stop!==undefined){
+        var col=p.ret_pct>0?"#3fb950":(p.ret_pct<0?"#f85149":"");
+        det='<span class="mono">'+p4(p.entry)+' &rarr; '+p4(p.px)+
+            ' &middot; stop '+p4(p.stop)+' &middot; '+p.ruedas+'r &middot; '+f(p.notional)+
+            ' <span style="color:'+col+'">'+(p.ret_pct>0?"+":"")+p.ret_pct+'%</span></span>';
+      } else {
+        det='<span class="mono">'+p4(p.entry)+" &middot; TP "+p4(p.tp)+
+            " &middot; SL "+p4(p.sl)+" &middot; "+p.horas+"h</span>";
+      }
+      return '<div class="row"><span class="lbl">'+p.symbol+'</span>'+det+'</div>';
+    }).join(""):'<div class="row"><span class="lbl">Sin posiciones. Esperando senal.</span></div>';
+
+    var lista=d.reglas_lista;
+    if(!lista){
+      lista=[{l:"Volumen 24h minimo",v:"$"+(r.min_qv_usd/1e6)+"M"},
+             {l:"Volumen vs mediana 20d",v:"&ge; "+r.vol_ratio+"x"},
+             {l:"Tamano por entrada",v:r.size_pct+"% del equity"},
+             {l:"Dia / semana",v:"&ge; +8% / &ge; +20%"}];
+    }
+    $("pRules").innerHTML=lista.map(function(x){
+      return '<div class="row"><span class="lbl">'+x.l+'</span><span class="mono">'+x.v+'</span></div>';
+    }).join("");
+
     var h=(d.recent_closed||[]).slice().reverse();
     $("pHistCount").textContent=h.length?h.length+" cerradas":"";
     $("pHistory").innerHTML=h.length?h.map(function(c){
       var col=c.pnl>0?"#3fb950":"#f85149";
-      return '<div class="row"><span class="lbl">'+c.symbol+' <span style="opacity:.6">'+c.motivo+' &middot; '+c.horas+'h</span></span>'+
+      var dur=(c.ruedas!==undefined)?(c.ruedas+"r"):(c.horas+"h");
+      return '<div class="row"><span class="lbl">'+c.symbol+' <span style="opacity:.6">'+c.motivo+' &middot; '+dur+'</span></span>'+
         '<span class="mono" style="color:'+col+'">'+(c.ret_pct>0?"+":"")+c.ret_pct+"% &middot; "+f(c.pnl)+"</span></div>";
     }).join(""):'<div class="row"><span class="lbl">Todavia sin operaciones cerradas.</span></div>';
   }
