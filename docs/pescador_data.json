@@ -1,34 +1,62 @@
 {
- "generated_at": "2026-09-21T00:07:20Z",
+ "generated_at": "2026-09-21T01:53:24Z",
  "modo": "PAPER",
- "equity_now": 1000.0,
- "realized_pnl": -50.0,
- "trades_total": 1,
+ "version": "bstocks",
+ "sub": "Runners de bStocks &middot; entra en la ruptura, banca con stop ancho",
+ "subtitulo": "stop y trailing 3x ATR(14) &middot; tope de tenencia 40 ruedas",
+ "equity_now": 992.75,
+ "caja": 485.55,
+ "realized_pnl": 0.0,
+ "trades_total": 0,
  "win_rate": 0,
- "profit_factor": 0.0,
- "reglas": {
-  "tp_pct": 15.0,
-  "sl_pct": 20.0,
-  "max_hold_h": 24.0,
-  "size_pct": 25.0,
-  "vol_ratio": 15.0,
-  "min_qv_usd": 10000000
- },
- "open_positions": [],
- "recent_closed": [
+ "profit_factor": 0,
+ "reglas_lista": [
   {
-   "symbol": "VIC/USDT",
-   "entry": 0.0592,
-   "exit": 0.04736,
-   "qty": 4222.9729729729725,
-   "pnl": -50.0,
-   "ret_pct": -20.0,
-   "motivo": "sl",
-   "horas": 4.6,
-   "btc_sobre_ema200": false,
-   "vol_ratio": 88.0,
-   "qv_musd": 21.2,
-   "closed_ts": 1785830928.07419
+   "l": "Universo",
+   "v": "17 bStocks (senal en el subyacente)"
+  },
+  {
+   "l": "Entrada",
+   "v": "cierre > max 60 ruedas + vol 1.5x"
+  },
+  {
+   "l": "Stop / trailing",
+   "v": "3.0x ATR(14), solo sube"
+  },
+  {
+   "l": "Tope de tenencia",
+   "v": "40 ruedas"
+  },
+  {
+   "l": "Riesgo por operacion",
+   "v": "5% del equity"
+  },
+  {
+   "l": "Tope por posicion",
+   "v": "60% del equity &middot; max 2 abiertas"
   }
- ]
+ ],
+ "open_positions": [
+  {
+   "symbol": "MSTRB/USDT",
+   "tk": "MSTR",
+   "entry": 157.58,
+   "px": 155.06,
+   "stop": 127.6827,
+   "notional": 263.54,
+   "ruedas": 1,
+   "ret_pct": -1.6
+  },
+  {
+   "symbol": "COINB/USDT",
+   "tk": "COIN",
+   "entry": 197.27,
+   "px": 194.88,
+   "stop": 157.9596,
+   "notional": 250.91,
+   "ruedas": 1,
+   "ret_pct": -1.21
+  }
+ ],
+ "recent_closed": []
 }
