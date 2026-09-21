@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-21T20:42:53Z",
+ "generated_at": "2026-09-21T21:12:12Z",
  "modo": "PAPER",
  "version": "chico",
  "subtitulo": "250 USD por posicion &middot; TP +10%% &middot; stop 1.5x ATR &middot; tope 10 ruedas",
  "equity_now": 1000.0,
- "caja": 1000.0,
+ "caja": 750.0,
  "realized_pnl": 0.0,
  "trades_total": 0,
  "win_rate": 0,
@@ -36,6 +36,17 @@
    "v": "WR 57%% &middot; +2.0%%/op &middot; PF 1.88"
   }
  ],
- "open_positions": [],
+ "open_positions": [
+  {
+   "symbol": "AMDB/USDT",
+   "qty": 0.4063388866314506,
+   "notional": 250.0,
+   "entry": 615.25,
+   "px": 615.25,
+   "tp": 676.775,
+   "stop": 576.9825,
+   "ruedas": 0
+  }
+ ],
  "recent_closed": []
 }
