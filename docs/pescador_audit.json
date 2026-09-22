@@ -1,0 +1,13 @@
+{
+ "generated_at": "2026-09-22T21:10:45Z",
+ "pescador": {
+  "nom": "Pescador",
+  "sin_datos": true,
+  "error": "'d'"
+ },
+ "chico": {
+  "nom": "Pescador Chico",
+  "sin_datos": true,
+  "error": "'d'"
+ }
+}
