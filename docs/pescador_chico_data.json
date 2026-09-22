@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-22T20:12:09Z",
+ "generated_at": "2026-09-22T21:10:37Z",
  "modo": "PAPER",
  "version": "chico",
  "subtitulo": "250 USD por posicion &middot; TP +10%% &middot; stop 1.5x ATR &middot; tope 10 ruedas",
- "equity_now": 1002.69,
+ "equity_now": 1002.39,
  "caja": 750.0,
  "realized_pnl": 0.0,
  "trades_total": 0,
@@ -42,10 +42,16 @@
    "qty": 0.4063388866314506,
    "notional": 250.0,
    "entry": 615.25,
-   "px": 621.88,
+   "px": 621.13,
    "tp": 676.775,
    "stop": 576.9825,
-   "ruedas": 0
+   "ruedas": 1
+  }
+ ],
+ "equity_curve": [
+  {
+   "d": "2026-09-22",
+   "eq": 1002.39
   }
  ],
  "recent_closed": []
