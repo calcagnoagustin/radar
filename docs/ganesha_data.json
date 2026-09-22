@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 271.89,
+ "equity_now": 274.95,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 15.72,
- "pnl_vs_depositos_pct": 6.14,
+ "pnl_vs_depositos": 18.78,
+ "pnl_vs_depositos_pct": 7.33,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -50.03,
@@ -44,7 +44,7 @@
    "symbol": "VET/USDT",
    "entry": 0.006821,
    "qty": 6946.0,
-   "stop": 0.0082525,
+   "stop": 0.008461964285714286,
    "tp1_done": false
   },
   {
