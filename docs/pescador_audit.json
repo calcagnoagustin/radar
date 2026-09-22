@@ -1,13 +1,134 @@
 {
- "generated_at": "2026-09-22T21:10:45Z",
+ "generated_at": "2026-09-22T21:11:03Z",
  "pescador": {
   "nom": "Pescador",
-  "sin_datos": true,
-  "error": "'d'"
+  "sin_datos": false,
+  "desde": "2026-09-22",
+  "dias": 1,
+  "equity": 1020.31,
+  "ret_pct": 2.03,
+  "max_dd_pct": 0.0,
+  "trades": 0,
+  "win_rate": null,
+  "profit_factor": null,
+  "ruedas_prom": null,
+  "controles": [
+   {
+    "k": "Este bot",
+    "v": 2.03,
+    "pp": null,
+    "destacar": true
+   },
+   {
+    "k": "Efectivo quieto (no operar)",
+    "v": 0.0,
+    "pp": 2.03
+   },
+   {
+    "k": "Comprar y mantener SPY",
+    "v": null,
+    "pp": null
+   }
+  ],
+  "salida": {
+   "con_reglas": null,
+   "sin_salir": null,
+   "n": 0
+  },
+  "chequeos": [
+   {
+    "k": "Stops respetados",
+    "ok": true,
+    "v": "0 de 0 salidas por stop"
+   },
+   {
+    "k": "Tope de tenencia (40 ruedas)",
+    "ok": true,
+    "v": "max 0 ruedas"
+   },
+   {
+    "k": "Tope de posiciones abiertas",
+    "ok": true,
+    "v": "2 abiertas de 2"
+   },
+   {
+    "k": "Caja sana",
+    "ok": true,
+    "v": "$485.55 libres"
+   },
+   {
+    "k": "Bot corriendo",
+    "ok": true,
+    "v": "ultimo dato 2026-09-22"
+   }
+  ]
  },
  "chico": {
   "nom": "Pescador Chico",
-  "sin_datos": true,
-  "error": "'d'"
+  "sin_datos": false,
+  "desde": "2026-09-22",
+  "dias": 1,
+  "equity": 1002.39,
+  "ret_pct": 0.24,
+  "max_dd_pct": 0.0,
+  "trades": 0,
+  "win_rate": null,
+  "profit_factor": null,
+  "ruedas_prom": null,
+  "controles": [
+   {
+    "k": "Este bot",
+    "v": 0.24,
+    "pp": null,
+    "destacar": true
+   },
+   {
+    "k": "Efectivo quieto (no operar)",
+    "v": 0.0,
+    "pp": 0.24
+   },
+   {
+    "k": "Comprar y mantener SPY",
+    "v": null,
+    "pp": null
+   }
+  ],
+  "salida": {
+   "con_reglas": null,
+   "sin_salir": null,
+   "n": 0
+  },
+  "chequeos": [
+   {
+    "k": "Stops respetados",
+    "ok": true,
+    "v": "0 de 0 salidas por stop"
+   },
+   {
+    "k": "Tope de tenencia (10 ruedas)",
+    "ok": true,
+    "v": "max 0 ruedas"
+   },
+   {
+    "k": "Tope de posiciones abiertas",
+    "ok": true,
+    "v": "1 abiertas de 4"
+   },
+   {
+    "k": "Caja sana",
+    "ok": true,
+    "v": "$750.00 libres"
+   },
+   {
+    "k": "Take profit a +10%",
+    "ok": true,
+    "v": "0 cerradas en el objetivo"
+   },
+   {
+    "k": "Bot corriendo",
+    "ok": true,
+    "v": "ultimo dato 2026-09-22"
+   }
+  ]
  }
 }
