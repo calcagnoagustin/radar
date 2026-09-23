@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 281.48,
+ "equity_now": 284.95,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 25.31,
- "pnl_vs_depositos_pct": 9.88,
+ "pnl_vs_depositos": 28.78,
+ "pnl_vs_depositos_pct": 11.23,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -50.03,
@@ -23,7 +23,7 @@
    "symbol": "AAVE/USDT",
    "entry": 122.35,
    "qty": 0.072,
-   "stop": 109.11857142857144,
+   "stop": 142.48035714285714,
    "tp1_done": false
   },
   {
@@ -44,7 +44,7 @@
    "symbol": "VET/USDT",
    "entry": 0.006821,
    "qty": 6946.0,
-   "stop": 0.008500892857142858,
+   "stop": 0.00887282142857143,
    "tp1_done": false
   },
   {
@@ -72,7 +72,7 @@
    "symbol": "NEAR/USDT",
    "entry": 2.767,
    "qty": 8.338547460449623,
-   "stop": 3.9487142857142863,
+   "stop": 4.000500000000001,
    "tp1_done": false
   },
   {
