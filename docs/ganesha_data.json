@@ -1,29 +1,22 @@
 {
  "dry_run": true,
- "equity_now": 285.26,
+ "equity_now": 271.55,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 29.09,
- "pnl_vs_depositos_pct": 11.36,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -50.03,
- "trades_total": 133,
- "win_rate": 32,
- "profit_factor": 0.8,
+ "pnl_vs_depositos": 15.38,
+ "pnl_vs_depositos_pct": 6.0,
+ "pnl_today": 15.98,
+ "trades_today": 2,
+ "realized_pnl": -34.05,
+ "trades_total": 135,
+ "win_rate": 33,
+ "profit_factor": 0.86,
  "open_positions": [
   {
    "symbol": "RE/USDT",
    "entry": 0.5186,
    "qty": 21.5,
    "stop": 0.39343928571428566,
-   "tp1_done": false
-  },
-  {
-   "symbol": "AAVE/USDT",
-   "entry": 122.35,
-   "qty": 0.072,
-   "stop": 142.48035714285714,
    "tp1_done": false
   },
   {
@@ -38,13 +31,6 @@
    "entry": 0.01609,
    "qty": 741.6,
    "stop": 0.006776785714285714,
-   "tp1_done": false
-  },
-  {
-   "symbol": "VET/USDT",
-   "entry": 0.006821,
-   "qty": 6946.0,
-   "stop": 0.008989535714285714,
    "tp1_done": false
   },
   {
@@ -105,24 +91,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.000861,
-   "exit": 0.0013085,
-   "qty_total": 0,
-   "pnl_net": 2.21,
-   "action": "tp",
-   "closed_ts": 1787227662.184839
-  },
-  {
-   "symbol": "BOME/USDT",
-   "entry": 0.000861,
-   "exit": 0.0011437,
-   "qty_total": 16478.0,
-   "pnl_net": 3.26,
-   "action": "stop",
-   "closed_ts": 1787242037.439166
-  },
   {
    "symbol": "ONG/USDT",
    "entry": 0.05436061124694377,
@@ -464,6 +432,24 @@
    "pnl_net": -7.0,
    "action": "stop",
    "closed_ts": 1789459645.1349247
+  },
+  {
+   "symbol": "AAVE/USDT",
+   "entry": 122.35,
+   "exit": 138.91,
+   "qty_total": 0.072,
+   "pnl_net": 1.19,
+   "action": "stop",
+   "closed_ts": 1790179637.131836
+  },
+  {
+   "symbol": "VET/USDT",
+   "entry": 0.006821,
+   "exit": 0.00895,
+   "qty_total": 6946.0,
+   "pnl_net": 14.79,
+   "action": "stop",
+   "closed_ts": 1790179638.9629164
   }
  ],
  "equity_curve": [
@@ -1264,7 +1250,19 @@
    "pnl_net": -7.0,
    "action": "stop",
    "closed_ts": 1789459645.1349247
+  },
+  {
+   "symbol": "AAVE/USDT",
+   "pnl_net": 1.19,
+   "action": "stop",
+   "closed_ts": 1790179637.131836
+  },
+  {
+   "symbol": "VET/USDT",
+   "pnl_net": 14.79,
+   "action": "stop",
+   "closed_ts": 1790179638.9629164
   }
  ],
- "realized_total_events": -50.07
+ "realized_total_events": -34.09
 }
