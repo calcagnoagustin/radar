@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-23T21:10:10Z",
+ "generated_at": "2026-09-24T21:10:09Z",
  "modo": "PAPER",
  "version": "bstocks",
  "sub": "Runners de bStocks &middot; entra en la ruptura, banca con stop ancho",
  "subtitulo": "stop y trailing 3x ATR(14) &middot; tope de tenencia 40 ruedas",
- "equity_now": 1008.15,
+ "equity_now": 1007.43,
  "caja": 485.55,
  "realized_pnl": 0.0,
  "trades_total": 0,
@@ -42,22 +42,22 @@
    "tk": "MSTR",
    "qty": 1.6723940650697948,
    "entry": 157.58,
-   "px": 161.89,
+   "px": 161.02,
    "stop": 138.0448,
    "notional": 263.54,
-   "ruedas": 4,
-   "ret_pct": 2.74
+   "ruedas": 5,
+   "ret_pct": 2.18
   },
   {
    "symbol": "COINB/USDT",
    "tk": "COIN",
    "qty": 1.2719289288924855,
    "entry": 197.27,
-   "px": 198.01,
-   "stop": 163.3998,
+   "px": 198.59,
+   "stop": 163.4443,
    "notional": 250.91,
-   "ruedas": 4,
-   "ret_pct": 0.38
+   "ruedas": 5,
+   "ret_pct": 0.67
   }
  ],
  "equity_curve": [
@@ -68,6 +68,10 @@
   {
    "d": "2026-09-23",
    "eq": 1008.15
+  },
+  {
+   "d": "2026-09-24",
+   "eq": 1007.43
   }
  ],
  "recent_closed": []
