@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 324.89,
+ "equity_now": 301.42,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 68.72,
- "pnl_vs_depositos_pct": 26.83,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -34.05,
- "trades_total": 135,
- "win_rate": 33,
- "profit_factor": 0.86,
+ "pnl_vs_depositos": 45.25,
+ "pnl_vs_depositos_pct": 17.66,
+ "pnl_today": 27.4,
+ "trades_today": 2,
+ "realized_pnl": -6.65,
+ "trades_total": 137,
+ "win_rate": 34,
+ "profit_factor": 0.97,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -58,14 +58,7 @@
    "symbol": "NEAR/USDT",
    "entry": 2.767,
    "qty": 8.338547460449623,
-   "stop": 4.974428571428572,
-   "tp1_done": false
-  },
-  {
-   "symbol": "RAY/USDT",
-   "entry": 1.7071666666666665,
-   "qty": 20.72308145819003,
-   "stop": 2.121207142857143,
+   "stop": 4.986035714285714,
    "tp1_done": false
   },
   {
@@ -90,13 +83,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "QNT/USDT",
-   "entry": 171.62,
-   "qty": 0.22744022038567507,
-   "stop": 297.2964285714286,
-   "tp1_done": false
-  },
-  {
    "symbol": "W/USDT",
    "entry": 0.01575,
    "qty": 1139.7866666666666,
@@ -105,24 +91,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ONG/USDT",
-   "entry": 0.05436061124694377,
-   "exit": 0.0757,
-   "qty_total": 0,
-   "pnl_net": 2.62,
-   "action": "tp",
-   "closed_ts": 1787242061.0667696
-  },
-  {
-   "symbol": "ONG/USDT",
-   "entry": 0.05436061124694377,
-   "exit": 0.1025,
-   "qty_total": 409.0,
-   "pnl_net": 13.78,
-   "action": "stop",
-   "closed_ts": 1787314037.6306276
-  },
   {
    "symbol": "HEMI/USDT",
    "entry": 0.00691,
@@ -464,6 +432,24 @@
    "pnl_net": 14.79,
    "action": "stop",
    "closed_ts": 1790179638.9629164
+  },
+  {
+   "symbol": "RAY/USDT",
+   "entry": 1.458,
+   "exit": 2.0783,
+   "qty_total": 13.815388,
+   "pnl_net": 7.69,
+   "action": "stop",
+   "closed_ts": 1790568441.24181
+  },
+  {
+   "symbol": "QNT/USDT",
+   "entry": 171.62,
+   "exit": 258.26,
+   "qty_total": 0.22744,
+   "pnl_net": 19.71,
+   "action": "stop",
+   "closed_ts": 1790568444.6420476
   }
  ],
  "equity_curve": [
@@ -1276,7 +1262,19 @@
    "pnl_net": 14.79,
    "action": "stop",
    "closed_ts": 1790179638.9629164
+  },
+  {
+   "symbol": "RAY/USDT",
+   "pnl_net": 7.69,
+   "action": "stop",
+   "closed_ts": 1790568441.24181
+  },
+  {
+   "symbol": "QNT/USDT",
+   "pnl_net": 19.71,
+   "action": "stop",
+   "closed_ts": 1790568444.6420476
   }
  ],
- "realized_total_events": -34.09
+ "realized_total_events": -6.69
 }
