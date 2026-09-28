@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 299.64,
+ "equity_now": 292.94,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 43.47,
- "pnl_vs_depositos_pct": 16.97,
- "pnl_today": 27.4,
- "trades_today": 2,
- "realized_pnl": -6.65,
- "trades_total": 137,
+ "pnl_vs_depositos": 36.77,
+ "pnl_vs_depositos_pct": 14.35,
+ "pnl_today": 45.24,
+ "trades_today": 3,
+ "realized_pnl": 11.19,
+ "trades_total": 138,
  "win_rate": 34,
- "profit_factor": 0.97,
+ "profit_factor": 1.05,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -55,13 +55,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "NEAR/USDT",
-   "entry": 2.767,
-   "qty": 8.338547460449623,
-   "stop": 4.998714285714286,
-   "tp1_done": false
-  },
-  {
    "symbol": "REZ/USDT",
    "entry": 0.00452,
    "qty": 2769.6057522123897,
@@ -91,15 +84,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00691,
-   "exit": 0.01441,
-   "qty_total": 0,
-   "pnl_net": 2.84,
-   "action": "tp",
-   "closed_ts": 1787314069.9716253
-  },
   {
    "symbol": "HEMI/USDT",
    "entry": 0.00691,
@@ -450,6 +434,15 @@
    "pnl_net": 19.71,
    "action": "stop",
    "closed_ts": 1790568444.6420476
+  },
+  {
+   "symbol": "NEAR/USDT",
+   "entry": 2.402,
+   "exit": 4.907,
+   "qty_total": 5.559032,
+   "pnl_net": 17.84,
+   "action": "stop",
+   "closed_ts": 1790611640.3111925
   }
  ],
  "equity_curve": [
@@ -1274,7 +1267,13 @@
    "pnl_net": 19.71,
    "action": "stop",
    "closed_ts": 1790568444.6420476
+  },
+  {
+   "symbol": "NEAR/USDT",
+   "pnl_net": 17.84,
+   "action": "stop",
+   "closed_ts": 1790611640.3111925
   }
  ],
- "realized_total_events": -6.69
+ "realized_total_events": 11.15
 }
