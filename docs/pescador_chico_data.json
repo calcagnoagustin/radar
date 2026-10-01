@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-01T20:12:15Z",
+ "generated_at": "2026-10-01T21:12:12Z",
  "modo": "PAPER",
  "version": "chico",
  "subtitulo": "250 USD por posicion &middot; TP +10%% &middot; stop 1.5x ATR &middot; tope 10 ruedas",
- "equity_now": 1000.46,
- "caja": 750.0,
+ "equity_now": 1000.41,
+ "caja": 500.0,
  "realized_pnl": 0.0,
  "trades_total": 0,
  "win_rate": 0,
@@ -42,10 +42,20 @@
    "qty": 0.4063388866314506,
    "notional": 250.0,
    "entry": 615.25,
-   "px": 616.38,
+   "px": 616.26,
    "tp": 676.775,
    "stop": 576.9825,
-   "ruedas": 7
+   "ruedas": 8
+  },
+  {
+   "symbol": "MUB/USDT",
+   "qty": 0.22927576371756891,
+   "notional": 250.0,
+   "entry": 1090.39,
+   "px": 1090.39,
+   "tp": 1199.429,
+   "stop": 1023.5143,
+   "ruedas": 0
   }
  ],
  "equity_curve": [
@@ -79,7 +89,7 @@
   },
   {
    "d": "2026-10-01",
-   "eq": 1000.46
+   "eq": 1000.41
   }
  ],
  "recent_closed": []
