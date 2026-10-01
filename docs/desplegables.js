@@ -5,7 +5,7 @@
 (function(){
   var G={
     total:  {n:"Total sistema",  bal:"sysBal", pnl:"sysPct"},
-    fondo:  {n:"Fondo Semillas", bal:"fBal",   pnl:"fPnl"},
+    fondo:  {n:"Fondo Abundancia", bal:"fBal",   pnl:"fPnl"},
     ganesha:{n:"Ganesha",        bal:"gBal",   pnl:"gGen"},
     pescador:{n:"Pescador",      bal:"p2Bal",  sum:["p2Real","p2Unr"]},
     chico:  {n:"Pescador Chico", bal:"pcBal",  sum:["pcReal","pcUnr"]}

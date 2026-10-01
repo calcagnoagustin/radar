@@ -1,6 +1,6 @@
 /* fondo_auditor.js — panel "Auditoria del Fondo" (auditor loop, N5).
    Lee learning_data.json -> .fondo (lo publica loop_analista tras correr fondo/auditor.py).
-   Muestra el Fondo Semillas contra sus controles: cartera congelada, BTC, 50/50 y SPY.
+   Muestra el Fondo Abundancia contra sus controles: cartera congelada, BTC, 50/50 y SPY.
    El P&L solo no dice nada: lo que importa es si le gana a no hacer nada. */
 (function () {
   var A = null, sig = "", tries = 0;
@@ -38,13 +38,15 @@
   }
 
   var ETIQ = {
-    fondo: "Fondo Semillas",
+    fondo: "Fondo Abundancia",
     congelado: "Cartera congelada (no hacer nada)",
     btc_100: "100% BTC",
     btc_eth_5050: "50/50 BTC-ETH",
     spy_100: "100% SPY"
   };
 
+  var BASEF = 0;
+  function usd(p) { var u = p * BASEF / 100; return (u < 0 ? "-" : "+") + "$" + Math.abs(u).toFixed(2); }
   function tablaControles(comp, vs) {
     var ord = ["fondo", "congelado", "btc_100", "btc_eth_5050", "spy_100"];
     var h = '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12.5px">'
@@ -60,11 +62,11 @@
       var diff = esF ? null : (vs || {})[k];
       h += '<tr style="border-top:1px solid var(--hair);' + (esF ? 'background:rgba(111,191,142,.06)' : '') + '">'
         + '<td style="padding:7px 8px 7px 0;' + (esF ? 'font-weight:600' : 'color:var(--faint)') + '">' + ETIQ[k] + '</td>'
-        + '<td class="mono" style="text-align:right;padding:7px 8px;color:' + col(m.ret_pct) + '">' + sgn(m.ret_pct) + '%</td>'
+        + '<td class="mono" style="text-align:right;padding:7px 8px;color:' + col(m.ret_pct) + '">' + usd(m.ret_pct) + ' (' + sgn(m.ret_pct) + '%)</td>'
         + '<td class="mono" style="text-align:right;padding:7px 8px;color:var(--clay)">' + (m.max_dd_pct != null ? m.max_dd_pct.toFixed(2) + "%" : "\u2014") + '</td>'
         + '<td class="mono" style="text-align:right;padding:7px 8px;color:var(--faint)">' + (m.vol_anual_pct != null ? m.vol_anual_pct.toFixed(0) + "%" : "\u2014") + '</td>'
         + '<td class="mono" style="text-align:right;padding:7px 0 7px 8px;color:' + (diff == null ? "var(--faint)" : col(diff)) + '">'
-        + (diff == null ? "\u2014" : sgn(diff) + " pp") + '</td></tr>';
+        + (diff == null ? "\u2014" : usd(-diff) + " (" + sgn(-diff) + " pp)") + '</td></tr>';
     });
     return h + '</table></div>';
   }
@@ -131,9 +133,9 @@
     b.innerHTML =
       '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px">' + badge
       + '<span class="mono" style="font-size:13px">' + fU(A.equity) + ' \u00b7 <span style="color:' + col(A.pnl) + '">'
-      + sgn(A.pnl) + ' (' + sgn(A.pnl_pct) + '%)</span> sobre ' + fU(A.aportado) + ' aportados</span></div>'
+      + (A.pnl < 0 ? "-" : "+") + fU(Math.abs(A.pnl)) + ' (' + sgn(A.pnl_pct) + '%)</span> sobre ' + fU(A.aportado) + ' aportados</span></div>'
       + '<div class="note" style="margin-top:0;margin-bottom:10px">' + A.veredicto + '</div>'
-      + tablaControles(A.comparativa || {}, A.vs_controles_pp || {})
+      + (BASEF = A.aportado || 0, tablaControles(A.comparativa || {}, A.vs_controles_pp || {}))
       + bloques(A.bloques)
       + rotacion(A.rotacion)
       + checks(A.checks)

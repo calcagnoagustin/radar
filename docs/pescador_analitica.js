@@ -59,9 +59,9 @@
       if(c.v==null) return;
       h+='<tr style="border-top:1px solid var(--hair);'+(c.destacar?'background:rgba(111,191,142,.06)':'')+'">'
         +'<td style="padding:7px 8px 7px 0;'+(c.destacar?'font-weight:600':'color:var(--faint)')+'">'+c.k+'</td>'
-        +'<td class="mono" style="text-align:right;padding:7px 8px;color:'+col(c.v)+'">'+sg(c.v)+'%</td>'
+        +'<td class="mono" style="text-align:right;padding:7px 8px;color:'+col(c.v)+'">'+(c.v<0?"-":"+")+"$"+Math.abs(c.v*10).toFixed(2)+' ('+sg(c.v)+'%)</td>'
         +'<td class="mono" style="text-align:right;padding:7px 0 7px 8px;color:'+(c.pp==null?"var(--faint)":col(c.pp))+'">'
-        +(c.pp==null?"\u2014":sg(c.pp)+" pp")+'</td></tr>';
+        +(c.pp==null?"\u2014":(c.pp<0?"-":"+")+"$"+Math.abs(c.pp*10).toFixed(2)+" ("+sg(c.pp)+" pp)")+'</td></tr>';
     });
     h+='</table></div>';
 

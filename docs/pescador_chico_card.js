@@ -85,7 +85,7 @@
     $("pcPositions").innerHTML=op.length?op.map(function(p){
       var distStop=100*(p._px-p.stop)/p._px;
       return '<div class="pos"><div class="pos-top"><span class="pos-sym">'+p.symbol.replace("/USDT","")+
-        '</span><span class="mono" style="color:'+col(p._ret)+'">'+sg(p._ret)+'%</span></div>'+
+        '</span><span class="mono" style="color:'+col(p._ret)+'">'+(function(u){return (u<0?"-":"+")+"$"+Math.abs(u).toFixed(2);})((p.qty||(p.notional/p.entry))*(p._px-p.entry))+' ('+sg(p._ret)+'%)</span></div>'+
         '<div class="pos-det mono">'+p4(p.entry)+' &rarr; '+p4(p._px)+' &middot; '+f(p.notional)+'<br>'+
         'TP '+p4(p.tp)+' (+'+(100*(p.tp-p._px)/p._px).toFixed(1)+'% falta) &middot; stop '+p4(p.stop)+' ('+distStop.toFixed(1)+'% abajo) &middot; '+p.ruedas+' rueda'+(p.ruedas===1?'':'s')+'</div></div>';
     }).join(""):'<div class="pos"><span style="opacity:.6">Sin posiciones. Esperando senal.</span></div>';

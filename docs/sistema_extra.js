@@ -5,7 +5,7 @@
   var pct=function(n){return (n>=0?"+":"")+n.toFixed(2)+"%";};
   var cls=function(n){return n>0.0001?"up":(n<-0.0001?"down":"flat");};
   var bS=function(s){return s.replace("/","").toUpperCase();};
-  var SEM=null,GAN=null,FON=null,PX={};
+  var SEM=null,GAN=null,FON=null,PES=null,CHI=null,PX={};
   var $=function(id){return document.getElementById(id);};
 
   // ---- Header TOTAL SISTEMA (arriba de todo) ----
@@ -14,12 +14,12 @@
   hero.style.borderColor="rgba(111,191,142,.35)";
   hero.style.marginBottom="26px";
   hero.innerHTML='<div>'+
-    '<div class="eyebrow">Sistema en PAPER &middot; Ganesha + Fondo Semillas</div>'+
+    '<div class="eyebrow">Sistema en PAPER &middot; Fondo Abundancia + Ganesha + Pescadores</div>'+
     '<div class="pnl-val mono" id="sysBal">&mdash;</div>'+
     '<div class="pnl-sub" id="sysSub">cargando&hellip;</div></div>'+
     '<div class="hero-stats">'+
-    '<div class="stat"><div class="k">P&amp;L papers (desde 28/08)</div><div class="v mono" id="sysPct" style="font-size:1.6em">&mdash;</div></div>'+
-    '<div class="stat"><div class="k">Semillas 1.0</div><div class="v mono" id="sysUnreal" style="font-size:1.1em">cerrada &middot; LIVE -$28.73</div></div>'+
+    '<div class="stat"><div class="k">Ganancia papers (desde el arranque de cada uno)</div><div class="v mono" id="sysPct" style="font-size:1.6em">&mdash;</div></div>'+
+    '<div class="stat"><div class="k">Bot v1 (cerrado)</div><div class="v mono" id="sysUnreal" style="font-size:1.1em">cerrada &middot; LIVE -$28.73</div></div>'+
     '<div class="stat"><div class="k">Dinero real en riesgo</div><div class="v mono" id="sysDep">$0</div></div>'+
     '</div>';
   var firstHeader=document.querySelector("header");
@@ -59,19 +59,24 @@
     var ge=(g.equity_now!=null)?g.equity_now:null;
     var fe=(f.equity!=null)?f.equity:null;
     if(ge==null&&fe==null) return;
-    var tot=(ge||0)+(fe||0);
+    var pe=(PES&&PES.equity_now!=null)?PES.equity_now:null, ce=(CHI&&CHI.equity_now!=null)?CHI.equity_now:null;
+    var tot=(ge||0)+(fe||0)+(pe||0)+(ce||0);
     var pg=(g.pnl_vs_depositos!=null)?g.pnl_vs_depositos:0;
     var pf=(f.pnl!=null)?f.pnl:0;
-    var p=pg+pf;
+    var pp=(pe!=null?pe-1000:0)+(ce!=null?ce-1000:0);
+    var p=pg+pf+pp;
+    var base=(g.deposits_total||0)+(f.aportado||0)+(pe!=null?1000:0)+(ce!=null?1000:0);
     $("sysBal").textContent=fmt(tot);
-    $("sysSub").textContent="Ganesha "+(ge!=null?fmt(ge):"\u2014")+" \u00b7 Fondo "+(fe!=null?fmt(fe):"\u2014")+" \u00b7 todo simulado";
-    $("sysPct").innerHTML='<span class="'+cls(p)+'">'+fmt(p)+'</span>';
+    $("sysSub").textContent="Fondo "+(fe!=null?fmt(fe):"\u2014")+" \u00b7 Ganesha "+(ge!=null?fmt(ge):"\u2014")+" \u00b7 Pescadores "+fmt((pe||0)+(ce||0))+" \u00b7 todo simulado";
+    $("sysPct").innerHTML='<span class="'+cls(p)+'">'+fmt(p)+' <span style="font-size:.7em">('+pct(base>0?100*p/base:0)+')</span></span>';
   }
 
   async function load(){
     try{SEM=await(await fetch("./dashboard_data.json?ts="+Date.now())).json();}catch(e){}
     try{GAN=await(await fetch("./ganesha_data.json?ts="+Date.now())).json();
   fetch("./fondo_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)FON=j;}).catch(function(){});}catch(e){}
+    try{PES=await(await fetch("./pescador_data.json?ts="+Date.now())).json();}catch(e){}
+    try{CHI=await(await fetch("./pescador_chico_data.json?ts="+Date.now())).json();}catch(e){}
   }
   async function prices(){
     var ss=new Set();

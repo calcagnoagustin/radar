@@ -242,13 +242,14 @@
   var F=null, sig="";
   function load(){return fetch("./fondo_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)F=j;}).catch(function(){});}
   function fU(n){return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function pC2(u,n){return '<span style="color:'+(u>=0?"var(--jade)":"var(--clay)")+'">'+(u>=0?"+":"-")+"$"+Math.abs(u).toFixed(2)+' <span style="font-size:.85em">('+(n>=0?"+":"")+n.toFixed(2)+"%)</span></span>";}
   function pC(n){return '<span style="color:'+(n>=0?"var(--jade)":"var(--clay)")+'">'+(n>=0?"+":"")+n.toFixed(2)+"%</span>";}
 
   function ocultar1punto0(){
     // titulo y subtitulo de la seccion
     var h=document.querySelector("h1");
     if(h&&(h.textContent||"").indexOf("Semillas")>=0&&h.textContent.indexOf("Fondo")<0)
-      h.textContent="Radar \u2014 Fondo Semillas";
+      h.textContent="Radar \u2014 Fondo Abundancia";
     var sub=document.querySelector("header .sub");
     if(sub&&sub.textContent.indexOf("Fondo")<0)
       sub.textContent="Fondo patrimonial \u00b7 n\u00facleo + sat\u00e9lite + caja \u00b7 PAPER con activos reales";
@@ -289,7 +290,7 @@
     var wrap=document.createElement("div");wrap.id="fondoWrap";
     wrap.innerHTML=
       '<section class="hero" id="fondoHero" style="border-color:rgba(111,191,142,.4)">'
-      +'<div><div class="eyebrow">Balance (USD) \u00b7 Fondo Semillas (Jardinero 2.0) \u00b7 PAPER</div>'
+      +'<div><div class="eyebrow">Balance (USD) \u00b7 Fondo Abundancia \u00b7 PAPER</div>'
       +'<div class="pnl-val mono" id="fBal">\u2014</div>'
       +'<div class="pnl-sub" id="fSub">cargando\u2026</div></div>'
       +'<div class="hero-stats">'
@@ -313,7 +314,7 @@
       +'<span class="sym">'+sym.replace("/USDT","")+'</span>'
       +' <span class="badge '+badgeCls+'" style="margin-left:8px">'+badge+'</span>'
       +(nom?'<div style="font-size:11.5px;color:var(--faint);margin-top:3px">'+nom+(esBS?' \u00b7 bStock del ticker real <b class="mono">'+base+'</b>':"")+'</div>':"")+'</div>'
-      +'<div class="pos-pnl">'+(d!=null?pC(d):"")+(val!=null?' <span class="mono" style="margin-left:8px;color:var(--ink)">'+fU(val)+'</span>':"")+'</div></div>'
+      +'<div class="pos-pnl">'+(d!=null?pC2(val-p.cost,d):"")+(val!=null?' <span class="mono" style="margin-left:8px;color:var(--ink)">'+fU(val)+'</span>':"")+'</div></div>'
       +'<div class="pos-meta"><span>Cant <b class="mono">'+(+p.qty).toLocaleString("en-US",{maximumFractionDigits:8})+'</b></span>'
       +'<span style="margin-left:14px">Costo <b class="mono">'+fU(p.cost)+'</b></span>'
       +(p.px?'<span style="margin-left:14px">Precio <b class="mono">'+fU(p.px)+'</b></span>':"")
