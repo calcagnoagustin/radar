@@ -1,2 +1,0 @@
-resueltas 40 OK
-EXIT=0

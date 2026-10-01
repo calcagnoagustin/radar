@@ -1,6 +1,0 @@
-regimenes 499
-Counter({'BAJA': 239, 'ALZA': 196, 'LATERAL': 64})
-universo 77
-confirmaciones 77
-medidos 77 OK
-EXIT=0
