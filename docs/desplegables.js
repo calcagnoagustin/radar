@@ -24,8 +24,10 @@
     '.bot-bar .bn{font-weight:600;font-size:1.05em}',
     '.bot-bar .bd{display:flex;align-items:center;gap:14px;opacity:.85}',
     '.bot-bar .br{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}',
-    '.bot-bar .bg{font-size:1.02em;font-weight:600}',
-    '.bot-bar .bv{font-size:.8em;opacity:.6}',
+    '.bot-bar .bg{font-size:1.6em;font-weight:700;letter-spacing:-.01em;line-height:1.1;display:flex;align-items:center;gap:10px;justify-content:flex-end}',
+    '.bot-bar .bg .bp{font-size:.62em;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(127,127,127,.14)}',
+    '.bot-bar .bk{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}',
+    '.bot-bar .bv{font-size:.85em;opacity:.65}',
     '.bot-bar .ch{transition:transform .2s;opacity:.6}',
     '.bot-bar.abierto .ch{transform:rotate(90deg)}',
     'hr.gan-sep[data-grupo],#pescadorV2>hr.gan-sep,#pescadorChico>hr.gan-sep{display:none}'
@@ -52,7 +54,7 @@
     if(b) return b;
     b=document.createElement("div");
     b.className="bot-bar"; b.setAttribute("data-g",g);
-    b.innerHTML='<span class="bn">'+G[g].n+'</span><span class="bd"><span class="br"><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
+    b.innerHTML='<span class="bn">'+G[g].n+'</span><span class="bd"><span class="br"><span class="bk">Ganancia total</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
     b.addEventListener("click",function(){
       abiertos[g]=!abiertos[g];
       try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}
@@ -104,6 +106,7 @@
       var bar=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(!bar) return;
       var c=G[g], bs=document.getElementById(c.bal), bal=bs?num(bs.textContent):null;
       if(bal!=null) bar.querySelector(".bv").textContent="saldo $"+bal.toFixed(2);
+      bar._bal=bal;
       var pnl=null, pct=null;
       if(c.pnl){ var e=document.getElementById(c.pnl); if(e){ pnl=num(e.textContent); pct=pctDe(e.textContent); } }
       if(c.sum){ pnl=0; c.sum.forEach(function(id){ var e=document.getElementById(id), v=e?num(e.textContent):null;
@@ -111,8 +114,10 @@
       if(pnl==null) return;
       if(pct==null&&bal!=null&&bal-pnl>0) pct=100*pnl/(bal-pnl);
       var el=bar.querySelector(".bg");
-      el.textContent=fm(pnl)+(pct!=null?" \u00b7 "+(pct>0?"+":"")+pct.toFixed(2)+"%":"");
-      el.style.color=pnl>0.004?"#3fb950":(pnl<-0.004?"#f85149":"");
+      var c=pnl>0.004?"#3fb950":(pnl<-0.004?"#f85149":"");
+      el.innerHTML='<span>'+fm(pnl)+'</span>'+(pct!=null?'<span class="bp" style="color:'+c+'">'+(pct>0?"+":"")+pct.toFixed(2)+'%</span>':'');
+      el.style.color=c;
+      if(bar._bal!=null) bar.querySelector(".bv").textContent="puso $"+(bar._bal-pnl).toFixed(2)+" \u00b7 hoy vale $"+bar._bal.toFixed(2);
     });
   }
 
