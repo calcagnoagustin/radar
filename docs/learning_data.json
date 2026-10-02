@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01T00:20:10Z",
+ "generated": "2026-10-02T00:20:13Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -338,80 +338,80 @@
  ],
  "n_trades_consolidados": 128,
  "fondo": {
-  "generated": "2026-10-01T00:20",
+  "generated": "2026-10-02T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-09-30",
-  "dias": 34,
+  "hasta": "2026-10-01",
+  "dias": 35,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 34 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1418.16,
+  "veredicto": "Muestra insuficiente: 35 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1441.49,
   "aportado": 1306.52,
-  "pnl": 111.64,
-  "pnl_pct": 8.54,
+  "pnl": 134.97,
+  "pnl_pct": 10.33,
   "comparativa": {
    "fondo": {
-    "ret_pct": 8.61,
+    "ret_pct": 10.4,
     "max_dd_pct": -6.09,
-    "vol_anual_pct": 33.5,
-    "n": 34
+    "vol_anual_pct": 33.3,
+    "n": 35
    },
    "congelado": {
-    "ret_pct": 8.47,
+    "ret_pct": 10.37,
     "max_dd_pct": -5.97,
-    "vol_anual_pct": 33.9,
-    "n": 34
+    "vol_anual_pct": 33.7,
+    "n": 35
    },
    "btc_100": {
-    "ret_pct": 7.42,
+    "ret_pct": 9.04,
     "max_dd_pct": -6.92,
-    "vol_anual_pct": 39.6,
-    "n": 34
+    "vol_anual_pct": 39.2,
+    "n": 35
    },
    "btc_eth_5050": {
-    "ret_pct": 8.69,
+    "ret_pct": 9.91,
     "max_dd_pct": -5.65,
-    "vol_anual_pct": 40.1,
-    "n": 34
+    "vol_anual_pct": 39.6,
+    "n": 35
    },
    "spy_100": {
-    "ret_pct": -0.67,
+    "ret_pct": -0.87,
     "max_dd_pct": -2.47,
-    "vol_anual_pct": 10.1,
-    "n": 34
+    "vol_anual_pct": 10.0,
+    "n": 35
    }
   },
   "vs_controles_pp": {
-   "congelado": 0.14,
-   "btc_100": 1.19,
-   "btc_eth_5050": -0.08,
-   "spy_100": 9.28
+   "congelado": 0.03,
+   "btc_100": 1.36,
+   "btc_eth_5050": 0.49,
+   "spy_100": 11.27
   },
   "bloques": {
    "nucleo": {
-    "val": 973.9,
+    "val": 987.04,
     "cost": 900.93,
-    "pnl": 72.97,
-    "peso_pct": 68.7,
+    "pnl": 86.11,
+    "peso_pct": 68.4,
     "objetivo_pct": 60.0,
-    "drift_pp": 8.7
+    "drift_pp": 8.4
    },
    "satelite": {
-    "val": 313.99,
-    "cost": 274.95,
-    "pnl": 39.04,
-    "peso_pct": 22.1,
+    "val": 324.42,
+    "cost": 272.84,
+    "pnl": 51.58,
+    "peso_pct": 22.5,
     "objetivo_pct": 30.0,
-    "drift_pp": -7.9
+    "drift_pp": -7.5
    },
    "caja": {
     "val": 130.65,
     "cost": 130.65,
     "pnl": 0.0,
-    "peso_pct": 9.2,
+    "peso_pct": 9.1,
     "objetivo_pct": 10.0,
-    "drift_pp": -0.8
+    "drift_pp": -0.9
    }
   },
   "posiciones": [
@@ -419,93 +419,89 @@
     "sym": "BTC/USDT",
     "bloque": "nucleo",
     "cost": 718.49,
-    "val": 773.08,
-    "pnl": 54.59,
-    "pnl_pct": 7.6
+    "val": 784.69,
+    "pnl": 66.2,
+    "pnl_pct": 9.21
+   },
+   {
+    "sym": "AXTIB/USDT",
+    "bloque": "satelite",
+    "cost": 65.57,
+    "val": 86.16,
+    "pnl": 20.6,
+    "pnl_pct": 31.41
    },
    {
     "sym": "ETH/USDT",
     "bloque": "nucleo",
     "cost": 182.44,
-    "val": 200.82,
-    "pnl": 18.38,
-    "pnl_pct": 10.08
-   },
-   {
-    "sym": "AXTIB/USDT",
-    "bloque": "satelite",
-    "cost": 54.99,
-    "val": 72.32,
-    "pnl": 17.33,
-    "pnl_pct": 31.51
+    "val": 202.35,
+    "pnl": 19.91,
+    "pnl_pct": 10.91
    },
    {
     "sym": "SNDKB/USDT",
     "bloque": "satelite",
-    "cost": 54.99,
-    "val": 64.49,
-    "pnl": 9.5,
-    "pnl_pct": 17.28
+    "cost": 65.57,
+    "val": 77.18,
+    "pnl": 11.61,
+    "pnl_pct": 17.71
    },
    {
     "sym": "MUB/USDT",
     "bloque": "satelite",
-    "cost": 54.99,
-    "val": 63.22,
-    "pnl": 8.23,
-    "pnl_pct": 14.98
+    "cost": 65.57,
+    "val": 75.55,
+    "pnl": 9.98,
+    "pnl_pct": 15.23
    },
    {
     "sym": "LITEB/USDT",
     "bloque": "satelite",
-    "cost": 54.99,
-    "val": 59.55,
-    "pnl": 4.56,
-    "pnl_pct": 8.29
+    "cost": 65.57,
+    "val": 74.57,
+    "pnl": 9.0,
+    "pnl_pct": 13.73
    },
    {
-    "sym": "WDCB/USDT",
+    "sym": "DELLB/USDT",
     "bloque": "satelite",
-    "cost": 54.99,
-    "val": 54.4,
-    "pnl": -0.59,
-    "pnl_pct": -1.07
+    "cost": 10.58,
+    "val": 10.95,
+    "pnl": 0.38,
+    "pnl_pct": 3.57
    }
   ],
   "semaforos": {
    "acciones": "sol",
    "cripto": "sol",
-   "eval": "2026-09"
+   "eval": "2026-10"
   },
   "rotacion": {
-   "corridas": 2,
+   "corridas": 3,
    "ult_top": [
-    "SNDK",
     "AXTI",
+    "SNDK",
     "MU",
     "LITE",
+    "DELL"
+   ],
+   "entraron": [
+    "DELL"
+   ],
+   "salieron": [
     "WDC"
    ],
-   "entraron": [],
-   "salieron": [],
-   "last_month_run": "2026-09"
+   "last_month_run": "2026-10"
   },
   "checks": [
    {
     "nivel": "info",
-    "txt": "nucleo pesa 68.7% contra 60.0% (+8.7 pp): estructural, no se vende; se corrige por flujo de aportes."
+    "txt": "nucleo pesa 68.4% contra 60.0% (+8.4 pp): estructural, no se vende; se corrige por flujo de aportes."
    },
    {
     "nivel": "aviso",
-    "txt": "satelite pesa 22.1% contra 30.0% de diseño (-7.9 pp)."
-   },
-   {
-    "nivel": "alerta",
-    "txt": "la corrida mensual de 2026-10 no se ejecuto (last_month_run=2026-09)."
-   },
-   {
-    "nivel": "aviso",
-    "txt": "semaforos evaluados en 2026-09, no en 2026-10."
+    "txt": "satelite pesa 22.5% contra 30.0% de diseño (-7.5 pp)."
    }
   ],
   "nota": "auditoria de control: el Fondo se mide contra no hacer nada, no contra cero.",
@@ -544,43 +540,45 @@
     1427.86,
     1407.93,
     1419.64,
-    1418.16
+    1418.16,
+    1441.49
    ],
    "congelado": [
-    1307.73,
-    1312.86,
-    1299.47,
-    1321.28,
-    1297.52,
-    1297.87,
-    1340.26,
-    1342.76,
-    1347.75,
-    1355.55,
-    1346.45,
-    1345.22,
-    1347.28,
-    1310.96,
-    1321.2,
-    1321.15,
-    1301.18,
-    1312.02,
-    1274.66,
-    1297.17,
-    1306.38,
-    1375.12,
-    1377.69,
-    1380.07,
-    1454.32,
-    1455.16,
-    1423.31,
-    1421.64,
-    1424.3,
-    1428.4,
-    1428.3,
-    1407.49,
-    1419.37,
-    1418.54
+    1307.75,
+    1312.88,
+    1299.49,
+    1321.3,
+    1297.54,
+    1297.89,
+    1340.28,
+    1342.78,
+    1347.77,
+    1355.57,
+    1346.47,
+    1345.24,
+    1347.3,
+    1310.98,
+    1321.22,
+    1321.17,
+    1301.2,
+    1312.04,
+    1274.68,
+    1297.19,
+    1306.4,
+    1375.14,
+    1377.71,
+    1380.09,
+    1454.34,
+    1455.18,
+    1423.33,
+    1421.66,
+    1424.32,
+    1428.42,
+    1428.32,
+    1407.51,
+    1419.39,
+    1418.56,
+    1443.31
    ],
    "btc_100": [
     1305.68,
@@ -616,7 +614,8 @@
     1416.82,
     1400.51,
     1403.26,
-    1402.59
+    1402.59,
+    1423.66
    ],
    "btc_eth_5050": [
     1305.68,
@@ -652,7 +651,8 @@
     1426.95,
     1418.82,
     1417.32,
-    1419.13
+    1419.13,
+    1435.12
    ],
    "spy_100": [
     1305.68,
@@ -688,7 +688,8 @@
     1309.07,
     1299.33,
     1296.94,
-    1296.94
+    1294.28,
+    1294.28
    ]
   },
   "dias_lista": [
@@ -725,7 +726,8 @@
    "2026-09-27",
    "2026-09-28",
    "2026-09-29",
-   "2026-09-30"
+   "2026-09-30",
+   "2026-10-01"
   ]
  }
 }
