@@ -3,7 +3,10 @@
 (function(){
   if (document.getElementById("labRadar")) return;
   var css=[
-'#labRadar .lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}',
+'#labRadar .lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}',
+'#labRadar .card{height:auto!important;max-height:none!important;overflow:visible!important}',
+'#labRadar .card .body{height:auto!important;max-height:none!important;overflow:visible!important}',
+'#labRadar .card .head .title{white-space:nowrap}',
 '#labRadar .kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}',
 '#labRadar .kv:last-child{border-bottom:0}',
 '#labRadar .kv .lbl{opacity:.7}',
@@ -87,7 +90,7 @@
     h+=kv("Entradas v5 analizadas",d.n_trades+" ("+d.movers_cerrados+" movers cerrados)");
     h+=kv("Peor p&eacute;rdida mover (% equity)",d.movers.peor_pct_eq==null?"&mdash;":d.movers.peor_pct_eq+"%",col(d.movers.peor_pct_eq));
     h+=kv("Movers P&amp;L real / con sizing v5.1",f(d.movers_real_pnl_total)+" / "+f(d.movers_alt_pnl_total),col(d.movers_alt_pnl_total-d.movers_real_pnl_total));
-    var tr=(d.trades||[]).slice().reverse().slice(0,10);
+    var tr=(d.trades||[]).slice().reverse().slice(0,8);
     if(tr.length){
       h+='<table style="margin-top:10px"><tr><th>Trade</th><th>stop%</th><th>ATR4h%</th><th>real</th><th>%eq</th><th>v5.1 stop%</th><th>v5.1</th></tr>';
       tr.forEach(function(t){h+='<tr><td>'+t.sym.replace("/USDT","")+' <span style="opacity:.5">'+t.fecha.slice(5)+'</span></td><td>'+t.stop_pct+'</td><td>'+t.atr4h_pct+'</td><td style="color:'+col(t.real_pnl)+'">'+(t.real_pnl==null?"abierto":f(t.real_pnl))+'</td><td style="color:'+col(t.real_loss_pct_eq)+'">'+(t.real_loss_pct_eq==null?"&mdash;":t.real_loss_pct_eq+"%")+'</td><td>'+t.alt_stop_pct+'</td><td style="color:'+col(t.alt_pnl)+'">'+f(t.alt_pnl)+(t.cerrado_alt?"":"*")+'</td></tr>'});
