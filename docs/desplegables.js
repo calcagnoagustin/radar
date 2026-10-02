@@ -8,7 +8,8 @@
     fondo:  {n:"Fondo Abundancia", bal:"fBal",   pnl:"fPnl"},
     ganesha:{n:"Ganesha",        bal:"gBal",   pnl:"gGen"},
     pescador:{n:"Pescador",      bal:"p2Bal",  sum:["p2Real","p2Unr"]},
-    chico:  {n:"Pescador Chico", bal:"pcBal",  sum:["pcReal","pcUnr"]}
+    chico:  {n:"Pescador Chico", bal:"pcBal",  sum:["pcReal","pcUnr"]},
+    lab:    {n:"Laboratorio (paper)", bal:"labBal", pnl:"labPnl"}
   };
   var KEY="radar_abiertos";
   var abiertos={};
@@ -30,7 +31,7 @@
     '.bot-bar .bv{font-size:.85em;opacity:.65}',
     '.bot-bar .ch{transition:transform .2s;opacity:.6}',
     '.bot-bar.abierto .ch{transform:rotate(90deg)}',
-    'hr.gan-sep[data-grupo],#pescadorV2>hr.gan-sep,#pescadorChico>hr.gan-sep{display:none}'
+    'hr.gan-sep[data-grupo],#pescadorV2>hr.gan-sep,#pescadorChico>hr.gan-sep,#labRadar>hr.gan-sep{display:none}'
   ].join("");
   document.head.appendChild(st);
 
@@ -40,6 +41,7 @@
     if(el.tagName==="HEADER") return "fondo";
     if(el.id==="pescadorV2") return "pescador";
     if(el.id==="pescadorChico") return "chico";
+    if(el.id==="labRadar") return "lab";
     if(el.tagName==="HR"&&el.classList.contains("gan-sep")){
       var sig=el.nextElementSibling;
       if(sig&&sig.classList.contains("gan-head")&&/Ganesha/.test(sig.textContent)) return "ganesha";
