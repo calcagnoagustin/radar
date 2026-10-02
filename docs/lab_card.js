@@ -1,42 +1,46 @@
 /* Radar - Laboratorio (02/10/2026). Lee docs/lab_data.json. Cuatro experimentos PAPER:
    Faro, RS-BTC (seleccion), Ganesha v5.1 (shadow de riesgo), Positioning (logger). Solo lectura. */
 (function(){
-  if (document.getElementById("labRadar")) return;
+  if (document.getElementById("faroRadar")) return;
   var css=[
-'#labRadar .lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}',
-'#labRadar .card{height:auto!important;max-height:none!important;overflow:visible!important}',
-'#labRadar .card .body{height:auto!important;max-height:none!important;overflow:visible!important}',
-'#labRadar .card .head .title{white-space:nowrap}',
-'#labRadar .kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}',
-'#labRadar .kv:last-child{border-bottom:0}',
-'#labRadar .kv .lbl{opacity:.7}',
-'#labRadar .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18)}',
-'#labRadar .pill.on{color:#3fb950;border-color:#3fb950}',
-'#labRadar .pill.off{color:#f0883e;border-color:#f0883e}',
-'#labRadar .pill.warn{color:#f85149;border-color:#f85149}',
-'#labRadar table{width:100%;border-collapse:collapse;font-size:12.5px}',
-'#labRadar th,#labRadar td{padding:6px 4px;text-align:right;border-bottom:1px solid rgba(255,255,255,.06)}',
-'#labRadar th:first-child,#labRadar td:first-child{text-align:left}',
-'#labRadar .hint{opacity:.6;font-size:12.5px;line-height:1.5;margin-top:10px}',
-'#labRadar svg{width:100%;height:110px;display:block;margin-top:10px}'
+'#faroRadar .lab-grid,#rsRadar .lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}',
+'.labsec .card{height:auto!important;max-height:none!important;overflow:visible!important}',
+'.labsec .card .body{height:auto!important;max-height:none!important;overflow:visible!important}',
+'.labsec .card .head .title{white-space:nowrap}',
+'.labsec .kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}',
+'.labsec .kv:last-child{border-bottom:0}',
+'.labsec .kv .lbl{opacity:.7}',
+'.labsec .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18)}',
+'.labsec .pill.on{color:#3fb950;border-color:#3fb950}',
+'.labsec .pill.off{color:#f0883e;border-color:#f0883e}',
+'.labsec .pill.warn{color:#f85149;border-color:#f85149}',
+'.labsec table{width:100%;border-collapse:collapse;font-size:12.5px}',
+'.labsec th,.labsec td{padding:6px 4px;text-align:right;border-bottom:1px solid rgba(255,255,255,.06)}',
+'.labsec th:first-child,.labsec td:first-child{text-align:left}',
+'.labsec .hint{opacity:.6;font-size:12.5px;line-height:1.5;margin-top:10px}',
+'.labsec svg{width:100%;height:110px;display:block;margin-top:10px}'
   ].join("");
   var st=document.createElement("style"); st.textContent=css; document.head.appendChild(st);
-  var host=document.createElement("div"); host.id="labRadar";
-  host.innerHTML=['<span id="labBal" style="display:none"></span><span id="labPnl" style="display:none"></span>',
-'<hr class="gan-sep">',
-'<div class="gan-head"><div class="brand"><h1>Radar - Laboratorio</h1>',
-'<div class="sub">Experimentos PAPER &middot; hip&oacute;tesis separadas, misma infraestructura &middot; criterios de muerte escritos de antemano</div></div>',
-'<div style="display:flex;align-items:center;gap:14px"><span class="badge dry">PAPER</span><div class="pulse"><span class="dot"></span><span id="labFresh">&mdash;</span></div></div></div>',
-'<div class="lab-grid">',
-'<div class="card"><div class="head"><span class="title">Faro</span><span class="eyebrow">BTC / cash &middot; ensamble 21/28/35/42</span></div><div class="body" id="labFaro"></div></div>',
-'<div class="card"><div class="head"><span class="title">RS-BTC</span><span class="eyebrow">selecci&oacute;n de alts &middot; 3 carteras, mismo gate</span></div><div class="body" id="labRS"></div></div>',
-'<div class="card"><div class="head"><span class="title">Ganesha v5.1</span><span class="eyebrow">shadow de riesgo &middot; movers</span></div><div class="body" id="labV51"></div></div>',
-'<div class="card"><div class="head"><span class="title">Positioning</span><span class="eyebrow">logger de derivados &middot; sin PAPER</span></div><div class="body" id="labPos"></div></div>',
-'</div>',
-'<div class="hint" style="margin-top:14px">Rechazados con n&uacute;meros (02/10/2026, motor com&uacute;n 2021-26, costos 0,2%/lado): RMM-14/7 no agrega sobre BTC a igual exposici&oacute;n &middot; CTREND-lite DD -94% &middot; Squeeze Breakout PF 0,79 &middot; Quiet Pullback sin edge y 1 trade/mes. Lead-Lag: no priorizado (no testeado).</div>'
-  ].join("");
+  function seccion(id,titulo,sub,cards,pie){
+    var h=document.createElement("div"); h.id=id; h.className="labsec";
+    h.innerHTML='<hr class="gan-sep"><div class="gan-head"><div class="brand"><h1>'+titulo+'</h1><div class="sub">'+sub+'</div></div>'+
+      '<div style="display:flex;align-items:center;gap:14px"><span class="badge dry">PAPER</span><div class="pulse"><span class="dot"></span><span class="labFresh">&mdash;</span></div></div></div>'+
+      '<div class="lab-grid">'+cards+'</div>'+(pie||'');
+    return h;
+  }
+  var card=function(id,t,e){return '<div class="card"><div class="head"><span class="title">'+t+'</span><span class="eyebrow">'+e+'</span></div><div class="body" id="'+id+'"></div></div>'};
+  var hFaro=seccion("faroRadar","Radar - Faro","BTC / cash &middot; ensamble 21/28/35/42 congelado &middot; una decisi&oacute;n por d&iacute;a",
+    '<span id="faroBal" style="display:none"></span><span id="faroPnl" style="display:none"></span>'+card("labFaro","Estado y m&eacute;tricas","gate: 6 meses y 3 transiciones"));
+  var hRS=seccion("rsRadar","Radar - RS-BTC","Selecci&oacute;n de alts por fuerza relativa &middot; 3 carteras con el mismo gate &middot; el dato es el selection alpha",
+    '<span id="rsBal" style="display:none"></span><span id="rsPnl" style="display:none"></span>'+card("labRS","Carteras","kill: 90 d&iacute;as y 25 cierres")+card("labPos","Positioning","logger de derivados &middot; sin PAPER"),
+    '<div class="hint" style="margin-top:14px">Rechazados con n&uacute;meros (02/10/2026, motor com&uacute;n 2021-26, costos 0,2%/lado): RMM-14/7 no agrega sobre BTC a igual exposici&oacute;n &middot; CTREND-lite DD -94% &middot; Squeeze Breakout PF 0,79 &middot; Quiet Pullback sin edge y 1 trade/mes. Lead-Lag: no priorizado (no testeado).</div>');
+  var hV51=document.createElement("div"); hV51.id="labV51Host"; hV51.className="card labsec"; hV51.style.marginTop="18px";
+  hV51.innerHTML='<div class="head"><span class="title">Ganesha v5.1 &middot; sombra de riesgo</span><span class="eyebrow">movers &middot; no opera</span></div><div class="body" id="labV51"></div>';
+  var host=document.createElement("div"); host.id="labRadar"; host.style.display="contents";
   var foot=document.querySelector("footer");
-  if(foot&&foot.parentNode) foot.parentNode.insertBefore(host,foot); else document.body.appendChild(host);
+  var p2=document.getElementById("pescadorV2");
+  if(p2&&p2.parentNode) p2.parentNode.insertBefore(hV51,p2); else if(foot&&foot.parentNode) foot.parentNode.insertBefore(hV51,foot); else document.body.appendChild(hV51);
+  [hFaro,hRS].forEach(function(h){ if(foot&&foot.parentNode) foot.parentNode.insertBefore(h,foot); else document.body.appendChild(h); });
 
   var $=function(i){return document.getElementById(i)};
   var f=function(n,d){d=(d==null)?2:d;return (n<0?"-":"")+"$"+Math.abs(Number(n)||0).toFixed(d)};
@@ -109,9 +113,11 @@
     $("labPos").innerHTML=h;
   }
   fetch("./lab_data.json?ts="+Date.now()).then(function(r){return r.json()}).then(function(d){
-    $("labFresh").textContent="lab: "+(d.generated_at||"").replace("T"," ").replace("Z"," UTC");
+    Array.prototype.forEach.call(document.querySelectorAll(".labFresh"),function(e){e.textContent="lab: "+(d.generated_at||"").replace("T"," ").replace("Z"," UTC");});
     pintaFaro(d.faro);pintaRS(d.rs);pintaV51(d.v51);pintaPos(d.positioning);
-    if(d.faro){var eq=d.faro.equity,pn=eq-1000;$("labBal").textContent="$"+eq.toFixed(2);$("labPnl").textContent=(pn<0?"-":"")+"$"+Math.abs(pn).toFixed(2)+" ("+(pn>=0?"+":"")+(pn/10).toFixed(2)+"%)";}
-    if(d.errores&&d.errores.length){var e=document.createElement("div");e.className="hint";e.style.color="#f85149";e.textContent="errores: "+d.errores.join(" | ");host.appendChild(e);}
-  }).catch(function(){$("labFresh").innerHTML='<span class="err">lab_data.json a&uacute;n no disponible</span>';});
+    var setb=function(b,p,eq){var pn=eq-1000;$(b).textContent="$"+eq.toFixed(2);$(p).textContent=(pn<0?"-":"")+"$"+Math.abs(pn).toFixed(2)+" ("+(pn>=0?"+":"")+(pn/10).toFixed(2)+"%)";};
+    if(d.faro) setb("faroBal","faroPnl",d.faro.equity);
+    if(d.rs&&d.rs.RS) setb("rsBal","rsPnl",d.rs.RS.equity);
+    if(d.errores&&d.errores.length){var e=document.createElement("div");e.className="hint";e.style.color="#f85149";e.textContent="errores: "+d.errores.join(" | ");hRS.appendChild(e);}
+  }).catch(function(){Array.prototype.forEach.call(document.querySelectorAll(".labFresh"),function(e){e.innerHTML='<span class="err">lab_data.json a&uacute;n no disponible</span>';});});
 })();
