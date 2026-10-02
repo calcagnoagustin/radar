@@ -19,7 +19,7 @@
   ].join("");
   var st=document.createElement("style"); st.textContent=css; document.head.appendChild(st);
   var host=document.createElement("div"); host.id="labRadar";
-  host.innerHTML=[
+  host.innerHTML=['<span id="labBal" style="display:none"></span><span id="labPnl" style="display:none"></span>',
 '<hr class="gan-sep">',
 '<div class="gan-head"><div class="brand"><h1>Radar - Laboratorio</h1>',
 '<div class="sub">Experimentos PAPER &middot; hip&oacute;tesis separadas, misma infraestructura &middot; criterios de muerte escritos de antemano</div></div>',
@@ -108,6 +108,7 @@
   fetch("./lab_data.json?ts="+Date.now()).then(function(r){return r.json()}).then(function(d){
     $("labFresh").textContent="lab: "+(d.generated_at||"").replace("T"," ").replace("Z"," UTC");
     pintaFaro(d.faro);pintaRS(d.rs);pintaV51(d.v51);pintaPos(d.positioning);
+    if(d.faro){var eq=d.faro.equity,pn=eq-1000;$("labBal").textContent="$"+eq.toFixed(2);$("labPnl").textContent=(pn<0?"-":"")+"$"+Math.abs(pn).toFixed(2)+" ("+(pn>=0?"+":"")+(pn/10).toFixed(2)+"%)";}
     if(d.errores&&d.errores.length){var e=document.createElement("div");e.className="hint";e.style.color="#f85149";e.textContent="errores: "+d.errores.join(" | ");host.appendChild(e);}
   }).catch(function(){$("labFresh").innerHTML='<span class="err">lab_data.json a&uacute;n no disponible</span>';});
 })();
