@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-02T21:25:11Z",
+ "generated_at": "2026-10-05T21:25:11Z",
  "pescador": {
   "nom": "Pescador",
   "sin_datos": false,
   "desde": "2026-09-22",
-  "dias": 9,
-  "equity": 986.89,
-  "ret_pct": -1.31,
+  "dias": 10,
+  "equity": 999.3,
+  "ret_pct": -0.07,
   "max_dd_pct": -4.04,
   "trades": 0,
   "win_rate": null,
@@ -15,14 +15,14 @@
   "controles": [
    {
     "k": "Este bot",
-    "v": -1.31,
+    "v": -0.07,
     "pp": null,
     "destacar": true
    },
    {
     "k": "Efectivo quieto (no operar)",
     "v": 0.0,
-    "pp": -1.31
+    "pp": -0.07
    },
    {
     "k": "Comprar y mantener SPY",
@@ -59,7 +59,7 @@
    {
     "k": "Bot corriendo",
     "ok": true,
-    "v": "ultimo dato 2026-10-02"
+    "v": "ultimo dato 2026-10-05"
    }
   ]
  },
@@ -67,25 +67,25 @@
   "nom": "Pescador Chico",
   "sin_datos": false,
   "desde": "2026-09-22",
-  "dias": 9,
-  "equity": 1003.03,
-  "ret_pct": 0.3,
+  "dias": 10,
+  "equity": 1000.62,
+  "ret_pct": 0.06,
   "max_dd_pct": -0.85,
-  "trades": 0,
-  "win_rate": null,
-  "profit_factor": null,
-  "ruedas_prom": null,
+  "trades": 1,
+  "win_rate": 100,
+  "profit_factor": 6.72,
+  "ruedas_prom": 10.0,
   "controles": [
    {
     "k": "Este bot",
-    "v": 0.3,
+    "v": 0.06,
     "pp": null,
     "destacar": true
    },
    {
     "k": "Efectivo quieto (no operar)",
     "v": 0.0,
-    "pp": 0.3
+    "pp": 0.06
    },
    {
     "k": "Comprar y mantener SPY",
@@ -94,30 +94,30 @@
    }
   ],
   "salida": {
-   "con_reglas": null,
-   "sin_salir": null,
-   "n": 0
+   "con_reglas": 2.69,
+   "sin_salir": 2.7,
+   "n": 1
   },
   "chequeos": [
    {
     "k": "Stops respetados",
     "ok": true,
-    "v": "0 de 0 salidas por stop"
+    "v": "0 de 1 salidas por stop"
    },
    {
     "k": "Tope de tenencia (10 ruedas)",
     "ok": true,
-    "v": "max 0 ruedas"
+    "v": "max 10 ruedas"
    },
    {
     "k": "Tope de posiciones abiertas",
     "ok": true,
-    "v": "2 abiertas de 4"
+    "v": "1 abiertas de 4"
    },
    {
     "k": "Caja sana",
     "ok": true,
-    "v": "$500.00 libres"
+    "v": "$756.72 libres"
    },
    {
     "k": "Take profit a +10%",
@@ -127,7 +127,7 @@
    {
     "k": "Bot corriendo",
     "ok": true,
-    "v": "ultimo dato 2026-10-02"
+    "v": "ultimo dato 2026-10-05"
    }
   ]
  }
