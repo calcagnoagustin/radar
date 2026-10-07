@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-10-06T21:12:17Z",
+ "generated_at": "2026-10-07T13:12:09Z",
  "modo": "PAPER",
  "version": "chico",
  "subtitulo": "250 USD por posicion &middot; TP +10%% &middot; stop 1.5x ATR &middot; tope 10 ruedas",
- "equity_now": 996.78,
- "caja": 756.72,
- "realized_pnl": 6.72,
- "trades_total": 1,
- "win_rate": 100,
- "profit_factor": 0,
+ "equity_now": 990.48,
+ "caja": 990.48,
+ "realized_pnl": -9.52,
+ "trades_total": 2,
+ "win_rate": 50,
+ "profit_factor": 0.41,
  "sub": "Mismas senales que el Pescador &middot; agarra un poquito y se va",
  "reglas_lista": [
   {
@@ -36,18 +36,7 @@
    "v": "WR 57%% &middot; +2.0%%/op &middot; PF 1.88"
   }
  ],
- "open_positions": [
-  {
-   "symbol": "MUB/USDT",
-   "qty": 0.22927576371756891,
-   "notional": 250.0,
-   "entry": 1090.39,
-   "px": 1047.04,
-   "tp": 1199.429,
-   "stop": 1023.5143,
-   "ruedas": 3
-  }
- ],
+ "open_positions": [],
  "equity_curve": [
   {
    "d": "2026-09-22",
@@ -92,6 +81,10 @@
   {
    "d": "2026-10-06",
    "eq": 996.78
+  },
+  {
+   "d": "2026-10-07",
+   "eq": 990.48
   }
  ],
  "recent_closed": [
@@ -104,6 +97,16 @@
    "motivo": "tiempo",
    "ruedas": 10,
    "closed_ts": 1791234728.2693546
+  },
+  {
+   "symbol": "MUB/USDT",
+   "entry": 1090.39,
+   "exit": 1019.55,
+   "pnl": -16.24,
+   "ret_pct": -6.5,
+   "motivo": "stop",
+   "ruedas": 3,
+   "closed_ts": 1791378729.2521536
   }
  ]
 }
