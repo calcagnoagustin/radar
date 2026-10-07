@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-06T00:15:04Z",
+ "generated_at": "2026-10-07T00:15:04Z",
  "errores": [],
  "faro": {
-  "dias": 5,
+  "dias": 6,
   "estado": "ON",
-  "equity": 1008.43,
-  "btc_hold": 1010.45,
+  "equity": 1005.88,
+  "btc_hold": 1007.89,
   "transiciones": 0,
   "positivos": 4,
   "desde": "2026-10-01",
@@ -54,16 +54,22 @@
     "eq": 1008.43,
     "btc": 1010.45,
     "on": true
+   },
+   {
+    "d": "2026-10-06",
+    "eq": 1005.88,
+    "btc": 1007.89,
+    "on": true
    }
   ]
  },
  "rs": {
   "desde": "2026-10-01",
-  "dias": 5,
+  "dias": 6,
   "gate_on": true,
   "RS": {
-   "equity": 995.28,
-   "ret_pct": -0.47,
+   "equity": 1045.24,
+   "ret_pct": 4.52,
    "cierres": 2,
    "pos": [
     {
@@ -108,8 +114,8 @@
    ]
   },
   "BTC": {
-   "equity": 1008.43,
-   "ret_pct": 0.84,
+   "equity": 1005.88,
+   "ret_pct": 0.59,
    "cierres": 0,
    "pos": [
     {
@@ -121,8 +127,8 @@
    "ultimos_cierres": []
   },
   "VOL": {
-   "equity": 1006.02,
-   "ret_pct": 0.6,
+   "equity": 1008.37,
+   "ret_pct": 0.84,
    "cierres": 0,
    "pos": [
     {
@@ -148,9 +154,9 @@
    ],
    "ultimos_cierres": []
   },
-  "selection_alpha_vs_BTC_pct": -1.3,
-  "selection_alpha_vs_VOL_pct": -1.07,
-  "estado": "SIN_MUESTRA (5/90 dias, 2/25 cierres)",
+  "selection_alpha_vs_BTC_pct": 3.91,
+  "selection_alpha_vs_VOL_pct": 3.66,
+  "estado": "SIN_MUESTRA (6/90 dias, 2/25 cierres)",
   "curva": [
    {
     "d": "2026-10-01",
@@ -181,6 +187,12 @@
     "RS": 995.28,
     "BTC": 1008.43,
     "VOL": 1006.02
+   },
+   {
+    "d": "2026-10-06",
+    "RS": 1045.24,
+    "BTC": 1005.88,
+    "VOL": 1008.37
    }
   ]
  },
@@ -200,7 +212,7 @@
   "movers_exceso_riesgo": [
    "LSK/USDT"
   ],
-  "movers_alt_pnl_total": 29.99,
+  "movers_alt_pnl_total": 26.89,
   "movers_real_pnl_total": 17.9,
   "criterio": "riesgo disenado 2% del equity por trade; defecto recurrente si >=2 movers cerrados (de >=5) pierden mas de 4% del equity; ademas se compara contra las semillas si las hay",
   "veredicto": "SHOCK AISLADO (1/7 movers con perdida >4% del equity)",
@@ -239,8 +251,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 22.66,
     "alt_notional": 23.16,
-    "alt_pnl": -0.58,
-    "alt_pnl_pct_eq": -0.22,
+    "alt_pnl": -1.0,
+    "alt_pnl_pct_eq": -0.38,
     "cerrado_alt": false
    },
    {
@@ -277,8 +289,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 14.23,
     "alt_notional": 36.86,
-    "alt_pnl": 3.66,
-    "alt_pnl_pct_eq": 1.4,
+    "alt_pnl": 2.23,
+    "alt_pnl_pct_eq": 0.85,
     "cerrado_alt": false
    },
    {
@@ -334,8 +346,8 @@
     "real_loss_pct_eq": 3.02,
     "alt_stop_pct": 28.91,
     "alt_notional": 17.61,
-    "alt_pnl": 9.59,
-    "alt_pnl_pct_eq": 3.77,
+    "alt_pnl": 8.63,
+    "alt_pnl_pct_eq": 3.39,
     "cerrado_alt": false
    },
    {
@@ -372,8 +384,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 28.94,
     "alt_notional": 18.02,
-    "alt_pnl": -1.46,
-    "alt_pnl_pct_eq": -0.56,
+    "alt_pnl": -1.94,
+    "alt_pnl_pct_eq": -0.74,
     "cerrado_alt": false
    },
    {
@@ -391,8 +403,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 32.55,
     "alt_notional": 14.74,
-    "alt_pnl": 0.0,
-    "alt_pnl_pct_eq": 0.0,
+    "alt_pnl": -0.5,
+    "alt_pnl_pct_eq": -0.21,
     "cerrado_alt": false
    },
    {
@@ -410,8 +422,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 23.91,
     "alt_notional": 20.03,
-    "alt_pnl": -2.36,
-    "alt_pnl_pct_eq": -0.99,
+    "alt_pnl": -1.98,
+    "alt_pnl_pct_eq": -0.83,
     "cerrado_alt": false
    },
    {
@@ -448,40 +460,40 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 20.46,
     "alt_notional": 29.01,
-    "alt_pnl": -2.34,
-    "alt_pnl_pct_eq": -0.79,
+    "alt_pnl": -2.03,
+    "alt_pnl_pct_eq": -0.68,
     "cerrado_alt": false
    }
   ]
  },
  "positioning": {
   "hoy_simbolos": 27,
-  "dias_logueados": 5,
+  "dias_logueados": 6,
   "objetivo_dias": 90,
   "btc": {
-   "d": "2026-10-06",
+   "d": "2026-10-07",
    "sym": "BTC/USDT",
    "funding_8h": [
-    4.186e-05,
-    -1.541e-05,
-    -2.485e-05
+    -1.592e-05,
+    2.245e-05,
+    -7.43e-06
    ],
-   "top_ls_ratio": 1.7755,
-   "global_ls_ratio": 1.0859,
-   "oi_usd": 8083009900.536926
+   "top_ls_ratio": 1.6328,
+   "global_ls_ratio": 1.1142,
+   "oi_usd": 8182390891.9482
   },
   "eth": {
-   "d": "2026-10-06",
+   "d": "2026-10-07",
    "sym": "ETH/USDT",
    "funding_8h": [
-    6.919e-05,
-    2.986e-05,
-    1.605e-05
+    -2.085e-05,
+    5.651e-05,
+    9.228e-05
    ],
-   "top_ls_ratio": 1.6653,
-   "global_ls_ratio": 2.4953,
-   "oi_usd": 6174612844.0265
+   "top_ls_ratio": 1.6413,
+   "global_ls_ratio": 2.6819,
+   "oi_usd": 6238607033.3329
   },
-  "estado": "LOGGER (5/90 dias)"
+  "estado": "LOGGER (6/90 dias)"
  }
 }
