@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 284.82,
+ "equity_now": 276.29,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 28.65,
- "pnl_vs_depositos_pct": 11.18,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 11.19,
- "trades_total": 138,
+ "pnl_vs_depositos": 20.12,
+ "pnl_vs_depositos_pct": 7.85,
+ "pnl_today": -5.41,
+ "trades_today": 1,
+ "realized_pnl": 5.78,
+ "trades_total": 139,
  "win_rate": 34,
- "profit_factor": 1.05,
+ "profit_factor": 1.02,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -69,13 +69,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "ZEC/USDT",
-   "entry": 1516.06,
-   "qty": 0.013508532643826761,
-   "stop": 1161.5064285714284,
-   "tp1_done": false
-  },
-  {
    "symbol": "W/USDT",
    "entry": 0.01575,
    "qty": 1139.7866666666666,
@@ -84,15 +77,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "HEMI/USDT",
-   "entry": 0.00691,
-   "exit": 0.01068,
-   "qty_total": 1261.8,
-   "pnl_net": 3.33,
-   "action": "stop",
-   "closed_ts": 1787328434.0393286
-  },
   {
    "symbol": "PUMP/USDT",
    "entry": 0.002852,
@@ -443,6 +427,15 @@
    "pnl_net": 17.84,
    "action": "stop",
    "closed_ts": 1790611640.3111925
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "entry": 1516.06,
+   "exit": 1115.45,
+   "qty_total": 0.013509,
+   "pnl_net": -5.41,
+   "action": "stop",
+   "closed_ts": 1791475644.4059565
   }
  ],
  "equity_curve": [
@@ -1273,7 +1266,13 @@
    "pnl_net": 17.84,
    "action": "stop",
    "closed_ts": 1790611640.3111925
+  },
+  {
+   "symbol": "ZEC/USDT",
+   "pnl_net": -5.41,
+   "action": "stop",
+   "closed_ts": 1791475644.4059565
   }
  ],
- "realized_total_events": 11.15
+ "realized_total_events": 5.74
 }
