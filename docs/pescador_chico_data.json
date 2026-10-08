@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T21:12:16Z",
+ "generated_at": "2026-10-08T13:12:08Z",
  "modo": "PAPER",
  "version": "chico",
  "subtitulo": "250 USD por posicion &middot; TP +10%% &middot; stop 1.5x ATR &middot; tope 10 ruedas",
@@ -84,6 +84,10 @@
   },
   {
    "d": "2026-10-07",
+   "eq": 990.48
+  },
+  {
+   "d": "2026-10-08",
    "eq": 990.48
   }
  ],
