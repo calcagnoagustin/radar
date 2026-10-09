@@ -1,12 +1,12 @@
 {
  "dry_run": true,
- "equity_now": 278.8,
+ "equity_now": 279.74,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 22.63,
- "pnl_vs_depositos_pct": 8.83,
- "pnl_today": -5.41,
- "trades_today": 1,
+ "pnl_vs_depositos": 23.57,
+ "pnl_vs_depositos_pct": 9.2,
+ "pnl_today": 0,
+ "trades_today": 0,
  "realized_pnl": 5.78,
  "trades_total": 139,
  "win_rate": 34,
@@ -73,6 +73,13 @@
    "entry": 0.01575,
    "qty": 1139.7866666666666,
    "stop": 0.012885714285714285,
+   "tp1_done": false
+  },
+  {
+   "symbol": "OGN/USDT",
+   "entry": 0.04578,
+   "qty": 536.9016786570742,
+   "stop": 0.035355,
    "tp1_done": false
   }
  ],
