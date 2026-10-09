@@ -337,7 +337,8 @@
     var s2=F.generated_at||"";
     if(sig===s2&&document.getElementById("fBal").dataset.ok)return;sig=s2;
     var pos=F.posiciones||{};
-    var nuc=["BTC/USDT","ETH/USDT"].filter(function(k){return pos[k];});
+    var NUCK=(F&&F.diseno&&F.diseno.nucleo_pesos)?Object.keys(F.diseno.nucleo_pesos):["BTC/USDT","ETH/USDT"];
+    var nuc=NUCK.filter(function(k){return pos[k];});
     var sat=Object.keys(pos).filter(function(k){return nuc.indexOf(k)<0;});
     var vN=nuc.reduce(function(a,k){return a+(pos[k].val||pos[k].cost||0);},0);
     var vS=sat.reduce(function(a,k){return a+(pos[k].val||pos[k].cost||0);},0);
@@ -352,7 +353,7 @@
     el("fBase").textContent=fU(F.aportado||0);el("fRot").textContent=F.proxima_rotacion||"\u2014";
     el("fPosN").textContent=(nuc.length+sat.length)+" activos";
     el("fPosBody").innerHTML=
-      nuc.map(function(k){return posRow(k,pos[k],"N\u00daCLEO \u00b7 no se vende","confirmed");}).join("")
+      nuc.map(function(k){return posRow(k,pos[k],"N\u00daCLEO \u00b7 rebalancea a objetivo","confirmed");}).join("")
       +sat.map(function(k){return posRow(k,pos[k],"SAT\u00c9LITE \u00b7 rota mensual","seed");}).join("")
       +'<div class="note" style="margin-top:10px">Fuera del per\u00edmetro del Fondo: BNB, WLD, BANK y el colch\u00f3n en Earn. Aportes reales: <span class="mono">engine.py --aporte &lt;usd&gt;</span>.</div>';
     var evs=(F.eventos||[]).slice().reverse().slice(0,12);
