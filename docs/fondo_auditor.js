@@ -74,8 +74,8 @@
   function bloques(b) {
     if (!b) return "";
     var ord = ["nucleo", "satelite", "caja"];
-    var NOM = { nucleo: "N\u00facleo (BTC/ETH)", satelite: "Sat\u00e9lite (bStocks)", caja: "Caja (USDT)" };
-    var h = '<div class="note" style="margin-top:16px;margin-bottom:8px;border-left-color:var(--sky)">Atribuci\u00f3n por bloque y desv\u00edo contra el dise\u00f1o 60/30/10</div>';
+    var NOM = { nucleo: "N\u00facleo (BTC/QQQ/SMH/oro)", satelite: "Sat\u00e9lite (bStocks)", caja: "Caja (USDT)" };
+    var h = '<div class="note" style="margin-top:16px;margin-bottom:8px;border-left-color:var(--sky)">Atribuci\u00f3n por bloque y desv\u00edo contra el dise\u00f1o 70/30/0 (desde 09/10)</div>';
     ord.forEach(function (k) {
       var x = b[k]; if (!x) return;
       var dr = x.drift_pp;
