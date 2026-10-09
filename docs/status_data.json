@@ -51,6 +51,12 @@
       {
        "p": "P1",
        "quien": "Claude",
+       "estado": "resuelto",
+       "t": "09/10 - Chat del Radar: boton verde en cripto.semillaredes.com. Responde con datos en vivo + PLAYBOOK (radar_chat/PLAYBOOK.md), guarda decisiones/ideas en el playbook, aplica cambios del Retiro (aporte, objetivos, rutina, compras/ventas) y anota pedidos de codigo en radar_chat/pedidos.jsonl (mail a Agus). Servicio radar-chat (puerto 8793, Caddy /radar/*). Modelo: Gemini (Anthropic sin credito)."
+      },
+      {
+       "p": "P1",
+       "quien": "Claude",
        "estado": "abierta",
        "t": "Retiro: refrescar tenencias de Inviu despues de cada compra mensual (o con capturas de Agus) - retiro/tenencias.json."
       },
