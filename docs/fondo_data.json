@@ -1,91 +1,130 @@
 {
- "generated_at": "2026-10-09T14:52",
+ "generated_at": "2026-10-09T15:43",
  "modo": "paper",
  "diseno": {
-  "nucleo": 0.7,
-  "satelite": 0.3,
-  "caja": 0.0,
-  "nucleo_pesos": {
-   "BTC/USDT": 0.2,
-   "QQQB/USDT": 0.25,
-   "SMHB/USDT": 0.15,
-   "PAXG/USDT": 0.1
-  },
-  "nota": "09/10: nucleo BTC 20 / QQQ 25 / SMH 15 / oro(PAXG) 10, rebalanceo mensual con banda 20%; satelite momentum 12-1 top-5; sin caja fija"
+  "modelo": "rotativo",
+  "nucleo_pesos": {},
+  "nota": "Rotativo: cada dia 1 elige los 5 activos con mejor tendencia entre 27 ETFs + BTC + ETH, 20% c/u; si alguno viene en baja, ese 20% va a bonos cortos (SHY)."
  },
- "equity": 1389.63,
+ "rotativo": {
+  "ranking": [
+   {
+    "sym": "EWY",
+    "score": 0.4337,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "SMH",
+    "score": 0.3707,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "XLK",
+    "score": 0.238,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "ETH/USDT",
+    "score": 0.1802,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "XLE",
+    "score": 0.1413,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "QQQ",
+    "score": 0.1403,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "EWJ",
+    "score": 0.1223,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "BTC/USDT",
+    "score": 0.1121,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "XLV",
+    "score": 0.1114,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "EEM",
+    "score": 0.1076,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "SPY",
+    "score": 0.0891,
+    "mes": "2026-09"
+   },
+   {
+    "sym": "EWZ",
+    "score": 0.0872,
+    "mes": "2026-09"
+   }
+  ],
+  "objetivo": {
+   "EWY": 0.2,
+   "SMH": 0.2,
+   "XLK": 0.2,
+   "ETH/USDT": 0.2,
+   "XLE": 0.2
+  },
+  "mes_senal": "2026-09",
+  "fecha": "2026-10-09T15:43"
+ },
+ "equity": 1384.72,
  "aportado": 1306.52,
- "pnl": 83.11,
+ "pnl": 78.2,
  "cash_espera": 0.0,
- "caja": 3.68,
+ "caja": 0.0,
  "semaforos": {
   "acciones": "sol",
   "cripto": "sol",
-  "eval": "2026-10"
+  "eval": "2026-10",
+  "informativo": true
  },
  "posiciones": {
-  "BTC/USDT": {
-   "qty": 0.0033481517334246437,
-   "cost": 260.21,
-   "px": 83042.0,
-   "val": 278.04,
-   "nombre": "Bitcoin"
+  "XLK": {
+   "qty": 1.3965914005256603,
+   "cost": 277.11,
+   "px": 198.505,
+   "val": 277.23,
+   "nombre": "Tecnologia EE.UU."
   },
-  "AXTIB/USDT": {
-   "qty": 1.4379235456000594,
-   "cost": 92.56,
-   "px": 70.52,
-   "val": 101.4,
-   "nombre": "AXT Inc"
+  "XLE": {
+   "qty": 4.223099894064937,
+   "cost": 277.11,
+   "px": 65.64500000000001,
+   "val": 277.23,
+   "nombre": "Energia EE.UU."
   },
-  "SNDKB/USDT": {
-   "qty": 0.05902174504570702,
-   "cost": 90.86,
-   "px": 1603.29,
-   "val": 94.63,
-   "nombre": "Sandisk Corporation"
-  },
-  "MUB/USDT": {
-   "qty": 0.0944881043622369,
-   "cost": 91.43,
-   "px": 1024.27,
-   "val": 96.78,
-   "nombre": "Micron Technology, Inc."
-  },
-  "LITEB/USDT": {
-   "qty": 0.09716711824283775,
-   "cost": 94.62,
-   "px": 1119.42,
-   "val": 108.77,
-   "nombre": "Lumentum Holdings Inc."
-  },
-  "DELLB/USDT": {
-   "qty": 0.02013785923014485,
-   "cost": 10.58,
-   "px": 569.78,
-   "val": 11.47,
-   "nombre": "Dell Technologies Inc."
-  },
-  "QQQB/USDT": {
-   "qty": 0.46238464411058783,
-   "cost": 347.59,
-   "px": 751.15,
-   "val": 347.32,
-   "nombre": "Invesco QQQ Trust, Series 1"
-  },
-  "SMHB/USDT": {
-   "qty": 0.34405907360333843,
-   "cost": 208.55,
-   "px": 605.62,
-   "val": 208.37,
+  "SMH": {
+   "qty": 0.45859329517227787,
+   "cost": 277.11,
+   "px": 603.62,
+   "val": 276.82,
    "nombre": "VanEck Semiconductor ETF"
   },
-  "PAXG/USDT": {
-   "qty": 0.033212257032648206,
-   "cost": 139.04,
-   "px": 4182.51,
-   "val": 138.91,
-   "nombre": ""
+  "EWY": {
+   "qty": 1.5635768688734841,
+   "cost": 277.11,
+   "px": 177.10000000000002,
+   "val": 276.91,
+   "nombre": "iShares MSCI South Korea ETF"
+  },
+  "ETH/USDT": {
+   "qty": 0.11119238266417066,
+   "cost": 277.11,
+   "px": 2490.19,
+   "val": 276.89,
+   "nombre": "Ethereum"
   }
  },
  "equity_hist": [
@@ -301,134 +340,11 @@
   },
   {
    "d": "2026-10-09",
-   "eq": 1389.63,
+   "eq": 1384.72,
    "aportado": 1306.52
   }
  ],
  "eventos": [
-  {
-   "type": "PARAGUAS",
-   "pata": "nucleo",
-   "msg": "aporte espera en USDT",
-   "ts": 1787801029.1590073,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "AXTIB/USDT",
-   "usd": 60.0,
-   "px": 69.97,
-   "qty": 0.8566528512219522,
-   "ts": 1787801031.8438413,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "SNDKB/USDT",
-   "usd": 60.0,
-   "px": 1553.39,
-   "qty": 0.038586575167858676,
-   "ts": 1787801032.1116974,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "MUB/USDT",
-   "usd": 60.0,
-   "px": 969.6,
-   "qty": 0.06181930693069307,
-   "ts": 1787801032.3777647,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "WDCB/USDT",
-   "usd": 60.0,
-   "px": 483.36,
-   "qty": 0.12400695134061568,
-   "ts": 1787801032.642625,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "LITEB/USDT",
-   "usd": 60.0,
-   "px": 965.49,
-   "qty": 0.06208246589814498,
-   "ts": 1787801032.907378,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "MENSUAL_OK",
-   "equity": 999.7,
-   "aportado": 1000.0,
-   "semaforos": {
-    "acciones": "sol",
-    "cripto": "tormenta",
-    "eval": "2026-08"
-   },
-   "top": [
-    "AXTI",
-    "SNDK",
-    "MU",
-    "WDC",
-    "LITE"
-   ],
-   "elegidos": [
-    "AXTIB/USDT",
-    "SNDKB/USDT",
-    "MUB/USDT",
-    "WDCB/USDT",
-    "LITEB/USDT"
-   ],
-   "ts": 1787801034.21966,
-   "iso": "2026-08-27T03:23"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "AXTIB/USDT",
-   "usd": 54.99,
-   "px": 59.4,
-   "qty": 0.9247645454545456,
-   "ts": 1787958717.3726354,
-   "iso": "2026-08-28T23:11"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "SNDKB/USDT",
-   "usd": 54.99,
-   "px": 1479.05,
-   "qty": 0.03713938947297252,
-   "ts": 1787958717.6365192,
-   "iso": "2026-08-28T23:11"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "MUB/USDT",
-   "usd": 54.99,
-   "px": 928.9,
-   "qty": 0.05913555172785015,
-   "ts": 1787958717.8999667,
-   "iso": "2026-08-28T23:11"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "WDCB/USDT",
-   "usd": 54.99,
-   "px": 459.7,
-   "qty": 0.11949317815966937,
-   "ts": 1787958718.1637332,
-   "iso": "2026-08-28T23:11"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "LITEB/USDT",
-   "usd": 54.99,
-   "px": 896.99,
-   "qty": 0.06123927134081763,
-   "ts": 1787958718.4283018,
-   "iso": "2026-08-28T23:11"
-  },
   {
    "type": "PAPER_BUY",
    "sym": "BTC/USDT",
@@ -692,8 +608,195 @@
    },
    "ts": 1791557505.1017017,
    "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "REDISENO",
+   "nota": "09/10/2026 decision Agus: Fondo Abundancia pasa a ROTATIVO top-5 (28 ETFs + BTC + ETH), refugio SHY, rebalanceo mensual. Backtest verificado (senal con retraso y placebo).",
+   "ts": 1791560579.276536,
+   "iso": "2026-10-09T15:42"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "BTC/USDT",
+   "usd": 277.52,
+   "px": 82970.22,
+   "qty": 0.0033481517334246437,
+   "ts": 1791560605.1485558,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "AXTIB/USDT",
+   "usd": 99.59,
+   "px": 69.33,
+   "qty": 1.4379235456000594,
+   "ts": 1791560605.1487508,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "SNDKB/USDT",
+   "usd": 94.29,
+   "px": 1599.2,
+   "qty": 0.05902174504570702,
+   "ts": 1791560605.1488564,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "MUB/USDT",
+   "usd": 96.52,
+   "px": 1022.51,
+   "qty": 0.0944881043622369,
+   "ts": 1791560605.1489327,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "LITEB/USDT",
+   "usd": 108.66,
+   "px": 1119.44,
+   "qty": 0.09716711824283775,
+   "ts": 1791560605.149004,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "DELLB/USDT",
+   "usd": 11.56,
+   "px": 574.72,
+   "qty": 0.02013785923014485,
+   "ts": 1791560605.1490736,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "QQQB/USDT",
+   "usd": 346.85,
+   "px": 750.88,
+   "qty": 0.46238464411058783,
+   "ts": 1791560605.1491425,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "SMHB/USDT",
+   "usd": 207.87,
+   "px": 604.77,
+   "qty": 0.34405907360333843,
+   "ts": 1791560605.1492105,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "PAXG/USDT",
+   "usd": 139.01,
+   "px": 4189.55,
+   "qty": 0.033212257032648206,
+   "ts": 1791560605.1492777,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "XLK",
+   "usd": 277.11,
+   "px": 198.32,
+   "qty": 1.3965914005256603,
+   "ts": 1791560605.4515893,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "XLE",
+   "usd": 277.11,
+   "px": 65.58500000000001,
+   "qty": 4.223099894064937,
+   "ts": 1791560605.742565,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "SMH",
+   "usd": 277.11,
+   "px": 603.96,
+   "qty": 0.45859329517227787,
+   "ts": 1791560606.0335913,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "EWY",
+   "usd": 277.11,
+   "px": 177.14,
+   "qty": 1.5635768688734841,
+   "ts": 1791560606.3269868,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "ETH/USDT",
+   "usd": 277.11,
+   "px": 2489.68,
+   "qty": 0.11119238266417066,
+   "ts": 1791560606.590746,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "REBALANCE",
+   "motivo": "migracion",
+   "equity": 1386.94,
+   "antes": {
+    "BTC/USDT": 277.8,
+    "AXTIB/USDT": 99.69,
+    "SNDKB/USDT": 94.39,
+    "MUB/USDT": 96.62,
+    "LITEB/USDT": 108.77,
+    "DELLB/USDT": 11.57,
+    "QQQB/USDT": 347.2,
+    "SMHB/USDT": 208.08,
+    "PAXG/USDT": 139.14
+   },
+   "objetivo": {
+    "EWY": 277.39,
+    "SMH": 277.39,
+    "XLK": 277.39,
+    "ETH/USDT": 277.39,
+    "XLE": 277.39
+   },
+   "despues": {
+    "XLK": 276.97,
+    "XLE": 276.97,
+    "SMH": 276.97,
+    "EWY": 276.97,
+    "ETH/USDT": 276.83
+   },
+   "caja": 0.0,
+   "ts": 1791560606.5909388,
+   "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "MENSUAL_OK",
+   "modelo": "rotativo",
+   "equity": 1384.72,
+   "aportado": 1306.52,
+   "elegidos": [
+    "EWY",
+    "SMH",
+    "XLK",
+    "ETH/USDT",
+    "XLE"
+   ],
+   "top": [
+    "EWY",
+    "SMH",
+    "XLK",
+    "ETH/USDT",
+    "XLE"
+   ],
+   "ts": 1791560606.5921872,
+   "iso": "2026-10-09T15:43"
   }
  ],
  "proxima_rotacion": "1 nov",
- "politica_pesos": "09/10: todo rebalancea a objetivo (dia 1 de cada mes y en cada aporte); banda +-20%; semaforos informativos"
+ "politica_pesos": "rotativo top-5 en partes iguales, rebalanceo mensual con banda +-20%; sol/tormenta solo informativo"
 }
