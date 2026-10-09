@@ -8,6 +8,7 @@ Cada entrada lleva fecha. Lo que está acá manda sobre lo que diga cualquier ar
 - No casarse con nada: cualquier regla se cambia si los datos dicen otra cosa. Todo cambio importante se backtestea antes.
 - Separación: el sistema cripto/inversión no se mezcla con Semilla Redes (ni nombres "semilla", ni crons).
 - Ejecución: Claude hace, Agus decide. Las preguntas a Agus van solo cuando una decisión es irreversible o ambigua.
+- 09/10/2026: GD35 preferido sobre AL35 por mejor protección legal (ley NY) en bonos soberanos argentinos.
 
 ## Fondos
 ### Fondo Abundancia — rotativo (PAPER desde 09/10/2026, Binance)
