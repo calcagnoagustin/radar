@@ -26,6 +26,12 @@
    '#rcIn textarea{flex:1;resize:none;height:44px;max-height:120px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#e8efe9;padding:11px 12px;font:inherit}',
    '#rcIn button{border:0;border-radius:12px;padding:0 16px;background:'+VERDE+';color:#fff;font:600 15px system-ui;cursor:pointer}',
    '#rcIn button:disabled{opacity:.5}',
+   '#rcIn .ic{padding:0 11px;background:rgba(255,255,255,.08);font-size:18px}',
+   '#rcIn .ic.rec{background:#c0392b;animation:rcD 1.2s infinite}',
+   '#rcPend{display:none;gap:8px;padding:8px 10px 0;flex-wrap:wrap}#rcPend.on{display:flex}',
+   '#rcPend div{position:relative}#rcPend img{width:58px;height:58px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.2)}',
+   '#rcPend b{position:absolute;top:-6px;right:-6px;background:#000;color:#fff;border-radius:50%;width:20px;height:20px;font:12px/20px system-ui;text-align:center;cursor:pointer}',
+   '.rcM img{display:block;max-width:100%;max-height:260px;border-radius:10px;margin-top:6px}',
    '#rcPb{flex:1;overflow-y:auto;padding:16px 18px;display:none;font-size:14.5px}',
    '#rcPb h1{font-size:18px;margin:0 0 8px}#rcPb h2{font-size:15.5px;margin:18px 0 6px;color:#9fd3b0}#rcPb h3{font-size:14.5px;margin:12px 0 4px}',
    '#rcPb ul{margin:4px 0;padding-left:18px}#rcPb li{margin:3px 0}#rcPb p{margin:6px 0;opacity:.85}',
@@ -54,7 +60,8 @@
   var box=el("div",{id:"rcBox"});
   box.innerHTML='<div id="rcHead"><b>Radar &middot; Claude</b><button data-t="chat" class="act">Chat</button><button data-t="pb">Playbook</button><button id="rcX">&#10005;</button></div>'
     +'<div id="rcMsgs"></div><div id="rcPb"></div>'
-    +'<div id="rcIn"><textarea id="rcT" placeholder="Pregunt&aacute;, ped&iacute; un cambio o tir&aacute; una idea&hellip;"></textarea><button id="rcS">Enviar</button></div>';
+    +'<div id="rcPend"></div><div id="rcIn"><button class="ic" id="rcF" title="Mandar foto">&#128247;</button><button class="ic" id="rcV" title="Dictar">&#127908;</button><textarea id="rcT" placeholder="Pregunt&aacute;, mand&aacute; una captura o tir&aacute; una idea&hellip;"></textarea><button id="rcS">Enviar</button></div>'
+    +'<input type="file" id="rcFile" accept="image/*" multiple style="display:none">';
   document.body.appendChild(fab); document.body.appendChild(tip); document.body.appendChild(box);
   try{ if(localStorage.getItem("radar_ct")) tip.remove(); }catch(e){}
   var $=function(i){return document.getElementById(i);};
@@ -62,10 +69,11 @@
   fab.onclick=function(){abrir(!abierto);}; tip.onclick=function(){abrir(true);}; $("rcX").onclick=function(){abrir(false);};
   Array.prototype.forEach.call(box.querySelectorAll("#rcHead button[data-t]"),function(b){b.onclick=function(){
     tab=b.getAttribute("data-t"); box.querySelectorAll("#rcHead button[data-t]").forEach(function(x){x.classList.toggle("act",x===b);});
-    $("rcMsgs").style.display=tab==="chat"?"flex":"none"; $("rcIn").style.display=tab==="chat"?"flex":"none"; $("rcPb").style.display=tab==="pb"?"block":"none";
+    $("rcMsgs").style.display=tab==="chat"?"flex":"none"; $("rcIn").style.display=tab==="chat"?"flex":"none"; $("rcPend").style.visibility=tab==="chat"?"visible":"hidden"; $("rcPb").style.display=tab==="pb"?"block":"none";
     if(tab==="pb") playbook(); };});
   function burbuja(m){
     var d=el("div",{"class":"rcM "+(m.rol==="ia"?"ia":"yo")},md(m.texto));
+    (m.fotos||[]).forEach(function(f){ d.appendChild(el("img",{src:API+"/foto/"+encodeURIComponent(f)+"?k="+encodeURIComponent(K),alt:""})); });
     (m.playbook||[]).forEach(function(x){d.appendChild(el("span",{"class":"rcChip"},"&#128210; Guardado en el playbook &middot; "+esc(x)));});
     (m.cambios||[]).forEach(function(x){d.appendChild(el("span",{"class":"rcChip"},"&#10003; "+esc(x)));});
     if(m.pedido) d.appendChild(el("span",{"class":"rcChip ped"},"&#128221; Pedido para Claude: "+esc(m.pedido)));
@@ -92,13 +100,55 @@
     if(!K) return; $("rcPb").innerHTML='<div class="rcHint rcDots">Cargando el playbook</div>';
     fetch(API+"/playbook?k="+encodeURIComponent(K)).then(function(r){return r.text();}).then(function(t){$("rcPb").innerHTML=mdDoc(t);}).catch(function(){$("rcPb").innerHTML='<div class="rcHint">No pude cargarlo.</div>';});
   }
+  var PEND=[];
+  function pintarPend(){ var p=$("rcPend"); p.innerHTML=""; p.classList.toggle("on",PEND.length>0);
+    PEND.forEach(function(f,i){ var w=el("div"); w.appendChild(el("img",{src:API+"/foto/"+encodeURIComponent(f)+"?k="+encodeURIComponent(K)})); var x=el("b",null,"&times;"); x.onclick=function(){PEND.splice(i,1);pintarPend();}; w.appendChild(x); p.appendChild(w); }); }
+  function achicar(file){ return new Promise(function(ok,mal){
+    var fr=new FileReader(); fr.onload=function(){ var im=new Image(); im.onload=function(){
+      var M=1600, w=im.width, h=im.height, r=Math.min(1,M/Math.max(w,h)); var c=document.createElement("canvas"); c.width=Math.round(w*r); c.height=Math.round(h*r);
+      c.getContext("2d").drawImage(im,0,0,c.width,c.height); ok(c.toDataURL("image/jpeg",0.85).split(",")[1]); };
+      im.onerror=function(){ mal("img"); }; im.src=fr.result; }; fr.onerror=mal; fr.readAsDataURL(file); }); }
+  $("rcF").onclick=function(){ $("rcFile").click(); };
+  $("rcFile").onchange=async function(){
+    var fs=Array.prototype.slice.call(this.files||[]).slice(0,4-PEND.length); this.value="";
+    for(var i=0;i<fs.length;i++){
+      try{ var b64=await achicar(fs[i]);
+        var r=await (await fetch(API+"/foto",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({k:K,mime:"image/jpeg",b64:b64})})).json();
+        if(r.id){ PEND.push(r.id); pintarPend(); } else alert(r.error||"No pude subir la foto");
+      }catch(e){ alert("No pude subir la foto"); }
+    }
+  };
+  // voz: dictado del navegador (es-AR) y, si no hay, grabar y transcribir en el servidor
+  var grab=null, trozos=[], rec=null;
+  $("rcV").onclick=async function(){
+    var b=$("rcV");
+    if(rec){ rec.stop(); return; }
+    if(grab){ grab.stop(); return; }
+    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(SR){ try{ rec=new SR(); rec.lang="es-AR"; rec.interimResults=false; rec.continuous=false; var base=$("rcT").value;
+        rec.onresult=function(e){ var t=""; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript; $("rcT").value=(base?base+" ":"")+t; };
+        rec.onend=function(){ rec=null; b.classList.remove("rec"); }; rec.onerror=function(){ rec=null; b.classList.remove("rec"); };
+        rec.start(); b.classList.add("rec"); return; }catch(e){ rec=null; } }
+    if(!(navigator.mediaDevices&&window.MediaRecorder)){ alert("Tu navegador no permite dictar. Us\u00e1 el micr\u00f3fono del teclado."); return; }
+    try{ var st=await navigator.mediaDevices.getUserMedia({audio:true}); }catch(e){ alert("Necesito permiso para el micr\u00f3fono."); return; }
+    var mime=["audio/webm;codecs=opus","audio/webm","audio/mp4","audio/ogg;codecs=opus"].filter(function(m){ return MediaRecorder.isTypeSupported(m); })[0]||"";
+    grab=new MediaRecorder(st,mime?{mimeType:mime}:{}); trozos=[]; b.classList.add("rec");
+    grab.ondataavailable=function(e){ if(e.data&&e.data.size) trozos.push(e.data); };
+    grab.onstop=async function(){ st.getTracks().forEach(function(t){t.stop();}); b.classList.remove("rec"); var bl=new Blob(trozos,{type:grab.mimeType||"audio/webm"}); grab=null;
+      var fr=new FileReader(); fr.onload=async function(){ try{
+        var r=await (await fetch(API+"/voz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({k:K,mime:bl.type,b64:fr.result.split(",")[1]})})).json();
+        if(r.texto) $("rcT").value=($("rcT").value?$("rcT").value+" ":"")+r.texto; else alert(r.error||"No se entendi\u00f3 el audio");
+      }catch(e){ alert("No pude transcribir"); } }; fr.readAsDataURL(bl); };
+    grab.start();
+  };
   function enviar(){
-    var t=$("rcT").value.trim(); if(!t||ocup||!K) return;
+    var t=$("rcT").value.trim(); if((!t&&!PEND.length)||ocup||!K) return;
+    var fotos=PEND.slice(); PEND=[]; pintarPend();
     ocup=true; $("rcS").disabled=true; $("rcT").value="";
     var h=$("rcMsgs").querySelector(".rcHint"); if(h&&!cargado) h.remove(); else if(h&&$("rcMsgs").children.length===1) h.remove();
-    burbuja({rol:"yo",texto:t});
+    burbuja({rol:"yo",texto:t||"",fotos:fotos});
     var w=el("div",{"class":"rcM ia rcDots"},"Pensando"); $("rcMsgs").appendChild(w); $("rcMsgs").scrollTop=1e9;
-    fetch(API+"/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({k:K,texto:t})})
+    fetch(API+"/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({k:K,texto:t,fotos:fotos})})
       .then(function(r){return r.json();}).then(function(d){ w.remove(); burbuja({rol:"ia",texto:d.respuesta||"(sin respuesta)",playbook:d.playbook,cambios:d.cambios,pedido:d.pedido}); })
       .catch(function(){ w.remove(); burbuja({rol:"ia",texto:"No pude conectar. Prob\u00e1 de nuevo."}); })
       .then(function(){ ocup=false; $("rcS").disabled=false; });
