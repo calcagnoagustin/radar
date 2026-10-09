@@ -261,7 +261,7 @@
       h.textContent="Radar \u2014 Fondo Abundancia";
     var sub=document.querySelector("header .sub");
     if(sub&&sub.textContent.indexOf("Fondo")<0)
-      sub.textContent="Fondo patrimonial \u00b7 n\u00facleo + sat\u00e9lite + caja \u00b7 PAPER con activos reales";
+      sub.textContent="Rotativo \u00b7 los 5 activos con mejor tendencia \u00b7 PAPER";
     // hero de Semillas 1.0
     var sb=document.getElementById("semBal");
     if(sb){var he=sb.closest("section.hero")||sb.closest(".hero");if(he)he.style.display="none";}
@@ -299,16 +299,16 @@
     var wrap=document.createElement("div");wrap.id="fondoWrap";
     wrap.innerHTML=
       '<section class="hero" id="fondoHero" style="border-color:rgba(111,191,142,.4)">'
-      +'<div><div class="eyebrow">Balance (USD) \u00b7 Fondo Abundancia \u00b7 PAPER</div>'
+      +'<div><div class="eyebrow">Balance (USD) \u00b7 Fondo Abundancia \u00b7 ROTATIVO \u00b7 PAPER</div>'
       +'<div class="pnl-val mono" id="fBal">\u2014</div>'
       +'<div class="pnl-sub" id="fSub">cargando\u2026</div></div>'
       +'<div class="hero-stats">'
       +'<div class="stat"><div class="k">P&amp;L del paper (desde 28/08)</div><div class="v mono" id="fPnl" style="font-size:1.4em">\u2014</div></div>'
-      +'<div class="stat"><div class="k">Sem\u00e1foros</div><div class="v mono" id="fSem" style="font-size:1.05em">\u2014</div></div>'
+      +'<div class="stat"><div class="k">Term\u00f3metro (solo info)</div><div class="v mono" id="fSem" style="font-size:1.05em">\u2014</div></div>'
       +'<div class="stat"><div class="k">Pr\u00f3xima rotaci\u00f3n</div><div class="v mono" id="fRot">\u2014</div></div>'
       +'<div class="stat"><div class="k">Base paper (28/08)</div><div class="v mono" id="fBase">\u2014</div></div>'
       +'</div></section>'
-      +'<div class="card" id="fondoPos" style="margin-bottom:18px"><div class="head"><span class="title">Posiciones del Fondo</span><span class="eyebrow" id="fPosN"></span></div><div class="body" id="fPosBody"></div></div>'
+      +'<div class="card" id="fondoPos" style="margin-bottom:18px"><div class="head"><span class="title">Cartera del mes</span><span class="eyebrow" id="fPosN"></span></div><div class="body" id="fPosBody"></div></div>'
       +'<div class="card" id="fondoMov" style="margin-bottom:18px"><div class="head"><span class="title">Movimientos</span><span class="eyebrow" id="fMovN"></span></div><div class="body" id="fMovBody"></div></div>';
     ref.parentNode.insertBefore(wrap,ref);
     return true;
@@ -344,7 +344,8 @@
     var vS=sat.reduce(function(a,k){return a+(pos[k].val||pos[k].cost||0);},0);
     var el=function(id){return document.getElementById(id);};
     el("fBal").textContent=fU(F.equity||0);el("fBal").dataset.ok="1";
-    el("fSub").textContent="N\u00facleo "+fU(vN)+" \u00b7 Sat\u00e9lite "+fU(vS)+" \u00b7 Caja "+fU(F.caja||0)+((F.cash_espera||0)>0?" \u00b7 en espera "+fU(F.cash_espera):"");
+    var RT=F.rotativo||{};
+    el("fSub").textContent="Los 5 con mejor tendencia, 20% c/u \u00b7 se\u00f1al "+(RT.mes_senal||"\u2014")+" \u00b7 Caja "+fU(F.caja||0);
     var p=F.pnl||0;
     el("fPnl").innerHTML='<span style="color:'+(p>=0?"var(--jade)":"var(--clay)")+'">'+fU(p)+' <span style="font-size:.8em">('+(p>=0?"+":"")+((F.aportado?100*p/F.aportado:0)).toFixed(2)+'%)</span></span>';
     var sm=F.semaforos||{};
@@ -353,9 +354,9 @@
     el("fBase").textContent=fU(F.aportado||0);el("fRot").textContent=F.proxima_rotacion||"\u2014";
     el("fPosN").textContent=(nuc.length+sat.length)+" activos";
     el("fPosBody").innerHTML=
-      nuc.map(function(k){return posRow(k,pos[k],"N\u00daCLEO \u00b7 rebalancea a objetivo","confirmed");}).join("")
-      +sat.map(function(k){return posRow(k,pos[k],"SAT\u00c9LITE \u00b7 rota mensual","seed");}).join("")
-      +'<div class="note" style="margin-top:10px">Fuera del per\u00edmetro del Fondo: BNB, WLD, BANK y el colch\u00f3n en Earn. Aportes reales: <span class="mono">engine.py --aporte &lt;usd&gt;</span>.</div>';
+      sat.map(function(k){var sc=(RT.ranking||[]).filter(function(x){return x.sym===k;})[0];
+        return posRow(k,pos[k],(k==="SHY"?"REFUGIO":"TOP 5")+(sc?" \u00b7 tendencia "+(sc.score>0?"+":"")+(100*sc.score).toFixed(1)+"%":""),k==="SHY"?"closed":"confirmed");}).join("")
+      +((RT.ranking||[]).length?'<div class="note" style="margin-top:10px">Ranking de tendencia (promedio 1/3/6/12 meses): '+RT.ranking.slice(0,10).map(function(x,i){return (i<5?"<b>":"")+x.sym.replace("/USDT","")+" "+(100*x.score).toFixed(0)+"%"+(i<5?"</b>":"");}).join(" \u00b7 ")+'. Pr\u00f3ximo cambio: '+(F.proxima_rotacion||"d\u00eda 1")+'.</div>':"");
     var evs=(F.eventos||[]).slice().reverse().slice(0,12);
     el("fMovN").textContent=(F.eventos||[]).length+" eventos";
     el("fMovBody").innerHTML=evs.length?evs.map(function(e){
@@ -363,7 +364,9 @@
       var txt=t==="PAPER_BUY"?("compra "+String(e.sym||"").replace("/USDT","")+" "+fU(e.usd||0)+" @ "+fU(e.px||0))
         :t==="PAPER_SELL"?("venta "+String(e.sym||"").replace("/USDT","")+" "+fU(e.usd||0))
         :t==="PARAGUAS"?("paraguas: "+(e.msg||"")+(e.pata?" ("+e.pata+")":""))
-        :t==="MENSUAL_OK"?("ciclo mensual \u00b7 equity "+fU(e.equity||0))
+        :t==="MENSUAL_OK"?("rotaci\u00f3n mensual \u00b7 equity "+fU(e.equity||0))
+        :t==="REBALANCE"?("rebalanceo ("+(e.motivo||"")+") \u00b7 equity "+fU(e.equity||0))
+        :t==="REDISENO"?("redise\u00f1o: "+String(e.nota||"").slice(0,90))
         :t;
       var col=t==="PAPER_BUY"?"var(--jade)":(t==="PAPER_SELL"?"var(--clay)":"var(--muted)");
       return '<div class="row"><span class="lbl"><b style="color:'+col+'">'+txt+'</b></span><span style="color:var(--faint);font-size:11.5px" class="mono">'+d+'</span></div>';
