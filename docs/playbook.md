@@ -37,7 +37,6 @@ Cada entrada lleva fecha. Lo que está acá manda sobre lo que diga cualquier ar
 - Pata de acciones por convicción (ej. OpenAI en DCA cuando salga a bolsa).
 - Pasar cripto a hardware wallet y acciones a broker cuando el monto lo justifique.
 - Oro físico (lingotes chicos).
-- 09/10/2026: 09/10/2026: probar ETF de dividendos (prueba)
 
 ## Preguntas abiertas
 - ¿Cuándo pasa el Fondo Abundancia a real y con cuánto?
