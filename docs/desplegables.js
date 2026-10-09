@@ -1,29 +1,24 @@
-/* desplegables.js (21/09/2026) - Cada bot del Radar como bloque plegable.
-   No mueve nada del DOM: marca cada elemento con su grupo y lo oculta con una
-   clase (no pisa los display:none que ponen los otros scripts). Arranca todo
-   cerrado; recuerda lo que abriste en este navegador. */
+/* desplegables.js (09/10/2026) - 4 bloques plegables: Total, Fondo Abundancia, Fondo de Retiro y
+   Laboratorio (Ganesha, Pescadores, Faro, RS y cualquier experimento futuro).
+   No mueve el DOM: marca cada hijo de <body> con su grupo y lo oculta con una clase.
+   Lo de Semillas 1.0 (cerrado) se oculta siempre. */
 (function(){
   var G={
-    total:  {n:"Total sistema",  bal:"sysBal", pnl:"sysPct"},
-    fondo:  {n:"Fondo Abundancia", bal:"fBal",   pnl:"fPnl"},
-    ganesha:{n:"Ganesha",        bal:"gBal",   pnl:"gGen"},
-    pescador:{n:"Pescador",      bal:"p2Bal",  sum:["p2Real","p2Unr"]},
-    chico:  {n:"Pescador Chico", bal:"pcBal",  sum:["pcReal","pcUnr"]},
-    faro:   {n:"Faro",           bal:"faroBal", pnl:"faroPnl"},
-    rs:     {n:"RS-BTC",         bal:"rsBal",   pnl:"rsPnl"}
+    total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"]},
+    fondo:  {n:"Fondo Abundancia",  bal:["fBal"],    pnl:["fPnl"], tag:"rotativo \u00b7 paper"},
+    retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu"},
+    lab:    {n:"Laboratorio",       bal:["gBal","p2Bal","pcBal","faroBal","rsBal"],
+             pnl:["gGen","p2Real","p2Unr","pcReal","pcUnr","faroPnl","rsPnl"], tag:"experimentos \u00b7 paper \u00b7 no suman al total"}
   };
-  var KEY="radar_abiertos";
-  var abiertos={};
+  var KEY="radar_abiertos4", abiertos={};
   try{abiertos=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){}
-
   var st=document.createElement("style");
   st.textContent=[
-    '.bot-oculto{display:none!important}',
-    '.bot-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;',
-    'padding:16px 18px;margin:0 0 12px;border:1px solid var(--hair,rgba(255,255,255,.08));',
-    'border-radius:14px;background:var(--surface,rgba(255,255,255,.02));cursor:pointer;user-select:none}',
+    '.bot-oculto,.legado-oculto{display:none!important}',
+    '.bot-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;margin:0 0 12px;border:1px solid var(--hair,rgba(255,255,255,.08));border-radius:14px;background:var(--surface,rgba(255,255,255,.02));cursor:pointer;user-select:none}',
     '.bot-bar.abierto{margin-bottom:20px}',
-    '.bot-bar .bn{font-weight:600;font-size:1.05em}',
+    '.bot-bar .bn{font-weight:600;font-size:1.05em;display:flex;flex-direction:column;gap:3px}',
+    '.bot-bar .bn small{font-weight:400;font-size:11px;letter-spacing:.06em;opacity:.55}',
     '.bot-bar .bd{display:flex;align-items:center;gap:14px;opacity:.85}',
     '.bot-bar .br{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}',
     '.bot-bar .bg{font-size:1.6em;font-weight:700;letter-spacing:-.01em;line-height:1.1;display:flex;align-items:center;gap:10px;justify-content:flex-end}',
@@ -32,56 +27,46 @@
     '.bot-bar .bv{font-size:.85em;opacity:.65}',
     '.bot-bar .ch{transition:transform .2s;opacity:.6}',
     '.bot-bar.abierto .ch{transform:rotate(90deg)}',
-    'hr.gan-sep[data-grupo],#pescadorV2>hr.gan-sep,#pescadorChico>hr.gan-sep,#faroRadar>hr.gan-sep,#rsRadar>hr.gan-sep{display:none}'
+    '.bot-bar[data-g="lab"]{margin-top:26px;border-style:dashed}'
   ].join("");
   document.head.appendChild(st);
 
+  function legado(el){
+    if(el.id==="alertCard"||el.id==="discipline") return true;
+    if(el.querySelector&&(el.querySelector("#semBal")||el.querySelector("#positions")||el.querySelector("#sHistory")||el.querySelector("#fondoAuditor"))) return true;
+    return false;
+  }
   function grupoDe(el, actual){
     if(el.classList.contains("bot-bar")) return actual;
     if(el.id==="sysHero") return "total";
-    if(el.tagName==="HEADER") return "fondo";
-    if(el.id==="pescadorV2") return "pescador";
-    if(el.id==="pescadorChico") return "chico";
-    if(el.id==="faroRadar") return "faro";
-    if(el.id==="rsRadar") return "rs";
-    if(el.tagName==="HR"&&el.classList.contains("gan-sep")){
-      var sig=el.nextElementSibling;
-      if(sig&&sig.classList.contains("gan-head")&&/Ganesha/.test(sig.textContent)) return "ganesha";
-    }
-    if(el.classList.contains("gan-head")&&/Ganesha/.test(el.textContent)) return "ganesha";
+    if(el.tagName==="HEADER"||el.id==="fondoWrap") return "fondo";
+    if(el.id==="retiroSec") return "retiro";
+    if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "lab";
+    if(el.id==="pescadorV2"||el.id==="pescadorChico"||el.id==="labV51Host"||el.classList.contains("labsec")) return "lab";
     if(el.tagName==="FOOTER"||el.tagName==="SCRIPT"||el.tagName==="STYLE") return null;
     return actual;
   }
-
   function barra(g){
-    var b=document.querySelector('.bot-bar[data-g="'+g+'"]');
-    if(b) return b;
-    b=document.createElement("div");
-    b.className="bot-bar"; b.setAttribute("data-g",g);
-    b.innerHTML='<span class="bn">'+G[g].n+'</span><span class="bd"><span class="br"><span class="bk">Ganancia total</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
-    b.addEventListener("click",function(){
-      abiertos[g]=!abiertos[g];
-      try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}
-      aplicar();
-    });
+    var b=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(b) return b;
+    b=document.createElement("div"); b.className="bot-bar"; b.setAttribute("data-g",g);
+    b.innerHTML='<span class="bn">'+G[g].n+(G[g].tag?'<small>'+G[g].tag+'</small>':'')+'</span><span class="bd"><span class="br"><span class="bk">Ganancia total</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
+    b.addEventListener("click",function(){abiertos[g]=!abiertos[g];try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}aplicar();});
     return b;
   }
-
   var ocupado=false;
   function aplicar(){
     if(ocupado) return; ocupado=true;
     try{
       var actual=null, primero={};
       Array.prototype.slice.call(document.body.children).forEach(function(el){
-        actual=grupoDe(el,actual);
         if(el.classList.contains("bot-bar")) return;
+        if(legado(el)){ el.classList.add("legado-oculto"); return; }
+        actual=grupoDe(el,actual);
         if(actual&&G[actual]){
           el.setAttribute("data-grupo",actual);
           if(!primero[actual]) primero[actual]=el;
           el.classList.toggle("bot-oculto",!abiertos[actual]);
-        } else if(el.hasAttribute("data-grupo")){
-          el.removeAttribute("data-grupo"); el.classList.remove("bot-oculto");
-        }
+        } else if(el.hasAttribute("data-grupo")){ el.removeAttribute("data-grupo"); el.classList.remove("bot-oculto"); }
       });
       Object.keys(G).forEach(function(g){
         var b=barra(g), p=primero[g];
@@ -91,43 +76,31 @@
       });
     } finally { ocupado=false; }
   }
-
   function num(t){
     if(!t) return null;
-    var m=String(t).replace(/\u2212/g,"-").match(/(-?)\s*\$\s*(-?)([\d.,]+)/);
-    if(!m) return null;
+    var m=String(t).replace(/\u2212/g,"-").match(/(-?)\s*\$\s*(-?)([\d.,]+)/); if(!m) return null;
     var x=m[3];
     if(/,\d{1,2}$/.test(x)&&x.indexOf(".")>=0&&x.lastIndexOf(",")>x.lastIndexOf(".")) x=x.replace(/\./g,"").replace(",",".");
     else x=x.replace(/,/g,"");
-    var v=parseFloat(x); if(isNaN(v)) return null;
-    return (m[1]||m[2])?-v:v;
+    var v=parseFloat(x); if(isNaN(v)) return null; return (m[1]||m[2])?-v:v;
   }
-  function pctDe(t){ var m=String(t||"").match(/\(\s*([+\-\u2212]?[\d.,]+)\s*%\s*\)/);
-    return m?parseFloat(m[1].replace("\u2212","-").replace(",",".")):null; }
   var fm=function(v){return (v>0?"+":(v<0?"-":""))+"$"+Math.abs(v).toFixed(2)};
+  function suma(ids){var t=0,ok=false;ids.forEach(function(i){var e=document.getElementById(i),v=e?num(e.textContent):null;if(v!=null){t+=v;ok=true;}});return ok?t:null;}
   function saldos(){
     Object.keys(G).forEach(function(g){
       var bar=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(!bar) return;
-      var c=G[g], bs=document.getElementById(c.bal), bal=bs?num(bs.textContent):null;
-      if(bal!=null) bar.querySelector(".bv").textContent="saldo $"+bal.toFixed(2);
-      bar._bal=bal;
-      var pnl=null, pct=null;
-      if(c.pnl){ var e=document.getElementById(c.pnl); if(e){ pnl=num(e.textContent); pct=pctDe(e.textContent); } }
-      if(c.sum){ pnl=0; c.sum.forEach(function(id){ var e=document.getElementById(id), v=e?num(e.textContent):null;
-        if(v==null) pnl=null; else if(pnl!=null) pnl+=v; }); }
-      if(pnl==null) return;
-      if(pct==null&&bal!=null&&bal-pnl>0) pct=100*pnl/(bal-pnl);
-      var el=bar.querySelector(".bg");
+      var bal=suma(G[g].bal), pnl=suma(G[g].pnl);
+      if(pnl==null){ if(bal!=null) bar.querySelector(".bv").textContent="vale $"+bal.toFixed(2); return; }
+      var pct=(bal!=null&&bal-pnl>0)?100*pnl/(bal-pnl):null;
       var c=pnl>0.004?"#3fb950":(pnl<-0.004?"#f85149":"");
+      var el=bar.querySelector(".bg");
       el.innerHTML='<span>'+fm(pnl)+'</span>'+(pct!=null?'<span class="bp" style="color:'+c+'">'+(pct>0?"+":"")+pct.toFixed(2)+'%</span>':'');
       el.style.color=c;
-      if(bar._bal!=null) bar.querySelector(".bv").textContent="puso $"+(bar._bal-pnl).toFixed(2)+" \u00b7 hoy vale $"+bar._bal.toFixed(2);
+      if(bal!=null) bar.querySelector(".bv").textContent="puso $"+(bal-pnl).toFixed(2)+" \u00b7 hoy vale $"+bal.toFixed(2);
     });
   }
-
   var t=null;
-  new MutationObserver(function(){ if(ocupado) return; clearTimeout(t); t=setTimeout(aplicar,120); })
-    .observe(document.body,{childList:true});
+  new MutationObserver(function(){ if(ocupado) return; clearTimeout(t); t=setTimeout(aplicar,120); }).observe(document.body,{childList:true});
   aplicar();
   setInterval(function(){aplicar();saldos();},2000);
 })();
