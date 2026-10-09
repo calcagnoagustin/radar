@@ -11,6 +11,9 @@ Cada entrada lleva fecha. Lo que está acá manda sobre lo que diga cualquier ar
 - 09/10/2026: GD35 preferido sobre AL35 por mejor protección legal (ley NY) en bonos soberanos argentinos.
 - 09/10/2026: GD35 preferido sobre AL35 por mejor protección legal (ley NY) en bonos soberanos argentinos.
 
+## Reglas duras
+- 09/10/2026: NUNCA comprar vendedores de armas (fabricantes de armas y contratistas de defensa: Lockheed, RTX, General Dynamics, Northrop, etc.). Aplica a compras directas y a ETFs de sector concentrados en defensa (XLI sale del rotativo por eso). Los índices amplios (SPY, ACWI) tienen una porción chica de estas empresas; queda pendiente si se quiere ir más allá.
+
 ## Fondos
 ### Fondo Abundancia — rotativo (PAPER desde 09/10/2026, Binance)
 - El día 1 de cada mes ordena 27 ETFs (índices, países, sectores, oro, bonos) + BTC + ETH por tendencia
