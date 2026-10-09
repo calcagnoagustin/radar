@@ -10,6 +10,13 @@
     lab:    {n:"Laboratorio",       bal:["gBal","p2Bal","pcBal","faroBal","rsBal"],
              pnl:["gGen","p2Real","p2Unr","pcReal","pcUnr","faroPnl","rsPnl"], tag:"experimentos \u00b7 paper \u00b7 no suman al total"}
   };
+  var SUB={
+    ganesha: {n:"Ganesha",        bal:["gBal"],    pnl:["gGen"], tag:"alts de momentum + sombra v5.1"},
+    pescador:{n:"Pescador",       bal:["p2Bal"],   pnl:["p2Real","p2Unr"], tag:"runners de bStocks"},
+    chico:   {n:"Pescador Chico", bal:["pcBal"],   pnl:["pcReal","pcUnr"], tag:"ganancias chicas y salir"},
+    faro:    {n:"Faro",           bal:["faroBal"], pnl:["faroPnl"], tag:"r\u00e9gimen de mercado"},
+    rs:      {n:"RS-BTC",         bal:["rsBal"],   pnl:["rsPnl"], tag:"fuerza relativa vs BTC"}
+  };
   var KEY="radar_abiertos4", abiertos={};
   try{abiertos=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){}
   var st=document.createElement("style");
@@ -29,7 +36,11 @@
     '.bot-bar .bv{font-size:.85em;opacity:.65}',
     '.bot-bar .ch{transition:transform .2s;opacity:.6}',
     '.bot-bar.abierto .ch{transform:rotate(90deg)}',
-    '.bot-bar[data-g="lab"]{margin-top:26px;border-style:dashed}'
+    '.bot-bar[data-g="lab"]{margin-top:26px;border-style:dashed}',
+    '.bot-bar.sub{margin:0 0 10px 22px;padding:12px 16px;border-radius:12px;background:rgba(127,127,127,.04)}',
+    '.bot-bar.sub .bt{font-size:1.3em}',
+    '.bot-bar.sub .bn{font-size:.95em}',
+    '.bot-bar.sub.abierto{margin-bottom:16px;border-color:rgba(111,191,142,.45)}'
   ].join("");
   document.head.appendChild(st);
 
@@ -48,33 +59,55 @@
     if(el.tagName==="FOOTER"||el.tagName==="SCRIPT"||el.tagName==="STYLE") return null;
     return actual;
   }
+  function subDe(el, actual){
+    if(el.id==="pescadorV2") return "pescador";
+    if(el.id==="pescadorChico") return "chico";
+    if(el.id==="faroRadar") return "faro";
+    if(el.id==="rsRadar") return "rs";
+    if(el.id==="labV51Host") return "ganesha";
+    if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "ganesha";
+    return actual;
+  }
   function barra(g){
+    var esSub=!!SUB[g]&&!G[g], D=esSub?SUB[g]:G[g];
     var b=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(b) return b;
-    b=document.createElement("div"); b.className="bot-bar"; b.setAttribute("data-g",g);
-    b.innerHTML='<span class="bn">'+G[g].n+(G[g].tag?'<small>'+G[g].tag+'</small>':'')+'</span><span class="bd"><span class="br"><span class="bk">Total en cartera</span><span class="mono bt">&mdash;</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
-    b.addEventListener("click",function(){abiertos[g]=!abiertos[g];try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}aplicar();});
+    b=document.createElement("div"); b.className="bot-bar"+(esSub?" sub":""); b.setAttribute("data-g",g);
+    b.innerHTML='<span class="bn">'+D.n+(D.tag?'<small>'+D.tag+'</small>':'')+'</span><span class="bd"><span class="br"><span class="bk">Total en cartera</span><span class="mono bt">&mdash;</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
+    var k=esSub?"sub_"+g:g;
+    b.addEventListener("click",function(){abiertos[k]=!abiertos[k];try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}aplicar();});
     return b;
   }
   var ocupado=false;
   function aplicar(){
     if(ocupado) return; ocupado=true;
     try{
-      var actual=null, primero={};
+      var actual=null, sub=null, primero={}, primSub={};
       Array.prototype.slice.call(document.body.children).forEach(function(el){
         if(el.classList.contains("bot-bar")) return;
         if(legado(el)){ el.classList.add("legado-oculto"); return; }
         actual=grupoDe(el,actual);
+        if(actual==="lab"){ sub=subDe(el,sub); } else sub=null;
         if(actual&&G[actual]){
           el.setAttribute("data-grupo",actual);
           if(!primero[actual]) primero[actual]=el;
-          el.classList.toggle("bot-oculto",!abiertos[actual]);
+          var visible=!!abiertos[actual]&&(!sub||!!abiertos["sub_"+sub]);
+          if(sub&&!primSub[sub]) primSub[sub]=el;
+          el.classList.toggle("bot-oculto",!visible);
         } else if(el.hasAttribute("data-grupo")){ el.removeAttribute("data-grupo"); el.classList.remove("bot-oculto"); }
       });
       Object.keys(G).forEach(function(g){
         var b=barra(g), p=primero[g];
         if(!p){ if(b.parentNode) b.parentNode.removeChild(b); return; }
-        if(b.nextElementSibling!==p) p.parentNode.insertBefore(b,p);
+        var nx=b.nextElementSibling, ok=(nx===p)||(nx&&nx.classList.contains("sub")&&nx.nextElementSibling===p);
+        if(!ok) p.parentNode.insertBefore(b,p);
         b.classList.toggle("abierto",!!abiertos[g]);
+      });
+      Object.keys(SUB).forEach(function(g){
+        var b=barra(g), p=primSub[g];
+        if(!p){ if(b.parentNode) b.parentNode.removeChild(b); return; }
+        if(b.nextElementSibling!==p) p.parentNode.insertBefore(b,p);
+        b.classList.toggle("abierto",!!abiertos["sub_"+g]);
+        b.classList.toggle("bot-oculto",!abiertos.lab);
       });
     } finally { ocupado=false; }
   }
@@ -89,9 +122,9 @@
   var fm=function(v){return (v>0?"+":(v<0?"-":""))+"$"+Math.abs(v).toFixed(2)};
   function suma(ids){var t=0,ok=false;ids.forEach(function(i){var e=document.getElementById(i),v=e?num(e.textContent):null;if(v!=null){t+=v;ok=true;}});return ok?t:null;}
   function saldos(){
-    Object.keys(G).forEach(function(g){
+    Object.keys(G).concat(Object.keys(SUB)).forEach(function(g){
       var bar=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(!bar) return;
-      var bal=suma(G[g].bal), pnl=suma(G[g].pnl);
+      var D=G[g]||SUB[g], bal=suma(D.bal), pnl=suma(D.pnl);
       if(bal!=null) bar.querySelector(".bt").textContent="$"+bal.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
       if(pnl==null) return;
       var pct=(bal!=null&&bal-pnl>0)?100*pnl/(bal-pnl):null;
