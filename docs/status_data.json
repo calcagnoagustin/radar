@@ -49,16 +49,22 @@
      "tipo": "tareas",
      "items": [
       {
-       "p": "P0",
+       "p": "P1",
        "quien": "Claude",
-       "estado": "en curso",
-       "t": "09/10 - Backtest del Abundancia 100% rotativo con universo ampliado (ETFs + top cripto + acciones). Despues: explicar sol/tormenta en simple y migrar el paper."
+       "estado": "abierta",
+       "t": "Retiro: refrescar tenencias de Inviu despues de cada compra mensual (o con capturas de Agus) - retiro/tenencias.json."
       },
       {
        "p": "P0",
        "quien": "Claude",
-       "estado": "pendiente",
-       "t": "09/10 - Panel nuevo: Total + Abundancia + Retiro, con caja 'Recomendaciones del mes' arriba (cuanto depositar en cada fondo; en Retiro: X ARS en SPY, ACWI, FXI y con el resto que comprar, pensando a 20 anios)."
+       "estado": "resuelto",
+       "t": "RESUELTO 09/10 - Backtest verificado (senal con 1 mes de retraso: +22% vs +26%; 5 al azar: +14%). Mas cripto (top-10) lo rompe (caidas -90%); acciones sueltas inflado por sesgo. Elegido: top-5 entre 27 ETFs + BTC + ETH, refugio SHY. Migrado en paper 09/10 (fondo/rotativo.py)."
+      },
+      {
+       "p": "P0",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "RESUELTO 09/10 - Panel: Total (Abundancia + Retiro), Fondo Abundancia, Fondo de Retiro (recomendacion del mes arriba) y Laboratorio (Ganesha, Pescadores, Faro, RS). Retiro: retiro/retiro.py lun-vie 18:05 ART."
       },
       {
        "p": "P1",
@@ -143,9 +149,13 @@
   },
   {
    "id": "fondo_semillas",
-   "titulo": "Fondo Abundancia - PAPER (rediseno 09/10/2026)",
+   "titulo": "Fondo Abundancia - ROTATIVO en PAPER (desde 09/10/2026)",
    "destacada": true,
    "bloques": [
+    {
+     "tipo": "p",
+     "t": "Como funciona: el dia 1 de cada mes ordena 27 ETFs (indices, paises, sectores, oro, bonos) + BTC + ETH por su tendencia (promedio de lo que subieron en 1, 3, 6 y 12 meses) y se queda con los 5 mejores, 20% cada uno. Si alguno de los 5 viene en baja, ese 20% va a bonos cortos (SHY). Sol/tormenta queda solo como termometro. Opera en Binance (ETFs por Stocks API, cripto spot). Cartera inicial 09/10: EWY, SMH, XLK, ETH, XLE."
+    },
     {
      "tipo": "p",
      "t": "09/10/2026: nucleo pasa de BTC/ETH fijo e intocable a BTC 20 / QQQ 25 / SMH 15 / oro (PAXG) 10, rebalanceable; satelite momentum 30%; caja 0; semaforos sol/tormenta solo informativos. ETH vendido. Backup: fondo/*.bak.pre_rediseno_0910. Objetivo siguiente: 100% rotativo."
@@ -254,6 +264,10 @@
     {
      "tipo": "p",
      "t": "Recomendaciones del mes (a construir): 'este mes: X ARS en SPY, X en ACWI, X en FXI; con el resto, comprar X de A y X de B' mirando CEDEARs, acciones y bonos argentinos a largo plazo, con freno cuando la exposicion a algo ya alcanza."
+    },
+    {
+     "tipo": "p",
+     "t": "Objetivo a 20 anios: nucleo global 65% / conviccion 10% / acciones argentinas 12% / bonos USD 8% / oro 5%. Recomendacion de noviembre 2026: rutina fija (1 SPY, 1 ACWI, 1 FXI) + ~ARS 65.000 en GD35 + 3 GLD. Argentina (22%) y conviccion (13%) ya alcanzan."
     }
    ]
   },
