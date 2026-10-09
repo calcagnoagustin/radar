@@ -458,15 +458,15 @@ async function cyclePrices(){ try{await loadPrices();render();}catch(e){document
   fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.json();}).then(function(d){paint("gHistory","gHistCount",d.recent_closed);}).catch(function(){});
 })();
 </script>
-<script src="./ganesha_extra.js?v=1oct"></script>
-<script src="./sistema_extra.js?v=1oct"></script>
+<script src="./ganesha_extra.js?v=9oct"></script>
+<script src="./sistema_extra.js?v=9oct"></script>
 <script src="./pescador_extra.js"></script>
 <script src="./pescador_card.js?v=1oct"></script>
 <script src="./pescador_chico_card.js?v=1oct"></script>
 <script src="./pescador_analitica.js?v=1oct"></script>
-<script src="./fondo_auditor.js?v=1oct"></script>
 <script src="./lab_card.js?v=4"></script>
+<script src="./retiro_card.js?v=1"></script>
 <script src="./curvas.js?v=1"></script>
-<script src="./desplegables.js?v=6"></script>
+<script src="./desplegables.js?v=7"></script>
 </body>
 </html>
