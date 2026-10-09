@@ -32,6 +32,7 @@ Cada entrada lleva fecha. Lo que está acá manda sobre lo que diga cualquier ar
 - 09/10/2026: el Fondo pasa a rotativo; se caen las reglas duras (núcleo BTC/ETH intocable).
 - 09/10/2026: panel = Total, Abundancia, Retiro (con recomendación del mes arriba) y Laboratorio (sub-panel por bot).
 - 09/10/2026: disclaimer de acciones EE.UU. firmado en las subcuentas de Binance (agus@, ganesha@).
+- 09/10/2026: Se mantiene la preferencia por GLD (ETF) sobre el oro físico para el Fondo de Retiro por razones de liquidez, costos operativos y practicidad en el largo plazo.
 
 ## Ideas
 - Pata de acciones por convicción (ej. OpenAI en DCA cuando salga a bolsa).
