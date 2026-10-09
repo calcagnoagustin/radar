@@ -80,7 +80,16 @@
     }
     var gen=document.getElementById("gGen");
     if(gen&&D.pnl_vs_depositos!=null){
+      // 09/10: el P&L se calcula contra el saldo EN VIVO (gBal, revaluado con
+      // precios Binance), no contra el snapshot del JSON: si no, la barra
+      // muestra un "puso" inventado (saldo vivo - pnl viejo).
       var p=D.pnl_vs_depositos, pc=D.pnl_vs_depositos_pct;
+      var balEl=document.getElementById("gBal");
+      var mBal=balEl?String(balEl.textContent).replace(/\u2212/g,"-").match(/(-?)\$([\d.,]+)/):null;
+      if(mBal&&D.deposits_total>0){
+        var balV=parseFloat(mBal[2].replace(/,/g,""))*(mBal[1]?-1:1);
+        if(!isNaN(balV)){p=balV-D.deposits_total;pc=Math.round(100*p/D.deposits_total*100)/100;}
+      }
       var col=p>=0?"var(--jade)":"var(--clay)";
       var html='<span style="color:'+col+'">'+fU2(p)+' <span style="font-size:.8em">('+(p>=0?"+":"")+(pc!=null?pc:0)+'%)</span></span>';
       if(gen.innerHTML!==html)gen.innerHTML=html;
