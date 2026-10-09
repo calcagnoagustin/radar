@@ -37,6 +37,7 @@ Cada entrada lleva fecha. Lo que está acá manda sobre lo que diga cualquier ar
 - Pata de acciones por convicción (ej. OpenAI en DCA cuando salga a bolsa).
 - Pasar cripto a hardware wallet y acciones a broker cuando el monto lo justifique.
 - Oro físico (lingotes chicos).
+- 09/10/2026: Oro físico (lingotes chicos) sigue como posibilidad a futuro, pero hoy priorizamos GLD en Inviu por practicidad y liquidez.
 
 ## Preguntas abiertas
 - ¿Cuándo pasa el Fondo Abundancia a real y con cuánto?
