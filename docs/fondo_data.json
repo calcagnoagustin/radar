@@ -1,17 +1,23 @@
 {
- "generated_at": "2026-10-08T23:50",
+ "generated_at": "2026-10-09T14:52",
  "modo": "paper",
  "diseno": {
-  "nucleo": 0.6,
+  "nucleo": 0.7,
   "satelite": 0.3,
-  "caja": 0.1,
-  "nota": "satelite cripto descartado por backtest (mom 12-1: -15.6% CAGR, DD -96%)"
+  "caja": 0.0,
+  "nucleo_pesos": {
+   "BTC/USDT": 0.2,
+   "QQQB/USDT": 0.25,
+   "SMHB/USDT": 0.15,
+   "PAXG/USDT": 0.1
+  },
+  "nota": "09/10: nucleo BTC 20 / QQQ 25 / SMH 15 / oro(PAXG) 10, rebalanceo mensual con banda 20%; satelite momentum 12-1 top-5; sin caja fija"
  },
- "equity": 1375.93,
+ "equity": 1389.63,
  "aportado": 1306.52,
- "pnl": 69.41,
+ "pnl": 83.11,
  "cash_espera": 0.0,
- "caja": 130.65,
+ "caja": 3.68,
  "semaforos": {
   "acciones": "sol",
   "cripto": "sol",
@@ -19,53 +25,67 @@
  },
  "posiciones": {
   "BTC/USDT": {
-   "qty": 0.00924475,
-   "cost": 718.49,
-   "px": 81748.01,
-   "val": 755.74,
+   "qty": 0.0033481517334246437,
+   "cost": 260.21,
+   "px": 83042.0,
+   "val": 278.04,
    "nombre": "Bitcoin"
   },
-  "ETH/USDT": {
-   "qty": 0.07476581,
-   "cost": 182.44,
-   "px": 2475.9,
-   "val": 185.11,
-   "nombre": "Ethereum"
-  },
   "AXTIB/USDT": {
-   "qty": 1.0542490060044525,
-   "cost": 65.57,
-   "px": 72.34,
-   "val": 76.26,
+   "qty": 1.4379235456000594,
+   "cost": 92.56,
+   "px": 70.52,
+   "val": 101.4,
    "nombre": "AXT Inc"
   },
   "SNDKB/USDT": {
-   "qty": 0.04327324372529023,
-   "cost": 65.57,
-   "px": 1615.83,
-   "val": 69.92,
+   "qty": 0.05902174504570702,
+   "cost": 90.86,
+   "px": 1603.29,
+   "val": 94.63,
    "nombre": "Sandisk Corporation"
   },
   "MUB/USDT": {
-   "qty": 0.06927248854271736,
-   "cost": 65.57,
-   "px": 1037.62,
-   "val": 71.88,
+   "qty": 0.0944881043622369,
+   "cost": 91.43,
+   "px": 1024.27,
+   "val": 96.78,
    "nombre": "Micron Technology, Inc."
   },
   "LITEB/USDT": {
-   "qty": 0.07125522718621903,
-   "cost": 65.57,
-   "px": 1053.34,
-   "val": 75.06,
+   "qty": 0.09716711824283775,
+   "cost": 94.62,
+   "px": 1119.42,
+   "val": 108.77,
    "nombre": "Lumentum Holdings Inc."
   },
   "DELLB/USDT": {
    "qty": 0.02013785923014485,
    "cost": 10.58,
-   "px": 574.47,
-   "val": 11.57,
+   "px": 569.78,
+   "val": 11.47,
    "nombre": "Dell Technologies Inc."
+  },
+  "QQQB/USDT": {
+   "qty": 0.46238464411058783,
+   "cost": 347.59,
+   "px": 751.15,
+   "val": 347.32,
+   "nombre": "Invesco QQQ Trust, Series 1"
+  },
+  "SMHB/USDT": {
+   "qty": 0.34405907360333843,
+   "cost": 208.55,
+   "px": 605.62,
+   "val": 208.37,
+   "nombre": "VanEck Semiconductor ETF"
+  },
+  "PAXG/USDT": {
+   "qty": 0.033212257032648206,
+   "cost": 139.04,
+   "px": 4182.51,
+   "val": 138.91,
+   "nombre": ""
   }
  },
  "equity_hist": [
@@ -277,6 +297,11 @@
   {
    "d": "2026-10-08",
    "eq": 1375.93,
+   "aportado": 1306.52
+  },
+  {
+   "d": "2026-10-09",
+   "eq": 1389.63,
    "aportado": 1306.52
   }
  ],
@@ -545,8 +570,130 @@
    ],
    "ts": 1790867415.8153424,
    "iso": "2026-10-01T15:10"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "ETH/USDT",
+   "usd": 186.18,
+   "px": 2492.66,
+   "qty": 0.07476581,
+   "ts": 1791557494.7015407,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "REDISENO",
+   "nota": "09/10/2026 decision Agus: nucleo BTC20/QQQ25/SMH15/PAXG10 rebalanceable, sale ETH, caja 0, semaforos informativos. Backtest: _experimentos/bt_mix_nucleo.py",
+   "ts": 1791557494.7017574,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "BTC/USDT",
+   "usd": 489.24,
+   "px": 83052.21,
+   "qty": 0.005896598266575356,
+   "ts": 1791557498.3354359,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "QQQB/USDT",
+   "usd": 347.59,
+   "px": 750.98,
+   "qty": 0.46238464411058783,
+   "ts": 1791557498.6011755,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "SMHB/USDT",
+   "usd": 208.55,
+   "px": 605.55,
+   "qty": 0.34405907360333843,
+   "ts": 1791557498.8608153,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "PAXG/USDT",
+   "usd": 139.04,
+   "px": 4182.09,
+   "qty": 0.033212257032648206,
+   "ts": 1791557499.1231358,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "LITEB/USDT",
+   "usd": 29.06,
+   "px": 1120.28,
+   "qty": 0.025911891056618716,
+   "ts": 1791557499.8991482,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "AXTIB/USDT",
+   "usd": 27.0,
+   "px": 70.29,
+   "qty": 0.383674539595607,
+   "ts": 1791557500.1667304,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "MUB/USDT",
+   "usd": 25.86,
+   "px": 1024.53,
+   "qty": 0.02521561581951953,
+   "ts": 1791557500.4290175,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "SNDKB/USDT",
+   "usd": 25.29,
+   "px": 1604.33,
+   "qty": 0.015748501320416795,
+   "ts": 1791557500.691109,
+   "iso": "2026-10-09T14:51"
+  },
+  {
+   "type": "REBALANCE",
+   "motivo": "rediseno 09/10",
+   "equity": 1390.36,
+   "antes": {
+    "BTC/USDT": 767.8,
+    "AXTIB/USDT": 74.1,
+    "SNDKB/USDT": 69.42,
+    "MUB/USDT": 70.99,
+    "LITEB/USDT": 79.76,
+    "DELLB/USDT": 11.45,
+    "caja": 316.83
+   },
+   "despues": {
+    "BTC/USDT": 278.07,
+    "AXTIB/USDT": 101.07,
+    "SNDKB/USDT": 94.69,
+    "MUB/USDT": 96.81,
+    "LITEB/USDT": 108.86,
+    "DELLB/USDT": 11.46,
+    "QQQB/USDT": 347.24,
+    "SMHB/USDT": 208.34,
+    "PAXG/USDT": 138.9,
+    "caja": 3.68
+   },
+   "objetivo": {
+    "BTC/USDT": 278.07,
+    "QQQB/USDT": 347.59,
+    "SMHB/USDT": 208.55,
+    "PAXG/USDT": 139.04,
+    "satelite": 417.11
+   },
+   "ts": 1791557505.1017017,
+   "iso": "2026-10-09T14:51"
   }
  ],
  "proxima_rotacion": "1 nov",
- "politica_pesos": "nucleo no se vende; drift se corrige por flujo de aportes (split por deficit)"
+ "politica_pesos": "09/10: todo rebalancea a objetivo (dia 1 de cada mes y en cada aporte); banda +-20%; semaforos informativos"
 }
