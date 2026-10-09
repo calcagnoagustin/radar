@@ -1,32 +1,32 @@
 {
  "meta": {
-  "actualizado": "2026-09-06",
+  "actualizado": "2026-10-09",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
  "resumen": {
   "titulo": "TRADING",
-  "bajada": "Sistema propio de especulacion disciplinada. Dos tracks: cripto en Binance Spot (Ganesha/Pescador, asimetria en mercado ineficiente) y Fondo Semillas sobre bStocks (captura de indice + gestion de riesgo, en construccion). Todo se mide antes de construirse.",
+  "bajada": "Sistema propio de inversion. Dos fondos: Fondo Abundancia (rotativo en Binance: cripto + acciones/ETFs, busca la tendencia que mas sube) y Fondo de Retiro (cartera a 20 anios en Inviu, CEDEARs + acciones y bonos argentinos, compra mensual a mano). Ganesha y Pescadores siguen en paper hasta el corte de noviembre.",
   "kpis": [
    {
     "k": "Horizonte",
-    "v": "~10 anios"
+    "v": "~20 anios"
    },
    {
-    "k": "Capital hoy",
-    "v": "~$1.000 + $294 Ganesha"
+    "k": "Abundancia",
+    "v": "PAPER · ~$1.390"
    },
    {
-    "k": "Inyeccion",
-    "v": "~$100 / mes"
+    "k": "Retiro",
+    "v": "Inviu · aporte ~USD 100/mes"
    },
    {
-    "k": "Aporte objetivo",
-    "v": "$500-1000 / mes"
+    "k": "Corte bots",
+    "v": "01/12/2026"
    },
    {
     "k": "Tracks",
-    "v": "Cripto · Acciones"
+    "v": "Rotativo · Retiro"
    }
   ]
  },
@@ -41,8 +41,31 @@
      "t": "Orden real de trabajo. Lo de arriba destraba lo de abajo. Las tareas de Agus son las unicas que Claude no puede ejecutar."
     },
     {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "09/10/2026 - REDISENO. (1) Fondo Abundancia: se cayeron las reglas duras (nucleo BTC/ETH intocable). Backtest 2018-2026: BTC/ETH fijo +22.6% anual con -74% de caida; mezcla con acciones/oro +28.8% con -41%. Desde hoy el paper corre con nucleo BTC 20 / QQQ 25 / SMH 15 / oro 10 + satelite momentum 30%, rebalanceo mensual. Proximo paso: Abundancia 100% ROTATIVO (top-5 por momentum entre ETFs, bonos, oro, cripto y acciones), backtest con universo ampliado pendiente. Rotativo con 29 ETFs: +13% anual 2005-2026 con -29% de caida vs SPY +11% / -51%. (2) Binance acciones/ETFs directos (7.954 papeles) habilitado en la cuenta y por API; disclaimer de acciones EE.UU. firmado en subcuentas agus@ y ganesha@. (3) Fondo de Retiro: cartera a 20 anios en Inviu (SPY, ACWI, FXI 1 unidad c/u por mes + elecciones libres). Panel nuevo con recomendaciones del mes en ARS."
+    },
+    {
      "tipo": "tareas",
      "items": [
+      {
+       "p": "P0",
+       "quien": "Claude",
+       "estado": "en curso",
+       "t": "09/10 - Backtest del Abundancia 100% rotativo con universo ampliado (ETFs + top cripto + acciones). Despues: explicar sol/tormenta en simple y migrar el paper."
+      },
+      {
+       "p": "P0",
+       "quien": "Claude",
+       "estado": "pendiente",
+       "t": "09/10 - Panel nuevo: Total + Abundancia + Retiro, con caja 'Recomendaciones del mes' arriba (cuanto depositar en cada fondo; en Retiro: X ARS en SPY, ACWI, FXI y con el resto que comprar, pensando a 20 anios)."
+      },
+      {
+       "p": "P1",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "09/10 - Disclaimer de acciones EE.UU. en la cuenta PRINCIPAL de Binance: aceptarlo la primera vez que compre una accion a mano (sale en 'Vista previa'). Las subcuentas ya estan firmadas."
+      },
       {
        "p": "P0",
        "quien": "Agus",
@@ -120,9 +143,13 @@
   },
   {
    "id": "fondo_semillas",
-   "titulo": "Fondo Semillas - PAPER CORRIENDO desde 27-ago-2026",
+   "titulo": "Fondo Abundancia - PAPER (rediseno 09/10/2026)",
    "destacada": true,
    "bloques": [
+    {
+     "tipo": "p",
+     "t": "09/10/2026: nucleo pasa de BTC/ETH fijo e intocable a BTC 20 / QQQ 25 / SMH 15 / oro (PAXG) 10, rebalanceable; satelite momentum 30%; caja 0; semaforos sol/tormenta solo informativos. ETH vendido. Backup: fondo/*.bak.pre_rediseno_0910. Objetivo siguiente: 100% rotativo."
+    },
     {
      "tipo": "alerta",
      "nivel": "warn",
@@ -209,6 +236,24 @@
     {
      "tipo": "p",
      "t": "Jardinero v1 CERRADO 27-ago: Agus vendio manualmente PYTH (+$0.98), PUMP (+$9.45) y ZEC (+$5.00), total $44.70 a USDT (principal: $150.39). state.json reconciliado, cierres registrados como 'cierre manual', SEEDS_PER_MONTH=0 (no planta mas). El cron main.py sigue activo solo por dashboard/regimen."
+    }
+   ]
+  },
+  {
+   "id": "fondo_retiro",
+   "titulo": "Fondo de Retiro - Inviu (manual, 20 anios)",
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Cuenta Inviu activa desde 06/2021 (arranco con acciones argentinas). Hoy ~74% CEDEARs: SPY es la posicion principal; ademas ACWI, FXI, EEM, NVDA, ARKK, AMD, TSLA, AMZN. ~21% acciones argentinas (YPF, BYMA, TGN, Pampa, Central Puerto, Agrometal...). ~1% bonos USD (AL30, AL35, AE38) y algo en FCIs."
+    },
+    {
+     "tipo": "p",
+     "t": "Rutina: deposita ~USD 100/mes en ARS, compra 1 unidad de SPY, 1 de ACWI y 1 de FXI; con el resto, eleccion libre. Objetivo: aumentar el aporte con el tiempo."
+    },
+    {
+     "tipo": "p",
+     "t": "Recomendaciones del mes (a construir): 'este mes: X ARS en SPY, X en ACWI, X en FXI; con el resto, comprar X de A y X de B' mirando CEDEARs, acciones y bonos argentinos a largo plazo, con freno cuando la exposicion a algo ya alcanza."
     }
    ]
   },
