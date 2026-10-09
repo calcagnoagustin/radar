@@ -24,6 +24,8 @@
     '.bot-bar .bg{font-size:1.6em;font-weight:700;letter-spacing:-.01em;line-height:1.1;display:flex;align-items:center;gap:10px;justify-content:flex-end}',
     '.bot-bar .bg .bp{font-size:.62em;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(127,127,127,.14)}',
     '.bot-bar .bk{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}',
+    '.bot-bar .bt{font-size:1.75em;font-weight:700;letter-spacing:-.01em;line-height:1.1;color:var(--ink,#e8efe9)}',
+    '.bot-bar .bg{font-size:1.15em!important}',
     '.bot-bar .bv{font-size:.85em;opacity:.65}',
     '.bot-bar .ch{transition:transform .2s;opacity:.6}',
     '.bot-bar.abierto .ch{transform:rotate(90deg)}',
@@ -49,7 +51,7 @@
   function barra(g){
     var b=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(b) return b;
     b=document.createElement("div"); b.className="bot-bar"; b.setAttribute("data-g",g);
-    b.innerHTML='<span class="bn">'+G[g].n+(G[g].tag?'<small>'+G[g].tag+'</small>':'')+'</span><span class="bd"><span class="br"><span class="bk">Ganancia total</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
+    b.innerHTML='<span class="bn">'+G[g].n+(G[g].tag?'<small>'+G[g].tag+'</small>':'')+'</span><span class="bd"><span class="br"><span class="bk">Total en cartera</span><span class="mono bt">&mdash;</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
     b.addEventListener("click",function(){abiertos[g]=!abiertos[g];try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}aplicar();});
     return b;
   }
@@ -90,13 +92,14 @@
     Object.keys(G).forEach(function(g){
       var bar=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(!bar) return;
       var bal=suma(G[g].bal), pnl=suma(G[g].pnl);
-      if(pnl==null){ if(bal!=null) bar.querySelector(".bv").textContent="vale $"+bal.toFixed(2); return; }
+      if(bal!=null) bar.querySelector(".bt").textContent="$"+bal.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+      if(pnl==null) return;
       var pct=(bal!=null&&bal-pnl>0)?100*pnl/(bal-pnl):null;
       var c=pnl>0.004?"#3fb950":(pnl<-0.004?"#f85149":"");
       var el=bar.querySelector(".bg");
       el.innerHTML='<span>'+fm(pnl)+'</span>'+(pct!=null?'<span class="bp" style="color:'+c+'">'+(pct>0?"+":"")+pct.toFixed(2)+'%</span>':'');
       el.style.color=c;
-      if(bal!=null) bar.querySelector(".bv").textContent="puso $"+(bal-pnl).toFixed(2)+" \u00b7 hoy vale $"+bal.toFixed(2);
+      if(bal!=null) bar.querySelector(".bv").textContent="ganancia \u00b7 puso $"+(bal-pnl).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
     });
   }
   var t=null;
