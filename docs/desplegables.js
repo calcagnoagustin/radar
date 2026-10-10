@@ -5,6 +5,7 @@
 (function(){
   var G={
     total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"], tag:"plata real \u00b7 Colch\u00f3n + Retiro + Binance"},
+    binance:{n:"Binance",          bal:["binBal"],  pnl:["binPnl"], tag:"real \u00b7 sin invertir \u00b7 resultado hist\u00f3rico desde 2018"},
     colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
     retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu"},
     lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","pcBal","faroBal","rsBal"],
@@ -59,6 +60,7 @@
     if(el.classList.contains("bot-bar")) return actual;
     if(el.id==="sysHero") return "total";
     if(el.id==="colchonSec") return "colchon";
+    if(el.id==="binanceSec") return "binance";
     if(el.tagName==="HEADER"||el.id==="fondoWrap") return "lab";
     if(el.id==="retiroSec") return "retiro";
     if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "lab";
@@ -89,7 +91,7 @@
   function aplicar(){
     if(ocupado) return; ocupado=true;
     try{
-      var actual=null, sub=null, primero={}, primSub={};
+      var actual=null, sub=null, primero={}, primSub={}, subEls={};
       Array.prototype.slice.call(document.body.children).forEach(function(el){
         if(el.classList.contains("bot-bar")) return;
         if(legado(el)){ el.classList.add("legado-oculto"); return; }
@@ -100,6 +102,7 @@
           if(!primero[actual]) primero[actual]=el;
           var visible=!!abiertos[actual]&&(!sub||!!abiertos["sub_"+sub]);
           if(sub&&!primSub[sub]) primSub[sub]=el;
+          if(sub){ (subEls[sub]=subEls[sub]||[]).push(el); }
           el.classList.toggle("bot-oculto",!visible);
         } else if(el.hasAttribute("data-grupo")){ el.removeAttribute("data-grupo"); el.classList.remove("bot-oculto"); }
       });
@@ -110,6 +113,18 @@
         if(!ok) p.parentNode.insertBefore(b,p);
         b.classList.toggle("abierto",!!abiertos[g]);
       });
+      // Laboratorio ordenado por efectividad: % de ganancia sobre lo puesto, de mayor a menor
+      var orden=Object.keys(subEls).map(function(g){var D=SUB[g],bal=suma(D.bal),pnl=suma(D.pnl);
+        var pc=(bal!=null&&pnl!=null&&bal-pnl>0)?pnl/(bal-pnl):-1e9; return {g:g,pc:pc};}).sort(function(a,b){return b.pc-a.pc;}).map(function(x){return x.g;});
+      var actualOrden=Object.keys(subEls).sort(function(a,b){return subEls[a][0].compareDocumentPosition(subEls[b][0])&Node.DOCUMENT_POSITION_FOLLOWING?-1:1;});
+      var ft=document.querySelector("body > footer");
+      if(ft&&orden.length&&orden.join()!==actualOrden.join()&&orden.every(function(g){return suma(SUB[g].bal)!=null;})){
+        orden.forEach(function(g){ var b=barra(g); ft.parentNode.insertBefore(b,ft); subEls[g].forEach(function(e){ ft.parentNode.insertBefore(e,ft); }); });
+        primSub={}; orden.forEach(function(g){ primSub[g]=subEls[g][0]; });
+        var labBar=document.querySelector('.bot-bar[data-g="lab"]'); var f0=document.querySelector('.bot-bar[data-g="'+orden[0]+'"]');
+        if(labBar&&f0) f0.parentNode.insertBefore(labBar,f0);
+        primero.lab=f0;
+      }
       Object.keys(SUB).forEach(function(g){
         var b=barra(g), p=primSub[g];
         if(!p){ if(b.parentNode) b.parentNode.removeChild(b); return; }
