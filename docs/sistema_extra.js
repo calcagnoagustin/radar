@@ -11,7 +11,7 @@
   // ---- Header TOTAL SISTEMA (arriba de todo) ----
   var hero=document.createElement("section");
   hero.className="hero"; hero.id="sysHero";
-  hero.style.borderColor="rgba(111,191,142,.35)";
+  hero.style.borderColor="rgba(191,215,141,.35)";
   hero.style.marginBottom="26px";
   hero.innerHTML='<div>'+
     '<div class="eyebrow">Total &middot; plata real: Colch&oacute;n + Retiro + Binance</div>'+
