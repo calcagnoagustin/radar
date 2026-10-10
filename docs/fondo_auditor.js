@@ -60,7 +60,7 @@
       var m = comp[k]; if (!m || m.ret_pct == null) return;
       var esF = (k === "fondo");
       var diff = esF ? null : (vs || {})[k];
-      h += '<tr style="border-top:1px solid var(--hair);' + (esF ? 'background:rgba(111,191,142,.06)' : '') + '">'
+      h += '<tr style="border-top:1px solid var(--hair);' + (esF ? 'background:rgba(191,215,141,.06)' : '') + '">'
         + '<td style="padding:7px 8px 7px 0;' + (esF ? 'font-weight:600' : 'color:var(--faint)') + '">' + ETIQ[k] + '</td>'
         + '<td class="mono" style="text-align:right;padding:7px 8px;color:' + col(m.ret_pct) + '">' + usd(m.ret_pct) + ' (' + sgn(m.ret_pct) + '%)</td>'
         + '<td class="mono" style="text-align:right;padding:7px 8px;color:var(--clay)">' + (m.max_dd_pct != null ? m.max_dd_pct.toFixed(2) + "%" : "\u2014") + '</td>'
@@ -123,7 +123,7 @@
     sig = A.generated;
 
     var esSinEv = (A.estado === "sin_evidencia");
-    var badge = '<span class="badge" style="background:' + (esSinEv ? "rgba(224,122,95,.13)" : "rgba(111,191,142,.13)")
+    var badge = '<span class="badge" style="background:' + (esSinEv ? "rgba(217,150,126,.13)" : "rgba(191,215,141,.13)")
       + ';color:' + (esSinEv ? "var(--clay)" : "var(--jade)") + '">'
       + (esSinEv ? "muestra insuficiente" : "muestra medible") + '</span>';
 
