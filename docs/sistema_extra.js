@@ -5,7 +5,7 @@
   var pct=function(n){return (n>=0?"+":"")+n.toFixed(2)+"%";};
   var cls=function(n){return n>0.0001?"up":(n<-0.0001?"down":"flat");};
   var bS=function(s){return s.replace("/","").toUpperCase();};
-  var SEM=null,GAN=null,FON=null,PES=null,CHI=null,RET=null,COL=null,PX={};
+  var SEM=null,GAN=null,FON=null,PES=null,CHI=null,RET=null,COL=null,BIN=null,PX={};
   var $=function(id){return document.getElementById(id);};
 
   // ---- Header TOTAL SISTEMA (arriba de todo) ----
@@ -14,13 +14,13 @@
   hero.style.borderColor="rgba(111,191,142,.35)";
   hero.style.marginBottom="26px";
   hero.innerHTML='<div>'+
-    '<div class="eyebrow">Total &middot; Fondo Abundancia + Fondo de Retiro</div>'+
+    '<div class="eyebrow">Total &middot; plata real: Colch&oacute;n + Retiro + Binance</div>'+
     '<div class="pnl-val mono" id="sysBal">&mdash;</div>'+
     '<div class="pnl-sub" id="sysSub">cargando&hellip;</div></div>'+
     '<div class="hero-stats">'+
     '<div class="stat"><div class="k">Ganancia total</div><div class="v mono" id="sysPct" style="font-size:1.6em">&mdash;</div></div>'+
-    '<div class="stat"><div class="k">Fondo Abundancia</div><div class="v mono" id="sysUnreal" style="font-size:1.1em">&mdash;</div></div>'+
-    '<div class="stat"><div class="k">Fondo de Retiro</div><div class="v mono" id="sysDep">&mdash;</div></div>'+
+    '<div class="stat"><div class="k">Colch&oacute;n</div><div class="v mono" id="sysUnreal" style="font-size:1.1em">&mdash;</div></div>'+
+    '<div class="stat"><div class="k">Retiro</div><div class="v mono" id="sysDep">&mdash;</div></div>'+
     '</div>';
   var firstHeader=document.querySelector("header");
   if(firstHeader) firstHeader.parentNode.insertBefore(hero,firstHeader);
@@ -53,20 +53,16 @@
   }
 
   function renderTotals(){
-    // 09/10/2026: TOTAL = Fondo Abundancia (paper) + Fondo de Retiro (real, Inviu).
-    // Los experimentos (Ganesha, Pescadores, Faro, RS) viven en Laboratorio y NO suman.
-    var f=FON||{}, r=RET||{};
-    var fe=(f.equity!=null)?f.equity:null, re=(r.total_usd!=null)?r.total_usd:null;
-    if(fe==null&&re==null) return;
-    var ce=(COL&&COL.saldo_usd)||0;
-    var tot=(fe||0)+(re||0)+ce;
-    var p=(f.pnl||0)+(r.gan_usd||0);
-    var base=(f.aportado||0)+(r.costo_usd||0)+ce;
+    // 10/10/2026: TOTAL = solo plata real: Colchon + Fondo de Retiro + Binance (sin invertir).
+    // El Fondo Abundancia (paper) y los experimentos viven en Laboratorio y NO suman.
+    var r=RET||{}, c=COL||{}, bz=BIN||{};
+    var re=(r.total_usd!=null)?r.total_usd:0, ce=c.saldo_usd||0, be=bz.saldo_usd||0;
+    var tot=re+ce+be, p=(r.gan_usd||0)+(bz.pnl_usd||0), base=tot-p;
     $("sysBal").textContent=fmt(tot);
-    $("sysSub").textContent="Abundancia "+(fe!=null?fmt(fe):"\u2014")+" (paper) \u00b7 Retiro "+(re!=null?fmt(re):"\u2014")+" (real, Inviu) \u00b7 Colch\u00f3n "+fmt(ce);
+    $("sysSub").textContent="Colch\u00f3n "+fmt(ce)+" \u00b7 Retiro "+fmt(re)+" \u00b7 Binance "+(bz.saldo_usd!=null?fmt(be):"(pendiente)");
     $("sysPct").innerHTML='<span class="'+cls(p)+'">'+fmt(p)+' <span style="font-size:.7em">('+pct(base>0?100*p/base:0)+')</span></span>';
-    var u=$("sysUnreal"); if(u) u.innerHTML=fe!=null?fmt(fe)+' <span style="font-size:.75em;color:var(--faint)">paper</span>':"\u2014";
-    var d=$("sysDep"); if(d) d.innerHTML=re!=null?fmt(re)+' <span style="font-size:.75em;color:var(--faint)">real</span>':"\u2014";
+    var u=$("sysUnreal"); if(u) u.innerHTML=fmt(ce)+' <span style="font-size:.75em;color:var(--faint)">colch\u00f3n</span>';
+    var d=$("sysDep"); if(d) d.innerHTML=fmt(re)+' <span style="font-size:.75em;color:var(--faint)">retiro</span>';
   }
 
   async function load(){
@@ -77,6 +73,7 @@
     try{CHI=await(await fetch("./pescador_chico_data.json?ts="+Date.now())).json();}catch(e){}
     try{RET=await(await fetch("./retiro_data.json?ts="+Date.now())).json();}catch(e){}
     try{COL=await(await fetch("./colchon_data.json?ts="+Date.now())).json();}catch(e){}
+    try{BIN=await(await fetch("./binance_data.json?ts="+Date.now())).json();}catch(e){BIN=null;}
   }
   async function prices(){
     var ss=new Set();
