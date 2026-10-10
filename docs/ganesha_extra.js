@@ -109,7 +109,7 @@
      - Punto final resaltado con su valor, y tooltip por punto (símbolo · P&L · acumulado).
    Sin dependencias externas (CSP-safe). Realizada = solo cierres. */
 (function(){
-  var COL={tp:"#6FBF8E",stopwin:"#57B8A9",stoploss:"#E07A5F",manual:"#E8C36A"};
+  var COL={tp:"#BFD78D",stopwin:"#57B8A9",stoploss:"#D9967E",manual:"#E8C36A"};
   var LBL={tp:"cierre en TP (+2R)",stopwin:"stop en ganancia (trailing)",stoploss:"stop en pérdida",manual:"cierre manual"};
   var G=null, lastSig="";
   function load(){return fetch("./ganesha_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)G=j;}).catch(function(){});}
@@ -217,7 +217,7 @@
     if(!si&&!no)return "";
     function box(r,ok){
       if(!r)return "";
-      return '<div style="flex:1;min-width:190px;border:1px solid var(--hair);border-radius:10px;padding:11px 13px;background:'+(ok?"rgba(111,191,142,.07)":"rgba(224,122,95,.07)")+'">'
+      return '<div style="flex:1;min-width:190px;border:1px solid var(--hair);border-radius:10px;padding:11px 13px;background:'+(ok?"rgba(191,215,141,.07)":"rgba(217,150,126,.07)")+'">'
         +'<div style="font-size:12px;color:'+(ok?"var(--jade)":"var(--clay)")+';font-weight:600">'+(ok?"Tocó TP1 antes del stop ✓":"Murió antes del TP1 ✗")+'</div>'
         +'<div class="mono" style="font-size:13px;margin-top:5px">'+r.n+' trades &middot; WR '+r.win_rate+'% &middot; '+(r.pnl_total>=0?"+":"")+fU(r.pnl_total)+'</div></div>';
     }
@@ -298,7 +298,7 @@
     if(!ref||!ref.parentNode)return false;
     var wrap=document.createElement("div");wrap.id="fondoWrap";
     wrap.innerHTML=
-      '<section class="hero" id="fondoHero" style="border-color:rgba(111,191,142,.4)">'
+      '<section class="hero" id="fondoHero" style="border-color:rgba(191,215,141,.4)">'
       +'<div><div class="eyebrow">Balance (USD) \u00b7 Fondo Abundancia \u00b7 ROTATIVO \u00b7 PAPER</div>'
       +'<div class="pnl-val mono" id="fBal">\u2014</div>'
       +'<div class="pnl-sub" id="fSub">cargando\u2026</div></div>'
