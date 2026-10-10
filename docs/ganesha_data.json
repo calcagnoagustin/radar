@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 277.84,
+ "equity_now": 278.38,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 21.67,
- "pnl_vs_depositos_pct": 8.46,
+ "pnl_vs_depositos": 22.21,
+ "pnl_vs_depositos_pct": 8.67,
  "pnl_today": -5.79,
  "trades_today": 1,
  "realized_pnl": -0.01,
@@ -23,7 +23,7 @@
    "symbol": "TRUMP/USDT",
    "entry": 2.384,
    "qty": 4.27,
-   "stop": 1.76425,
+   "stop": 2.6078,
    "tp1_done": false
   },
   {
@@ -51,7 +51,7 @@
    "symbol": "CAKE/USDT",
    "entry": 2.246,
    "qty": 8.397369545859306,
-   "stop": 1.9288571428571428,
+   "stop": 2.43355,
    "tp1_done": false
   },
   {
@@ -72,7 +72,7 @@
    "symbol": "W/USDT",
    "entry": 0.01575,
    "qty": 1139.7866666666666,
-   "stop": 0.012885714285714285,
+   "stop": 0.016116000000000002,
    "tp1_done": false
   },
   {
