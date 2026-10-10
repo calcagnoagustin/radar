@@ -5,7 +5,7 @@
    - Splash "Apertura 01-02-03" al cargar (los niveles aparecen de afuera hacia adentro).
    Cargar ANTES de desplegables.js. Fuente de verdad del diseño: brand/BRANDING.md */
 (function(){
-  var EYE='<svg viewBox="0 0 64 64" aria-hidden="true"><path class="l1" d="M 2 32 A 37.5 37.5 0 0 1 62 32 A 37.5 37.5 0 0 1 2 32 Z" fill="#ECECDF"/><path class="l1" d="M 13.46 32 A 23.175 23.175 0 0 1 50.54 32 A 23.175 23.175 0 0 1 13.46 32 Z" fill="#0F1A14"/><path class="l2" d="M 20.542 32 A 14.322 14.322 0 0 1 43.458 32 A 14.322 14.322 0 0 1 20.542 32 Z" fill="#ECECDF"/><path class="l2" d="M 24.919 32 A 8.851 8.851 0 0 1 39.081 32 A 8.851 8.851 0 0 1 24.919 32 Z" fill="#0F1A14"/><circle class="l3" cx="32" cy="32" r="3.3" fill="#BFD78D"/></svg>';
+  var EYE='<svg viewBox="0 0 64 64" aria-hidden="true"><path class="l1" d="M 2 32 A 30.397 30.397 0 0 1 62 32 A 30.397 30.397 0 0 1 2 32 Z" fill="#ECECDF"/><circle class="l1" cx="32" cy="32" r="15" fill="#0F1A14"/><circle class="l2" cx="32" cy="32" r="11.4" fill="#ECECDF"/><circle class="l2" cx="32" cy="32" r="8.6" fill="#0F1A14"/><circle class="l3" cx="32" cy="32" r="6.1" fill="#BFD78D"/></svg>';
   var KEY_AB="radar_abiertos4", KEY_V="pv_vista";
   // Laboratorio siempre "abierto" para desplegables.js; la vista decide qué se ve.
   try{ var ab=JSON.parse(localStorage.getItem(KEY_AB)||"{}")||{}; if(!ab.lab){ ab.lab=true; localStorage.setItem(KEY_AB,JSON.stringify(ab)); } }catch(e){}
