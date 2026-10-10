@@ -5,7 +5,7 @@
   var fU=function(n,d){d=(d==null?2:d);return "$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});};
   function ensure(){
     if($("colchonSec")) return true;
-    var ref=document.querySelector("body > header"); if(!ref) return false;
+    var ref=document.getElementById("retiroSec")||document.querySelector("body > header"); if(!ref) return false;
     var w=document.createElement("div"); w.id="colchonSec";
     w.innerHTML='<section class="hero" style="border-color:rgba(200,180,120,.35)"><div><div class="eyebrow">Balance (USD) &middot; Colch&oacute;n &middot; ahorro de emergencia</div>'
       +'<div class="pnl-val mono" id="colBal">&mdash;</div><div class="pnl-sub" id="colSub"></div></div>'
@@ -25,7 +25,7 @@
       +'<div style="position:relative;height:5px;border-radius:4px;background:rgba(127,127,127,.15)"><div style="height:100%;width:'+Math.max(0.6,p)+'%;border-radius:4px;background:#c8b478;opacity:.7"></div>'
       +'<div style="position:absolute;top:-3px;bottom:-3px;left:'+p1+'%;width:1px;background:var(--faint)"></div></div>';
     $("colAct").textContent="al "+C.actualizado;
-    $("colPartes").innerHTML=(C.partes||[]).map(function(x){return '<div class="row"><span class="lbl">'+x.donde+(x.ok===false?' <span style="color:var(--clay);font-size:11.5px">&middot; '+(x.nota||"mover")+'</span>':'')+'</span><span class="mono">'+fU(x.usd)+'</span></div>';}).join("")
+    $("colPartes").innerHTML=(C.partes||[]).map(function(x){return '<div class="row"><span class="lbl"><b style="color:var(--ink)">'+String(x.donde).split(" \u00b7 ")[0]+'</b>'+(String(x.donde).indexOf(" \u00b7 ")>0?' <span style="color:var(--faint)">\u00b7 '+String(x.donde).split(" \u00b7 ").slice(1).join(" \u00b7 ")+'</span>':'')+(x.ok===false?' <span style="color:var(--clay);font-size:11.5px">&middot; '+(x.nota||"mover")+'</span>':'')+'</span><span class="mono">'+fU(x.usd)+'</span></div>';}).join("")
       +(C.pendiente?'<div class="note" style="margin-top:10px">'+C.pendiente+'</div>':'');
   }
   function load(){return fetch("./colchon_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)C=j;}).catch(function(){});}
