@@ -20,9 +20,9 @@
       +'<div id="retMeta" style="margin:-6px 0 18px;padding:0 4px"></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Distribuci&oacute;n vs objetivo</span><span class="eyebrow">a 20 a&ntilde;os</span></div><div class="body" id="retDist"></div></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Tenencias</span><span class="eyebrow" id="retN"></span></div><div class="body" id="retPos"></div></div>';
-    var ref=document.querySelector("hr.gan-sep")||document.querySelector("footer");
-    if(!ref||!ref.parentNode) return false;
-    ref.parentNode.insertBefore(w,ref); return true;
+    var col=document.getElementById("colchonSec"), hd=document.querySelector("body > header");
+    if(col&&col.parentNode){ col.parentNode.insertBefore(w,col.nextSibling); return true; }
+    if(!hd) return false; hd.parentNode.insertBefore(w,hd); return true;
   }
   function render(){
     if(!R||!ensure()) return;
