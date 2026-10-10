@@ -5,7 +5,7 @@
 (function(){
   var G={
     total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"], tag:"plata real \u00b7 Colch\u00f3n + Retiro + Binance"},
-    binance:{n:"Binance",          bal:["binBal"],  pnl:["binPnl"], tag:"real \u00b7 sin invertir \u00b7 resultado hist\u00f3rico desde 2018"},
+    binance:{n:"Binance",          bal:["binBal"],  pnl:["binPnl"], tag:"real \u00b7 sin invertir \u00b7 desde el 10/10/2026"},
     colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
     retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu"},
     lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","pcBal","faroBal","rsBal"],
