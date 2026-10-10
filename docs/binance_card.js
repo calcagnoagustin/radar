@@ -1,12 +1,15 @@
 /* binance_card.js (10/10/2026) - Bloque BINANCE (plata real sin invertir): cuenta principal + subcuentas
    menos lo reservado para el Colchon. Lee binance_data.json (VM binance_main/publicar.py, diario). */
 (function(){
-  var B=null, sig="";
+  var B=null, sig="", t0=Date.now();
   var $=function(i){return document.getElementById(i);};
   var fU=function(n,d){d=(d==null?2:d);return (n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});};
   function ensure(){
     if($("binanceSec")) return true;
-    var ret=$("retiroSec"); if(!ret||!ret.parentNode) return false;
+    // 10/10/2026 (orden pedido por Agus): Total, Colchon, Binance, subtotal liquido, Fondo de Retiro.
+    var col=$("colchonSec"), ret=$("retiroSec");
+    if(!col&&Date.now()-t0<12000) return false;
+    if(!col&&!(ret&&ret.parentNode)) return false;
     var w=document.createElement("div"); w.id="binanceSec";
     w.innerHTML='<section class="hero" style="border-color:rgba(240,185,11,.35)"><div><div class="eyebrow">Balance (USD) &middot; Binance &middot; real, sin invertir</div>'
       +'<div class="pnl-val mono" id="binBal">&mdash;</div><div class="pnl-sub" id="binSub"></div></div>'
@@ -15,10 +18,22 @@
       +'<div class="stat"><div class="k">Reservado Colch&oacute;n</div><div class="v mono" id="binRes">&mdash;</div></div></div></section>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Qu&eacute; hay</span><span class="eyebrow" id="binAct"></span></div><div class="body" id="binComp"></div></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Historial desde la base</span><span class="eyebrow">diario</span></div><div class="body" id="binAnios"></div></div>';
-    ret.parentNode.insertBefore(w,ret.nextSibling); return true;
+    if(col) col.parentNode.insertBefore(w,col.nextSibling); else ret.parentNode.insertBefore(w,ret);
+    // Subtotal liquido = Colchon + Binance (lo que se puede usar ya). El Retiro (Inviu, a 20 anios) va abajo.
+    var l=document.createElement("div"); l.id="liquidoSec";
+    l.innerHTML='<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Qu&eacute; suma</span><span class="eyebrow">Colch&oacute;n + Binance</span></div><div class="body" id="liqPartes"></div></div><span id="liqBal" style="display:none"></span>';
+    w.parentNode.insertBefore(l,w.nextSibling);
+    if(ret&&ret.parentNode&&(ret.compareDocumentPosition(l)&Node.DOCUMENT_POSITION_FOLLOWING)) l.parentNode.insertBefore(ret,l.nextSibling);
+    return true;
+  }
+  function liquido(){
+    var c=parseFloat((($("colBal")||{}).textContent||"").replace(/[^0-9.\-]/g,"")), b=(B&&B.saldo_usd!=null)?B.saldo_usd:NaN;
+    if(isNaN(c)||isNaN(b)) return;
+    var el=$("liqBal"); if(el) el.textContent=fU(c+b);
+    var pt=$("liqPartes"); if(pt) pt.innerHTML='<div class="row"><span class="lbl">Colch&oacute;n (Mercado Pago)</span><span class="mono">'+fU(c)+'</span></div><div class="row"><span class="lbl">Binance (sin invertir)</span><span class="mono">'+fU(b)+'</span></div><div class="row"><span class="lbl"><b style="color:var(--ink)">Subtotal l&iacute;quido</b></span><span class="mono"><b>'+fU(c+b)+'</b></span></div><div class="note" style="margin-top:10px">Plata disponible ya. El Fondo de Retiro no entra: es a 20 a&ntilde;os y est&aacute; en Inviu.</div>';
   }
   function render(){
-    if(!B||!ensure()) return; if(sig===B.actualizado) return; sig=B.actualizado;
+    if(!B||!ensure()) return; liquido(); if(sig===B.actualizado) return; sig=B.actualizado;
     $("binBal").textContent=fU(B.saldo_usd);
     $("binSub").textContent="Cuenta "+fU(B.cuenta_total_usd)+" menos "+fU(B.reservado_colchon_usd,0)+" en USDT que van al Colch\u00f3n. Destino: el Fondo Abundancia cuando pase a real.";
     // 10/10/2026 (decision Agus): la verdad arranca en la foto de ese dia (baseline). El historico 2018-2026 es sucio y no se muestra.
