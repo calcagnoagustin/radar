@@ -41,13 +41,13 @@
     '.bot-bar[data-g="lab"]{margin-top:78px;border-style:dashed;background:transparent;position:relative;opacity:.9}',
     '.bot-bar[data-g="lab"]:before{content:"LABORATORIO \\00B7  SIMULACIONES";position:absolute;left:0;right:0;top:-44px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font:600 10.5px/1 system-ui;letter-spacing:.24em;color:rgba(232,239,233,.45)}',
     '.bot-bar[data-g="lab"] .bt{color:rgba(232,239,233,.75)}',
-    '.bot-bar[data-g="total"]{padding:24px 20px;margin-bottom:26px;border:1px solid rgba(111,191,142,.55);background:linear-gradient(135deg,rgba(111,191,142,.14),rgba(111,191,142,.03));box-shadow:0 10px 30px rgba(0,0,0,.25)}',
+    '.bot-bar[data-g="total"]{padding:24px 20px;margin-bottom:26px;border:1px solid rgba(191,215,141,.55);background:linear-gradient(135deg,rgba(191,215,141,.14),rgba(191,215,141,.03));box-shadow:0 10px 30px rgba(0,0,0,.25)}',
     '.bot-bar[data-g="total"] .bn{font-size:1.25em;letter-spacing:.02em}',
     '.bot-bar[data-g="total"] .bt{font-size:2.2em}',
     '.bot-bar.sub{margin:0 0 10px 22px;padding:12px 16px;border-radius:12px;background:rgba(127,127,127,.04)}',
     '.bot-bar.sub .bt{font-size:1.3em}',
     '.bot-bar.sub .bn{font-size:.95em}',
-    '.bot-bar.sub.abierto{margin-bottom:16px;border-color:rgba(111,191,142,.45)}'
+    '.bot-bar.sub.abierto{margin-bottom:16px;border-color:rgba(191,215,141,.45)}'
   ].join("");
   document.head.appendChild(st);
 
@@ -151,7 +151,7 @@
       if(bal!=null) bar.querySelector(".bt").textContent="$"+bal.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
       if(pnl==null){ if(D.sub){ bar.querySelector(".bg").textContent=""; bar.querySelector(".bv").textContent=D.sub; } return; }
       var pct=(bal!=null&&bal-pnl>0)?100*pnl/(bal-pnl):null;
-      var c=pnl>0.004?"#3fb950":(pnl<-0.004?"#f85149":"");
+      var c=pnl>0.004?"#BFD78D":(pnl<-0.004?"#D9967E":"");
       var el=bar.querySelector(".bg");
       el.innerHTML='<span>'+fm(pnl)+'</span>'+(pct!=null?'<span class="bp" style="color:'+c+'">'+(pct>0?"+":"")+pct.toFixed(2)+'%</span>':'');
       el.style.color=c;
