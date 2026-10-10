@@ -17,6 +17,7 @@
       +'<div class="stat"><div class="k">Invertido (MEP de cada compra)</div><div class="v mono" id="retCost">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Aporte mensual</div><div class="v mono" id="retAp">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Cuenta desde</div><div class="v mono" id="retDesde">&mdash;</div></div></div></section>'
+      +'<div id="retMeta" style="margin:-6px 0 18px;padding:0 4px"></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Distribuci&oacute;n vs objetivo</span><span class="eyebrow">a 20 a&ntilde;os</span></div><div class="body" id="retDist"></div></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Tenencias</span><span class="eyebrow" id="retN"></span></div><div class="body" id="retPos"></div></div>';
     var ref=document.querySelector("hr.gan-sep")||document.querySelector("footer");
@@ -43,6 +44,9 @@
     $("retSub").textContent=fA(R.total_ars)+" \u00b7 d\u00f3lar MEP "+R.mep+" \u00b7 tenencias al "+R.tenencias_al;
     var p=R.gan_usd, pc=R.costo_usd>0?100*p/R.costo_usd:0;
     $("retPnl").innerHTML='<span style="color:'+col(p)+'">'+fU(p)+' <span style="font-size:.8em">('+(pc>=0?"+":"")+pc.toFixed(2)+'%)</span></span>';
+    if(R.meta_usd){ var pm=Math.min(100,100*R.total_usd/R.meta_usd);
+      $("retMeta").innerHTML='<div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--faint);margin-bottom:5px"><span>Meta de libertad &middot; '+fU(R.meta_usd,0)+'</span><span class="mono">'+pm.toFixed(1)+'%</span></div>'
+        +'<div style="height:5px;border-radius:4px;background:rgba(127,127,127,.15);overflow:hidden"><div style="height:100%;width:'+Math.max(0.6,pm)+'%;background:var(--jade);opacity:.6"></div></div>'; }
     $("retCost").textContent=fU(R.costo_usd); $("retAp").textContent="USD "+rc.aporte_usd; $("retDesde").textContent=R.cuenta_desde;
     var cl=R.clases||{}, d="";
     ["nucleo","conviccion","argentina","bonos","oro"].forEach(function(k){var c=cl[k]; if(!c) return;
