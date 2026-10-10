@@ -10,24 +10,26 @@
     var w=document.createElement("div"); w.id="binanceSec";
     w.innerHTML='<section class="hero" style="border-color:rgba(240,185,11,.35)"><div><div class="eyebrow">Balance (USD) &middot; Binance &middot; real, sin invertir</div>'
       +'<div class="pnl-val mono" id="binBal">&mdash;</div><div class="pnl-sub" id="binSub"></div></div>'
-      +'<div class="hero-stats"><div class="stat"><div class="k">Resultado hist&oacute;rico (desde 2018)</div><div class="v mono" id="binPnl" style="font-size:1.3em">&mdash;</div></div>'
-      +'<div class="stat"><div class="k">Aportes netos</div><div class="v mono" id="binAp">&mdash;</div></div>'
+      +'<div class="hero-stats"><div class="stat"><div class="k">Resultado desde el 10/10/2026</div><div class="v mono" id="binPnl" style="font-size:1.3em">&mdash;</div></div>'
+      +'<div class="stat"><div class="k">Base 10/10/2026</div><div class="v mono" id="binAp">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Reservado Colch&oacute;n</div><div class="v mono" id="binRes">&mdash;</div></div></div></section>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Qu&eacute; hay</span><span class="eyebrow" id="binAct"></span></div><div class="body" id="binComp"></div></div>'
-      +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Plata que entr&oacute; (+) y sali&oacute; (&minus;) por a&ntilde;o</span><span class="eyebrow">aprox.</span></div><div class="body" id="binAnios"></div></div>';
+      +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Historial desde la base</span><span class="eyebrow">diario</span></div><div class="body" id="binAnios"></div></div>';
     ret.parentNode.insertBefore(w,ret.nextSibling); return true;
   }
   function render(){
     if(!B||!ensure()) return; if(sig===B.actualizado) return; sig=B.actualizado;
     $("binBal").textContent=fU(B.saldo_usd);
     $("binSub").textContent="Cuenta "+fU(B.cuenta_total_usd)+" menos "+fU(B.reservado_colchon_usd,0)+" en USDT que van al Colch\u00f3n. Destino: el Fondo Abundancia cuando pase a real.";
-    var p=B.pnl_historico_usd; $("binPnl").innerHTML='<span style="color:'+(p>=0?"var(--jade)":"var(--clay)")+'">'+(p>=0?"+":"")+fU(p)+'</span>';
-    $("binAp").textContent=fU(B.aportes_netos_usd); $("binRes").textContent=fU(B.reservado_colchon_usd,0);
+    // 10/10/2026 (decision Agus): la verdad arranca en la foto de ese dia (baseline). El historico 2018-2026 es sucio y no se muestra.
+    var bl=B.baseline||{}, p=(bl.pnl_desde_baseline_usd!=null)?bl.pnl_desde_baseline_usd:0;
+    $("binPnl").innerHTML='<span style="color:'+(p>=0?"var(--jade)":"var(--clay)")+'">'+(p>=0?"+":"")+fU(p)+(bl.pnl_desde_baseline_pct!=null?' <span style="font-size:.7em">('+(p>=0?"+":"")+bl.pnl_desde_baseline_pct.toFixed(2)+'%)</span>':'')+'</span>';
+    $("binAp").textContent=fU(bl.total_usd||0)+(bl.flujos_posteriores_usd?(" \u00b7 flujos "+(bl.flujos_posteriores_usd>0?"+":"")+fU(bl.flujos_posteriores_usd)):""); $("binRes").textContent=fU(B.reservado_colchon_usd,0);
     $("binAct").textContent="al "+String(B.actualizado).replace("T"," ")+" UTC";
     $("binComp").innerHTML=(B.composicion||[]).map(function(x){return '<div class="row"><span class="lbl">'+x.activo+'</span><span class="mono">'+fU(x.usd)+'</span></div>';}).join("");
-    var a=B.aportes_por_anio||{};
-    $("binAnios").innerHTML=Object.keys(a).map(function(k){var v=a[k];return '<div class="row"><span class="lbl">'+k+'</span><span class="mono" style="color:'+(v>=0?"var(--ink)":"var(--muted)")+'">'+(v>=0?"+":"")+fU(v,0)+'</span></div>';}).join("")
-      +'<div class="note" style="margin-top:10px">'+(B.nota||"")+' Incluye lo que mandaste a otras billeteras como salida.</div>';
+    var h=(B.historial||[]).slice(-30).reverse();
+    $("binAnios").innerHTML=h.map(function(x){var v=x.pnl_bl||0;return '<div class="row"><span class="lbl">'+x.d+'</span><span class="mono">'+fU(x.total)+' <span style="color:'+(v>=0?"var(--jade)":"var(--clay)")+';font-size:.85em">'+(v>=0?"+":"")+fU(v)+'</span></span></div>';}).join("")
+      +'<div class="note" style="margin-top:10px">Base: foto de la cuenta del 10/10/2026 ('+fU((B.baseline||{}).total_usd||0)+'). El resultado descuenta lo que entre o salga despu\u00e9s de esa fecha.</div>';
   }
   function load(){return fetch("./binance_data.json?ts="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)B=j;}).catch(function(){});}
   load().then(function(){setTimeout(render,900);}); setInterval(function(){load().then(render);},60000); setInterval(render,3000);
