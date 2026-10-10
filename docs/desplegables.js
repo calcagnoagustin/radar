@@ -5,6 +5,7 @@
 (function(){
   var G={
     total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"]},
+    colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
     fondo:  {n:"Fondo Abundancia",  bal:["fBal"],    pnl:["fPnl"], tag:"rotativo \u00b7 paper"},
     retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu"},
     lab:    {n:"Laboratorio",       bal:["gBal","p2Bal","pcBal","faroBal","rsBal"],
@@ -52,6 +53,7 @@
   function grupoDe(el, actual){
     if(el.classList.contains("bot-bar")) return actual;
     if(el.id==="sysHero") return "total";
+    if(el.id==="colchonSec") return "colchon";
     if(el.tagName==="HEADER"||el.id==="fondoWrap") return "fondo";
     if(el.id==="retiroSec") return "retiro";
     if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "lab";
@@ -126,7 +128,7 @@
       var bar=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(!bar) return;
       var D=G[g]||SUB[g], bal=suma(D.bal), pnl=suma(D.pnl);
       if(bal!=null) bar.querySelector(".bt").textContent="$"+bal.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
-      if(pnl==null) return;
+      if(pnl==null){ if(D.sub){ bar.querySelector(".bg").textContent=""; bar.querySelector(".bv").textContent=D.sub; } return; }
       var pct=(bal!=null&&bal-pnl>0)?100*pnl/(bal-pnl):null;
       var c=pnl>0.004?"#3fb950":(pnl<-0.004?"#f85149":"");
       var el=bar.querySelector(".bg");
