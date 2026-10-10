@@ -4,10 +4,10 @@
 (function(){
   var API="https://vm.semillaredes.com/radar", K=null, ocup=false, abierto=false, tab="chat";
   try{ var m=location.hash.match(/rk=([\w-]+)/); if(m){ localStorage.setItem("radar_ck",m[1]); history.replaceState(null,"",location.pathname+location.search); } K=localStorage.getItem("radar_ck"); }catch(e){}
-  var VERDE="#5E7B3C";
+  var VERDE="#BFD78D";
   var st=document.createElement("style");
   st.textContent=[
-   '#rcFab{position:fixed;right:18px;bottom:18px;z-index:2147483001;width:60px;height:60px;border-radius:50%;border:0;background:'+VERDE+';color:#fff;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center}',
+   '#rcFab{position:fixed;right:18px;bottom:18px;z-index:2147483001;width:60px;height:60px;border-radius:50%;border:0;background:'+VERDE+';color:#0F1A14;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center}',
    '#rcFab svg{width:28px;height:28px}',
    '#rcTip{position:fixed;right:88px;bottom:30px;z-index:2147483001;background:#f4efe6;color:#1A2456;font:600 14px/1.2 system-ui,sans-serif;padding:10px 14px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer}',
    '#rcBox{position:fixed;right:18px;bottom:90px;z-index:2147483002;width:min(420px,calc(100vw - 24px));height:min(640px,calc(100vh - 120px));background:#121a16;border:1px solid rgba(191,215,141,.35);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.55);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 system-ui,-apple-system,sans-serif;color:#e8efe9}',
@@ -24,7 +24,7 @@
    '.rcChip.ped{background:rgba(240,136,62,.14);color:#f3b07e}',
    '#rcIn{display:flex;gap:8px;padding:10px;border-top:1px solid rgba(255,255,255,.08)}',
    '#rcIn textarea{flex:1;resize:none;height:44px;max-height:120px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#e8efe9;padding:11px 12px;font:inherit}',
-   '#rcIn button{border:0;border-radius:12px;padding:0 16px;background:'+VERDE+';color:#fff;font:600 15px system-ui;cursor:pointer}',
+   '#rcIn button{border:0;border-radius:12px;padding:0 16px;background:'+VERDE+';color:#0F1A14;font:600 15px system-ui;cursor:pointer}',
    '#rcIn button:disabled{opacity:.5}',
    '#rcIn .ic{padding:0 11px;background:rgba(255,255,255,.08);font-size:18px}',
    '#rcIn .ic.rec{background:#c0392b;animation:rcD 1.2s infinite}',
