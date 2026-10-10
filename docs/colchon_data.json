@@ -1,0 +1,17 @@
+{
+ "actualizado": "2026-10-09",
+ "meta_usd": 23400,
+ "meta_1_usd": 11700,
+ "gasto_mensual_usd": 3900,
+ "partes": [
+  {
+   "donde": "Mercado Pago (FCI dólares)",
+   "usd": 2100,
+   "ok": false,
+   "nota": "mover: es donde cobrás"
+  }
+ ],
+ "pendiente": "USD 1.000 en USDT en Binance para pasar al colchón (no se cuentan hasta moverlos)",
+ "plan": "~70% broker (FCI dólares) · ~15% banco sin tarjeta ni deuda · ~15% billetes",
+ "saldo_usd": 2100
+}
