@@ -9,7 +9,7 @@
   var AUD=null;
   var $=function(i){return document.getElementById(i)};
   var sg=function(v,d){d=(d==null?2:d);return (v>=0?"+":"")+Number(v).toFixed(d)};
-  var col=function(v){return v>0?"#3fb950":(v<0?"#f85149":"var(--faint,#888)")};
+  var col=function(v){return v>0?"#BFD78D":(v<0?"#D9967E":"var(--faint,#888)")};
 
   function tarjetas(b){
     var h=$(b.host); if(!h||$(b.pre+"CurvaBody")) return false;
@@ -57,7 +57,7 @@
       +'<th style="text-align:right;padding:6px 0 6px 8px">Diferencia</th></tr>';
     (a.controles||[]).forEach(function(c){
       if(c.v==null) return;
-      h+='<tr style="border-top:1px solid var(--hair);'+(c.destacar?'background:rgba(111,191,142,.06)':'')+'">'
+      h+='<tr style="border-top:1px solid var(--hair);'+(c.destacar?'background:rgba(191,215,141,.06)':'')+'">'
         +'<td style="padding:7px 8px 7px 0;'+(c.destacar?'font-weight:600':'color:var(--faint)')+'">'+c.k+'</td>'
         +'<td class="mono" style="text-align:right;padding:7px 8px;color:'+col(c.v)+'">'+(c.v<0?"-":"+")+"$"+Math.abs(c.v*10).toFixed(2)+' ('+sg(c.v)+'%)</td>'
         +'<td class="mono" style="text-align:right;padding:7px 0 7px 8px;color:'+(c.pp==null?"var(--faint)":col(c.pp))+'">'
@@ -80,7 +80,7 @@
       +Number(a.max_dd_pct||0).toFixed(2)+'%</span></div>';
     h+='<div style="margin-top:14px">';
     (a.chequeos||[]).forEach(function(c){
-      h+='<div class="rg"><span class="lbl">'+(c.ok?'<span style="color:#3fb950">\u2713</span>':'<span style="color:#f85149">\u2717</span>')
+      h+='<div class="rg"><span class="lbl">'+(c.ok?'<span style="color:#BFD78D">\u2713</span>':'<span style="color:#D9967E">\u2717</span>')
         +' '+c.k+'</span><span class="mono" style="opacity:.7">'+c.v+'</span></div>';
     });
     body.innerHTML=h+'</div>';
