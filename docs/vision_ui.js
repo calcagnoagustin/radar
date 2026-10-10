@@ -19,6 +19,7 @@
     '#pvHead .pvRow{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1080px;margin:0 auto}',
     '#pvBrand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}',
     '#pvBrand svg{width:44px;height:44px;flex:none}',
+    '#pvBrand>span{display:flex;flex-direction:column;justify-content:center}',
     '#pvBrand .pvEye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500;line-height:1}',
     '#pvBrand .pvName{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.05;margin-top:3px}',
     '#pvTabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--surface-2);border:1px solid var(--hair)}',
