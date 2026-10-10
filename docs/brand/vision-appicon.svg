@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Portfolio Visión">
   <rect width="64" height="64" fill="#0F1A14"/>
-  <g transform="translate(32 32) scale(0.72) translate(-32 -32)">
+  <g transform="translate(32 32) scale(0.8) translate(-32 -32)">
   <path d="M 2.000 32.000 A 37.500 37.500 0 0 1 62.000 32.000 A 37.500 37.500 0 0 1 2.000 32.000 Z" fill="#ECECDF"/>
   <path d="M 13.460 32.000 A 23.175 23.175 0 0 1 50.540 32.000 A 23.175 23.175 0 0 1 13.460 32.000 Z" fill="#0F1A14"/>
   <path d="M 20.542 32.000 A 14.322 14.322 0 0 1 43.458 32.000 A 14.322 14.322 0 0 1 20.542 32.000 Z" fill="#ECECDF"/>
