@@ -4,14 +4,14 @@
    Lo de Semillas 1.0 (cerrado) se oculta siempre. */
 (function(){
   var G={
-    total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"]},
+    total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"], tag:"plata real \u00b7 Colch\u00f3n + Retiro + Binance"},
     colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
-    fondo:  {n:"Fondo Abundancia",  bal:["fBal"],    pnl:["fPnl"], tag:"rotativo \u00b7 paper"},
     retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu"},
-    lab:    {n:"Laboratorio",       bal:["gBal","p2Bal","pcBal","faroBal","rsBal"],
-             pnl:["gGen","p2Real","p2Unr","pcReal","pcUnr","faroPnl","rsPnl"], tag:"experimentos \u00b7 paper \u00b7 no suman al total"}
+    lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","pcBal","faroBal","rsBal"],
+             pnl:["fPnl","gGen","p2Real","p2Unr","pcReal","pcUnr","faroPnl","rsPnl"], tag:"simulaciones con plata ficticia \u00b7 no suman al total"}
   };
   var SUB={
+    fondo:   {n:"Fondo Abundancia", bal:["fBal"], pnl:["fPnl"], tag:"rotativo \u00b7 pasa a real con la plata de Binance"},
     ganesha: {n:"Ganesha",        bal:["gBal"],    pnl:["gGen"], tag:"alts de momentum + sombra v5.1"},
     pescador:{n:"Pescador",       bal:["p2Bal"],   pnl:["p2Real","p2Unr"], tag:"runners de bStocks"},
     chico:   {n:"Pescador Chico", bal:["pcBal"],   pnl:["pcReal","pcUnr"], tag:"ganancias chicas y salir"},
@@ -37,7 +37,12 @@
     '.bot-bar .bv{font-size:.85em;opacity:.65}',
     '.bot-bar .ch{transition:transform .2s;opacity:.6}',
     '.bot-bar.abierto .ch{transform:rotate(90deg)}',
-    '.bot-bar[data-g="lab"]{margin-top:26px;border-style:dashed}',
+    '.bot-bar[data-g="lab"]{margin-top:78px;border-style:dashed;background:transparent;position:relative;opacity:.9}',
+    '.bot-bar[data-g="lab"]:before{content:"LABORATORIO \\00B7  SIMULACIONES";position:absolute;left:0;right:0;top:-44px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font:600 10.5px/1 system-ui;letter-spacing:.24em;color:rgba(232,239,233,.45)}',
+    '.bot-bar[data-g="lab"] .bt{color:rgba(232,239,233,.75)}',
+    '.bot-bar[data-g="total"]{padding:24px 20px;margin-bottom:26px;border:1px solid rgba(111,191,142,.55);background:linear-gradient(135deg,rgba(111,191,142,.14),rgba(111,191,142,.03));box-shadow:0 10px 30px rgba(0,0,0,.25)}',
+    '.bot-bar[data-g="total"] .bn{font-size:1.25em;letter-spacing:.02em}',
+    '.bot-bar[data-g="total"] .bt{font-size:2.2em}',
     '.bot-bar.sub{margin:0 0 10px 22px;padding:12px 16px;border-radius:12px;background:rgba(127,127,127,.04)}',
     '.bot-bar.sub .bt{font-size:1.3em}',
     '.bot-bar.sub .bn{font-size:.95em}',
@@ -54,7 +59,7 @@
     if(el.classList.contains("bot-bar")) return actual;
     if(el.id==="sysHero") return "total";
     if(el.id==="colchonSec") return "colchon";
-    if(el.tagName==="HEADER"||el.id==="fondoWrap") return "fondo";
+    if(el.tagName==="HEADER"||el.id==="fondoWrap") return "lab";
     if(el.id==="retiroSec") return "retiro";
     if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "lab";
     if(el.id==="pescadorV2"||el.id==="pescadorChico"||el.id==="labV51Host"||el.classList.contains("labsec")) return "lab";
@@ -62,6 +67,7 @@
     return actual;
   }
   function subDe(el, actual){
+    if(el.tagName==="HEADER"||el.id==="fondoWrap") return "fondo";
     if(el.id==="pescadorV2") return "pescador";
     if(el.id==="pescadorChico") return "chico";
     if(el.id==="faroRadar") return "faro";
