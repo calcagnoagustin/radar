@@ -57,7 +57,8 @@
     // El Fondo Abundancia (paper) y los experimentos viven en Laboratorio y NO suman.
     var r=RET||{}, c=COL||{}, bz=BIN||{};
     var re=(r.total_usd!=null)?r.total_usd:0, ce=c.saldo_usd||0, be=bz.saldo_usd||0;
-    var tot=re+ce+be, p=(r.gan_usd||0)+(bz.pnl_usd||0), base=tot-p;
+    // El resultado historico de Binance (desde 2018) se muestra en su bloque y NO entra en la ganancia del Total.
+    var tot=re+ce+be, p=(r.gan_usd||0), base=tot-p;
     $("sysBal").textContent=fmt(tot);
     $("sysSub").textContent="Colch\u00f3n "+fmt(ce)+" \u00b7 Retiro "+fmt(re)+" \u00b7 Binance "+(bz.saldo_usd!=null?fmt(be):"(pendiente)");
     $("sysPct").innerHTML='<span class="'+cls(p)+'">'+fmt(p)+' <span style="font-size:.7em">('+pct(base>0?100*p/base:0)+')</span></span>';
