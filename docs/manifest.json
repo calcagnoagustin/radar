@@ -1,0 +1,12 @@
+{
+  "name": "Portfolio Visión",
+  "short_name": "Visión",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0F1A14",
+  "theme_color": "#0F1A14",
+  "icons": [
+    {"src": "brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+    {"src": "brand/appicon-1024.png", "sizes": "1024x1024", "type": "image/png"}
+  ]
+}
