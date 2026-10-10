@@ -1,0 +1,15 @@
+/* Portfolio Visión — design tokens v1 (10/10/2026). Fuente de verdad: docs/brand/BRANDING.md */
+:root{
+  --pv-bg:#0F1A14;        /* fondo verde oscuro */
+  --pv-ink:#ECECDF;       /* marfil: texto, anillo, párpados */
+  --pv-lime:#BFD78D;      /* pupila, positivo, estado activo */
+  --pv-clay:#D9967E;      /* terracota: negativo */
+  --pv-surface:#15221B;   /* tarjetas */
+  --pv-surface-2:#1B2C23; /* tarjetas elevadas / chips */
+  --pv-hair:#243A2E;      /* líneas */
+  --pv-muted:#8FA094;     /* texto secundario */
+  --pv-faint:#5F7066;     /* texto terciario */
+  --pv-font:"Space Grotesk",system-ui,sans-serif;
+  --pv-mono:"IBM Plex Mono",monospace;
+  --pv-radius:14px;
+}
