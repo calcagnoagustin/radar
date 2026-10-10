@@ -20,7 +20,8 @@
       +'<div id="retMeta" style="margin:-6px 0 18px;padding:0 4px"></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Distribuci&oacute;n vs objetivo</span><span class="eyebrow">a 20 a&ntilde;os</span></div><div class="body" id="retDist"></div></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Tenencias</span><span class="eyebrow" id="retN"></span></div><div class="body" id="retPos"></div></div>';
-    var col=document.getElementById("colchonSec"), hd=document.querySelector("body > header");
+    // 10/10/2026: el Retiro va abajo de todo lo real (Colchon, Binance, subtotal liquido).
+    var col=document.getElementById("liquidoSec")||document.getElementById("binanceSec")||document.getElementById("colchonSec"), hd=document.querySelector("body > header");
     if(col&&col.parentNode){ col.parentNode.insertBefore(w,col.nextSibling); return true; }
     if(!hd) return false; hd.parentNode.insertBefore(w,hd); return true;
   }
