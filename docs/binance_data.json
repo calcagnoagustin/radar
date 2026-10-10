@@ -1,0 +1,47 @@
+{
+ "actualizado": "2026-10-10T15:45",
+ "cuenta_total_usd": 2541.72,
+ "reservado_colchon_usd": 1000.0,
+ "saldo_usd": 1541.72,
+ "composicion": [
+  {
+   "activo": "USDT (Earn)",
+   "usd": 1421.08
+  },
+  {
+   "activo": "BTC",
+   "usd": 774.27
+  },
+  {
+   "activo": "ETH",
+   "usd": 187.76
+  },
+  {
+   "activo": "BNB",
+   "usd": 132.79
+  },
+  {
+   "activo": "WLD",
+   "usd": 19.46
+  },
+  {
+   "activo": "BANK",
+   "usd": 5.33
+  }
+ ],
+ "pnl_historico_usd": -7576.43,
+ "aportes_netos_usd": 10118.14,
+ "desde": "2018-01-30",
+ "aportes_por_anio": {
+  "2018": 20693,
+  "2019": -68,
+  "2020": 7580,
+  "2021": -9240,
+  "2022": -7960,
+  "2023": -781,
+  "2024": -1596,
+  "2025": 429,
+  "2026": 1061
+ },
+ "nota": "P&L aproximado: valor de hoy menos todo lo que entro y salio desde 2018 (cripto al precio del dia, pesos al MEP del dia)."
+}
