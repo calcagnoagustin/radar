@@ -6,14 +6,14 @@ Diseño: ChatGPT genera, Claude audita y publica. Esta carpeta es la **fuente de
 ## Concepto
 El tercer ojo: ver con claridad para decidir. Criterio, no predicción. Nombre: **Portfolio Visión** ("Portfolio" descriptor chico, "Visión" protagonista).
 
-## Símbolo: "Apertura" (ojo geométrico fractal)
-- Un solo módulo: párpado = vésica (dos arcos de círculo iguales que se cruzan), repetido hacia adentro a **escala constante 61,8 %** (1 : 0,618 : 0,382 : 0,236).
-- 4 niveles alternando marfil / fondo + pupila lima en el centro exacto. Simetría vertical y horizontal perfectas. Sin línea vertical. Flat, sin brillos ni texturas.
-- Proporción del párpado exterior 2:1 (ancho:alto). Pupila r = 3,3 en viewBox 64.
-- Archivos: `vision-eye.svg` (símbolo completo, fondo transparente), `vision-eye-simple.svg` (2 niveles, para 16/32 px), `vision-appicon.svg` (sobre fondo, ojo al 72 %).
+## Símbolo: "Doble iris" (lámina 03, elegido 10/10/2026 — reemplaza a "Apertura")
+- Párpado = vésica (dos arcos de círculo iguales que se cruzan), proporción ~1,18:1 (ancho 60, alto 51 en viewBox 64; arcos r = 30,4).
+- Adentro, un iris de anillos concéntricos centrados: círculo fondo r 15 → anillo marfil r 11,4 → anillo fondo r 8,6 → pupila lima r 6,1. Simetría vertical y horizontal perfectas. Flat, sin brillos ni texturas.
+- Versión simple (16/32 px): párpado + círculo fondo r 15 + pupila lima r 7,5.
+- Archivos: `vision-eye.svg` (símbolo completo, fondo transparente), `vision-favicon.svg` (favicon: fondo redondeado + ojo de 2 niveles, pupila grande; es el único válido para 16-64 px), `vision-appicon.svg` (sobre fondo, ojo al 80 %), `vision-eye-simple.svg` (2 niveles sin fondo, solo para usar sobre fondo oscuro).
 - Renders: `favicon-16/32/64.png`, `apple-touch-icon.png` (180), `appicon-1024.png`, `eye-512.png`. Regenerar con `rsvg-convert` desde los SVG; nunca editar los PNG a mano.
 - Mobile: splash = ojo al 70 % del ancho sobre fondo, "Portfolio" (400) arriba y "Visión" (700) abajo, centrados.
-- Microinteracción reservada: secuencia "Apertura 01-02-03" (los niveles aparecen de afuera hacia adentro, la pupila al final) como animación de carga del ícono.
+- Microinteracción reservada: secuencia 01-02-03 (párpado+iris, anillos, pupila al final) como animación de carga del ícono.
 
 ## Paleta (hex)
 | Uso | Hex |
