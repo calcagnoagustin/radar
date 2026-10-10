@@ -7,7 +7,8 @@
     total:  {n:"Total",             bal:["sysBal"],  pnl:["sysPct"], tag:"plata real \u00b7 Colch\u00f3n + Retiro + Binance"},
     binance:{n:"Binance",          bal:["binBal"],  pnl:["binPnl"], tag:"real \u00b7 sin invertir \u00b7 desde el 10/10/2026"},
     colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
-    retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu"},
+    liquido:{n:"Subtotal l\u00edquido", bal:["liqBal"], pnl:[], tag:"Colch\u00f3n + Binance \u00b7 disponible ya", sub:"lo que se puede usar hoy"},
+    retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu \u00b7 a 20 a\u00f1os"},
     lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","pcBal","faroBal","rsBal"],
              pnl:["fPnl","gGen","p2Real","p2Unr","pcReal","pcUnr","faroPnl","rsPnl"], tag:"simulaciones con plata ficticia \u00b7 no suman al total"}
   };
@@ -61,6 +62,7 @@
     if(el.id==="sysHero") return "total";
     if(el.id==="colchonSec") return "colchon";
     if(el.id==="binanceSec") return "binance";
+    if(el.id==="liquidoSec") return "liquido";
     if(el.tagName==="HEADER"||el.id==="fondoWrap") return "lab";
     if(el.id==="retiroSec") return "retiro";
     if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "lab";
