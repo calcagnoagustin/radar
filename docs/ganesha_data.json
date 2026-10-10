@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 281.7,
+ "equity_now": 278.93,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 25.53,
- "pnl_vs_depositos_pct": 9.97,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 5.78,
- "trades_total": 139,
+ "pnl_vs_depositos": 22.76,
+ "pnl_vs_depositos_pct": 8.88,
+ "pnl_today": -5.79,
+ "trades_today": 1,
+ "realized_pnl": -0.01,
+ "trades_total": 140,
  "win_rate": 34,
- "profit_factor": 1.02,
+ "profit_factor": 1.0,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -76,23 +76,14 @@
    "tp1_done": false
   },
   {
-   "symbol": "OGN/USDT",
-   "entry": 0.04578,
-   "qty": 536.9016786570742,
-   "stop": 0.035355,
+   "symbol": "MAGIC/USDT",
+   "entry": 0.1088,
+   "qty": 196.29918290383407,
+   "stop": 0.0803892857142857,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PUMP/USDT",
-   "entry": 0.002852,
-   "exit": 0.004188,
-   "qty_total": 4268.6,
-   "pnl_net": 5.7,
-   "action": "manual",
-   "closed_ts": 1787328434.824626
-  },
   {
    "symbol": "ETHFI/USDT",
    "entry": 0.4399,
@@ -443,6 +434,15 @@
    "pnl_net": -5.41,
    "action": "stop",
    "closed_ts": 1791475644.4059565
+  },
+  {
+   "symbol": "OGN/USDT",
+   "entry": 0.04578,
+   "exit": 0.035,
+   "qty_total": 536.901679,
+   "pnl_net": -5.79,
+   "action": "stop",
+   "closed_ts": 1791634045.8149874
   }
  ],
  "equity_curve": [
@@ -1279,7 +1279,13 @@
    "pnl_net": -5.41,
    "action": "stop",
    "closed_ts": 1791475644.4059565
+  },
+  {
+   "symbol": "OGN/USDT",
+   "pnl_net": -5.79,
+   "action": "stop",
+   "closed_ts": 1791634045.8149874
   }
  ],
- "realized_total_events": 5.74
+ "realized_total_events": -0.05
 }
