@@ -39,6 +39,11 @@ Cada entrada lleva fecha. Lo que está acá manda sobre lo que diga cualquier ar
 - 09/10/2026: disclaimer de acciones EE.UU. firmado en las subcuentas de Binance (agus@, ganesha@).
 - 09/10/2026: Se mantiene la preferencia por GLD (ETF) sobre el oro físico para el Fondo de Retiro por razones de liquidez, costos operativos y practicidad en el largo plazo.
 
+- 10/10/2026: TOTAL del panel = solo plata real: Colchón + Retiro + Binance (cuenta principal + subcuentas, menos los USDT 1.000 que pasan al Colchón). El Fondo Abundancia (paper) y los experimentos van a Laboratorio y no suman.
+- 10/10/2026: Colchón: meta 6 meses de gastos (USD 23.400; gasto ~USD 3.900/mes). Separado de donde cobra (Mercado Pago) y de donde tiene deuda (Patagonia). Plan: ~70% broker FCI dólares, ~15% banco sin tarjeta, ~15% billetes. Sin Ledger.
+- 10/10/2026: Retiro: meta de libertad USD 1.115.000. Mediano (nombre a confirmar): apartados por objetivo — vacaciones anuales (~USD 5.000), cabaña para alquilar, ampliar la casa; horizonte 10 años.
+- Pendiente: qué hacer cuando la plata de Binance pase a ser el Fondo Abundancia en real.
+
 ## Ideas
 - Pata de acciones por convicción (ej. OpenAI en DCA cuando salga a bolsa).
 - Pasar cripto a hardware wallet y acciones a broker cuando el monto lo justifique.
