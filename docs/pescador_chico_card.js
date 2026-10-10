@@ -44,7 +44,7 @@
   var $=function(i){return document.getElementById(i)};
   var f=function(n){return (n<0?"-":"")+"$"+Math.abs(Number(n)||0).toFixed(2)};
   var p4=function(n){return Number(n).toPrecision(4)};
-  var col=function(v){return v>0?"#3fb950":(v<0?"#f85149":"")};
+  var col=function(v){return v>0?"#BFD78D":(v<0?"#D9967E":"")};
   var sg=function(v){return (v>0?"+":"")+Number(v).toFixed(2)};
   var D=null, PX={};
 
