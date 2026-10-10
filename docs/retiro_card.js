@@ -10,7 +10,7 @@
     if($("retiroSec")) return true;
     var w=document.createElement("div"); w.id="retiroSec";
     w.innerHTML=
-      '<div class="card" id="retRec" style="margin-bottom:18px;border-color:rgba(111,191,142,.55)"><div class="head"><span class="title" id="retRecT">Recomendaci&oacute;n del mes</span><span class="eyebrow">Fondo de Retiro &middot; a 20 a&ntilde;os</span></div><div class="body" id="retRecB"></div></div>'
+      '<div class="card" id="retRec" style="margin-bottom:18px;border-color:rgba(191,215,141,.55)"><div class="head"><span class="title" id="retRecT">Recomendaci&oacute;n del mes</span><span class="eyebrow">Fondo de Retiro &middot; a 20 a&ntilde;os</span></div><div class="body" id="retRecB"></div></div>'
       +'<section class="hero" style="border-color:rgba(130,170,220,.4)"><div><div class="eyebrow">Balance (USD) &middot; Fondo de Retiro &middot; REAL (Inviu)</div>'
       +'<div class="pnl-val mono" id="retBal">&mdash;</div><div class="pnl-sub" id="retSub">cargando&hellip;</div></div>'
       +'<div class="hero-stats"><div class="stat"><div class="k">Ganancia (en d&oacute;lares MEP)</div><div class="v mono" id="retPnl" style="font-size:1.4em">&mdash;</div></div>'
