@@ -5,7 +5,7 @@
 (function(){
   var st=document.createElement("style");
   st.textContent='html,body{overscroll-behavior-y:contain}'
-   +'#ptr{position:fixed;left:50%;top:0;z-index:2147483000;transform:translate(-50%,-60px);width:40px;height:40px;border-radius:50%;background:#1b2620;border:1px solid rgba(111,191,142,.45);display:flex;align-items:center;justify-content:center;color:#9fd3b0;font:18px system-ui;transition:opacity .2s;opacity:0;pointer-events:none}'
+   +'#ptr{position:fixed;left:50%;top:0;z-index:2147483000;transform:translate(-50%,-60px);width:40px;height:40px;border-radius:50%;background:#1B2C23;border:1px solid rgba(191,215,141,.45);display:flex;align-items:center;justify-content:center;color:#BFD78D;font:18px system-ui;transition:opacity .2s;opacity:0;pointer-events:none}'
    +'#ptr.go span{animation:ptrg .8s linear infinite;display:inline-block}@keyframes ptrg{to{transform:rotate(360deg)}}';
   document.head.appendChild(st);
   var ptr=document.createElement("div"); ptr.id="ptr"; ptr.innerHTML="<span>&#8635;</span>"; document.body.appendChild(ptr);
