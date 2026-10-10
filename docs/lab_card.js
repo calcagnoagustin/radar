@@ -11,9 +11,9 @@
 '.labsec .kv:last-child{border-bottom:0}',
 '.labsec .kv .lbl{opacity:.7}',
 '.labsec .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18)}',
-'.labsec .pill.on{color:#3fb950;border-color:#3fb950}',
+'.labsec .pill.on{color:#BFD78D;border-color:#BFD78D}',
 '.labsec .pill.off{color:#f0883e;border-color:#f0883e}',
-'.labsec .pill.warn{color:#f85149;border-color:#f85149}',
+'.labsec .pill.warn{color:#D9967E;border-color:#D9967E}',
 '.labsec table{width:100%;border-collapse:collapse;font-size:12.5px}',
 '.labsec th,.labsec td{padding:6px 4px;text-align:right;border-bottom:1px solid rgba(255,255,255,.06)}',
 '.labsec th:first-child,.labsec td:first-child{text-align:left}',
@@ -45,7 +45,7 @@
   var $=function(i){return document.getElementById(i)};
   var f=function(n,d){d=(d==null)?2:d;return (n<0?"-":"")+"$"+Math.abs(Number(n)||0).toFixed(d)};
   var pc=function(n){return n==null?"&mdash;":((n>0?"+":"")+Number(n).toFixed(2)+"%")};
-  var col=function(v){return v>0?"#3fb950":(v<0?"#f85149":"")};
+  var col=function(v){return v>0?"#BFD78D":(v<0?"#D9967E":"")};
   var kv=function(l,v,c){return '<div class="kv"><span class="lbl">'+l+'</span><span class="mono"'+(c?' style="color:'+c+'"':'')+'>'+v+'</span></div>'};
   var pill=function(t,k){return '<span class="pill '+(k||"")+'">'+t+'</span>'};
   function spark(series,keys,colors){
@@ -118,6 +118,6 @@
     var setb=function(b,p,eq){var pn=eq-1000;$(b).textContent="$"+eq.toFixed(2);$(p).textContent=(pn<0?"-":"")+"$"+Math.abs(pn).toFixed(2)+" ("+(pn>=0?"+":"")+(pn/10).toFixed(2)+"%)";};
     if(d.faro) setb("faroBal","faroPnl",d.faro.equity);
     if(d.rs&&d.rs.RS) setb("rsBal","rsPnl",d.rs.RS.equity);
-    if(d.errores&&d.errores.length){var e=document.createElement("div");e.className="hint";e.style.color="#f85149";e.textContent="errores: "+d.errores.join(" | ");hRS.appendChild(e);}
+    if(d.errores&&d.errores.length){var e=document.createElement("div");e.className="hint";e.style.color="#D9967E";e.textContent="errores: "+d.errores.join(" | ");hRS.appendChild(e);}
   }).catch(function(){Array.prototype.forEach.call(document.querySelectorAll(".labFresh"),function(e){e.innerHTML='<span class="err">lab_data.json a&uacute;n no disponible</span>';});});
 })();
