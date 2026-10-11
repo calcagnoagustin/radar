@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 287.17,
+ "equity_now": 293.38,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 31.0,
- "pnl_vs_depositos_pct": 12.1,
+ "pnl_vs_depositos": 37.21,
+ "pnl_vs_depositos_pct": 14.53,
  "pnl_today": -1.92,
  "trades_today": 2,
  "realized_pnl": -1.93,
@@ -56,16 +56,16 @@
   },
   {
    "symbol": "W/USDT",
-   "entry": 0.01575,
-   "qty": 1139.7866666666666,
-   "stop": 0.016116000000000002,
+   "entry": 0.01813666666666667,
+   "qty": 1709.6799999999998,
+   "stop": 0.020387142857142857,
    "tp1_done": false
   },
   {
    "symbol": "MAGIC/USDT",
    "entry": 0.1088,
    "qty": 196.29918290383407,
-   "stop": 0.0803892857142857,
+   "stop": 0.11883,
    "tp1_done": false
   },
   {
@@ -80,6 +80,13 @@
    "entry": 0.603,
    "qty": 41.75150554675118,
    "stop": 0.46778571428571425,
+   "tp1_done": false
+  },
+  {
+   "symbol": "RLC/USDT",
+   "entry": 1.0608,
+   "qty": 13.215189058728884,
+   "stop": 0.6168714285714286,
    "tp1_done": false
   }
  ],
