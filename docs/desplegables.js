@@ -20,6 +20,12 @@
     faro:    {n:"Faro",           bal:["faroBal"], pnl:["faroPnl"], tag:"r\u00e9gimen de mercado"},
     rs:      {n:"RS-BTC",         bal:["rsBal"],   pnl:["rsPnl"], tag:"fuerza relativa vs BTC"}
   };
+  // Desde cuando corre cada cosa (pedido de Agus 11/10/2026): fecha de inicio en chiquito en cada barra
+  var DESDE={colchon:"2026-10-10",binance:"2018-01-30",retiro:"2021-06-01",fondo:"2026-08-28",ganesha:"2026-08-28",pescador:"2026-09-22",chico:"2026-09-22",faro:"2026-10-01",rs:"2026-10-01"};
+  var NOTA_DESDE={binance:"cuenta",retiro:"cuenta",fondo:"paper \u00b7 rotativo desde 09/10",ganesha:"paper",pescador:"paper",chico:"paper \u00b7 apagado 10/10",faro:"paper",rs:"paper",colchon:"seguimiento"};
+  function antig(d){ var ms=Date.now()-new Date(d+"T12:00:00Z").getTime(), dd=Math.floor(ms/86400000);
+    if(dd<1) return "hoy"; if(dd<60) return dd+" d\u00edas"; var m=Math.floor(dd/30.44); if(m<24) return m+" meses"; var y=Math.floor(dd/365.25); return y+" a\u00f1os "+Math.floor((dd-y*365.25)/30.44)+" meses"; }
+  function fe(d){ var p=d.split("-"); return p[2]+"/"+p[1]+"/"+p[0]; }
   var KEY="radar_abiertos4", abiertos={};
   try{abiertos=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){}
   var st=document.createElement("style");
@@ -29,6 +35,7 @@
     '.bot-bar.abierto{margin-bottom:20px}',
     '.bot-bar .bn{font-weight:600;font-size:1.05em;display:flex;flex-direction:column;gap:3px}',
     '.bot-bar .bn small{font-weight:400;font-size:11px;letter-spacing:.06em;opacity:.55}',
+    '.bot-bar .bn .desde{font-weight:400;font-size:10.5px;letter-spacing:.04em;opacity:.42;font-family:"IBM Plex Mono",ui-monospace,monospace}',
     '.bot-bar .bd{display:flex;align-items:center;gap:14px;opacity:.85}',
     '.bot-bar .br{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}',
     '.bot-bar .bg{font-size:1.6em;font-weight:700;letter-spacing:-.01em;line-height:1.1;display:flex;align-items:center;gap:10px;justify-content:flex-end}',
@@ -88,7 +95,8 @@
     var esSub=!!SUB[g]&&!G[g], D=esSub?SUB[g]:G[g];
     var b=document.querySelector('.bot-bar[data-g="'+g+'"]'); if(b) return b;
     b=document.createElement("div"); b.className="bot-bar"+(esSub?" sub":""); b.setAttribute("data-g",g);
-    b.innerHTML='<span class="bn">'+D.n+(D.tag?'<small>'+D.tag+'</small>':'')+'</span><span class="bd"><span class="br"><span class="bk">Total en cartera</span><span class="mono bt">&mdash;</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
+    var ds=DESDE[g]?'<span class="desde">desde '+fe(DESDE[g])+' \u00b7 '+antig(DESDE[g])+(NOTA_DESDE[g]?' \u00b7 '+NOTA_DESDE[g]:'')+'</span>':'';
+    b.innerHTML='<span class="bn">'+D.n+(D.tag?'<small>'+D.tag+'</small>':'')+ds+'</span><span class="bd"><span class="br"><span class="bk">Total en cartera</span><span class="mono bt">&mdash;</span><span class="mono bg">&mdash;</span><span class="mono bv">&mdash;</span></span><span class="ch">&#9656;</span></span>';
     var k=esSub?"sub_"+g:g;
     b.addEventListener("click",function(){abiertos[k]=!abiertos[k];try{localStorage.setItem(KEY,JSON.stringify(abiertos));}catch(e){}aplicar();});
     return b;
