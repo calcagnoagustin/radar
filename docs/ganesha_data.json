@@ -1,29 +1,22 @@
 {
  "dry_run": true,
- "equity_now": 278.38,
+ "equity_now": 276.82,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 22.21,
- "pnl_vs_depositos_pct": 8.67,
- "pnl_today": -5.79,
- "trades_today": 1,
- "realized_pnl": -0.01,
- "trades_total": 140,
+ "pnl_vs_depositos": 20.65,
+ "pnl_vs_depositos_pct": 8.06,
+ "pnl_today": -1.92,
+ "trades_today": 2,
+ "realized_pnl": -1.93,
+ "trades_total": 142,
  "win_rate": 34,
- "profit_factor": 1.0,
+ "profit_factor": 0.99,
  "open_positions": [
   {
    "symbol": "RE/USDT",
    "entry": 0.5186,
    "qty": 21.5,
    "stop": 0.39343928571428566,
-   "tp1_done": false
-  },
-  {
-   "symbol": "TRUMP/USDT",
-   "entry": 2.384,
-   "qty": 4.27,
-   "stop": 2.6078,
    "tp1_done": false
   },
   {
@@ -45,13 +38,6 @@
    "entry": 7.296,
    "qty": 3.1543421335050437,
    "stop": 5.632071428571429,
-   "tp1_done": false
-  },
-  {
-   "symbol": "CAKE/USDT",
-   "entry": 2.246,
-   "qty": 8.397369545859306,
-   "stop": 2.43355,
    "tp1_done": false
   },
   {
@@ -84,24 +70,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ETHFI/USDT",
-   "entry": 0.4399,
-   "exit": 0.6255,
-   "qty_total": 40.53,
-   "pnl_net": 7.52,
-   "action": "manual",
-   "closed_ts": 1787371636.2989295
-  },
-  {
-   "symbol": "GPS/USDT",
-   "entry": 0.01645,
-   "exit": 0.01331,
-   "qty_total": 353.2,
-   "pnl_net": -1.11,
-   "action": "manual",
-   "closed_ts": 1787371637.3060777
-  },
   {
    "symbol": "TRUMP/USDT",
    "entry": 1.67,
@@ -443,6 +411,24 @@
    "pnl_net": -5.79,
    "action": "stop",
    "closed_ts": 1791634045.8149874
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "entry": 2.384,
+   "exit": 1.893,
+   "qty_total": 4.27,
+   "pnl_net": -2.1,
+   "action": "stop",
+   "closed_ts": 1791677238.1201885
+  },
+  {
+   "symbol": "CAKE/USDT",
+   "entry": 2.246,
+   "exit": 2.267,
+   "qty_total": 8.39737,
+   "pnl_net": 0.18,
+   "action": "stop",
+   "closed_ts": 1791677240.4937348
   }
  ],
  "equity_curve": [
@@ -1285,7 +1271,19 @@
    "pnl_net": -5.79,
    "action": "stop",
    "closed_ts": 1791634045.8149874
+  },
+  {
+   "symbol": "TRUMP/USDT",
+   "pnl_net": -2.1,
+   "action": "stop",
+   "closed_ts": 1791677238.1201885
+  },
+  {
+   "symbol": "CAKE/USDT",
+   "pnl_net": 0.18,
+   "action": "stop",
+   "closed_ts": 1791677240.4937348
   }
  ],
- "realized_total_events": -0.05
+ "realized_total_events": -1.97
 }
