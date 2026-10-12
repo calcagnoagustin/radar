@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T00:15:04Z",
+ "generated_at": "2026-10-12T01:09:53Z",
  "errores": [],
  "faro": {
   "dias": 11,
@@ -94,185 +94,87 @@
   ]
  },
  "rs": {
-  "desde": "2026-10-01",
-  "dias": 11,
+  "desde": "2026-10-11",
+  "dias": 1,
   "gate_on": true,
   "RS": {
-   "equity": 1461.06,
-   "ret_pct": 46.11,
-   "cierres": 2,
+   "equity": 998.14,
+   "ret_pct": -0.19,
+   "cierres": 0,
    "pos": [
     {
-     "sym": "MOVR/USDT",
-     "w": 0.16,
-     "d": "2026-10-01"
-    },
-    {
-     "sym": "QNT/USDT",
-     "w": 0.2,
-     "d": "2026-10-01"
-    },
-    {
-     "sym": "MUBARAK/USDT",
-     "w": 0.18,
-     "d": "2026-10-04"
-    },
-    {
-     "sym": "SAND/USDT",
-     "w": 0.26,
-     "d": "2026-10-04"
+     "sym": "RLC/USDT",
+     "w": 0.19,
+     "d": "2026-10-11"
     },
     {
      "sym": "STRK/USDT",
-     "w": 0.3,
-     "d": "2026-10-04"
-    },
-    {
-     "sym": "ORCA/USDT",
-     "w": 0.3,
-     "d": "2026-10-07"
-    },
-    {
-     "sym": "MET/USDT",
-     "w": 0.28,
-     "d": "2026-10-07"
-    },
-    {
-     "sym": "RLC/USDT",
-     "w": 0.23,
-     "d": "2026-10-10"
+     "w": 0.26,
+     "d": "2026-10-11"
     },
     {
      "sym": "MAGIC/USDT",
-     "w": 0.25,
-     "d": "2026-10-10"
-    }
-   ],
-   "ultimos_cierres": [
-    {
-     "d": "2026-10-04",
-     "sym": "NEAR/USDT",
-     "pnl": 5.11,
-     "ret": 1.84
+     "w": 0.18,
+     "d": "2026-10-11"
     },
     {
-     "d": "2026-10-04",
-     "sym": "ZRO/USDT",
-     "pnl": 24.05,
-     "ret": 8.99
+     "sym": "S/USDT",
+     "w": 0.3,
+     "d": "2026-10-11"
     }
-   ]
+   ],
+   "ultimos_cierres": []
   },
   "BTC": {
-   "equity": 984.99,
-   "ret_pct": -1.5,
+   "equity": 998.0,
+   "ret_pct": -0.2,
    "cierres": 0,
    "pos": [
     {
      "sym": "BTC/USDT",
      "w": 1.0,
-     "d": "2026-10-01"
+     "d": "2026-10-11"
     }
    ],
    "ultimos_cierres": []
   },
   "VOL": {
-   "equity": 942.54,
-   "ret_pct": -5.75,
+   "equity": 998.0,
+   "ret_pct": -0.2,
    "cierres": 0,
    "pos": [
     {
      "sym": "ETH/USDT",
      "w": 0.25,
-     "d": "2026-10-01"
+     "d": "2026-10-11"
     },
     {
      "sym": "ZEC/USDT",
      "w": 0.25,
-     "d": "2026-10-01"
+     "d": "2026-10-11"
     },
     {
      "sym": "SOL/USDT",
      "w": 0.25,
-     "d": "2026-10-01"
+     "d": "2026-10-11"
     },
     {
      "sym": "XRP/USDT",
      "w": 0.25,
-     "d": "2026-10-01"
+     "d": "2026-10-11"
     }
    ],
    "ultimos_cierres": []
   },
-  "selection_alpha_vs_BTC_pct": 48.33,
-  "selection_alpha_vs_VOL_pct": 55.01,
-  "estado": "SIN_MUESTRA (11/90 dias, 2/25 cierres)",
+  "selection_alpha_vs_BTC_pct": 0.01,
+  "selection_alpha_vs_VOL_pct": 0.01,
+  "estado": "SIN_MUESTRA (1/90 dias, 0/25 cierres)",
   "curva": [
    {
-    "d": "2026-10-01",
-    "RS": 998.28,
+    "d": "2026-10-11",
+    "RS": 998.14,
     "BTC": 998.0,
     "VOL": 998.0
-   },
-   {
-    "d": "2026-10-02",
-    "RS": 926.75,
-    "BTC": 993.75,
-    "VOL": 987.12
-   },
-   {
-    "d": "2026-10-03",
-    "RS": 983.31,
-    "BTC": 996.52,
-    "VOL": 991.85
-   },
-   {
-    "d": "2026-10-04",
-    "RS": 1033.99,
-    "BTC": 1017.4,
-    "VOL": 1014.22
-   },
-   {
-    "d": "2026-10-05",
-    "RS": 995.28,
-    "BTC": 1008.43,
-    "VOL": 1006.02
-   },
-   {
-    "d": "2026-10-06",
-    "RS": 1045.24,
-    "BTC": 1005.88,
-    "VOL": 1008.37
-   },
-   {
-    "d": "2026-10-07",
-    "RS": 1041.18,
-    "BTC": 979.68,
-    "VOL": 967.86
-   },
-   {
-    "d": "2026-10-08",
-    "RS": 1007.45,
-    "BTC": 961.25,
-    "VOL": 911.44
-   },
-   {
-    "d": "2026-10-09",
-    "RS": 1107.76,
-    "BTC": 971.61,
-    "VOL": 917.67
-   },
-   {
-    "d": "2026-10-10",
-    "RS": 1235.38,
-    "BTC": 975.76,
-    "VOL": 925.54
-   },
-   {
-    "d": "2026-10-11",
-    "RS": 1461.06,
-    "BTC": 984.99,
-    "VOL": 942.54
    }
   ]
  },
@@ -292,7 +194,7 @@
   "movers_exceso_riesgo": [
    "LSK/USDT"
   ],
-  "movers_alt_pnl_total": 33.26,
+  "movers_alt_pnl_total": 33.73,
   "movers_real_pnl_total": 6.88,
   "criterio": "riesgo disenado 2% del equity por trade; defecto recurrente si >=2 movers cerrados (de >=5) pierden mas de 4% del equity; ademas se compara contra las semillas si las hay",
   "veredicto": "SHOCK AISLADO (1/10 movers con perdida >4% del equity)",
@@ -331,8 +233,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 22.66,
     "alt_notional": 23.16,
-    "alt_pnl": -2.3,
-    "alt_pnl_pct_eq": -0.87,
+    "alt_pnl": -2.41,
+    "alt_pnl_pct_eq": -0.92,
     "cerrado_alt": false
    },
    {
@@ -369,8 +271,8 @@
     "real_loss_pct_eq": 0.07,
     "alt_stop_pct": 14.23,
     "alt_notional": 36.86,
-    "alt_pnl": 1.89,
-    "alt_pnl_pct_eq": 0.72,
+    "alt_pnl": 2.0,
+    "alt_pnl_pct_eq": 0.76,
     "cerrado_alt": false
    },
    {
@@ -464,8 +366,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 28.94,
     "alt_notional": 18.02,
-    "alt_pnl": -2.13,
-    "alt_pnl_pct_eq": -0.82,
+    "alt_pnl": -2.19,
+    "alt_pnl_pct_eq": -0.84,
     "cerrado_alt": false
    },
    {
@@ -483,8 +385,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 32.55,
     "alt_notional": 14.74,
-    "alt_pnl": -0.28,
-    "alt_pnl_pct_eq": -0.12,
+    "alt_pnl": -0.39,
+    "alt_pnl_pct_eq": -0.16,
     "cerrado_alt": false
    },
    {
@@ -540,8 +442,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 20.46,
     "alt_notional": 29.01,
-    "alt_pnl": 10.92,
-    "alt_pnl_pct_eq": 3.68,
+    "alt_pnl": 11.81,
+    "alt_pnl_pct_eq": 3.98,
     "cerrado_alt": false
    },
    {
@@ -578,8 +480,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 37.32,
     "alt_notional": 15.08,
-    "alt_pnl": 4.24,
-    "alt_pnl_pct_eq": 1.51,
+    "alt_pnl": 3.99,
+    "alt_pnl_pct_eq": 1.42,
     "cerrado_alt": false
    }
   ]
