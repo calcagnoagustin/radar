@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 298.27,
+ "equity_now": 297.33,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 42.1,
- "pnl_vs_depositos_pct": 16.43,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -1.93,
- "trades_total": 142,
+ "pnl_vs_depositos": 41.16,
+ "pnl_vs_depositos_pct": 16.07,
+ "pnl_today": 2.61,
+ "trades_today": 1,
+ "realized_pnl": 0.68,
+ "trades_total": 143,
  "win_rate": 34,
- "profit_factor": 0.99,
+ "profit_factor": 1.0,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -58,14 +58,7 @@
    "symbol": "W/USDT",
    "entry": 0.01813666666666667,
    "qty": 1709.6799999999998,
-   "stop": 0.027144,
-   "tp1_done": false
-  },
-  {
-   "symbol": "MAGIC/USDT",
-   "entry": 0.1088,
-   "qty": 196.29918290383407,
-   "stop": 0.12478,
+   "stop": 0.027972,
    "tp1_done": false
   },
   {
@@ -91,15 +84,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "TRUMP/USDT",
-   "entry": 1.67,
-   "exit": 2.849,
-   "qty_total": 0,
-   "pnl_net": 2.11,
-   "action": "tp",
-   "closed_ts": 1787386059.330344
-  },
   {
    "symbol": "NEIRO/USDT",
    "entry": 0.00010121,
@@ -450,6 +434,15 @@
    "pnl_net": 0.18,
    "action": "stop",
    "closed_ts": 1791677240.4937348
+  },
+  {
+   "symbol": "MAGIC/USDT",
+   "entry": 0.1088,
+   "exit": 0.1221,
+   "qty_total": 196.299183,
+   "pnl_net": 2.61,
+   "action": "stop",
+   "closed_ts": 1791792447.5322022
   }
  ],
  "equity_curve": [
@@ -1304,7 +1297,13 @@
    "pnl_net": 0.18,
    "action": "stop",
    "closed_ts": 1791677240.4937348
+  },
+  {
+   "symbol": "MAGIC/USDT",
+   "pnl_net": 2.61,
+   "action": "stop",
+   "closed_ts": 1791792447.5322022
   }
  ],
- "realized_total_events": -1.97
+ "realized_total_events": 0.64
 }
