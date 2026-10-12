@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 297.33,
+ "equity_now": 290.34,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 41.16,
- "pnl_vs_depositos_pct": 16.07,
- "pnl_today": 2.61,
- "trades_today": 1,
- "realized_pnl": 0.68,
- "trades_total": 143,
- "win_rate": 34,
- "profit_factor": 1.0,
+ "pnl_vs_depositos": 34.17,
+ "pnl_vs_depositos_pct": 13.34,
+ "pnl_today": 15.83,
+ "trades_today": 2,
+ "realized_pnl": 13.91,
+ "trades_total": 144,
+ "win_rate": 35,
+ "profit_factor": 1.05,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -55,13 +55,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "W/USDT",
-   "entry": 0.01813666666666667,
-   "qty": 1709.6799999999998,
-   "stop": 0.027972,
-   "tp1_done": false
-  },
-  {
    "symbol": "STRK/USDT",
    "entry": 0.10682,
    "qty": 230.3468612703849,
@@ -84,15 +77,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "NEIRO/USDT",
-   "entry": 0.00010121,
-   "exit": 8.992e-05,
-   "qty_total": 129555.0,
-   "pnl_net": -1.46,
-   "action": "manual",
-   "closed_ts": 1787414838.6339722
-  },
   {
    "symbol": "PEPE/USDT",
    "entry": 4.26e-06,
@@ -443,6 +427,15 @@
    "pnl_net": 2.61,
    "action": "stop",
    "closed_ts": 1791792447.5322022
+  },
+  {
+   "symbol": "W/USDT",
+   "entry": 0.01575,
+   "exit": 0.02587,
+   "qty_total": 1139.786667,
+   "pnl_net": 13.22,
+   "action": "stop",
+   "closed_ts": 1791806842.5635045
   }
  ],
  "equity_curve": [
@@ -1303,7 +1296,13 @@
    "pnl_net": 2.61,
    "action": "stop",
    "closed_ts": 1791792447.5322022
+  },
+  {
+   "symbol": "W/USDT",
+   "pnl_net": 13.22,
+   "action": "stop",
+   "closed_ts": 1791806842.5635045
   }
  ],
- "realized_total_events": 0.64
+ "realized_total_events": 13.86
 }
