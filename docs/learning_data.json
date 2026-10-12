@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T00:20:16Z",
+ "generated": "2026-10-12T00:20:15Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -24,13 +24,13 @@
     "max_dd_usd": -33.28
    },
    "ult_30d": {
-    "n": 14,
-    "win_rate": 50.0,
-    "pnl_total": 20.13,
-    "expectancy_usd": 1.438,
-    "expectancy_r": 0.35,
-    "profit_factor": 1.48,
-    "payoff": 1.48,
+    "n": 13,
+    "win_rate": 46.2,
+    "pnl_total": 19.07,
+    "expectancy_usd": 1.467,
+    "expectancy_r": 0.33,
+    "profit_factor": 1.45,
+    "payoff": 1.69,
     "max_dd_usd": -29.03
    },
    "ult_90d": {
@@ -66,13 +66,13 @@
     "max_dd_usd": -33.28
    },
    "ult_30d": {
-    "n": 14,
-    "win_rate": 50.0,
-    "pnl_total": 20.13,
-    "expectancy_usd": 1.438,
-    "expectancy_r": 0.35,
-    "profit_factor": 1.48,
-    "payoff": 1.48,
+    "n": 13,
+    "win_rate": 46.2,
+    "pnl_total": 19.07,
+    "expectancy_usd": 1.467,
+    "expectancy_r": 0.33,
+    "profit_factor": 1.45,
+    "payoff": 1.69,
     "max_dd_usd": -29.03
    },
    "ult_90d": {
@@ -331,60 +331,63 @@
   "PORTAL/USDT",
   "RE/USDT",
   "REZ/USDT",
+  "RLC/USDT",
+  "STRK/USDT",
+  "TIA/USDT",
   "W/USDT",
   "ZEN/USDT"
  ],
  "n_trades_consolidados": 132,
  "fondo": {
-  "generated": "2026-10-11T00:20",
+  "generated": "2026-10-12T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-10-10",
-  "dias": 44,
+  "hasta": "2026-10-11",
+  "dias": 45,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 44 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1385.49,
+  "veredicto": "Muestra insuficiente: 45 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1388.75,
   "aportado": 1306.52,
-  "pnl": 78.97,
-  "pnl_pct": 6.04,
+  "pnl": 82.23,
+  "pnl_pct": 6.29,
   "comparativa": {
    "fondo": {
-    "ret_pct": 6.11,
+    "ret_pct": 6.36,
     "max_dd_pct": -6.09,
-    "vol_anual_pct": 32.5,
-    "n": 44
+    "vol_anual_pct": 32.1,
+    "n": 45
    },
    "congelado": {
-    "ret_pct": 5.75,
+    "ret_pct": 6.69,
     "max_dd_pct": -6.05,
-    "vol_anual_pct": 32.6,
-    "n": 44
+    "vol_anual_pct": 32.3,
+    "n": 45
    },
    "btc_100": {
-    "ret_pct": 6.61,
+    "ret_pct": 7.61,
     "max_dd_pct": -6.92,
-    "vol_anual_pct": 37.0,
-    "n": 44
+    "vol_anual_pct": 36.7,
+    "n": 45
    },
    "btc_eth_5050": {
-    "ret_pct": 4.61,
+    "ret_pct": 5.73,
     "max_dd_pct": -8.26,
-    "vol_anual_pct": 38.6,
-    "n": 44
+    "vol_anual_pct": 38.3,
+    "n": 45
    },
    "spy_100": {
     "ret_pct": 1.2,
     "max_dd_pct": -2.47,
-    "vol_anual_pct": 9.8,
-    "n": 44
+    "vol_anual_pct": 9.7,
+    "n": 45
    }
   },
   "vs_controles_pp": {
-   "congelado": 0.36,
-   "btc_100": -0.5,
-   "btc_eth_5050": 1.5,
-   "spy_100": 4.91
+   "congelado": -0.33,
+   "btc_100": -1.25,
+   "btc_eth_5050": 0.63,
+   "spy_100": 5.16
   },
   "bloques": {
    "nucleo": {
@@ -417,9 +420,9 @@
     "sym": "ETH/USDT",
     "bloque": "otro",
     "cost": 277.11,
-    "val": 278.71,
-    "pnl": 1.6,
-    "pnl_pct": 0.58
+    "val": 282.09,
+    "pnl": 4.98,
+    "pnl_pct": 1.8
    },
    {
     "sym": "XLK",
@@ -537,7 +540,8 @@
     1418.78,
     1375.93,
     1397.25,
-    1385.49
+    1385.49,
+    1388.75
    ],
    "congelado": [
     1307.75,
@@ -583,7 +587,8 @@
     1412.4,
     1371.14,
     1379.16,
-    1383.0
+    1383.0,
+    1395.24
    ],
    "btc_100": [
     1305.68,
@@ -629,7 +634,8 @@
     1397.53,
     1371.24,
     1386.02,
-    1391.93
+    1391.93,
+    1405.1
    ],
    "btc_eth_5050": [
     1305.68,
@@ -675,7 +681,8 @@
     1386.7,
     1347.01,
     1357.85,
-    1365.84
+    1365.84,
+    1380.55
    ],
    "spy_100": [
     1305.68,
@@ -720,6 +727,7 @@
     1322.21,
     1319.04,
     1313.45,
+    1321.33,
     1321.33,
     1321.33
    ]
@@ -768,7 +776,8 @@
    "2026-10-07",
    "2026-10-08",
    "2026-10-09",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-11"
   ]
  }
 }
