@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 293.23,
+ "equity_now": 298.27,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 37.06,
- "pnl_vs_depositos_pct": 14.47,
+ "pnl_vs_depositos": 42.1,
+ "pnl_vs_depositos_pct": 16.43,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -1.93,
@@ -58,14 +58,14 @@
    "symbol": "W/USDT",
    "entry": 0.01813666666666667,
    "qty": 1709.6799999999998,
-   "stop": 0.020387142857142857,
+   "stop": 0.027144,
    "tp1_done": false
   },
   {
    "symbol": "MAGIC/USDT",
    "entry": 0.1088,
    "qty": 196.29918290383407,
-   "stop": 0.11891499999999999,
+   "stop": 0.12478,
    "tp1_done": false
   },
   {
