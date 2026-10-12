@@ -9,20 +9,19 @@
     colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
     liquido:{n:"Subtotal l\u00edquido", bal:["liqBal"], pnl:[], tag:"Colch\u00f3n + Binance \u00b7 disponible ya", sub:"lo que se puede usar hoy"},
     retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu \u00b7 a 20 a\u00f1os"},
-    lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","pcBal","faroBal","rsBal"],
-             pnl:["fPnl","gGen","p2Real","p2Unr","pcReal","pcUnr","faroPnl","rsPnl"], tag:"simulaciones con plata ficticia \u00b7 no suman al total"}
+    lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","faroBal","rsBal"],
+             pnl:["fPnl","gGen","p2Real","p2Unr","faroPnl","rsPnl"], tag:"simulaciones con plata ficticia \u00b7 no suman al total"}
   };
   var SUB={
     fondo:   {n:"Fondo Abundancia", bal:["fBal"], pnl:["fPnl"], tag:"rotativo \u00b7 pasa a real con la plata de Binance"},
     ganesha: {n:"Ganesha",        bal:["gBal"],    pnl:["gGen"], tag:"alts de momentum + sombra v5.1"},
     pescador:{n:"Pescador",       bal:["p2Bal"],   pnl:["p2Real","p2Unr"], tag:"runners de bStocks"},
-    chico:   {n:"Pescador Chico", bal:["pcBal"],   pnl:["pcReal","pcUnr"], tag:"ganancias chicas y salir"},
     faro:    {n:"Faro",           bal:["faroBal"], pnl:["faroPnl"], tag:"r\u00e9gimen de mercado"},
     rs:      {n:"RS-BTC",         bal:["rsBal"],   pnl:["rsPnl"], tag:"fuerza relativa vs BTC"}
   };
   // Desde cuando corre cada cosa (pedido de Agus 11/10/2026): fecha de inicio en chiquito en cada barra
-  var DESDE={colchon:"2026-10-10",binance:"2018-01-30",retiro:"2021-06-01",fondo:"2026-08-28",ganesha:"2026-08-28",pescador:"2026-09-22",chico:"2026-09-22",faro:"2026-10-01",rs:"2026-10-01"};
-  var NOTA_DESDE={binance:"cuenta",retiro:"cuenta",fondo:"paper \u00b7 rotativo desde 09/10",ganesha:"paper",pescador:"paper",chico:"paper \u00b7 apagado 10/10",faro:"paper",rs:"paper",colchon:"seguimiento"};
+  var DESDE={colchon:"2026-10-10",binance:"2018-01-30",retiro:"2021-06-01",fondo:"2026-08-28",ganesha:"2026-08-28",pescador:"2026-09-22",faro:"2026-10-01",rs:"2026-10-01"};
+  var NOTA_DESDE={binance:"cuenta",retiro:"cuenta",fondo:"paper \u00b7 rotativo desde 09/10",ganesha:"paper",pescador:"paper",faro:"paper",rs:"paper",colchon:"seguimiento"};
   function antig(d){ var ms=Date.now()-new Date(d+"T12:00:00Z").getTime(), dd=Math.floor(ms/86400000);
     if(dd<1) return "hoy"; if(dd===1) return "1 d\u00eda"; if(dd<60) return dd+" d\u00edas"; var m=Math.floor(dd/30.44); if(m<24) return m+" meses"; var y=Math.floor(dd/365.25); return y+" a\u00f1os "+Math.floor((dd-y*365.25)/30.44)+" meses"; }
   function fe(d){ var p=d.split("-"); return p[2]+"/"+p[1]+"/"+p[0]; }
