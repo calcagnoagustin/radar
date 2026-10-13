@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-12T01:09:53Z",
+ "generated_at": "2026-10-13T00:15:03Z",
  "errores": [],
  "faro": {
-  "dias": 11,
+  "dias": 12,
   "estado": "ON",
-  "equity": 984.99,
-  "btc_hold": 986.96,
+  "equity": 962.38,
+  "btc_hold": 964.3,
   "transiciones": 0,
-  "positivos": 4,
+  "positivos": 3,
   "desde": "2026-10-01",
   "fees": 2.0,
   "ultimas_transiciones": [
@@ -90,16 +90,22 @@
     "eq": 984.99,
     "btc": 986.96,
     "on": true
+   },
+   {
+    "d": "2026-10-12",
+    "eq": 962.38,
+    "btc": 964.3,
+    "on": true
    }
   ]
  },
  "rs": {
   "desde": "2026-10-11",
-  "dias": 1,
+  "dias": 2,
   "gate_on": true,
   "RS": {
-   "equity": 998.14,
-   "ret_pct": -0.19,
+   "equity": 852.13,
+   "ret_pct": -14.79,
    "cierres": 0,
    "pos": [
     {
@@ -126,8 +132,8 @@
    "ultimos_cierres": []
   },
   "BTC": {
-   "equity": 998.0,
-   "ret_pct": -0.2,
+   "equity": 975.09,
+   "ret_pct": -2.49,
    "cierres": 0,
    "pos": [
     {
@@ -139,8 +145,8 @@
    "ultimos_cierres": []
   },
   "VOL": {
-   "equity": 998.0,
-   "ret_pct": -0.2,
+   "equity": 943.19,
+   "ret_pct": -5.68,
    "cierres": 0,
    "pos": [
     {
@@ -166,38 +172,44 @@
    ],
    "ultimos_cierres": []
   },
-  "selection_alpha_vs_BTC_pct": 0.01,
-  "selection_alpha_vs_VOL_pct": 0.01,
-  "estado": "SIN_MUESTRA (1/90 dias, 0/25 cierres)",
+  "selection_alpha_vs_BTC_pct": -12.61,
+  "selection_alpha_vs_VOL_pct": -9.65,
+  "estado": "SIN_MUESTRA (2/90 dias, 0/25 cierres)",
   "curva": [
    {
     "d": "2026-10-11",
     "RS": 998.14,
     "BTC": 998.0,
     "VOL": 998.0
+   },
+   {
+    "d": "2026-10-12",
+    "RS": 852.13,
+    "BTC": 975.09,
+    "VOL": 943.19
    }
   ]
  },
  "v51": {
   "n_trades": 15,
   "movers": {
-   "n": 10,
+   "n": 12,
    "peor_pct_eq": -5.44,
-   "media_pct_eq": 0.15
+   "media_pct_eq": 0.57
   },
   "semillas": {
    "n": 0,
    "peor_pct_eq": null,
    "media_pct_eq": null
   },
-  "movers_cerrados": 10,
+  "movers_cerrados": 12,
   "movers_exceso_riesgo": [
    "LSK/USDT"
   ],
-  "movers_alt_pnl_total": 33.73,
-  "movers_real_pnl_total": 6.88,
+  "movers_alt_pnl_total": 30.39,
+  "movers_real_pnl_total": 22.71,
   "criterio": "riesgo disenado 2% del equity por trade; defecto recurrente si >=2 movers cerrados (de >=5) pierden mas de 4% del equity; ademas se compara contra las semillas si las hay",
-  "veredicto": "SHOCK AISLADO (1/10 movers con perdida >4% del equity)",
+  "veredicto": "SHOCK AISLADO (1/12 movers con perdida >4% del equity)",
   "trades": [
    {
     "sym": "DASH/USDT",
@@ -233,8 +245,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 22.66,
     "alt_notional": 23.16,
-    "alt_pnl": -2.41,
-    "alt_pnl_pct_eq": -0.92,
+    "alt_pnl": -3.9,
+    "alt_pnl_pct_eq": -1.49,
     "cerrado_alt": false
    },
    {
@@ -271,8 +283,8 @@
     "real_loss_pct_eq": 0.07,
     "alt_stop_pct": 14.23,
     "alt_notional": 36.86,
-    "alt_pnl": 2.0,
-    "alt_pnl_pct_eq": 0.76,
+    "alt_pnl": 0.18,
+    "alt_pnl_pct_eq": 0.07,
     "cerrado_alt": false
    },
    {
@@ -366,8 +378,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 28.94,
     "alt_notional": 18.02,
-    "alt_pnl": -2.19,
-    "alt_pnl_pct_eq": -0.84,
+    "alt_pnl": -3.31,
+    "alt_pnl_pct_eq": -1.27,
     "cerrado_alt": false
    },
    {
@@ -385,8 +397,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 32.55,
     "alt_notional": 14.74,
-    "alt_pnl": -0.39,
-    "alt_pnl_pct_eq": -0.16,
+    "alt_pnl": -1.43,
+    "alt_pnl_pct_eq": -0.6,
     "cerrado_alt": false
    },
    {
@@ -437,14 +449,14 @@
     "stop_pct": 18.19,
     "atr4h_pct": 4.92,
     "notional": 17.95,
-    "real_pnl": null,
-    "real_r": null,
-    "real_loss_pct_eq": null,
+    "real_pnl": 13.22,
+    "real_r": 2.7,
+    "real_loss_pct_eq": 4.45,
     "alt_stop_pct": 20.46,
     "alt_notional": 29.01,
-    "alt_pnl": 11.81,
-    "alt_pnl_pct_eq": 3.98,
-    "cerrado_alt": false
+    "alt_pnl": 16.5,
+    "alt_pnl_pct_eq": 5.56,
+    "cerrado_alt": true
    },
    {
     "sym": "OGN/USDT",
@@ -475,45 +487,45 @@
     "stop_pct": 26.11,
     "atr4h_pct": 14.93,
     "notional": 21.36,
-    "real_pnl": null,
-    "real_r": null,
-    "real_loss_pct_eq": null,
+    "real_pnl": 2.61,
+    "real_r": 0.47,
+    "real_loss_pct_eq": 0.93,
     "alt_stop_pct": 37.32,
     "alt_notional": 15.08,
-    "alt_pnl": 3.99,
-    "alt_pnl_pct_eq": 1.42,
+    "alt_pnl": 1.43,
+    "alt_pnl_pct_eq": 0.51,
     "cerrado_alt": false
    }
   ]
  },
  "positioning": {
-  "hoy_simbolos": 29,
-  "dias_logueados": 11,
+  "hoy_simbolos": 26,
+  "dias_logueados": 12,
   "objetivo_dias": 90,
   "btc": {
-   "d": "2026-10-12",
+   "d": "2026-10-13",
    "sym": "BTC/USDT",
    "funding_8h": [
-    -9.93e-06,
-    1.347e-05,
-    5.56e-06
+    1.866e-05,
+    1.944e-05,
+    6.741e-05
    ],
-   "top_ls_ratio": 1.5487,
-   "global_ls_ratio": 1.4125,
-   "oi_usd": 7734132958.865111
+   "top_ls_ratio": 1.6068,
+   "global_ls_ratio": 1.5013,
+   "oi_usd": 7642933868.6864
   },
   "eth": {
-   "d": "2026-10-12",
+   "d": "2026-10-13",
    "sym": "ETH/USDT",
    "funding_8h": [
-    -0.00011662,
-    1.163e-05,
-    1.479e-05
+    -1.797e-05,
+    1.695e-05,
+    6.35e-06
    ],
-   "top_ls_ratio": 1.5403,
-   "global_ls_ratio": 2.873,
-   "oi_usd": 5840719150.25358
+   "top_ls_ratio": 1.5127,
+   "global_ls_ratio": 3.0306,
+   "oi_usd": 5569951093.59425
   },
-  "estado": "LOGGER (11/90 dias)"
+  "estado": "LOGGER (12/90 dias)"
  }
 }
