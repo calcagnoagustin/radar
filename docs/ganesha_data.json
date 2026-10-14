@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 280.74,
+ "equity_now": 280.26,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 24.57,
- "pnl_vs_depositos_pct": 9.59,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 13.91,
- "trades_total": 144,
- "win_rate": 35,
- "profit_factor": 1.05,
+ "pnl_vs_depositos": 24.09,
+ "pnl_vs_depositos_pct": 9.4,
+ "pnl_today": -5.64,
+ "trades_today": 1,
+ "realized_pnl": 8.27,
+ "trades_total": 145,
+ "win_rate": 34,
+ "profit_factor": 1.03,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -55,13 +55,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "STRK/USDT",
-   "entry": 0.10682,
-   "qty": 230.3468612703849,
-   "stop": 0.08283964285714285,
-   "tp1_done": false
-  },
-  {
    "symbol": "TIA/USDT",
    "entry": 0.603,
    "qty": 41.75150554675118,
@@ -74,18 +67,16 @@
    "qty": 13.215189058728884,
    "stop": 0.6168714285714286,
    "tp1_done": false
+  },
+  {
+   "symbol": "GNS/USDT",
+   "entry": 0.658,
+   "qty": 25.625600000000002,
+   "stop": 0.4392500000000001,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "PEPE/USDT",
-   "entry": 4.26e-06,
-   "exit": 4e-06,
-   "qty_total": 6681579.0,
-   "pnl_net": -1.74,
-   "action": "manual",
-   "closed_ts": 1787414840.581856
-  },
   {
    "symbol": "TRUMP/USDT",
    "entry": 1.67,
@@ -436,6 +427,15 @@
    "pnl_net": 13.22,
    "action": "stop",
    "closed_ts": 1791806842.5635045
+  },
+  {
+   "symbol": "STRK/USDT",
+   "entry": 0.10682,
+   "exit": 0.08234,
+   "qty_total": 230.346861,
+   "pnl_net": -5.64,
+   "action": "stop",
+   "closed_ts": 1791965239.767552
   }
  ],
  "equity_curve": [
@@ -1302,7 +1302,13 @@
    "pnl_net": 13.22,
    "action": "stop",
    "closed_ts": 1791806842.5635045
+  },
+  {
+   "symbol": "STRK/USDT",
+   "pnl_net": -5.64,
+   "action": "stop",
+   "closed_ts": 1791965239.767552
   }
  ],
- "realized_total_events": 13.86
+ "realized_total_events": 8.22
 }
