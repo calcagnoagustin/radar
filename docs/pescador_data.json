@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-10-15T21:10:10Z",
+ "generated_at": "2026-10-16T21:10:15Z",
  "modo": "PAPER",
  "version": "bstocks",
  "sub": "Runners de bStocks &middot; entra en la ruptura, banca con stop ancho",
  "subtitulo": "stop y trailing 3x ATR(14) &middot; tope de tenencia 40 ruedas",
- "equity_now": 965.23,
- "caja": 485.55,
- "realized_pnl": 0.0,
- "trades_total": 0,
+ "equity_now": 935.99,
+ "caja": 135.82,
+ "realized_pnl": -34.13,
+ "trades_total": 1,
  "win_rate": 0,
- "profit_factor": 0,
+ "profit_factor": 0.0,
  "reglas_lista": [
   {
    "l": "Universo",
@@ -38,26 +38,26 @@
  ],
  "open_positions": [
   {
-   "symbol": "MSTRB/USDT",
-   "tk": "MSTR",
-   "qty": 1.6723940650697948,
-   "entry": 157.58,
-   "px": 148.23,
-   "stop": 138.0448,
-   "notional": 263.54,
-   "ruedas": 20,
-   "ret_pct": -5.93
-  },
-  {
    "symbol": "COINB/USDT",
    "tk": "COIN",
    "qty": 1.2719289288924855,
    "entry": 197.27,
-   "px": 182.23,
+   "px": 173.78,
    "stop": 163.4443,
    "notional": 250.91,
-   "ruedas": 20,
-   "ret_pct": -7.62
+   "ruedas": 21,
+   "ret_pct": -11.91
+  },
+  {
+   "symbol": "AAPLB/USDT",
+   "tk": "AAPL",
+   "qty": 1.684520069808028,
+   "entry": 343.8,
+   "px": 343.8,
+   "stop": 323.7101,
+   "notional": 579.14,
+   "ruedas": 0,
+   "ret_pct": 0.0
   }
  ],
  "equity_curve": [
@@ -132,7 +132,23 @@
   {
    "d": "2026-10-15",
    "eq": 965.23
+  },
+  {
+   "d": "2026-10-16",
+   "eq": 935.99
   }
  ],
- "recent_closed": []
+ "recent_closed": [
+  {
+   "symbol": "MSTRB/USDT",
+   "entry": 157.58,
+   "exit": 137.17,
+   "pnl": -34.13,
+   "ret_pct": -12.95,
+   "pico_pct": 7.28,
+   "motivo": "stop",
+   "ruedas": 21,
+   "closed_ts": 1792185012.63419
+  }
+ ]
 }
