@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 276.5,
+ "equity_now": 277.43,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 20.33,
- "pnl_vs_depositos_pct": 7.94,
+ "pnl_vs_depositos": 21.26,
+ "pnl_vs_depositos_pct": 8.3,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": 8.27,
@@ -58,7 +58,7 @@
    "symbol": "TIA/USDT",
    "entry": 0.603,
    "qty": 41.75150554675118,
-   "stop": 0.46778571428571425,
+   "stop": 0.648125,
    "tp1_done": false
   },
   {
