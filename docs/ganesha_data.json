@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 274.31,
+ "equity_now": 272.45,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 18.14,
- "pnl_vs_depositos_pct": 7.08,
+ "pnl_vs_depositos": 16.28,
+ "pnl_vs_depositos_pct": 6.36,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": 8.27,
