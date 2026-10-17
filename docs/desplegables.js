@@ -20,7 +20,7 @@
     rs:      {n:"RS-BTC",         bal:["rsBal"],   pnl:["rsPnl"], tag:"fuerza relativa vs BTC"}
   };
   // Desde cuando corre cada cosa (pedido de Agus 11/10/2026): fecha de inicio en chiquito en cada barra
-  var DESDE={colchon:"2026-10-10",binance:"2018-01-30",retiro:"2021-06-01",fondo:"2026-08-28",ganesha:"2026-08-28",pescador:"2026-09-22",faro:"2026-10-01",rs:"2026-10-01"};
+  var DESDE={colchon:"2026-10-10",binance:"2018-01-30",retiro:"2021-06-01",fondo:"2026-08-28",ganesha:"2026-08-28",pescador:"2026-09-22",faro:"2026-10-01",rs:"2026-10-11"};
   var NOTA_DESDE={binance:"cuenta",retiro:"cuenta",fondo:"paper \u00b7 rotativo desde 09/10",ganesha:"paper",pescador:"paper",faro:"paper",rs:"paper",colchon:"seguimiento"};
   function antig(d){ var ms=Date.now()-new Date(d+"T12:00:00Z").getTime(), dd=Math.floor(ms/86400000);
     if(dd<1) return "hoy"; if(dd===1) return "1 d\u00eda"; if(dd<60) return dd+" d\u00edas"; var m=Math.floor(dd/30.44); if(m<24) return m+" meses"; var y=Math.floor(dd/365.25); return y+" a\u00f1os "+Math.floor((dd-y*365.25)/30.44)+" meses"; }
