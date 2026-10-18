@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 273.82,
+ "equity_now": 271.56,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 17.65,
- "pnl_vs_depositos_pct": 6.89,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": 8.27,
- "trades_total": 145,
- "win_rate": 34,
- "profit_factor": 1.03,
+ "pnl_vs_depositos": 15.39,
+ "pnl_vs_depositos_pct": 6.01,
+ "pnl_today": 1.82,
+ "trades_today": 1,
+ "realized_pnl": 10.09,
+ "trades_total": 146,
+ "win_rate": 35,
+ "profit_factor": 1.04,
  "open_positions": [
   {
    "symbol": "RE/USDT",
@@ -55,13 +55,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "TIA/USDT",
-   "entry": 0.603,
-   "qty": 41.75150554675118,
-   "stop": 0.65365,
-   "tp1_done": false
-  },
-  {
    "symbol": "RLC/USDT",
    "entry": 1.0608,
    "qty": 13.215189058728884,
@@ -77,15 +70,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "TRUMP/USDT",
-   "entry": 1.67,
-   "exit": 2.275,
-   "qty_total": 5.953,
-   "pnl_net": 2.52,
-   "action": "stop",
-   "closed_ts": 1787443638.1533093
-  },
   {
    "symbol": "ENA/USDT",
    "entry": 0.1494,
@@ -436,6 +420,15 @@
    "pnl_net": -5.64,
    "action": "stop",
    "closed_ts": 1791965239.767552
+  },
+  {
+   "symbol": "TIA/USDT",
+   "entry": 0.603,
+   "exit": 0.6466,
+   "qty_total": 41.751506,
+   "pnl_net": 1.82,
+   "action": "stop",
+   "closed_ts": 1792282042.5896816
   }
  ],
  "equity_curve": [
@@ -1308,7 +1301,13 @@
    "pnl_net": -5.64,
    "action": "stop",
    "closed_ts": 1791965239.767552
+  },
+  {
+   "symbol": "TIA/USDT",
+   "pnl_net": 1.82,
+   "action": "stop",
+   "closed_ts": 1792282042.5896816
   }
  ],
- "realized_total_events": 8.22
+ "realized_total_events": 10.04
 }
