@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 264.71,
+ "equity_now": 262.16,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 8.54,
- "pnl_vs_depositos_pct": 3.33,
- "pnl_today": -10.39,
- "trades_today": 4,
- "realized_pnl": -2.13,
- "trades_total": 149,
+ "pnl_vs_depositos": 5.99,
+ "pnl_vs_depositos_pct": 2.34,
+ "pnl_today": -15.7,
+ "trades_today": 5,
+ "realized_pnl": -7.44,
+ "trades_total": 150,
  "win_rate": 34,
- "profit_factor": 0.99,
+ "profit_factor": 0.97,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -24,13 +24,6 @@
    "entry": 0.02526,
    "qty": 590.57,
    "stop": 0.012951071428571426,
-   "tp1_done": false
-  },
-  {
-   "symbol": "ZEN/USDT",
-   "entry": 7.296,
-   "qty": 3.1543421335050437,
-   "stop": 5.632071428571429,
    "tp1_done": false
   },
   {
@@ -56,15 +49,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "DOGE/USDT",
-   "entry": 0.09381,
-   "exit": 0.08665000000000002,
-   "qty_total": 521.0,
-   "pnl_net": -3.73,
-   "action": "manual",
-   "closed_ts": 1787717241.1218324
-  },
   {
    "symbol": "FF/USDT",
    "entry": 0.10115,
@@ -415,6 +399,15 @@
    "pnl_net": -3.41,
    "action": "stop",
    "closed_ts": 1792339634.8059223
+  },
+  {
+   "symbol": "ZEN/USDT",
+   "entry": 7.296,
+   "exit": 5.612,
+   "qty_total": 3.154342,
+   "pnl_net": -5.31,
+   "action": "stop",
+   "closed_ts": 1792354034.3309002
   }
  ],
  "equity_curve": [
@@ -1311,7 +1304,13 @@
    "pnl_net": -3.41,
    "action": "stop",
    "closed_ts": 1792339634.8059223
+  },
+  {
+   "symbol": "ZEN/USDT",
+   "pnl_net": -5.31,
+   "action": "stop",
+   "closed_ts": 1792354034.3309002
   }
  ],
- "realized_total_events": -2.17
+ "realized_total_events": -7.48
 }
