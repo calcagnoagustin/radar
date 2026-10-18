@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 268.93,
+ "equity_now": 264.71,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 12.76,
- "pnl_vs_depositos_pct": 4.98,
- "pnl_today": -6.98,
- "trades_today": 3,
- "realized_pnl": 1.29,
- "trades_total": 148,
+ "pnl_vs_depositos": 8.54,
+ "pnl_vs_depositos_pct": 3.33,
+ "pnl_today": -10.39,
+ "trades_today": 4,
+ "realized_pnl": -2.13,
+ "trades_total": 149,
  "win_rate": 34,
- "profit_factor": 1.0,
+ "profit_factor": 0.99,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -31,13 +31,6 @@
    "entry": 7.296,
    "qty": 3.1543421335050437,
    "stop": 5.632071428571429,
-   "tp1_done": false
-  },
-  {
-   "symbol": "REZ/USDT",
-   "entry": 0.00452,
-   "qty": 2769.6057522123897,
-   "stop": 0.0033799999999999993,
    "tp1_done": false
   },
   {
@@ -63,15 +56,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "XRP/USDT",
-   "entry": 1.5049,
-   "exit": 1.4387,
-   "qty_total": 33.5,
-   "pnl_net": -2.22,
-   "action": "manual",
-   "closed_ts": 1787717240.107107
-  },
   {
    "symbol": "DOGE/USDT",
    "entry": 0.09381,
@@ -422,6 +406,15 @@
    "pnl_net": -6.02,
    "action": "stop",
    "closed_ts": 1792310840.5632324
+  },
+  {
+   "symbol": "REZ/USDT",
+   "entry": 0.00452,
+   "exit": 0.003288,
+   "qty_total": 2769.605752,
+   "pnl_net": -3.41,
+   "action": "stop",
+   "closed_ts": 1792339634.8059223
   }
  ],
  "equity_curve": [
@@ -1312,7 +1305,13 @@
    "pnl_net": -6.02,
    "action": "stop",
    "closed_ts": 1792310840.5632324
+  },
+  {
+   "symbol": "REZ/USDT",
+   "pnl_net": -3.41,
+   "action": "stop",
+   "closed_ts": 1792339634.8059223
   }
  ],
- "realized_total_events": 1.24
+ "realized_total_events": -2.17
 }
