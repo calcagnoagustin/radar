@@ -1,24 +1,17 @@
 {
  "dry_run": true,
- "equity_now": 270.88,
+ "equity_now": 269.06,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 14.71,
- "pnl_vs_depositos_pct": 5.74,
- "pnl_today": 1.82,
- "trades_today": 1,
- "realized_pnl": 10.09,
- "trades_total": 146,
- "win_rate": 35,
- "profit_factor": 1.04,
+ "pnl_vs_depositos": 12.89,
+ "pnl_vs_depositos_pct": 5.03,
+ "pnl_today": -6.98,
+ "trades_today": 3,
+ "realized_pnl": 1.29,
+ "trades_total": 148,
+ "win_rate": 34,
+ "profit_factor": 1.0,
  "open_positions": [
-  {
-   "symbol": "RE/USDT",
-   "entry": 0.5186,
-   "qty": 21.5,
-   "stop": 0.39343928571428566,
-   "tp1_done": false
-  },
   {
    "symbol": "PORTAL/USDT",
    "entry": 0.01609,
@@ -62,13 +55,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "GNS/USDT",
-   "entry": 0.658,
-   "qty": 25.625600000000002,
-   "stop": 0.4392500000000001,
-   "tp1_done": false
-  },
-  {
    "symbol": "AVA/USDT",
    "entry": 0.404,
    "qty": 53.888443103142194,
@@ -77,24 +63,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ENA/USDT",
-   "entry": 0.1494,
-   "exit": 0.1423,
-   "qty_total": 215.05,
-   "pnl_net": -1.53,
-   "action": "manual",
-   "closed_ts": 1787717237.223348
-  },
-  {
-   "symbol": "PEPE/USDT",
-   "entry": 4.05e-06,
-   "exit": 3.85e-06,
-   "qty_total": 7287611.0,
-   "pnl_net": -1.46,
-   "action": "manual",
-   "closed_ts": 1787717238.779773
-  },
   {
    "symbol": "XRP/USDT",
    "entry": 1.5049,
@@ -436,6 +404,24 @@
    "pnl_net": 1.82,
    "action": "stop",
    "closed_ts": 1792282042.5896816
+  },
+  {
+   "symbol": "RE/USDT",
+   "entry": 0.5186,
+   "exit": 0.3893,
+   "qty_total": 21.5,
+   "pnl_net": -2.78,
+   "action": "stop",
+   "closed_ts": 1792310834.5696218
+  },
+  {
+   "symbol": "GNS/USDT",
+   "entry": 0.658,
+   "exit": 0.423,
+   "qty_total": 25.6256,
+   "pnl_net": -6.02,
+   "action": "stop",
+   "closed_ts": 1792310840.5632324
   }
  ],
  "equity_curve": [
@@ -1314,7 +1300,19 @@
    "pnl_net": 1.82,
    "action": "stop",
    "closed_ts": 1792282042.5896816
+  },
+  {
+   "symbol": "RE/USDT",
+   "pnl_net": -2.78,
+   "action": "stop",
+   "closed_ts": 1792310834.5696218
+  },
+  {
+   "symbol": "GNS/USDT",
+   "pnl_net": -6.02,
+   "action": "stop",
+   "closed_ts": 1792310840.5632324
   }
  ],
- "realized_total_events": 10.04
+ "realized_total_events": 1.24
 }
