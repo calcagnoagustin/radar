@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 263.23,
+ "equity_now": 265.72,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 7.06,
- "pnl_vs_depositos_pct": 2.76,
+ "pnl_vs_depositos": 9.55,
+ "pnl_vs_depositos_pct": 3.73,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -7.44,
@@ -45,6 +45,13 @@
    "entry": 0.404,
    "qty": 53.888443103142194,
    "stop": 0.3034107142857143,
+   "tp1_done": false
+  },
+  {
+   "symbol": "AMP/USDT",
+   "entry": 0.000835,
+   "qty": 18620.17521902379,
+   "stop": 0.0005496428571428573,
    "tp1_done": false
   }
  ],
