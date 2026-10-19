@@ -154,5 +154,5 @@
       .then(function(){ ocup=false; $("rcS").disabled=false; });
   }
   $("rcS").onclick=enviar;
-  $("rcT").addEventListener("keydown",function(e){ if(e.key==="Enter"&&!e.shiftKey&&window.innerWidth>600){ e.preventDefault(); enviar(); } });
+  $("rcT").addEventListener("keydown",function(e){ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); enviar(); } });
 })();
