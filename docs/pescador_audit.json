@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-16T21:25:11Z",
+ "generated_at": "2026-10-19T21:25:10Z",
  "pescador": {
   "nom": "Pescador",
   "sin_datos": false,
   "desde": "2026-09-22",
-  "dias": 19,
-  "equity": 935.99,
-  "ret_pct": -6.4,
-  "max_dd_pct": -8.27,
+  "dias": 20,
+  "equity": 929.14,
+  "ret_pct": -7.09,
+  "max_dd_pct": -8.94,
   "trades": 1,
   "win_rate": 0,
   "profit_factor": 0.0,
@@ -15,14 +15,14 @@
   "controles": [
    {
     "k": "Este bot",
-    "v": -6.4,
+    "v": -7.09,
     "pp": null,
     "destacar": true
    },
    {
     "k": "Efectivo quieto (no operar)",
     "v": 0.0,
-    "pp": -6.4
+    "pp": -7.09
    },
    {
     "k": "Comprar y mantener SPY",
@@ -32,7 +32,7 @@
   ],
   "salida": {
    "con_reglas": -12.95,
-   "sin_salir": -12.93,
+   "sin_salir": -13.35,
    "n": 1
   },
   "chequeos": [
@@ -59,7 +59,7 @@
    {
     "k": "Bot corriendo",
     "ok": true,
-    "v": "ultimo dato 2026-10-16"
+    "v": "ultimo dato 2026-10-19"
    }
   ]
  },
@@ -95,7 +95,7 @@
   ],
   "salida": {
    "con_reglas": -1.91,
-   "sin_salir": -16.48,
+   "sin_salir": -14.52,
    "n": 2
   },
   "chequeos": [
