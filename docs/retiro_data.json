@@ -304,13 +304,13 @@
   "resto_ars": 63701,
   "extra": [
    {
-    "t": "QQQ",
+    "t": "SPY",
     "clase": "nucleo",
-    "ars": 34496,
-    "q": 0,
-    "precio_ars": 58500,
-    "porque": "Nasdaq 100: el modelo pide 25% y hoy esta lejos",
-    "tendencia_12m": 0.242
+    "ars": 20900,
+    "q": 1,
+    "precio_ars": 20900,
+    "porque": "S&P 500: el corazon de la cartera",
+    "tendencia_12m": 0.206
    },
    {
     "t": "GLD",
