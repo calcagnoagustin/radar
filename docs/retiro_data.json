@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T21:10",
+ "generated_at": "2026-10-20T21:24",
  "fuente": "Inviu cuenta 88152, vista MEP (precio promedio convertido al dolar MEP del dia de cada operacion)",
  "tenencias_al": "2026-10-09",
  "cuenta_desde": "2021-06",
@@ -334,7 +334,9 @@
   "aportes_usd": 781.63,
   "resultado_usd": 147.53,
   "rend_pct": 8.75,
-  "nota": "Rendimiento simple: resultado / (valor inicial + mitad de los aportes). Inviu (TWR) da 10,15% al 19/10."
+  "nota": "Rendimiento simple: resultado / (valor inicial + mitad de los aportes). Inviu (TWR) da 10,15% al 19/10.",
+  "spy_ytd_pct": 13.66,
+  "twr_inviu_pct": 10.15
  },
  "historial": [
   [
@@ -1177,5 +1179,107 @@
    "2026-10-20",
    2223.95
   ]
+ ],
+ "mensual": [
+  {
+   "mes": "ene 26",
+   "ym": "2026-01",
+   "inicio": 1294.79,
+   "fin": 1376.0,
+   "aporte": 54.2,
+   "resultado": 27.01,
+   "pct": 2.04,
+   "spy_pct": 1.47
+  },
+  {
+   "mes": "feb 26",
+   "ym": "2026-02",
+   "inicio": 1376.0,
+   "fin": 1428.0,
+   "aporte": 106.54,
+   "resultado": -54.54,
+   "pct": -3.82,
+   "spy_pct": -0.86
+  },
+  {
+   "mes": "mar 26",
+   "ym": "2026-03",
+   "inicio": 1428.0,
+   "fin": 1509.0,
+   "aporte": 68.61,
+   "resultado": 12.39,
+   "pct": 0.85,
+   "spy_pct": -4.94
+  },
+  {
+   "mes": "abr 26",
+   "ym": "2026-04",
+   "inicio": 1509.0,
+   "fin": 1727.0,
+   "aporte": 105.55,
+   "resultado": 112.45,
+   "pct": 7.2,
+   "spy_pct": 10.51
+  },
+  {
+   "mes": "may 26",
+   "ym": "2026-05",
+   "inicio": 1727.0,
+   "fin": 1902.0,
+   "aporte": 68.55,
+   "resultado": 106.45,
+   "pct": 6.04,
+   "spy_pct": 5.26
+  },
+  {
+   "mes": "jun 26",
+   "ym": "2026-06",
+   "inicio": 1902.0,
+   "fin": 1923.0,
+   "aporte": 99.6,
+   "resultado": -78.6,
+   "pct": -4.03,
+   "spy_pct": -1.03
+  },
+  {
+   "mes": "jul 26",
+   "ym": "2026-07",
+   "inicio": 1923.0,
+   "fin": 1997.0,
+   "aporte": 44.94,
+   "resultado": 29.06,
+   "pct": 1.49,
+   "spy_pct": 0.03
+  },
+  {
+   "mes": "ago 26",
+   "ym": "2026-08",
+   "inicio": 1997.0,
+   "fin": 2054.0,
+   "aporte": 32.91,
+   "resultado": 24.09,
+   "pct": 1.2,
+   "spy_pct": 2.68
+  },
+  {
+   "mes": "sep 26",
+   "ym": "2026-09",
+   "inicio": 2054.0,
+   "fin": 2147.0,
+   "aporte": 100.71,
+   "resultado": -7.71,
+   "pct": -0.37,
+   "spy_pct": -0.33
+  },
+  {
+   "mes": "oct 26",
+   "ym": "2026-10",
+   "inicio": 2147.0,
+   "fin": 2223.95,
+   "aporte": 100.02,
+   "resultado": -23.07,
+   "pct": -1.05,
+   "spy_pct": 0.84
+  }
  ]
 }
