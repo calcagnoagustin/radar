@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T00:20:15Z",
+ "generated": "2026-10-20T00:20:16Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -34,14 +34,14 @@
     "max_dd_usd": -21.34
    },
    "ult_90d": {
-    "n": 131,
-    "win_rate": 26.7,
-    "pnl_total": -0.65,
-    "expectancy_usd": -0.005,
-    "expectancy_r": 0.09,
-    "profit_factor": 1.0,
-    "payoff": 2.74,
-    "max_dd_usd": -99.53
+    "n": 128,
+    "win_rate": 26.6,
+    "pnl_total": -27.55,
+    "expectancy_usd": -0.215,
+    "expectancy_r": 0.03,
+    "profit_factor": 0.9,
+    "payoff": 2.48,
+    "max_dd_usd": -95.14
    }
   },
   "ganesha": {
@@ -76,14 +76,14 @@
     "max_dd_usd": -21.34
    },
    "ult_90d": {
-    "n": 125,
-    "win_rate": 26.4,
-    "pnl_total": 2.42,
-    "expectancy_usd": 0.019,
-    "expectancy_r": 0.09,
-    "profit_factor": 1.01,
-    "payoff": 2.81,
-    "max_dd_usd": -93.19
+    "n": 122,
+    "win_rate": 26.2,
+    "pnl_total": -24.48,
+    "expectancy_usd": -0.201,
+    "expectancy_r": 0.03,
+    "profit_factor": 0.9,
+    "payoff": 2.54,
+    "max_dd_usd": -88.8
    }
   },
   "semillas": {
@@ -325,6 +325,7 @@
  "decay": [],
  "propuestas": [],
  "abiertas_ganesha": [
+  "AMP/USDT",
   "AVA/USDT",
   "BICO/USDT",
   "MTL/USDT",
@@ -333,55 +334,55 @@
  ],
  "n_trades_consolidados": 140,
  "fondo": {
-  "generated": "2026-10-19T00:20",
+  "generated": "2026-10-20T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-10-18",
-  "dias": 52,
+  "hasta": "2026-10-19",
+  "dias": 53,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 52 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1274.19,
+  "veredicto": "Muestra insuficiente: 53 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1311.99,
   "aportado": 1306.52,
-  "pnl": -32.33,
-  "pnl_pct": -2.47,
+  "pnl": 5.47,
+  "pnl_pct": 0.42,
   "comparativa": {
    "fondo": {
-    "ret_pct": -2.41,
+    "ret_pct": 0.48,
     "max_dd_pct": -13.02,
-    "vol_anual_pct": 32.7,
-    "n": 52
+    "vol_anual_pct": 33.3,
+    "n": 53
    },
    "congelado": {
-    "ret_pct": 0.05,
+    "ret_pct": 0.84,
     "max_dd_pct": -11.22,
-    "vol_anual_pct": 33.6,
-    "n": 52
+    "vol_anual_pct": 33.3,
+    "n": 53
    },
    "btc_100": {
-    "ret_pct": 5.49,
+    "ret_pct": 5.26,
     "max_dd_pct": -6.92,
-    "vol_anual_pct": 35.5,
-    "n": 52
+    "vol_anual_pct": 35.1,
+    "n": 53
    },
    "btc_eth_5050": {
-    "ret_pct": 2.08,
+    "ret_pct": 1.92,
     "max_dd_pct": -9.73,
-    "vol_anual_pct": 37.5,
-    "n": 52
+    "vol_anual_pct": 37.2,
+    "n": 53
    },
    "spy_100": {
     "ret_pct": -0.79,
     "max_dd_pct": -2.47,
-    "vol_anual_pct": 9.9,
-    "n": 52
+    "vol_anual_pct": 9.8,
+    "n": 53
    }
   },
   "vs_controles_pp": {
-   "congelado": -2.46,
-   "btc_100": -7.9,
-   "btc_eth_5050": -4.49,
-   "spy_100": -1.62
+   "congelado": -0.36,
+   "btc_100": -4.78,
+   "btc_eth_5050": -1.44,
+   "spy_100": 1.27
   },
   "bloques": {
    "nucleo": {
@@ -414,9 +415,9 @@
     "sym": "ETH/USDT",
     "bloque": "otro",
     "cost": 277.11,
-    "val": 268.01,
-    "pnl": -9.1,
-    "pnl_pct": -3.28
+    "val": 267.75,
+    "pnl": -9.36,
+    "pnl_pct": -3.38
    },
    {
     "sym": "XLK",
@@ -542,7 +543,8 @@
     1307.82,
     1285.41,
     1273.08,
-    1274.19
+    1274.19,
+    1311.99
    ],
    "congelado": [
     1307.75,
@@ -596,7 +598,8 @@
     1327.74,
     1303.39,
     1295.75,
-    1308.41
+    1308.41,
+    1318.79
    ],
    "btc_100": [
     1305.68,
@@ -650,7 +653,8 @@
     1379.48,
     1368.91,
     1366.82,
-    1377.3
+    1377.3,
+    1374.32
    ],
    "btc_eth_5050": [
     1305.68,
@@ -704,7 +708,8 @@
     1342.39,
     1332.15,
     1325.56,
-    1332.81
+    1332.81,
+    1330.7
    ],
    "spy_100": [
     1305.68,
@@ -756,6 +761,7 @@
     1320.38,
     1306.1,
     1309.82,
+    1295.33,
     1295.33,
     1295.33,
     1295.33
@@ -813,7 +819,8 @@
    "2026-10-15",
    "2026-10-16",
    "2026-10-17",
-   "2026-10-18"
+   "2026-10-18",
+   "2026-10-19"
   ]
  }
 }
