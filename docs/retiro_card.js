@@ -19,6 +19,7 @@
       +'<div class="stat"><div class="k">Aporte mensual</div><div class="v mono" id="retAp">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Cuenta desde</div><div class="v mono" id="retDesde">&mdash;</div></div></div></section>'
       +'<div id="retMeta" style="margin:-6px 0 18px;padding:0 4px"></div>'
+      +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Mes a mes</span><span class="eyebrow" id="retMesE">resultado sin contar aportes &middot; vs SPY</span></div><div class="body" id="retMes"></div></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Distribuci&oacute;n vs objetivo</span><span class="eyebrow">a 20 a&ntilde;os</span></div><div class="body" id="retDist"></div></div>'
       +'<div class="card" style="margin-bottom:18px"><div class="head"><span class="title">Tenencias</span><span class="eyebrow" id="retN"></span></div><div class="body" id="retPos"></div></div>';
     // 10/10/2026: el Retiro va abajo de todo lo real (Colchon, Binance, subtotal liquido).
@@ -50,6 +51,11 @@
       $("retMeta").innerHTML='<div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--faint);margin-bottom:5px"><span>Meta de libertad &middot; '+fU(R.meta_usd,0)+'</span><span class="mono">'+pm.toFixed(1)+'%</span></div>'
         +'<div style="height:5px;border-radius:4px;background:rgba(127,127,127,.15);overflow:hidden"><div style="height:100%;width:'+Math.max(0.6,pm)+'%;background:var(--jade);opacity:.6"></div></div>'; }
     if(R.anio){ var a=R.anio; $("retAnioK").textContent=a.anio; $("retAnio").innerHTML='<span style="color:'+col(a.resultado_usd)+'">'+fU(a.resultado_usd)+' <span style="font-size:.8em">('+(a.rend_pct>=0?"+":"")+a.rend_pct.toFixed(1)+'%)</span></span>'; $("retAnio").title="Arranc\u00f3 el a\u00f1o en "+fU(a.inicio_usd)+", aportaste "+fU(a.aportes_usd)+". "+a.nota; }
+    if(R.anio && R.anio.spy_ytd_pct!=null){ var ty=(R.anio.twr_inviu_pct!=null?R.anio.twr_inviu_pct:R.anio.rend_pct); $("retAnio").innerHTML+='<div style="font-size:11px;color:var(--faint);margin-top:2px">Inviu '+(ty>=0?"+":"")+ty.toFixed(1)+'% &middot; SPY '+(R.anio.spy_ytd_pct>=0?"+":"")+R.anio.spy_ytd_pct.toFixed(1)+'%</div>'; }
+    if(R.mensual && R.mensual.length){ var mm=R.mensual.slice().reverse();
+      $("retMes").innerHTML='<table style="width:100%;border-collapse:collapse;font-size:12.5px"><tr style="color:var(--faint);font-size:11px"><td>Mes</td><td class="mono" style="text-align:right">Aporte</td><td class="mono" style="text-align:right">Resultado</td><td class="mono" style="text-align:right">Cartera</td><td class="mono" style="text-align:right">SPY</td></tr>'
+        +mm.map(function(m){ return '<tr style="border-top:1px solid rgba(127,127,127,.12)"><td style="padding:5px 0">'+m.mes+'</td><td class="mono" style="text-align:right;color:var(--faint)">'+(m.aporte?fU(m.aporte,0):'&mdash;')+'</td><td class="mono" style="text-align:right;color:'+col(m.resultado)+'">'+fU(m.resultado,0)+'</td><td class="mono" style="text-align:right;color:'+col(m.pct)+'">'+(m.pct>=0?"+":"")+m.pct.toFixed(1)+'%</td><td class="mono" style="text-align:right;color:'+(m.spy_pct==null?'var(--faint)':col(m.spy_pct))+'">'+(m.spy_pct==null?'&mdash;':(m.spy_pct>=0?"+":"")+m.spy_pct.toFixed(1)+'%')+'</td></tr>'; }).join('')
+        +'</table>'; }
     $("retCost").textContent=fU(R.costo_usd); $("retAp").textContent="USD "+rc.aporte_usd; $("retDesde").textContent=R.cuenta_desde;
     var cl=R.clases||{}, d="";
     ["nucleo","conviccion","argentina","bonos","oro"].forEach(function(k){var c=cl[k]; if(!c) return;
