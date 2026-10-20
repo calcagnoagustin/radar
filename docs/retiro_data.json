@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T21:24",
+ "generated_at": "2026-10-20T21:37",
  "fuente": "Inviu cuenta 88152, vista MEP (precio promedio convertido al dolar MEP del dia de cada operacion)",
  "tenencias_al": "2026-10-09",
  "cuenta_desde": "2021-06",
@@ -15,31 +15,31 @@
    "nom": "Nucleo global (indices)",
    "val_usd": 1387.29,
    "peso": 0.635,
-   "objetivo": 0.65
+   "objetivo": 0.72
   },
   "conviccion": {
    "nom": "Conviccion (empresas/tematicos)",
    "val_usd": 264.97,
    "peso": 0.1213,
-   "objetivo": 0.1
+   "objetivo": 0.08
   },
   "argentina": {
    "nom": "Acciones argentinas",
    "val_usd": 459.61,
    "peso": 0.2104,
-   "objetivo": 0.12
+   "objetivo": 0.08
   },
   "bonos": {
    "nom": "Bonos USD argentinos",
    "val_usd": 72.68,
    "peso": 0.0333,
-   "objetivo": 0.08
+   "objetivo": 0.04
   },
   "oro": {
    "nom": "Oro",
    "val_usd": 0,
    "peso": 0.0,
-   "objetivo": 0.05
+   "objetivo": 0.08
   },
   "liquidez": {
    "nom": "Liquidez",
@@ -291,42 +291,42 @@
     "ars": 20900
    },
    {
-    "t": "ACWI",
+    "t": "QQQ",
     "q": 1,
-    "ars": 9970
+    "ars": 58500
    },
    {
-    "t": "FXI",
+    "t": "GLD",
     "q": 1,
-    "ars": 10940
+    "ars": 12330
    }
   ],
-  "resto_ars": 113621,
+  "resto_ars": 63701,
   "extra": [
+   {
+    "t": "QQQ",
+    "clase": "nucleo",
+    "ars": 34496,
+    "q": 0,
+    "precio_ars": 58500,
+    "porque": "Nasdaq 100: el modelo pide 25% y hoy esta lejos",
+    "tendencia_12m": 0.242
+   },
    {
     "t": "GLD",
     "clase": "oro",
-    "ars": 49320,
-    "q": 4,
+    "ars": 24660,
+    "q": 2,
     "precio_ars": 12330,
     "porque": "Oro: seguro de largo plazo contra crisis e inflacion en dolares; hoy 0%",
     "tendencia_12m": 0.043
-   },
-   {
-    "t": "GD35",
-    "clase": "bonos",
-    "ars": 54741,
-    "q": 47,
-    "precio_ars": 1165,
-    "porque": "Bono USD 2035 ley Nueva York (comprar GD35 en pesos; cada unidad = 1 nominal): renta en dolares y amortiguador; mas proteccion legal que AL35",
-    "tendencia_12m": null
    }
   ],
   "suficiente": [
    "Conviccion (empresas/tematicos)",
    "Acciones argentinas"
   ],
-  "regla": "Todos los meses: 1 SPY + 1 ACWI + 1 FXI. Con el resto se completa la clase que mas lejos esta de su objetivo (a 20 anios). Si una clase ya llego a su objetivo, no se recomienda mas hasta que vuelva a quedar abajo."
+  "regla": "Desde noviembre 2026: todos los meses 1 SPY + 1 QQQ + 1 GLD, y 1 ACWI mes por medio (FXI frenado). Con el resto se completa la clase que mas lejos esta de su objetivo. Argentina y bonos: congelados (no se vende, no se suma). Rebalanceo una vez por anio, el 2 de enero."
  },
  "anio": {
   "anio": "2026",
