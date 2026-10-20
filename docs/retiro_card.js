@@ -15,6 +15,7 @@
       +'<div class="pnl-val mono" id="retBal">&mdash;</div><div class="pnl-sub" id="retSub">cargando&hellip;</div></div>'
       +'<div class="hero-stats"><div class="stat"><div class="k">Ganancia (en d&oacute;lares MEP)</div><div class="v mono" id="retPnl" style="font-size:1.4em">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Invertido (MEP de cada compra)</div><div class="v mono" id="retCost">&mdash;</div></div>'
+      +'<div class="stat"><div class="k">Resultado <span id="retAnioK">a&ntilde;o</span></div><div class="v mono" id="retAnio">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Aporte mensual</div><div class="v mono" id="retAp">&mdash;</div></div>'
       +'<div class="stat"><div class="k">Cuenta desde</div><div class="v mono" id="retDesde">&mdash;</div></div></div></section>'
       +'<div id="retMeta" style="margin:-6px 0 18px;padding:0 4px"></div>'
@@ -48,6 +49,7 @@
     if(R.meta_usd){ var pm=Math.min(100,100*R.total_usd/R.meta_usd);
       $("retMeta").innerHTML='<div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--faint);margin-bottom:5px"><span>Meta de libertad &middot; '+fU(R.meta_usd,0)+'</span><span class="mono">'+pm.toFixed(1)+'%</span></div>'
         +'<div style="height:5px;border-radius:4px;background:rgba(127,127,127,.15);overflow:hidden"><div style="height:100%;width:'+Math.max(0.6,pm)+'%;background:var(--jade);opacity:.6"></div></div>'; }
+    if(R.anio){ var a=R.anio; $("retAnioK").textContent=a.anio; $("retAnio").innerHTML='<span style="color:'+col(a.resultado_usd)+'">'+fU(a.resultado_usd)+' <span style="font-size:.8em">('+(a.rend_pct>=0?"+":"")+a.rend_pct.toFixed(1)+'%)</span></span>'; $("retAnio").title="Arranc\u00f3 el a\u00f1o en "+fU(a.inicio_usd)+", aportaste "+fU(a.aportes_usd)+". "+a.nota; }
     $("retCost").textContent=fU(R.costo_usd); $("retAp").textContent="USD "+rc.aporte_usd; $("retDesde").textContent=R.cuenta_desde;
     var cl=R.clases||{}, d="";
     ["nucleo","conviccion","argentina","bonos","oro"].forEach(function(k){var c=cl[k]; if(!c) return;
