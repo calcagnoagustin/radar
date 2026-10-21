@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-20T21:10:12Z",
+ "generated_at": "2026-10-21T21:10:11Z",
  "modo": "PAPER",
  "version": "bstocks",
  "sub": "Runners de bStocks &middot; entra en la ruptura, banca con stop ancho",
  "subtitulo": "stop y trailing 3x ATR(14) &middot; tope de tenencia 40 ruedas",
- "equity_now": 926.12,
+ "equity_now": 941.22,
  "caja": 135.82,
  "realized_pnl": -34.13,
  "trades_total": 1,
@@ -42,22 +42,22 @@
    "tk": "COIN",
    "qty": 1.2719289288924855,
    "entry": 197.27,
-   "px": 171.9,
+   "px": 177.77,
    "stop": 163.4443,
    "notional": 250.91,
-   "ruedas": 23,
-   "ret_pct": -12.86
+   "ruedas": 24,
+   "ret_pct": -9.88
   },
   {
    "symbol": "AAPLB/USDT",
    "tk": "AAPL",
    "qty": 1.684520069808028,
    "entry": 343.8,
-   "px": 339.36,
-   "stop": 323.9445,
+   "px": 343.89,
+   "stop": 326.0495,
    "notional": 579.14,
-   "ruedas": 2,
-   "ret_pct": -1.29
+   "ruedas": 3,
+   "ret_pct": 0.03
   }
  ],
  "equity_curve": [
@@ -144,6 +144,10 @@
   {
    "d": "2026-10-20",
    "eq": 926.12
+  },
+  {
+   "d": "2026-10-21",
+   "eq": 941.22
   }
  ],
  "recent_closed": [
