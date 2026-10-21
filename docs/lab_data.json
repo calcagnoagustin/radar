@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-20T00:15:03Z",
+ "generated_at": "2026-10-21T00:15:05Z",
  "errores": [],
  "faro": {
-  "dias": 19,
+  "dias": 20,
   "estado": "ON",
-  "equity": 963.42,
-  "btc_hold": 965.34,
+  "equity": 976.23,
+  "btc_hold": 978.18,
   "transiciones": 0,
   "positivos": 2,
   "desde": "2026-10-01",
@@ -138,22 +138,43 @@
     "eq": 963.42,
     "btc": 965.34,
     "on": true
+   },
+   {
+    "d": "2026-10-20",
+    "eq": 976.23,
+    "btc": 978.18,
+    "on": true
    }
   ]
  },
  "rs": {
   "desde": "2026-10-11",
-  "dias": 9,
+  "dias": 10,
   "gate_on": true,
   "RS": {
-   "equity": 627.02,
-   "ret_pct": -37.3,
+   "equity": 627.2,
+   "ret_pct": -37.28,
    "cierres": 5,
    "pos": [
     {
      "sym": "MAGIC/USDT",
-     "w": 0.22,
+     "w": 0.11,
      "d": "2026-10-11"
+    },
+    {
+     "sym": "TIA/USDT",
+     "w": 0.24,
+     "d": "2026-10-20"
+    },
+    {
+     "sym": "INJ/USDT",
+     "w": 0.3,
+     "d": "2026-10-20"
+    },
+    {
+     "sym": "ZRO/USDT",
+     "w": 0.3,
+     "d": "2026-10-20"
     }
    ],
    "ultimos_cierres": [
@@ -190,8 +211,8 @@
    ]
   },
   "BTC": {
-   "equity": 976.15,
-   "ret_pct": -2.39,
+   "equity": 989.13,
+   "ret_pct": -1.09,
    "cierres": 0,
    "pos": [
     {
@@ -203,8 +224,8 @@
    "ultimos_cierres": []
   },
   "VOL": {
-   "equity": 928.17,
-   "ret_pct": -7.18,
+   "equity": 961.6,
+   "ret_pct": -3.84,
    "cierres": 0,
    "pos": [
     {
@@ -230,9 +251,9 @@
    ],
    "ultimos_cierres": []
   },
-  "selection_alpha_vs_BTC_pct": -35.77,
-  "selection_alpha_vs_VOL_pct": -32.45,
-  "estado": "SIN_MUESTRA (9/90 dias, 5/25 cierres)",
+  "selection_alpha_vs_BTC_pct": -36.59,
+  "selection_alpha_vs_VOL_pct": -34.78,
+  "estado": "SIN_MUESTRA (10/90 dias, 5/25 cierres)",
   "curva": [
    {
     "d": "2026-10-11",
@@ -287,6 +308,12 @@
     "RS": 627.02,
     "BTC": 976.15,
     "VOL": 928.17
+   },
+   {
+    "d": "2026-10-20",
+    "RS": 627.2,
+    "BTC": 989.13,
+    "VOL": 961.6
    }
   ]
  },
@@ -306,7 +333,7 @@
   "movers_exceso_riesgo": [
    "LSK/USDT"
   ],
-  "movers_alt_pnl_total": 21.06,
+  "movers_alt_pnl_total": 22.13,
   "movers_real_pnl_total": 13.99,
   "criterio": "riesgo disenado 2% del equity por trade; defecto recurrente si >=2 movers cerrados (de >=5) pierden mas de 4% del equity; ademas se compara contra las semillas si las hay",
   "veredicto": "SHOCK AISLADO (1/14 movers con perdida >4% del equity)",
@@ -383,8 +410,8 @@
     "real_loss_pct_eq": 0.07,
     "alt_stop_pct": 14.23,
     "alt_notional": 36.86,
-    "alt_pnl": -0.92,
-    "alt_pnl_pct_eq": -0.35,
+    "alt_pnl": -0.3,
+    "alt_pnl_pct_eq": -0.11,
     "cerrado_alt": false
    },
    {
@@ -497,8 +524,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 32.55,
     "alt_notional": 14.74,
-    "alt_pnl": -2.84,
-    "alt_pnl_pct_eq": -1.18,
+    "alt_pnl": -2.5,
+    "alt_pnl_pct_eq": -1.04,
     "cerrado_alt": false
    },
    {
@@ -592,40 +619,40 @@
     "real_loss_pct_eq": 0.93,
     "alt_stop_pct": 37.32,
     "alt_notional": 15.08,
-    "alt_pnl": -1.93,
-    "alt_pnl_pct_eq": -0.68,
+    "alt_pnl": -1.82,
+    "alt_pnl_pct_eq": -0.65,
     "cerrado_alt": false
    }
   ]
  },
  "positioning": {
   "hoy_simbolos": 23,
-  "dias_logueados": 19,
+  "dias_logueados": 20,
   "objetivo_dias": 90,
   "btc": {
-   "d": "2026-10-20",
+   "d": "2026-10-21",
    "sym": "BTC/USDT",
    "funding_8h": [
-    0.0001,
-    7.964e-05,
-    9.208e-05
+    7.102e-05,
+    7.856e-05,
+    6.542e-05
    ],
-   "top_ls_ratio": 1.8258,
-   "global_ls_ratio": 1.6567,
-   "oi_usd": 7784152312.547611
+   "top_ls_ratio": 1.8428,
+   "global_ls_ratio": 1.4969,
+   "oi_usd": 7868521477.8144
   },
   "eth": {
-   "d": "2026-10-20",
+   "d": "2026-10-21",
    "sym": "ETH/USDT",
    "funding_8h": [
-    9.885e-05,
-    4.646e-05,
-    5.32e-05
+    3.039e-05,
+    7.381e-05,
+    4.599e-05
    ],
-   "top_ls_ratio": 1.6829,
-   "global_ls_ratio": 3.0371,
-   "oi_usd": 5495721107.64138
+   "top_ls_ratio": 1.6097,
+   "global_ls_ratio": 2.7355,
+   "oi_usd": 5602671449.11919
   },
-  "estado": "LOGGER (19/90 dias)"
+  "estado": "LOGGER (20/90 dias)"
  }
 }
