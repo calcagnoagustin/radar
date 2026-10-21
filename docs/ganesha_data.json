@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 281.39,
+ "equity_now": 295.8,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 25.22,
- "pnl_vs_depositos_pct": 9.85,
+ "pnl_vs_depositos": 39.63,
+ "pnl_vs_depositos_pct": 15.47,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -7.44,
@@ -58,14 +58,14 @@
    "symbol": "ALT/USDT",
    "entry": 0.01004,
    "qty": 2275.107033639143,
-   "stop": 0.007704285714285714,
+   "stop": 0.013277,
    "tp1_done": false
   },
   {
    "symbol": "IOST/USDT",
    "entry": 0.001215333333333333,
    "qty": 43024.94665373427,
-   "stop": 0.0016092,
+   "stop": 0.0017172,
    "tp1_done": false
   },
   {
