@@ -1,35 +1,35 @@
 {
- "actualizado": "2026-10-21T21:10",
- "cuenta_total_usd": 2557.07,
+ "actualizado": "2026-10-22T21:10",
+ "cuenta_total_usd": 2514.41,
  "reservado_colchon_usd": 1000.0,
- "saldo_usd": 1557.07,
+ "saldo_usd": 1514.41,
  "composicion": [
   {
    "activo": "USDT (Earn)",
-   "usd": 1422.61
+   "usd": 1422.76
   },
   {
    "activo": "BTC",
-   "usd": 789.69
+   "usd": 759.0
   },
   {
    "activo": "ETH",
-   "usd": 186.36
+   "usd": 178.66
   },
   {
    "activo": "BNB",
-   "usd": 132.43
+   "usd": 129.25
   },
   {
    "activo": "WLD",
-   "usd": 19.93
+   "usd": 19.01
   },
   {
    "activo": "BANK",
-   "usd": 5.04
+   "usd": 4.7
   }
  ],
- "pnl_historico_usd": -7561.07,
+ "pnl_historico_usd": -7603.73,
  "aportes_netos_usd": 10118.14,
  "desde": "2018-01-30",
  "aportes_por_anio": {
@@ -48,8 +48,8 @@
   "fecha": "2026-10-10",
   "total_usd": 2543.76,
   "flujos_posteriores_usd": 0,
-  "pnl_desde_baseline_usd": 13.31,
-  "pnl_desde_baseline_pct": 0.52
+  "pnl_desde_baseline_usd": -29.35,
+  "pnl_desde_baseline_pct": -1.15
  },
  "historial": [
   {
@@ -206,6 +206,19 @@
     "ETH": 186.36,
     "WLD": 19.93,
     "USDT (Earn)": 1422.61
+   }
+  },
+  {
+   "d": "2026-10-22",
+   "total": 2514.41,
+   "pnl_bl": -29.35,
+   "comp": {
+    "BANK": 4.7,
+    "BNB": 129.25,
+    "BTC": 759.0,
+    "ETH": 178.66,
+    "WLD": 19.01,
+    "USDT (Earn)": 1422.76
    }
   }
  ]
