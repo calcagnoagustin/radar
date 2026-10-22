@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-21T00:15:05Z",
+ "generated_at": "2026-10-22T00:15:05Z",
  "errores": [],
  "faro": {
-  "dias": 20,
+  "dias": 21,
   "estado": "ON",
-  "equity": 976.23,
-  "btc_hold": 978.18,
+  "equity": 988.75,
+  "btc_hold": 990.73,
   "transiciones": 0,
-  "positivos": 2,
+  "positivos": 3,
   "desde": "2026-10-01",
   "fees": 2.0,
   "ultimas_transiciones": [
@@ -144,17 +144,23 @@
     "eq": 976.23,
     "btc": 978.18,
     "on": true
+   },
+   {
+    "d": "2026-10-21",
+    "eq": 988.75,
+    "btc": 990.73,
+    "on": true
    }
   ]
  },
  "rs": {
   "desde": "2026-10-11",
-  "dias": 10,
+  "dias": 11,
   "gate_on": true,
   "RS": {
-   "equity": 627.2,
-   "ret_pct": -37.28,
-   "cierres": 5,
+   "equity": 608.43,
+   "ret_pct": -39.16,
+   "cierres": 6,
    "pos": [
     {
      "sym": "MAGIC/USDT",
@@ -170,20 +176,9 @@
      "sym": "INJ/USDT",
      "w": 0.3,
      "d": "2026-10-20"
-    },
-    {
-     "sym": "ZRO/USDT",
-     "w": 0.3,
-     "d": "2026-10-20"
     }
    ],
    "ultimos_cierres": [
-    {
-     "d": "2026-10-14",
-     "sym": "S/USDT",
-     "pnl": -34.05,
-     "ret": -11.35
-    },
     {
      "d": "2026-10-17",
      "sym": "WAL/USDT",
@@ -207,12 +202,18 @@
      "sym": "RLC/USDT",
      "pnl": -62.57,
      "ret": -30.73
+    },
+    {
+     "d": "2026-10-21",
+     "sym": "ZRO/USDT",
+     "pnl": -6.63,
+     "ret": -3.51
     }
    ]
   },
   "BTC": {
-   "equity": 989.13,
-   "ret_pct": -1.09,
+   "equity": 1001.82,
+   "ret_pct": 0.18,
    "cierres": 0,
    "pos": [
     {
@@ -224,8 +225,8 @@
    "ultimos_cierres": []
   },
   "VOL": {
-   "equity": 961.6,
-   "ret_pct": -3.84,
+   "equity": 981.67,
+   "ret_pct": -1.83,
    "cierres": 0,
    "pos": [
     {
@@ -251,9 +252,9 @@
    ],
    "ultimos_cierres": []
   },
-  "selection_alpha_vs_BTC_pct": -36.59,
-  "selection_alpha_vs_VOL_pct": -34.78,
-  "estado": "SIN_MUESTRA (10/90 dias, 5/25 cierres)",
+  "selection_alpha_vs_BTC_pct": -39.27,
+  "selection_alpha_vs_VOL_pct": -38.02,
+  "estado": "SIN_MUESTRA (11/90 dias, 6/25 cierres)",
   "curva": [
    {
     "d": "2026-10-11",
@@ -314,6 +315,12 @@
     "RS": 627.2,
     "BTC": 989.13,
     "VOL": 961.6
+   },
+   {
+    "d": "2026-10-21",
+    "RS": 608.43,
+    "BTC": 1001.82,
+    "VOL": 981.67
    }
   ]
  },
@@ -333,7 +340,7 @@
   "movers_exceso_riesgo": [
    "LSK/USDT"
   ],
-  "movers_alt_pnl_total": 22.13,
+  "movers_alt_pnl_total": 22.72,
   "movers_real_pnl_total": 13.99,
   "criterio": "riesgo disenado 2% del equity por trade; defecto recurrente si >=2 movers cerrados (de >=5) pierden mas de 4% del equity; ademas se compara contra las semillas si las hay",
   "veredicto": "SHOCK AISLADO (1/14 movers con perdida >4% del equity)",
@@ -410,8 +417,8 @@
     "real_loss_pct_eq": 0.07,
     "alt_stop_pct": 14.23,
     "alt_notional": 36.86,
-    "alt_pnl": -0.3,
-    "alt_pnl_pct_eq": -0.11,
+    "alt_pnl": -0.15,
+    "alt_pnl_pct_eq": -0.06,
     "cerrado_alt": false
    },
    {
@@ -524,8 +531,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 32.55,
     "alt_notional": 14.74,
-    "alt_pnl": -2.5,
-    "alt_pnl_pct_eq": -1.04,
+    "alt_pnl": -2.18,
+    "alt_pnl_pct_eq": -0.91,
     "cerrado_alt": false
    },
    {
@@ -619,40 +626,40 @@
     "real_loss_pct_eq": 0.93,
     "alt_stop_pct": 37.32,
     "alt_notional": 15.08,
-    "alt_pnl": -1.82,
-    "alt_pnl_pct_eq": -0.65,
+    "alt_pnl": -1.7,
+    "alt_pnl_pct_eq": -0.61,
     "cerrado_alt": false
    }
   ]
  },
  "positioning": {
   "hoy_simbolos": 23,
-  "dias_logueados": 20,
+  "dias_logueados": 21,
   "objetivo_dias": 90,
   "btc": {
-   "d": "2026-10-21",
+   "d": "2026-10-22",
    "sym": "BTC/USDT",
    "funding_8h": [
-    7.102e-05,
-    7.856e-05,
-    6.542e-05
+    8.54e-05,
+    4.896e-05,
+    5.07e-06
    ],
-   "top_ls_ratio": 1.8428,
-   "global_ls_ratio": 1.4969,
-   "oi_usd": 7868521477.8144
+   "top_ls_ratio": 1.6499,
+   "global_ls_ratio": 1.0222,
+   "oi_usd": 8237053340.8559
   },
   "eth": {
-   "d": "2026-10-21",
+   "d": "2026-10-22",
    "sym": "ETH/USDT",
    "funding_8h": [
-    3.039e-05,
-    7.381e-05,
-    4.599e-05
+    5.314e-05,
+    8.498e-05,
+    1.426e-05
    ],
-   "top_ls_ratio": 1.6097,
-   "global_ls_ratio": 2.7355,
-   "oi_usd": 5602671449.11919
+   "top_ls_ratio": 1.6535,
+   "global_ls_ratio": 2.3535,
+   "oi_usd": 5571700150.13024
   },
-  "estado": "LOGGER (20/90 dias)"
+  "estado": "LOGGER (21/90 dias)"
  }
 }
