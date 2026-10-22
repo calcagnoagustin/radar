@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 295.8,
+ "equity_now": 269.79,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 39.63,
- "pnl_vs_depositos_pct": 15.47,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -7.44,
- "trades_total": 150,
+ "pnl_vs_depositos": 13.62,
+ "pnl_vs_depositos_pct": 5.32,
+ "pnl_today": 2.42,
+ "trades_today": 2,
+ "realized_pnl": -5.02,
+ "trades_total": 152,
  "win_rate": 34,
- "profit_factor": 0.97,
+ "profit_factor": 0.98,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -55,46 +55,21 @@
    "tp1_done": false
   },
   {
-   "symbol": "ALT/USDT",
-   "entry": 0.01004,
-   "qty": 2275.107033639143,
-   "stop": 0.013277,
-   "tp1_done": false
-  },
-  {
-   "symbol": "IOST/USDT",
-   "entry": 0.001215333333333333,
-   "qty": 43024.94665373427,
-   "stop": 0.0017172,
-   "tp1_done": false
-  },
-  {
    "symbol": "CVX/USDT",
    "entry": 2.58,
    "qty": 11.189190794357831,
    "stop": 2.0989285714285715,
    "tp1_done": false
+  },
+  {
+   "symbol": "BMT/USDT",
+   "entry": 0.02206,
+   "qty": 1145.8363151884282,
+   "stop": 0.017368928571428573,
+   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "FF/USDT",
-   "entry": 0.10115,
-   "exit": 0.08526,
-   "qty_total": 379.0,
-   "pnl_net": -6.02,
-   "action": "stop",
-   "closed_ts": 1787746040.2184145
-  },
-  {
-   "symbol": "STX/USDT",
-   "entry": 0.2813,
-   "exit": 0.2711,
-   "qty_total": 156.1,
-   "pnl_net": -1.59,
-   "action": "manual",
-   "closed_ts": 1787774840.172857
-  },
   {
    "symbol": "ZRO/USDT",
    "entry": 1.214,
@@ -436,6 +411,24 @@
    "pnl_net": -5.31,
    "action": "stop",
    "closed_ts": 1792354034.3309002
+  },
+  {
+   "symbol": "ALT/USDT",
+   "entry": 0.01004,
+   "exit": 0.01302,
+   "qty_total": 2275.107034,
+   "pnl_net": 6.78,
+   "action": "stop",
+   "closed_ts": 1792627638.7572231
+  },
+  {
+   "symbol": "IOST/USDT",
+   "entry": 0.00108,
+   "exit": 0.001114,
+   "qty_total": 28683.297769,
+   "pnl_net": -4.36,
+   "action": "stop",
+   "closed_ts": 1792627639.5399716
   }
  ],
  "equity_curve": [
@@ -1338,7 +1331,19 @@
    "pnl_net": -5.31,
    "action": "stop",
    "closed_ts": 1792354034.3309002
+  },
+  {
+   "symbol": "ALT/USDT",
+   "pnl_net": 6.78,
+   "action": "stop",
+   "closed_ts": 1792627638.7572231
+  },
+  {
+   "symbol": "IOST/USDT",
+   "pnl_net": -4.36,
+   "action": "stop",
+   "closed_ts": 1792627639.5399716
   }
  ],
- "realized_total_events": -7.48
+ "realized_total_events": -5.06
 }
