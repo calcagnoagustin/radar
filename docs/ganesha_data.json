@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 269.08,
+ "equity_now": 273.55,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 12.91,
- "pnl_vs_depositos_pct": 5.04,
+ "pnl_vs_depositos": 17.38,
+ "pnl_vs_depositos_pct": 6.78,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -5.02,
@@ -65,7 +65,7 @@
    "symbol": "BMT/USDT",
    "entry": 0.02206,
    "qty": 1145.8363151884282,
-   "stop": 0.025126,
+   "stop": 0.02533,
    "tp1_done": false
   }
  ],
