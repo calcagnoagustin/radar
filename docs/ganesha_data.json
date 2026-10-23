@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 273.26,
+ "equity_now": 269.25,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 17.09,
- "pnl_vs_depositos_pct": 6.67,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -5.02,
- "trades_total": 152,
- "win_rate": 34,
- "profit_factor": 0.98,
+ "pnl_vs_depositos": 13.08,
+ "pnl_vs_depositos_pct": 5.11,
+ "pnl_today": 3.09,
+ "trades_today": 1,
+ "realized_pnl": -1.92,
+ "trades_total": 153,
+ "win_rate": 35,
+ "profit_factor": 0.99,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -62,23 +62,14 @@
    "tp1_done": false
   },
   {
-   "symbol": "BMT/USDT",
-   "entry": 0.02206,
-   "qty": 1145.8363151884282,
-   "stop": 0.025627499999999998,
+   "symbol": "PHA/USDT",
+   "entry": 0.066,
+   "qty": 279.03644773357996,
+   "stop": 0.04669642857142857,
    "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ZRO/USDT",
-   "entry": 1.214,
-   "exit": 1.111,
-   "qty_total": 30.05,
-   "pnl_net": -3.1,
-   "action": "manual",
-   "closed_ts": 1787774841.5915504
-  },
   {
    "symbol": "ONT/USDT",
    "entry": 0.04889,
@@ -429,6 +420,15 @@
    "pnl_net": -4.36,
    "action": "stop",
    "closed_ts": 1792627639.5399716
+  },
+  {
+   "symbol": "BMT/USDT",
+   "entry": 0.02206,
+   "exit": 0.02476,
+   "qty_total": 1145.836315,
+   "pnl_net": 3.09,
+   "action": "stop",
+   "closed_ts": 1792757238.4816837
   }
  ],
  "equity_curve": [
@@ -1343,7 +1343,13 @@
    "pnl_net": -4.36,
    "action": "stop",
    "closed_ts": 1792627639.5399716
+  },
+  {
+   "symbol": "BMT/USDT",
+   "pnl_net": 3.09,
+   "action": "stop",
+   "closed_ts": 1792757238.4816837
   }
  ],
- "realized_total_events": -5.06
+ "realized_total_events": -1.97
 }
