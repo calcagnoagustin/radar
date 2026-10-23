@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-22T23:50",
+ "generated_at": "2026-10-23T23:50",
  "modo": "paper",
  "diseno": {
   "modelo": "rotativo",
@@ -79,9 +79,9 @@
   "mes_senal": "2026-09",
   "fecha": "2026-10-09T15:43"
  },
- "equity": 1275.32,
+ "equity": 1304.92,
  "aportado": 1306.52,
- "pnl": -31.2,
+ "pnl": -1.6,
  "cash_espera": 0.0,
  "caja": 0.0,
  "semaforos": {
@@ -94,36 +94,36 @@
   "XLK": {
    "qty": 1.3965914005256603,
    "cost": 277.11,
-   "px": 181.625,
-   "val": 253.66,
+   "px": 191.05,
+   "val": 266.82,
    "nombre": "Tecnologia EE.UU."
   },
   "XLE": {
    "qty": 4.223099894064937,
    "cost": 277.11,
-   "px": 67.655,
-   "val": 285.71,
+   "px": 72.12,
+   "val": 304.57,
    "nombre": "Energia EE.UU."
   },
   "SMH": {
    "qty": 0.45859329517227787,
    "cost": 277.11,
-   "px": 520.495,
-   "val": 238.7,
+   "px": 526.81,
+   "val": 241.59,
    "nombre": "VanEck Semiconductor ETF"
   },
   "EWY": {
    "qty": 1.5635768688734841,
    "cost": 277.11,
-   "px": 148.475,
-   "val": 232.15,
+   "px": 145.075,
+   "val": 226.84,
    "nombre": "iShares MSCI South Korea ETF"
   },
   "ETH/USDT": {
    "qty": 0.11119238266417066,
    "cost": 277.11,
-   "px": 2386.32,
-   "val": 265.34,
+   "px": 2386.73,
+   "val": 265.39,
    "nombre": "Ethereum"
   }
  },
@@ -406,6 +406,11 @@
   {
    "d": "2026-10-22",
    "eq": 1275.32,
+   "aportado": 1306.52
+  },
+  {
+   "d": "2026-10-23",
+   "eq": 1304.92,
    "aportado": 1306.52
   }
  ],
