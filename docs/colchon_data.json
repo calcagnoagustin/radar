@@ -6,7 +6,7 @@
  "partes": [
   {
    "donde": "Mercado Pago · FCI dólares",
-   "usd": 2353.0
+   "usd": 2553.0
   },
   {
    "donde": "Binance · USDT",
@@ -15,5 +15,5 @@
  ],
  "pendiente": null,
  "plan": "~70% broker (FCI dólares) · ~15% banco sin tarjeta ni deuda · ~15% billetes",
- "saldo_usd": 3353.0
+ "saldo_usd": 3553.0
 }
