@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 263.52,
+ "equity_now": 262.8,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 7.35,
- "pnl_vs_depositos_pct": 2.87,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -1.92,
- "trades_total": 153,
- "win_rate": 35,
- "profit_factor": 0.99,
+ "pnl_vs_depositos": 6.63,
+ "pnl_vs_depositos_pct": 2.59,
+ "pnl_today": -5.97,
+ "trades_today": 1,
+ "realized_pnl": -7.89,
+ "trades_total": 154,
+ "win_rate": 34,
+ "profit_factor": 0.97,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -31,13 +31,6 @@
    "entry": 0.328,
    "qty": 49.127878048780474,
    "stop": 0.24425000000000002,
-   "tp1_done": false
-  },
-  {
-   "symbol": "RLC/USDT",
-   "entry": 1.0608,
-   "qty": 13.215189058728884,
-   "stop": 0.6168714285714286,
    "tp1_done": false
   },
   {
@@ -70,15 +63,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ONT/USDT",
-   "entry": 0.04889,
-   "exit": 0.0688,
-   "qty_total": 331.0,
-   "pnl_net": 6.59,
-   "action": "manual",
-   "closed_ts": 1787789237.1404712
-  },
   {
    "symbol": "ZEC/USDT",
    "entry": 813.2,
@@ -429,6 +413,15 @@
    "pnl_net": 3.09,
    "action": "stop",
    "closed_ts": 1792757238.4816837
+  },
+  {
+   "symbol": "RLC/USDT",
+   "entry": 1.0608,
+   "exit": 0.6094,
+   "qty_total": 13.215189,
+   "pnl_net": -5.97,
+   "action": "stop",
+   "closed_ts": 1792843637.834358
   }
  ],
  "equity_curve": [
@@ -1349,7 +1342,13 @@
    "pnl_net": 3.09,
    "action": "stop",
    "closed_ts": 1792757238.4816837
+  },
+  {
+   "symbol": "RLC/USDT",
+   "pnl_net": -5.97,
+   "action": "stop",
+   "closed_ts": 1792843637.834358
   }
  ],
- "realized_total_events": -1.97
+ "realized_total_events": -7.94
 }
