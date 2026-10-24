@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-23T21:05",
+ "generated_at": "2026-10-24T22:04",
  "fuente": "Inviu cuenta 88152, vista MEP (precio promedio convertido al dolar MEP del dia de cada operacion)",
- "tenencias_al": "2026-10-09",
+ "tenencias_al": "2026-10-24",
  "cuenta_desde": "2021-06",
  "mep": 1577.4,
  "meta_usd": 1115000,
@@ -319,7 +319,7 @@
     "q": 2,
     "precio_ars": 12120,
     "porque": "Oro: seguro de largo plazo contra crisis e inflacion en dolares; hoy 0%",
-    "tendencia_12m": 0.025
+    "tendencia_12m": 0.027
    },
    {
     "t": "SPY",
@@ -1198,6 +1198,10 @@
   ],
   [
    "2026-10-23",
+   2195.95
+  ],
+  [
+   "2026-10-24",
    2195.95
   ]
  ],
