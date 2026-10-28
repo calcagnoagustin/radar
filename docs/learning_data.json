@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T00:20:11Z",
+ "generated": "2026-10-28T00:20:12Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -34,12 +34,12 @@
     "max_dd_usd": -21.8
    },
    "ult_90d": {
-    "n": 121,
-    "win_rate": 27.3,
-    "pnl_total": -15.63,
-    "expectancy_usd": -0.129,
-    "expectancy_r": 0.07,
-    "profit_factor": 0.94,
+    "n": 120,
+    "win_rate": 27.5,
+    "pnl_total": -12.45,
+    "expectancy_usd": -0.104,
+    "expectancy_r": 0.08,
+    "profit_factor": 0.95,
     "payoff": 2.5,
     "max_dd_usd": -90.53
    }
@@ -76,12 +76,12 @@
     "max_dd_usd": -21.8
    },
    "ult_90d": {
-    "n": 115,
-    "win_rate": 27.0,
-    "pnl_total": -12.56,
-    "expectancy_usd": -0.109,
-    "expectancy_r": 0.07,
-    "profit_factor": 0.95,
+    "n": 114,
+    "win_rate": 27.2,
+    "pnl_total": -9.38,
+    "expectancy_usd": -0.082,
+    "expectancy_r": 0.08,
+    "profit_factor": 0.96,
     "payoff": 2.57,
     "max_dd_usd": -87.27
    }
@@ -335,55 +335,55 @@
  ],
  "n_trades_consolidados": 144,
  "fondo": {
-  "generated": "2026-10-27T00:20",
+  "generated": "2026-10-28T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-10-26",
-  "dias": 60,
+  "hasta": "2026-10-27",
+  "dias": 61,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 60 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1303.75,
+  "veredicto": "Muestra insuficiente: 61 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1316.63,
   "aportado": 1306.52,
-  "pnl": -2.77,
-  "pnl_pct": -0.21,
+  "pnl": 10.11,
+  "pnl_pct": 0.77,
   "comparativa": {
    "fondo": {
-    "ret_pct": -0.15,
+    "ret_pct": 0.84,
     "max_dd_pct": -13.02,
-    "vol_anual_pct": 33.3,
-    "n": 60
+    "vol_anual_pct": 33.1,
+    "n": 61
    },
    "congelado": {
-    "ret_pct": -1.02,
+    "ret_pct": 0.25,
     "max_dd_pct": -12.16,
-    "vol_anual_pct": 33.3,
-    "n": 60
+    "vol_anual_pct": 33.2,
+    "n": 61
    },
    "btc_100": {
-    "ret_pct": 2.96,
+    "ret_pct": 3.94,
     "max_dd_pct": -7.47,
-    "vol_anual_pct": 34.4,
-    "n": 60
+    "vol_anual_pct": 34.1,
+    "n": 61
    },
    "btc_eth_5050": {
-    "ret_pct": -0.94,
+    "ret_pct": 0.08,
     "max_dd_pct": -11.91,
-    "vol_anual_pct": 36.3,
-    "n": 60
+    "vol_anual_pct": 36.1,
+    "n": 61
    },
    "spy_100": {
-    "ret_pct": -1.22,
+    "ret_pct": -0.52,
     "max_dd_pct": -2.47,
-    "vol_anual_pct": 9.9,
-    "n": 60
+    "vol_anual_pct": 10.0,
+    "n": 61
    }
   },
   "vs_controles_pp": {
-   "congelado": 0.87,
-   "btc_100": -3.11,
-   "btc_eth_5050": 0.79,
-   "spy_100": 1.07
+   "congelado": 0.59,
+   "btc_100": -3.1,
+   "btc_eth_5050": 0.76,
+   "spy_100": 1.36
   },
   "bloques": {
    "nucleo": {
@@ -416,9 +416,9 @@
     "sym": "ETH/USDT",
     "bloque": "otro",
     "cost": 277.11,
-    "val": 258.47,
-    "pnl": -18.64,
-    "pnl_pct": -6.73
+    "val": 261.34,
+    "pnl": -15.77,
+    "pnl_pct": -5.69
    },
    {
     "sym": "XLK",
@@ -552,7 +552,8 @@
     1304.92,
     1286.37,
     1281.71,
-    1303.75
+    1303.75,
+    1316.63
    ],
    "congelado": [
     1307.75,
@@ -614,7 +615,8 @@
     1293.5,
     1289.64,
     1281.98,
-    1294.39
+    1294.39,
+    1311.08
    ],
    "btc_100": [
     1305.68,
@@ -676,7 +678,8 @@
     1361.76,
     1356.71,
     1344.39,
-    1344.34
+    1344.34,
+    1357.07
    ],
    "btc_eth_5050": [
     1305.68,
@@ -738,7 +741,8 @@
     1318.97,
     1308.75,
     1294.86,
-    1293.41
+    1293.41,
+    1306.67
    ],
    "spy_100": [
     1305.68,
@@ -800,7 +804,8 @@
     1289.76,
     1289.76,
     1289.76,
-    1289.76
+    1298.93,
+    1298.93
    ]
   },
   "dias_lista": [
@@ -863,7 +868,8 @@
    "2026-10-23",
    "2026-10-24",
    "2026-10-25",
-   "2026-10-26"
+   "2026-10-26",
+   "2026-10-27"
   ]
  }
 }
