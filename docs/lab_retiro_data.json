@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-28T21:08",
+ "generated_at": "2026-10-29T21:08",
  "desde": "2025-12-31",
- "hasta": "2026-10-28",
+ "hasta": "2026-10-29",
  "inicio_usd": 1294.79,
  "aportes_usd": 781.63,
  "modelo_pesos": {
@@ -12,19 +12,19 @@
  },
  "regla": "Mismos aportes y fechas que el Retiro real. Modelo: SPY 55 / QQQ 25 / GLD 10 / ACWI 10 (CEDEARs), rebalanceo cada 2 de enero. No opera: compara.",
  "real": {
-  "valor": 2208.52,
-  "ganancia": 132.1,
-  "pct": 7.84
+  "valor": 2197.0,
+  "ganancia": 120.58,
+  "pct": 7.15
  },
  "modelo": {
-  "valor": 2293.54,
-  "ganancia": 217.12,
-  "pct": 12.88
+  "valor": 2277.08,
+  "ganancia": 200.66,
+  "pct": 11.9
  },
  "spy": {
-  "valor": 2318.57,
-  "ganancia": 242.15,
-  "pct": 14.37
+  "valor": 2309.72,
+  "ganancia": 233.3,
+  "pct": 13.84
  },
  "curvas": {
   "real": [
@@ -895,6 +895,10 @@
    [
     "2026-10-28",
     2208.52
+   ],
+   [
+    "2026-10-29",
+    2197.0
    ]
   ],
   "modelo": [
@@ -1765,6 +1769,10 @@
    [
     "2026-10-28",
     2293.54
+   ],
+   [
+    "2026-10-29",
+    2277.08
    ]
   ],
   "spy": [
@@ -2635,6 +2643,10 @@
    [
     "2026-10-28",
     2318.57
+   ],
+   [
+    "2026-10-29",
+    2309.72
    ]
   ]
  },
