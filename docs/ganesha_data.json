@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 253.76,
+ "equity_now": 252.17,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -2.41,
- "pnl_vs_depositos_pct": -0.94,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -7.89,
- "trades_total": 154,
+ "pnl_vs_depositos": -4.0,
+ "pnl_vs_depositos_pct": -1.56,
+ "pnl_today": -5.75,
+ "trades_today": 1,
+ "realized_pnl": -13.64,
+ "trades_total": 155,
  "win_rate": 34,
- "profit_factor": 0.97,
+ "profit_factor": 0.95,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -53,25 +53,9 @@
    "qty": 11.189190794357831,
    "stop": 2.0989285714285715,
    "tp1_done": false
-  },
-  {
-   "symbol": "PHA/USDT",
-   "entry": 0.066,
-   "qty": 279.03644773357996,
-   "stop": 0.04669642857142857,
-   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ZEC/USDT",
-   "entry": 813.2,
-   "exit": 812.4,
-   "qty_total": 0.001,
-   "pnl_net": -0.0,
-   "action": "manual",
-   "closed_ts": 1787789239.3122246
-  },
   {
    "symbol": "ONG/USDT",
    "entry": 0.10352,
@@ -422,6 +406,15 @@
    "pnl_net": -5.97,
    "action": "stop",
    "closed_ts": 1792843637.834358
+  },
+  {
+   "symbol": "PHA/USDT",
+   "entry": 0.066,
+   "exit": 0.0454,
+   "qty_total": 279.036448,
+   "pnl_net": -5.75,
+   "action": "stop",
+   "closed_ts": 1793261236.1638663
   }
  ],
  "equity_curve": [
@@ -1348,7 +1341,13 @@
    "pnl_net": -5.97,
    "action": "stop",
    "closed_ts": 1792843637.834358
+  },
+  {
+   "symbol": "PHA/USDT",
+   "pnl_net": -5.75,
+   "action": "stop",
+   "closed_ts": 1793261236.1638663
   }
  ],
- "realized_total_events": -7.94
+ "realized_total_events": -13.69
 }
