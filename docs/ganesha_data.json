@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 252.27,
+ "equity_now": 248.45,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -3.9,
- "pnl_vs_depositos_pct": -1.52,
- "pnl_today": -5.75,
- "trades_today": 1,
- "realized_pnl": -13.64,
- "trades_total": 155,
+ "pnl_vs_depositos": -7.72,
+ "pnl_vs_depositos_pct": -3.01,
+ "pnl_today": -11.89,
+ "trades_today": 2,
+ "realized_pnl": -25.53,
+ "trades_total": 157,
  "win_rate": 34,
- "profit_factor": 0.95,
+ "profit_factor": 0.92,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -34,46 +34,14 @@
    "tp1_done": false
   },
   {
-   "symbol": "AVA/USDT",
-   "entry": 0.404,
-   "qty": 53.888443103142194,
-   "stop": 0.3034107142857143,
-   "tp1_done": false
-  },
-  {
    "symbol": "AMP/USDT",
    "entry": 0.000835,
    "qty": 18620.17521902379,
    "stop": 0.0005496428571428573,
    "tp1_done": false
-  },
-  {
-   "symbol": "CVX/USDT",
-   "entry": 2.58,
-   "qty": 11.189190794357831,
-   "stop": 2.0989285714285715,
-   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ONG/USDT",
-   "entry": 0.10352,
-   "exit": 0.2416243442622951,
-   "qty_total": 122.0,
-   "pnl_net": 16.85,
-   "action": "manual",
-   "closed_ts": 1787789241.0957541
-  },
-  {
-   "symbol": "BMT/USDT",
-   "entry": 0.02208,
-   "exit": 0.021380000000000003,
-   "qty_total": 910.6,
-   "pnl_net": -0.64,
-   "action": "manual",
-   "closed_ts": 1787789241.8420737
-  },
   {
    "symbol": "FF/USDT",
    "entry": 0.1,
@@ -415,6 +383,24 @@
    "pnl_net": -5.75,
    "action": "stop",
    "closed_ts": 1793261236.1638663
+  },
+  {
+   "symbol": "AVA/USDT",
+   "entry": 0.404,
+   "exit": 0.3027,
+   "qty_total": 53.888443,
+   "pnl_net": -5.46,
+   "action": "stop",
+   "closed_ts": 1793318836.2807128
+  },
+  {
+   "symbol": "CVX/USDT",
+   "entry": 2.58,
+   "exit": 2.005,
+   "qty_total": 11.189191,
+   "pnl_net": -6.43,
+   "action": "stop",
+   "closed_ts": 1793318837.5918767
   }
  ],
  "equity_curve": [
@@ -1347,7 +1333,19 @@
    "pnl_net": -5.75,
    "action": "stop",
    "closed_ts": 1793261236.1638663
+  },
+  {
+   "symbol": "AVA/USDT",
+   "pnl_net": -5.46,
+   "action": "stop",
+   "closed_ts": 1793318836.2807128
+  },
+  {
+   "symbol": "CVX/USDT",
+   "pnl_net": -6.43,
+   "action": "stop",
+   "closed_ts": 1793318837.5918767
   }
  ],
- "realized_total_events": -13.69
+ "realized_total_events": -25.58
 }
