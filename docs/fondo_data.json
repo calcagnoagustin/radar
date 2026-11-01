@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T23:50",
+ "generated_at": "2026-11-01T23:50",
  "modo": "paper",
  "diseno": {
   "modelo": "rotativo",
@@ -9,108 +9,94 @@
  "rotativo": {
   "ranking": [
    {
-    "sym": "EWY",
-    "score": 0.4337,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "SMH",
-    "score": 0.3707,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "XLK",
-    "score": 0.238,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "ETH/USDT",
-    "score": 0.1802,
-    "mes": "2026-09"
-   },
-   {
     "sym": "XLE",
-    "score": 0.1413,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "QQQ",
-    "score": 0.1403,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "EWJ",
-    "score": 0.1223,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "BTC/USDT",
-    "score": 0.1121,
-    "mes": "2026-09"
+    "score": 0.2863,
+    "mes": "2026-10"
    },
    {
     "sym": "XLV",
-    "score": 0.1114,
-    "mes": "2026-09"
+    "score": 0.2048,
+    "mes": "2026-10"
    },
    {
-    "sym": "EEM",
-    "score": 0.1076,
-    "mes": "2026-09"
+    "sym": "XLP",
+    "score": 0.1118,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "XLB",
+    "score": 0.1051,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "EWY",
+    "score": 0.0931,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "EWC",
+    "score": 0.0774,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "SMH",
+    "score": 0.0749,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "XLK",
+    "score": 0.0676,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "XLF",
+    "score": 0.0605,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "EWU",
+    "score": 0.051,
+    "mes": "2026-10"
+   },
+   {
+    "sym": "EWA",
+    "score": 0.051,
+    "mes": "2026-10"
    },
    {
     "sym": "SPY",
-    "score": 0.0891,
-    "mes": "2026-09"
-   },
-   {
-    "sym": "EWZ",
-    "score": 0.0872,
-    "mes": "2026-09"
+    "score": 0.0455,
+    "mes": "2026-10"
    }
   ],
   "objetivo": {
-   "EWY": 0.2,
-   "SMH": 0.2,
-   "XLK": 0.2,
-   "ETH/USDT": 0.2,
-   "XLE": 0.2
+   "XLE": 0.2,
+   "XLV": 0.2,
+   "XLP": 0.2,
+   "XLB": 0.2,
+   "EWY": 0.2
   },
-  "mes_senal": "2026-09",
-  "fecha": "2026-10-09T15:43"
+  "mes_senal": "2026-10",
+  "fecha": "2026-11-01T15:10"
  },
- "equity": 1280.9,
+ "equity": 1281.92,
  "aportado": 1306.52,
- "pnl": -25.62,
+ "pnl": -24.6,
  "cash_espera": 0.0,
- "caja": 0.0,
+ "caja": 26.66,
  "semaforos": {
   "acciones": "sol",
   "cripto": "sol",
-  "eval": "2026-10",
+  "eval": "2026-11",
   "informativo": true
  },
  "posiciones": {
-  "XLK": {
-   "qty": 1.3965914005256603,
-   "cost": 277.11,
-   "px": 179.235,
-   "val": 250.32,
-   "nombre": "Tecnologia EE.UU."
-  },
   "XLE": {
-   "qty": 4.223099894064937,
-   "cost": 277.11,
+   "qty": 3.50763262867378,
+   "cost": 230.16,
    "px": 73.14500000000001,
-   "val": 308.9,
+   "val": 256.57,
    "nombre": "Energia EE.UU."
-  },
-  "SMH": {
-   "qty": 0.45859329517227787,
-   "cost": 277.11,
-   "px": 526.6,
-   "val": 241.5,
-   "nombre": "VanEck Semiconductor ETF"
   },
   "EWY": {
    "qty": 1.5635768688734841,
@@ -119,12 +105,26 @@
    "val": 229.38,
    "nombre": "iShares MSCI South Korea ETF"
   },
-  "ETH/USDT": {
-   "qty": 0.11119238266417066,
-   "cost": 277.11,
-   "px": 2255.69,
-   "val": 250.82,
-   "nombre": "Ethereum"
+  "XLV": {
+   "qty": 1.3872359726814607,
+   "cost": 256.57,
+   "px": 184.85500000000002,
+   "val": 256.44,
+   "nombre": "Salud EE.UU."
+  },
+  "XLP": {
+   "qty": 2.8687493649181275,
+   "cost": 256.57,
+   "px": 89.39,
+   "val": 256.44,
+   "nombre": "Consumo basico EE.UU."
+  },
+  "XLB": {
+   "qty": 4.675250788150072,
+   "cost": 256.57,
+   "px": 54.85,
+   "val": 256.44,
+   "nombre": "Materiales EE.UU."
   }
  },
  "equity_hist": [
@@ -452,107 +452,14 @@
    "d": "2026-10-31",
    "eq": 1280.9,
    "aportado": 1306.52
+  },
+  {
+   "d": "2026-11-01",
+   "eq": 1281.92,
+   "aportado": 1306.52
   }
  ],
  "eventos": [
-  {
-   "type": "PAPER_BUY",
-   "sym": "BTC/USDT",
-   "usd": 0.0,
-   "px": 77792.01,
-   "qty": 0.0,
-   "ts": 1788275409.6386163,
-   "iso": "2026-09-01T15:10"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "ETH/USDT",
-   "usd": 0.0,
-   "px": 2436.14,
-   "qty": 0.0,
-   "ts": 1788275409.9038212,
-   "iso": "2026-09-01T15:10"
-  },
-  {
-   "type": "MENSUAL_OK",
-   "equity": 1306.71,
-   "aportado": 1306.52,
-   "semaforos": {
-    "acciones": "sol",
-    "cripto": "sol",
-    "eval": "2026-09"
-   },
-   "top": [
-    "SNDK",
-    "AXTI",
-    "MU",
-    "LITE",
-    "WDC"
-   ],
-   "elegidos": [
-    "SNDKB/USDT",
-    "AXTIB/USDT",
-    "MUB/USDT",
-    "LITEB/USDT",
-    "WDCB/USDT"
-   ],
-   "ts": 1788275414.1275744,
-   "iso": "2026-09-01T15:10"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "BTC/USDT",
-   "usd": 0.0,
-   "px": 83850.01,
-   "qty": 0.0,
-   "ts": 1790867409.8707,
-   "iso": "2026-10-01T15:10"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "ETH/USDT",
-   "usd": 0.0,
-   "px": 2679.86,
-   "qty": 0.0,
-   "ts": 1790867410.138055,
-   "iso": "2026-10-01T15:10"
-  },
-  {
-   "type": "PAPER_SELL",
-   "sym": "WDCB/USDT",
-   "usd": 52.88,
-   "px": 443.0,
-   "qty": 0.11949317815966937,
-   "ts": 1790867412.6685114,
-   "iso": "2026-10-01T15:10"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "AXTIB/USDT",
-   "usd": 10.58,
-   "px": 81.6,
-   "qty": 0.12948446054990684,
-   "ts": 1790867412.9317832,
-   "iso": "2026-10-01T15:10"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "SNDKB/USDT",
-   "usd": 10.58,
-   "px": 1722.56,
-   "qty": 0.006133854252317712,
-   "ts": 1790867413.1908727,
-   "iso": "2026-10-01T15:10"
-  },
-  {
-   "type": "PAPER_BUY",
-   "sym": "MUB/USDT",
-   "usd": 10.58,
-   "px": 1042.32,
-   "qty": 0.010136936814867218,
-   "ts": 1790867413.4512641,
-   "iso": "2026-10-01T15:10"
-  },
   {
    "type": "PAPER_BUY",
    "sym": "LITEB/USDT",
@@ -905,8 +812,122 @@
    ],
    "ts": 1791560606.5921872,
    "iso": "2026-10-09T15:43"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "XLK",
+   "usd": 250.19,
+   "px": 179.235,
+   "qty": 1.3965914005256603,
+   "ts": 1793545834.2853553,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "SMH",
+   "usd": 241.37,
+   "px": 526.6,
+   "qty": 0.45859329517227787,
+   "ts": 1793545834.288103,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "ETH/USDT",
+   "usd": 252.49,
+   "px": 2273.0,
+   "qty": 0.11119238266417066,
+   "ts": 1793545834.288206,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "PAPER_SELL",
+   "sym": "XLE",
+   "usd": 52.31,
+   "px": 73.14500000000001,
+   "qty": 0.7154672653911576,
+   "ts": 1793545834.2882876,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "XLV",
+   "usd": 256.57,
+   "px": 184.85500000000002,
+   "qty": 1.3872359726814607,
+   "ts": 1793545834.5860927,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "XLP",
+   "usd": 256.57,
+   "px": 89.39,
+   "qty": 2.8687493649181275,
+   "ts": 1793545834.8852646,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "PAPER_BUY",
+   "sym": "XLB",
+   "usd": 256.57,
+   "px": 54.85,
+   "qty": 4.675250788150072,
+   "ts": 1793545835.1756744,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "REBALANCE",
+   "motivo": "mensual",
+   "equity": 1282.83,
+   "antes": {
+    "XLK": 250.32,
+    "XLE": 308.9,
+    "SMH": 241.5,
+    "EWY": 229.38,
+    "ETH/USDT": 252.74
+   },
+   "objetivo": {
+    "XLE": 256.57,
+    "XLV": 256.57,
+    "XLP": 256.57,
+    "XLB": 256.57,
+    "EWY": 256.57
+   },
+   "despues": {
+    "XLE": 256.57,
+    "EWY": 229.38,
+    "XLV": 256.44,
+    "XLP": 256.44,
+    "XLB": 256.44
+   },
+   "caja": 26.66,
+   "ts": 1793545835.1758597,
+   "iso": "2026-11-01T15:10"
+  },
+  {
+   "type": "MENSUAL_OK",
+   "modelo": "rotativo",
+   "equity": 1281.92,
+   "aportado": 1306.52,
+   "elegidos": [
+    "XLE",
+    "XLV",
+    "XLP",
+    "XLB",
+    "EWY"
+   ],
+   "top": [
+    "XLE",
+    "XLV",
+    "XLP",
+    "XLB",
+    "EWY"
+   ],
+   "ts": 1793545835.1773586,
+   "iso": "2026-11-01T15:10"
   }
  ],
- "proxima_rotacion": "1 nov",
+ "proxima_rotacion": "1 dic",
  "politica_pesos": "rotativo top-5 en partes iguales, rebalanceo mensual con banda +-20%; sol/tormenta solo informativo"
 }
