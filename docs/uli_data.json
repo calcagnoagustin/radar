@@ -1,0 +1,102 @@
+{
+ "actualizado": "2026-11-02",
+ "donde": "ARQ",
+ "activo": "SPY",
+ "saldo_usd": 338.12,
+ "ganancia_usd": 11.82,
+ "edad": 7,
+ "aporte_mensual_usd": 100,
+ "plan": "Agus aporta 100 USD/mes en SPY (antes 25). Cuando Uli este maduro, se lo entrega y sigue aportando el: el fondo es su esfuerzo, no herencia.",
+ "proyeccion": {
+  "nota": "En dolares de hoy (rendimiento real, ya descontada la inflacion). SPY rindio ~7% real anual en la historia; 5% es un escenario conservador.",
+  "base_7": [
+   {
+    "edad": 18,
+    "valor": 20252,
+    "puesto": 13538
+   },
+   {
+    "edad": 25,
+    "valor": 43235,
+    "puesto": 21938
+   },
+   {
+    "edad": 40,
+    "valor": 150396,
+    "puesto": 39938
+   },
+   {
+    "edad": 65,
+    "valor": 894569,
+    "puesto": 69938
+   }
+  ],
+  "base_5": [
+   {
+    "edad": 18,
+    "valor": 18014,
+    "puesto": 13538
+   },
+   {
+    "edad": 25,
+    "valor": 35339,
+    "puesto": 21938
+   },
+   {
+    "edad": 40,
+    "valor": 99951,
+    "puesto": 39938
+   },
+   {
+    "edad": 65,
+    "valor": 397042,
+    "puesto": 69938
+   }
+  ],
+  "uli200_7": [
+   {
+    "edad": 18,
+    "valor": 20252,
+    "puesto": 13538
+   },
+   {
+    "edad": 25,
+    "valor": 53949,
+    "puesto": 30338
+   },
+   {
+    "edad": 40,
+    "valor": 211067,
+    "puesto": 66338
+   },
+   {
+    "edad": 65,
+    "valor": 1302159,
+    "puesto": 126338
+   }
+  ],
+  "uli200_5": [
+   {
+    "edad": 18,
+    "valor": 18014,
+    "puesto": 13538
+   },
+   {
+    "edad": 25,
+    "valor": 45332,
+    "puesto": 30338
+   },
+   {
+    "edad": 40,
+    "valor": 147206,
+    "puesto": 66338
+   },
+   {
+    "edad": 65,
+    "valor": 615640,
+    "puesto": 126338
+   }
+  ]
+ },
+ "publicado": "2026-11-02T23:21"
+}
