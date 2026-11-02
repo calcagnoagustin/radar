@@ -1,12 +1,20 @@
 {
- "actualizado": "2026-11-02T21:10",
- "cuenta_total_usd": 39.32,
- "reservado_colchon_usd": 1000.0,
- "saldo_usd": -960.68,
+ "actualizado": "2026-11-02T23:06",
+ "cuenta_total_usd": 428.1,
+ "reservado_colchon_usd": 0.0,
+ "saldo_usd": 428.1,
  "composicion": [
   {
+   "activo": "ARQ · acciones y ETFs",
+   "usd": 338.12
+  },
+  {
+   "activo": "Wallet Uli · ETH, LPT, SPYX",
+   "usd": 50.34
+  },
+  {
    "activo": "WLD",
-   "usd": 12.93
+   "usd": 13.2
   },
   {
    "activo": "ETH",
@@ -18,10 +26,10 @@
   },
   {
    "activo": "BANK",
-   "usd": 4.74
+   "usd": 4.8
   }
  ],
- "pnl_historico_usd": -5328.17,
+ "pnl_historico_usd": -4939.38,
  "aportes_netos_usd": 5367.49,
  "desde": "2018-01-30",
  "aportes_por_anio": {
@@ -37,315 +45,24 @@
  },
  "nota": "P&L aproximado: valor de hoy menos todo lo que entro y salio desde 2018 (cripto al precio del dia, pesos al MEP del dia).",
  "baseline": {
-  "fecha": "2026-10-10",
-  "total_usd": 2543.76,
-  "flujos_posteriores_usd": -4750.66,
-  "pnl_desde_baseline_usd": 2246.22,
-  "pnl_desde_baseline_pct": 88.3
+  "fecha": "2026-11-02",
+  "total_usd": 428.06,
+  "flujos_posteriores_usd": 0,
+  "pnl_desde_baseline_usd": 0.04,
+  "pnl_desde_baseline_pct": 0.01
  },
  "historial": [
   {
-   "d": "2026-10-10",
-   "total": 2541.13,
-   "pnl_bl": -2.63,
-   "comp": {
-    "BANK": 5.34,
-    "BNB": 132.68,
-    "BTC": 773.96,
-    "ETH": 187.56,
-    "WLD": 19.46,
-    "USDT (Earn)": 1421.1
-   }
-  },
-  {
-   "d": "2026-10-11",
-   "total": 2548.9,
-   "pnl_bl": 5.14,
-   "comp": {
-    "BANK": 5.46,
-    "BNB": 133.08,
-    "BTC": 779.51,
-    "ETH": 189.59,
-    "WLD": 19.03,
-    "USDT (Earn)": 1421.19
-   }
-  },
-  {
-   "d": "2026-10-12",
-   "total": 2538.21,
-   "pnl_bl": -5.55,
-   "comp": {
-    "BANK": 5.33,
-    "BNB": 131.83,
-    "BTC": 773.01,
-    "ETH": 187.84,
-    "WLD": 17.9,
-    "USDT (Earn)": 1421.28
-   }
-  },
-  {
-   "d": "2026-10-13",
-   "total": 2542.02,
-   "pnl_bl": -1.74,
-   "comp": {
-    "BANK": 5.21,
-    "BNB": 131.23,
-    "BTC": 777.59,
-    "ETH": 187.66,
-    "WLD": 17.92,
-    "USDT (Earn)": 1421.38
-   }
-  },
-  {
-   "d": "2026-10-14",
-   "total": 2514.8,
-   "pnl_bl": -28.96,
-   "comp": {
-    "BANK": 5.04,
-    "BNB": 128.55,
-    "BTC": 761.46,
-    "ETH": 180.23,
-    "WLD": 16.96,
-    "USDT (Earn)": 1421.53
-   }
-  },
-  {
-   "d": "2026-10-15",
-   "total": 2523.44,
-   "pnl_bl": -20.32,
-   "comp": {
-    "BANK": 5.14,
-    "BNB": 128.99,
-    "BTC": 765.69,
-    "ETH": 183.51,
-    "WLD": 17.4,
-    "USDT (Earn)": 1421.68
-   }
-  },
-  {
-   "d": "2026-10-16",
-   "total": 2514.94,
-   "pnl_bl": -28.82,
-   "comp": {
-    "BANK": 5.06,
-    "BNB": 127.46,
-    "BTC": 761.41,
-    "ETH": 180.6,
-    "WLD": 17.54,
-    "USDT (Earn)": 1421.84
-   }
-  },
-  {
-   "d": "2026-10-17",
-   "total": 2514.83,
-   "pnl_bl": -28.93,
-   "comp": {
-    "BANK": 5.06,
-    "BNB": 127.21,
-    "BTC": 760.99,
-    "ETH": 181.04,
-    "WLD": 17.51,
-    "USDT (Earn)": 1421.99
-   }
-  },
-  {
-   "d": "2026-10-18",
-   "total": 2499.22,
-   "pnl_bl": -44.54,
-   "comp": {
-    "BANK": 4.72,
-    "BNB": 125.21,
-    "BTC": 754.32,
-    "ETH": 175.87,
-    "WLD": 15.94,
-    "USDT (Earn)": 1422.14
-   }
-  },
-  {
-   "d": "2026-10-19",
-   "total": 2518.91,
-   "pnl_bl": -24.85,
-   "comp": {
-    "BANK": 4.89,
-    "BNB": 128.79,
-    "BTC": 764.62,
-    "ETH": 179.53,
-    "WLD": 17.76,
-    "USDT (Earn)": 1422.29
-   }
-  },
-  {
-   "d": "2026-10-20",
-   "total": 2536.03,
-   "pnl_bl": -7.73,
-   "comp": {
-    "BANK": 5.08,
-    "BNB": 130.85,
-    "BTC": 772.94,
-    "ETH": 183.4,
-    "WLD": 20.29,
-    "USDT (Earn)": 1422.44
-   }
-  },
-  {
-   "d": "2026-10-21",
-   "total": 2557.07,
-   "pnl_bl": 13.31,
-   "comp": {
-    "BANK": 5.04,
-    "BNB": 132.43,
-    "BTC": 789.69,
-    "ETH": 186.36,
-    "WLD": 19.93,
-    "USDT (Earn)": 1422.61
-   }
-  },
-  {
-   "d": "2026-10-22",
-   "total": 2514.41,
-   "pnl_bl": -29.35,
-   "comp": {
-    "BANK": 4.7,
-    "BNB": 129.25,
-    "BTC": 759.0,
-    "ETH": 178.66,
-    "WLD": 19.01,
-    "USDT (Earn)": 1422.76
-   }
-  },
-  {
-   "d": "2026-10-23",
-   "total": 2517.34,
-   "pnl_bl": -26.42,
-   "comp": {
-    "BANK": 4.72,
-    "BNB": 131.3,
-    "BTC": 759.72,
-    "ETH": 179.81,
-    "WLD": 17.84,
-    "USDT (Earn)": 1422.92
-   }
-  },
-  {
-   "d": "2026-10-24",
-   "total": 2497.93,
-   "pnl_bl": -45.83,
-   "comp": {
-    "BANK": 4.52,
-    "BNB": 129.35,
-    "BTC": 748.97,
-    "ETH": 174.9,
-    "WLD": 16.1,
-    "USDT (Earn)": 1423.08
-   }
-  },
-  {
-   "d": "2026-10-25",
-   "total": 2501.26,
-   "pnl_bl": -42.5,
-   "comp": {
-    "BANK": 4.44,
-    "BNB": 130.88,
-    "BTC": 750.58,
-    "ETH": 175.38,
-    "WLD": 15.73,
-    "USDT (Earn)": 1423.23
-   }
-  },
-  {
-   "d": "2026-10-26",
-   "total": 2493.25,
-   "pnl_bl": -50.51,
+   "d": "2026-11-02",
+   "total": 428.1,
+   "pnl_bl": 0.04,
    "comp": {
     "BANK": 4.8,
-    "BNB": 131.06,
-    "BTC": 745.36,
-    "ETH": 172.52,
-    "WLD": 15.11,
-    "USDT (Earn)": 1423.39
-   }
-  },
-  {
-   "d": "2026-10-27",
-   "total": 2506.47,
-   "pnl_bl": -37.29,
-   "comp": {
-    "BANK": 6.12,
-    "BNB": 132.18,
-    "BTC": 753.1,
-    "ETH": 175.38,
-    "WLD": 15.13,
-    "USDT (Earn)": 1423.56
-   }
-  },
-  {
-   "d": "2026-10-28",
-   "total": 2513.23,
-   "pnl_bl": -30.53,
-   "comp": {
-    "BANK": 5.21,
-    "BNB": 133.68,
-    "BTC": 757.83,
-    "ETH": 176.49,
-    "WLD": 15.27,
-    "USDT (Earn)": 1423.74
-   }
-  },
-  {
-   "d": "2026-10-29",
-   "total": 2476.33,
-   "pnl_bl": -67.43,
-   "comp": {
-    "BANK": 4.91,
-    "BNB": 125.66,
-    "BTC": 737.87,
-    "ETH": 169.32,
-    "WLD": 13.66,
-    "USDT (Earn)": 1423.9
-   }
-  },
-  {
-   "d": "2026-10-30",
-   "total": 40.45,
-   "pnl_bl": -2503.31,
-   "comp": {
-    "BANK": 4.89,
-    "ETH": 11.2,
-    "WLD": 13.99,
-    "USDT (Earn)": 10.03
-   }
-  },
-  {
-   "d": "2026-10-31",
-   "total": 40.31,
-   "pnl_bl": -2503.45,
-   "comp": {
-    "BANK": 4.91,
     "ETH": 11.27,
-    "WLD": 13.75,
-    "USDT (Earn)": 10.03
-   }
-  },
-  {
-   "d": "2026-11-01",
-   "total": 40.17,
-   "pnl_bl": 2247.07,
-   "comp": {
-    "BANK": 4.87,
-    "ETH": 11.34,
-    "WLD": 13.57,
-    "USDT (Earn)": 10.04
-   }
-  },
-  {
-   "d": "2026-11-02",
-   "total": 39.32,
-   "pnl_bl": 2246.22,
-   "comp": {
-    "BANK": 4.74,
-    "ETH": 11.27,
-    "WLD": 12.93,
-    "USDT (Earn)": 10.04
+    "WLD": 13.2,
+    "USDT (Earn)": 10.04,
+    "ARQ · acciones y ETFs": 338.12,
+    "Wallet Uli · ETH, LPT, SPYX": 50.34
    }
   }
  ]
