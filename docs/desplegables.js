@@ -8,6 +8,7 @@
     binance:{n:"Otros", bal:["binBal"],  pnl:["binPnl"], tag:"Binance \u00b7 ARQ \u00b7 wallet \u00b7 desde el 02/11/2026"},
     colchon:{n:"Colch\u00f3n",        bal:["colBal"],  pnl:[], tag:"emergencias \u00b7 real", sub:"ahorro de emergencia"},
     liquido:{n:"Subtotal l\u00edquido", bal:["liqBal"], pnl:[], tag:"Colch\u00f3n + Otros \u00b7 disponible ya", sub:"lo que se puede usar hoy"},
+    uli:    {n:"Fondo Uli",         bal:["uliBal"],  pnl:[], tag:"de Uli \u00b7 ARQ \u00b7 SPY \u00b7 no suma a tu total", sub:"retiro de Uli a los 65"},
     retiro: {n:"Fondo de Retiro",   bal:["retBal"],  pnl:["retPnl"], tag:"real \u00b7 Inviu \u00b7 a 20 a\u00f1os"},
     lab:    {n:"Laboratorio",       bal:["fBal","gBal","p2Bal","faroBal","rsBal","retlabBal"],
              pnl:["fPnl","gGen","p2Real","p2Unr","faroPnl","rsPnl","retlabPnl"], tag:"simulaciones con plata ficticia \u00b7 no suman al total"}
@@ -76,6 +77,7 @@
     if(el.id==="liquidoSec") return "liquido";
     if(el.tagName==="HEADER"||el.id==="fondoWrap") return "lab";
     if(el.id==="retiroSec") return "retiro";
+    if(el.id==="uliSec") return "uli";
     if(el.tagName==="HR"&&el.classList.contains("gan-sep")) return "lab";
     if(el.id==="pescadorV2"||el.id==="pescadorChico"||el.id==="labV51Host"||el.classList.contains("labsec")) return "lab";
     if(el.tagName==="FOOTER"||el.tagName==="SCRIPT"||el.tagName==="STYLE") return null;
