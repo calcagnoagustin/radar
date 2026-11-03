@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-11-02T21:25:13Z",
+ "generated_at": "2026-11-03T21:25:12Z",
  "pescador": {
   "nom": "Pescador",
   "sin_datos": false,
   "desde": "2026-09-22",
-  "dias": 30,
-  "equity": 909.89,
-  "ret_pct": -9.01,
-  "max_dd_pct": -10.83,
-  "trades": 2,
+  "dias": 31,
+  "equity": 898.38,
+  "ret_pct": -10.16,
+  "max_dd_pct": -11.96,
+  "trades": 3,
   "win_rate": 0,
   "profit_factor": 0.0,
-  "ruedas_prom": 24.0,
+  "ruedas_prom": 20.0,
   "controles": [
    {
     "k": "Este bot",
-    "v": -9.01,
+    "v": -10.16,
     "pp": null,
     "destacar": true
    },
    {
     "k": "Efectivo quieto (no operar)",
     "v": 0.0,
-    "pp": -9.01
+    "pp": -10.16
    },
    {
     "k": "Comprar y mantener SPY",
@@ -31,15 +31,15 @@
    }
   ],
   "salida": {
-   "con_reglas": -15.97,
-   "sin_salir": -23.05,
-   "n": 2
+   "con_reglas": -11.79,
+   "sin_salir": -14.45,
+   "n": 3
   },
   "chequeos": [
    {
     "k": "Stops respetados",
     "ok": true,
-    "v": "2 de 2 salidas por stop"
+    "v": "3 de 3 salidas por stop"
    },
    {
     "k": "Tope de tenencia (40 ruedas)",
@@ -49,17 +49,17 @@
    {
     "k": "Tope de posiciones abiertas",
     "ok": true,
-    "v": "1 abiertas de 2"
+    "v": "0 abiertas de 2"
    },
    {
     "k": "Caja sana",
     "ok": true,
-    "v": "$339.06 libres"
+    "v": "$898.38 libres"
    },
    {
     "k": "Bot corriendo",
     "ok": true,
-    "v": "ultimo dato 2026-11-02"
+    "v": "ultimo dato 2026-11-03"
    }
   ]
  },
@@ -95,7 +95,7 @@
   ],
   "salida": {
    "con_reglas": -1.91,
-   "sin_salir": -23.25,
+   "sin_salir": -17.98,
    "n": 2
   },
   "chequeos": [
