@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-04T00:15:05Z",
+ "generated_at": "2026-11-05T00:15:05Z",
  "errores": [],
  "faro": {
-  "dias": 34,
+  "dias": 35,
   "estado": "OFF",
   "equity": 949.17,
-  "btc_hold": 912.51,
+  "btc_hold": 948.44,
   "transiciones": 1,
   "positivos": 0,
   "desde": "2026-10-01",
@@ -24,11 +24,11 @@
     "positivos": 1
    }
   ],
-  "upside_capture": 74.6,
+  "upside_capture": 58.3,
   "downside_capture": 66.8,
-  "btc_en_periodos_off_pct": -4.25,
-  "dias_off": 10,
-  "vs_hold_pct": 4.02,
+  "btc_en_periodos_off_pct": -0.47,
+  "dias_off": 11,
+  "vs_hold_pct": 0.08,
   "gate": "SIN_COBERTURA (1/6 meses, 1/3 transiciones)",
   "curva": [
    {
@@ -234,12 +234,18 @@
     "eq": 949.17,
     "btc": 912.51,
     "on": false
+   },
+   {
+    "d": "2026-11-04",
+    "eq": 949.17,
+    "btc": 948.44,
+    "on": false
    }
   ]
  },
  "rs": {
   "desde": "2026-10-11",
-  "dias": 24,
+  "dias": 25,
   "gate_on": false,
   "RS": {
    "equity": 569.27,
@@ -333,7 +339,7 @@
   },
   "selection_alpha_vs_BTC_pct": -40.81,
   "selection_alpha_vs_VOL_pct": -37.75,
-  "estado": "SIN_MUESTRA (24/90 dias, 11/25 cierres)",
+  "estado": "SIN_MUESTRA (25/90 dias, 11/25 cierres)",
   "curva": [
    {
     "d": "2026-10-11",
@@ -478,6 +484,12 @@
     "RS": 569.27,
     "BTC": 961.71,
     "VOL": 914.53
+   },
+   {
+    "d": "2026-11-04",
+    "RS": 569.27,
+    "BTC": 961.71,
+    "VOL": 914.53
    }
   ]
  },
@@ -497,7 +509,7 @@
   "movers_exceso_riesgo": [
    "LSK/USDT"
   ],
-  "movers_alt_pnl_total": 14.29,
+  "movers_alt_pnl_total": 15.06,
   "movers_real_pnl_total": 13.99,
   "criterio": "riesgo disenado 2% del equity por trade; defecto recurrente si >=2 movers cerrados (de >=5) pierden mas de 4% del equity; ademas se compara contra las semillas si las hay",
   "veredicto": "SHOCK AISLADO (1/14 movers con perdida >4% del equity)",
@@ -688,8 +700,8 @@
     "real_loss_pct_eq": null,
     "alt_stop_pct": 32.55,
     "alt_notional": 14.74,
-    "alt_pnl": -2.95,
-    "alt_pnl_pct_eq": -1.23,
+    "alt_pnl": -2.79,
+    "alt_pnl_pct_eq": -1.16,
     "cerrado_alt": false
    },
    {
@@ -783,40 +795,40 @@
     "real_loss_pct_eq": 0.93,
     "alt_stop_pct": 37.32,
     "alt_notional": 15.08,
-    "alt_pnl": -3.95,
-    "alt_pnl_pct_eq": -1.4,
+    "alt_pnl": -3.34,
+    "alt_pnl_pct_eq": -1.19,
     "cerrado_alt": false
    }
   ]
  },
  "positioning": {
   "hoy_simbolos": 19,
-  "dias_logueados": 34,
+  "dias_logueados": 35,
   "objetivo_dias": 90,
   "btc": {
-   "d": "2026-11-04",
+   "d": "2026-11-05",
    "sym": "BTC/USDT",
    "funding_8h": [
     0.0001,
     0.0001,
-    0.0001
+    2.405e-05
    ],
-   "top_ls_ratio": 1.7385,
-   "global_ls_ratio": 2.308,
-   "oi_usd": 7639904309.8929
+   "top_ls_ratio": 1.9162,
+   "global_ls_ratio": 1.3906,
+   "oi_usd": 7738508370.23556
   },
   "eth": {
-   "d": "2026-11-04",
+   "d": "2026-11-05",
    "sym": "ETH/USDT",
    "funding_8h": [
     0.0001,
     0.0001,
-    8.833e-05
+    -2.65e-05
    ],
-   "top_ls_ratio": 1.5581,
-   "global_ls_ratio": 2.2862,
-   "oi_usd": 5397356110.529675
+   "top_ls_ratio": 1.4307,
+   "global_ls_ratio": 1.8313,
+   "oi_usd": 5733262077.1808605
   },
-  "estado": "LOGGER (34/90 dias)"
+  "estado": "LOGGER (35/90 dias)"
  }
 }
