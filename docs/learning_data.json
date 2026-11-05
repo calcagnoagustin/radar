@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T00:20:12Z",
+ "generated": "2026-11-05T00:20:11Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -332,55 +332,55 @@
  ],
  "n_trades_consolidados": 147,
  "fondo": {
-  "generated": "2026-11-04T00:20",
+  "generated": "2026-11-05T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-11-03",
-  "dias": 68,
+  "hasta": "2026-11-04",
+  "dias": 69,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 68 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1238.44,
+  "veredicto": "Muestra insuficiente: 69 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1266.11,
   "aportado": 1306.52,
-  "pnl": -68.08,
-  "pnl_pct": -5.21,
+  "pnl": -40.41,
+  "pnl_pct": -3.09,
   "comparativa": {
    "fondo": {
-    "ret_pct": -5.15,
+    "ret_pct": -3.03,
     "max_dd_pct": -15.39,
-    "vol_anual_pct": 32.4,
-    "n": 68
+    "vol_anual_pct": 32.6,
+    "n": 69
    },
    "congelado": {
-    "ret_pct": -5.06,
+    "ret_pct": -3.54,
     "max_dd_pct": -15.87,
     "vol_anual_pct": 34.4,
-    "n": 68
+    "n": 69
    },
    "btc_100": {
-    "ret_pct": -0.5,
+    "ret_pct": 3.41,
     "max_dd_pct": -11.32,
-    "vol_anual_pct": 34.3,
-    "n": 68
+    "vol_anual_pct": 35.2,
+    "n": 69
    },
    "btc_eth_5050": {
-    "ret_pct": -3.69,
+    "ret_pct": 1.33,
     "max_dd_pct": -15.12,
-    "vol_anual_pct": 36.0,
-    "n": 68
+    "vol_anual_pct": 37.7,
+    "n": 69
    },
    "spy_100": {
-    "ret_pct": -1.95,
+    "ret_pct": -0.33,
     "max_dd_pct": -3.46,
-    "vol_anual_pct": 10.6,
-    "n": 68
+    "vol_anual_pct": 11.2,
+    "n": 69
    }
   },
   "vs_controles_pp": {
-   "congelado": -0.09,
-   "btc_100": -4.65,
-   "btc_eth_5050": -1.46,
-   "spy_100": -3.2
+   "congelado": 0.51,
+   "btc_100": -6.44,
+   "btc_eth_5050": -4.36,
+   "spy_100": -2.7
   },
   "bloques": {
    "nucleo": {
@@ -561,7 +561,8 @@
     1280.9,
     1281.92,
     1260.19,
-    1238.44
+    1238.44,
+    1266.11
    ],
    "congelado": [
     1307.76,
@@ -631,7 +632,8 @@
     1259.45,
     1270.07,
     1227.77,
-    1241.57
+    1241.57,
+    1261.47
    ],
    "btc_100": [
     1305.68,
@@ -701,7 +703,8 @@
     1301.25,
     1314.2,
     1288.41,
-    1299.1
+    1299.1,
+    1350.26
    ],
    "btc_eth_5050": [
     1305.68,
@@ -771,7 +774,8 @@
     1253.45,
     1265.18,
     1246.4,
-    1257.49
+    1257.49,
+    1323.11
    ],
    "spy_100": [
     1305.68,
@@ -841,7 +845,8 @@
     1282.55,
     1282.55,
     1276.4,
-    1280.22
+    1280.22,
+    1301.37
    ]
   },
   "dias_lista": [
@@ -912,7 +917,8 @@
    "2026-10-31",
    "2026-11-01",
    "2026-11-02",
-   "2026-11-03"
+   "2026-11-03",
+   "2026-11-04"
   ]
  }
 }
