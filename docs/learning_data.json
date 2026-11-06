@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T00:20:11Z",
+ "generated": "2026-11-06T00:20:12Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -34,13 +34,13 @@
     "max_dd_usd": -39.44
    },
    "ult_90d": {
-    "n": 119,
-    "win_rate": 26.1,
-    "pnl_total": -28.42,
-    "expectancy_usd": -0.239,
-    "expectancy_r": 0.03,
-    "profit_factor": 0.89,
-    "payoff": 2.52,
+    "n": 110,
+    "win_rate": 25.5,
+    "pnl_total": -23.2,
+    "expectancy_usd": -0.211,
+    "expectancy_r": 0.05,
+    "profit_factor": 0.9,
+    "payoff": 2.65,
     "max_dd_usd": -90.53
    }
   },
@@ -76,13 +76,13 @@
     "max_dd_usd": -39.44
    },
    "ult_90d": {
-    "n": 115,
-    "win_rate": 26.1,
-    "pnl_total": -28.43,
-    "expectancy_usd": -0.247,
-    "expectancy_r": 0.03,
-    "profit_factor": 0.89,
-    "payoff": 2.51,
+    "n": 106,
+    "win_rate": 25.5,
+    "pnl_total": -23.21,
+    "expectancy_usd": -0.219,
+    "expectancy_r": 0.05,
+    "profit_factor": 0.9,
+    "payoff": 2.64,
     "max_dd_usd": -87.27
    }
   },
@@ -332,55 +332,55 @@
  ],
  "n_trades_consolidados": 147,
  "fondo": {
-  "generated": "2026-11-05T00:20",
+  "generated": "2026-11-06T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-11-04",
-  "dias": 69,
+  "hasta": "2026-11-05",
+  "dias": 70,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 69 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1266.11,
+  "veredicto": "Muestra insuficiente: 70 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1196.77,
   "aportado": 1306.52,
-  "pnl": -40.41,
-  "pnl_pct": -3.09,
+  "pnl": -109.75,
+  "pnl_pct": -8.4,
   "comparativa": {
    "fondo": {
-    "ret_pct": -3.03,
-    "max_dd_pct": -15.39,
-    "vol_anual_pct": 32.6,
-    "n": 69
+    "ret_pct": -8.34,
+    "max_dd_pct": -18.24,
+    "vol_anual_pct": 34.7,
+    "n": 70
    },
    "congelado": {
-    "ret_pct": -3.54,
-    "max_dd_pct": -15.87,
-    "vol_anual_pct": 34.4,
-    "n": 69
+    "ret_pct": -10.81,
+    "max_dd_pct": -20.08,
+    "vol_anual_pct": 38.2,
+    "n": 70
    },
    "btc_100": {
-    "ret_pct": 3.41,
-    "max_dd_pct": -11.32,
-    "vol_anual_pct": 35.2,
-    "n": 69
+    "ret_pct": -2.26,
+    "max_dd_pct": -12.16,
+    "vol_anual_pct": 37.2,
+    "n": 70
    },
    "btc_eth_5050": {
-    "ret_pct": 1.33,
-    "max_dd_pct": -15.12,
-    "vol_anual_pct": 37.7,
-    "n": 69
+    "ret_pct": -5.32,
+    "max_dd_pct": -15.81,
+    "vol_anual_pct": 40.3,
+    "n": 70
    },
    "spy_100": {
-    "ret_pct": -0.33,
-    "max_dd_pct": -3.46,
-    "vol_anual_pct": 11.2,
-    "n": 69
+    "ret_pct": -4.72,
+    "max_dd_pct": -5.92,
+    "vol_anual_pct": 15.0,
+    "n": 70
    }
   },
   "vs_controles_pp": {
-   "congelado": 0.51,
-   "btc_100": -6.44,
-   "btc_eth_5050": -4.36,
-   "spy_100": -2.7
+   "congelado": 2.47,
+   "btc_100": -6.08,
+   "btc_eth_5050": -3.02,
+   "spy_100": -3.62
   },
   "bloques": {
    "nucleo": {
@@ -562,7 +562,8 @@
     1281.92,
     1260.19,
     1238.44,
-    1266.11
+    1266.11,
+    1196.77
    ],
    "congelado": [
     1307.76,
@@ -633,7 +634,8 @@
     1270.07,
     1227.77,
     1241.57,
-    1261.47
+    1261.47,
+    1166.33
    ],
    "btc_100": [
     1305.68,
@@ -704,7 +706,8 @@
     1314.2,
     1288.41,
     1299.1,
-    1350.26
+    1350.26,
+    1276.2
    ],
    "btc_eth_5050": [
     1305.68,
@@ -775,7 +778,8 @@
     1265.18,
     1246.4,
     1257.49,
-    1323.11
+    1323.11,
+    1236.21
    ],
    "spy_100": [
     1305.68,
@@ -846,7 +850,8 @@
     1282.55,
     1276.4,
     1280.22,
-    1301.37
+    1301.37,
+    1243.99
    ]
   },
   "dias_lista": [
@@ -918,7 +923,8 @@
    "2026-11-01",
    "2026-11-02",
    "2026-11-03",
-   "2026-11-04"
+   "2026-11-04",
+   "2026-11-05"
   ]
  }
 }
