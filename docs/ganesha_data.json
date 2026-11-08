@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 246.37,
+ "equity_now": 246.15,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -9.8,
- "pnl_vs_depositos_pct": -3.83,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -25.53,
- "trades_total": 157,
+ "pnl_vs_depositos": -10.02,
+ "pnl_vs_depositos_pct": -3.91,
+ "pnl_today": -4.23,
+ "trades_today": 1,
+ "realized_pnl": -29.76,
+ "trades_total": 158,
  "win_rate": 34,
- "profit_factor": 0.92,
+ "profit_factor": 0.91,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -27,13 +27,6 @@
    "tp1_done": false
   },
   {
-   "symbol": "MTL/USDT",
-   "entry": 0.328,
-   "qty": 49.127878048780474,
-   "stop": 0.24425000000000002,
-   "tp1_done": false
-  },
-  {
    "symbol": "AMP/USDT",
    "entry": 0.000835,
    "qty": 18620.17521902379,
@@ -42,15 +35,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "FF/USDT",
-   "entry": 0.1,
-   "exit": 0.09514,
-   "qty_total": 320.6,
-   "pnl_net": -1.56,
-   "action": "manual",
-   "closed_ts": 1787789242.8383718
-  },
   {
    "symbol": "NIL/USDT",
    "entry": 0.03700879751954705,
@@ -401,6 +385,15 @@
    "pnl_net": -6.43,
    "action": "stop",
    "closed_ts": 1793318837.5918767
+  },
+  {
+   "symbol": "MTL/USDT",
+   "entry": 0.328,
+   "exit": 0.2419,
+   "qty_total": 49.127878,
+   "pnl_net": -4.23,
+   "action": "stop",
+   "closed_ts": 1794110834.3341045
   }
  ],
  "equity_curve": [
@@ -1345,7 +1338,13 @@
    "pnl_net": -6.43,
    "action": "stop",
    "closed_ts": 1793318837.5918767
+  },
+  {
+   "symbol": "MTL/USDT",
+   "pnl_net": -4.23,
+   "action": "stop",
+   "closed_ts": 1794110834.3341045
   }
  ],
- "realized_total_events": -25.58
+ "realized_total_events": -29.81
 }
