@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-10T21:25:12Z",
+ "generated_at": "2026-11-11T21:25:13Z",
  "pescador": {
   "nom": "Pescador",
   "sin_datos": false,
   "desde": "2026-09-22",
-  "dias": 36,
+  "dias": 37,
   "equity": 898.38,
   "ret_pct": -10.16,
   "max_dd_pct": -11.96,
@@ -32,7 +32,7 @@
   ],
   "salida": {
    "con_reglas": -11.79,
-   "sin_salir": -18.15,
+   "sin_salir": -16.41,
    "n": 3
   },
   "chequeos": [
@@ -59,7 +59,7 @@
    {
     "k": "Bot corriendo",
     "ok": true,
-    "v": "ultimo dato 2026-11-10"
+    "v": "ultimo dato 2026-11-11"
    }
   ]
  },
@@ -95,7 +95,7 @@
   ],
   "salida": {
    "con_reglas": -1.91,
-   "sin_salir": -24.87,
+   "sin_salir": -17.73,
    "n": 2
   },
   "chequeos": [
