@@ -1,29 +1,22 @@
 {
  "dry_run": true,
- "equity_now": 245.3,
+ "equity_now": 244.53,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -10.87,
- "pnl_vs_depositos_pct": -4.24,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -29.76,
- "trades_total": 158,
- "win_rate": 34,
- "profit_factor": 0.91,
+ "pnl_vs_depositos": -11.64,
+ "pnl_vs_depositos_pct": -4.54,
+ "pnl_today": -7.37,
+ "trades_today": 1,
+ "realized_pnl": -37.13,
+ "trades_total": 159,
+ "win_rate": 33,
+ "profit_factor": 0.88,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
    "entry": 0.01609,
    "qty": 741.6,
    "stop": 0.006776785714285714,
-   "tp1_done": false
-  },
-  {
-   "symbol": "BICO/USDT",
-   "entry": 0.02526,
-   "qty": 590.57,
-   "stop": 0.012951071428571426,
    "tp1_done": false
   },
   {
@@ -35,15 +28,6 @@
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "NIL/USDT",
-   "entry": 0.03700879751954705,
-   "exit": 0.04391,
-   "qty_total": 370.9,
-   "pnl_net": 2.56,
-   "action": "manual",
-   "closed_ts": 1787926355.6571372
-  },
   {
    "symbol": "ONT/USDT",
    "entry": 0.07168,
@@ -394,6 +378,15 @@
    "pnl_net": -4.23,
    "action": "stop",
    "closed_ts": 1794110834.3341045
+  },
+  {
+   "symbol": "BICO/USDT",
+   "entry": 0.02526,
+   "exit": 0.01278,
+   "qty_total": 590.57,
+   "pnl_net": -7.37,
+   "action": "stop",
+   "closed_ts": 1794542833.932722
   }
  ],
  "equity_curve": [
@@ -1344,7 +1337,13 @@
    "pnl_net": -4.23,
    "action": "stop",
    "closed_ts": 1794110834.3341045
+  },
+  {
+   "symbol": "BICO/USDT",
+   "pnl_net": -7.37,
+   "action": "stop",
+   "closed_ts": 1794542833.932722
   }
  ],
- "realized_total_events": -29.81
+ "realized_total_events": -37.18
 }
