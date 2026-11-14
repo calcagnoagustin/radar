@@ -1,16 +1,16 @@
 {
  "dry_run": true,
- "equity_now": 243.59,
+ "equity_now": 243.1,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -12.58,
- "pnl_vs_depositos_pct": -4.91,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -37.13,
- "trades_total": 159,
+ "pnl_vs_depositos": -13.07,
+ "pnl_vs_depositos_pct": -5.1,
+ "pnl_today": -5.44,
+ "trades_today": 1,
+ "realized_pnl": -42.57,
+ "trades_total": 160,
  "win_rate": 33,
- "profit_factor": 0.88,
+ "profit_factor": 0.87,
  "open_positions": [
   {
    "symbol": "PORTAL/USDT",
@@ -18,25 +18,9 @@
    "qty": 741.6,
    "stop": 0.006776785714285714,
    "tp1_done": false
-  },
-  {
-   "symbol": "AMP/USDT",
-   "entry": 0.000835,
-   "qty": 18620.17521902379,
-   "stop": 0.0005496428571428573,
-   "tp1_done": false
   }
  ],
  "recent_closed": [
-  {
-   "symbol": "ONT/USDT",
-   "entry": 0.07168,
-   "exit": 0.0565828835978836,
-   "qty_total": 379.0,
-   "pnl_net": -5.72,
-   "action": "manual",
-   "closed_ts": 1787926361.6740842
-  },
   {
    "symbol": "CVX/USDT",
    "entry": 2.462,
@@ -387,6 +371,15 @@
    "pnl_net": -7.37,
    "action": "stop",
    "closed_ts": 1794542833.932722
+  },
+  {
+   "symbol": "AMP/USDT",
+   "entry": 0.000835,
+   "exit": 0.000543,
+   "qty_total": 18620.175219,
+   "pnl_net": -5.44,
+   "action": "stop",
+   "closed_ts": 1794686832.7968373
   }
  ],
  "equity_curve": [
@@ -1343,7 +1336,13 @@
    "pnl_net": -7.37,
    "action": "stop",
    "closed_ts": 1794542833.932722
+  },
+  {
+   "symbol": "AMP/USDT",
+   "pnl_net": -5.44,
+   "action": "stop",
+   "closed_ts": 1794686832.7968373
   }
  ],
- "realized_total_events": -37.18
+ "realized_total_events": -42.62
 }
