@@ -1,19 +1,19 @@
 {
- "actualizado": "2026-11-13T21:10",
- "cuenta_total_usd": 84.76,
+ "actualizado": "2026-11-14T21:10",
+ "cuenta_total_usd": 81.63,
  "reservado_colchon_usd": 0.0,
- "saldo_usd": 84.76,
+ "saldo_usd": 81.63,
  "composicion": [
   {
    "activo": "Wallet Uli · ETH, LPT, SPYX",
    "usd": 50.34
   },
   {
-   "activo": "Binance · WLD, USDT, ETH, BANK",
-   "usd": 34.42
+   "activo": "Binance · USDT, ETH, WLD, BANK",
+   "usd": 31.29
   }
  ],
- "pnl_historico_usd": -5282.72,
+ "pnl_historico_usd": -5285.85,
  "aportes_netos_usd": 5367.49,
  "desde": "2018-01-30",
  "aportes_por_anio": {
@@ -32,8 +32,8 @@
   "fecha": "2026-11-02",
   "total_usd": 89.94,
   "flujos_posteriores_usd": 0,
-  "pnl_desde_baseline_usd": -5.18,
-  "pnl_desde_baseline_pct": -5.76
+  "pnl_desde_baseline_usd": -8.31,
+  "pnl_desde_baseline_pct": -9.24
  },
  "historial": [
   {
@@ -177,6 +177,18 @@
     "ETH": 9.71,
     "WLD": 10.29,
     "USDT (Earn)": 10.07,
+    "Wallet Uli · ETH, LPT, SPYX": 50.34
+   }
+  },
+  {
+   "d": "2026-11-14",
+   "total": 81.63,
+   "pnl_bl": -8.31,
+   "comp": {
+    "BANK": 3.48,
+    "ETH": 8.87,
+    "WLD": 8.58,
+    "USDT (Earn)": 10.08,
     "Wallet Uli · ETH, LPT, SPYX": 50.34
    }
   }
