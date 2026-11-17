@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T23:50",
+ "generated_at": "2026-11-17T23:50",
  "modo": "paper",
  "diseno": {
   "modelo": "rotativo",
@@ -79,9 +79,9 @@
   "mes_senal": "2026-10",
   "fecha": "2026-11-01T15:10"
  },
- "equity": 1221.05,
+ "equity": 1222.1,
  "aportado": 1306.52,
- "pnl": -85.47,
+ "pnl": -84.42,
  "cash_espera": 0.0,
  "caja": 26.66,
  "semaforos": {
@@ -94,36 +94,36 @@
   "XLE": {
    "qty": 3.50763262867378,
    "cost": 230.16,
-   "px": 64.07,
-   "val": 224.73,
+   "px": 63.480000000000004,
+   "val": 222.66,
    "nombre": "Energia EE.UU."
   },
   "EWY": {
    "qty": 1.5635768688734841,
    "cost": 277.11,
-   "px": 136.86,
-   "val": 213.99,
+   "px": 135.75,
+   "val": 212.26,
    "nombre": "iShares MSCI South Korea ETF"
   },
   "XLV": {
    "qty": 1.3872359726814607,
    "cost": 256.57,
-   "px": 188.5,
-   "val": 261.49,
+   "px": 184.35,
+   "val": 255.74,
    "nombre": "Salud EE.UU."
   },
   "XLP": {
    "qty": 2.8687493649181275,
    "cost": 256.57,
-   "px": 88.785,
-   "val": 254.7,
+   "px": 91.095,
+   "val": 261.33,
    "nombre": "Consumo basico EE.UU."
   },
   "XLB": {
    "qty": 4.675250788150072,
    "cost": 256.57,
-   "px": 51.535,
-   "val": 240.94,
+   "px": 50.765,
+   "val": 237.34,
    "nombre": "Materiales EE.UU."
   }
  },
@@ -531,6 +531,11 @@
   {
    "d": "2026-11-16",
    "eq": 1221.05,
+   "aportado": 1306.52
+  },
+  {
+   "d": "2026-11-17",
+   "eq": 1222.1,
    "aportado": 1306.52
   }
  ],
