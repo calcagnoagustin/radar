@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-11-16T21:05",
+ "generated_at": "2026-11-17T21:05",
  "fuente": "Inviu cuenta 88152, vista MEP (precio promedio convertido al dolar MEP del dia de cada operacion)",
  "tenencias_al": "2026-10-24",
  "cuenta_desde": "2021-06",
- "mep": 1603.0,
+ "mep": 1615.3,
  "meta_usd": 1115000,
- "total_usd": 2013.87,
+ "total_usd": 1999.32,
  "costo_usd": 1861.22,
- "gan_usd": 152.65,
- "total_ars": 3228328,
+ "gan_usd": 138.1,
+ "total_ars": 3229550,
  "cash_usd": 22.82,
  "clases": {
   "nucleo": {
    "nom": "Nucleo global (indices)",
-   "val_usd": 1336.34,
-   "peso": 0.6766,
+   "val_usd": 1322.55,
+   "peso": 0.6746,
    "objetivo": 0.72
   },
   "conviccion": {
    "nom": "Conviccion (empresas/tematicos)",
-   "val_usd": 225.26,
-   "peso": 0.1141,
+   "val_usd": 222.86,
+   "peso": 0.1137,
    "objetivo": 0.08
   },
   "argentina": {
    "nom": "Acciones argentinas",
-   "val_usd": 342.91,
-   "peso": 0.1736,
+   "val_usd": 345.2,
+   "peso": 0.1761,
    "objetivo": 0.08
   },
   "bonos": {
    "nom": "Bonos USD argentinos",
-   "val_usd": 70.48,
+   "val_usd": 69.95,
    "peso": 0.0357,
    "objetivo": 0.04
   },
@@ -43,7 +43,7 @@
   },
   "liquidez": {
    "nom": "Liquidez",
-   "val_usd": 16.06,
+   "val_usd": 15.94,
    "peso": null,
    "objetivo": null
   }
@@ -54,100 +54,100 @@
    "nom": "S&P 500",
    "cls": "nucleo",
    "q": 80,
-   "ars": 20740.0,
-   "val_usd": 1035.03,
+   "ars": 20680.0,
+   "val_usd": 1024.19,
    "cost_usd": 852.8,
-   "gan_usd": 182.23
+   "gan_usd": 171.39
   },
   {
    "t": "YPFD",
    "nom": "YPF",
    "cls": "argentina",
    "q": 44,
-   "ars": 6015.0,
-   "val_usd": 165.1,
+   "ars": 6190.0,
+   "val_usd": 168.61,
    "cost_usd": 168.52,
-   "gan_usd": -3.42
+   "gan_usd": 0.09
   },
   {
    "t": "FXI",
    "nom": "China",
    "cls": "nucleo",
    "q": 22,
-   "ars": 11160.0,
-   "val_usd": 153.16,
+   "ars": 11150.0,
+   "val_usd": 151.86,
    "cost_usd": 166.1,
-   "gan_usd": -12.94
+   "gan_usd": -14.24
   },
   {
    "t": "ARKK",
    "nom": "ARK Innovation",
    "cls": "conviccion",
    "q": 12,
-   "ars": 12010.0,
-   "val_usd": 89.9,
+   "ars": 12000.0,
+   "val_usd": 89.15,
    "cost_usd": 82.68,
-   "gan_usd": 7.22
+   "gan_usd": 6.47
   },
   {
    "t": "BYMA",
    "nom": "BYMA",
    "cls": "argentina",
    "q": 740,
-   "ars": 189.5,
-   "val_usd": 87.48,
+   "ars": 191.25,
+   "val_usd": 87.61,
    "cost_usd": 133.2,
-   "gan_usd": -45.72
+   "gan_usd": -45.59
   },
   {
    "t": "ACWI",
    "nom": "MSCI Mundo (ACWI)",
    "cls": "nucleo",
    "q": 12,
-   "ars": 9905.0,
-   "val_usd": 74.15,
+   "ars": 9875.0,
+   "val_usd": 73.36,
    "cost_usd": 71.04,
-   "gan_usd": 3.11
+   "gan_usd": 2.32
   },
   {
    "t": "EEM",
    "nom": "MSCI Emergentes",
    "cls": "nucleo",
    "q": 6,
-   "ars": 19770.0,
-   "val_usd": 74.0,
+   "ars": 19690.0,
+   "val_usd": 73.14,
    "cost_usd": 54.54,
-   "gan_usd": 19.46
+   "gan_usd": 18.6
   },
   {
    "t": "NVDA",
    "nom": "NVIDIA",
    "cls": "conviccion",
    "q": 8,
-   "ars": 10900.0,
-   "val_usd": 54.4,
+   "ars": 10850.0,
+   "val_usd": 53.74,
    "cost_usd": 57.04,
-   "gan_usd": -2.64
+   "gan_usd": -3.3
   },
   {
    "t": "AMD",
    "nom": "AMD",
    "cls": "conviccion",
    "q": 1,
-   "ars": 84550.0,
-   "val_usd": 52.74,
+   "ars": 83275.0,
+   "val_usd": 51.55,
    "cost_usd": 19.53,
-   "gan_usd": 33.21
+   "gan_usd": 32.02
   },
   {
    "t": "TGNO4",
    "nom": "TGN",
    "cls": "argentina",
    "q": 34,
-   "ars": 2424.0,
-   "val_usd": 51.41,
+   "ars": 2345.0,
+   "val_usd": 49.36,
    "cost_usd": 74.12,
-   "gan_usd": -22.71
+   "gan_usd": -24.76
   },
   {
    "t": "GD35",
@@ -155,29 +155,29 @@
    "cls": "bonos",
    "q": 68,
    "ars": 1164.7,
-   "val_usd": 49.41,
+   "val_usd": 49.03,
    "cost_usd": 52.01,
-   "gan_usd": -2.6
+   "gan_usd": -2.98
   },
   {
    "t": "TSLA",
    "nom": "Tesla",
    "cls": "conviccion",
    "q": 1,
-   "ars": 42240.0,
-   "val_usd": 26.35,
+   "ars": 42880.0,
+   "val_usd": 26.55,
    "cost_usd": 24.85,
-   "gan_usd": 1.5
+   "gan_usd": 1.7
   },
   {
    "t": "PAMP",
    "nom": "Pampa Energia",
    "cls": "argentina",
    "q": 9,
-   "ars": 4112.5,
-   "val_usd": 23.09,
+   "ars": 4250.0,
+   "val_usd": 23.68,
    "cost_usd": 26.55,
-   "gan_usd": -3.46
+   "gan_usd": -2.87
   },
   {
    "t": "FCI",
@@ -185,9 +185,9 @@
    "cls": "liquidez",
    "q": 1,
    "ars": 25745.28,
-   "val_usd": 16.06,
+   "val_usd": 15.94,
    "cost_usd": 12.97,
-   "gan_usd": 3.09
+   "gan_usd": 2.97
   },
   {
    "t": "AL35",
@@ -195,19 +195,19 @@
    "cls": "bonos",
    "q": 16,
    "ars": 1103.1,
-   "val_usd": 11.01,
+   "val_usd": 10.93,
    "cost_usd": 5.4,
-   "gan_usd": 5.61
+   "gan_usd": 5.52
   },
   {
    "t": "CEPU",
    "nom": "Central Puerto",
    "cls": "argentina",
    "q": 10,
-   "ars": 1732.0,
-   "val_usd": 10.8,
+   "ars": 1755.0,
+   "val_usd": 10.86,
    "cost_usd": 14.7,
-   "gan_usd": -3.9
+   "gan_usd": -3.84
   },
   {
    "t": "AE38",
@@ -215,19 +215,19 @@
    "cls": "bonos",
    "q": 11,
    "ars": 1152.2,
-   "val_usd": 7.91,
+   "val_usd": 7.85,
    "cost_usd": 8.39,
-   "gan_usd": -0.48
+   "gan_usd": -0.54
   },
   {
    "t": "AGRO",
    "nom": "Agrometal",
    "cls": "argentina",
    "q": 200,
-   "ars": 19.1,
-   "val_usd": 2.38,
+   "ars": 19.6,
+   "val_usd": 2.43,
    "cost_usd": 10.0,
-   "gan_usd": -7.62
+   "gan_usd": -7.57
   },
   {
    "t": "AL30",
@@ -235,16 +235,16 @@
    "cls": "bonos",
    "q": 4,
    "ars": 863.3,
-   "val_usd": 2.15,
+   "val_usd": 2.14,
    "cost_usd": 0.0,
-   "gan_usd": 2.15
+   "gan_usd": 2.14
   },
   {
    "t": "AMZN",
    "nom": "Amazon",
    "cls": "conviccion",
    "q": 1,
-   "ars": 3000.0,
+   "ars": 3025.0,
    "val_usd": 1.87,
    "cost_usd": 1.65,
    "gan_usd": 0.22
@@ -254,10 +254,10 @@
    "nom": "Banco de Valores",
    "cls": "argentina",
    "q": 4,
-   "ars": 523.0,
-   "val_usd": 1.31,
+   "ars": 524.5,
+   "val_usd": 1.3,
    "cost_usd": 0.4,
-   "gan_usd": 0.91
+   "gan_usd": 0.9
   },
   {
    "t": "TXAR",
@@ -265,66 +265,66 @@
    "cls": "argentina",
    "q": 2,
    "ars": 686.0,
-   "val_usd": 0.86,
+   "val_usd": 0.85,
    "cost_usd": 1.06,
-   "gan_usd": -0.2
+   "gan_usd": -0.21
   },
   {
    "t": "ALUA",
    "nom": "Aluar",
    "cls": "argentina",
    "q": 1,
-   "ars": 770.0,
-   "val_usd": 0.48,
+   "ars": 800.0,
+   "val_usd": 0.5,
    "cost_usd": 0.85,
-   "gan_usd": -0.37
+   "gan_usd": -0.35
   }
  ],
  "recomendacion": {
   "mes": "diciembre 2026",
-  "presupuesto_ars": 160305,
+  "presupuesto_ars": 161533,
   "aporte_usd": 100,
   "fija": [
    {
     "t": "SPY",
     "q": 1,
-    "ars": 20740
+    "ars": 20680
    },
    {
     "t": "QQQ",
     "q": 1,
-    "ars": 55600
+    "ars": 55550
    },
    {
     "t": "GLD",
     "q": 1,
-    "ars": 11870
+    "ars": 11960
    },
    {
     "t": "ACWI",
     "q": 1,
-    "ars": 9905
+    "ars": 9875
    }
   ],
-  "resto_ars": 62190,
+  "resto_ars": 63468,
   "extra": [
    {
     "t": "GLD",
     "clase": "oro",
-    "ars": 35610,
+    "ars": 35880,
     "q": 3,
-    "precio_ars": 11870,
+    "precio_ars": 11960,
     "porque": "Oro: seguro de largo plazo contra crisis e inflacion en dolares; hoy 0%",
-    "tendencia_12m": -0.023
+    "tendencia_12m": -0.016
    },
    {
     "t": "SPY",
     "clase": "nucleo",
-    "ars": 20720,
+    "ars": 20680,
     "q": 1,
-    "precio_ars": 20720,
+    "precio_ars": 20680,
     "porque": "S&P 500: el corazon de la cartera",
-    "tendencia_12m": 0.19
+    "tendencia_12m": 0.187
    }
   ],
   "suficiente": [
@@ -337,10 +337,10 @@
   "anio": "2026",
   "inicio_usd": 1294.79,
   "aportes_usd": 781.63,
-  "resultado_usd": -62.55,
-  "rend_pct": -3.71,
+  "resultado_usd": -77.1,
+  "rend_pct": -4.57,
   "nota": "Rendimiento simple: resultado / (valor inicial + mitad de los aportes). Inviu (TWR) da 10,15% al 19/10.",
-  "spy_ytd_pct": 9.36,
+  "spy_ytd_pct": 8.21,
   "twr_inviu_pct": 10.15
  },
  "historial": [
@@ -1263,6 +1263,10 @@
   [
    "2026-11-16",
    2013.87
+  ],
+  [
+   "2026-11-17",
+   1999.32
   ]
  ],
  "mensual": [
@@ -1370,11 +1374,11 @@
    "mes": "nov 26",
    "ym": "2026-11",
    "inicio": 2146.94,
-   "fin": 2013.87,
+   "fin": 1999.32,
    "aporte": 0,
-   "resultado": -133.07,
-   "pct": -6.2,
-   "spy_pct": -2.09
+   "resultado": -147.62,
+   "pct": -6.88,
+   "spy_pct": -3.11
   }
  ]
 }
