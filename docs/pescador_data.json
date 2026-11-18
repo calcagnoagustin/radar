@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T21:10:17Z",
+ "generated_at": "2026-11-18T21:10:21Z",
  "modo": "PAPER",
  "version": "bstocks",
  "sub": "Runners de bStocks &middot; entra en la ruptura, banca con stop ancho",
@@ -200,6 +200,10 @@
   },
   {
    "d": "2026-11-17",
+   "eq": 898.38
+  },
+  {
+   "d": "2026-11-18",
    "eq": 898.38
   }
  ],
