@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T00:20:13Z",
+ "generated": "2026-11-18T00:20:12Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -24,23 +24,23 @@
     "max_dd_usd": -56.48
    },
    "ult_30d": {
-    "n": 14,
-    "win_rate": 14.3,
-    "pnl_total": -52.66,
-    "expectancy_usd": -3.761,
-    "expectancy_r": -0.75,
-    "profit_factor": 0.16,
-    "payoff": 0.95,
-    "max_dd_usd": -52.66
+    "n": 10,
+    "win_rate": 20.0,
+    "pnl_total": -35.14,
+    "expectancy_usd": -3.514,
+    "expectancy_r": -0.63,
+    "profit_factor": 0.22,
+    "payoff": 0.88,
+    "max_dd_usd": -41.92
    },
    "ult_90d": {
-    "n": 62,
-    "win_rate": 41.9,
-    "pnl_total": 29.78,
-    "expectancy_usd": 0.48,
-    "expectancy_r": 0.43,
-    "profit_factor": 1.2,
-    "payoff": 1.66,
+    "n": 61,
+    "win_rate": 42.6,
+    "pnl_total": 32.45,
+    "expectancy_usd": 0.532,
+    "expectancy_r": 0.45,
+    "profit_factor": 1.22,
+    "payoff": 1.64,
     "max_dd_usd": -56.48
    }
   },
@@ -66,23 +66,23 @@
     "max_dd_usd": -56.48
    },
    "ult_30d": {
-    "n": 14,
-    "win_rate": 14.3,
-    "pnl_total": -52.66,
-    "expectancy_usd": -3.761,
-    "expectancy_r": -0.75,
-    "profit_factor": 0.16,
-    "payoff": 0.95,
-    "max_dd_usd": -52.66
+    "n": 10,
+    "win_rate": 20.0,
+    "pnl_total": -35.14,
+    "expectancy_usd": -3.514,
+    "expectancy_r": -0.63,
+    "profit_factor": 0.22,
+    "payoff": 0.88,
+    "max_dd_usd": -41.92
    },
    "ult_90d": {
-    "n": 61,
-    "win_rate": 41.0,
-    "pnl_total": 26.51,
-    "expectancy_usd": 0.435,
-    "expectancy_r": 0.43,
-    "profit_factor": 1.17,
-    "payoff": 1.69,
+    "n": 60,
+    "win_rate": 41.7,
+    "pnl_total": 29.18,
+    "expectancy_usd": 0.486,
+    "expectancy_r": 0.45,
+    "profit_factor": 1.2,
+    "payoff": 1.67,
     "max_dd_usd": -56.48
    }
   },
@@ -344,55 +344,55 @@
  ],
  "n_trades_consolidados": 150,
  "fondo": {
-  "generated": "2026-11-17T00:20",
+  "generated": "2026-11-18T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-11-16",
-  "dias": 81,
+  "hasta": "2026-11-17",
+  "dias": 82,
   "min_dias_evidencia": 90,
   "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 81 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1221.05,
+  "veredicto": "Muestra insuficiente: 82 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
+  "equity": 1222.1,
   "aportado": 1306.52,
-  "pnl": -85.47,
-  "pnl_pct": -6.54,
+  "pnl": -84.42,
+  "pnl_pct": -6.46,
   "comparativa": {
    "fondo": {
-    "ret_pct": -6.48,
+    "ret_pct": -6.4,
     "max_dd_pct": -18.24,
-    "vol_anual_pct": 33.1,
-    "n": 81
+    "vol_anual_pct": 32.9,
+    "n": 82
    },
    "congelado": {
-    "ret_pct": -20.36,
+    "ret_pct": -19.74,
     "max_dd_pct": -28.84,
-    "vol_anual_pct": 39.7,
-    "n": 81
+    "vol_anual_pct": 39.5,
+    "n": 82
    },
    "btc_100": {
-    "ret_pct": -16.65,
+    "ret_pct": -16.57,
     "max_dd_pct": -25.94,
-    "vol_anual_pct": 39.2,
-    "n": 81
+    "vol_anual_pct": 39.0,
+    "n": 82
    },
    "btc_eth_5050": {
-    "ret_pct": -21.06,
+    "ret_pct": -20.93,
     "max_dd_pct": -31.16,
-    "vol_anual_pct": 43.1,
-    "n": 81
+    "vol_anual_pct": 42.8,
+    "n": 82
    },
    "spy_100": {
-    "ret_pct": -3.82,
-    "max_dd_pct": -5.92,
+    "ret_pct": -4.8,
+    "max_dd_pct": -5.99,
     "vol_anual_pct": 15.7,
-    "n": 81
+    "n": 82
    }
   },
   "vs_controles_pp": {
-   "congelado": 13.88,
+   "congelado": 13.34,
    "btc_100": 10.17,
-   "btc_eth_5050": 14.58,
-   "spy_100": -2.66
+   "btc_eth_5050": 14.53,
+   "spy_100": -1.6
   },
   "bloques": {
    "nucleo": {
@@ -586,7 +586,8 @@
     1229.35,
     1227.63,
     1227.63,
-    1221.05
+    1221.05,
+    1222.1
    ],
    "congelado": [
     1307.76,
@@ -669,7 +670,8 @@
     1091.82,
     1038.51,
     1060.91,
-    1041.45
+    1041.45,
+    1049.55
    ],
    "btc_100": [
     1305.68,
@@ -752,7 +754,8 @@
     1145.81,
     1075.96,
     1096.11,
-    1088.26
+    1088.26,
+    1089.34
    ],
    "btc_eth_5050": [
     1305.68,
@@ -835,7 +838,8 @@
     1088.66,
     1010.8,
     1038.55,
-    1030.7
+    1030.7,
+    1032.37
    ],
    "spy_100": [
     1305.68,
@@ -918,7 +922,8 @@
     1280.26,
     1280.26,
     1280.26,
-    1255.78
+    1255.78,
+    1243.04
    ]
   },
   "dias_lista": [
@@ -1002,7 +1007,8 @@
    "2026-11-13",
    "2026-11-14",
    "2026-11-15",
-   "2026-11-16"
+   "2026-11-16",
+   "2026-11-17"
   ]
  }
 }
