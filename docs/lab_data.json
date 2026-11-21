@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-20T00:15:05Z",
+ "generated_at": "2026-11-21T00:15:06Z",
  "errores": [],
  "faro": {
-  "dias": 50,
+  "dias": 51,
   "estado": "OFF",
   "equity": 949.17,
-  "btc_hold": 730.29,
+  "btc_hold": 694.53,
   "transiciones": 1,
   "positivos": 0,
   "desde": "2026-10-01",
@@ -25,10 +25,10 @@
    }
   ],
   "upside_capture": 50.0,
-  "downside_capture": 29.8,
-  "btc_en_periodos_off_pct": -23.37,
-  "dias_off": 26,
-  "vs_hold_pct": 29.97,
+  "downside_capture": 27.2,
+  "btc_en_periodos_off_pct": -27.12,
+  "dias_off": 27,
+  "vs_hold_pct": 36.66,
   "gate": "SIN_COBERTURA (1/6 meses, 1/3 transiciones)",
   "curva": [
    {
@@ -330,12 +330,18 @@
     "eq": 949.17,
     "btc": 730.29,
     "on": false
+   },
+   {
+    "d": "2026-11-20",
+    "eq": 949.17,
+    "btc": 694.53,
+    "on": false
    }
   ]
  },
  "rs": {
   "desde": "2026-10-11",
-  "dias": 40,
+  "dias": 41,
   "gate_on": false,
   "RS": {
    "equity": 569.27,
@@ -429,7 +435,7 @@
   },
   "selection_alpha_vs_BTC_pct": -40.81,
   "selection_alpha_vs_VOL_pct": -37.75,
-  "estado": "SIN_MUESTRA (40/90 dias, 11/25 cierres)",
+  "estado": "SIN_MUESTRA (41/90 dias, 11/25 cierres)",
   "curva": [
    {
     "d": "2026-10-11",
@@ -667,6 +673,12 @@
    },
    {
     "d": "2026-11-19",
+    "RS": 569.27,
+    "BTC": 961.71,
+    "VOL": 914.53
+   },
+   {
+    "d": "2026-11-20",
     "RS": 569.27,
     "BTC": 961.71,
     "VOL": 914.53
@@ -982,33 +994,33 @@
   ]
  },
  "positioning": {
-  "hoy_simbolos": 20,
-  "dias_logueados": 50,
+  "hoy_simbolos": 18,
+  "dias_logueados": 51,
   "objetivo_dias": 90,
   "btc": {
-   "d": "2026-11-20",
+   "d": "2026-11-21",
    "sym": "BTC/USDT",
    "funding_8h": [
-    6.781e-05,
-    1.785e-05,
-    2.034e-05
+    7.06e-06,
+    2.551e-05,
+    -6.069e-05
    ],
-   "top_ls_ratio": 1.95,
-   "global_ls_ratio": 3.4425,
-   "oi_usd": 6009972730.1367
+   "top_ls_ratio": 1.6756,
+   "global_ls_ratio": 3.4763,
+   "oi_usd": 5660944839.626898
   },
   "eth": {
-   "d": "2026-11-20",
+   "d": "2026-11-21",
    "sym": "ETH/USDT",
    "funding_8h": [
-    0.0001,
-    2.874e-05,
-    4.779e-05
+    5.158e-05,
+    -2.39e-06,
+    -0.00018843
    ],
-   "top_ls_ratio": 1.8696,
-   "global_ls_ratio": 3.0568,
-   "oi_usd": 4320094144.42464
+   "top_ls_ratio": 1.6228,
+   "global_ls_ratio": 2.8432,
+   "oi_usd": 3825739772.9346776
   },
-  "estado": "LOGGER (50/90 dias)"
+  "estado": "LOGGER (51/90 dias)"
  }
 }
