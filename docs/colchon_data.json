@@ -1,15 +1,19 @@
 {
- "actualizado": "2026-11-02",
+ "actualizado": "2026-11-22",
  "meta_usd": 23400,
  "meta_1_usd": 11700,
  "gasto_mensual_usd": 3900,
  "partes": [
   {
-   "donde": "Mercado Pago · FCI dólares",
-   "usd": 4050.78
+   "donde": "Mercado Pago · dólares",
+   "usd": 4200.0
+  },
+  {
+   "donde": "Billetes en casa",
+   "usd": 600.0
   }
  ],
- "pendiente": null,
- "plan": "~70% broker (FCI dólares) · ~15% banco sin tarjeta ni deuda · ~15% billetes",
- "saldo_usd": 4050.78
+ "pendiente": "Pasar los dólares de Mercado Pago a Nación y ARQ",
+ "plan": "Nación (caja de ahorro USD, sin débitos) ~USD 3.200 · ARQ ~USD 1.000 (anticorralito) · billetes USD 600",
+ "saldo_usd": 4800.0
 }
