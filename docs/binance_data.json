@@ -1,8 +1,8 @@
 {
- "actualizado": "2026-11-23T21:10",
- "cuenta_total_usd": 130.53,
+ "actualizado": "2026-11-24T21:10",
+ "cuenta_total_usd": 130.02,
  "reservado_colchon_usd": 0.0,
- "saldo_usd": 130.53,
+ "saldo_usd": 130.02,
  "composicion": [
   {
    "activo": "Inviu IBKR · SATL, YOLO",
@@ -14,14 +14,14 @@
   },
   {
    "activo": "Binance · USDT, ETH, WLD, BANK",
-   "usd": 30.22
+   "usd": 29.71
   },
   {
    "activo": "Wallet 2 · DAI, MATIC",
    "usd": 11.27
   }
  ],
- "pnl_historico_usd": -2813.56,
+ "pnl_historico_usd": -2814.06,
  "aportes_netos_usd": 2944.09,
  "desde": "2018-01-30",
  "aportes_por_anio": {
@@ -40,8 +40,8 @@
   "fecha": "2026-11-02",
   "total_usd": 89.94,
   "flujos_posteriores_usd": 0,
-  "pnl_desde_baseline_usd": 40.59,
-  "pnl_desde_baseline_pct": 45.13
+  "pnl_desde_baseline_usd": 40.08,
+  "pnl_desde_baseline_pct": 44.57
  },
  "historial": [
   {
@@ -306,6 +306,20 @@
     "BANK": 2.97,
     "ETH": 8.64,
     "WLD": 8.23,
+    "USDT (Earn)": 10.1,
+    "Wallet Uli · ETH, LPT, POL": 36.9,
+    "Wallet 2 · DAI, MATIC": 11.27,
+    "Inviu IBKR · SATL, YOLO": 52.14
+   }
+  },
+  {
+   "d": "2026-11-24",
+   "total": 130.02,
+   "pnl_bl": 40.08,
+   "comp": {
+    "BANK": 2.84,
+    "ETH": 8.38,
+    "WLD": 8.13,
     "USDT (Earn)": 10.1,
     "Wallet Uli · ETH, LPT, POL": 36.9,
     "Wallet 2 · DAI, MATIC": 11.27,
