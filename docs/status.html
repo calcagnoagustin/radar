@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>TRADING · Estado del proyecto</title>
+<title>Portfolio Visión · Status</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -140,6 +140,9 @@
 
   footer{color:var(--faint);font-size:12px;text-align:center;padding:26px 0 10px;line-height:1.7}
   .hidden{display:none}
+  section.hist{padding-top:10px;padding-bottom:10px}
+  section.hist summary{cursor:pointer;font-weight:700;font-size:16px;line-height:1.35;padding:6px 0;color:var(--faint,#888)}
+  section.hist details[open] summary{margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -147,7 +150,7 @@
 <header>
   <div class="brand">
     <div class="eyebrow">Documento maestro</div>
-    <h1 id="h-titulo">TRADING</h1>
+    <h1 id="h-titulo">Portfolio Visión</h1>
     <div class="sub" id="h-bajada"></div>
   </div>
   <div class="stamp">
@@ -181,8 +184,8 @@
 </div>
 
 <footer>
-  TRADING · Documento maestro del proyecto · cripto + acciones<br>
-  Contenido en <span class="mono">docs/status_data.json</span> · Actualizado por Claude en cada sesión con cambios de estado
+  Portfolio Visión · Documento maestro · Colchón, Libertad, Retiro y Laboratorio<br>
+  Fuente en la VM (status/status_data.json) · No editar directo en GitHub
 </footer>
 
 <script>
@@ -192,6 +195,8 @@ const usd = n => (n===null||n===undefined||isNaN(n)) ? '—' : (n<0?'-$':'$')+Ma
 const cls = n => (n===null||n===undefined||isNaN(n)) ? '' : (n>0?'pos':(n<0?'neg':''));
 
 function bloque(b){
+  if(b.tipo==='kv') b = {...b, items:(b.items||[]).map(i=>Array.isArray(i)?i:[i.k,i.v])};
+  if(b.tipo==='tabla') b = {...b, headers:b.headers||[], rows:b.rows||b.filas||[]};
   if(b.tipo==='p') return `<p>${esc(b.t)}</p>`;
   if(b.tipo==='ul') return `<ul>${b.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`;
   if(b.tipo==='kv') return `<div class="kv">${b.items.map(([k,v])=>
@@ -229,13 +234,17 @@ function render(d){
     `<div class="kpi"><div class="k">${esc(k.k)}</div><div class="v mono">${esc(k.v)}</div></div>`).join('');
   const sec = s => `<section id="${s.id}"><h2>${esc(s.titulo)}</h2>${s.bloques.map(bloque).join('')}</section>`;
   const top  = d.secciones.filter(s=>s.destacada);
-  const rest = d.secciones.filter(s=>!s.destacada);
+  const hist = d.secciones.filter(s=>s.historial);
+  const rest = d.secciones.filter(s=>!s.destacada && !s.historial);
+  const secH = s => `<section id="${s.id}" class="hist"><details><summary>${esc(s.titulo)}</summary>${s.bloques.map(bloque).join('')}</details></section>`;
+  const histHead = hist.length ? `<section id="historial"><h2>Historial técnico (no vigente)</h2><p>Textos de la etapa de bots, tal como se escribieron en su fecha. No describen el estado actual. Tocá un título para abrirlo.</p></section>` : '';
   document.getElementById('top').innerHTML  = top.map(sec).join('');
-  document.getElementById('main').innerHTML = rest.map(sec).join('');
+  document.getElementById('main').innerHTML = rest.map(sec).join('') + histHead + hist.map(secH).join('');
   document.getElementById('nav').innerHTML =
     top.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('') +
     `<a href="#vivo">Estado en vivo</a>` +
-    rest.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('');
+    rest.map(s=>`<a href="#${s.id}">${esc(s.titulo)}</a>`).join('') +
+    (hist.length ? `<a href="#historial">Historial técnico</a>` : '');
 }
 
 // ---- buscador ----
