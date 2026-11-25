@@ -1,36 +1,115 @@
 {
  "meta": {
-  "actualizado": "2026-10-09",
+  "actualizado": "2026-11-25",
   "version": "2.0",
   "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
  },
  "resumen": {
   "titulo": "TRADING",
-  "bajada": "Sistema propio de inversion. Dos fondos: Fondo Abundancia (rotativo en Binance: cripto + acciones/ETFs, busca la tendencia que mas sube) y Fondo de Retiro (cartera a 20 anios en Inviu, CEDEARs + acciones y bonos argentinos, compra mensual a mano). Ganesha y Pescadores siguen en paper hasta el corte de noviembre.",
+  "bajada": "Marco patrimonial 2027: colchón de seguridad, libertad (1–5 años) y retiro (20 años), con laboratorio experimental limitado al 3% del retiro. Las estrategias y bots anteriores se conservan como historial técnico; esta actualización no activa operaciones.",
   "kpis": [
    {
-    "k": "Horizonte",
-    "v": "~20 anios"
+    "k": "Colchón",
+    "v": "3–6 meses de gastos"
    },
    {
-    "k": "Abundancia",
-    "v": "PAPER · ~$1.390"
+    "k": "Libertad",
+    "v": "1–5 años"
    },
    {
     "k": "Retiro",
-    "v": "Inviu · aporte ~USD 100/mes"
+    "v": "20 años"
    },
    {
-    "k": "Corte bots",
-    "v": "01/12/2026"
+    "k": "Retiro estructural",
+    "v": "85%"
    },
    {
-    "k": "Tracks",
-    "v": "Rotativo · Retiro"
+    "k": "Laboratorio",
+    "v": "3% del retiro"
    }
   ]
  },
  "secciones": [
+  {
+   "id": "estrategia_financiera_2027",
+   "titulo": "Estrategia financiera general 2027 — 25/11/2026",
+   "destacada": true,
+   "bloques": [
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Acuerdo estratégico del 25/11/2026. Marco patrimonial familiar vigente para 2027; prevalece sobre las asignaciones estratégicas anteriores cuando exista contradicción. No modifica bots, órdenes, configuraciones ni activa operaciones reales."
+    },
+    {
+     "tipo": "p",
+     "t": "Separar patrimonio familiar y empresa, que tiene balance propio y se sostiene por sí misma. Seguridad para vivir, libertad para elegir, patrimonio para independizarse y experimentación para descubrir."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      {
+       "k": "Colchón",
+       "v": "Liquidez máxima, riesgo mínimo, preservación del capital. Objetivo inicial: tres meses de gastos familiares ajustados; objetivo sólido: seis meses; doce meses como seguridad extraordinaria. Recalcular según gastos y tipo de cambio. Reponer retiros y mantener cobertura."
+      },
+      {
+       "k": "Libertad",
+       "v": "Horizonte de 1 a 5 años, riesgo bajo/moderado, disponibilidad para proyectos, compras, descanso y oportunidades sin comprometer seguridad ni retiro."
+      },
+      {
+       "k": "Retiro",
+       "v": "Horizonte de 20 años, diversificación, interés compuesto y compras manuales mensuales. Mayor tolerancia a volatilidad, no a pérdida permanente indiscriminada."
+      }
+     ]
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      {
+       "k": "Hasta 3 meses de colchón",
+       "v": "80% de nuevos ahorros al colchón, 20% al retiro."
+      },
+      {
+       "k": "Entre 3 y 6 meses",
+       "v": "50% colchón, 20% libertad, 30% retiro."
+      },
+      {
+       "k": "Colchón completo",
+       "v": "30% libertad, 70% retiro; reponer colchón cuando corresponda."
+      }
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Los porcentajes se aplican a aportes nuevos, no implican liquidar posiciones existentes. Revisar semestralmente."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      {
+       "k": "85% estructural",
+       "v": "Índices y ETF diversificados, exposición global, empresas consolidadas, baja rotación."
+      },
+      {
+       "k": "12% convicción",
+       "v": "Empresas y sectores específicos, IA, innovación y tendencias estructurales; limitar concentración."
+      },
+      {
+       "k": "3% laboratorio",
+       "v": "Descubrimiento de oportunidades asimétricas y trading algorítmico. El capital experimental puede perderse por completo."
+      }
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Laboratorio: distinguir investigación y compra paciente de activos con potencial extraordinario de estrategias de trading. Evaluar Interactive Brokers y API para acciones, integración con Claude y paper trading previo. Acciones no necesariamente menos riesgosas que cripto. Evitar apalancamiento, limitar permisos API, cuidar custodia, comisiones y liquidez, registrar resultados y no rescatar pérdidas con colchón, libertad o núcleo de retiro. No depender de repetir éxitos extraordinarios."
+    },
+    {
+     "tipo": "p",
+     "t": "Prioridades 2027: completar primero tres meses de colchón, mantener aportes al retiro, activar libertad progresivamente, completar seis meses de seguridad, consolidar estructura 85/12/3 y evaluar infraestructura experimental. Las cifras patrimoniales y gastos familiares exactos se mantienen fuera de este documento web por privacidad."
+    }
+   ]
+  },
   {
    "id": "prioridades",
    "titulo": "Prioridades y tareas",
