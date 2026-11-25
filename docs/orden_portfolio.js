@@ -17,6 +17,10 @@
     '.bot-bar[data-g="total"] .bn{font-size:1em!important}',
     '.bot-bar[data-g="total"] .bt{font-size:1.3em!important}',
     '.bot-bar[data-g="uli"],.bot-bar[data-g="binance"]{opacity:.75}',
+    /* 25/11: solo Colchón, Retiro y Total a la vista; Uli y Otros detrás de "Ver más" */
+    'body:not(.pv-mas) .bot-bar[data-g="uli"],body:not(.pv-mas) .bot-bar[data-g="binance"],body:not(.pv-mas) [data-grupo="uli"],body:not(.pv-mas) [data-grupo="binance"]{display:none!important}',
+    '.bot-bar[data-g="mas"]{justify-content:center;padding:12px!important;margin:0 0 18px!important;border:0!important;background:transparent!important;opacity:.6;font-size:13px;letter-spacing:.08em}',
+    'body[data-vista="lab"] .bot-bar[data-g="mas"]{display:none!important}',
     '.bot-bar[data-g="uli"] .bt,.bot-bar[data-g="binance"] .bt{font-size:1.25em!important}'
   ].join("");
   document.head.appendChild(st);
@@ -25,9 +29,17 @@
     Array.prototype.forEach.call(document.body.children,function(el){ if(!el.classList.contains("bot-bar")&&el.getAttribute("data-grupo")===g) out.push(el); });
     return out;
   }
+  var KM="pv_mas"; try{ if(localStorage.getItem(KM)==="1") document.body.classList.add("pv-mas"); }catch(e){}
+  function botonMas(){
+    var b=document.querySelector('.bot-bar[data-g="mas"]'); if(b) return b;
+    b=document.createElement("div"); b.className="bot-bar"; b.setAttribute("data-g","mas");
+    b.addEventListener("click",function(){ var on=document.body.classList.toggle("pv-mas"); try{localStorage.setItem(KM,on?"1":"0");}catch(e){} txt(); });
+    function txt(){ b.textContent=document.body.classList.contains("pv-mas")?"\u25B4 Ocultar Fondo Uli y Otros":"\u25BE Ver m\u00e1s \u00b7 Fondo Uli y Otros"; }
+    txt(); return b;
+  }
   function ordenar(){
     var ancla=document.querySelector('.bot-bar[data-g="lab"]')||document.querySelector("body > header"); if(!ancla) return;
-    var seq=[]; ORDEN.forEach(function(g){ seq=seq.concat(nodos(g)); });
+    var seq=[]; ORDEN.forEach(function(g){ if(g==="uli") seq.push(botonMas()); seq=seq.concat(nodos(g)); });
     if(!seq.length) return;
     var set=new Set(seq), actual=Array.prototype.filter.call(document.body.children,function(n){return set.has(n);});
     var ok=actual.length===seq.length&&actual.every(function(n,i){return n===seq[i];})&&(seq[seq.length-1].compareDocumentPosition(ancla)&Node.DOCUMENT_POSITION_FOLLOWING);
