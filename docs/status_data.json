@@ -1,20 +1,20 @@
 {
  "meta": {
   "actualizado": "2026-11-25",
-  "version": "2.0",
-  "nota": "Documento maestro del proyecto TRADING (cripto + acciones/ETFs/bonos). Arranca por prioridades y situacion. Se actualiza en cada sesion con cambios de estado. El contenido vive en docs/status_data.json; status.html es solo el renderer."
+  "version": "3.0",
+  "nota": "Documento maestro de Portfolio Visión (finanzas personales de Agus). Arriba lo vigente; abajo el historial técnico de la etapa de bots. Fuente: status/status_data.json en la VM, publicado con status/publicar_status.py. No editar directo en GitHub."
  },
  "resumen": {
-  "titulo": "TRADING",
-  "bajada": "Marco patrimonial 2027: colchón de seguridad, libertad (1–5 años) y retiro (20 años), con laboratorio experimental limitado al 3% del retiro. Las estrategias y bots anteriores se conservan como historial técnico; esta actualización no activa operaciones.",
+  "titulo": "Portfolio Visión",
+  "bajada": "Marco patrimonial 2027: Colchón (seguridad), Libertad (1 a 5 años) y Retiro (20 años), con un Laboratorio de experimentos limitado al 3% del Retiro. Hoy ningún bot opera con plata real. Lo anterior queda abajo como historial técnico.",
   "kpis": [
    {
     "k": "Colchón",
-    "v": "3–6 meses de gastos"
+    "v": "3 a 6 meses de gastos"
    },
    {
     "k": "Libertad",
-    "v": "1–5 años"
+    "v": "1 a 5 años"
    },
    {
     "k": "Retiro",
@@ -26,14 +26,18 @@
    },
    {
     "k": "Laboratorio",
-    "v": "3% del retiro"
+    "v": "tope 3% del Retiro"
+   },
+   {
+    "k": "Bots en real",
+    "v": "ninguno"
    }
   ]
  },
  "secciones": [
   {
    "id": "estrategia_financiera_2027",
-   "titulo": "Estrategia financiera general 2027 — 25/11/2026",
+   "titulo": "Estrategia financiera 2027 (acordada el 25/11/2026)",
    "destacada": true,
    "bloques": [
     {
@@ -48,35 +52,35 @@
     {
      "tipo": "kv",
      "items": [
-      {
-       "k": "Colchón",
-       "v": "Liquidez máxima, riesgo mínimo, preservación del capital. Objetivo inicial: tres meses de gastos familiares ajustados; objetivo sólido: seis meses; doce meses como seguridad extraordinaria. Recalcular según gastos y tipo de cambio. Reponer retiros y mantener cobertura."
-      },
-      {
-       "k": "Libertad",
-       "v": "Horizonte de 1 a 5 años, riesgo bajo/moderado, disponibilidad para proyectos, compras, descanso y oportunidades sin comprometer seguridad ni retiro."
-      },
-      {
-       "k": "Retiro",
-       "v": "Horizonte de 20 años, diversificación, interés compuesto y compras manuales mensuales. Mayor tolerancia a volatilidad, no a pérdida permanente indiscriminada."
-      }
+      [
+       "Colchón",
+       "Liquidez máxima, riesgo mínimo, preservación del capital. Objetivo inicial: tres meses de gastos familiares ajustados; objetivo sólido: seis meses; doce meses como seguridad extraordinaria. Recalcular según gastos y tipo de cambio. Reponer retiros y mantener cobertura."
+      ],
+      [
+       "Libertad",
+       "Horizonte de 1 a 5 años, riesgo bajo/moderado, disponibilidad para proyectos, compras, descanso y oportunidades sin comprometer seguridad ni retiro."
+      ],
+      [
+       "Retiro",
+       "Horizonte de 20 años, diversificación, interés compuesto y compras manuales mensuales. Mayor tolerancia a volatilidad, no a pérdida permanente indiscriminada."
+      ]
      ]
     },
     {
      "tipo": "kv",
      "items": [
-      {
-       "k": "Hasta 3 meses de colchón",
-       "v": "80% de nuevos ahorros al colchón, 20% al retiro."
-      },
-      {
-       "k": "Entre 3 y 6 meses",
-       "v": "50% colchón, 20% libertad, 30% retiro."
-      },
-      {
-       "k": "Colchón completo",
-       "v": "30% libertad, 70% retiro; reponer colchón cuando corresponda."
-      }
+      [
+       "Hasta 3 meses de colchón",
+       "80% de nuevos ahorros al colchón, 20% al retiro."
+      ],
+      [
+       "Entre 3 y 6 meses",
+       "50% colchón, 20% libertad, 30% retiro."
+      ],
+      [
+       "Colchón completo",
+       "30% libertad, 70% retiro; reponer colchón cuando corresponda."
+      ]
      ]
     },
     {
@@ -86,18 +90,18 @@
     {
      "tipo": "kv",
      "items": [
-      {
-       "k": "85% estructural",
-       "v": "Índices y ETF diversificados, exposición global, empresas consolidadas, baja rotación."
-      },
-      {
-       "k": "12% convicción",
-       "v": "Empresas y sectores específicos, IA, innovación y tendencias estructurales; limitar concentración."
-      },
-      {
-       "k": "3% laboratorio",
-       "v": "Descubrimiento de oportunidades asimétricas y trading algorítmico. El capital experimental puede perderse por completo."
-      }
+      [
+       "85% estructural",
+       "Índices y ETF diversificados, exposición global, empresas consolidadas, baja rotación."
+      ],
+      [
+       "12% convicción",
+       "Empresas y sectores específicos, IA, innovación y tendencias estructurales; limitar concentración."
+      ],
+      [
+       "3% laboratorio",
+       "Descubrimiento de oportunidades asimétricas y trading algorítmico. El capital experimental puede perderse por completo."
+      ]
      ]
     },
     {
@@ -106,7 +110,76 @@
     },
     {
      "tipo": "p",
-     "t": "Prioridades 2027: completar primero tres meses de colchón, mantener aportes al retiro, activar libertad progresivamente, completar seis meses de seguridad, consolidar estructura 85/12/3 y evaluar infraestructura experimental. Las cifras patrimoniales y gastos familiares exactos se mantienen fuera de este documento web por privacidad."
+     "t": "Prioridades 2027: completar primero tres meses de colchón, mantener aportes al retiro, activar libertad progresivamente, completar seis meses de seguridad, consolidar estructura 85/12/3 y evaluar infraestructura experimental. Las cifras actuales de patrimonio y de gastos familiares no se publican en este documento."
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "El Fondo Uli va aparte y antes del reparto: no entra en estos porcentajes.",
+      "El Retiro Turbo es parte del Retiro: sus compras cuentan dentro del porcentaje del Retiro.",
+      "El 85/12/3 ordena los aportes nuevos del Retiro. Cómo se cuentan Argentina, bonos y oro dentro de esos tres grupos está a decidir (ver Prioridades). Mientras tanto sigue la rutina vigente del Retiro.",
+      "El 3% del Laboratorio es el tope para experimentos con plata real. Hoy todo el Laboratorio corre en paper: plata real en experimentos, cero.",
+      "Próxima revisión semestral del marco: mayo 2027."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ahora",
+   "titulo": "Dónde estamos hoy (25/11/2026)",
+   "destacada": true,
+   "bloques": [
+    {
+     "tipo": "pulso",
+     "items": [
+      {
+       "frente": "Colchón",
+       "estado": "ambar",
+       "t": "En armado. Primera meta: 3 meses de gastos; después 6. Es la prioridad número uno de los ahorros nuevos."
+      },
+      {
+       "frente": "Libertad",
+       "estado": "gris",
+       "t": "Todavía no arranca. Se activa cuando el Colchón llegue a 3 meses. Falta definir en qué se invierte."
+      },
+      {
+       "frente": "Retiro",
+       "estado": "verde",
+       "t": "Funcionando. Compra manual todos los meses en Inviu. Desde diciembre llega por WhatsApp una placa con la compra del mes y recordatorios si falta hacerla."
+      },
+      {
+       "frente": "Laboratorio",
+       "estado": "ambar",
+       "t": "Todo en paper. El 01/12 a las 9:00 se evalúan los bots y se apagan solos los que no cumplan."
+      },
+      {
+       "frente": "Binance",
+       "estado": "gris",
+       "t": "Sin plata invertida desde el 29/10/2026 (se vendió todo). Queda un resto chico; el panel lo lee en modo solo lectura."
+      },
+      {
+       "frente": "Infra",
+       "estado": "verde",
+       "t": "VM y panel funcionando. Sin migraciones pendientes."
+      }
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Plata real en manos de bots: cero. Ningún bot opera en real; para volver a operar hace falta una decisión explícita de Agus."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Corte del 01/12. Simulacro corrido el 25/11 con los números de hoy: se apagan los tres. Ganesha: 36 cierres con PF 0,87 (el mínimo era 1,3). Pescador: 3 cierres, ninguno ganador (el mínimo eran 10). Pescador Chico: 2 cierres; ya estaba apagado desde el 10/10. El Fondo Abundancia rotativo no entra en el corte: sigue en paper."
+    },
+    {
+     "tipo": "p",
+     "t": "Qué cambió desde la foto anterior (octubre): el 29/10, tras el hackeo de Binance, Agus vendió todo lo que tenía ahí. En noviembre el Colchón pasó a ser la prioridad, se sumaron el Retiro Turbo y el Fondo Uli, y el 25/11 se acordó el marco 2027."
+    },
+    {
+     "tipo": "p",
+     "t": "Lo que sigue firme hace más de dos años: el Retiro y el Fondo Uli. Todo lo demás cambió varias veces en 2026. El marco 2027 existe para que eso deje de pasar: el orden de prioridades queda fijo y lo experimental queda acotado."
     }
    ]
   },
@@ -117,315 +190,327 @@
    "bloques": [
     {
      "tipo": "p",
-     "t": "Orden real de trabajo. Lo de arriba destraba lo de abajo. Las tareas de Agus son las unicas que Claude no puede ejecutar."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "09/10/2026 - REDISENO. (1) Fondo Abundancia: se cayeron las reglas duras (nucleo BTC/ETH intocable). Backtest 2018-2026: BTC/ETH fijo +22.6% anual con -74% de caida; mezcla con acciones/oro +28.8% con -41%. Desde hoy el paper corre con nucleo BTC 20 / QQQ 25 / SMH 15 / oro 10 + satelite momentum 30%, rebalanceo mensual. Proximo paso: Abundancia 100% ROTATIVO (top-5 por momentum entre ETFs, bonos, oro, cripto y acciones), backtest con universo ampliado pendiente. Rotativo con 29 ETFs: +13% anual 2005-2026 con -29% de caida vs SPY +11% / -51%. (2) Binance acciones/ETFs directos (7.954 papeles) habilitado en la cuenta y por API; disclaimer de acciones EE.UU. firmado en subcuentas agus@ y ganesha@. (3) Fondo de Retiro: cartera a 20 anios en Inviu (SPY, ACWI, FXI 1 unidad c/u por mes + elecciones libres). Panel nuevo con recomendaciones del mes en ARS."
+     "t": "Orden de trabajo vigente. Las tareas de Agus son las únicas que Claude no puede ejecutar."
     },
     {
      "tipo": "tareas",
      "items": [
       {
-       "p": "P1",
-       "quien": "Claude",
-       "estado": "resuelto",
-       "t": "09/10 - Chat del Radar: boton verde en cripto.semillaredes.com. Responde con datos en vivo + PLAYBOOK (radar_chat/PLAYBOOK.md), guarda decisiones/ideas en el playbook, aplica cambios del Retiro (aporte, objetivos, rutina, compras/ventas) y anota pedidos de codigo en radar_chat/pedidos.jsonl (mail a Agus). Servicio radar-chat (puerto 8793, Caddy /radar/*). Modelo: Gemini (Anthropic sin credito)."
-      },
-      {
-       "p": "P1",
-       "quien": "Claude",
-       "estado": "abierta",
-       "t": "Retiro: refrescar tenencias de Inviu despues de cada compra mensual (o con capturas de Agus) - retiro/tenencias.json."
+       "p": "P0",
+       "quien": "Agus",
+       "estado": "en curso",
+       "t": "Colchón: llegar a 3 meses de gastos. Mientras tanto, 80% de los ahorros nuevos al Colchón y 20% al Retiro (el Fondo Uli va aparte)."
       },
       {
        "p": "P0",
-       "quien": "Claude",
-       "estado": "resuelto",
-       "t": "RESUELTO 09/10 - Backtest verificado (senal con 1 mes de retraso: +22% vs +26%; 5 al azar: +14%). Mas cripto (top-10) lo rompe (caidas -90%); acciones sueltas inflado por sesgo. Elegido: top-5 entre 27 ETFs + BTC + ETH, refugio SHY. Migrado en paper 09/10 (fondo/rotativo.py)."
+       "quien": "Agus + Claude",
+       "estado": "a decidir",
+       "t": "Retiro y el 85/12/3: definir en cuál de los tres grupos se cuentan las acciones argentinas, los bonos y el oro. Hoy el panel usa objetivos por clase (núcleo global 72 / convicción 8 / Argentina 8 / bonos 4 / oro 8). Hay que elegir uno solo de los dos esquemas o dejar escrita la equivalencia."
       },
       {
-       "p": "P0",
+       "p": "P1",
        "quien": "Claude",
-       "estado": "resuelto",
-       "t": "RESUELTO 09/10 - Panel: Total (Abundancia + Retiro), Fondo Abundancia, Fondo de Retiro (recomendacion del mes arriba) y Laboratorio (Ganesha, Pescadores, Faro, RS). Retiro: retiro/retiro.py lun-vie 18:05 ART."
+       "estado": "programado",
+       "t": "01/12 09:00: corte automático del Laboratorio (evaluacion_noviembre.py). Apaga en el cron lo que no cumpla y manda mail con el resultado."
       },
       {
        "p": "P1",
        "quien": "Agus",
-       "estado": "abierta",
-       "t": "09/10 - Disclaimer de acciones EE.UU. en la cuenta PRINCIPAL de Binance: aceptarlo la primera vez que compre una accion a mano (sale en 'Vista previa'). Las subcuentas ya estan firmadas."
-      },
-      {
-       "p": "P0",
-       "quien": "Agus",
-       "estado": "abierta",
-       "t": "06/09 - DECISION DE DISENO: ¿el nucleo del Fondo (BTC/ETH) puede venderse PARCIALMENTE por ensamble de tendencia (0/25/50/75/100% segun 4 lookbacks semanales)? Es el unico cambio medido que le gana al DCA con la mitad del drawdown, en dos eras y dos activos. Contradice 'nucleo no se vende'. Si es SI: Claude implementa en paper como 'Jardinero 2.1' y el Fondo lo mide contra DCA puro como control. Si es NO: queda registrado que se elige aceptar drawdowns de -75/-90% a cambio de nunca vender."
+       "estado": "a decidir",
+       "t": "Privacidad del panel: cripto.semillaredes.com y su repo son públicos y hoy muestran montos reales (Colchón, Retiro, Binance, Fondo Uli). La regla propia era ponerle clave al pasar los USD 2.000, y ya se pasó. Opciones: clave de acceso al panel, repo privado, o dejarlo así a conciencia."
       },
       {
        "p": "P1",
        "quien": "Agus",
        "estado": "pendiente",
-       "t": "Oracle: upgrade billing a PAYG (tarjeta prepaga) -> A1 (2 OCPU/12GB) -> IB Gateway. YA NO bloquea el track acciones: Fondo Semillas corre sobre bStocks con la infra actual. Queda para cuando se evalue IB como vehiculo final."
-      },
-      {
-       "p": "P2b",
-       "quien": "Agus",
-       "estado": "abierta",
-       "t": "05/09 - Ganesha v4: Claude APAGO el filtro BTC 72h (decision de Agus del 28/08) y lo reemplazo por BTC > EMA200 diaria. Razon: el 72h salio de un barrido in-sample sobre 91 trades todos en bear; la EMA200d es el unico regimen validado (Pescador bull 16-0). Se vuelve con regime_window_h=72 en ganesha_ejecutor.py. Agus decide si acepta o revierte."
-      },
-      {
-       "p": "P2c",
-       "quien": "Agus",
-       "estado": "abierta",
-       "t": "05/09 - Regla 'moonbag universal': el backtest sobre 117 entradas reales muestra que una moonbag MECANICA (20-30% con stop en BE) pierde feo (PF 0.3 en cerradas). Ganesha v4 NO la implementa. La regla sigue vigente como filosofia para tesis largas (Fondo), no para el ejecutor. Agus confirma o discute."
+       "t": "Colchón: cuando termine de acomodarlo, avisar para que Claude actualice la tarjeta del Colchón en el panel (hoy muestra un plan anterior)."
       },
       {
        "p": "P2",
        "quien": "Agus",
+       "estado": "a decidir",
+       "t": "Libertad: definir en qué se invierte (riesgo bajo/moderado, 1 a 5 años). No hace falta decidirlo antes de llegar a 3 meses de Colchón."
+      },
+      {
+       "p": "P2",
+       "quien": "Agus + Claude",
+       "estado": "a decidir",
+       "t": "Fondo Abundancia rotativo (paper): decidir si sigue como experimento del Laboratorio, si es candidato para Libertad o si se cierra. Hoy es solo paper."
+      },
+      {
+       "p": "P2",
+       "quien": "Claude",
        "estado": "resuelto",
-       "t": "RESUELTO 28/08: Agus paso Ganesha a PAPER (LIVE.off). 05/09: Ganesha v4 desplegado en paper (ver seccion Ganesha)."
+       "t": "25/11: Retiro, placa mensual por WhatsApp con la compra del mes (día 1) y recordatorios los días 15, 22 y 29 si la compra no está marcada como hecha."
       },
       {
        "p": "P3",
        "quien": "Agus",
        "estado": "higiene",
-       "t": "Revocar el token temporal de GitHub del 7-8 de agosto (quedo en texto plano en aquel chat). Riesgo bajo pero no cuesta nada cerrarlo."
+       "t": "Confirmar que se revocó el token temporal de GitHub de agosto."
       },
       {
-       "p": "P4",
-       "quien": "Claude",
-       "estado": "resuelto",
-       "t": "RESUELTO por la via negativa: 5 backtests (timing, semaforo, seleccion, canonicas) muestran que ninguna senial tecnica reemplaza a la confirmacion semanal porque ninguna agrega edge. El criterio del Fondo Semillas es estructural (indice + momentum satelite + filtro defensivo), no de senial."
-      },
-      {
-       "p": "P5",
+       "p": "P3",
        "quien": "Agus + Claude",
-       "estado": "a decidir",
-       "t": "Definir que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. El backtest que la justificaba se cayo. Propuesta de Agus sobre la mesa: Jardinero cripto por fundamentals (TVL, revenue, valor a descuento) con DCA en tier-1."
-      },
-      {
-       "p": "P6",
-       "quien": "Claude",
-       "estado": "bloqueada por P1",
-       "t": "Acciones Fase 1: bakeoff Weinstein Stage 2 vs Momentum 12-1 vs Dual Momentum vs Faber SMA10 vs comprar el indice, sobre universo amplio con delisted (Sharadar, $9/mes). Ademas: DCA fijo vs DCA con trigger del Jardinero sobre 25 anios limpios. Si el trigger no le gana al DCA ciego, el Jardinero de acciones no se construye."
-      },
-      {
-       "p": "P7",
-       "quien": "Agus + Claude",
-       "estado": "a decidir",
-       "t": "Stops anchos vs red en el exchange: con atr_mult 2.5 el stop nativo es imposible de colocar hasta que el precio se acerque a ~9% de el. Mientras tanto la unica proteccion es software cada 4h (ahora reintento cada 15 min). Opciones: (a) convivir, asumiendo que si la VM muere las posiciones quedan sueltas; (b) stop nativo de catastrofe en el borde permitido, que cierra antes y cambia la estrategia; (c) revisar atr_mult. Hoy queda en (a), que es lo que ya habia sin saberlo."
-      },
-      {
-       "p": "P8",
-       "quien": "Claude",
-       "estado": "resuelto",
-       "t": "Gates de entrada de Ganesha (28/08). La frecuencia de entrada era un resultado del cash disponible, no una decision: el 27/08 a las 00:07 Agus cerro 4 posiciones a mano, se liberaron ~$60 y el ejecutor metio 6 entradas en 15 segundos. Implementado y testeado: cooldown de 20h por simbolo tras cerrarlo, max_open 8, max_new_per_run 2. Ademas se corrigio el bug de slippage que salio en el mismo analisis."
+       "estado": "agendado",
+       "t": "Mayo 2027: revisión semestral del marco."
       }
      ]
     },
     {
      "tipo": "alerta",
      "nivel": "info",
-     "t": "Decision del 17 ago: los dos tracks van en paralelo, no se condicionan entre si. Que Ganesha vaya mal no frena acciones — acciones hoy no arriesga capital, solo mide. El unico cruce real es el capital, y eso recien se discute cuando acciones pida plata."
+     "t": "Este documento se escribe desde un solo lugar: la VM (status/status_data.json) y se publica con status/publicar_status.py. Si se edita directo en GitHub, la próxima publicación lo pisa."
     }
    ]
   },
   {
-   "id": "fondo_semillas",
-   "titulo": "Fondo Abundancia - ROTATIVO en PAPER (desde 09/10/2026)",
-   "destacada": true,
+   "id": "nombres",
+   "titulo": "Nombres: qué es cada cosa",
    "bloques": [
     {
      "tipo": "p",
-     "t": "Como funciona: el dia 1 de cada mes ordena 27 ETFs (indices, paises, sectores, oro, bonos) + BTC + ETH por su tendencia (promedio de lo que subieron en 1, 3, 6 y 12 meses) y se queda con los 5 mejores, 20% cada uno. Si alguno de los 5 viene en baja, ese 20% va a bonos cortos (SHY). Sol/tormenta queda solo como termometro. Opera en Binance (ETFs por Stocks API, cripto spot). Cartera inicial 09/10: EWY, SMH, XLK, ETH, XLE."
-    },
-    {
-     "tipo": "p",
-     "t": "09/10/2026: nucleo pasa de BTC/ETH fijo e intocable a BTC 20 / QQQ 25 / SMH 15 / oro (PAXG) 10, rebalanceable; satelite momentum 30%; caja 0; semaforos sol/tormenta solo informativos. ETH vendido. Backup: fondo/*.bak.pre_rediseno_0910. Objetivo siguiente: 100% rotativo."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "06/09 - CORRECCION de Claude: el 05/09 dije que el P&L del Fondo era 'basicamente BTC'. Falso. Al 05/09: nucleo +2.75% sobre su capital, satelite +6.56% sobre el suyo (SNDK +19%, MU +9%, AXTI +6%). En dolares 58/42 por el tamanio de cada bloque, pero por dolar invertido el satelite rinde 2.4x lo que BTC. El satelite es el bloque que esta funcionando."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "05/09 - REBALANCEO POR FLUJO implementado (engine.split_aporte). El nucleo no se vende: la unica forma de volver al 60/30/10 son los aportes, y ahora cada aporte (mensual o real via --aporte) se reparte proporcional al DEFICIT de cada bloque. Ensayo con $100 hoy: $0 nucleo / $91 satelite / $9 caja. El auditor marca el sobrepeso del nucleo como estructural (info), y el del satelite como aviso. Dashboard: 'proxima rotacion' ya no esta hardcodeada ('1 sep'), sale de fondo_data.json (hoy: 1 oct). Salida de paper: ventana fines de noviembre (90 dias), y solo si (1) >=3 rotaciones ejecutadas con cambios reales, (2) semaforos probados en tormenta, (3) satelite >= cartera congelada. La rotacion del 1/9 no cambio nada (mismo top-5)."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "04/09 - AUDITOR LOOP ENCENDIDO Y APUNTANDO AL FONDO (N5). Dos problemas encontrados: (1) el auditor no corria desde el 29/08 - solo se disparaba desde main.py y ese cron quedo comentado al cerrar Semillas 1.0; (2) nunca miro al Fondo: consolidaba Ganesha y Semillas 1.0 solamente. Ahora tiene cron propio (00:20 UTC, despues del mark del Fondo) y un modulo nuevo fondo/auditor.py que mide al Fondo contra CONTROLES, no contra cero: cartera congelada (no hacer nada desde el dia base), 100% BTC, 50/50 BTC-ETH y SPY. Publica en learning_data.json -> .fondo y se ve en el dashboard como card 'Auditoria del Fondo'. Primera corrida (7 dias, 2026-08-28 -> 2026-09-03): Fondo +2.64%, congelado +2.49%, BTC +4.40%, 50/50 +3.52%, SPY +0.50%. El Fondo pierde 1.76 pp contra tener BTC y solo. Veredicto del auditor: muestra insuficiente (minimo 90 dias) - a 7 dias todo esto es ruido, lo unico auditable hoy es la disciplina. Desvio real detectado: nucleo 70% vs 60% de disenio (+10 pp), satelite 20.2% vs 30% (-9.8 pp): el rebase del 28/08 designo la cartera real y nunca cuadro con el 60/30/10."
-    },
-    {
-     "tipo": "p",
-     "t": "Aclaracion de alcance (04/09): el nucleo BTC/ETH del Fondo vive en la CUENTA PRINCIPAL de Agus, fuera del alcance del bot y de Claude por disenio de seguridad. El sistema solo ve las subcuentas ganesha@ y agus@semillaredes.com. Por eso el paper valua el nucleo por cantidades designadas contra precios publicos de Binance, y no por lectura de balance. El satelite bStocks y la caja son 100%% simulados: nunca se compraron. Dinero real en riesgo del sistema: $0."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "28/08 (10) - FONDO SEMILLAS EN PAPER CON BASE REAL (FONDO_REBASE). El paper de $1,000 ficticios del 27/08 se reseteo a la cartera real de Agus: nucleo designado BTC 0.00924475 + ETH 0.07476581 (~$901, cost = valor de designacion; cost historico real anotado como metadato), caja $130.65 (10%), satelite $274.93 en top-5 momentum 12-1 bStocks REALES: AXTIB, SNDKB, MUB, WDCB, LITEB (~$55 c/u). Total base $1,306.52. Semaforos al rebase: acciones SOL, cripto TORMENTA (cierre mensual jul vs SMA10). APORTE_MENSUAL simulado = 0: los aportes reales se registran con engine.py --aporte <usd> y se despliegan 60/30/10 con semaforos. Cron nuevo: refresco de datos Yahoo dia 1 14:00 UTC antes del mensual. Validacion pre-noviembre EN MARCHA con activos reales."
-    },
-    {
-     "tipo": "p",
-     "t": "28/08 (11) - Ganesha paper: filtro de regimen btc-72h APLICADO por decision de Agus (regime_window_h=72, solo entradas; la gestion de abiertas no se toca). Barrido de ventanas sobre trades reales: 24h PEOR que sin filtro (-50.61 vs -47.05), plateau robusto 72-168h, optimo 72h (-2.00). La intuicion de ventana corta quedo refutada con datos. CONFIG_CHANGE en events.jsonl. Nota honesta: n=61, plateau da robustez pero el parametro exacto puede ser suerte de muestra."
+     "t": "Un nombre por cosa. Si en un texto viejo aparece otro nombre, vale esta tabla."
     },
     {
      "tipo": "kv",
      "items": [
-      {
-       "k": "MAPA TOTAL 1/3 - Nucleo Retiro",
-       "v": "DCA mensual CEDEARs (SPY, MSCI, FXI; a veces YPF/BYMA como tesis locales). Manual de Agus, corriendo, SIN paraguas ni gestion del bot: el DCA ciego es el ganador de todos los tests. El sistema solo lo muestra en el mapa."
-      },
-      {
-       "k": "MAPA TOTAL 2/3 - Fondo Semillas",
-       "v": "Riesgo medio en Binance (bot): 40 BTC/ETH DCA + 30 satelite acciones + 20 satelite cripto + 10 caja. Paraguas suave DOBLE: SPY/SMA10m para pata acciones, BTC/SMA10m para pata cripto. El viejo DCA BTC manual (hoy parado) queda absorbido aca: lo ejecuta el bot al encender."
-      },
-      {
-       "k": "MAPA TOTAL 3/3 - Casino controlado",
-       "v": "Ganesha (live) + Pescador (paper): asimetria en cripto chica e ineficiente. Se mide con la guillotina de siempre."
-      }
+      [
+       "Portfolio Visión",
+       "El sistema completo y su panel (cripto.semillaredes.com). En textos viejos: Radar, TRADING, BOT FINANCIERO, BOT - CRIPTO. Es lo mismo."
+      ],
+      [
+       "Colchón",
+       "Plata de emergencias. Liquidez total, riesgo mínimo. No se invierte ni se usa para experimentos."
+      ],
+      [
+       "Libertad",
+       "Nombre nuevo (25/11/2026). Plata para proyectos, compras, descanso y oportunidades a 1-5 años. Ocupa el lugar de lo que antes se llamó fondo mediano o fondo corto. Todavía no tiene plata ni instrumento. No es el Fondo Abundancia."
+      ],
+      [
+       "Retiro",
+       "Cartera a 20 años en Inviu, compra manual mensual. También: Fondo de Retiro, cartera Inviu."
+      ],
+      [
+       "Retiro Turbo",
+       "Parte del Retiro: compras extra cuando el mercado cae, con aviso por WhatsApp. No es un fondo aparte."
+      ],
+      [
+       "Laboratorio",
+       "Experimentos. Hoy todos en paper (sin plata). Si alguna vez usa plata real, el tope es 3% del Retiro."
+      ],
+      [
+       "Fondo Abundancia",
+       "Experimento en paper dentro del Laboratorio: rotativo que elige cada mes los 5 activos con mejor tendencia. Antes: Fondo Semillas, Jardinero 2.0. No es plata real y no es Libertad."
+      ],
+      [
+       "Retiro Lab",
+       "Comparación dentro del Laboratorio: el Retiro real contra un modelo fijo. No opera ni mueve plata."
+      ],
+      [
+       "Ganesha",
+       "Bot experimental de momentum en altcoins. Paper."
+      ],
+      [
+       "Pescador / Pescador Chico",
+       "Bots experimentales de acciones que rompen al alza (bStocks). Paper. El Chico está apagado desde el 10/10."
+      ],
+      [
+       "Faro / RS-BTC",
+       "Experimentos en paper: Faro prueba entrar y salir de BTC según tendencia; RS-BTC prueba elegir altcoins por fuerza contra BTC."
+      ],
+      [
+       "Fondo Uli",
+       "Fondo de largo plazo de Uli. Va aparte: no es Colchón, Libertad ni Retiro."
+      ],
+      [
+       "Total del panel",
+       "Solo plata real: Colchón + Retiro + Binance. El Laboratorio no suma. En la vista Portfolio va el Colchón arriba, después el Retiro y el Total abajo."
+      ],
+      [
+       "Bot v1 (cerrado)",
+       "El primer sistema, cerrado el 28/08/2026. En textos viejos: Semillas 1.0."
+      ],
+      [
+       "Semilla Redes",
+       "La empresa de Agus. No forma parte de este sistema: balance propio y tareas automáticas separadas. La carpeta interna de la VM conserva un nombre viejo; es solo el nombre de una carpeta."
+      ]
      ]
-    },
-    {
-     "tipo": "p",
-     "t": "Rediseno completo del Jardinero tras 5 backtests propios (20 anios, sin look-ahead). Hallazgo central: ni el timing de entrada ni la seleccion por seniales tecnicas le ganan al indice; lo unico robusto (aparecio 3 veces con disenios independientes) es que el filtro de tendencia recorta el drawdown a la mitad cediendo ~2 pts de CAGR. El sistema captura mercado con la mitad del dolor; no promete ganarle al indice."
-    },
+    }
+   ]
+  },
+  {
+   "id": "colchon",
+   "titulo": "Colchón",
+   "bloques": [
     {
      "tipo": "kv",
      "items": [
-      {
-       "k": "Nucleo 40%",
-       "v": "DCA mensual BTC+ETH. Nadie vende, nunca. Solo acumula."
-      },
-      {
-       "k": "Satelite acciones 30%",
-       "v": "Momentum 12-1 top 3-5 bStocks, rotacion mensual (el bot vende al rotar). Brain narra la tesis de cada pick y puede vetar; no elige."
-      },
-      {
-       "k": "Satelite cripto 20%",
-       "v": "Momentum 12-1 sobre top-30 liquido Binance, absolute momentum (slot frio -> USDT). Rotacion mensual automatica. PENDIENTE: backtest propio antes de encender."
-      },
-      {
-       "k": "Caja 10%",
-       "v": "Operativa."
-      },
-      {
-       "k": "Paraguas SUAVE",
-       "v": "SPY vs SMA10m. Tormenta: frena aportes nuevos (no vende nada), avisa, reactiva solo. Historico 2000-2026: 76% del tiempo comprando normal; 4 crisis esquivadas, ~13 falsas alarmas de costo minimo."
-      },
-      {
-       "k": "Rol de Agus",
-       "v": "Depositar todos los meses + leer el mail mensual + go-live (barrera inviolable). Nada mas."
-      }
+      [
+       "Para qué",
+       "Emergencias. Preservar el capital, no hacerlo rendir."
+      ],
+      [
+       "Metas",
+       "Primera: 3 meses de gastos familiares. Sólida: 6 meses. Extraordinaria: 12 meses. Se recalcula con los gastos y el tipo de cambio."
+      ],
+      [
+       "Reglas",
+       "Liquidez total. Separado del Retiro. Si se usa, se repone antes de seguir con lo demás."
+      ],
+      [
+       "Dónde está",
+       "No se publica en este documento."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "libertad",
+   "titulo": "Libertad",
+   "bloques": [
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Para qué",
+       "Proyectos, compras, descanso y oportunidades, sin tocar el Colchón ni el Retiro."
+      ],
+      [
+       "Horizonte y riesgo",
+       "1 a 5 años, riesgo bajo/moderado."
+      ],
+      [
+       "Cuándo arranca",
+       "Cuando el Colchón llegue a 3 meses: 20% de los ahorros nuevos. Con el Colchón completo: 30%."
+      ],
+      [
+       "En qué se invierte",
+       "A decidir por Agus. Hoy no tiene plata asignada."
+      ]
      ]
     },
     {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "FASE 1 ACTIVA. Backtest satelite cripto (mom 12-1, universo por fecha, 2019-2026): -15.6% CAGR y DD -96% vs BTC +28% -> DESCARTADO; su 20% se pliega al nucleo. Diseno final: 60 nucleo BTC/ETH + 30 satelite bStocks + 10 caja. Primera corrida real: semaforo cripto TORMENTA (nucleo $600 espera en USDT), acciones SOL (satelite: AXTI, SNDK, MU, WDC, LITE). Cron: mensual dia 1 15:10 UTC + mark diario 23:50 UTC. Datos: cripto.semillaredes.com/fondo_data.json. Mail mensual activo. Go-live: solo Agus, tras 2-3 meses de paper sano."
-    },
-    {
      "tipo": "p",
-     "t": "Jardinero v1 CERRADO 27-ago: Agus vendio manualmente PYTH (+$0.98), PUMP (+$9.45) y ZEC (+$5.00), total $44.70 a USDT (principal: $150.39). state.json reconciliado, cierres registrados como 'cierre manual', SEEDS_PER_MONTH=0 (no planta mas). El cron main.py sigue activo solo por dashboard/regimen."
+     "t": "Objetivos que Agus ya nombró para esta plata (10/10/2026): vacaciones todos los años, una cabaña para alquilar y seguir ampliando la casa. Mientras Libertad no arranque, vacaciones y compras grandes van por gasto corriente."
     }
    ]
   },
   {
    "id": "fondo_retiro",
-   "titulo": "Fondo de Retiro - Inviu (manual, 20 anios)",
+   "titulo": "Retiro (Inviu, manual, 20 años)",
    "bloques": [
     {
-     "tipo": "p",
-     "t": "Cuenta Inviu activa desde 06/2021 (arranco con acciones argentinas). Hoy ~74% CEDEARs: SPY es la posicion principal; ademas ACWI, FXI, EEM, NVDA, ARKK, AMD, TSLA, AMZN. ~21% acciones argentinas (YPF, BYMA, TGN, Pampa, Central Puerto, Agrometal...). ~1% bonos USD (AL30, AL35, AE38) y algo en FCIs."
-    },
-    {
-     "tipo": "p",
-     "t": "Rutina: deposita ~USD 100/mes en ARS, compra 1 unidad de SPY, 1 de ACWI y 1 de FXI; con el resto, eleccion libre. Objetivo: aumentar el aporte con el tiempo."
-    },
-    {
-     "tipo": "p",
-     "t": "Recomendaciones del mes (a construir): 'este mes: X ARS en SPY, X en ACWI, X en FXI; con el resto, comprar X de A y X de B' mirando CEDEARs, acciones y bonos argentinos a largo plazo, con freno cuando la exposicion a algo ya alcanza."
-    },
-    {
-     "tipo": "p",
-     "t": "Objetivo a 20 anios: nucleo global 65% / conviccion 10% / acciones argentinas 12% / bonos USD 8% / oro 5%. Recomendacion de noviembre 2026: rutina fija (1 SPY, 1 ACWI, 1 FXI) + ~ARS 65.000 en GD35 + 3 GLD. Argentina (22%) y conviccion (13%) ya alcanzan."
-    }
-   ]
-  },
-  {
-   "id": "ahora",
-   "titulo": "Donde estamos / que nos esta pasando",
-   "destacada": true,
-   "bloques": [
-    {
-     "tipo": "pulso",
+     "tipo": "kv",
      "items": [
-      {
-       "frente": "Ganesha",
-       "estado": "ambar",
-       "t": "v4 en PAPER desde 05/09 (regimen EMA200d + chandelier). 11 legacy + entradas nuevas. Base v4: $262.46."
-      },
-      {
-       "frente": "Pescador",
-       "estado": "ambar",
-       "t": "Paper v2, juntando muestra limpia. Sin decisiones."
-      },
-      {
-       "frente": "Semillas / Brain",
-       "estado": "gris",
-       "t": "Los 4 cambios, en suspension: se cayo su backtest."
-      },
-      {
-       "frente": "Acciones",
-       "estado": "ambar",
-       "t": "Fase 0 cerrada. Fase 1 bloqueada por infra."
-      },
-      {
-       "frente": "Infra",
-       "estado": "rojo",
-       "t": "E2.1.Micro (1GB). A1 esperando el PAYG."
-      }
+      [
+       "Rutina vigente (desde noviembre 2026)",
+       "Todos los meses 1 SPY + 1 QQQ + 1 GLD; 1 ACWI mes por medio. FXI frenado. Con el resto, lo que indique la recomendación del mes."
+      ],
+      [
+       "Congelado",
+       "Acciones argentinas y bonos: no se vende y no se suma."
+      ],
+      [
+       "Convicción",
+       "Empresas puntuales en tamaño chico (Google o Meta en vez de ARKK)."
+      ],
+      [
+       "Rebalanceo",
+       "Una vez por año, el 2 de enero."
+      ],
+      [
+       "Retiro Turbo",
+       "Compras extra en las caídas del mercado, con aviso por WhatsApp. Es plata del Retiro."
+      ],
+      [
+       "Regla de fondo",
+       "No se vende. Solo entra plata."
+      ],
+      [
+       "Avisos",
+       "Placa con la compra del mes el día 1 y recordatorios los días 15, 22 y 29 si falta hacerla."
+      ]
      ]
     },
     {
      "tipo": "alerta",
-     "nivel": "warn",
-     "t": "05/09 - Ganesha estaba TRABADO: 11 posiciones con max_open 8, 9 dias sin entrar. Se destrabo con v4 (las legacy no cuentan para el tope). Objetivo declarado por Agus: un bot en verde, escalable, que agarre rallies y pierda poco en crash. Lo que dicen los datos: la muestra completa (117 entradas, 88/91 en bear) es una loteria de cola derecha -- 4 trades hacen toda la plata, y el trailing devolvia el 75% de los gigantes (BANK MFE 43R -> 9R). La palanca que falta medir es el REGIMEN: BTC cruzo la EMA200d el 20/08. v4 existe para juntar n en bull con las reglas que sobrevivieron al backtest."
-    },
+     "nivel": "info",
+     "t": "Pendiente de alinear con el marco 2027: el panel todavía usa objetivos por clase (núcleo global 72 / convicción 8 / Argentina 8 / bonos 4 / oro 8) y el marco nuevo habla de 85 estructural / 12 convicción / 3 laboratorio. La rutina mensual no cambia mientras tanto: todo el aporte fijo va a índices y oro."
+    }
+   ]
+  },
+  {
+   "id": "laboratorio",
+   "titulo": "Laboratorio (todo en paper)",
+   "bloques": [
     {
      "tipo": "p",
-     "t": "La foto honesta: el track cripto esta perdiendo plata y el track acciones esta produciendo los hallazgos mas valiosos del proyecto. No es contradictorio — son dos etapas distintas del mismo metodo."
+     "t": "Nada de lo que está acá es plata real ni suma al Total. Datos al 25/11/2026."
     },
     {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "Ganesha, 17 ago: se hizo rollback al ejecutor previo a v3 (atr_mult 2.5, sin time_stop, sin zombie, sin depth), a pedido de Agus. Post-v3 (8-16 ago) habia dado n=55, -$65,58, WR 9,1%, PF 0,40, con 8 de 9 dias en rojo. El fusible PF<0,70 con n>=15 se cruzo (PF 0,63 con n=87). Realizado total: -$62,70. El contador de muestra arranca de cero. Las 6 abiertas (NIL, COOKIE, ETHFI, BOME, ONG, PORTAL) se heredaron con sus stops nativos."
+     "tipo": "tabla",
+     "headers": [
+      "Experimento",
+      "Qué prueba",
+      "Estado"
+     ],
+     "rows": [
+      [
+       "Fondo Abundancia (rotativo)",
+       "Top-5 por tendencia entre 27 ETFs + BTC + ETH, rotación mensual",
+       "Paper. -9,7% contra lo aportado en paper. No entra en el corte."
+      ],
+      [
+       "Ganesha",
+       "Momentum en altcoins",
+       "Paper. 36 cierres, PF 0,87. Simulacro: se apaga el 01/12."
+      ],
+      [
+       "Pescador",
+       "Acciones que rompen al alza (bStocks), stop ancho",
+       "Paper. 3 cierres, ninguno ganador. Simulacro: se apaga el 01/12."
+      ],
+      [
+       "Pescador Chico",
+       "Misma señal, toma ganancia rápida",
+       "Apagado desde el 10/10."
+      ],
+      [
+       "Faro",
+       "Entrar y salir de BTC según tendencia",
+       "Paper. Juntando muestra."
+      ],
+      [
+       "RS-BTC",
+       "Altcoins por fuerza contra BTC, con filtro anti-bombeo",
+       "Paper. Juntando muestra (45 de 90 días)."
+      ],
+      [
+       "Retiro Lab",
+       "Retiro real contra el modelo SPY 55 / QQQ 25 / GLD 10 / ACWI 10",
+       "Comparación, no opera. En 2026: real +6,0%, modelo +0,6%, SPY +4,5%."
+      ]
+     ]
     },
     {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "Lo que la medicion enseno y no hay que olvidar: el contrafactual mostro que las reglas de salida v3 no eran la causa por si solas (-$68 vs -$48 real). El problema real fue que las salidas rapidas liberaban capital y triplicaron la frecuencia de entrada (1,7 a 4,9 por dia; skip_no_balance de 142 a 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo POR ACCIDENTE — le faltaba plata. Eso no estaba medido; Agus lo vio en la practica."
-    },
+     "tipo": "ul",
+     "items": [
+      "Si algún experimento pasa a plata real, el tope total es 3% del Retiro y esa plata puede perderse entera.",
+      "Las pérdidas del Laboratorio no se cubren con Colchón, Libertad ni Retiro.",
+      "Pasar algo a real es siempre una decisión y una acción de Agus."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fondo_uli",
+   "titulo": "Fondo Uli",
+   "bloques": [
     {
      "tipo": "p",
-     "t": "Contexto de regimen: BTC lleva ~77 dias por debajo de la EMA200 (-10,6%). Es el mismo clima que en julio, asi que no explica por si solo la diferencia entre los dos periodos. Pero en risk-off el momentum de alts devuelve lo que da."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "Dicho una vez y no se repite: volver a operar para recuperar lo perdido choca con una regla inviolable. Los -$62,70 son costo hundido. La decision de modo se toma por lo que se espera hacia adelante, no por lo que se perdio atras."
-    },
-    {
-     "tipo": "p",
-     "t": "En acciones, Fase 0 cerro con un resultado incomodo y valioso: la confirmacion semanal de Weinstein no tiene edge medible como senal de seleccion, ni en el Dow-30 ni en cripto, probado con el mismo motor en los dos mercados. Ademas aparecio un look-ahead bias que contaminaba el resultado cripto original (+18% caia a +1,9%). Eso obligo a poner en suspension los 4 cambios de Brain/Jardinero."
-    },
-    {
-     "tipo": "p",
-     "t": "Traducido: hoy el sistema sabe bastante mejor donde NO hay edge que donde si. Eso es progreso real, aunque no se vea en el P&L."
+     "t": "Fondo de largo plazo de Uli, con aporte fijo mensual en SPY. Se valúa solo de lunes a viernes. Va aparte del Colchón, Libertad y Retiro, y antes del reparto de ahorros."
     }
    ]
   },
@@ -435,577 +520,67 @@
    "bloques": [
     {
      "tipo": "p",
-     "t": "Construir capital y un sistema de bots validado que reduzca la dependencia del ingreso por empleo. Horizonte ~10 anios con aportes de $500-1000/mes."
+     "t": "Seguridad para vivir, libertad para elegir, patrimonio para independizarse y experimentación para descubrir."
     },
     {
      "tipo": "alerta",
      "nivel": "info",
-     "t": "Lo que mueve la aguja a 10 anios es la TASA DE APORTE, no el rendimiento del bot. Duplicar aportes duplica el resultado con certeza; mejorar el retorno de 10% a 15% lo mejora ~30% con enorme incertidumbre."
+     "t": "Lo que mueve la aguja es cuánto se aporta, no el rendimiento de un bot. Duplicar aportes duplica el resultado con certeza; mejorar el rendimiento lo mejora poco y con mucha incertidumbre."
     },
     {
      "tipo": "p",
-     "t": "A escala actual (~$1.000) el bot no mueve la aguja economica. Su valor hoy es aprendizaje y validacion. Empieza a importar cerca de los ~$50k."
-    },
-    {
-     "tipo": "p",
-     "t": "Ningun bot sobrevive 10 anios. Lo que puede sobrevivir es el proceso: medir, matar lo que no tiene edge, reconstruir."
+     "t": "Ningún bot sobrevive 10 años. Lo que puede sobrevivir es el proceso: medir, cerrar lo que no funciona, reconstruir."
     }
    ]
   },
   {
    "id": "reglas",
-   "titulo": "Reglas inviolables",
+   "titulo": "Reglas vigentes",
    "bloques": [
     {
      "tipo": "ul",
      "items": [
-      "Nunca salir 100% de un activo con tesis activa (moonbag).",
-      "Pausar no es fallar.",
-      "Nunca promediar a la baja por esperanza. Solo se agrega con confirmacion de tendencia.",
-      "Regla de freeze 60 dias: sin activacion, congela.",
-      "Nunca operar para cubrir una obligacion financiera.",
-      "Liquidar posiciones sin tesis y consolidar en el nucleo.",
-      "Sin apalancamiento. Sin futuros. Solo Spot."
+      "Familia y empresa van separadas.",
+      "Sin apalancamiento. Sin futuros.",
+      "Nunca comprar vendedores de armas (fabricantes y contratistas de defensa), ni ETFs concentrados en defensa.",
+      "El Retiro no se vende: solo entra plata; a lo sumo un rebalanceo por año.",
+      "Las pérdidas del Laboratorio no se rescatan con Colchón, Libertad ni Retiro.",
+      "Nunca operar para cubrir una obligación financiera.",
+      "Los porcentajes del marco se aplican a aportes nuevos: no obligan a vender nada.",
+      "Pausar no es fallar."
      ]
     },
     {
      "tipo": "alerta",
      "nivel": "warn",
-     "t": "BARRERA DE GO-LIVE (inviolable): Claude nunca pone dry_run en false, nunca carga API keys, nunca coloca ordenes. Esa accion final es siempre de Agus. Vale aun si Agus pide lo contrario."
-    },
-    {
-     "tipo": "p",
-     "t": "Regla manual de Agus: +100% -> vender 30% una vez. Por debajo de +100% no vender. Cancelar stop -> vender -> reconcilia (automatico solo en Ganesha)."
+     "t": "BARRERA DE GO-LIVE (inviolable): Claude nunca pone un bot en real, nunca carga API keys y nunca coloca órdenes. Esa acción final es siempre de Agus."
     }
    ]
   },
   {
-   "id": "arquitectura",
-   "titulo": "Arquitectura objetivo: 6 capas por regimen",
+   "id": "metodo",
+   "titulo": "Método de trabajo",
    "bloques": [
     {
-     "tipo": "tabla",
-     "headers": [
-      "#",
-      "Capa",
-      "Regimen",
-      "Estado"
-     ],
-     "rows": [
-      [
-       "1",
-       "Core DCA BTC/ETH/BNB",
-       "Alcista",
-       "Conceptual"
-      ],
-      [
-       "2",
-       "Semillas: tendencia / swing",
-       "Alcista",
-       "Activo"
-      ],
-      [
-       "3",
-       "Ganesha: intradia por volumen",
-       "Alcista",
-       "Activo (LIVE)"
-      ],
-      [
-       "4",
-       "Neutral BTC-ETH: cointegracion / rotacion de ratio",
-       "Lateral",
-       "Conceptual"
-      ],
-      [
-       "5",
-       "Risk-off macro a USDT en Stage 4",
-       "Bajista",
-       "Conceptual"
-      ],
-      [
-       "6",
-       "Solana launch/pump como casino aislado (dead money)",
-       "Cola",
-       "Conceptual"
-      ]
-     ]
-    },
-    {
-     "tipo": "p",
-     "t": "Transversal: brain_monthly emite senal ofensiva (Watchlist \"Salto de Nivel\") y senal defensiva (Regimen)."
-    },
-    {
-     "tipo": "p",
-     "t": "Short perp 1x fue evaluado y NO adoptado: rompe la regla de no futuros."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "Principio de diseno: dos motores en paralelo, no un filtro unico. Ganesha = movers puros (velocidad, no calidad). Brain = calidad + confirmacion. Conectarlos como filtro mataria el edge de Ganesha."
-    }
-   ]
-  },
-  {
-   "id": "ganesha",
-   "titulo": "Ganesha — momentum 4h (PAPER, v4 desde 05/09)",
-   "bloques": [
-    {
-     "tipo": "kv",
+     "tipo": "ul",
      "items": [
-      {
-       "k": "Version",
-       "v": "v5 (06/09/2026) en PAPER"
-      },
-      {
-       "k": "Regimen",
-       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
-      },
-      {
-       "k": "Entrada",
-       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
-      },
-      {
-       "k": "Piramide",
-       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
-      },
-      {
-       "k": "Salida",
-       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
-      },
-      {
-       "k": "Frenos",
-       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
-      },
-      {
-       "k": "Base v4/v5",
-       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
-      }
-     ]
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "06/09 - v5. bt_salidas_v5 sobre las 117 entradas reales: PIRAMIDE a +2R (agregar 50%, stop a entrada original) sin scale-out = +0.228 R/trade, PF 1.36, positivo en cerradas y en ambas mitades (vs +0.084 de v4). Es la mejora mas grande encontrada hasta ahora en la gestion. Gate cambiado a ensamble (EMA200d era la peor senal de tendencia en bt_lento2). Pausa diaria -3%."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "05/09 - LO QUE SE MIDIO ANTES DE ESCRIBIR v4 (bt_salidas_v2/v3/v4, mismas 117 entradas reales, velas 4h reales, conservador intra-vela). (1) TIME STOP EMPEORA en todas las variantes (12/18/24/36 velas, umbral 0.5R y 1R): PF 1.03 -> 0.6-0.8. Los ganadores grandes arrancan tarde. El separador tp1_antes_del_stop es real pero no accionable. (2) Filtro por distancia de stop (<=15%) parece ayudar pero es espejismo: sacando las abiertas mark-to-market todo da negativo, y BANK/TUT tenian stop >20%. (3) Trail mas ancho (3.5, 5 ATR) empeora. (4) Moonbag mecanica 20-30% con stop BE: PF 0.3 en cerradas. (5) TP limite parcial a 1.5R/2R empeora; a 3R es ruido. (6) CHANDELIER (trail desde el maximo, no desde el cierre) 2.5-3 ATR desde +2R: la unica mejora que sobrevive en cerradas (PF 0.95 -> 1.11, +0.085 R/trade) y en las dos mitades temporales. Es lo que v4 implementa. Caveat: in-sample, n=117, casi todo bear."
-    },
-    {
-     "tipo": "p",
-     "t": "28/08 (13) - DATO CLAVE DE AGUS: compra SPY todos los meses A MANO (DCA manual propio, fuera de Binance). Eso ES el nucleo de acciones del hogar y resuelve la pregunta abierta: NO se agrega SPYB al Fondo (duplicaria). Mapa patrimonial completo: SPY manual (nucleo acciones) + Fondo Semillas (nucleo cripto BTC/ETH + satelite momentum bStocks + caja) + colchon $1,018 en Earn + fuera de perimetro (BNB/WLD/BANK). Dato del universo medido hoy: estadia promedio en el top-5 del satelite 3.5 meses (mediana 2, max 12); rotan 1.3 de 5 posiciones por mes. Duracion del satelite y semaforos explicados a Agus; pendiente de escribir manana: 'El Fondo en 10 lineas'."
-    },
-    {
-     "tipo": "p",
-     "t": "28/08 (9) - Cierre del dia: (a) elegibilidad Binance Stocks CONFIRMADA por Agus -- la opcion aparece funcional en master y sub-cuentas; el camino API stocks sin IB queda habilitado para investigar. (b) Colchon ejecutado: $1,018 USDT en Simple Earn Flexible con auto-subscribe (tasa 'Max 6.79%' es por tramos; la efectiva sobre el total sera menor). Capital de proyecto en Spot: ~$405 USDT. (c) PAYG pendiente de tarjeta fisica; pasos: cloud.oracle.com -> menu -> Billing & Cost Management -> Upgrade and Manage Payment -> Upgrade to Pay As You Go; tarjeta de credito real, no prepaga. (d) Filtro btc3d aclarado: NO bloquea todo -- en el backtest opero n=63 (vs 61 sin filtro); solo exige BTC 3d positivo al entrar. Hoy 28/08 esta ABIERTO (+1.59%)."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "28/08 (6) - Backtest de regimen LEIDO (sim_regimen_bbb.py, replica event-driven con caja virtual sobre trades reales): sin filtro -47.05 total. El unico modo que elimina casi toda la perdida es btc3d (solo entrar con BTC 3d positivo): -2.00 total con realizado +6.48 (n=63). El filtro semanal (no_1w_baja) bloqueo el 100% de los trades: TODA la muestra ocurrio con BTC semanal bajista -- sigue sin existir muestra de Ganesha en bull. Lectura: el filtro de regimen correcto evita perder pero NINGUN modo demuestra que Ganesha gane. Candidato para el paper: btc3d. Cambiarlo o no lo decide Agus (cambiar parametros corta la muestra paper recien iniciada)."
-    },
-    {
-     "tipo": "p",
-     "t": "28/08 (7) - Binance lanzo API REST de stocks (20/07/2026): trading programatico de acciones y ETFs US, posiciones, data, y conversion a bStocks. Si la cuenta de Agus es elegible, la ejecucion del track de acciones podria NO necesitar IB Gateway ni la instancia A1 -- una API REST corre en la E2.1.Micro actual. Pendiente: verificar elegibilidad y leer la doc oficial. P1 (PAYG) sigue valiendo por la RAM para backtests Sharadar de universo amplio, pero deja de ser bloqueante unico de la ejecucion."
-    },
-    {
-     "tipo": "p",
-     "t": "28/08 (8) - Cash: Agus vendio todo en sub-cuentas y consolido en master. Decision: $1,000 USDT como colchon de liquidez (candidato: Simple Earn Flexible, master cobra bono de primeros 200) + $418 USDT en Spot como capital de proyecto (seed Fondo Semillas + margen). Cartera restante: BTC ~$716 + ETH ~$182 (nucleo designable), BNB ~$122, WLD ~$13 (sin tesis declarada), BANK moonbag."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "28/08 (5) - DECISION DE AGUS: Ganesha pasa de LIVE a PAPER con la cartera heredada tal cual estaba (11 posiciones, cash simulado $78.66, equity base $256). La simulacion continua el sistema completo con precios reales: gestion de las 11 abiertas, scanner de movers, gates P3, gate de slippage y contabilidad de cash simulado (sin el cual el paper seria de capital infinito, el artefacto que ya invalido un backtest). El P&L realizado historico LIVE queda congelado en -$28.73 como referencia; evento PAPER_MIGRATION en events.jsonl marca el corte de muestra. Motivo: 118 cierres con PF 0.88 en regimen BTC<EMA200, sin salida alternativa que de positivo (bt_salidas). El paper acumula muestra mientras el backtest de regimen responde si Ganesha tiene edge en algun contexto. Regla aplicada: pausar no es fallar. IMPORTANTE: las 11 posiciones REALES siguen en Binance con stops nativos activos; el sistema ya no las gestiona -- venderlas o mantenerlas es decision y accion de Agus."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "28/08 (4) - INCIDENTE, detectado por Agus: el panel mostro equity $336 y +14.4% cuando el real era $259 y -11.8%. Causa: doble conteo en _real_equity (USDT libre + posiciones del state); si habia ventas manuales sin reconciliar, la plata de la venta se contaba dos veces. El bug era viejo, pero Claude lo expuso al publicar el panel a mano en medio de la ventana, sin reconciliar antes. Corregido de raiz: el equity ahora valora TODOS los assets reales de la sub-cuenta a mercado, sin depender del state. Verificado publicado: equity $258.91, P&L vs aportes -$35.09 (-11.94%), 11 abiertas. Leccion operativa nueva: nunca publicar el dashboard sin reconciliar primero."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "28/08 (2) - Medido con bt_salidas.py: la salida NO es el problema principal. Sobre las 117 entradas reales del bot, con velas 4h reales y sin ventas manuales, se probaron 6 reglas de salida. Todas dan negativo. La actual (-$13, PF 0.94) es la segunda mejor; breakeven en +1R la EMPEORA (-$36, el BE saca en el ruido de las alts); TP total en +2R tambien peor (-$30). La unica que mejora algo es trailing 1.5 ATR desde +1R: -$8.5, WR 35%, PF 0.96 -- sigue sin ser un sistema."
-    },
-    {
-     "tipo": "p",
-     "t": "La materia prima existe: 51% de las entradas alcanza +1R y 40% alcanza +2R (MFE sobre velas reales). Pero ninguna forma de cosechar eso compensa el 60% que muere en el stop. Conclusion: con estas entradas, en este regimen (la muestra es casi toda BTC bajo EMA200 diario), no hay regla de salida que de positivo. El deficit es de entrada+regimen, no de salida. Esto conecta directo con el backtest de 3 anios en curso (filtros de regimen) y coincide con el hallazgo previo del backtest con capital finito: solo trailing apretado mejoraba. No se cambia la salida del ejecutor: no hay candidata con evidencia positiva, y el cambio de regla lo decide Agus."
-    },
-    {
-     "tipo": "p",
-     "t": "28/08 (3) - Dashboard: la curva de equity mostraba +$15.87 porque graficaba solo los ultimos 40 cierres acumulados desde un cero arbitrario (14/08); los 72 anteriores sumaban -$41 y no se veian. Corregido: ganesha_data.json publica equity_curve completa (118 cierres) y la curva del panel arranca en el cero real. Realizado verdadero: -$25.34. Atribucion sobre los 118: cierres del bot -$52.63 (n=101), cierres manuales de Agus +$27.29 (n=17) -- con la salvedad de que Agus cierra ganadores y el stop carga los perdedores, asi que la particion favorece al humano por construccion."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "28/08/2026 - El caso ONT: el bot recompro lo que Agus acababa de vender. A las 00:07:17 del 27/08 Agus cerro ONT a mano en $0.0688 (+$6.59, 2.09R). Diecisiete segundos despues, a las 00:07:34, el ejecutor la recompro a $0.07168 -- 4.2% mas caro y con mas tamanio (379 vs 331). El activo cayo a $0.0565 (-21%). Neto real de ONT: +$0.84, no la perdida que se veia en pantalla."
-    },
-    {
-     "tipo": "p",
-     "t": "Los cierres manuales destrababan la avalancha. En esos mismos 15 segundos el ejecutor abrio 6 posiciones (PORTAL, ONT, S, VET, CVX, BICO). No habia cooldown por simbolo ni tope de cartera: el unico freno era la falta de plata. Al liberarla, vacio el cargador. Es el hallazgo de julio confirmado con un caso nuevo: el Ganesha viejo era selectivo por restriccion de cash, no por diseno."
-    },
-    {
-     "tipo": "p",
-     "t": "Segundo bug, encontrado en el mismo analisis: el sizing y el stop se calculaban con el cierre de la vela 15m anterior ($0.06835), pero la compra es market al precio vivo ($0.07168). Son +4.9% de slippage sobre una vela que hizo +7.4% vertical; el techo llego 8 minutos despues de la compra. El stop no se re-anclaba al fill, asi que quedaba a 2.96 ATR en vez de los 2.5 ATR de disenio: 18% mas de riesgo del pedido, y una posicion que tolera -30% antes de cortar."
-    },
-    {
-     "tipo": "kv",
-     "titulo": "Gates de entrada (28/08/2026)",
-     "items": [
-      {
-       "k": "Version",
-       "v": "v5 (06/09/2026) en PAPER"
-      },
-      {
-       "k": "Regimen",
-       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
-      },
-      {
-       "k": "Entrada",
-       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
-      },
-      {
-       "k": "Piramide",
-       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
-      },
-      {
-       "k": "Salida",
-       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
-      },
-      {
-       "k": "Frenos",
-       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
-      },
-      {
-       "k": "Base v4/v5",
-       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
-      }
-     ]
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "Efecto inmediato: con 15 posiciones abiertas y max_open en 8, Ganesha no abre nada nuevo hasta bajar a 7. No liquida nada -- la cartera se drena sola por stops y salidas. Es intencional."
-    },
-    {
-     "tipo": "kv",
-     "items": [
-      {
-       "k": "Version",
-       "v": "v5 (06/09/2026) en PAPER"
-      },
-      {
-       "k": "Regimen",
-       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
-      },
-      {
-       "k": "Entrada",
-       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
-      },
-      {
-       "k": "Piramide",
-       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
-      },
-      {
-       "k": "Salida",
-       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
-      },
-      {
-       "k": "Frenos",
-       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
-      },
-      {
-       "k": "Base v4/v5",
-       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
-      }
-     ]
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "info",
-     "t": "APORTE DE CAPITAL 22/08/2026 — Agus deposito $100 USDT en la sub-cuenta Ganesha (master->sub, 17:58 UTC, tranId 403653749542). Aportes netos Ganesha: $194 -> $294. El aporte NO es ganancia: el panel ahora separa equity de aportes."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "BUGFIX CONTABLE 22/08/2026 — dos errores que inflaban el P&L del panel de Ganesha. (1) ejecutor_dash.py tenia deposits_total HARDCODEADO EN 0: cada aporte de capital aparecia como si fuera equity ganado. (2) dashboard._update_deposit_ledger() llamaba a sapiGetSubAccountTransferSubUserHistory SIN el parametro type, y ese endpoint devuelve lista vacia si falta: el ledger no detectaba ningun deposito nuevo desde junio. Corregidos ambos: ahora consulta type=1 (entradas) y type=2 (salidas), y el panel publica deposits_total, pnl_vs_depositos y pnl_vs_depositos_pct. Backups: dashboard.py.bak.pre_depositos.*, ejecutor_dash.py.bak.pre_depositos.*, deposits_ledger.json.bak.*"
-    },
-    {
-     "tipo": "tabla",
-     "t": "Ganesha por version — resultados realizados medidos sobre ejecutor/events.jsonl (22/08/2026)",
-     "headers": [
-      "Periodo",
-      "n",
-      "PnL",
-      "WR",
-      "PF",
-      "ops/dia"
-     ],
-     "filas": [
-      [
-       "pre-v3 (hasta 07/08)",
-       "31",
-       "+$2,85",
-       "41,9%",
-       "1,05",
-       "1,6"
-      ],
-      [
-       "v3 (08/08 - 16/08)",
-       "57",
-       "-$65,58",
-       "12,3%",
-       "0,40",
-       "6,5"
-      ],
-      [
-       "post-rollback v2 (17/08 -)",
-       "17",
-       "+$33,28",
-       "64,7%",
-       "3,49",
-       "4,1"
-      ]
+      "Agus es CEO y no hace trabajo operativo. Claude ejecuta todo lo tecnico de punta a punta: codigo, VM, automatizacion, dashboard, documentacion.",
+      "Claude nunca pide pegar codigo, correr comandos ni hacer pasos operativos. Solo se pide accion a Agus en casos extremos: credenciales que el controla, go-live real, acciones en el exchange.",
+      "Medir antes de construir: backtest primero, calibrar con datos, despues construir. Si el trigger no le gana al benchmark ciego, el componente no se construye.",
+      "Avisar una vez, no repetir: las advertencias metodologicas se dicen una vez; Agus decide.",
+      "Los documentos externos se evaluan criticamente pieza por pieza, no como doctrina (precedente: el doc de auditoria de ChatGPT).",
+      "Los problemas se nombran honestamente, con sus riesgos, sin suavizar."
      ]
     },
     {
      "tipo": "p",
-     "t": "Lectura del post-rollback (n=17, 5 dias): el numero es bueno y coincide con la tesis de Agus de que la v2 es mejor bot. Advertencia registrada una sola vez: n=17 no distingue el merito del bot del regimen alcista diario de BTC, y las ops/dia (4,1) siguen mas cerca de v3 (6,5) que de pre-v3 (1,6) -- el mecanismo de seleccion por escasez de caja ya no esta operando, y el aporte de $100 lo afloja mas. Decision de Agus: no se toca nada. Queda P4 abierta (tope explicito de frecuencia de entrada)."
-    },
-    {
-     "tipo": "kv",
-     "items": [
-      {
-       "k": "Version",
-       "v": "v5 (06/09/2026) en PAPER"
-      },
-      {
-       "k": "Regimen",
-       "v": "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
-      },
-      {
-       "k": "Entrada",
-       "v": "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
-      },
-      {
-       "k": "Piramide",
-       "v": "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
-      },
-      {
-       "k": "Salida",
-       "v": "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
-      },
-      {
-       "k": "Frenos",
-       "v": "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
-      },
-      {
-       "k": "Base v4/v5",
-       "v": "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
-      }
-     ]
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "ROLLBACK 17/08/2026 (decision de Agus): se restauro el ejecutor al codigo del 19/07 (pre-v3). Motivo: desde los cambios del 7-8/08 (atr 2.0 + time_stop + zombie + depth) el bot fue 8 de 9 dias en rojo, PF cayo de 1.05 a 0.40 y el fusible (PF<0.70, n>=15) se cruzo con PF 0.63 n=87. Backups: ganesha_ejecutor.py.bak.v3_full.* y ejecutor/state.json.bak.pre_rollback.*. Las 6 posiciones abiertas se heredan con sus stops nativos; el modo (LIVE/paper) lo decide Agus con el archivo ejecutor/LIVE."
-    },
-    {
-     "tipo": "p",
-     "t": "Lo que se midio antes del rollback: (1) las reglas v3 por si solas no eran la causa: sobre las mismas entradas, las reglas viejas simulan -$68 vs -$48 real. (2) PERO las salidas rapidas de v3 liberaban capital y triplicaron la frecuencia de entrada (1.7 -> 4.9 entradas/dia; skip_no_balance 142 -> 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo por accidente: le faltaba plata. (3) BTC lleva ~77 dias bajo la EMA200; el motor de entrada por momentum de altcoins no tiene edge en ese clima con ninguna de las dos versiones. Contador de muestra: se reinicia."
-    },
-    {
-     "tipo": "p",
-     "t": "Foto post-rollback al 19/08 (47h, 12 corridas): 8 posiciones abiertas, $119.76 invertidos, PnL abierto +$5.08 (+4.2%). Realizado: -$6.40 (COOKIE -4.02, CHIP -2.38), 2 de 2 cierres en rojo. Frecuencia de entrada 2.0/dia -- vuelve al nivel pre-v3 (1.7) y lejos del v3 (4.9): el objetivo del rollback se cumplio a nivel mecanismo. El resultado, con n=2, no dice nada todavia, y el verde abierto es beta de alts, no edge del bot."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "HALLAZGO 19/08/2026 — los stops nativos no se estaban colocando. 6 de 8 posiciones abiertas quedaron SIN stop en el exchange (solo gestionado por software, evaluado cada 4h). Causa medida: el filtro PERCENT_PRICE_BY_SIDE de Binance exige, para una venta, price >= avgPrice(5m) x 0.9. Con atr_mult 2.5 el stop queda a -16%/-40% del precio y el exchange lo rechaza siempre. Verificado con order/test: ni STOP_LOSS_LIMIT ni STOP_LOSS market lo evaden. NO es un bug del codigo: es un limite estructural de Binance spot incompatible con stops anchos."
-    },
-    {
-     "tipo": "p",
-     "t": "Fix aplicado 19/08 (Claude): (1) place_stop ahora calcula el borde real del filtro leyendo askMultiplierDown del par y el avgPrice de 5m. Si el stop esta fuera de rango NO lo fuerza al borde -- forzarlo cerraria el trade antes de tiempo y cambiaria la estrategia por la ventana; lo registra como stop_pending_filter con la distancia que falta y lo deja en software. Si el stop entra pero el precio limite se pasaba, sube el limite al borde (caso que antes se perdia). (2) Nuevo watcher ganesha_stops.py, cron 22/37/52 de cada hora: solo reintenta colocar stops pendientes, no escanea ni abre ni cierra nada. La ventana de desproteccion baja de 4h a ~15 min. Cuando el precio baja hacia el stop, la red se arma sola. Backup: ganesha_ejecutor.py.bak.pre_stopfilter.1787103064"
-    },
-    {
-     "tipo": "tabla",
-     "t": "Proteccion en exchange al 19/08 01:30 UTC (falta% = cuanto debe bajar el precio para que el stop sea colocable)",
-     "headers": [
-      "Simbolo",
-      "PnL abierto",
-      "Stop nativo",
-      "Falta para armarlo"
-     ],
-     "filas": [
-      [
-       "NIL/USDT",
-       "+19.7%",
-       "SI",
-       "-"
-      ],
-      [
-       "GPS/USDT",
-       "+12.3%",
-       "NO",
-       "25.4%"
-      ],
-      [
-       "ETHFI/USDT",
-       "+9.2%",
-       "NO",
-       "11.7%"
-      ],
-      [
-       "PUMP/USDT",
-       "+8.7%",
-       "NO",
-       "8.5%"
-      ],
-      [
-       "ONG/USDT",
-       "+5.8%",
-       "NO",
-       "11.1%"
-      ],
-      [
-       "HEMI/USDT",
-       "+1.4%",
-       "NO",
-       "37.9%"
-      ],
-      [
-       "BOME/USDT",
-       "-10.8%",
-       "NO",
-       "1.8%"
-      ],
-      [
-       "PORTAL/USDT",
-       "-17.1%",
-       "SI",
-       "-"
-      ]
-     ]
-    },
-    {
-     "tipo": "p",
-     "t": "Riesgo conocido del rollback: cuando el capital crezca y deje de trabar, la frecuencia sube sola y puede volver la sangria. La solucion de fondo seria un tope explicito de entradas/dia o max_open, medido antes de encender. Pendiente."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "Barrera: las posiciones abiertas y el archivo ejecutor/LIVE los toca solo Agus. Claude nunca cierra posiciones ni cambia el modo."
-    },
-    {
-     "tipo": "p",
-     "t": "El edge historico de Ganesha (~100%) vino del scanner ciego de movers, no de la seleccion del Brain. BANK, el mejor trade, lo cerro Agus a mano: el sistema no lo capturo. Sin BANK, Ganesha realiza aprox -$37."
-    }
-   ]
-  },
-  {
-   "id": "pescador",
-   "titulo": "Pescador — captura de rallies (PAPER)",
-   "bloques": [
-    {
-     "tipo": "kv",
-     "items": [
-      [
-       "Modo",
-       "PAPER (v2). Datos de v1 invalidos: median otra estrategia"
-      ],
-      [
-       "Tesis",
-       "capturar 20-50% de rallies ya ultra-confirmados"
-      ],
-      [
-       "Universo",
-       "mismo scanner que Ganesha: todo /USDT de Binance, vol 24h >= $10M absoluto y >= 15x mediana 20d, dia >= +8%, semana >= +20%"
-      ],
-      [
-       "Evaluacion",
-       "solo sobre la ultima vela diaria CERRADA"
-      ],
-      [
-       "Gestion",
-       "TP +15%, SL -20%, salida forzada a 24h"
-      ],
-      [
-       "Sizing",
-       "25% del equity, max_open 4, cooldown 20h por simbolo, min_notional $12"
-      ],
-      [
-       "Cron",
-       "cada hora, minuto :07"
-      ],
-      [
-       "Archivos",
-       "/home/opc/bot_semillas/pescador/ — md5 v2: 38d1a60fa4780f14824e5b3648a4a6df"
-      ]
-     ]
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "warn",
-     "t": "El SL de -20% es intocable. Medido: con SL a -8% el sistema pierde plata. El edge viene de aguantar el sacudon inicial. Si duele, se reduce el size, no el stop."
-    },
-    {
-     "tipo": "p",
-     "t": "Para pasar a LIVE (solo Agus): crear pescador/keys.json, crear archivo vacio pescador/LIVE, fondear la sub-cuenta. En LIVE, TP y SL van como OCO nativo en Binance."
-    },
-    {
-     "tipo": "p",
-     "t": "22/08/2026 — por que PUMP (+124%) no activo al Pescador. El filtro que lo bloquea es vol_ratio >= 15x la mediana de 20 dias: PUMP llego a 4,17x. Su mediana ya es ~$12M/dia, asi que necesitaria ~$180M en una jornada. El 20/08 paso 3 de los 4 umbrales (dia +27,7%, semana +31,9%, $44M absolutos) y solo lo freno el ratio. Efecto de diseno registrado: el Pescador solo puede cazar activos que venian ILIQUIDOS y explotan; por construccion nunca va a tocar un top-100 ya liquido. Selectividad real: 447 corridas desde el 04/08, 1 sola confirmacion (VIC, cerro en stop -20%). No es un bug."
-    }
-   ]
-  },
-  {
-   "id": "semillas",
-   "titulo": "Semillas / Jardinero / Brain",
-   "bloques": [
-    {
-     "tipo": "kv",
-     "items": [
-      [
-       "Cron diario",
-       "00:15 UTC (21:15 ART) — main.py"
-      ],
-      [
-       "Brain",
-       "mensual, ~$0.60-1.50 por corrida via API de Anthropic"
-      ],
-      [
-       "Codigo",
-       "/home/opc/bot_semillas/ — el espejo del repo puede estar desactualizado"
-      ]
-     ]
-    },
-    {
-     "tipo": "p",
-     "t": "Organigrama: BRAIN (estratega mensual, garden_plan) -> JARDINERO (swing paciente, garden.py) -> GANESHA (intradia) + AUDITOR LOOP (no opera; consolida y propone con evidencia n>=15)."
-    },
-    {
-     "tipo": "alerta",
-     "nivel": "alta",
-     "t": "Los 4 cambios de Brain/Jardinero estan EN SUSPENSO. Eran \"obligatorios post-backtest\", pero el backtest que los justificaba se derrumbo (ver Hallazgos). El spec sigue valido como diseno."
-    },
-    {
-     "tipo": "p",
-     "t": "Los 4 cambios especificados: (1) Brain filtra solo lo que crece en semanal (aduana semanal); (2) Brain vigila proyectos de calidad cerca de minimos (antena de valor); (3) Brain lee los movers que Ganesha gano ese mes (loop de aprendizaje); (4) Jardinero planta en dias lo que la watchlist asigna, DCA en pullback a EMA diaria en tendencia alcista + vela de reclaim, nunca el cuchillo."
-    },
-    {
-     "tipo": "p",
-     "t": "Pregunta abierta para Agus: que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. Propuesta de Agus: Jardinero cripto por fundamentals (TVL, revenue de protocolo, valor con descuento) con DCA en proyectos tier-1."
-    },
-    {
-     "tipo": "p",
-     "t": "Tier-1 = filtro de SUPERVIVENCIA (proyecto vivo, uso o narrativa real, liquidez, sobrevive el invierno), no filtro de tamanio. La lista la firma Agus; Claude propone candidatos."
+     "t": "Del doc de auditoria de ChatGPT: el allocator dinamico y las matrices de correlacion son ruido a esta escala (n < 20 trades, ~$1.000). Lo barato, falsable y util ya: benchmarks / operaciones de control virtuales, logging que permita atribucion futura, reglas de salida del bull definidas ANTES de la euforia."
     }
    ]
   },
   {
    "id": "hallazgos",
-   "titulo": "Hallazgos medidos — donde NO hay edge",
+   "titulo": "Hallazgos medidos (siguen valiendo)",
    "bloques": [
     {
      "tipo": "alerta",
@@ -1151,8 +726,858 @@
    ]
   },
   {
-   "id": "acciones",
-   "titulo": "Expansion a acciones / ETFs / bonos",
+   "id": "infra",
+   "titulo": "Infraestructura",
+   "bloques": [
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Panel",
+       "cripto.semillaredes.com, servido desde el repo del panel (carpeta docs/)."
+      ],
+      [
+       "Este documento",
+       "Fuente en la VM: status/status_data.json. Se publica con status/publicar_status.py. No editar directo en GitHub."
+      ],
+      [
+       "Publicación",
+       "La VM publica al repo con un token que nunca se muestra."
+      ],
+      [
+       "Binance",
+       "La cuenta principal se lee en modo solo lectura para mostrar el saldo. Ningún bot opera en real."
+      ],
+      [
+       "Tareas automáticas",
+       "Retiro (valuación y recomendación, lunes a viernes), Retiro Turbo, placa y recordatorios de la compra del mes, Fondo Uli, saldo de Binance, Laboratorio (diario), Ganesha y rotativo en paper, y el corte del 01/12."
+      ],
+      [
+       "Separación",
+       "Las tareas de este sistema y las de Semilla Redes están en archivos separados. Nunca se edita el cron a mano."
+      ],
+      [
+       "Datos de acceso",
+       "Direcciones, usuarios y claves no se publican en este documento."
+      ]
+     ]
+    },
+    {
+     "tipo": "ul",
+     "items": [
+      "Yahoo Finance chart API funciona gratis para diario historico ajustado, pero SOLO con User-Agent corto (\"Mozilla/5.0\"). Los UA completos de Chrome disparan 429. Patron: urllib con backoff exponencial hasta 6 reintentos, fallback a curl, sleep entre simbolos.",
+      "Los scripts que publican al repo deben correr con /home/opc/bot_semillas/venv/bin/python desde /home/opc/bot_semillas/. El Python del sistema no tiene dotenv y dashboard.TOKEN queda vacio.",
+      "Verificacion del dashboard: fetch mismo-origen desde la pestania de cripto.semillaredes.com. NO via raw.githubusercontent.com (cache de CDN agresivo). Para diagnosticos, subir el script con nombre NUEVO cada vez.",
+      "Gmail archiva todo lo que llega de la casilla del sistema salteando el inbox. Si un mail importa, hay que moverlo a INBOX+STARRED.",
+      "Si el token fine-grained se edita, hay que reconfirmar explicitamente Contents: R/W o GitHub lo limpia en silencio."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "h_prioridades",
+   "titulo": "Tareas y prioridades de agosto a octubre 2026",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Orden real de trabajo. Lo de arriba destraba lo de abajo. Las tareas de Agus son las unicas que Claude no puede ejecutar."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "09/10/2026 - REDISENO. (1) Fondo Abundancia: se cayeron las reglas duras (nucleo BTC/ETH intocable). Backtest 2018-2026: BTC/ETH fijo +22.6% anual con -74% de caida; mezcla con acciones/oro +28.8% con -41%. Desde hoy el paper corre con nucleo BTC 20 / QQQ 25 / SMH 15 / oro 10 + satelite momentum 30%, rebalanceo mensual. Proximo paso: Abundancia 100% ROTATIVO (top-5 por momentum entre ETFs, bonos, oro, cripto y acciones), backtest con universo ampliado pendiente. Rotativo con 29 ETFs: +13% anual 2005-2026 con -29% de caida vs SPY +11% / -51%. (2) Binance acciones/ETFs directos (7.954 papeles) habilitado en la cuenta y por API; disclaimer de acciones EE.UU. firmado en subcuentas agus@ y ganesha@. (3) Fondo de Retiro: cartera a 20 anios en Inviu (SPY, ACWI, FXI 1 unidad c/u por mes + elecciones libres). Panel nuevo con recomendaciones del mes en ARS."
+    },
+    {
+     "tipo": "tareas",
+     "items": [
+      {
+       "p": "P1",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "09/10 - Chat del Radar: boton verde en cripto.semillaredes.com. Responde con datos en vivo + PLAYBOOK (radar_chat/PLAYBOOK.md), guarda decisiones/ideas en el playbook, aplica cambios del Retiro (aporte, objetivos, rutina, compras/ventas) y anota pedidos de codigo en radar_chat/pedidos.jsonl (mail a Agus). Servicio radar-chat (puerto 8793, Caddy /radar/*). Modelo: Gemini (Anthropic sin credito)."
+      },
+      {
+       "p": "P1",
+       "quien": "Claude",
+       "estado": "abierta",
+       "t": "Retiro: refrescar tenencias de Inviu despues de cada compra mensual (o con capturas de Agus) - retiro/tenencias.json."
+      },
+      {
+       "p": "P0",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "RESUELTO 09/10 - Backtest verificado (senal con 1 mes de retraso: +22% vs +26%; 5 al azar: +14%). Mas cripto (top-10) lo rompe (caidas -90%); acciones sueltas inflado por sesgo. Elegido: top-5 entre 27 ETFs + BTC + ETH, refugio SHY. Migrado en paper 09/10 (fondo/rotativo.py)."
+      },
+      {
+       "p": "P0",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "RESUELTO 09/10 - Panel: Total (Abundancia + Retiro), Fondo Abundancia, Fondo de Retiro (recomendacion del mes arriba) y Laboratorio (Ganesha, Pescadores, Faro, RS). Retiro: retiro/retiro.py lun-vie 18:05 ART."
+      },
+      {
+       "p": "P1",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "09/10 - Disclaimer de acciones EE.UU. en la cuenta PRINCIPAL de Binance: aceptarlo la primera vez que compre una accion a mano (sale en 'Vista previa'). Las subcuentas ya estan firmadas."
+      },
+      {
+       "p": "P0",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "06/09 - DECISION DE DISENO: ¿el nucleo del Fondo (BTC/ETH) puede venderse PARCIALMENTE por ensamble de tendencia (0/25/50/75/100% segun 4 lookbacks semanales)? Es el unico cambio medido que le gana al DCA con la mitad del drawdown, en dos eras y dos activos. Contradice 'nucleo no se vende'. Si es SI: Claude implementa en paper como 'Jardinero 2.1' y el Fondo lo mide contra DCA puro como control. Si es NO: queda registrado que se elige aceptar drawdowns de -75/-90% a cambio de nunca vender."
+      },
+      {
+       "p": "P1",
+       "quien": "Agus",
+       "estado": "pendiente",
+       "t": "Oracle: upgrade billing a PAYG (tarjeta prepaga) -> A1 (2 OCPU/12GB) -> IB Gateway. YA NO bloquea el track acciones: Fondo Abundancia corre sobre bStocks con la infra actual. Queda para cuando se evalue IB como vehiculo final."
+      },
+      {
+       "p": "P2b",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "05/09 - Ganesha v4: Claude APAGO el filtro BTC 72h (decision de Agus del 28/08) y lo reemplazo por BTC > EMA200 diaria. Razon: el 72h salio de un barrido in-sample sobre 91 trades todos en bear; la EMA200d es el unico regimen validado (Pescador bull 16-0). Se vuelve con regime_window_h=72 en ganesha_ejecutor.py. Agus decide si acepta o revierte."
+      },
+      {
+       "p": "P2c",
+       "quien": "Agus",
+       "estado": "abierta",
+       "t": "05/09 - Regla 'moonbag universal': el backtest sobre 117 entradas reales muestra que una moonbag MECANICA (20-30% con stop en BE) pierde feo (PF 0.3 en cerradas). Ganesha v4 NO la implementa. La regla sigue vigente como filosofia para tesis largas (Fondo), no para el ejecutor. Agus confirma o discute."
+      },
+      {
+       "p": "P2",
+       "quien": "Agus",
+       "estado": "resuelto",
+       "t": "RESUELTO 28/08: Agus paso Ganesha a PAPER (LIVE.off). 05/09: Ganesha v4 desplegado en paper (ver seccion Ganesha)."
+      },
+      {
+       "p": "P3",
+       "quien": "Agus",
+       "estado": "higiene",
+       "t": "Revocar el token temporal de GitHub del 7-8 de agosto (quedo en texto plano en aquel chat). Riesgo bajo pero no cuesta nada cerrarlo."
+      },
+      {
+       "p": "P4",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "RESUELTO por la via negativa: 5 backtests (timing, semaforo, seleccion, canonicas) muestran que ninguna senial tecnica reemplaza a la confirmacion semanal porque ninguna agrega edge. El criterio del Fondo Abundancia es estructural (indice + momentum satelite + filtro defensivo), no de senial."
+      },
+      {
+       "p": "P5",
+       "quien": "Agus + Claude",
+       "estado": "a decidir",
+       "t": "Definir que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. El backtest que la justificaba se cayo. Propuesta de Agus sobre la mesa: Jardinero cripto por fundamentals (TVL, revenue, valor a descuento) con DCA en tier-1."
+      },
+      {
+       "p": "P6",
+       "quien": "Claude",
+       "estado": "bloqueada por P1",
+       "t": "Acciones Fase 1: bakeoff Weinstein Stage 2 vs Momentum 12-1 vs Dual Momentum vs Faber SMA10 vs comprar el indice, sobre universo amplio con delisted (Sharadar, $9/mes). Ademas: DCA fijo vs DCA con trigger del Jardinero sobre 25 anios limpios. Si el trigger no le gana al DCA ciego, el Jardinero de acciones no se construye."
+      },
+      {
+       "p": "P7",
+       "quien": "Agus + Claude",
+       "estado": "a decidir",
+       "t": "Stops anchos vs red en el exchange: con atr_mult 2.5 el stop nativo es imposible de colocar hasta que el precio se acerque a ~9% de el. Mientras tanto la unica proteccion es software cada 4h (ahora reintento cada 15 min). Opciones: (a) convivir, asumiendo que si la VM muere las posiciones quedan sueltas; (b) stop nativo de catastrofe en el borde permitido, que cierra antes y cambia la estrategia; (c) revisar atr_mult. Hoy queda en (a), que es lo que ya habia sin saberlo."
+      },
+      {
+       "p": "P8",
+       "quien": "Claude",
+       "estado": "resuelto",
+       "t": "Gates de entrada de Ganesha (28/08). La frecuencia de entrada era un resultado del cash disponible, no una decision: el 27/08 a las 00:07 Agus cerro 4 posiciones a mano, se liberaron ~$60 y el ejecutor metio 6 entradas en 15 segundos. Implementado y testeado: cooldown de 20h por simbolo tras cerrarlo, max_open 8, max_new_per_run 2. Ademas se corrigio el bug de slippage que salio en el mismo analisis."
+      }
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Decision del 17 ago: los dos tracks van en paralelo, no se condicionan entre si. Que Ganesha vaya mal no frena acciones — acciones hoy no arriesga capital, solo mide. El unico cruce real es el capital, y eso recien se discute cuando acciones pida plata."
+    }
+   ]
+  },
+  {
+   "id": "h_ahora",
+   "titulo": "Foto de septiembre 2026",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "pulso",
+     "items": [
+      {
+       "frente": "Ganesha",
+       "estado": "ambar",
+       "t": "v4 en PAPER desde 05/09 (regimen EMA200d + chandelier). 11 legacy + entradas nuevas. Base v4: $262.46."
+      },
+      {
+       "frente": "Pescador",
+       "estado": "ambar",
+       "t": "Paper v2, juntando muestra limpia. Sin decisiones."
+      },
+      {
+       "frente": "Bot v1 / Brain",
+       "estado": "gris",
+       "t": "Los 4 cambios, en suspension: se cayo su backtest."
+      },
+      {
+       "frente": "Acciones",
+       "estado": "ambar",
+       "t": "Fase 0 cerrada. Fase 1 bloqueada por infra."
+      },
+      {
+       "frente": "Infra",
+       "estado": "rojo",
+       "t": "E2.1.Micro (1GB). A1 esperando el PAYG."
+      }
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "05/09 - Ganesha estaba TRABADO: 11 posiciones con max_open 8, 9 dias sin entrar. Se destrabo con v4 (las legacy no cuentan para el tope). Objetivo declarado por Agus: un bot en verde, escalable, que agarre rallies y pierda poco en crash. Lo que dicen los datos: la muestra completa (117 entradas, 88/91 en bear) es una loteria de cola derecha -- 4 trades hacen toda la plata, y el trailing devolvia el 75% de los gigantes (BANK MFE 43R -> 9R). La palanca que falta medir es el REGIMEN: BTC cruzo la EMA200d el 20/08. v4 existe para juntar n en bull con las reglas que sobrevivieron al backtest."
+    },
+    {
+     "tipo": "p",
+     "t": "La foto honesta: el track cripto esta perdiendo plata y el track acciones esta produciendo los hallazgos mas valiosos del proyecto. No es contradictorio — son dos etapas distintas del mismo metodo."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "Ganesha, 17 ago: se hizo rollback al ejecutor previo a v3 (atr_mult 2.5, sin time_stop, sin zombie, sin depth), a pedido de Agus. Post-v3 (8-16 ago) habia dado n=55, -$65,58, WR 9,1%, PF 0,40, con 8 de 9 dias en rojo. El fusible PF<0,70 con n>=15 se cruzo (PF 0,63 con n=87). Realizado total: -$62,70. El contador de muestra arranca de cero. Las 6 abiertas (NIL, COOKIE, ETHFI, BOME, ONG, PORTAL) se heredaron con sus stops nativos."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "Lo que la medicion enseno y no hay que olvidar: el contrafactual mostro que las reglas de salida v3 no eran la causa por si solas (-$68 vs -$48 real). El problema real fue que las salidas rapidas liberaban capital y triplicaron la frecuencia de entrada (1,7 a 4,9 por dia; skip_no_balance de 142 a 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo POR ACCIDENTE — le faltaba plata. Eso no estaba medido; Agus lo vio en la practica."
+    },
+    {
+     "tipo": "p",
+     "t": "Contexto de regimen: BTC lleva ~77 dias por debajo de la EMA200 (-10,6%). Es el mismo clima que en julio, asi que no explica por si solo la diferencia entre los dos periodos. Pero en risk-off el momentum de alts devuelve lo que da."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "Dicho una vez y no se repite: volver a operar para recuperar lo perdido choca con una regla inviolable. Los -$62,70 son costo hundido. La decision de modo se toma por lo que se espera hacia adelante, no por lo que se perdio atras."
+    },
+    {
+     "tipo": "p",
+     "t": "En acciones, Fase 0 cerro con un resultado incomodo y valioso: la confirmacion semanal de Weinstein no tiene edge medible como senal de seleccion, ni en el Dow-30 ni en cripto, probado con el mismo motor en los dos mercados. Ademas aparecio un look-ahead bias que contaminaba el resultado cripto original (+18% caia a +1,9%). Eso obligo a poner en suspension los 4 cambios de Brain/Jardinero."
+    },
+    {
+     "tipo": "p",
+     "t": "Traducido: hoy el sistema sabe bastante mejor donde NO hay edge que donde si. Eso es progreso real, aunque no se vea en el P&L."
+    }
+   ]
+  },
+  {
+   "id": "h_abundancia",
+   "titulo": "Fondo Abundancia en paper: diseño y bitácora (agosto a octubre 2026)",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Como funciona: el dia 1 de cada mes ordena 27 ETFs (indices, paises, sectores, oro, bonos) + BTC + ETH por su tendencia (promedio de lo que subieron en 1, 3, 6 y 12 meses) y se queda con los 5 mejores, 20% cada uno. Si alguno de los 5 viene en baja, ese 20% va a bonos cortos (SHY). Sol/tormenta queda solo como termometro. Opera en Binance (ETFs por Stocks API, cripto spot). Cartera inicial 09/10: EWY, SMH, XLK, ETH, XLE."
+    },
+    {
+     "tipo": "p",
+     "t": "09/10/2026: nucleo pasa de BTC/ETH fijo e intocable a BTC 20 / QQQ 25 / SMH 15 / oro (PAXG) 10, rebalanceable; satelite momentum 30%; caja 0; semaforos sol/tormenta solo informativos. ETH vendido. Backup: fondo/*.bak.pre_rediseno_0910. Objetivo siguiente: 100% rotativo."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "06/09 - CORRECCION de Claude: el 05/09 dije que el P&L del Fondo era 'basicamente BTC'. Falso. Al 05/09: nucleo +2.75% sobre su capital, satelite +6.56% sobre el suyo (SNDK +19%, MU +9%, AXTI +6%). En dolares 58/42 por el tamanio de cada bloque, pero por dolar invertido el satelite rinde 2.4x lo que BTC. El satelite es el bloque que esta funcionando."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "05/09 - REBALANCEO POR FLUJO implementado (engine.split_aporte). El nucleo no se vende: la unica forma de volver al 60/30/10 son los aportes, y ahora cada aporte (mensual o real via --aporte) se reparte proporcional al DEFICIT de cada bloque. Ensayo con $100 hoy: $0 nucleo / $91 satelite / $9 caja. El auditor marca el sobrepeso del nucleo como estructural (info), y el del satelite como aviso. Dashboard: 'proxima rotacion' ya no esta hardcodeada ('1 sep'), sale de fondo_data.json (hoy: 1 oct). Salida de paper: ventana fines de noviembre (90 dias), y solo si (1) >=3 rotaciones ejecutadas con cambios reales, (2) semaforos probados en tormenta, (3) satelite >= cartera congelada. La rotacion del 1/9 no cambio nada (mismo top-5)."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "04/09 - AUDITOR LOOP ENCENDIDO Y APUNTANDO AL FONDO (N5). Dos problemas encontrados: (1) el auditor no corria desde el 29/08 - solo se disparaba desde main.py y ese cron quedo comentado al cerrar Bot v1; (2) nunca miro al Fondo: consolidaba Ganesha y Bot v1 solamente. Ahora tiene cron propio (00:20 UTC, despues del mark del Fondo) y un modulo nuevo fondo/auditor.py que mide al Fondo contra CONTROLES, no contra cero: cartera congelada (no hacer nada desde el dia base), 100% BTC, 50/50 BTC-ETH y SPY. Publica en learning_data.json -> .fondo y se ve en el dashboard como card 'Auditoria del Fondo'. Primera corrida (7 dias, 2026-08-28 -> 2026-09-03): Fondo +2.64%, congelado +2.49%, BTC +4.40%, 50/50 +3.52%, SPY +0.50%. El Fondo pierde 1.76 pp contra tener BTC y solo. Veredicto del auditor: muestra insuficiente (minimo 90 dias) - a 7 dias todo esto es ruido, lo unico auditable hoy es la disciplina. Desvio real detectado: nucleo 70% vs 60% de disenio (+10 pp), satelite 20.2% vs 30% (-9.8 pp): el rebase del 28/08 designo la cartera real y nunca cuadro con el 60/30/10."
+    },
+    {
+     "tipo": "p",
+     "t": "Aclaracion de alcance (04/09): el nucleo BTC/ETH del Fondo vive en la CUENTA PRINCIPAL de Agus, fuera del alcance del bot y de Claude por disenio de seguridad. El sistema solo ve las subcuentas ganesha@ y agus@semillaredes.com. Por eso el paper valua el nucleo por cantidades designadas contra precios publicos de Binance, y no por lectura de balance. El satelite bStocks y la caja son 100%% simulados: nunca se compraron. Dinero real en riesgo del sistema: $0."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "28/08 (10) - FONDO SEMILLAS EN PAPER CON BASE REAL (FONDO_REBASE). El paper de $1,000 ficticios del 27/08 se reseteo a la cartera real de Agus: nucleo designado BTC 0.00924475 + ETH 0.07476581 (~$901, cost = valor de designacion; cost historico real anotado como metadato), caja $130.65 (10%), satelite $274.93 en top-5 momentum 12-1 bStocks REALES: AXTIB, SNDKB, MUB, WDCB, LITEB (~$55 c/u). Total base $1,306.52. Semaforos al rebase: acciones SOL, cripto TORMENTA (cierre mensual jul vs SMA10). APORTE_MENSUAL simulado = 0: los aportes reales se registran con engine.py --aporte <usd> y se despliegan 60/30/10 con semaforos. Cron nuevo: refresco de datos Yahoo dia 1 14:00 UTC antes del mensual. Validacion pre-noviembre EN MARCHA con activos reales."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (11) - Ganesha paper: filtro de regimen btc-72h APLICADO por decision de Agus (regime_window_h=72, solo entradas; la gestion de abiertas no se toca). Barrido de ventanas sobre trades reales: 24h PEOR que sin filtro (-50.61 vs -47.05), plateau robusto 72-168h, optimo 72h (-2.00). La intuicion de ventana corta quedo refutada con datos. CONFIG_CHANGE en events.jsonl. Nota honesta: n=61, plateau da robustez pero el parametro exacto puede ser suerte de muestra."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "MAPA TOTAL 1/3 - Nucleo Retiro",
+       "DCA mensual CEDEARs (SPY, MSCI, FXI; a veces YPF/BYMA como tesis locales). Manual de Agus, corriendo, SIN paraguas ni gestion del bot: el DCA ciego es el ganador de todos los tests. El sistema solo lo muestra en el mapa."
+      ],
+      [
+       "MAPA TOTAL 2/3 - Fondo Abundancia",
+       "Riesgo medio en Binance (bot): 40 BTC/ETH DCA + 30 satelite acciones + 20 satelite cripto + 10 caja. Paraguas suave DOBLE: SPY/SMA10m para pata acciones, BTC/SMA10m para pata cripto. El viejo DCA BTC manual (hoy parado) queda absorbido aca: lo ejecuta el bot al encender."
+      ],
+      [
+       "MAPA TOTAL 3/3 - Casino controlado",
+       "Ganesha (live) + Pescador (paper): asimetria en cripto chica e ineficiente. Se mide con la guillotina de siempre."
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Rediseno completo del Jardinero tras 5 backtests propios (20 anios, sin look-ahead). Hallazgo central: ni el timing de entrada ni la seleccion por seniales tecnicas le ganan al indice; lo unico robusto (aparecio 3 veces con disenios independientes) es que el filtro de tendencia recorta el drawdown a la mitad cediendo ~2 pts de CAGR. El sistema captura mercado con la mitad del dolor; no promete ganarle al indice."
+    },
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Nucleo 40%",
+       "DCA mensual BTC+ETH. Nadie vende, nunca. Solo acumula."
+      ],
+      [
+       "Satelite acciones 30%",
+       "Momentum 12-1 top 3-5 bStocks, rotacion mensual (el bot vende al rotar). Brain narra la tesis de cada pick y puede vetar; no elige."
+      ],
+      [
+       "Satelite cripto 20%",
+       "Momentum 12-1 sobre top-30 liquido Binance, absolute momentum (slot frio -> USDT). Rotacion mensual automatica. PENDIENTE: backtest propio antes de encender."
+      ],
+      [
+       "Caja 10%",
+       "Operativa."
+      ],
+      [
+       "Paraguas SUAVE",
+       "SPY vs SMA10m. Tormenta: frena aportes nuevos (no vende nada), avisa, reactiva solo. Historico 2000-2026: 76% del tiempo comprando normal; 4 crisis esquivadas, ~13 falsas alarmas de costo minimo."
+      ],
+      [
+       "Rol de Agus",
+       "Depositar todos los meses + leer el mail mensual + go-live (barrera inviolable). Nada mas."
+      ]
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "FASE 1 ACTIVA. Backtest satelite cripto (mom 12-1, universo por fecha, 2019-2026): -15.6% CAGR y DD -96% vs BTC +28% -> DESCARTADO; su 20% se pliega al nucleo. Diseno final: 60 nucleo BTC/ETH + 30 satelite bStocks + 10 caja. Primera corrida real: semaforo cripto TORMENTA (nucleo $600 espera en USDT), acciones SOL (satelite: AXTI, SNDK, MU, WDC, LITE). Cron: mensual dia 1 15:10 UTC + mark diario 23:50 UTC. Datos: cripto.semillaredes.com/fondo_data.json. Mail mensual activo. Go-live: solo Agus, tras 2-3 meses de paper sano."
+    },
+    {
+     "tipo": "p",
+     "t": "Jardinero v1 CERRADO 27-ago: Agus vendio manualmente PYTH (+$0.98), PUMP (+$9.45) y ZEC (+$5.00), total $44.70 a USDT (principal: $150.39). state.json reconciliado, cierres registrados como 'cierre manual', SEEDS_PER_MONTH=0 (no planta mas). El cron main.py sigue activo solo por dashboard/regimen."
+    }
+   ]
+  },
+  {
+   "id": "h_retiro",
+   "titulo": "Retiro: foto de octubre 2026 (rutina anterior)",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Cuenta Inviu activa desde 06/2021 (arranco con acciones argentinas). Hoy ~74% CEDEARs: SPY es la posicion principal; ademas ACWI, FXI, EEM, NVDA, ARKK, AMD, TSLA, AMZN. ~21% acciones argentinas (YPF, BYMA, TGN, Pampa, Central Puerto, Agrometal...). ~1% bonos USD (AL30, AL35, AE38) y algo en FCIs."
+    },
+    {
+     "tipo": "p",
+     "t": "Rutina: deposita ~USD 100/mes en ARS, compra 1 unidad de SPY, 1 de ACWI y 1 de FXI; con el resto, eleccion libre. Objetivo: aumentar el aporte con el tiempo."
+    },
+    {
+     "tipo": "p",
+     "t": "Recomendaciones del mes (a construir): 'este mes: X ARS en SPY, X en ACWI, X en FXI; con el resto, comprar X de A y X de B' mirando CEDEARs, acciones y bonos argentinos a largo plazo, con freno cuando la exposicion a algo ya alcanza."
+    },
+    {
+     "tipo": "p",
+     "t": "Objetivo a 20 anios: nucleo global 65% / conviccion 10% / acciones argentinas 12% / bonos USD 8% / oro 5%. Recomendacion de noviembre 2026: rutina fija (1 SPY, 1 ACWI, 1 FXI) + ~ARS 65.000 en GD35 + 3 GLD. Argentina (22%) y conviccion (13%) ya alcanzan."
+    }
+   ]
+  },
+  {
+   "id": "h_norte",
+   "titulo": "El norte de la etapa de bots",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "p",
+     "t": "Construir capital y un sistema de bots validado que reduzca la dependencia del ingreso por empleo. Horizonte ~10 anios con aportes de $500-1000/mes."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Lo que mueve la aguja a 10 anios es la TASA DE APORTE, no el rendimiento del bot. Duplicar aportes duplica el resultado con certeza; mejorar el retorno de 10% a 15% lo mejora ~30% con enorme incertidumbre."
+    },
+    {
+     "tipo": "p",
+     "t": "A escala actual (~$1.000) el bot no mueve la aguja economica. Su valor hoy es aprendizaje y validacion. Empieza a importar cerca de los ~$50k."
+    },
+    {
+     "tipo": "p",
+     "t": "Ningun bot sobrevive 10 anios. Lo que puede sobrevivir es el proceso: medir, matar lo que no tiene edge, reconstruir."
+    }
+   ]
+  },
+  {
+   "id": "h_reglas",
+   "titulo": "Reglas de la etapa de bots",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "ul",
+     "items": [
+      "Nunca salir 100% de un activo con tesis activa (moonbag).",
+      "Pausar no es fallar.",
+      "Nunca promediar a la baja por esperanza. Solo se agrega con confirmacion de tendencia.",
+      "Regla de freeze 60 dias: sin activacion, congela.",
+      "Nunca operar para cubrir una obligacion financiera.",
+      "Liquidar posiciones sin tesis y consolidar en el nucleo.",
+      "Sin apalancamiento. Sin futuros. Solo Spot."
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "BARRERA DE GO-LIVE (inviolable): Claude nunca pone dry_run en false, nunca carga API keys, nunca coloca ordenes. Esa accion final es siempre de Agus. Vale aun si Agus pide lo contrario."
+    },
+    {
+     "tipo": "p",
+     "t": "Regla manual de Agus: +100% -> vender 30% una vez. Por debajo de +100% no vender. Cancelar stop -> vender -> reconcilia (automatico solo en Ganesha)."
+    }
+   ]
+  },
+  {
+   "id": "h_arquitectura",
+   "titulo": "Arquitectura de 6 capas (agosto 2026)",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "tabla",
+     "headers": [
+      "#",
+      "Capa",
+      "Regimen",
+      "Estado"
+     ],
+     "rows": [
+      [
+       "1",
+       "Core DCA BTC/ETH/BNB",
+       "Alcista",
+       "Conceptual"
+      ],
+      [
+       "2",
+       "Bot v1: tendencia / swing",
+       "Alcista",
+       "Activo"
+      ],
+      [
+       "3",
+       "Ganesha: intradia por volumen",
+       "Alcista",
+       "Activo (LIVE)"
+      ],
+      [
+       "4",
+       "Neutral BTC-ETH: cointegracion / rotacion de ratio",
+       "Lateral",
+       "Conceptual"
+      ],
+      [
+       "5",
+       "Risk-off macro a USDT en Stage 4",
+       "Bajista",
+       "Conceptual"
+      ],
+      [
+       "6",
+       "Solana launch/pump como casino aislado (dead money)",
+       "Cola",
+       "Conceptual"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Transversal: brain_monthly emite senal ofensiva (Watchlist \"Salto de Nivel\") y senal defensiva (Regimen)."
+    },
+    {
+     "tipo": "p",
+     "t": "Short perp 1x fue evaluado y NO adoptado: rompe la regla de no futuros."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Principio de diseno: dos motores en paralelo, no un filtro unico. Ganesha = movers puros (velocidad, no calidad). Brain = calidad + confirmacion. Conectarlos como filtro mataria el edge de Ganesha."
+    }
+   ]
+  },
+  {
+   "id": "h_ganesha",
+   "titulo": "Ganesha: bitácora técnica",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Version",
+       "v5 (06/09/2026) en PAPER"
+      ],
+      [
+       "Regimen",
+       "ENSAMBLE BTC 21/28/35/42d semanal: entra si >=2 en positivo (hoy 4/4). EMA200 y 72h apagados."
+      ],
+      [
+       "Entrada",
+       "movers de volumen (qv>=$3M, dia>=+8%, semana>=+20%, vol>=3x mediana); 1 por ciclo; riesgo 2% equity; stop 2.5 ATR1d"
+      ],
+      [
+       "Piramide",
+       "a +2R agrega 50% de la qty inicial; stop conjunto sube a la entrada original (el riesgo nuevo lo paga lo ganado)"
+      ],
+      [
+       "Salida",
+       "sin scale-out; trail chandelier (max desde entrada - 2.5 ATR4h) desde +2R"
+      ],
+      [
+       "Frenos",
+       "6 posiciones con riesgo; calor <=10%; pausa de entradas si el dia va -3%; notional <=0.25% vol24h"
+      ],
+      [
+       "Base v4/v5",
+       "$262.46 (05/09). Legacy: 11 posiciones pre-v4, misma gestion, sin piramide, no cuentan"
+      ]
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "06/09 - v5. bt_salidas_v5 sobre las 117 entradas reales: PIRAMIDE a +2R (agregar 50%, stop a entrada original) sin scale-out = +0.228 R/trade, PF 1.36, positivo en cerradas y en ambas mitades (vs +0.084 de v4). Es la mejora mas grande encontrada hasta ahora en la gestion. Gate cambiado a ensamble (EMA200d era la peor senal de tendencia en bt_lento2). Pausa diaria -3%."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "05/09 - LO QUE SE MIDIO ANTES DE ESCRIBIR v4 (bt_salidas_v2/v3/v4, mismas 117 entradas reales, velas 4h reales, conservador intra-vela). (1) TIME STOP EMPEORA en todas las variantes (12/18/24/36 velas, umbral 0.5R y 1R): PF 1.03 -> 0.6-0.8. Los ganadores grandes arrancan tarde. El separador tp1_antes_del_stop es real pero no accionable. (2) Filtro por distancia de stop (<=15%) parece ayudar pero es espejismo: sacando las abiertas mark-to-market todo da negativo, y BANK/TUT tenian stop >20%. (3) Trail mas ancho (3.5, 5 ATR) empeora. (4) Moonbag mecanica 20-30% con stop BE: PF 0.3 en cerradas. (5) TP limite parcial a 1.5R/2R empeora; a 3R es ruido. (6) CHANDELIER (trail desde el maximo, no desde el cierre) 2.5-3 ATR desde +2R: la unica mejora que sobrevive en cerradas (PF 0.95 -> 1.11, +0.085 R/trade) y en las dos mitades temporales. Es lo que v4 implementa. Caveat: in-sample, n=117, casi todo bear."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (13) - DATO CLAVE DE AGUS: compra SPY todos los meses A MANO (DCA manual propio, fuera de Binance). Eso ES el nucleo de acciones del hogar y resuelve la pregunta abierta: NO se agrega SPYB al Fondo (duplicaria). Mapa patrimonial completo: SPY manual (nucleo acciones) + Fondo Abundancia (nucleo cripto BTC/ETH + satelite momentum bStocks + caja) + colchon $1,018 en Earn + fuera de perimetro (BNB/WLD/BANK). Dato del universo medido hoy: estadia promedio en el top-5 del satelite 3.5 meses (mediana 2, max 12); rotan 1.3 de 5 posiciones por mes. Duracion del satelite y semaforos explicados a Agus; pendiente de escribir manana: 'El Fondo en 10 lineas'."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (9) - Cierre del dia: (a) elegibilidad Binance Stocks CONFIRMADA por Agus -- la opcion aparece funcional en master y sub-cuentas; el camino API stocks sin IB queda habilitado para investigar. (b) Colchon ejecutado: $1,018 USDT en Simple Earn Flexible con auto-subscribe (tasa 'Max 6.79%' es por tramos; la efectiva sobre el total sera menor). Capital de proyecto en Spot: ~$405 USDT. (c) PAYG pendiente de tarjeta fisica; pasos: cloud.oracle.com -> menu -> Billing & Cost Management -> Upgrade and Manage Payment -> Upgrade to Pay As You Go; tarjeta de credito real, no prepaga. (d) Filtro btc3d aclarado: NO bloquea todo -- en el backtest opero n=63 (vs 61 sin filtro); solo exige BTC 3d positivo al entrar. Hoy 28/08 esta ABIERTO (+1.59%)."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "28/08 (6) - Backtest de regimen LEIDO (sim_regimen_bbb.py, replica event-driven con caja virtual sobre trades reales): sin filtro -47.05 total. El unico modo que elimina casi toda la perdida es btc3d (solo entrar con BTC 3d positivo): -2.00 total con realizado +6.48 (n=63). El filtro semanal (no_1w_baja) bloqueo el 100% de los trades: TODA la muestra ocurrio con BTC semanal bajista -- sigue sin existir muestra de Ganesha en bull. Lectura: el filtro de regimen correcto evita perder pero NINGUN modo demuestra que Ganesha gane. Candidato para el paper: btc3d. Cambiarlo o no lo decide Agus (cambiar parametros corta la muestra paper recien iniciada)."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (7) - Binance lanzo API REST de stocks (20/07/2026): trading programatico de acciones y ETFs US, posiciones, data, y conversion a bStocks. Si la cuenta de Agus es elegible, la ejecucion del track de acciones podria NO necesitar IB Gateway ni la instancia A1 -- una API REST corre en la E2.1.Micro actual. Pendiente: verificar elegibilidad y leer la doc oficial. P1 (PAYG) sigue valiendo por la RAM para backtests Sharadar de universo amplio, pero deja de ser bloqueante unico de la ejecucion."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (8) - Cash: Agus vendio todo en sub-cuentas y consolido en master. Decision: $1,000 USDT como colchon de liquidez (candidato: Simple Earn Flexible, master cobra bono de primeros 200) + $418 USDT en Spot como capital de proyecto (seed Fondo Abundancia + margen). Cartera restante: BTC ~$716 + ETH ~$182 (nucleo designable), BNB ~$122, WLD ~$13 (sin tesis declarada), BANK moonbag."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "28/08 (5) - DECISION DE AGUS: Ganesha pasa de LIVE a PAPER con la cartera heredada tal cual estaba (11 posiciones, cash simulado $78.66, equity base $256). La simulacion continua el sistema completo con precios reales: gestion de las 11 abiertas, scanner de movers, gates P3, gate de slippage y contabilidad de cash simulado (sin el cual el paper seria de capital infinito, el artefacto que ya invalido un backtest). El P&L realizado historico LIVE queda congelado en -$28.73 como referencia; evento PAPER_MIGRATION en events.jsonl marca el corte de muestra. Motivo: 118 cierres con PF 0.88 en regimen BTC<EMA200, sin salida alternativa que de positivo (bt_salidas). El paper acumula muestra mientras el backtest de regimen responde si Ganesha tiene edge en algun contexto. Regla aplicada: pausar no es fallar. IMPORTANTE: las 11 posiciones REALES siguen en Binance con stops nativos activos; el sistema ya no las gestiona -- venderlas o mantenerlas es decision y accion de Agus."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "28/08 (4) - INCIDENTE, detectado por Agus: el panel mostro equity $336 y +14.4% cuando el real era $259 y -11.8%. Causa: doble conteo en _real_equity (USDT libre + posiciones del state); si habia ventas manuales sin reconciliar, la plata de la venta se contaba dos veces. El bug era viejo, pero Claude lo expuso al publicar el panel a mano en medio de la ventana, sin reconciliar antes. Corregido de raiz: el equity ahora valora TODOS los assets reales de la sub-cuenta a mercado, sin depender del state. Verificado publicado: equity $258.91, P&L vs aportes -$35.09 (-11.94%), 11 abiertas. Leccion operativa nueva: nunca publicar el dashboard sin reconciliar primero."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "28/08 (2) - Medido con bt_salidas.py: la salida NO es el problema principal. Sobre las 117 entradas reales del bot, con velas 4h reales y sin ventas manuales, se probaron 6 reglas de salida. Todas dan negativo. La actual (-$13, PF 0.94) es la segunda mejor; breakeven en +1R la EMPEORA (-$36, el BE saca en el ruido de las alts); TP total en +2R tambien peor (-$30). La unica que mejora algo es trailing 1.5 ATR desde +1R: -$8.5, WR 35%, PF 0.96 -- sigue sin ser un sistema."
+    },
+    {
+     "tipo": "p",
+     "t": "La materia prima existe: 51% de las entradas alcanza +1R y 40% alcanza +2R (MFE sobre velas reales). Pero ninguna forma de cosechar eso compensa el 60% que muere en el stop. Conclusion: con estas entradas, en este regimen (la muestra es casi toda BTC bajo EMA200 diario), no hay regla de salida que de positivo. El deficit es de entrada+regimen, no de salida. Esto conecta directo con el backtest de 3 anios en curso (filtros de regimen) y coincide con el hallazgo previo del backtest con capital finito: solo trailing apretado mejoraba. No se cambia la salida del ejecutor: no hay candidata con evidencia positiva, y el cambio de regla lo decide Agus."
+    },
+    {
+     "tipo": "p",
+     "t": "28/08 (3) - Dashboard: la curva de equity mostraba +$15.87 porque graficaba solo los ultimos 40 cierres acumulados desde un cero arbitrario (14/08); los 72 anteriores sumaban -$41 y no se veian. Corregido: ganesha_data.json publica equity_curve completa (118 cierres) y la curva del panel arranca en el cero real. Realizado verdadero: -$25.34. Atribucion sobre los 118: cierres del bot -$52.63 (n=101), cierres manuales de Agus +$27.29 (n=17) -- con la salvedad de que Agus cierra ganadores y el stop carga los perdedores, asi que la particion favorece al humano por construccion."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "28/08/2026 - El caso ONT: el bot recompro lo que Agus acababa de vender. A las 00:07:17 del 27/08 Agus cerro ONT a mano en $0.0688 (+$6.59, 2.09R). Diecisiete segundos despues, a las 00:07:34, el ejecutor la recompro a $0.07168 -- 4.2% mas caro y con mas tamanio (379 vs 331). El activo cayo a $0.0565 (-21%). Neto real de ONT: +$0.84, no la perdida que se veia en pantalla."
+    },
+    {
+     "tipo": "p",
+     "t": "Los cierres manuales destrababan la avalancha. En esos mismos 15 segundos el ejecutor abrio 6 posiciones (PORTAL, ONT, S, VET, CVX, BICO). No habia cooldown por simbolo ni tope de cartera: el unico freno era la falta de plata. Al liberarla, vacio el cargador. Es el hallazgo de julio confirmado con un caso nuevo: el Ganesha viejo era selectivo por restriccion de cash, no por diseno."
+    },
+    {
+     "tipo": "p",
+     "t": "Segundo bug, encontrado en el mismo analisis: el sizing y el stop se calculaban con el cierre de la vela 15m anterior ($0.06835), pero la compra es market al precio vivo ($0.07168). Son +4.9% de slippage sobre una vela que hizo +7.4% vertical; el techo llego 8 minutos despues de la compra. El stop no se re-anclaba al fill, asi que quedaba a 2.96 ATR en vez de los 2.5 ATR de disenio: 18% mas de riesgo del pedido, y una posicion que tolera -30% antes de cortar."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "Efecto inmediato: con 15 posiciones abiertas y max_open en 8, Ganesha no abre nada nuevo hasta bajar a 7. No liquida nada -- la cartera se drena sola por stops y salidas. Es intencional."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "info",
+     "t": "APORTE DE CAPITAL 22/08/2026 — Agus deposito $100 USDT en la sub-cuenta Ganesha (master->sub, 17:58 UTC). Aportes netos Ganesha: $194 -> $294. El aporte NO es ganancia: el panel ahora separa equity de aportes."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "BUGFIX CONTABLE 22/08/2026 — dos errores que inflaban el P&L del panel de Ganesha. (1) ejecutor_dash.py tenia deposits_total HARDCODEADO EN 0: cada aporte de capital aparecia como si fuera equity ganado. (2) dashboard._update_deposit_ledger() llamaba a sapiGetSubAccountTransferSubUserHistory SIN el parametro type, y ese endpoint devuelve lista vacia si falta: el ledger no detectaba ningun deposito nuevo desde junio. Corregidos ambos: ahora consulta type=1 (entradas) y type=2 (salidas), y el panel publica deposits_total, pnl_vs_depositos y pnl_vs_depositos_pct. Backups: dashboard.py.bak.pre_depositos.*, ejecutor_dash.py.bak.pre_depositos.*, deposits_ledger.json.bak.*"
+    },
+    {
+     "tipo": "tabla",
+     "t": "Ganesha por version — resultados realizados medidos sobre ejecutor/events.jsonl (22/08/2026)",
+     "headers": [
+      "Periodo",
+      "n",
+      "PnL",
+      "WR",
+      "PF",
+      "ops/dia"
+     ],
+     "rows": [
+      [
+       "pre-v3 (hasta 07/08)",
+       "31",
+       "+$2,85",
+       "41,9%",
+       "1,05",
+       "1,6"
+      ],
+      [
+       "v3 (08/08 - 16/08)",
+       "57",
+       "-$65,58",
+       "12,3%",
+       "0,40",
+       "6,5"
+      ],
+      [
+       "post-rollback v2 (17/08 -)",
+       "17",
+       "+$33,28",
+       "64,7%",
+       "3,49",
+       "4,1"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Lectura del post-rollback (n=17, 5 dias): el numero es bueno y coincide con la tesis de Agus de que la v2 es mejor bot. Advertencia registrada una sola vez: n=17 no distingue el merito del bot del regimen alcista diario de BTC, y las ops/dia (4,1) siguen mas cerca de v3 (6,5) que de pre-v3 (1,6) -- el mecanismo de seleccion por escasez de caja ya no esta operando, y el aporte de $100 lo afloja mas. Decision de Agus: no se toca nada. Queda P4 abierta (tope explicito de frecuencia de entrada)."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "ROLLBACK 17/08/2026 (decision de Agus): se restauro el ejecutor al codigo del 19/07 (pre-v3). Motivo: desde los cambios del 7-8/08 (atr 2.0 + time_stop + zombie + depth) el bot fue 8 de 9 dias en rojo, PF cayo de 1.05 a 0.40 y el fusible (PF<0.70, n>=15) se cruzo con PF 0.63 n=87. Backups: ganesha_ejecutor.py.bak.v3_full.* y ejecutor/state.json.bak.pre_rollback.*. Las 6 posiciones abiertas se heredan con sus stops nativos; el modo (LIVE/paper) lo decide Agus con el archivo ejecutor/LIVE."
+    },
+    {
+     "tipo": "p",
+     "t": "Lo que se midio antes del rollback: (1) las reglas v3 por si solas no eran la causa: sobre las mismas entradas, las reglas viejas simulan -$68 vs -$48 real. (2) PERO las salidas rapidas de v3 liberaban capital y triplicaron la frecuencia de entrada (1.7 -> 4.9 entradas/dia; skip_no_balance 142 -> 35), y esas entradas extra fueron malas. El Ganesha viejo era selectivo por accidente: le faltaba plata. (3) BTC lleva ~77 dias bajo la EMA200; el motor de entrada por momentum de altcoins no tiene edge en ese clima con ninguna de las dos versiones. Contador de muestra: se reinicia."
+    },
+    {
+     "tipo": "p",
+     "t": "Foto post-rollback al 19/08 (47h, 12 corridas): 8 posiciones abiertas, $119.76 invertidos, PnL abierto +$5.08 (+4.2%). Realizado: -$6.40 (COOKIE -4.02, CHIP -2.38), 2 de 2 cierres en rojo. Frecuencia de entrada 2.0/dia -- vuelve al nivel pre-v3 (1.7) y lejos del v3 (4.9): el objetivo del rollback se cumplio a nivel mecanismo. El resultado, con n=2, no dice nada todavia, y el verde abierto es beta de alts, no edge del bot."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "HALLAZGO 19/08/2026 — los stops nativos no se estaban colocando. 6 de 8 posiciones abiertas quedaron SIN stop en el exchange (solo gestionado por software, evaluado cada 4h). Causa medida: el filtro PERCENT_PRICE_BY_SIDE de Binance exige, para una venta, price >= avgPrice(5m) x 0.9. Con atr_mult 2.5 el stop queda a -16%/-40% del precio y el exchange lo rechaza siempre. Verificado con order/test: ni STOP_LOSS_LIMIT ni STOP_LOSS market lo evaden. NO es un bug del codigo: es un limite estructural de Binance spot incompatible con stops anchos."
+    },
+    {
+     "tipo": "p",
+     "t": "Fix aplicado 19/08 (Claude): (1) place_stop ahora calcula el borde real del filtro leyendo askMultiplierDown del par y el avgPrice de 5m. Si el stop esta fuera de rango NO lo fuerza al borde -- forzarlo cerraria el trade antes de tiempo y cambiaria la estrategia por la ventana; lo registra como stop_pending_filter con la distancia que falta y lo deja en software. Si el stop entra pero el precio limite se pasaba, sube el limite al borde (caso que antes se perdia). (2) Nuevo watcher ganesha_stops.py, cron 22/37/52 de cada hora: solo reintenta colocar stops pendientes, no escanea ni abre ni cierra nada. La ventana de desproteccion baja de 4h a ~15 min. Cuando el precio baja hacia el stop, la red se arma sola. Backup: ganesha_ejecutor.py.bak.pre_stopfilter.1787103064"
+    },
+    {
+     "tipo": "tabla",
+     "t": "Proteccion en exchange al 19/08 01:30 UTC (falta% = cuanto debe bajar el precio para que el stop sea colocable)",
+     "headers": [
+      "Simbolo",
+      "PnL abierto",
+      "Stop nativo",
+      "Falta para armarlo"
+     ],
+     "rows": [
+      [
+       "NIL/USDT",
+       "+19.7%",
+       "SI",
+       "-"
+      ],
+      [
+       "GPS/USDT",
+       "+12.3%",
+       "NO",
+       "25.4%"
+      ],
+      [
+       "ETHFI/USDT",
+       "+9.2%",
+       "NO",
+       "11.7%"
+      ],
+      [
+       "PUMP/USDT",
+       "+8.7%",
+       "NO",
+       "8.5%"
+      ],
+      [
+       "ONG/USDT",
+       "+5.8%",
+       "NO",
+       "11.1%"
+      ],
+      [
+       "HEMI/USDT",
+       "+1.4%",
+       "NO",
+       "37.9%"
+      ],
+      [
+       "BOME/USDT",
+       "-10.8%",
+       "NO",
+       "1.8%"
+      ],
+      [
+       "PORTAL/USDT",
+       "-17.1%",
+       "SI",
+       "-"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Riesgo conocido del rollback: cuando el capital crezca y deje de trabar, la frecuencia sube sola y puede volver la sangria. La solucion de fondo seria un tope explicito de entradas/dia o max_open, medido antes de encender. Pendiente."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "Barrera: las posiciones abiertas y el archivo ejecutor/LIVE los toca solo Agus. Claude nunca cierra posiciones ni cambia el modo."
+    },
+    {
+     "tipo": "p",
+     "t": "El edge historico de Ganesha (~100%) vino del scanner ciego de movers, no de la seleccion del Brain. BANK, el mejor trade, lo cerro Agus a mano: el sistema no lo capturo. Sin BANK, Ganesha realiza aprox -$37."
+    }
+   ]
+  },
+  {
+   "id": "h_pescador",
+   "titulo": "Pescador en cripto (versión anterior a bStocks)",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Modo",
+       "PAPER (v2). Datos de v1 invalidos: median otra estrategia"
+      ],
+      [
+       "Tesis",
+       "capturar 20-50% de rallies ya ultra-confirmados"
+      ],
+      [
+       "Universo",
+       "mismo scanner que Ganesha: todo /USDT de Binance, vol 24h >= $10M absoluto y >= 15x mediana 20d, dia >= +8%, semana >= +20%"
+      ],
+      [
+       "Evaluacion",
+       "solo sobre la ultima vela diaria CERRADA"
+      ],
+      [
+       "Gestion",
+       "TP +15%, SL -20%, salida forzada a 24h"
+      ],
+      [
+       "Sizing",
+       "25% del equity, max_open 4, cooldown 20h por simbolo, min_notional $12"
+      ],
+      [
+       "Cron",
+       "cada hora, minuto :07"
+      ],
+      [
+       "Archivos",
+       "/home/opc/bot_semillas/pescador/ — md5 v2: 38d1a60fa4780f14824e5b3648a4a6df"
+      ]
+     ]
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "warn",
+     "t": "El SL de -20% es intocable. Medido: con SL a -8% el sistema pierde plata. El edge viene de aguantar el sacudon inicial. Si duele, se reduce el size, no el stop."
+    },
+    {
+     "tipo": "p",
+     "t": "Para pasar a LIVE (solo Agus): crear pescador/keys.json, crear archivo vacio pescador/LIVE, fondear la sub-cuenta. En LIVE, TP y SL van como OCO nativo en Binance."
+    },
+    {
+     "tipo": "p",
+     "t": "22/08/2026 — por que PUMP (+124%) no activo al Pescador. El filtro que lo bloquea es vol_ratio >= 15x la mediana de 20 dias: PUMP llego a 4,17x. Su mediana ya es ~$12M/dia, asi que necesitaria ~$180M en una jornada. El 20/08 paso 3 de los 4 umbrales (dia +27,7%, semana +31,9%, $44M absolutos) y solo lo freno el ratio. Efecto de diseno registrado: el Pescador solo puede cazar activos que venian ILIQUIDOS y explotan; por construccion nunca va a tocar un top-100 ya liquido. Selectividad real: 447 corridas desde el 04/08, 1 sola confirmacion (VIC, cerro en stop -20%). No es un bug."
+    }
+   ]
+  },
+  {
+   "id": "h_botv1",
+   "titulo": "Bot v1 / Jardinero / Brain (cerrado)",
+   "historial": true,
+   "bloques": [
+    {
+     "tipo": "kv",
+     "items": [
+      [
+       "Cron diario",
+       "00:15 UTC (21:15 ART) — main.py"
+      ],
+      [
+       "Brain",
+       "mensual, ~$0.60-1.50 por corrida via API de Anthropic"
+      ],
+      [
+       "Codigo",
+       "/home/opc/bot_semillas/ — el espejo del repo puede estar desactualizado"
+      ]
+     ]
+    },
+    {
+     "tipo": "p",
+     "t": "Organigrama: BRAIN (estratega mensual, garden_plan) -> JARDINERO (swing paciente, garden.py) -> GANESHA (intradia) + AUDITOR LOOP (no opera; consolida y propone con evidencia n>=15)."
+    },
+    {
+     "tipo": "alerta",
+     "nivel": "alta",
+     "t": "Los 4 cambios de Brain/Jardinero estan EN SUSPENSO. Eran \"obligatorios post-backtest\", pero el backtest que los justificaba se derrumbo (ver Hallazgos). El spec sigue valido como diseno."
+    },
+    {
+     "tipo": "p",
+     "t": "Los 4 cambios especificados: (1) Brain filtra solo lo que crece en semanal (aduana semanal); (2) Brain vigila proyectos de calidad cerca de minimos (antena de valor); (3) Brain lee los movers que Ganesha gano ese mes (loop de aprendizaje); (4) Jardinero planta en dias lo que la watchlist asigna, DCA en pullback a EMA diaria en tendencia alcista + vela de reclaim, nunca el cuchillo."
+    },
+    {
+     "tipo": "p",
+     "t": "Pregunta abierta para Agus: que reemplaza a la confirmacion semanal como criterio del Jardinero, en cripto y en acciones. Propuesta de Agus: Jardinero cripto por fundamentals (TVL, revenue de protocolo, valor con descuento) con DCA en proyectos tier-1."
+    },
+    {
+     "tipo": "p",
+     "t": "Tier-1 = filtro de SUPERVIVENCIA (proyecto vivo, uso o narrativa real, liquidez, sobrevive el invierno), no filtro de tamanio. La lista la firma Agus; Claude propone candidatos."
+    }
+   ]
+  },
+  {
+   "id": "h_acciones",
+   "titulo": "Expansión a acciones / ETFs / bonos (plan de agosto)",
+   "historial": true,
    "bloques": [
     {
      "tipo": "p",
@@ -1198,8 +1623,9 @@
    ]
   },
   {
-   "id": "horizonte",
-   "titulo": "En el horizonte",
+   "id": "h_horizonte",
+   "titulo": "En el horizonte (lista de septiembre)",
+   "historial": true,
    "bloques": [
     {
      "tipo": "ul",
@@ -1207,7 +1633,7 @@
       "Definir que reemplaza a la confirmacion semanal como criterio del Jardinero (decision de Agus).",
       "Antena de valor: antena.json en el repo radar (simbolo + tesis + condicion, editable por Agus desde la app de GitHub), chequeo diario 21:15, trigger de Stage 2 sostenido -> mail + corrida ad-hoc del Brain -> avisa al Jardinero. Opcion C tentativa, confirmar con Agus.",
       "Primer candidato de la antena: IOTA (tesis INCUCAI on-chain). Hoy en Stage 4, solo observacion.",
-      "Leer el codigo real de Semillas/Jardinero desde la VM (seeds.py, strategy.py, main.py): el espejo del repo puede estar viejo.",
+      "Leer el codigo real de Bot v1/Jardinero desde la VM (seeds.py, strategy.py, main.py): el espejo del repo puede estar viejo.",
       "Migracion a instancia A1 (bloqueada por PAYG).",
       "Setup de IB Gateway (bloqueado por A1).",
       "B4 = \"Auditor General / CEO conversacional\": cerebro conversable con acceso a codigo + estado + memoria; nunca decide, es el espejo de Agus. Idea futura, no ahora.",
@@ -1217,103 +1643,29 @@
    ]
   },
   {
-   "id": "infra",
-   "titulo": "Infraestructura",
+   "id": "h_infra",
+   "titulo": "Alcance de cuentas de Binance (hasta octubre 2026)",
+   "historial": true,
    "bloques": [
     {
      "tipo": "kv",
      "items": [
       [
-       "VM",
-       "Oracle Cloud Always Free — opc@163.176.185.60, sa-saopaulo-1, Oracle Linux, hostname semillas-bot"
-      ],
-      [
-       "Specs",
-       "E2.1.Micro (1GB RAM + ~3.5GB swap). A1 (2 OCPU / 12GB) pendiente de PAYG"
-      ],
-      [
-       "Canal primario",
-       "MCP \"VM Semillas\" — https://vm.semillaredes.com/mcp (read_file, write_file, run_script, tail_log, md5, list_dir)"
-      ],
-      [
-       "Denegados en MCP",
-       ".env, keys.json, id_rsa"
-      ],
-      [
-       "Kill switch",
-       "sudo systemctl stop caddy-vm"
-      ],
-      [
-       "Fallback",
-       "OCI Cloud Shell via Chrome (cloud.oracle.com/?region=sa-saopaulo-1)"
-      ],
-      [
-       "Dashboard",
-       "GitHub Pages, repo calcagnoagustin/radar, carpeta docs/ -> cripto.semillaredes.com"
-      ],
-      [
-       "Publicacion",
-       "la VM publica via GitHub Contents API (token en .env, nunca expuesto a Claude)"
-      ],
-      [
-       "Email",
-       "Resend, bot@semillaredes.com -> calcagnoagustin@gmail.com"
-      ]
-     ]
-    },
-    {
-     "tipo": "kv",
-     "items": [
-      [
        "ALCANCE DE CUENTAS BINANCE (limite de seguridad, por disenio)",
-       "El bot y Claude SOLO tienen claves de las SUBCUENTAS: ganesha@semillaredes.com (uid 1253377178) y agus@semillaredes.com (uid 1251544862). La CUENTA PRINCIPAL de Agus - donde vive el patrimonio real, incluido el nucleo BTC/ETH del Fondo - NO es accesible ni consultable por el sistema. Es asi a proposito: la plata de verdad esta fuera del alcance de cualquier bot y de Claude."
+       "El bot y Claude SOLO tienen claves de las SUBCUENTAS: ganesha@semillaredes.com y agus@semillaredes.com. La CUENTA PRINCIPAL de Agus - donde vive el patrimonio real, incluido el nucleo BTC/ETH del Fondo - NO es accesible ni consultable por el sistema. Es asi a proposito: la plata de verdad esta fuera del alcance de cualquier bot y de Claude."
       ],
       [
        "Consecuencia operativa",
        "Cualquier lectura de balances que haga el sistema devuelve SOLO las subcuentas. Un balance en cero ahi NO significa que no haya patrimonio: significa que el patrimonio esta donde el bot no llega. El nucleo del Fondo (BTC 0.00924475 + ETH 0.07476581) se mide en el paper por CANTIDADES DESIGNADAS y precios de mercado publicos, no por lectura de cuenta."
       ]
      ]
-    },
-    {
-     "tipo": "p",
-     "t": "Crontab: 15 0 * * * main.py | 7 0,4,8,12,16,20 * * * ganesha_ejecutor.py | 7 * * * * pescador.py"
-    },
-    {
-     "tipo": "ul",
-     "items": [
-      "Yahoo Finance chart API funciona gratis para diario historico ajustado, pero SOLO con User-Agent corto (\"Mozilla/5.0\"). Los UA completos de Chrome disparan 429. Patron: urllib con backoff exponencial hasta 6 reintentos, fallback a curl, sleep entre simbolos.",
-      "Los scripts que publican al repo deben correr con /home/opc/bot_semillas/venv/bin/python desde /home/opc/bot_semillas/. El Python del sistema no tiene dotenv y dashboard.TOKEN queda vacio.",
-      "Verificacion del dashboard: fetch mismo-origen desde la pestania de cripto.semillaredes.com. NO via raw.githubusercontent.com (cache de CDN agresivo). Para diagnosticos, subir el script con nombre NUEVO cada vez.",
-      "Gmail archiva todo lo que llega de bot@semillaredes.com salteando el inbox. Si un mail importa, hay que moverlo a INBOX+STARRED.",
-      "Si el token fine-grained se edita, hay que reconfirmar explicitamente Contents: R/W o GitHub lo limpia en silencio."
-     ]
     }
    ]
   },
   {
-   "id": "metodo",
-   "titulo": "Metodo de trabajo",
-   "bloques": [
-    {
-     "tipo": "ul",
-     "items": [
-      "Agus es CEO y no hace trabajo operativo. Claude ejecuta todo lo tecnico de punta a punta: codigo, VM, automatizacion, dashboard, documentacion.",
-      "Claude nunca pide pegar codigo, correr comandos ni hacer pasos operativos. Solo se pide accion a Agus en casos extremos: credenciales que el controla, go-live real, acciones en el exchange.",
-      "Medir antes de construir: backtest primero, calibrar con datos, despues construir. Si el trigger no le gana al benchmark ciego, el componente no se construye.",
-      "Avisar una vez, no repetir: las advertencias metodologicas se dicen una vez; Agus decide.",
-      "Los documentos externos se evaluan criticamente pieza por pieza, no como doctrina (precedente: el doc de auditoria de ChatGPT).",
-      "Los problemas se nombran honestamente, con sus riesgos, sin suavizar."
-     ]
-    },
-    {
-     "tipo": "p",
-     "t": "Del doc de auditoria de ChatGPT: el allocator dinamico y las matrices de correlacion son ruido a esta escala (n < 20 trades, ~$1.000). Lo barato, falsable y util ya: benchmarks / operaciones de control virtuales, logging que permita atribucion futura, reglas de salida del bull definidas ANTES de la euforia."
-    }
-   ]
-  },
-  {
-   "id": "vocabulario",
-   "titulo": "Vocabulario",
+   "id": "h_vocabulario",
+   "titulo": "Vocabulario de la etapa de bots",
+   "historial": true,
    "bloques": [
     {
      "tipo": "kv",
