@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T00:20:12Z",
+ "generated": "2026-11-26T00:20:26Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -337,55 +337,55 @@
  ],
  "n_trades_consolidados": 150,
  "fondo": {
-  "generated": "2026-11-25T00:20",
+  "generated": "2026-11-26T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-11-24",
-  "dias": 89,
+  "hasta": "2026-11-25",
+  "dias": 90,
   "min_dias_evidencia": 90,
-  "estado": "sin_evidencia",
-  "veredicto": "Muestra insuficiente: 89 dias de 90 minimos. Nada de lo de arriba es evidencia todavia — a este plazo la diferencia contra los controles es ruido. Lo unico que se audita con sentido hoy es la disciplina (pesos, semaforos, rotacion), no el resultado.",
-  "equity": 1179.24,
+  "estado": "medible",
+  "veredicto": "90 dias de muestra. El Fondo le gana a 3 de 4 controles (congelado, btc_100, btc_eth_5050).",
+  "equity": 1213.45,
   "aportado": 1306.52,
-  "pnl": -127.28,
-  "pnl_pct": -9.74,
+  "pnl": -93.07,
+  "pnl_pct": -7.12,
   "comparativa": {
    "fondo": {
-    "ret_pct": -9.68,
+    "ret_pct": -7.06,
     "max_dd_pct": -22.18,
-    "vol_anual_pct": 33.7,
-    "n": 89
+    "vol_anual_pct": 34.0,
+    "n": 90
    },
    "congelado": {
-    "ret_pct": -28.04,
+    "ret_pct": -27.57,
     "max_dd_pct": -36.57,
-    "vol_anual_pct": 42.3,
-    "n": 89
+    "vol_anual_pct": 42.1,
+    "n": 90
    },
    "btc_100": {
-    "ret_pct": -23.14,
+    "ret_pct": -22.34,
     "max_dd_pct": -31.94,
-    "vol_anual_pct": 39.8,
-    "n": 89
+    "vol_anual_pct": 39.7,
+    "n": 90
    },
    "btc_eth_5050": {
-    "ret_pct": -27.18,
+    "ret_pct": -26.52,
     "max_dd_pct": -36.79,
-    "vol_anual_pct": 44.1,
-    "n": 89
+    "vol_anual_pct": 43.9,
+    "n": 90
    },
    "spy_100": {
-    "ret_pct": -6.57,
+    "ret_pct": -6.84,
     "max_dd_pct": -11.46,
-    "vol_anual_pct": 19.8,
-    "n": 89
+    "vol_anual_pct": 19.7,
+    "n": 90
    }
   },
   "vs_controles_pp": {
-   "congelado": 18.36,
-   "btc_100": 13.46,
-   "btc_eth_5050": 17.5,
-   "spy_100": -3.11
+   "congelado": 20.51,
+   "btc_100": 15.28,
+   "btc_eth_5050": 19.46,
+   "spy_100": -0.22
   },
   "bloques": {
    "nucleo": {
@@ -587,7 +587,8 @@
     1162.21,
     1162.21,
     1198.34,
-    1179.24
+    1179.24,
+    1213.45
    ],
    "congelado": [
     1307.76,
@@ -678,7 +679,8 @@
     943.32,
     958.97,
     974.29,
-    941.09
+    941.09,
+    947.15
    ],
    "btc_100": [
     1305.68,
@@ -769,7 +771,8 @@
     1009.98,
     1027.68,
     1027.67,
-    1003.54
+    1003.54,
+    1014.04
    ],
    "btc_eth_5050": [
     1305.68,
@@ -860,7 +863,8 @@
     955.47,
     974.67,
     971.01,
-    950.78
+    950.78,
+    959.38
    ],
    "spy_100": [
     1305.68,
@@ -951,7 +955,8 @@
     1170.69,
     1170.69,
     1225.81,
-    1219.86
+    1219.86,
+    1216.33
    ]
   },
   "dias_lista": [
@@ -1043,7 +1048,8 @@
    "2026-11-21",
    "2026-11-22",
    "2026-11-23",
-   "2026-11-24"
+   "2026-11-24",
+   "2026-11-25"
   ]
  }
 }
