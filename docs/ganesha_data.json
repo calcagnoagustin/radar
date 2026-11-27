@@ -1,10 +1,10 @@
 {
  "dry_run": true,
- "equity_now": 252.7,
+ "equity_now": 254.61,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": -3.47,
- "pnl_vs_depositos_pct": -1.35,
+ "pnl_vs_depositos": -1.56,
+ "pnl_vs_depositos_pct": -0.61,
  "pnl_today": 0,
  "trades_today": 0,
  "realized_pnl": -42.57,
@@ -16,7 +16,7 @@
    "symbol": "PORTAL/USDT",
    "entry": 0.01609,
    "qty": 741.6,
-   "stop": 0.006776785714285714,
+   "stop": 0.023757499999999997,
    "tp1_done": false
   }
  ],
