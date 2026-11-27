@@ -1,9 +1,9 @@
 {
- "actualizado": "2026-11-26",
+ "actualizado": "2026-11-27",
  "donde": "ARQ",
  "activo": "SPY",
- "saldo_usd": 419.98,
- "ganancia_usd": -6.32,
+ "saldo_usd": 426.79,
+ "ganancia_usd": 0.49,
  "edad": 7,
  "aporte_mensual_usd": 25,
  "plan": "Agus aporta 25 USD/mes en SPY. Cuando Uli este maduro, se lo entrega y sigue aportando el: el fondo es su esfuerzo, no herencia.",
@@ -12,95 +12,95 @@
   "base_7": [
    {
     "edad": 18,
-    "valor": 5769,
-    "puesto": 3720
+    "valor": 5783,
+    "puesto": 3727
    },
    {
     "edad": 25,
-    "valor": 11942,
-    "puesto": 5820
+    "valor": 11965,
+    "puesto": 5827
    },
    {
     "edad": 40,
-    "valor": 40727,
-    "puesto": 10320
+    "valor": 40791,
+    "puesto": 10327
    },
    {
     "edad": 65,
-    "valor": 240620,
-    "puesto": 17820
+    "valor": 240965,
+    "puesto": 17827
    }
   ],
   "base_5": [
    {
     "edad": 18,
-    "valor": 5077,
-    "puesto": 3720
+    "valor": 5089,
+    "puesto": 3727
    },
    {
     "edad": 25,
-    "valor": 9642,
-    "puesto": 5820
+    "valor": 9659,
+    "puesto": 5827
    },
    {
     "edad": 40,
-    "valor": 26666,
-    "puesto": 10320
+    "valor": 26700,
+    "puesto": 10327
    },
    {
     "edad": 65,
-    "valor": 104944,
-    "puesto": 17820
+    "valor": 105059,
+    "puesto": 17827
    }
   ],
   "uli200_7": [
    {
     "edad": 18,
-    "valor": 5769,
-    "puesto": 3720
+    "valor": 5783,
+    "puesto": 3727
    },
    {
     "edad": 25,
-    "valor": 30692,
-    "puesto": 20520
+    "valor": 30715,
+    "puesto": 20527
    },
    {
     "edad": 40,
-    "valor": 146901,
-    "puesto": 56520
+    "valor": 146964,
+    "puesto": 56527
    },
    {
     "edad": 65,
-    "valor": 953902,
-    "puesto": 116520
+    "valor": 954247,
+    "puesto": 116527
    }
   ],
   "uli200_5": [
    {
     "edad": 18,
-    "valor": 5077,
-    "puesto": 3720
+    "valor": 5089,
+    "puesto": 3727
    },
    {
     "edad": 25,
-    "valor": 27129,
-    "puesto": 20520
+    "valor": 27145,
+    "puesto": 20527
    },
    {
     "edad": 40,
-    "valor": 109364,
-    "puesto": 56520
+    "valor": 109398,
+    "puesto": 56527
    },
    {
     "edad": 65,
-    "valor": 487491,
-    "puesto": 116520
+    "valor": 487606,
+    "puesto": 116527
    }
   ]
  },
- "publicado": "2026-11-26T21:12",
+ "publicado": "2026-11-27T21:12",
  "nota_saldo": "Se valua solo todos los dias con el cierre de SPY (unidades estimadas al 22/11: saldo del 02/11 + USD 100 del 05/11). Al comprar mas: sumar unidades y costo, o corregir con captura de ARQ.",
  "unidades_spy": 0.585994,
  "costo_usd": 426.3,
- "spy_px": 716.7
+ "spy_px": 728.32
 }
