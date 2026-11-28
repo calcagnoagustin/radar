@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T00:20:17Z",
+ "generated": "2026-11-28T00:20:12Z",
  "nota": "solo informativo; nada se aplica automaticamente",
  "metricas": {
   "todo": {
@@ -337,55 +337,55 @@
  ],
  "n_trades_consolidados": 150,
  "fondo": {
-  "generated": "2026-11-27T00:20",
+  "generated": "2026-11-28T00:20",
   "modo": "paper",
   "desde": "2026-08-28",
-  "hasta": "2026-11-26",
-  "dias": 91,
+  "hasta": "2026-11-27",
+  "dias": 92,
   "min_dias_evidencia": 90,
   "estado": "medible",
-  "veredicto": "91 dias de muestra. El Fondo le gana a 3 de 4 controles (congelado, btc_100, btc_eth_5050).",
-  "equity": 1215.71,
+  "veredicto": "92 dias de muestra. El Fondo le gana a 3 de 4 controles (congelado, btc_100, btc_eth_5050).",
+  "equity": 1217.22,
   "aportado": 1306.52,
-  "pnl": -90.81,
-  "pnl_pct": -6.95,
+  "pnl": -89.3,
+  "pnl_pct": -6.83,
   "comparativa": {
    "fondo": {
-    "ret_pct": -6.89,
+    "ret_pct": -6.78,
     "max_dd_pct": -22.18,
-    "vol_anual_pct": 33.8,
-    "n": 91
+    "vol_anual_pct": 33.6,
+    "n": 92
    },
    "congelado": {
-    "ret_pct": -27.45,
+    "ret_pct": -27.38,
     "max_dd_pct": -36.57,
-    "vol_anual_pct": 41.9,
-    "n": 91
+    "vol_anual_pct": 41.6,
+    "n": 92
    },
    "btc_100": {
-    "ret_pct": -22.18,
+    "ret_pct": -23.02,
     "max_dd_pct": -31.94,
-    "vol_anual_pct": 39.5,
-    "n": 91
+    "vol_anual_pct": 39.3,
+    "n": 92
    },
    "btc_eth_5050": {
-    "ret_pct": -26.5,
+    "ret_pct": -27.48,
     "max_dd_pct": -36.79,
-    "vol_anual_pct": 43.6,
-    "n": 91
+    "vol_anual_pct": 43.4,
+    "n": 92
    },
    "spy_100": {
-    "ret_pct": -6.84,
+    "ret_pct": -5.33,
     "max_dd_pct": -11.46,
-    "vol_anual_pct": 19.6,
-    "n": 91
+    "vol_anual_pct": 19.8,
+    "n": 92
    }
   },
   "vs_controles_pp": {
-   "congelado": 20.56,
-   "btc_100": 15.29,
-   "btc_eth_5050": 19.61,
-   "spy_100": -0.05
+   "congelado": 20.6,
+   "btc_100": 16.24,
+   "btc_eth_5050": 20.7,
+   "spy_100": -1.45
   },
   "bloques": {
    "nucleo": {
@@ -589,7 +589,8 @@
     1198.34,
     1179.24,
     1213.45,
-    1215.71
+    1215.71,
+    1217.22
    ],
    "congelado": [
     1307.76,
@@ -682,7 +683,8 @@
     974.29,
     941.09,
     947.15,
-    948.74
+    948.74,
+    949.73
    ],
    "btc_100": [
     1305.68,
@@ -775,7 +777,8 @@
     1027.67,
     1003.54,
     1014.04,
-    1016.04
+    1016.04,
+    1005.07
    ],
    "btc_eth_5050": [
     1305.68,
@@ -868,7 +871,8 @@
     971.01,
     950.78,
     959.38,
-    959.63
+    959.63,
+    946.83
    ],
    "spy_100": [
     1305.68,
@@ -961,7 +965,8 @@
     1225.81,
     1219.86,
     1216.33,
-    1216.33
+    1216.33,
+    1236.05
    ]
   },
   "dias_lista": [
@@ -1055,7 +1060,8 @@
    "2026-11-23",
    "2026-11-24",
    "2026-11-25",
-   "2026-11-26"
+   "2026-11-26",
+   "2026-11-27"
   ]
  }
 }
