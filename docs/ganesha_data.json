@@ -1,35 +1,18 @@
 {
  "dry_run": true,
- "equity_now": 264.94,
+ "equity_now": 246.6,
  "deposits_total": 256.17,
  "paper_base_date": 1787951571.3039901,
- "pnl_vs_depositos": 8.77,
- "pnl_vs_depositos_pct": 3.42,
- "pnl_today": 0,
- "trades_today": 0,
- "realized_pnl": -42.57,
- "trades_total": 160,
- "win_rate": 33,
+ "pnl_vs_depositos": -9.57,
+ "pnl_vs_depositos_pct": -3.74,
+ "pnl_today": 0.16,
+ "trades_today": 1,
+ "realized_pnl": -42.41,
+ "trades_total": 161,
+ "win_rate": 34,
  "profit_factor": 0.87,
- "open_positions": [
-  {
-   "symbol": "PORTAL/USDT",
-   "entry": 0.01609,
-   "qty": 741.6,
-   "stop": 0.037162,
-   "tp1_done": false
-  }
- ],
+ "open_positions": [],
  "recent_closed": [
-  {
-   "symbol": "CVX/USDT",
-   "entry": 2.462,
-   "exit": 2.347,
-   "qty_total": 13.334,
-   "pnl_net": -1.53,
-   "action": "manual",
-   "closed_ts": 1787926364.255127
-  },
   {
    "symbol": "PROM/USDT",
    "entry": 4.46268085106383,
@@ -380,6 +363,15 @@
    "pnl_net": -5.44,
    "action": "stop",
    "closed_ts": 1794686832.7968373
+  },
+  {
+   "symbol": "PORTAL/USDT",
+   "entry": 0.01609,
+   "exit": 0.0163,
+   "qty_total": 741.6,
+   "pnl_net": 0.16,
+   "action": "stop",
+   "closed_ts": 1795838835.37594
   }
  ],
  "equity_curve": [
@@ -1342,7 +1334,13 @@
    "pnl_net": -5.44,
    "action": "stop",
    "closed_ts": 1794686832.7968373
+  },
+  {
+   "symbol": "PORTAL/USDT",
+   "pnl_net": 0.16,
+   "action": "stop",
+   "closed_ts": 1795838835.37594
   }
  ],
- "realized_total_events": -42.62
+ "realized_total_events": -42.46
 }
